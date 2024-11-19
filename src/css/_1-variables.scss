@@ -1,15 +1,17 @@
 // Colors - For transparency use rgba($action1, 0.5) = 50% opaque
 $action1: #733bf7;
 $action2: #00a4bd;
-$black: #33475b;
+$black: #000000;
 $white: #fff;
 $gray1: #edf0f2;
 $gray2: #cbd6e2;
 $gray3: #7c98b6;
+$sectionbg: #f5f1e8;
+$basecolor: #3d3533;
 $gradient1: linear-gradient(-45deg, $black 0%, $action2 50%);
-$font1: "Montserrat";
-$baseFontSize: 16rem;
-$baseLineHeight: 1.61803398875; // Golden ratio
+$font1: "Neue Haas Grotesk Text Pro";
+$baseFontSize: 14rem;
+$baseLineHeight: 1.55; // Golden ratio
 // Border Radius
 $border1: 4rem;
 $border2: 5rem;
