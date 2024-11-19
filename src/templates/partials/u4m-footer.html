@@ -1,0 +1,72 @@
+<!--
+ templateType: global_partial
+ label: Footer
+ -->
+
+<footer class="cmftr u4m-footer">
+	<div class="inner_cnt">
+		<div class="container "> 
+			<div class="top_cnt">
+				<div class="left_cnt">
+					<div class="logo_wrpp">
+						<div class="custom_logo">
+							{% module "header_logo" path="@hubspot/logo", label="Footer Logo",  img={src= "{{ get_asset_url('/Appzen/templates/images/footer-logo.png') }}", width=129, override_inherited_src= true, alt="Appzen" } , link="/" %}
+						</div>
+					</div>
+				</div>
+				<div class="middle_cnt">
+					<div class="menu_wrpp">
+						{% module "middle_col" path="@hubspot/menu" , id=182966654489 , label="Middle Menu",max_levels="5", flyouts=false%}
+					</div>
+				</div>
+				<div class="right_cnt">
+					<div class="menu_wrpp">
+						{% module "right_col" path="@hubspot/menu" , id=182965671788 , label="Right Menu",max_levels="5", flyouts=false%}
+					</div>
+				</div>
+			</div>
+			<div class="btm_cnt">
+				<div class="lft_cnt">
+					<div class="social_share">
+						{%  module "u4m_footer_social_share" path="../../modules/u4m-footer-social-share", label="Footer Social Share",
+        offset=0,
+        width=12,
+        items_group=[ {
+          "image_field" : {
+            "height" : 48,
+            "loading" : "lazy",
+            "max_height" : 48,
+            "max_width" : 43,
+            "size_type" : "auto",
+            "src" : get_asset_url('/Appzen/images/linkedin.png'),
+            "width" : 43
+          },
+          "link_field" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "#",
+              "type" : "EXTERNAL"
+            }
+          }
+        } ]
+      %}
+					</div>
+					<div class="copyright">
+						{% module_block module "copyright" path="@hubspot/rich_text" label="Copyright" %}
+						{% module_attribute "html" %}
+						© {{year}} AppZen, Inc. All rights reserved. Privacy Policy | Master Services Agreement
+						{% end_module_attribute %}
+						{% end_module_block %}
+					</div>
+				</div>
+				<div class="rht_cnt">
+					<div class="btm_menu">
+						{% module "btm_pane" path="@hubspot/menu" , id=182965532045 , label="Bottom Menu", max_levels="5", flyouts=false%}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
