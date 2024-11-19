@@ -1,11 +1,5 @@
 footer.cmftr.u4m-footer {
     padding: 105px 0 82px 0;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 19px;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
 
     .container {
         max-width: 1327px;
@@ -216,6 +210,10 @@ footer.cmftr.u4m-footer {
                                         max-width: 100%;
                                         white-space: unset;
                                         cursor: pointer;
+
+                                        :empty {
+                                            margin: 0 !important;
+                                        }
                                     }
                                 }
 
@@ -230,6 +228,10 @@ footer.cmftr.u4m-footer {
                                         display: block;
                                         width: 100%;
                                         margin-bottom: 21px;
+
+                                        :empty {
+                                            margin: 0 !important;
+                                        }
                                     }
 
                                     >ul {
