@@ -1,0 +1,60 @@
+[ {
+  "id" : "cfdc4937-1628-c136-83d2-526e8d389fda",
+  "name" : "items_group",
+  "display_width" : null,
+  "label" : "Items Group",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "5d6a475e-8705-e3c0-811e-7685a5e6b07c",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "103b14a9-87b3-f6eb-9f7b-b687f44dbadd",
+    "name" : "link_field",
+    "display_width" : null,
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "#",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "5d6a475e-8705-e3c0-811e-7685a5e6b07c",
+    "name" : "image_field",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/linkedin-in%20(2)%202.png",
+      "alt" : "linkedin-in (2) 2",
+      "loading" : "lazy",
+      "width" : 43,
+      "height" : 48,
+      "max_width" : 43,
+      "max_height" : 48
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ ]
+} ]

@@ -1,11 +1,10 @@
 //heading styles
 @mixin h1 {
   font-family: $font1;
-  font-size: 60rem;
+  font-size: 78rem;
   font-weight: bold;
-  letter-spacing: .25rem;
   margin-bottom: 30rem;
-  line-height: 1.2;
+  line-height: 1;
   margin-top: 0;
   @include tablet {
     font-size: 48rem;
@@ -17,11 +16,10 @@
 }
 @mixin h2 {
   font-family: $font1;
-  font-size: 44rem;
+  font-size: 56rem;
   font-weight: bold;
-  letter-spacing: .25rem;
   margin-bottom: 30rem;
-  line-height: 1.2;
+  line-height: 1;
   @include tablet {
     font-size: 38rem;
   }
@@ -32,9 +30,8 @@
 }
 @mixin h3 {
   font-family: $font1;
-  font-size: 38rem;
+  font-size: 42rem;
   font-weight: bold;
-  letter-spacing: .25rem;
   margin-bottom: 30rem;
   line-height: 1.2;
   @include tablet {
@@ -44,12 +41,11 @@
     font-size: 28rem;
     margin-bottom: 20rem;
   }
-}
+} 
 @mixin h4 {
   font-family: $font1;
   font-size: 34rem;
   font-weight: bold;
-  letter-spacing: .25rem;
   margin-bottom: 30rem;
   line-height: 1.2;
   @include tablet {
@@ -62,31 +58,23 @@
 }
 @mixin h5 {
   font-family: $font1;
-  font-size: 30rem;
-  font-weight: bold;
-  letter-spacing: .25rem;
+  font-size: 20rem;
+  font-weight: bold; 
   margin-bottom: 30rem;
-  line-height: 1.2;
-  @include tablet {
-    font-size: 24rem;
-  }
+  line-height: 1.4;
   @include phone {
-    font-size: 20rem;
+    font-size: 18rem;
     margin-bottom: 20rem;
   }
 }
 @mixin h6 {
   font-family: $font1;
-  font-size: 24rem;
+  font-size: 18rem;
   font-weight: bold;
-  letter-spacing: .25rem;
+  letter-spacing: 0.25rem;
   margin-bottom: 30rem;
   line-height: 1.2;
-  @include tablet {
-    font-size: 20rem;
-  }
   @include phone {
-    font-size: 18rem;
     margin-bottom: 20rem;
   }
 }
@@ -95,7 +83,7 @@
   font-family: $font1;
   font-size: 22rem;
   line-height: 1.4;
-  letter-spacing: .25rem;
+  letter-spacing: 0.25rem;
   margin-bottom: 20rem;
   @include phone {
     font-size: 17rem;
@@ -105,7 +93,7 @@
   font-family: $font1;
   font-size: 18rem;
   line-height: 1.6;
-  letter-spacing: .25rem;
+  letter-spacing: 0.25rem;
   margin-bottom: 20rem;
   @include phone {
     font-size: 16rem;
@@ -115,7 +103,7 @@
   font-family: $font1;
   font-size: 16rem;
   line-height: 1.6;
-  letter-spacing: .25rem;
+  letter-spacing: 0.25rem;
   margin-bottom: 20rem;
   @include phone {
     font-size: 15rem;
@@ -125,7 +113,7 @@
   font-family: $font1;
   font-size: 14rem;
   line-height: 1.6;
-  letter-spacing: .35rem;
+  letter-spacing: 0.35rem;
   margin-bottom: 20rem;
   @include phone {
     font-size: 14rem;
@@ -135,7 +123,7 @@
   font-family: $font1;
   font-size: 13rem;
   line-height: 1.6;
-  letter-spacing: .35rem;
+  letter-spacing: 0.35rem;
   margin-bottom: 20rem;
   @include phone {
     font-size: 13rem;
@@ -145,7 +133,7 @@
   font-family: $font1;
   font-size: 12rem;
   line-height: 1.6;
-  letter-spacing: .35rem;
+  letter-spacing: 0.35rem;
   margin-bottom: 10rem;
   @include phone {
     font-size: 12rem;

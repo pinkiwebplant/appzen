@@ -23,6 +23,12 @@
   }
 }
 
+@mixin navbreakMin {
+  @media (max-width: 1070px) {
+    @content;
+  }
+}
+
 @mixin navbreak {
   @media (max-width: 1280px) {
     @content;
@@ -56,7 +62,7 @@
 }
 
 @mixin safari {
-  @media not all and (min-resolution:.001dpcm) {
+  @media not all and (min-resolution: 0.001dpcm) {
     @supports (-webkit-appearance: none) {
       @content;
     }
@@ -101,7 +107,7 @@
   float: none;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1240rem;
+  max-width: 1328rem;
   padding-left: 20rem;
   padding-right: 20rem;
 }
