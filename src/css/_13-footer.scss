@@ -1,0 +1,316 @@
+footer.cmftr.u4m-footer {
+    padding: 105px 0 82px 0;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 19px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+    .container {
+        max-width: 1327px;
+        margin: 0 auto;
+        padding: 0 20px;
+
+        .btm_cnt {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 10px;
+            flex-wrap: wrap;
+
+            .lft_cnt {
+                .social_share {
+                    margin-bottom: 26px;
+
+                    .inner_items {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 10px;
+
+                        .items {
+                            width: 21px;
+                            height: 24px;
+                        }
+                    }
+                }
+
+                .copyright {
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: 18px;
+                    text-align: left;
+                    text-underline-position: from-font;
+                    text-decoration-skip-ink: none;
+                }
+            }
+
+            .rht_cnt {
+                .btm_menu {
+                    .hs-menu-wrapper {
+                        >ul {
+                            gap: 12px;
+                            display: flex;
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+
+                            >li {
+                                margin: 0;
+                                float: unset;
+
+                                >a {
+                                    padding: 0;
+                                    font-size: 12px;
+                                    font-weight: 400;
+                                    line-height: 18px;
+                                    text-align: left;
+                                    text-underline-position: from-font;
+                                    text-decoration-skip-ink: none;
+                                    max-width: 100%;
+                                    cursor: pointer;
+                                }
+                            }
+
+                            &:before {
+                                display: none;
+                            }
+
+                            &:after {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            @include navbreakMin {
+                margin-top: 30px;
+            }
+
+            @include tabletvert {
+                margin-top: 28px;
+            }
+        }
+
+        .top_cnt {
+            display: flex;
+            justify-content: space-between;
+            column-gap: 137px;
+
+            .cmrht_cnt {
+                width: calc(100% - 266px);
+
+                .middle_cnt {
+                    max-width: calc(100% - 420px);
+                    width: 100%;
+                    padding-right: 20px;
+
+                    @include navbreakMin {
+                        width: 100%;
+                        max-width: 100%;
+                    }
+
+                    @include navbreakMin {
+                        padding: 0;
+                    }
+                }
+
+                .right_cnt {
+                    max-width: 420px;
+                    width: 100%;
+                    padding-left: 20px;
+
+                    .menu_wrpp {
+                        .hs-menu-wrapper {
+                            >ul {
+                                display: flex;
+                                flex-wrap: wrap;
+                                column-gap: 40px;
+                                row-gap: 40px;
+
+                                >li {
+                                    width: calc(55% - 40px);
+
+                                    @include navbreakMin {
+                                        width: calc(50% - 40px);
+                                    }
+
+                                    @include tabletvert {
+                                        width: calc(50% - 20px);
+                                    }
+                                }
+
+                                @include navbreak {
+                                    >li {
+                                        >ul {
+                                            >li {
+                                                width: 100% !important;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                @include tabletvert {
+                                    row-gap: 28px;
+                                }
+                            }
+
+
+                        }
+                    }
+
+                    @include navbreakMin {
+                        width: 100%;
+                        max-width: 100%;
+                    }
+
+                    @include navbreakMin {
+                        padding: 0;
+                    }
+                }
+
+                .flx {
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    .menu_wrpp {
+                        .hs-menu-wrapper {
+                            ul {
+                                position: unset;
+
+                                ul {
+                                    ul {
+                                        li {
+                                            margin-bottom: 9px;
+
+                                            a {
+                                                font-size: 12px;
+                                                font-weight: 400;
+                                                line-height: 18px;
+                                            }
+                                        }
+
+                                        ul {
+                                            li {
+                                                a {
+                                                    text-align: center;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            >ul {
+                                width: 100%;
+                                list-style: none;
+                                margin: 0;
+                                padding: 0;
+
+                                li {
+                                    a {
+                                        padding: 0;
+                                        display: block;
+                                        width: 100%;
+                                        max-width: 100%;
+                                        white-space: unset;
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                >li {
+                                    margin: 0;
+                                    float: unset;
+
+                                    >a {
+                                        font-size: 12px;
+                                        font-weight: 400;
+                                        line-height: 19.2px;
+                                        display: block;
+                                        width: 100%;
+                                        margin-bottom: 21px;
+                                    }
+
+                                    >ul {
+                                        border-top: 1px solid #E2DDD2;
+                                        padding-top: 20px;
+                                        display: flex;
+                                        gap: 28px;
+
+                                        >li {
+                                            margin: 0;
+                                            width: 100%;
+
+                                            >a {
+                                                font-size: 14px;
+                                                font-weight: 700;
+                                                line-height: 21px;
+                                                margin-bottom: 7px;
+                                            }
+
+                                            @include navbreak {
+                                                width: calc(50% - 14px);
+                                            }
+
+                                            @include navbreakMin {
+                                                width: calc(33.3% - 19px);
+                                            }
+
+                                            @include tabletvert {
+                                                width: calc(50% - 20px);
+                                            }
+                                        }
+
+                                        @include navbreak {
+                                            flex-wrap: wrap;
+                                        }
+                                    }
+                                }
+
+                                &:before {
+                                    display: none;
+                                }
+
+                                &:after {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+
+                    @include navbreakMin {
+                        gap: 50px;
+                    }
+
+                    @include tabletvert {
+                        gap: 28px;
+                    }
+                }
+
+                @include navbreakMin {
+                    width: 100%;
+                    max-width: 100%;
+                }
+            }
+
+            .left_cnt {
+                width: auto;
+
+                @include navbreakMin {
+                    width: 100%;
+                    max-width: 100%;
+                }
+            }
+
+            @include navbreakMin {
+                flex-wrap: wrap;
+                gap: 40px;
+            }
+        }
+    }
+
+    @include tabletvert {
+        padding: 80px 0 50px;
+    }
+}
