@@ -345,7 +345,39 @@
       @include button;
     }
   }
-}  
-.hs-button {
+}
+.hs-button,
+.primary {
   @include button;
+}
+.secondary {
+  @include button;
+  border: 2px solid $basecolor;
+  background-color: transparent;
+  &:hover,
+  &:focus {
+    background-color: transparent;
+  }
+}
+.tertiary {
+  @include button;
+  background-color: $basecolor;
+  color: $white;
+  &:hover,
+  &:focus {
+    background-color: $basecolor;
+    color: $white;
+  }
+}
+.quaternary {
+  @include button;
+  background-color: $basecolor;
+  color: $white;
+  border: 2px solid $white;
+  &:hover,
+  &:focus {
+    background-color: $basecolor;
+    color: $white;
+    border: 2px solid $white;
+  }
 }
