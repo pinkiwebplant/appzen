@@ -1,8 +1,7 @@
 // *********************************************************************************************************************************************************************
 
 @mixin cardBase {
-  border: 1px solid $lightGray;
-  background-color: $white;
+  border: 1px solid $lightGray; 
   border-radius: $borderRadius;
   padding: 20px;
 }
