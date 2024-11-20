@@ -2,7 +2,7 @@ footer.cmftr.u4m-footer {
     padding: 105px 0 82px 0;
 
     .container {
-        max-width: 1327px;
+        @include center;
         margin: 0 auto;
         padding: 0 20px;
 
@@ -183,7 +183,19 @@ footer.cmftr.u4m-footer {
                                             li {
                                                 a {
                                                     text-align: center;
+
+                                                    @include tabletvert {
+                                                        text-align: left;
+                                                    }
                                                 }
+                                            }
+
+                                            max-width: 100px;
+                                            margin-top: 9px;
+
+                                            @include tabletvert {
+                                                max-width: 100%;
+                                                margin-top: 9px;
                                             }
                                         }
                                     }
