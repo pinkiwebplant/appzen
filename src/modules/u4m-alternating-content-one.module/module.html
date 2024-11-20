@@ -1,0 +1,158 @@
+{% set moduleName = 'u4m-alternating-content-one' %}
+{% set imageMax = 1000 %}
+{% set bgImageMax = 1920 %}
+
+{% include "../partials/u4-module-includes.html" %}
+<div class="page-center">
+	{% if module.include_intro or module.include_intro  or module.include_button%} 
+	<div class="top_cnt">
+		{% if module.include_intro %} 
+		<div class='intro'>
+			<div class='intro_cnt'>
+				{{ module.intro_content }}
+			</div>
+		</div>
+		{% endif %}
+		{% if module.include_button %} 
+		<div class="btn_row">
+			{% for item in module.buttons %}
+			{% if item.button_type == 'stnd' %} 
+			{% set href = item.button_link.url.href %}
+			{% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+			{% set href = "mailto:" + href %}
+			{% endif %}
+			<a class="{{ item.theme }} hs-button"
+				 {% if item.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+				 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+				 {% else %}
+				 href="{{ href|escape_url }}"
+				 {% endif %}
+				 {% if item.button_link.open_in_new_tab %}
+				 target="_blank"
+				 {% endif %}
+				 {% if item.button_link.rel %}
+				 rel="{{ item.button_link.rel|escape_attr }}"
+				 {% endif %}
+				 >
+				{{ item.button_text }}
+			</a>
+			{% else %}
+			{% cta guid="{{ item.cta_field }}" %}
+			{% endif %}
+			{% endfor %}
+
+		</div>
+		{% endif %}
+	</div>
+	{% endif %}
+	<div class="two_cols">
+		<div class="inner_wrpp">
+			<div class="left_col">
+				<div class="cm_cnt">
+					{{ module.content_group.content }}
+				</div>
+				{% if module.content_group.include_statistic %}
+				<div class="statistics items">
+					<hr>
+					<div class="flx">
+						{% for item in module.content_group.statistic_group %}
+						<div class="statistics__item col ">
+							<div class="item_inr ">
+								<div class="stats_wrap">      
+									<span class="number  {% unless item.disable_animation %}count{% endunless %}">{{ item.numeric_stat }}</span>
+									<span class="unit">{{ item.stat_unit }}</span>
+								</div>
+								<span class="caption bodySize4">{{ item.bottom_caption }}</span>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+				{% endif %}
+				<div class="btm_btn">
+					{% if module.content_group.buttons_copy.button_type == 'stnd' %} 
+					{% set href = module.content_group.buttons_copy.button_link.url.href %}
+					{% if module.content_group.buttons_copy.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+					{% set href = "mailto:" + href %}
+					{% endif %}
+					<a class="{{ module.content_group.buttons_copy.theme }}  hs-button"
+						 {% if module.content_group.buttons_copy.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+						 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+						 {% else %}
+						 href="{{ href|escape_url }}"
+						 {% endif %}
+						 {% if module.content_group.buttons_copy.button_link.open_in_new_tab %}
+						 target="_blank"
+						 {% endif %}
+						 {% if module.content_group.buttons_copy.button_link.rel %}
+						 rel="{{ module.content_group.buttons_copy.button_link.rel|escape_attr }}"
+						 {% endif %}
+						 >
+						{{ module.content_group.buttons_copy.button_text }}
+						{% if module.content_group.buttons_copy.include_arrow %}
+					{{ module.content_group.buttons_copy.arrow_image }}
+						{% endif %}
+					</a>
+					{% else %}
+					{% cta guid="{{ module.content_group.buttons_copy.cta_field }}" %}
+					{% endif %}
+				</div>
+			</div>
+			{% if module.media_group.image_field.src %}
+			<div class="right_col">
+				{% set sizeAttrs = 'width="{{ module.media_group.image_field.width|escape_attr }}" height="{{ module.media_group.image_field.height|escape_attr }}"' %}
+				{% if module.media_group.image_field.size_type == 'auto' %}
+				{% set sizeAttrs = 'width="{{ module.media_group.image_field.width|escape_attr }}" height="{{ module.media_group.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+				{% elif module.media_group.image_field.size_type == 'auto_custom_max' %}
+				{% set sizeAttrs = 'width="{{ module.media_group.image_field.max_width|escape_attr }}" height="{{ module.media_group.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+				{% endif %}
+				{% set loadingAttr = module.media_group.image_field.loading != 'disabled' ? 'loading="{{ module.media_group.image_field.loading|escape_attr }}"' : '' %}
+				<img src="{{ module.media_group.image_field.src|escape_url }}" alt="{{ module.media_group.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+
+</div>
+
+</section>
+{% require_js %}
+<script>
+	{
+		const onScroll = (entries, obs) => {
+			entries.forEach(entry => {
+				if (!entry.isIntersecting) entry.target.classList.remove('is-in-viewport');
+				else {
+					entry.target.classList.add('is-in-viewport');
+
+					$('.count').each(function () {
+						$(this).prop('Counter',0).animate({
+							Counter: $(this).text()
+						}, {
+							duration: 4000,
+							easing: 'swing',
+							step: function (now) {
+								// $(this).text(Math.ceil(now));
+								$(this).text(Math.ceil(now).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
+								$(this).removeClass( "count" )
+							}
+						});
+					});
+
+				}
+			});
+		};
+
+		const options = {
+			threshold: .75 // 50% of element in view
+		}
+
+		const observer = new IntersectionObserver(onScroll, options);
+		document.querySelectorAll("section.{{moduleName}}.{{name}}").forEach(section => observer.observe(section));
+
+															}
+
+
+</script>
+{% end_require_js %}
+

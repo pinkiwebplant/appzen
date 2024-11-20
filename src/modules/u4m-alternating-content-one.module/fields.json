@@ -7,7 +7,7 @@
   "locked" : false,
   "display" : "checkbox",
   "type" : "boolean",
-  "default" : true
+  "default" : false
 }, {
   "id" : "50143178-d9f5-ba07-4078-39f5f1abb0d4",
   "name" : "intro_content",
@@ -24,7 +24,7 @@
     "access" : null
   },
   "type" : "richtext",
-  "default" : "<h1><span>Meet the AppZen AI Platform</span></h1>"
+  "default" : "<h1>Heading</h1>"
 }, {
   "id" : "01f93f2a-1e51-1e90-694f-422846df4779",
   "name" : "include_button",
@@ -175,69 +175,112 @@
     }
   } ]
 }, {
-  "id" : "f0f9961e-3e7c-f3a3-d4f7-619bb752ce57",
-  "name" : "items_group",
+  "id" : "de5b905f-f9bf-8772-aebf-28d721e23c71",
+  "name" : "content_group",
   "display_width" : null,
-  "label" : "Items Group",
+  "label" : "Content Group",
   "required" : false,
   "locked" : false,
-  "occurrence" : {
-    "min" : null,
-    "max" : null,
-    "sorting_label_field" : "eedb4aa6-bb11-0b24-60ae-89975a622327",
-    "default" : null
-  },
   "children" : [ {
-    "id" : "0a24bd51-c979-b871-5f61-e6bfd5dd3c48",
-    "name" : "image_field",
-    "display_width" : null,
-    "label" : "Image",
-    "required" : false,
-    "locked" : false,
-    "responsive" : true,
-    "resizable" : false,
-    "show_loading" : false,
-    "type" : "image",
-    "default" : {
-      "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/graphic.png",
-      "alt" : "graphic",
-      "loading" : "lazy",
-      "width" : 830,
-      "height" : 414,
-      "max_width" : 830,
-      "max_height" : 414
-    }
-  }, {
-    "id" : "eedb4aa6-bb11-0b24-60ae-89975a622327",
-    "name" : "supertitle",
-    "display_width" : null,
-    "label" : "SuperTitle",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "default" : "Mastermind AI Studio"
-  }, {
-    "id" : "3fbdc158-20a2-0784-e4eb-9dea807507f1",
+    "id" : "d5c0dab5-c00e-7a6b-a30b-26ea9e41e053",
     "name" : "content",
     "display_width" : null,
     "label" : "Content",
     "required" : false,
     "locked" : false,
     "type" : "richtext",
-    "default" : "<h3>Where SOPs become intelligent workflows</h3>\n<p>Transform manual processes into AI-powered operations that adapt and scale automatically. Connect departments, automate decisions, and drive business transformation exactly how you envision it.</p>"
+    "default" : "<h4>Try Autonomous AP</h4>\n<h2>This is how modern AP runs</h2>\n<p>See how leading enterprises are freeing their teams to drive strategic value:</p>"
   }, {
-    "id" : "20845a53-ca24-8ed5-6aba-de69e436e9b7",
-    "name" : "buttons",
+    "id" : "6b1add42-1369-708d-9666-8d199f0c8609",
+    "name" : "include_statistic",
+    "display_width" : null,
+    "label" : "Include Statistic ",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "id" : "08d17b47-a9a6-315c-a45f-21b69a21214c",
+    "name" : "statistic_group",
+    "display_width" : null,
+    "label" : "Statistic Group",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : "5759a4c8-6850-00d1-413c-fa3634f94218",
+      "default" : 2
+    },
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "content_group.include_statistic",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "8b58e5fd-cba2-9971-b930-697b46b1c34b",
+      "name" : "numeric_stat",
+      "display_width" : null,
+      "label" : "Numeric Stat",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "55"
+    }, {
+      "id" : "b4a61666-c9e8-b62f-655c-0a0e637e02c0",
+      "name" : "stat_unit",
+      "display_width" : null,
+      "label" : "Stat Unit",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "%"
+    }, {
+      "id" : "5759a4c8-6850-00d1-413c-fa3634f94218",
+      "name" : "bottom_caption",
+      "display_width" : null,
+      "label" : "Bottom Caption",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "placeholder" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Faster invoice processing, from inbox to posting"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : [ {
+      "numeric_stat" : "55",
+      "stat_unit" : "%",
+      "bottom_caption" : "Faster invoice processing, from inbox to posting"
+    }, {
+      "numeric_stat" : "55",
+      "stat_unit" : "%",
+      "bottom_caption" : "Faster invoice processing, from inbox to posting"
+    } ]
+  }, {
+    "id" : "257797f8-61d9-a3a0-046a-ae93b31c45df",
+    "name" : "buttons_copy",
     "display_width" : null,
     "label" : "Buttons",
     "required" : false,
     "locked" : false,
     "children" : [ {
-      "id" : "a64ae219-17b8-ea80-f802-0ba271254924",
+      "id" : "bb8ecee2-357a-b7c5-222a-4a52162f48bf",
       "name" : "button_type",
       "display_width" : null,
       "label" : "Button Type",
@@ -251,7 +294,7 @@
       "type" : "choice",
       "default" : "stnd"
     }, {
-      "id" : "cea90a55-4e28-3b6c-7966-1ec340b59e77",
+      "id" : "0d7ab980-f8e1-d55c-87bf-d4d82b8f0655",
       "name" : "theme",
       "display_width" : null,
       "label" : "Theme",
@@ -259,7 +302,7 @@
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
-        "controlling_field_path" : "items_group.buttons.button_type",
+        "controlling_field_path" : "content_group.buttons_copy.button_type",
         "controlling_value_regex" : "stnd",
         "property" : null,
         "operator" : "EQUAL",
@@ -271,9 +314,39 @@
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : "primary"
+      "default" : "secondary"
     }, {
-      "id" : "839dfb52-82ac-e600-d914-496bab35d0d0",
+      "id" : "adba3c64-1e5b-05c5-63ed-a45bf0ce023a",
+      "name" : "include_arrow",
+      "display_width" : null,
+      "label" : "Include  Arrow",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "default" : true
+    }, {
+      "id" : "583ebe83-8b64-5ec4-9637-2d7c2d5c26c2",
+      "name" : "arrow_image",
+      "display_width" : null,
+      "label" : "Arrow Image",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "content_group.buttons_copy.include_arrow",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" fill=\"none\"><path d=\"M5.5 1L10.5 6L5.5 11\" stroke=\"#3D3533\"/><path d=\"M10.5 6L0.5 6\" stroke=\"#3D3533\"/></svg>"
+    }, {
+      "id" : "e2a238a1-c2ac-0075-e144-aae6bb269150",
       "name" : "button_text",
       "display_width" : null,
       "label" : "Button Text",
@@ -282,7 +355,7 @@
       "validation_regex" : "",
       "visibility" : {
         "controlling_field" : null,
-        "controlling_field_path" : "items_group.buttons.button_type",
+        "controlling_field_path" : "content_group.buttons_copy.button_type",
         "controlling_value_regex" : "stnd",
         "property" : null,
         "operator" : "EQUAL",
@@ -291,9 +364,9 @@
       "allow_new_line" : false,
       "show_emoji_picker" : false,
       "type" : "text",
-      "default" : "Learn More"
+      "default" : "Button"
     }, {
-      "id" : "a2a20397-8c0d-4a39-8452-a4240b4b0b1c",
+      "id" : "3fd0dd50-e064-0532-71f6-5c7a94c56587",
       "name" : "button_link",
       "display_width" : null,
       "label" : "Button Link",
@@ -301,7 +374,7 @@
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
-        "controlling_field_path" : "items_group.buttons.button_type",
+        "controlling_field_path" : "content_group.buttons_copy.button_type",
         "controlling_value_regex" : "stnd",
         "property" : null,
         "operator" : "EQUAL",
@@ -320,7 +393,7 @@
         "no_follow" : false
       }
     }, {
-      "id" : "405ea3c2-16ee-c017-9584-0f06b6bec538",
+      "id" : "d6e05dde-30f2-c3d0-fd4c-54fb21795c4c",
       "name" : "cta_field",
       "display_width" : null,
       "label" : "CTA",
@@ -328,7 +401,7 @@
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
-        "controlling_field_path" : "items_group.buttons.button_type",
+        "controlling_field_path" : "content_group.buttons_copy.button_type",
         "controlling_value_regex" : "cta",
         "property" : null,
         "operator" : "EQUAL",
@@ -342,8 +415,10 @@
     "type" : "group",
     "default" : {
       "button_type" : "stnd",
-      "theme" : "primary",
-      "button_text" : "Learn More",
+      "theme" : "secondary",
+      "include_arrow" : true,
+      "arrow_image" : "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" fill=\"none\"><path d=\"M5.5 1L10.5 6L5.5 11\" stroke=\"#3D3533\"/><path d=\"M10.5 6L0.5 6\" stroke=\"#3D3533\"/></svg>",
+      "button_text" : "Button",
       "button_link" : {
         "url" : {
           "content_id" : null,
@@ -359,7 +434,80 @@
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
-  "default" : [ ]
+  "default" : {
+    "content" : "<h4>Try Autonomous AP</h4>\n<h2>This is how modern AP runs</h2>\n<p>See how leading enterprises are freeing their teams to drive strategic value:</p>",
+    "include_statistic" : false,
+    "statistic_group" : [ {
+      "numeric_stat" : "55",
+      "stat_unit" : "%",
+      "bottom_caption" : "Faster invoice processing, from inbox to posting"
+    }, {
+      "numeric_stat" : "55",
+      "stat_unit" : "%",
+      "bottom_caption" : "Faster invoice processing, from inbox to posting"
+    } ],
+    "buttons_copy" : {
+      "button_type" : "stnd",
+      "theme" : "secondary",
+      "include_arrow" : true,
+      "arrow_image" : "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" fill=\"none\"><path d=\"M5.5 1L10.5 6L5.5 11\" stroke=\"#3D3533\"/><path d=\"M10.5 6L0.5 6\" stroke=\"#3D3533\"/></svg>",
+      "button_text" : "Button",
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }
+}, {
+  "id" : "3b25f5d7-be12-cc3d-a702-701f8552b53a",
+  "name" : "media_group",
+  "display_width" : null,
+  "label" : "Media Group",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "d2bb9727-b452-0bbc-7b9c-ff0a632758ec",
+    "name" : "image_field",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/abstraction.png",
+      "alt" : "abstraction",
+      "loading" : "lazy",
+      "width" : 1207,
+      "height" : 1126,
+      "max_width" : 1207,
+      "max_height" : 1126
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/abstraction.png",
+      "alt" : "abstraction",
+      "loading" : "lazy",
+      "width" : 1207,
+      "height" : 1126,
+      "max_width" : 1207,
+      "max_height" : 1126
+    }
+  }
 }, {
   "id" : "module_overrides",
   "name" : "module_overrides",
@@ -377,7 +525,7 @@
     "locked" : false,
     "display" : "checkbox",
     "type" : "boolean",
-    "default" : false
+    "default" : true
   }, {
     "id" : "module_overrides.section_id",
     "name" : "section_id",
@@ -675,12 +823,12 @@
       "required" : false,
       "locked" : false,
       "display" : "select",
-      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "white", "White" ], [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : "light_grey"
+      "default" : "grey"
     }, {
       "id" : "6c8bfd0e-1629-1268-e01c-17b4047ecfce",
       "name" : "background_color",
@@ -736,7 +884,7 @@
     "type" : "group",
     "default" : {
       "background_type" : "color",
-      "select_background_color_type" : "light_grey",
+      "select_background_color_type" : "grey",
       "background_color" : {
         "color" : null,
         "opacity" : null
@@ -755,6 +903,14 @@
     "label" : "Reverse Text",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_overrides.enable_overrides",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "display" : "checkbox",
     "type" : "boolean",
     "default" : false
@@ -764,7 +920,7 @@
   "group_occurrence_meta" : null,
   "type" : "group",
   "default" : {
-    "enable_overrides" : false,
+    "enable_overrides" : true,
     "top_margin" : "top-margin-default",
     "custom_top_margin" : 100,
     "custom_top_margin_mobile" : 50,
@@ -779,7 +935,7 @@
     "custom_bottom_padding_mobile" : 50,
     "background_settings" : {
       "background_type" : "color",
-      "select_background_color_type" : "light_grey",
+      "select_background_color_type" : "grey",
       "background_color" : {
         "color" : null,
         "opacity" : null
