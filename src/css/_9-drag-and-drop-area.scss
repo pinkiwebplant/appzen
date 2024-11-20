@@ -49,10 +49,10 @@ section.u4m-drag-and-drop-area {
   display: flex;
   flex-wrap: wrap;
 }
-.dnd-section .row-fluid > .dnd-column,
-.col {
-  padding-left: 10px;
-  padding-right: 10px;
+@include tabletvertmin {
+  .dnd-section .row-fluid > .dnd-column,
+  .col {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
-
-

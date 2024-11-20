@@ -512,7 +512,8 @@ section[class*="u4m-"] {
   background-color: $basecolor;
 }
 
-.yellowColor {
+.yellowColor,
+.yellow {
   background-color: $yellowColor;
 }
 
@@ -521,4 +522,19 @@ section[class*="u4m-"] {
 }
 .darkGray {
   background-color: $darkGray;
+}
+.light_pink {
+  background-color: $LightPink;
+}
+.brown {
+  background-color: $basecolor;
+}
+.grey {
+  background-color: $sectionbg;
+}
+.light_grey {
+  background-color: $greybg;
+}
+.reverse-text {
+  color: $white;
 }
