@@ -278,3 +278,39 @@
     top: -10rem;
   }
 }
+
+//
+
+@mixin secondary {
+  @include button;
+  border: 2px solid $basecolor;
+  background-color: transparent;
+  &:hover,
+  &:focus {
+    background-color: transparent;
+  }
+}
+
+@mixin tertiary {
+  @include button;
+  background-color: $basecolor;
+  color: $white;
+  &:hover,
+  &:focus {
+    background-color: $basecolor;
+    color: $white;
+  }
+}
+
+@mixin quaternary {
+  @include button;
+  background-color: $basecolor;
+  color: $white;
+  border: 2px solid $white;
+  &:hover,
+  &:focus {
+    background-color: $basecolor;
+    color: $white;
+    border: 2px solid $white;
+  }
+}

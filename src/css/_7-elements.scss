@@ -543,3 +543,19 @@ section[class*="u4m-"] {
 .white_bg {
   background-color: $white;
 }
+
+//
+
+.hs-button,
+.primary {
+  @include button;
+}
+.secondary {
+  @include secondary;
+}
+.tertiary {
+  @include tertiary;
+}
+.quaternary {
+  @include quaternary;
+}
