@@ -24,7 +24,7 @@
     "access" : null
   },
   "type" : "richtext",
-  "default" : "<h1>Heading</h1>"
+  "default" : "<h3>Key capabilities of Autonomous AP</h3>"
 }, {
   "id" : "9b93951c-8bd5-eb81-08d1-d55ee6de42ad",
   "name" : "cards_group",
@@ -59,6 +59,43 @@
     "locked" : false,
     "type" : "richtext",
     "default" : "<p>Boost communication with any employee or vendor to get questions answered and invoices processed faster</p>"
+  }, {
+    "id" : "fdeaa751-b6cf-b575-2a38-795f814627ad",
+    "name" : "include_link",
+    "display_width" : null,
+    "label" : "Include Link",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "id" : "89a0941f-222a-675d-b741-90b7830710ca",
+    "name" : "link",
+    "display_width" : null,
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "cards_group.include_link",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -66,16 +103,56 @@
   "type" : "group",
   "default" : [ {
     "title" : "Easy stakeholder collaboration ",
-    "content" : "<p>Boost communication with any employee or vendor to get questions answered and invoices processed faster</p>"
+    "content" : "<p>Boost communication with any employee or vendor to get questions answered and invoices processed faster</p>",
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "boolean_field" : false
   }, {
     "title" : "Easy stakeholder collaboration ",
-    "content" : "<p>Boost communication with any employee or vendor to get questions answered and invoices processed faster</p>"
+    "content" : "<p>Boost communication with any employee or vendor to get questions answered and invoices processed faster</p>",
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "boolean_field" : false
   }, {
     "title" : "Easy stakeholder collaboration ",
-    "content" : "<p>Boost communication with any employee or vendor to get questions answered and invoices processed faster</p>"
+    "content" : "<p>Boost communication with any employee or vendor to get questions answered and invoices processed faster</p>",
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "boolean_field" : false
   }, {
     "title" : "Easy stakeholder collaboration ",
-    "content" : "<p>Boost communication with any employee or vendor to get questions answered and invoices processed faster</p>"
+    "content" : "<p>Boost communication with any employee or vendor to get questions answered and invoices processed faster</p>",
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "boolean_field" : false
   } ]
 }, {
   "id" : "module_overrides",
@@ -94,7 +171,7 @@
     "locked" : false,
     "display" : "checkbox",
     "type" : "boolean",
-    "default" : false
+    "default" : true
   }, {
     "id" : "module_overrides.section_id",
     "name" : "section_id",
@@ -356,6 +433,50 @@
     "type" : "number",
     "default" : 50
   }, {
+    "id" : "8c1b8a52-b908-5731-2956-0ee376edf287",
+    "name" : "select_column_alignment",
+    "display_width" : null,
+    "label" : "Select Column Alignment",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_overrides.enable_overrides",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "right", "Right" ], [ "center", "Center" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "right"
+  }, {
+    "id" : "19f9e36e-6554-7c45-7aab-6b1d7ec82615",
+    "name" : "card_background_color",
+    "display_width" : null,
+    "label" : "Card Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_overrides.enable_overrides",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "yellow", "Yellow" ], [ "black", "Black" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "white_bg", "White" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "white_bg"
+  }, {
     "id" : "3acc8068-a3e9-1ee0-60c7-9dbf953422a4",
     "name" : "background_settings",
     "display_width" : null,
@@ -383,7 +504,7 @@
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : "color"
+      "default" : ""
     }, {
       "id" : "0b377766-45a1-d996-07a1-ed7902a91581",
       "name" : "select_background_color_type",
@@ -391,13 +512,21 @@
       "label" : "Select Background Color",
       "required" : false,
       "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "module_overrides.background_settings.background_type",
+        "controlling_value_regex" : "color",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
       "display" : "select",
-      "choices" : [ [ "yellow", "Yellow" ], [ "black", "Black" ], [ "pink", "Pink" ], [ "grey", "Grey" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "yellow", "Yellow" ], [ "black", "Black" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : "yellow"
+      "default" : ""
     }, {
       "id" : "6c8bfd0e-1629-1268-e01c-17b4047ecfce",
       "name" : "background_color",
@@ -420,24 +549,6 @@
         "color" : null,
         "opacity" : null
       }
-    }, {
-      "id" : "5788e385-e7b8-15f0-9fae-fbaafc73a721",
-      "name" : "add_overlay",
-      "display_width" : null,
-      "label" : "Add Overlay",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "module_overrides.background_settings.background_type",
-        "controlling_value_regex" : "color",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "display" : "checkbox",
-      "type" : "boolean",
-      "default" : false
     }, {
       "id" : "878364f4-31ac-6917-e76f-65307d7d36e5",
       "name" : "background_image",
@@ -470,13 +581,12 @@
     "group_occurrence_meta" : null,
     "type" : "group",
     "default" : {
-      "background_type" : "color",
-      "select_background_color_type" : "yellow",
+      "background_type" : "",
+      "select_background_color_type" : "",
       "background_color" : {
         "color" : null,
         "opacity" : null
       },
-      "add_overlay" : false,
       "background_image" : {
         "size_type" : "auto",
         "src" : "",
@@ -491,6 +601,14 @@
     "label" : "Reverse Text",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_overrides.enable_overrides",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "display" : "checkbox",
     "type" : "boolean",
     "default" : false
@@ -500,7 +618,7 @@
   "group_occurrence_meta" : null,
   "type" : "group",
   "default" : {
-    "enable_overrides" : false,
+    "enable_overrides" : true,
     "top_margin" : "top-margin-default",
     "custom_top_margin" : 100,
     "custom_top_margin_mobile" : 50,
@@ -513,14 +631,15 @@
     "bottom_padding" : "bottom-padding-default",
     "custom_bottom_padding" : 100,
     "custom_bottom_padding_mobile" : 50,
+    "select_column_alignment" : "right",
+    "card_background_color" : "white_bg",
     "background_settings" : {
-      "background_type" : "color",
-      "select_background_color_type" : "yellow",
+      "background_type" : "",
+      "select_background_color_type" : "",
       "background_color" : {
         "color" : null,
         "opacity" : null
       },
-      "add_overlay" : false,
       "background_image" : {
         "size_type" : "auto",
         "src" : "",

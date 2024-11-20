@@ -1,6 +1,74 @@
 @import "../../css/_module-imports";
 
 section.u4m-cards {
+  .intro_cnt {
+    text-align: center;
+  }
+
+  .card_inner {
+    @include cardBase;
+    width: 100%;
+
+    .card_title {
+      margin-bottom: 15rem;
+    }
+
+    .card_content {
+      @include size14;
+      line-height: 150%;
+
+      p {
+        font: inherit;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .card_item {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include tabletmid {
+      width: 50%;
+    }
+    @include tabletvert {
+      width: 100%;
+    }
+
+    .arrow_link {
+      text-align: right;
+      margin-top: 20px;
+
+      svg {
+        display: block;
+        width: 15px;
+      }
+      a {
+        display: inline-flex;
+        margin-left: auto;
+        width: 20px;
+        height: 20px;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  .flex_row {
+    row-gap: 20px;
+    justify-content: flex-end;
+
+    &.left {
+      justify-content: flex-start;
+    }
+    &.center {
+      justify-content: center;
+    }
+  }
+
   &.reverse-text {
     .card .title {
       color: $white;
