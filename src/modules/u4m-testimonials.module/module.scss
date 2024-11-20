@@ -1,0 +1,164 @@
+@import "../../css/_module-imports";
+
+section.u4m-testimonials {
+  padding-top: 100rem;
+  padding-bottom: 100rem;
+  &.reverse-text {
+    .content-col {
+      color: $sectionbg;
+      .content-button {
+        a {
+          color: $sectionbg;
+        }
+      }
+    }
+    .hr-spacer {
+      border-top-color: $sectionbg;
+    }
+  }
+  & .type2 {
+    .page-center-inner {
+      column-gap: normal;
+      padding: 142px 78px 70px 108px;
+      border-radius: 12px;
+      @include tablet {
+        padding: 30px;
+      }
+      .content-col {
+        width: 100%;
+      }
+      .content-col {
+        max-width: 860px;
+        margin: 0 auto;
+        .testimonials-author {
+          span {
+            font-weight: 400;
+          }
+        }
+      }
+      .logo-img {
+        width: 100%;
+        text-align: right;
+        display: flex;
+        align-items: flex-end;
+        margin-top: 70px;
+        @include tablet {
+          margin-top: 20px;
+        }
+        hr {
+          margin: 0;
+          width: 100%;
+          margin-right: 20px;
+          border-top-color: $dividercolor;
+          @include tablet {
+            display: none;
+          }
+        }
+        img {
+          max-width: 230px;
+        }
+      }
+    }
+  }
+  .page-center-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 5%;
+    &.padd_inn {
+      padding: 20px;
+      border-radius: 12px;
+      .img-col {
+        img.img-2 {
+          max-width: 64%;
+        }
+      }
+    }
+  }
+  .img-col {
+    display: flex;
+    align-items: center;
+    width: 45%;
+    flex-wrap: wrap;
+    @include tabletmid {
+      width: 100%;
+      justify-content: center;
+    }
+    img.img-1 {
+      border-radius: 12px;
+      max-width: 200px;
+      width: 100%;
+      position: relative;
+      min-height: 260px;
+      object-fit: cover;
+      @include tablet {
+        max-width: 180px;
+        min-height: 200px;
+      }
+      @include phone {
+        max-width: 100%;
+        min-height: inherit;
+      }
+    }
+    img.img-2 {
+      border-radius: 12px;
+      max-width: 65%;
+      width: 100%;
+      margin-left: -50px;
+      @include phone {
+        max-width: 100%;
+        margin-left: 0;
+        margin-top: 32px;
+      }
+    }
+    .logo-img {
+      text-align: right;
+      width: 100%;
+      max-width: 530px;
+      @include tablet {
+        max-width: 100%;
+      }
+      @include tabletmid {
+        .hr-spacer {
+          margin-bottom: 32px;
+        }
+      }
+      @include phone {
+        text-align: left;
+        .hr-spacer {
+          border: 0;
+          margin-bottom: 0px;
+        }
+      }
+      img {
+        max-width: 115px;
+        padding-top: 32px;
+      }
+    }
+
+    .hr-spacer {
+      width: 100%;
+      height: 1px;
+      margin: 32px 0;
+      margin-bottom: 0;
+    }
+  }
+  .content-col {
+    width: 50%;
+    @include tabletmid {
+      width: 100%;
+    }
+    p {
+      @include size28;
+    }
+    .content-button {
+      a {
+        img {
+          max-width: 10px;
+          vertical-align: middle;
+          margin-left: 3.5px;
+        }
+      }
+    }
+  }
+}
