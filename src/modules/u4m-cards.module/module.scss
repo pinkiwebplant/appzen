@@ -1,23 +1,9 @@
 @import "../../css/_module-imports";
 
 section.u4m-cards {
-  padding-top: 100rem;
-  padding-top: 100rem;
-
-  @include tabletMin {
-    padding-top: 150rem;
-    padding-top: 150rem;
-    display: block;
-  }
-
-  .page-center {
-    @include center;
-  }
-
-  &.reverse-text{
-    .card .title{
-        color: $white;
+  &.reverse-text {
+    .card .title {
+      color: $white;
     }
   }
-
 }
