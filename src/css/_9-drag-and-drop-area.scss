@@ -1,7 +1,66 @@
 section.u4m-drag-and-drop-area {
-    @include center;
-    margin: 100rem auto;
-    form {
-        @include form;
-    }
+  @include center;
+  margin: 100rem auto;
+  form {
+    @include form;
+  }
+}
+
+.dnd_padding,
+.dnd-section {
+  padding: 100rem 0;
+
+  @include tablet {
+    padding: 60rem 0;
+  }
+
+  @include tabletvert {
+    padding: 50rem 0;
+  }
+
+  @include phone {
+    padding: 40rem 0;
+  }
+}
+
+.dnd-section[class*="full-width"],
+.dnd-section.dnd_padding {
+  padding: 0rem 0;
+}
+
+.page-center,
+.content-wrapper,
+.dnd-section > .row-fluid {
+  @include center;
+  margin: 0 auto;
+}
+
+.page-center-md {
+  @include centerMd;
+  margin: 0 auto;
+}
+
+.page-center-sm {
+  @include centerSmall;
+  margin: 0 auto;
+}
+
+.page-center-xs {
+  @include centerXs;
+  margin: 0 auto;
+}
+
+.page-center-lg {
+  @include centerlg;
+  margin: 0 auto;
+}
+.page-center-intro {
+  @include center811;
+  margin: 0 auto;
+}
+
+.full-width,
+[class*="full-width-section"].dnd-section > .row-fluid {
+  max-width: 100%;
+  padding: 0;
 }

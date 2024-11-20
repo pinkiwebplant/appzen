@@ -24,6 +24,12 @@ body {
   font-weight: normal;
 }
 
+@mixin bodyContent {
+  font-size: $baseFontSize;
+  line-height: $baseLineHeight;
+  font-family: $font2;
+}
+
 body.lp-sign-up {
   margin-top: 0;
 }
@@ -62,14 +68,7 @@ h5 {
 h6 {
   @include h6;
 }
-.page-center,
-.dnd-section > .row-fluid {
-  @include center;
-}
-.dnd-section {
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
+
 @font-face {
   font-family: "Neue Haas Grotesk Text Pro";
   src:

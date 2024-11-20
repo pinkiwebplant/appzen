@@ -1,4 +1,11 @@
 // *********************************************************************************************************************************************************************
+
+@mixin cardBase {
+  border: 1px solid $bodyColor;
+  background-color: $white;
+  border-radius: $borderRadius;
+}
+
 @mixin card {
   margin: 20rem;
   padding: 20rem;

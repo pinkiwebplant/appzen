@@ -1,4 +1,18 @@
 // Colors - For transparency use rgba($action1, 0.5) = 50% opaque
+
+
+$sectionbg: #f5f1e8;
+$basecolor: #3d3533;
+$bodyColor : #3D3533;
+$dark : #3D3533;
+$yellowColor : #FEF76C;
+
+$lightGray : #E2DDD2;
+$darkGray : #7C7665;
+
+
+
+
 $action1: #733bf7;
 $action2: #00a4bd;
 $black: #000000;
@@ -6,11 +20,11 @@ $white: #fff;
 $gray1: #edf0f2;
 $gray2: #cbd6e2;
 $gray3: #7c98b6;
-$sectionbg: #f5f1e8;
-$basecolor: #3d3533;
-$gray4: #E2DDD2;
-$gray5: #7C7665;
+
+$gray4: $lightGray;
+$gray5: $darkGray;
 $gray6: #7E7867;
+
 $gradient1: linear-gradient(-45deg, $black 0%, $action2 50%);
 $font1: "Neue Haas Grotesk Text Pro";
 $baseFontSize: 14rem;
@@ -32,3 +46,6 @@ $textShadow1: 0 0 4rem rgba($black, 0.3);
 $animation1: 0.1s ease-in;
 $animation2: 0.25s ease-in;
 $animation3: 1s ease-in;
+
+
+$borderRadius : 12rem;
