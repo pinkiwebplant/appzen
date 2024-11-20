@@ -1,0 +1,40 @@
+{% set moduleName = 'u4m-case-study-hero' %}
+{% set imageMax = 1000 %}
+{% set bgImageMax = 1920 %}
+
+{% include "../partials/u4-module-includes.html" %}
+<div class="page-center">
+	<div class="flex_row">
+		{% if module.left_content %}
+		<div class="left_section col col7">
+			{{ module.left_content }}
+		</div>
+		{% endif %}
+		{% if module.right_content %}
+		<div class="right_section col col5">
+			<div class="flex_row">
+				{{ module.right_content }}
+			</div>
+		</div>
+		{% endif %}
+	</div>
+</div>
+
+{% if module.image_field.src %}
+<div class="banner_section">
+	<div class="banner_inner_section">
+		{% set sizeAttrs = 'width="{{ module.image_field.width|escape_attr }}" height="{{ module.image_field.height|escape_attr }}"' %}
+		{% if module.image_field.size_type == 'auto' %}
+		{% set sizeAttrs = 'width="{{ module.image_field.width|escape_attr }}" height="{{ module.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+		{% elif module.image_field.size_type == 'auto_custom_max' %}
+		{% set sizeAttrs = 'width="{{ module.image_field.max_width|escape_attr }}" height="{{ module.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+		{% endif %}
+		{% set loadingAttr = module.image_field.loading != 'disabled' ? 'loading="{{ module.image_field.loading|escape_attr }}"' : '' %}
+		<img src="{{ module.image_field.src|escape_url }}" alt="{{ module.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+	</div>
+</div>
+{% endif %}
+
+
+</section>
+

@@ -1,0 +1,75 @@
+@import "../../css/_module-imports";
+
+.u4m-case-study-hero {
+  padding-top: 20px;
+
+  .flex_row {
+    padding-bottom: 50px;
+
+    .left_section {
+      h1 {
+        @include tabletmid {
+          padding-right: 20px;
+        }
+        @include tabletvert {
+          padding-right: 0;
+        }
+      }
+    }
+
+    .right_section {
+      padding-top: 52px;
+
+      .flex_row {
+        padding: 0;
+        ul {
+          padding: 0;
+          margin: 0;
+          list-style: none;
+          width: 50%;
+
+          li {
+            margin-bottom: 20px;
+            font-size: 14px;
+
+            strong {
+              display: block;
+              line-height: 21px;
+            }
+
+            span a {
+              text-decoration: underline;
+              color: inherit;
+              line-height: 21px;
+            }
+          }
+          li:last-child {
+            margin: 0;
+          }
+        }
+        ul:first-child {
+          padding-right: 15px;
+        }
+      }
+    }
+  }
+
+  .flex_row {
+    display: flex;
+  }
+
+  .banner_section {
+    .banner_inner_section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    img {
+      border-radius: 12px;
+    }
+  }
+  &.reverse-text * {
+    color: $white;
+  }
+}
