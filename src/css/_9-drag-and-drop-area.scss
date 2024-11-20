@@ -35,30 +35,6 @@ section.u4m-drag-and-drop-area {
   margin: 0 auto;
 }
 
-.page-center-md {
-  @include centerMd;
-  margin: 0 auto;
-}
-
-.page-center-sm {
-  @include centerSmall;
-  margin: 0 auto;
-}
-
-.page-center-xs {
-  @include centerXs;
-  margin: 0 auto;
-}
-
-.page-center-lg {
-  @include centerlg;
-  margin: 0 auto;
-}
-.page-center-intro {
-  @include center811;
-  margin: 0 auto;
-}
-
 .full-width,
 [class*="full-width-section"].dnd-section > .row-fluid {
   max-width: 100%;
