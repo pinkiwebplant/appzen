@@ -525,3 +525,9 @@ section[class*="u4m-"] {
 .darkGray {
   background-color: $darkGray;
 }
+
+.flex-row,
+.flex_row {
+  display: flex;
+  flex-wrap: wrap;
+}
