@@ -41,7 +41,7 @@
     font-size: 28rem;
     margin-bottom: 20rem;
   }
-} 
+}
 @mixin h4 {
   font-family: $font1;
   font-size: 34rem;
@@ -59,7 +59,7 @@
 @mixin h5 {
   font-family: $font1;
   font-size: 20rem;
-  font-weight: bold; 
+  font-weight: bold;
   margin-bottom: 30rem;
   line-height: 1.4;
   @include phone {
@@ -161,4 +161,28 @@
   text-transform: uppercase;
   display: block;
   margin-bottom: 10rem;
+}
+@mixin size28 {
+  font-size: 28px;
+}
+@mixin size18 {
+  font-size: 18px;
+}
+@mixin size17 {
+  font-size: 17px;
+}
+@mixin size16 {
+  font-size: 16px;
+}
+@mixin size15 {
+  font-size: 15px;
+}
+@mixin size14 {
+  font-size: 14px;
+}
+@mixin size12 {
+  font-size: 12px;
+}
+@mixin size13 {
+  font-size: 13px;
 }
