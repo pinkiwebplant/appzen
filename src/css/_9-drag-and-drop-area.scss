@@ -40,6 +40,9 @@ section.u4m-drag-and-drop-area {
   max-width: 100%;
   padding: 0;
 }
+[class*="full-width-section"].dnd-section > .row-fluid > .dnd-column {
+  padding: 0;
+}
 
 .flex-row,
 .flex_row {
