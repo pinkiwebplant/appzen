@@ -68,6 +68,10 @@
   .case_card_meta {
     margin-top: 117px;
 
+    @include tabletvert {
+      margin-top: 67px;
+    }
+
     span {
       display: block;
     }
@@ -79,6 +83,61 @@
   }
 
   .bottom_btm {
-    position: absolute;
+    padding: 0 48px;
+
+    @include tabletvert {
+      padding: 0 30px;
+      padding-top: 30px;
+      margin: 0;
+      text-align: right;
+    }
+
+    @include tabletvertmin {
+      position: absolute;
+      bottom: 29px;
+      right: 0;
+      width: 440px;
+    }
+
+    a {
+      margin: 0;
+      display: inline-flex;
+      gap: 10px;
+      border-width: 1px;
+      @include tabletvertmin {
+        background: transparent;
+        border-color: $lightGray;
+        color: $lightGray;
+      }
+      svg {
+        path {
+          stroke: currentColor;
+        }
+      }
+
+      @include tabletvert {
+        @include secondary;
+        border-width: 1px;
+        margin: 0;
+      }
+    }
+  }
+
+  .case_large_card.even {
+    @include tabletvertmin {
+      .case_large_bg {
+        display: block;
+        margin-left: auto;
+      }
+
+      .case_large_content {
+        right: auto;
+        left: 0;
+      }
+
+      .bottom_btm {
+        width: calc(100% - 60px);
+      }
+    }
   }
 }

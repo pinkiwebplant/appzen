@@ -8,12 +8,6 @@
 
 {% set table = module.select_hubdb_table %}
 
-{% set query = '' %}
-
-{% if request.query_dict.category && request.query_dict.category != '' %}
-{% set query = query ~ '&category__in=' ~ request.query_dict.category %}
-{% endif %}
-
 
 
 
@@ -38,16 +32,41 @@
 
 		<div class="case_listing_column">	
 
-			{% set tagsList = [] %}
-			{% for tag in hubdb_table_column(table, 'category').options %}
-			{% if loop.index < 6 %}
-			{% do schemaArr.append(tag  ) %}
-			{% endif%}
-			{% endfor %}
 
 			<div class="case_listing_wrap">
-				{% for row in hubdb_table_rows(table, query) %}
 
+
+
+				{% set batch_num = 2 %}
+				{% set queryParam = "" %}
+
+				{% if not request.query_dict.page_num %}
+				{% set page_num = 1 %}
+				{% set offset_num = 0 %}
+				{% elif request.query_dict.page_num %}
+				{% set page_num = request.query_dict.page_num %}
+				{% set offset_num = page_num|add(-1) * batch_num %}
+				{% endif %}
+
+				{% set paginationQuery =  "&limit=" ~ batch_num ~ "&offset=" ~ offset_num %}
+
+				{% if request.query_dict.category && request.query_dict.category != '' %}
+				{% set queryParam = queryParam ~ '&category__in=' ~ request.query_dict.category %}
+				{% endif %}
+
+				{% set rows = hubdb_table_rows(table, queryParam~ paginationQuery) %}
+
+
+
+				{# =========================== #}
+
+
+				{% if rows|length == 0%}
+				<h3>
+					No content available
+				</h3>
+				{% else %}
+				{% for row in rows %}
 				{% if row.image.url%}
 				{% set bgImag = row.image.url%}
 				{% else %}
@@ -56,21 +75,21 @@
 				<div class="case_card col4 col {% for tag in tagsList%}{% if tag.name == row.category.name %}category{% else %}no-match{% endif %}{% endfor %}" data-category="{{row.category.name}}">
 					<div class="case_card_inner">
 						<div class="card_img" style="background-image: url({{bgImag}})">
-						<div class="inner_wrapper">
-						{% if row.logo.url %}
-							<span class="logo">
-								<img src="{{row.logo.url}}"/>
-							</span>
-							{% endif %}
+							<div class="inner_wrapper">
+								{% if row.logo.url %}
+								<span class="logo">
+									<img src="{{row.logo.url}}"/>
+								</span>
+								{% endif %}
 
-							<div class="hover_content_wrap">
-							<div class="hover_content">
-								<span class="price">{{row.price}}</span>
-								<span class="subtitle">{{row.subtitle}}</span>
-							</div>
-							</div>
+								<div class="hover_content_wrap">
+									<div class="hover_content">
+										<span class="price">{{row.price}}</span>
+										<span class="subtitle">{{row.subtitle}}</span>
+									</div>
+								</div>
 
-						</div>
+							</div>
 						</div>
 
 						<div class="card_title">
@@ -82,11 +101,38 @@
 					</div>
 				</div>
 				{% endfor %}
+				{% endif %}
+
 			</div>
 
-			<div class="loadmore_btn col">
-				<a href="javascript:;" class="secondary hs-button">Load More</a>
+
+			{% if rows|length == 0%}
+
+			{% else %}
+			
+			
+			{% set nav = hubdb_table_rows(table, queryParam) %}
+			{% set total_pages = nav|length|divide(batch_num)%}
+
+			{% set more_pages = nav|length % batch_num %}
+
+			{% if more_pages == 0 %}
+			{% set total_pages = total_pages %}
+			{% else %}
+			{% set total_pages = total_pages + 1 %}
+			{% endif %}
+
+			<div class="loadmore_btn col" data-postCount="{{nav|length}}" total_pages="{{total_pages}}" more_pages="{{more_pages}}">
+				{% if total_pages > 1 %}
+				<a class="prev page-numbers secondary" href="{{ content.absolute_url }}?page_num={{ page_num|add(1) }}{% if request.query_dict.category && request.query_dict.category != '' %}&category={{request.query_dict.category}}{% endif%}" title="Next">Load More</a>
+				{% endif %}
+
+				{# 				  {% if total_pages >= page_num %}
+        <a class="next page-numbers" href="{{ content.absolute_url }}?page_num={{ page_num|add(1) }}" title="Older Posts">Previous</a>
+        {% endif %} #}
 			</div>
+
+			{% endif %}
 
 		</div>
 	</div>

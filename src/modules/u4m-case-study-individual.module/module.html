@@ -14,7 +14,7 @@
 	<div class="case_large_list flex_row">
 		{% for row in hubdb_table_rows(table, query) %}
 
-		<div class="case_large_card">
+		<div class="case_large_card cycle {% cycle "odd","even" %}">
 
 			<div class="case_large_bg" style="background-image: url({{row.featured_image.url}})">
 			</div>
@@ -47,8 +47,13 @@
 			{% if row.link  %}
 			<div class="bottom_btm">
 				<div class="bottom_btn_inner">
-					<a href="{{row.link}}" class="secondary hs-button">
-						Case Study
+					<a href="{{row.link}}" class="quaternary">
+						<span>Case Study </span>
+<svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 0.5L10 5.5L5 10.5" stroke="#E2DDD2"/>
+<path d="M10 5.5L0 5.5" stroke="#E2DDD2"/>
+</svg>
+
 					</a>
 				</div>
 			</div>
