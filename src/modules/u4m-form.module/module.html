@@ -5,122 +5,123 @@
 {% include "../partials/u4-module-includes.html" %}
 
 <div class="page-center">
-<div class="flex_row ">
+	<div class="flex_row ">
 
-	{% if module.include_intro %}
-	<div class='intro left_content_wrapper col6'>
-		<div class='intro_cnt'>
-			{{ module.intro_content }}
+		{% if module.include_intro %}
+		<div class='intro left_content_wrapper {% if module.include_form %}col6{% endif %}'>
+			<div class='intro_cnt'>
+				{{ module.intro_content }}
+			</div>
 		</div>
-	</div>
-	{% endif %}
-
-
-	{% if module.form_group.select_form.form_id %}
-	<div class="advanced-form-wrapper col6">
-	<div class="advanced-form-inner">
-		{% if module.form_group.form_title %}
-		<h3 class="form-title">{{ module.form_group.form_title }}</h3>
 		{% endif %}
-		<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-		
-		
-		
-		<script>
-			hbspt.forms.create({
-				region: "na1",
-			 portalId: "{{ hub_id }}",
-				cssClass: "adv-form",
-				formId: "{{module.form_group.select_form.form_id}}",
-				css: `
+
+		{% if module.include_form %}
+		{% if module.form_group.select_form.form_id %}
+		<div class="advanced-form-wrapper {% if module.include_intro %}col6{% endif %}">
+			<div class="advanced-form-inner">
+				{% if module.form_group.form_title %}
+				<h3 class="form-title">{{ module.form_group.form_title }}</h3>
+				{% endif %}
+				<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+
+
+
+				<script>
+					hbspt.forms.create({
+						region: "na1",
+						portalId: "{{ hub_id }}",
+						cssClass: "adv-form",
+						formId: "{{module.form_group.select_form.form_id}}",
+						css: `
 				.adv-form .hs-form-field {
     position: relative;
 }
 `,
-				onFormReady: 	function($form) {
+						onFormReady: 	function($form) {
 
-					setTimeout(function(){
-						// Define a debounce function
-						function debounce(func, delay) {
-							let timeout;
-							return function(...args) {
-								clearTimeout(timeout);
-								timeout = setTimeout(() => func.apply(this, args), delay);
-							};
-						}
-
-						// Focus and blur events (no debounce needed here)
-						$form.find('.hs-input').focus(function(){
-							$(this).parent().parent().addClass("focused");
-						}).blur(function(){
-							$(this).parent().parent().removeClass("focused");
-						});
-
-						// Debounced keyup and keydown events
-						// 						$form.find('.hs-input').on('keyup keydown', debounce(function() {
-						// 							if ($(this).val() !== "") {
-						// 								$(this).parent().parent().addClass("textExist");
-						// 								$(this).parent().parent().next().addClass("nextFieldActive");
-						// 							} else {
-						// 								$(this).parent().parent().removeClass("textExist");
-						// 								$(this).parent().parent().next().removeClass("nextFieldActive");
-						// 							}
-						// 						}, 80));  // 300ms debounce delay
-
-
-						$form.find('.hs-input').on('keyup keydown',function(){
-							if ($(this).val() !== "") {
-								$(this).parent().parent().addClass("textExist");
-								$(this).parent().parent().next().addClass("nextFieldActive");
-							} else {
-								$(this).parent().parent().removeClass("textExist");
-								$(this).parent().parent().next().removeClass("nextFieldActive");
+						setTimeout(function(){
+							// Define a debounce function
+							function debounce(func, delay) {
+								let timeout;
+								return function(...args) {
+									clearTimeout(timeout);
+									timeout = setTimeout(() => func.apply(this, args), delay);
+								};
 							}
-						});
-						console.log('form wrap')
-						// Blur event (no debounce necessary here)
-						$form.find('.hs-input').blur(function(){
-							if ($(this).val() == "") {
-								$(this).parent().parent().removeClass("textExist");
-								$(this).parent().parent().next().removeClass("nextFieldActive");
-							}
-						});
 
-						// Initial setup when the form loads
-						$form.find('.hs-input').each(function(){
-							if ($(this).val() !== "") {
-								$(this).parent().parent().addClass("textExist");
-								$(this).parent().parent().next().addClass("nextFieldActive");
-							}
-							var getText = $(this).attr('placeholder');
-							if(getText != "") {
-								$(this).parent().parent().addClass('removeLabelEffect');
-							}
-						});
+							// Focus and blur events (no debounce needed here)
+							$form.find('.hs-input').focus(function(){
+								$(this).parent().parent().addClass("focused");
+							}).blur(function(){
+								$(this).parent().parent().removeClass("focused");
+							});
 
-						// Handle file inputs (no debounce needed here)
-						$form.find('.hs-input[type="file"]').parent().parent().addClass('removeLabelEffect');
-
-						// Handle description fields (no debounce needed here)
-						$form.find('.hs-field-desc').each(function(){
-							$(this).css('display', 'block');
-							if($(this).text() !== "" ) {
-								$(this).parent().addClass('removeLabelEffect');
-							}
-						});
+							// Debounced keyup and keydown events
+							// 						$form.find('.hs-input').on('keyup keydown', debounce(function() {
+							// 							if ($(this).val() !== "") {
+							// 								$(this).parent().parent().addClass("textExist");
+							// 								$(this).parent().parent().next().addClass("nextFieldActive");
+							// 							} else {
+							// 								$(this).parent().parent().removeClass("textExist");
+							// 								$(this).parent().parent().next().removeClass("nextFieldActive");
+							// 							}
+							// 						}, 80));  // 300ms debounce delay
 
 
-					},100)
-				}
-			});
+							$form.find('.hs-input').on('keyup keydown',function(){
+								if ($(this).val() !== "") {
+									$(this).parent().parent().addClass("textExist");
+									$(this).parent().parent().next().addClass("nextFieldActive");
+								} else {
+									$(this).parent().parent().removeClass("textExist");
+									$(this).parent().parent().next().removeClass("nextFieldActive");
+								}
+							});
+							console.log('form wrap')
+							// Blur event (no debounce necessary here)
+							$form.find('.hs-input').blur(function(){
+								if ($(this).val() == "") {
+									$(this).parent().parent().removeClass("textExist");
+									$(this).parent().parent().next().removeClass("nextFieldActive");
+								}
+							});
 
-		</script>
+							// Initial setup when the form loads
+							$form.find('.hs-input').each(function(){
+								if ($(this).val() !== "") {
+									$(this).parent().parent().addClass("textExist");
+									$(this).parent().parent().next().addClass("nextFieldActive");
+								}
+								var getText = $(this).attr('placeholder');
+								if(getText != "") {
+									$(this).parent().parent().addClass('removeLabelEffect');
+								}
+							});
+
+							// Handle file inputs (no debounce needed here)
+							$form.find('.hs-input[type="file"]').parent().parent().addClass('removeLabelEffect');
+
+							// Handle description fields (no debounce needed here)
+							$form.find('.hs-field-desc').each(function(){
+								$(this).css('display', 'block');
+								if($(this).text() !== "" ) {
+									$(this).parent().addClass('removeLabelEffect');
+								}
+							});
 
 
+						},100)
+					}
+					});
+
+				</script>
+
+
+			</div>
 		</div>
+		{% endif %}
+		{% endif %}
 	</div>
-{% endif %}
-</div>
 
 </div>
 

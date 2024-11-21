@@ -26,7 +26,7 @@
   "type" : "richtext",
   "default" : "<h1>Form Headline</h1>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>"
 }, {
-  "id" : "1711738d-1186-64ce-dc08-e0986a96e667",
+  "id" : "c72fff38-749f-844f-e7c0-cee8a04a8445",
   "name" : "include_form",
   "display_width" : null,
   "label" : "Include Form",
@@ -34,7 +34,7 @@
   "locked" : false,
   "display" : "checkbox",
   "type" : "boolean",
-  "default" : false
+  "default" : true
 }, {
   "id" : "11a7dc26-f7bb-f33c-539e-4d20bcbc4426",
   "name" : "form_group",
@@ -57,14 +57,6 @@
     "label" : "Select Form",
     "required" : false,
     "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "include_form",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
     "type" : "form",
     "default" : {
       "form_id" : "ca1aed5f-51a5-4733-802b-1107b92463a1",
@@ -410,7 +402,7 @@
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : "color"
+      "default" : ""
     }, {
       "id" : "0b377766-45a1-d996-07a1-ed7902a91581",
       "name" : "select_background_color_type",
@@ -432,7 +424,7 @@
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : "grey"
+      "default" : ""
     }, {
       "id" : "6c8bfd0e-1629-1268-e01c-17b4047ecfce",
       "name" : "background_color",
@@ -487,8 +479,8 @@
     "group_occurrence_meta" : null,
     "type" : "group",
     "default" : {
-      "background_type" : "color",
-      "select_background_color_type" : "grey",
+      "background_type" : "",
+      "select_background_color_type" : "",
       "background_color" : {
         "color" : null,
         "opacity" : null
@@ -538,8 +530,8 @@
     "custom_bottom_padding" : 100,
     "custom_bottom_padding_mobile" : 50,
     "background_settings" : {
-      "background_type" : "color",
-      "select_background_color_type" : "grey",
+      "background_type" : "",
+      "select_background_color_type" : "",
       "background_color" : {
         "color" : null,
         "opacity" : null
