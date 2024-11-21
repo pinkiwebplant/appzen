@@ -1,5 +1,5 @@
 @import "../../css/_module-imports";
-.u4m-cta-row {
+.u4m-cta-row.dnd_padding {
   @include center;
   padding: 110rem 73rem;
   border-radius: $borderRadius;
