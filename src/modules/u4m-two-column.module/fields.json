@@ -7,7 +7,7 @@
   "locked" : false,
   "display" : "checkbox",
   "type" : "boolean",
-  "default" : true
+  "default" : false
 }, {
   "id" : "50143178-d9f5-ba07-4078-39f5f1abb0d4",
   "name" : "intro_content",
@@ -24,7 +24,7 @@
     "access" : null
   },
   "type" : "richtext",
-  "default" : "<h1><span>Meet the AppZen AI Platform</span></h1>"
+  "default" : "<h1>Heading</h1>"
 }, {
   "id" : "01f93f2a-1e51-1e90-694f-422846df4779",
   "name" : "include_button",
@@ -175,8 +175,8 @@
     }
   } ]
 }, {
-  "id" : "f0f9961e-3e7c-f3a3-d4f7-619bb752ce57",
-  "name" : "items_group",
+  "id" : "1f73f995-8ae7-1c7c-e365-f5927406cc50",
+  "name" : "content_group",
   "display_width" : null,
   "label" : "Items Group",
   "required" : false,
@@ -184,60 +184,147 @@
   "occurrence" : {
     "min" : null,
     "max" : null,
-    "sorting_label_field" : "eedb4aa6-bb11-0b24-60ae-89975a622327",
+    "sorting_label_field" : "414c82c0-280e-06ba-1834-54ed5721f034",
     "default" : 2
   },
   "children" : [ {
-    "id" : "0a24bd51-c979-b871-5f61-e6bfd5dd3c48",
-    "name" : "image_field",
-    "display_width" : null,
-    "label" : "Image",
-    "required" : false,
-    "locked" : false,
-    "responsive" : true,
-    "resizable" : false,
-    "show_loading" : false,
-    "type" : "image",
-    "default" : {
-      "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/graphic.png",
-      "alt" : "graphic",
-      "loading" : "lazy",
-      "width" : 830,
-      "height" : 414,
-      "max_width" : 830,
-      "max_height" : 414
-    }
-  }, {
-    "id" : "eedb4aa6-bb11-0b24-60ae-89975a622327",
-    "name" : "supertitle",
-    "display_width" : null,
-    "label" : "SuperTitle",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "default" : "Mastermind AI Studio"
-  }, {
-    "id" : "3fbdc158-20a2-0784-e4eb-9dea807507f1",
+    "id" : "414c82c0-280e-06ba-1834-54ed5721f034",
     "name" : "content",
+    "display_width" : null,
+    "label" : "Top Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<h3><span>Trusted by enterprise companies</span></h3>"
+  }, {
+    "id" : "34dcbce6-350f-443f-30af-5c58a7bc4543",
+    "name" : "bottom_content_type",
+    "display_width" : null,
+    "label" : "Bottom Content Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "img_group", "Images Group" ], [ "normal_cnt", "Normal Content" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "img_group"
+  }, {
+    "id" : "78353536-24c1-659b-c340-683e0e95d29f",
+    "name" : "images_group",
+    "display_width" : null,
+    "label" : "Images Group",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : "deedb750-ef40-460b-0e21-2f2884a18988",
+      "default" : 3
+    },
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "content_group.bottom_content_type",
+      "controlling_value_regex" : "img_group",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "deedb750-ef40-460b-0e21-2f2884a18988",
+      "name" : "image_field",
+      "display_width" : null,
+      "label" : "Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/image%20416.png",
+        "alt" : "image 416",
+        "loading" : "lazy",
+        "width" : 182,
+        "height" : 234,
+        "max_width" : 182,
+        "max_height" : 234
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : [ {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/image%20416.png",
+        "alt" : "image 416",
+        "loading" : "lazy",
+        "width" : 182,
+        "height" : 234,
+        "max_width" : 182,
+        "max_height" : 234
+      }
+    }, {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/image%20416.png",
+        "alt" : "image 416",
+        "loading" : "lazy",
+        "width" : 182,
+        "height" : 234,
+        "max_width" : 182,
+        "max_height" : 234
+      }
+    }, {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/image%20416.png",
+        "alt" : "image 416",
+        "loading" : "lazy",
+        "width" : 182,
+        "height" : 234,
+        "max_width" : 182,
+        "max_height" : 234
+      }
+    } ]
+  }, {
+    "id" : "0a6773d1-3b2f-b2f5-e49a-3241f303e846",
+    "name" : "btm_content",
     "display_width" : null,
     "label" : "Content",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "content_group.bottom_content_type",
+      "controlling_value_regex" : "normal_cnt",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "type" : "richtext",
-    "default" : "<h3>Where SOPs become intelligent workflows</h3>\n<p>Transform manual processes into AI-powered operations that adapt and scale automatically. Connect departments, automate decisions, and drive business transformation exactly how you envision it.</p>"
+    "default" : "<p>The AppZen Platform keeps your finance data safe. We use top-notch encryption, strict access control, and industry compliance to give you powerful insights without risking your data privacy.</p>"
   }, {
-    "id" : "20845a53-ca24-8ed5-6aba-de69e436e9b7",
+    "id" : "35d5b6fc-f9cb-c043-a2bd-0fc71bd07bc7",
     "name" : "buttons",
     "display_width" : null,
     "label" : "Button",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "content_group.bottom_content_type",
+      "controlling_value_regex" : "normal_cnt",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "children" : [ {
-      "id" : "a64ae219-17b8-ea80-f802-0ba271254924",
+      "id" : "4d242574-dc64-c213-83cc-e33e5dc042ab",
       "name" : "button_type",
       "display_width" : null,
       "label" : "Button Type",
@@ -251,7 +338,7 @@
       "type" : "choice",
       "default" : "stnd"
     }, {
-      "id" : "cea90a55-4e28-3b6c-7966-1ec340b59e77",
+      "id" : "91bb8af4-8bc8-deb9-c7c6-f22e62edcdf8",
       "name" : "theme",
       "display_width" : null,
       "label" : "Theme",
@@ -259,7 +346,7 @@
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
-        "controlling_field_path" : "items_group.buttons.button_type",
+        "controlling_field_path" : "content_group.buttons.button_type",
         "controlling_value_regex" : "stnd",
         "property" : null,
         "operator" : "EQUAL",
@@ -271,9 +358,9 @@
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : "secondary"
+      "default" : "primary"
     }, {
-      "id" : "839dfb52-82ac-e600-d914-496bab35d0d0",
+      "id" : "ffead39a-3f2b-d8dd-28d9-08a846821d72",
       "name" : "button_text",
       "display_width" : null,
       "label" : "Button Text",
@@ -282,7 +369,7 @@
       "validation_regex" : "",
       "visibility" : {
         "controlling_field" : null,
-        "controlling_field_path" : "items_group.buttons.button_type",
+        "controlling_field_path" : "content_group.buttons.button_type",
         "controlling_value_regex" : "stnd",
         "property" : null,
         "operator" : "EQUAL",
@@ -293,7 +380,7 @@
       "type" : "text",
       "default" : "Learn More"
     }, {
-      "id" : "a2a20397-8c0d-4a39-8452-a4240b4b0b1c",
+      "id" : "592dd2a2-c3ab-3245-cfc0-09a09458a919",
       "name" : "button_link",
       "display_width" : null,
       "label" : "Button Link",
@@ -301,7 +388,7 @@
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
-        "controlling_field_path" : "items_group.buttons.button_type",
+        "controlling_field_path" : "content_group.buttons.button_type",
         "controlling_value_regex" : "stnd",
         "property" : null,
         "operator" : "EQUAL",
@@ -320,7 +407,7 @@
         "no_follow" : false
       }
     }, {
-      "id" : "405ea3c2-16ee-c017-9584-0f06b6bec538",
+      "id" : "a47af880-1b90-fab3-2363-c88dea346e56",
       "name" : "cta_field",
       "display_width" : null,
       "label" : "CTA",
@@ -328,7 +415,7 @@
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
-        "controlling_field_path" : "items_group.buttons.button_type",
+        "controlling_field_path" : "content_group.buttons.button_type",
         "controlling_value_regex" : "cta",
         "property" : null,
         "operator" : "EQUAL",
@@ -342,7 +429,7 @@
     "type" : "group",
     "default" : {
       "button_type" : "stnd",
-      "theme" : "secondary",
+      "theme" : "primary",
       "button_text" : "Learn More",
       "button_link" : {
         "url" : {
@@ -360,21 +447,46 @@
   "group_occurrence_meta" : null,
   "type" : "group",
   "default" : [ {
-    "image_field" : {
-      "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/graphic.png",
-      "alt" : "graphic",
-      "loading" : "lazy",
-      "width" : 830,
-      "height" : 414,
-      "max_width" : 830,
-      "max_height" : 414
-    },
-    "supertitle" : "Mastermind AI Studio",
-    "content" : "<h3>Where SOPs become intelligent workflows</h3>\n<p>Transform manual processes into AI-powered operations that adapt and scale automatically. Connect departments, automate decisions, and drive business transformation exactly how you envision it.</p>",
+    "content" : "<h3><span>Trusted by enterprise companies</span></h3>",
+    "bottom_content_type" : "img_group",
+    "images_group" : [ {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/image%20416.png",
+        "alt" : "image 416",
+        "loading" : "lazy",
+        "width" : 182,
+        "height" : 234,
+        "max_width" : 182,
+        "max_height" : 234
+      }
+    }, {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/image%20416.png",
+        "alt" : "image 416",
+        "loading" : "lazy",
+        "width" : 182,
+        "height" : 234,
+        "max_width" : 182,
+        "max_height" : 234
+      }
+    }, {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/image%20416.png",
+        "alt" : "image 416",
+        "loading" : "lazy",
+        "width" : 182,
+        "height" : 234,
+        "max_width" : 182,
+        "max_height" : 234
+      }
+    } ],
+    "btm_content" : "<p>The AppZen Platform keeps your finance data safe. We use top-notch encryption, strict access control, and industry compliance to give you powerful insights without risking your data privacy.</p>",
     "buttons" : {
       "button_type" : "stnd",
-      "theme" : "secondary",
+      "theme" : "primary",
       "button_text" : "Learn More",
       "button_link" : {
         "url" : {
@@ -387,21 +499,46 @@
       }
     }
   }, {
-    "image_field" : {
-      "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/graphic.png",
-      "alt" : "graphic",
-      "loading" : "lazy",
-      "width" : 830,
-      "height" : 414,
-      "max_width" : 830,
-      "max_height" : 414
-    },
-    "supertitle" : "Mastermind AI Studio",
-    "content" : "<h3>Where SOPs become intelligent workflows</h3>\n<p>Transform manual processes into AI-powered operations that adapt and scale automatically. Connect departments, automate decisions, and drive business transformation exactly how you envision it.</p>",
+    "content" : "<h3><span>Trusted by enterprise companies</span></h3>",
+    "bottom_content_type" : "img_group",
+    "images_group" : [ {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/image%20416.png",
+        "alt" : "image 416",
+        "loading" : "lazy",
+        "width" : 182,
+        "height" : 234,
+        "max_width" : 182,
+        "max_height" : 234
+      }
+    }, {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/image%20416.png",
+        "alt" : "image 416",
+        "loading" : "lazy",
+        "width" : 182,
+        "height" : 234,
+        "max_width" : 182,
+        "max_height" : 234
+      }
+    }, {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/image%20416.png",
+        "alt" : "image 416",
+        "loading" : "lazy",
+        "width" : 182,
+        "height" : 234,
+        "max_width" : 182,
+        "max_height" : 234
+      }
+    } ],
+    "btm_content" : "<p>The AppZen Platform keeps your finance data safe. We use top-notch encryption, strict access control, and industry compliance to give you powerful insights without risking your data privacy.</p>",
     "buttons" : {
       "button_type" : "stnd",
-      "theme" : "secondary",
+      "theme" : "primary",
       "button_text" : "Learn More",
       "button_link" : {
         "url" : {
@@ -431,7 +568,7 @@
     "locked" : false,
     "display" : "checkbox",
     "type" : "boolean",
-    "default" : false
+    "default" : true
   }, {
     "id" : "module_overrides.section_id",
     "name" : "section_id",
@@ -728,13 +865,21 @@
       "label" : "Select Background Color",
       "required" : false,
       "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "module_overrides.background_settings.background_type",
+        "controlling_value_regex" : "color",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
       "display" : "select",
-      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "white_bg", "White" ], [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : "light_grey"
+      "default" : "white_bg"
     }, {
       "id" : "6c8bfd0e-1629-1268-e01c-17b4047ecfce",
       "name" : "background_color",
@@ -790,7 +935,7 @@
     "type" : "group",
     "default" : {
       "background_type" : "color",
-      "select_background_color_type" : "light_grey",
+      "select_background_color_type" : "white_bg",
       "background_color" : {
         "color" : null,
         "opacity" : null
@@ -826,7 +971,7 @@
   "group_occurrence_meta" : null,
   "type" : "group",
   "default" : {
-    "enable_overrides" : false,
+    "enable_overrides" : true,
     "top_margin" : "top-margin-default",
     "custom_top_margin" : 100,
     "custom_top_margin_mobile" : 50,
@@ -841,7 +986,7 @@
     "custom_bottom_padding_mobile" : 50,
     "background_settings" : {
       "background_type" : "color",
-      "select_background_color_type" : "light_grey",
+      "select_background_color_type" : "white_bg",
       "background_color" : {
         "color" : null,
         "opacity" : null

@@ -276,7 +276,7 @@
     "id" : "257797f8-61d9-a3a0-046a-ae93b31c45df",
     "name" : "buttons_copy",
     "display_width" : null,
-    "label" : "Buttons",
+    "label" : "Button",
     "required" : false,
     "locked" : false,
     "children" : [ {
@@ -364,7 +364,7 @@
       "allow_new_line" : false,
       "show_emoji_picker" : false,
       "type" : "text",
-      "default" : "Button"
+      "default" : "Autonomous AP"
     }, {
       "id" : "3fd0dd50-e064-0532-71f6-5c7a94c56587",
       "name" : "button_link",
@@ -418,7 +418,7 @@
       "theme" : "secondary",
       "include_arrow" : true,
       "arrow_image" : "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" fill=\"none\"><path d=\"M5.5 1L10.5 6L5.5 11\" stroke=\"#3D3533\"/><path d=\"M10.5 6L0.5 6\" stroke=\"#3D3533\"/></svg>",
-      "button_text" : "Button",
+      "button_text" : "Autonomous AP",
       "button_link" : {
         "url" : {
           "content_id" : null,
@@ -451,7 +451,7 @@
       "theme" : "secondary",
       "include_arrow" : true,
       "arrow_image" : "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" fill=\"none\"><path d=\"M5.5 1L10.5 6L5.5 11\" stroke=\"#3D3533\"/><path d=\"M10.5 6L0.5 6\" stroke=\"#3D3533\"/></svg>",
-      "button_text" : "Button",
+      "button_text" : "Autonomous AP",
       "button_link" : {
         "url" : {
           "content_id" : null,
@@ -852,7 +852,7 @@
       "required" : false,
       "locked" : false,
       "display" : "select",
-      "choices" : [ [ "white", "White" ], [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "white_bg", "White" ], [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,

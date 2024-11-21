@@ -1,6 +1,16 @@
 footer.cmftr.u4m-footer {
     padding: 105px 0 82px 0;
 
+    &.lp-ftr {
+        padding: 60px 0 60px;
+
+        .container {
+            .btm_cnt {
+                margin: 0;
+            }
+        }
+    }
+
     .container {
         @include center;
         margin: 0 auto;
@@ -33,6 +43,10 @@ footer.cmftr.u4m-footer {
                     font-size: $baseFontSize2;
                     font-weight: 400;
                     color: $gray6;
+
+                    a {
+                        color: $gray6;
+                    }
                 }
             }
 
