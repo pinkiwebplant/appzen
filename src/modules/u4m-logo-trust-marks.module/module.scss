@@ -19,6 +19,19 @@ section.u4m-logo-trust-marks {
   }
 
   .logo_section {
+    .slider_enable {
+      display: block;
+    }
+    .logo_wrapper.slider_wrapper {
+      display: block;
+      .slick-track {
+        display: flex;
+        align-items: center;
+        img {
+          margin: 0;
+        }
+      }
+    }
     .logo_wrapper {
       padding: 20px 0;
 
@@ -28,7 +41,7 @@ section.u4m-logo-trust-marks {
         justify-content: center;
 
         img {
-          width: 100px;
+          width: 120px;
           filter: grayscale(1);
           margin-bottom: 20px;
           cursor: pointer;
@@ -43,6 +56,7 @@ section.u4m-logo-trust-marks {
   .logo_section.theme_three {
     .logo_wrapper {
       .logo_items {
+        margin-bottom: 20px;
         .logo_inner {
           @include cardBase;
           img {
@@ -60,5 +74,20 @@ section.u4m-logo-trust-marks {
 
   &.reverse-text {
     color: $white;
+  }
+  @include tabletvert {
+    .col2,
+    .col4,
+    .col3 {
+      width: 33.333%;
+      padding: 0 10px;
+    }
+  }
+  @include phone {
+    .col2,
+    .col4,
+    .col3 {
+      width: 50%;
+    }
   }
 }

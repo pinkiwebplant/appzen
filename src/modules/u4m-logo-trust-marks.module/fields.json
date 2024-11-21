@@ -55,6 +55,44 @@
       "alt" : null,
       "loading" : "lazy"
     }
+  }, {
+    "id" : "266207b8-46f8-cea3-c844-72b4aacf4443",
+    "name" : "change_logo_width",
+    "display_width" : null,
+    "label" : "Change Logo Width",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "logo_items.image_field",
+      "controlling_value_regex" : null,
+      "property" : "src",
+      "operator" : null,
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "id" : "e64cefa1-44cb-534c-cd81-e725ecad1c92",
+    "name" : "width",
+    "display_width" : null,
+    "label" : "Width",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "logo_items.change_logo_width",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "text",
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "default" : 150
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -66,42 +104,54 @@
       "src" : "",
       "alt" : null,
       "loading" : "lazy"
-    }
+    },
+    "width" : 150,
+    "change_logo_width" : false
   }, {
     "image_field" : {
       "size_type" : "auto",
       "src" : "",
       "alt" : null,
       "loading" : "lazy"
-    }
+    },
+    "width" : 150,
+    "change_logo_width" : false
   }, {
     "image_field" : {
       "size_type" : "auto",
       "src" : "",
       "alt" : null,
       "loading" : "lazy"
-    }
+    },
+    "width" : 150,
+    "change_logo_width" : false
   }, {
     "image_field" : {
       "size_type" : "auto",
       "src" : "",
       "alt" : null,
       "loading" : "lazy"
-    }
+    },
+    "width" : 150,
+    "change_logo_width" : false
   }, {
     "image_field" : {
       "size_type" : "auto",
       "src" : "",
       "alt" : null,
       "loading" : "lazy"
-    }
+    },
+    "width" : 150,
+    "change_logo_width" : false
   }, {
     "image_field" : {
       "size_type" : "auto",
       "src" : "",
       "alt" : null,
       "loading" : "lazy"
-    }
+    },
+    "width" : 150,
+    "change_logo_width" : false
   } ]
 }, {
   "id" : "837f9b16-5eb7-c3b5-6cf0-eb38cf1928a2",
@@ -157,26 +207,6 @@
       "step" : 1,
       "type" : "number",
       "default" : 6
-    }, {
-      "id" : "ba0f8218-f0da-6f30-cb76-64f41dcf180d",
-      "name" : "enable_navigation",
-      "display_width" : null,
-      "label" : "Enable Navigation",
-      "required" : false,
-      "locked" : false,
-      "display" : "checkbox",
-      "type" : "boolean",
-      "default" : false
-    }, {
-      "id" : "c252d97f-9101-28a5-8deb-e3c541f3e197",
-      "name" : "enable_arrow",
-      "display_width" : null,
-      "label" : "Enable Arrow",
-      "required" : false,
-      "locked" : false,
-      "display" : "checkbox",
-      "type" : "boolean",
-      "default" : false
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
@@ -184,9 +214,7 @@
     "type" : "group",
     "default" : {
       "slider_per_scroll" : 6,
-      "slider_per_view" : 6,
-      "enable_navigation" : false,
-      "enable_arrow" : false
+      "slider_per_view" : 6
     }
   }, {
     "id" : "d031e113-73ff-4760-d140-73a8de6c8fad",
@@ -247,9 +275,7 @@
     "enable_slider" : false,
     "slider_settings" : {
       "slider_per_scroll" : 6,
-      "slider_per_view" : 6,
-      "enable_navigation" : false,
-      "enable_arrow" : false
+      "slider_per_view" : 6
     },
     "select_theme_type" : "theme_one",
     "select_column_count" : "col2",
