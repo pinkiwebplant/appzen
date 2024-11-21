@@ -5,9 +5,10 @@
 {% include "../partials/u4-module-includes.html" %}
 
 <div class="page-center">
+<div class="flex_row ">
 
 	{% if module.include_intro %}
-	<div class='intro'>
+	<div class='intro left_content_wrapper col6'>
 		<div class='intro_cnt'>
 			{{ module.intro_content }}
 		</div>
@@ -15,7 +16,9 @@
 	{% endif %}
 
 
-	<div class="advanced-form-wrapper">
+	{% if module.form_group.select_form.form_id %}
+	<div class="advanced-form-wrapper col6">
+	<div class="advanced-form-inner">
 		{% if module.form_group.form_title %}
 		<h3 class="form-title">{{ module.form_group.form_title }}</h3>
 		{% endif %}
@@ -114,9 +117,10 @@
 		</script>
 
 
-
+		</div>
 	</div>
-
+{% endif %}
+</div>
 
 </div>
 

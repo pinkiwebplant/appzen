@@ -1,9 +1,55 @@
 @import "../../css/_module-imports";
 section.u4m-form-wrapper {
-  margin: 50rem 0;
+  .flex_row {
+    align-items: center;
+  }
 
-  form {
+  .left_content_wrapper {
+    padding-right: 20px;
+
+    @include tabletMin {
+      padding-right: 15%;
+      padding-left: 20px;
+    }
+
+    @include tabletmid {
+      width: 100%;
+    }
+
+    @include tabletmid {
+      padding-right: 0;
+    }
+  }
+
+  .advanced-form-wrapper {
+    @include tabletMin {
+      padding-left: 6.5%;
+    }
+    @include tabletmid {
+      width: 100%;
+    }
+  }
+
+  .advanced-form-inner {
+    margin-top: 0;
+    margin-bottom: 0;
     @include form;
+    .form-title {
+      @include h3;
+    }
+
+    @include tabletmid {
+      width: 100%;
+      margin: auto;
+      margin-top: 20px;
+      max-width: 100%;
+    }
+
+    padding: 53rem 50rem;
+
+    form {
+      margin-bottom: 0;
+    }
 
     /* Labels */
     .hs-form-field > label {
@@ -54,11 +100,21 @@ section.u4m-form-wrapper {
         transform: scale(0.733) translateY(calc(-9px - 0.5em)) translate(-7px);
       }
     }
+
+    .hs-form__virality-link {
+      margin-top: 20px;
+    }
+
+    .hs_submit {
+      margin-top: 36px;
+    }
   }
 
   form.hs-form {
     .hs-button {
       @include secondary;
+      margin-top: 0;
+      margin-bottom: 0;
     }
   }
 }
