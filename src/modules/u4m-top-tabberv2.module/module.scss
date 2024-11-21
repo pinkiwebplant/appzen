@@ -1,0 +1,128 @@
+@import "../../css/_module-imports";
+
+.u4m-top-tabber {
+  overflow: hidden;
+  .intro {
+    text-align: center;
+    h2,
+    h4 {
+      margin: 0;
+    }
+  }
+  .wrapper .page-center {
+    @include tabletvertmin {
+      padding: 0 2px;
+      width: 80%;
+    }
+  }
+  .tabber_wrap {
+    .tabber_inr {
+      .tabs {
+        .tab {
+          padding: 40px 0;
+          .slick-track {
+            width: 100% !important;
+            margin-left: 0 !important;
+            display: flex;
+            justify-content: center;
+            transform: none !important;
+            gap: 8px;
+            flex-direction: row-reverse;
+          }
+          @include tabletvert {
+            .tab_acc_item.active .tab_ttl {
+              background-color: $basecolor;
+              color: $greybg;
+            }
+          }
+        }
+        .tab_ttl {
+          border-radius: 20px;
+          display: inline-block;
+          letter-spacing: 0.03em;
+          padding: 10px 37px;
+          cursor: pointer;
+          background: $sectionbg;
+          color: $basecolor;
+          @include tabletvert {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+          }
+          &.slick-current {
+            background-color: $basecolor;
+            color: $greybg;
+          }
+        }
+      }
+      .tabber_cnt {
+        @include tabletvert {
+          display: none;
+        }
+        .slick-list {
+          overflow: visible;
+        }
+
+        .tabber_cnt_inr {
+          border: 4px solid lightGray;
+          border-radius: 12px;
+          padding: 53px 56px;
+          margin: 0 18px;
+
+          @include tablet {
+            padding: 25px;
+          }
+          @include tabletvert {
+            margin: 0 0 10px;
+          }
+          &.slick-current {
+            background-color: $yellowColor;
+            border-color: $yellowColor;
+          }
+
+          .tabber_flex {
+            flex-direction: row-reverse;
+            text-align: left;
+            margin: 0 -15px;
+            align-items: center;
+            @include tablet {
+              flex-direction: column-reverse;
+              gap: 25px;
+            }
+            .tabber_col {
+              width: 50%;
+              padding: 0 15px;
+              @include tablet {
+                width: 100%;
+              }
+              &.cnt h3 {
+                margin-bottom: 15px;
+              }
+              &.cnt p {
+                margin: 0 0 20px;
+              }
+              &.img {
+                @include tabletvert {
+                  margin-top: 25px;
+                }
+                img {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+      @include tabletvertmin {
+        &.mobile_tab {
+          display: none;
+        }
+      }
+      @include tabletvert {
+        &.desktop_tab {
+          display: none;
+        }
+      }
+    }
+  }
+}
