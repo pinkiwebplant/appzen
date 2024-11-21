@@ -559,3 +559,9 @@ section[class*="u4m-"] {
 .quaternary {
   @include quaternary;
 }
+section {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+ 
