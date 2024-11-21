@@ -1,0 +1,32 @@
+<!--
+ templateType: global_partial
+ label: Website Header
+ -->
+{% module "header_theme" path="../../modules/um4-header-theme", label="Header Theme",export_to_template_context=True %}
+<header class="u4m-header {{ widget_data.header_theme.select_header_theme }}">
+	<div class="headerIn">
+		<div class="flex_row">
+			<div class="left_sec flex_row">
+				<div class="headerLogo darkLogo">
+					{% module "header_logo" path="@hubspot/logo", label="Header Logo",  img={src= "{{ get_asset_url('../../templates/images/appzen-logo.png') }}", width=200, override_inherited_src= true, alt="Appzen" } , link="/" %}
+				</div>
+				<div class="headerLogo lightLogo">
+					{% module "header_lt_logo" path="@hubspot/logo", label="Header Light Logo",  img={src= "{{ get_asset_url('../../templates/images/appzenLogoLight.png') }}", width=200, override_inherited_src= true, alt="Appzen" } , link="/" %}
+				</div>
+				<div class="headerMenu">
+					{% module "mega_menu" path="../../modules/u4m-mega-menu", label="Mega Menu" %}
+					<div class="hdrbtn desktopHide">
+						{% module "demo_button" path="@hubspot/button",no_wrapper="true", link={ "url": { "type": "EXTERNAL", "href": "#", "content_id": null }, "open_in_new_tab": false, "no_follow": false }, button_text="Get a Demo",label="Demo Button" %}
+					</div>
+				</div>
+			</div>
+			<div class="hdrTrigger desktopHide">
+				<div class="mobile-trigger"><i></i></div>
+			</div>
+			<div class="right_sec hdrbtn mobileHide">
+				{% module "demo_button" path="@hubspot/button",no_wrapper="true", link={ "url": { "type": "EXTERNAL", "href": "#", "content_id": null }, "open_in_new_tab": false, "no_follow": false }, button_text="Get a Demo",label="Demo Button" %}
+			</div>
+		</div>
+	</div>
+</header>
+

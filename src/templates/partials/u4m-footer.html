@@ -11,7 +11,7 @@
 					<div class="left_cnt">
 						<div class="logo_wrpp">
 							<div class="custom_logo">
-								{% module "header_logo" path="@hubspot/logo", label="Footer Logo",  img={src= "{{ get_asset_url('/Appzen/templates/images/footer-logo.png') }}", width=129, override_inherited_src= true, alt="Appzen" } , link="/" %}
+								{% module "header_logo" path="@hubspot/logo", label="Footer Logo",  img={src= "{{ get_asset_url('../../templates/images/footer-logo.png') }}", width=129, override_inherited_src= true, alt="Appzen" } , link="/" %}
 							</div>
 						</div>
 					</div>
@@ -43,7 +43,7 @@
             "max_height" : 48,
             "max_width" : 43,
             "size_type" : "auto",
-            "src" : get_asset_url('/Appzen/images/linkedin.png'),
+            "src" : get_asset_url('../../images/linkedin.png'),
             "width" : 43
           },
           "link_field" : {
@@ -60,7 +60,7 @@
 						<div class="copyright">
 							{% module_block module "copyright" path="@hubspot/rich_text" label="Copyright" %}
 							{% module_attribute "html" %}
-							© {{year}} AppZen, Inc. All rights reserved. Privacy Policy | Master Services Agreement
+							© {{year}} AppZen, Inc. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Master Services Agreement</a>
 							{% end_module_attribute %}
 							{% end_module_block %}
 						</div>
