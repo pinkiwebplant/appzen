@@ -258,7 +258,7 @@ $(document).ready(function () {
   });
 })();
 
-$(".u4m-blog-listing .hs-search-field button").click(function (e) {
+$(".u4m-blog-listing .search-icon").click(function (e) {
   e.preventDefault();
   $(this).parents(".hs-search-field__bar").addClass("search-open");
 });

@@ -1,0 +1,11 @@
+[ {
+  "id" : "3d3ce43b-fbc4-3070-99ae-c41ffd1060f7",
+  "name" : "author",
+  "display_width" : null,
+  "label" : "Author",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : true
+} ]

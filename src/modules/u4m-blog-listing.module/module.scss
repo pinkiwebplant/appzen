@@ -13,17 +13,26 @@ section.u4m-blog-listing {
       background: transparent;
       border: 0;
       outline: none;
+      display: none;
+    }
+    button.search-icon {
+      margin-left: 20px;
+      display: block;
     }
     .hs-search-field__bar {
       &.search-open {
         .hs-search-field__input {
           display: block;
         }
+        .search-icon {
+          display: none;
+        }
         button {
           position: absolute;
           top: 0;
           right: 5px;
           height: 32px;
+          display: block;
         }
       }
     }
@@ -36,6 +45,9 @@ section.u4m-blog-listing {
     border-radius: 8px;
     padding-right: 30px;
     outline: none;
+    &::placeholder {
+      color: $sidebarplaceholder;
+    }
   }
   .hs-search-field__bar button svg {
     width: 24px;
@@ -47,7 +59,8 @@ section.u4m-blog-listing {
     list-style: none;
   }
   .hs-search-field--open .hs-search-field__suggestions {
-    border: 1px solid #000;
+    border: 1px solid $lightGray;
+    padding: 10px;
   }
   .hs-search-field__suggestions li {
     display: block;
@@ -192,6 +205,7 @@ section.u4m-blog-listing {
             display: inline-block;
             padding: 8px 24px;
             color: inherit;
+            text-transform: capitalize;
           }
           &.active a {
             border: 2px solid $sidebarplaceholder;
@@ -201,44 +215,7 @@ section.u4m-blog-listing {
       }
     }
     .sidebar-form {
-      h6 {
-        margin-bottom: 10px;
-      }
-      .form-title {
-        margin: 0;
-      }
-      form {
-        position: relative;
-        .hs_error_rollup {
-          display: none;
-        }
-        .hs-input {
-          border: 1px solid $lightGray;
-          border-radius: 8px;
-          padding: 20px 16px;
-          line-height: 1.55;
-          outline: none;
-          padding-right: 125px;
-          &::placeholder {
-            color: $sidebarplaceholder;
-          }
-        }
-        .hs-error-msgs {
-          margin: 0;
-          padding-left: 15px;
-          list-style: none;
-          margin-top: 10px;
-        }
-        .hs_submit.hs-submit {
-          position: absolute;
-          top: 0;
-          right: 10px;
-        }
-        .hs-button {
-          margin: 0;
-          margin: 7px 0;
-        }
-      }
+      @include sidebar-form;
     }
   }
   .blog-listing-item-wrap {
