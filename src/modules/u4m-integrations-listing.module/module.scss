@@ -1,0 +1,114 @@
+@import "../../css/_module-imports";
+
+section.u4m-integrations-listing {
+  padding: 80px 0;
+
+  .center {
+    text-align: center;
+  }
+  .right {
+    text-align: right;
+  }
+  .top-section {
+    margin-bottom: 50px;
+  }
+  .intro {
+    h2 {
+      margin-bottom: 23px;
+    }
+    h4 {
+      @include size28;
+      font-weight: 400;
+      line-height: 33.6px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 27px;
+      max-width: 762px;
+      margin: 0 auto 23px;
+    }
+  }
+
+  .logo_section {
+    .slider_enable {
+      display: block;
+    }
+    .logo_wrapper.slider_wrapper {
+      display: block;
+      .slick-track {
+        display: flex;
+        align-items: center;
+        img {
+          margin: 0;
+        }
+      }
+    }
+    .logo_wrapper {
+      padding: 20px 0;
+
+      .logo_items {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 120px;
+          filter: grayscale(1);
+          margin-bottom: 0;
+          cursor: pointer;
+          transition: all 0.3s;
+          &:hover {
+            filter: unset;
+          }
+        }
+      }
+    }
+  }
+  .logo_items .logo_inner {
+    @include cardBase;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .page-center > .flex_row {
+    justify-content: center;
+  }
+
+  &.reverse-text {
+    color: $white;
+  }
+  @include tabletmid {
+    .flex_row .col2,
+    .flex_row .col4,
+    .flex_row .col3 {
+      width: 33.333%;
+      padding: 0 10px;
+    }
+  }
+  @include tabletvert {
+    .flex_row .col2,
+    .flex_row .col4,
+    .flex_row .col3 {
+      width: 33.333%;
+      padding: 0 10px;
+    }
+  }
+  @include phone {
+    .flex_row .col2,
+    .flex_row .col4,
+    .flex_row .col3 {
+      width: 50%;
+    }
+    .logo_section .logo_wrapper .logo_items .logo_inner {
+      height: 130px;
+      padding: 10px;
+      img {
+        margin: 0;
+      }
+    }
+  }
+}
