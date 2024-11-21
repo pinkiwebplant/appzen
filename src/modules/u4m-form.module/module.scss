@@ -70,11 +70,18 @@ section.u4m-form-wrapper {
       letter-spacing: 1rem;
       line-height: 1.2;
       pointer-events: auto;
+
+      @include tabletmid {
+        padding: 0;
+        left: 16px;
+      }
     }
     .hs-form-field.textExist > label,
     .hs-form-field.focused > label {
       font-weight: 600;
       transform: scale(0.733) translateY(calc(-9px - 0.5em)) translate(-7px);
+      transform: scale(0.733) translateY(calc(-9px - 0.5em)) translate(-20px);
+      transform: scale(0.733) translateY(calc(-9px - 0.5em)) translate(0px);
     }
     .removeLabelEffect.hs-form-field > label,
     .hs-fieldtype-file.hs-form-field > label,
@@ -89,7 +96,7 @@ section.u4m-form-wrapper {
       background: none;
     }
 
-    @media (min-width: 992px) {
+    @include tabletmidmin {
       .hs-form-field > label {
         top: 15px;
         left: 16px;
@@ -108,13 +115,22 @@ section.u4m-form-wrapper {
     .hs_submit {
       margin-top: 36px;
     }
-  }
 
-  form.hs-form {
-    .hs-button {
-      @include secondary;
-      margin-top: 0;
-      margin-bottom: 0;
+    form.hs-form {
+      .hs-button {
+        @include secondary;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      select {
+        font-size: 12rem;
+        font-weight: 700;
+        letter-spacing: 1rem;
+      }
+    }
+
+    div.legal-consent-container p {
+      margin: 0;
     }
   }
 }

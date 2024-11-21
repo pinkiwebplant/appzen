@@ -139,6 +139,11 @@
   max-width: 900rem;
 }
 
+@mixin centerMiddle {
+  @include center;
+  max-width: 1188rem;
+}
+
 // Links
 @mixin link {
   text-decoration: none;

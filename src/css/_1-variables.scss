@@ -5,11 +5,11 @@ $basecolor: #3d3533;
 $bodyColor: $basecolor;
 $dark: $basecolor;
 $yellowColor: #fef76c;
-$greybg:#F7F6F2;
+$greybg: #f7f6f2;
 $lightGray: #e2ddd2;
 $darkGray: #7c7665;
 $LightPink: #fd807c;
-$dividercolor:#574D4A;
+$dividercolor: #574d4a;
 $action1: #733bf7;
 $action2: #00a4bd;
 $black: #000000;
@@ -24,6 +24,10 @@ $gray6: #7e7867;
 
 $gradient1: linear-gradient(-45deg, $black 0%, $action2 50%);
 $font1: "Neue Haas Grotesk Text Pro";
+
+$fontHelvetica: "Helvetica";
+$fontRobot: "Roboto";
+
 $baseFontSize: 14rem;
 $baseLineHeight: 1.55; // Golden ratio
 $baseFontSize2: 12rem;

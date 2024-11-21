@@ -101,10 +101,11 @@
       input select {
         border: 0;
         border-radius: 4rem;
-        margin-top: 2rem;
-        margin-bottom: 20rem;
+        margin-top: 0;
+        margin-bottom: 0;
         font-size: 16rem; // Note anything below 16rem will trigger the zoom feature on iOS
         background-color: $white;
+        cursor: pointer;
       }
 
       input[type="file"] {
@@ -124,11 +125,12 @@
         background-position: 97% 51%;
         border: 0;
         border-radius: 4rem;
-        margin-top: 2rem;
-        margin-bottom: 20rem;
+        margin-top: 0;
+        margin-bottom: 0;
         font-size: 16rem; // Note anything below 16rem will trigger the zoom feature on iOS
         background-color: $white;
         padding: 16rem;
+        cursor: pointer;
         // Note anything below 16rem will trigger the zoom feature on iOS
       }
 
