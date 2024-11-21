@@ -185,7 +185,7 @@
     "min" : null,
     "max" : null,
     "sorting_label_field" : "eedb4aa6-bb11-0b24-60ae-89975a622327",
-    "default" : null
+    "default" : 2
   },
   "children" : [ {
     "id" : "0a24bd51-c979-b871-5f61-e6bfd5dd3c48",
@@ -359,7 +359,61 @@
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
-  "default" : [ ]
+  "default" : [ {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/graphic.png",
+      "alt" : "graphic",
+      "loading" : "lazy",
+      "width" : 830,
+      "height" : 414,
+      "max_width" : 830,
+      "max_height" : 414
+    },
+    "supertitle" : "Mastermind AI Studio",
+    "content" : "<h3>Where SOPs become intelligent workflows</h3>\n<p>Transform manual processes into AI-powered operations that adapt and scale automatically. Connect departments, automate decisions, and drive business transformation exactly how you envision it.</p>",
+    "buttons" : {
+      "button_type" : "stnd",
+      "theme" : "primary",
+      "button_text" : "Learn More",
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }, {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/graphic.png",
+      "alt" : "graphic",
+      "loading" : "lazy",
+      "width" : 830,
+      "height" : 414,
+      "max_width" : 830,
+      "max_height" : 414
+    },
+    "supertitle" : "Mastermind AI Studio",
+    "content" : "<h3>Where SOPs become intelligent workflows</h3>\n<p>Transform manual processes into AI-powered operations that adapt and scale automatically. Connect departments, automate decisions, and drive business transformation exactly how you envision it.</p>",
+    "buttons" : {
+      "button_type" : "stnd",
+      "theme" : "primary",
+      "button_text" : "Learn More",
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  } ]
 }, {
   "id" : "module_overrides",
   "name" : "module_overrides",
@@ -755,6 +809,14 @@
     "label" : "Reverse Text",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_overrides.enable_overrides",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "display" : "checkbox",
     "type" : "boolean",
     "default" : false

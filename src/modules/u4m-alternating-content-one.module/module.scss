@@ -104,7 +104,27 @@
                     flex-direction: column;
                     row-gap: 50px;
                 }
+
+                @include tabletvertmin {
+                    &.left_align {
+                        .left_col {
+                            order: 2;
+                        }
+                    }
+                }
+
+                @include tabletvertmin {
+                    &.left_align {
+                        .right_col {
+                            order: 1;
+                        }
+                    }
+                }
+
+
             }
+
+
         }
 
         .statistics.items {

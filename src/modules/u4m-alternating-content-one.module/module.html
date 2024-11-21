@@ -46,7 +46,7 @@
 	</div>
 	{% endif %}
 	<div class="two_cols">
-		<div class="inner_wrpp">
+		<div class="inner_wrpp {{ module.module_settings.images_alignment }}_align">
 			<div class="left_col">
 				<div class="cm_cnt">
 					{{ module.content_group.content }}
@@ -155,4 +155,5 @@
 
 </script>
 {% end_require_js %}
+
 
