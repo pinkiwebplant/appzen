@@ -2,9 +2,18 @@
 
 .u4m-case-study-post {
   display: block;
+  position: relative;
+  .post-body-inn {
+    @include tabletmid {
+      .col9,
+      .col3 {
+        width: 100%;
+      }
+    }
+  }
   .post-content {
     padding-right: 11.36vw;
-    @include tabletvert {
+    @include tabletmid {
       padding-right: 0;
     }
     h6 {
@@ -25,7 +34,7 @@
       .post-cnt-img {
         margin-top: 100px;
         margin-bottom: 20px;
-        @include tabletvert {
+        @include tabletmid {
           margin-top: 20px;
         }
       }
@@ -36,9 +45,17 @@
     }
   }
   .post-sidebar {
-    @include tabletvert {
+    @include tabletmid {
       margin-top: 30px;
     }
+    .post-sidebar-inn {
+      position: sticky;
+      top: 100px;
+      @include tabletmid {
+        position: static;
+      }
+    }
+
     h6 {
       line-height: 1.6;
       margin-bottom: 8px;

@@ -276,6 +276,43 @@
     "required" : false,
     "locked" : false,
     "children" : [ {
+      "id" : "dca7bf5d-d980-708a-4253-867727af7e4b",
+      "name" : "enable_share_link",
+      "display_width" : null,
+      "label" : "Enable Share Link",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "default" : true
+    }, {
+      "id" : "6cca86fa-b6b7-39f1-75b4-3835d1c99790",
+      "name" : "share_link",
+      "display_width" : null,
+      "label" : "Share Link",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "right_column.social_share.enable_share_link",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
       "id" : "b0ba2331-ac67-6b95-df3a-ae7df6cd3992",
       "name" : "enable_email",
       "display_width" : null,
@@ -311,6 +348,16 @@
     "group_occurrence_meta" : null,
     "type" : "group",
     "default" : {
+      "enable_share_link" : true,
+      "share_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
       "enable_email" : true,
       "enable_twitter" : true,
       "enable_linkedin" : true
@@ -344,6 +391,16 @@
       "disable_counter_animation" : false
     },
     "social_share" : {
+      "enable_share_link" : true,
+      "share_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
       "enable_email" : true,
       "enable_twitter" : true,
       "enable_linkedin" : true
