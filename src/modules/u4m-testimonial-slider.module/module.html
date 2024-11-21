@@ -1,0 +1,150 @@
+{% set moduleName = 'u4m-testimonial-slider' %}
+{% set imageMax = 1000 %}
+{% set bgImageMax = 1920 %}
+
+{% include "../partials/u4-module-includes.html" %}
+<div class="wrapper">
+	<div class="page-center"> 
+		{% if module.include_intro or  module.include_button %}
+		<div class="top_cnt">
+			{% if module.include_intro %}
+			<div class='intro'>
+				<div class='intro_cnt'>
+					{{ module.intro_content }}
+				</div>
+			</div>
+			{% endif %}
+			{% if module.include_button %} 
+			<div class="btn_row">
+				{% for item in module.buttons %}
+				{% if item.button_type == 'stnd' %} 
+				{% set href = item.button_link.url.href %}
+				{% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+				{% set href = "mailto:" + href %}
+				{% endif %}
+				<a class="{{ item.theme }} hs-button"
+					 {% if item.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+					 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+					 {% else %}
+					 href="{{ href|escape_url }}"
+					 {% endif %}
+					 {% if item.button_link.open_in_new_tab %}
+					 target="_blank"
+					 {% endif %}
+					 {% if item.button_link.rel %}
+					 rel="{{ item.button_link.rel|escape_attr }}"
+					 {% endif %}
+					 >
+					{{ item.button_text }}
+				</a>
+				{% else %}
+				{% cta guid="{{ item.cta_field }}" %}
+				{% endif %}
+				{% endfor %}
+
+			</div>
+			{% endif %}
+		</div>
+		{% endif %}
+		<div class="btm_cards">
+			<div class="test-slider">
+				{% for item in module.items_group %}
+				<div class="items">
+					<div class="pd {{ module.module_overrides.cards_background_settings.select_background_color_type }}">
+						<div class="inner-pd">
+						{% if item.image_field.src %}
+						<div class="top_img">
+							{% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+							{% if item.image_field.size_type == 'auto' %}
+							{% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+							{% elif item.image_field.size_type == 'auto_custom_max' %}
+							{% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+							{% endif %}
+							{% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+							<img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+						</div>
+						{% endif %}
+						{% if item.content %}
+						<div class="content">
+							{{ item.content }}
+						</div>
+						{% endif %}
+						{% if item.author_name or item.author_designation  or item.organization%}
+						<div class="author_cnt">
+							{% if item.author_name %}
+							<div class="author_info author_name">
+								<p>
+									{{ item.author_name }}
+								</p>
+							</div>
+							{% endif %}
+							{% if item.author_designation %}
+							<div class="author_info author_designation">
+								<p>
+									{{ item.author_designation }}
+								</p>
+							</div>
+							{% endif %}
+							{% if item.organization %}
+							<div class="author_info organization">
+								<p>
+									{{ item.organization }}
+								</p>
+							</div>
+							{% endif %}
+						</div>
+						{% endif %}
+						{% if item.button.button_type %} 
+						<div class="btn_wrpp">
+							{% if item.button.button_type == 'stnd' %} 
+							{% set href = item.button.button_link.url.href %}
+							{% if item.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+							{% set href = "mailto:" + href %}
+							{% endif %}
+							<a class=" hs-button"
+								 {% if item.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+								 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+								 {% else %}
+								 href="{{ href|escape_url }}"
+								 {% endif %}
+								 {% if item.button.button_link.open_in_new_tab %}
+								 target="_blank"
+								 {% endif %}
+								 {% if item.button.button_link.rel %}
+								 rel="{{ item.button.button_link.rel|escape_attr }}"
+								 {% endif %}
+								 >
+								{{ item.button.button_text }}
+								{% if item.button.include_arrow %}
+								{{ item.button.arrow }}
+								{% endif %}
+							</a>
+							{% else %}
+							{% cta guid="{{ item.button.cta_field }}" %}
+							{% endif %}
+						</div>
+						{% endif %}
+
+					</div>
+												<div class="line">
+							<hr>
+						</div>
+									</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+</section>
+
+<style>
+
+.u4m-testimonial-slider .page-center .slick-arrow:before {
+	background-image: url({{ get_asset_url('/Appzen/images/nextArrow.png') }});
+}
+
+</style>

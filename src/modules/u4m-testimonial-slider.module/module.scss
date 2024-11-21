@@ -1,0 +1,144 @@
+@import "../../css/_module-imports";
+
+
+.u4m-testimonial-slider {
+	.page-center {
+		.top_cnt {
+			margin-bottom: 52px;
+			padding-left: 48px;
+		}
+
+		.btm_cards {
+			.slick-track {
+				.items {
+					.pd {
+						padding: 25px;
+						border-radius: 12px;
+						display: flex;
+						flex-direction: column;
+						height: 100%;
+
+						.top_img {
+							margin-bottom: 40px;
+							max-width: 141px;
+						}
+
+						p {
+							@include size18;
+							font-weight: 400;
+							line-height: 1.6;
+						}
+
+						.content {
+							margin-bottom: 45px;
+						}
+
+						.btn_wrpp {
+							a {
+								display: flex;
+								gap: 17px;
+								margin: 40px 0 0;
+								@include size14;
+								font-weight: 500;
+								line-height: 1.2;
+								padding: 0;
+								background: transparent;
+
+								svg {
+									path {
+										stroke: currentColor;
+									}
+								}
+							}
+
+							width: auto;
+							display: inline-flex;
+						}
+
+						.line {
+							margin-top: 0;
+
+							hr {
+								margin: auto;
+								border: 1px solid #544D45;
+							}
+						}
+					}
+
+					.author_cnt {
+						margin-top: auto;
+
+						p {
+							margin: 0;
+							font-size: 18px;
+							font-weight: 400;
+							line-height: 28.8px;
+						}
+
+						.author_info.author_name {
+							p {
+								font-weight: 700;
+							}
+						}
+					}
+				}
+
+				.slick-slide {
+					margin-right: 20px;
+					height: auto;
+
+					@include tabletvert {
+						margin-right: 0px;
+					}
+				}
+
+				display: flex;
+				flex-wrap: wrap;
+			}
+		}
+
+		.slick-arrow {
+			bottom: 0;
+			right: 0;
+			left: 86%;
+			top: auto;
+			bottom: -16%;
+			width: 43px;
+			height: 43px;
+
+			@include tabletvert {
+				left: 75%;
+			}
+
+			&:before {
+				content: '';
+				height: 100%;
+				width: 100%;
+				display: block;
+				background-size: cover;
+				background-position: inherit;
+			}
+		}
+
+		.slick-prev {
+			display: none;
+		}
+
+		position: relative;
+
+		.slick-slider {
+			position: unset;
+		}
+
+		.inner-pd {
+			padding: 35px;
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+
+			@include tabletvert {
+				padding: 15px;
+			}
+		}
+	}
+}
