@@ -1,8 +1,18 @@
 footer.cmftr.u4m-footer {
     padding: 105px 0 82px 0;
 
+    &.lp-ftr {
+        padding: 60px 0 60px;
+
+        .container {
+            .btm_cnt {
+                margin: 0;
+            }
+        }
+    }
+
     .container {
-        max-width: 1327px;
+        @include center;
         margin: 0 auto;
         padding: 0 20px;
 
@@ -30,12 +40,13 @@ footer.cmftr.u4m-footer {
                 }
 
                 .copyright {
-                    font-size: 12px;
+                    font-size: $baseFontSize2;
                     font-weight: 400;
-                    line-height: 18px;
-                    text-align: left;
-                    text-underline-position: from-font;
-                    text-decoration-skip-ink: none;
+                    color: $gray6;
+
+                    a {
+                        color: $gray6;
+                    }
                 }
             }
 
@@ -55,14 +66,10 @@ footer.cmftr.u4m-footer {
 
                                 >a {
                                     padding: 0;
-                                    font-size: 12px;
+                                    font-size: $baseFontSize2;
                                     font-weight: 400;
-                                    line-height: 18px;
-                                    text-align: left;
-                                    text-underline-position: from-font;
-                                    text-decoration-skip-ink: none;
-                                    max-width: 100%;
                                     cursor: pointer;
+                                    color: $gray5;
                                 }
                             }
 
@@ -179,9 +186,10 @@ footer.cmftr.u4m-footer {
                                             margin-bottom: 9px;
 
                                             a {
-                                                font-size: 12px;
+                                                font-size: $baseFontSize2;
                                                 font-weight: 400;
-                                                line-height: 18px;
+                                                line-height: 1.5;
+                                                color: $gray5;
                                             }
                                         }
 
@@ -189,7 +197,19 @@ footer.cmftr.u4m-footer {
                                             li {
                                                 a {
                                                     text-align: center;
+
+                                                    @include tabletvert {
+                                                        text-align: left;
+                                                    }
                                                 }
+                                            }
+
+                                            max-width: 100px;
+                                            margin-top: 9px;
+
+                                            @include tabletvert {
+                                                max-width: 100%;
+                                                margin-top: 9px;
                                             }
                                         }
                                     }
@@ -222,12 +242,13 @@ footer.cmftr.u4m-footer {
                                     float: unset;
 
                                     >a {
-                                        font-size: 12px;
+                                        font-size: $baseFontSize2;
                                         font-weight: 400;
-                                        line-height: 19.2px;
+                                        line-height: $baseLineHeight2;
                                         display: block;
                                         width: 100%;
                                         margin-bottom: 21px;
+                                        color: $basecolor;
 
                                         :empty {
                                             margin: 0 !important;
@@ -235,7 +256,7 @@ footer.cmftr.u4m-footer {
                                     }
 
                                     >ul {
-                                        border-top: 1px solid #E2DDD2;
+                                        border-top: 1px solid $gray4;
                                         padding-top: 20px;
                                         display: flex;
                                         gap: 28px;
@@ -245,10 +266,11 @@ footer.cmftr.u4m-footer {
                                             width: 100%;
 
                                             >a {
-                                                font-size: 14px;
+                                                font-size: $baseFontSize3;
                                                 font-weight: 700;
-                                                line-height: 21px;
+                                                line-height: $baseLineHeight3;
                                                 margin-bottom: 7px;
+                                                color: $basecolor;
                                             }
 
                                             @include navbreak {

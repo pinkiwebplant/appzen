@@ -1,0 +1,41 @@
+@import "../../css/_module-imports";
+.information-banner {
+    text-align: center;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 130%;
+    color: $sectionbg;
+    padding: 12px 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-color: $basecolor;
+    .closeTrigger {
+        position: absolute;
+        right: 14px;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+            * {
+                stroke: $white;
+            }
+        }
+    }
+    p {
+        a {
+            color: $yellowColor;
+            text-decoration: underline;
+            margin-left: 5px;
+        }
+        margin: 0;
+    }
+}
+body.anncmnt_hide {
+    .information-banner {
+        display: none;
+    }
+}

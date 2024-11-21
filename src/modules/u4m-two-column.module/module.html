@@ -1,0 +1,115 @@
+{% set moduleName = 'u4m-two-column' %}
+{% set imageMax = 1000 %}
+{% set bgImageMax = 1920 %}
+
+{% include "../partials/u4-module-includes.html" %}
+
+<div class="wrapper">
+	<div class="page-center"> 
+
+		{% if module.include_intro %}
+		<div class='intro'>
+			<div class='intro_cnt'>
+				{{ module.intro_content }}
+			</div>
+		</div>
+		{% endif %}
+		{% if module.include_button %} 
+		<div class="btn_row">
+			{% for item in module.buttons %}
+			{% if item.button_type == 'stnd' %} 
+			{% set href = item.button_link.url.href %}
+			{% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+			{% set href = "mailto:" + href %}
+			{% endif %}
+			<a class="{{ item.theme }} hs-button"
+				 {% if item.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+				 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+				 {% else %}
+				 href="{{ href|escape_url }}"
+				 {% endif %}
+				 {% if item.button_link.open_in_new_tab %}
+				 target="_blank"
+				 {% endif %}
+				 {% if item.button_link.rel %}
+				 rel="{{ item.button_link.rel|escape_attr }}"
+				 {% endif %}
+				 >
+				{{ item.button_text }}
+			</a>
+			{% else %}
+			{% cta guid="{{ item.cta_field }}" %}
+			{% endif %}
+			{% endfor %}
+
+		</div>
+		{% endif %}
+
+		<div class="cm_cards">
+			{% for item in module.content_group %}
+			<div class="items">
+				<div class="inner_cnt">
+					<div class="top_cnt">
+						{{ item.content }}
+					</div>
+					{% if  item.bottom_content_type %}
+					<div class="btm_cnt">
+						{% if  item.bottom_content_type == 'img_group' %}
+						<div class="img_sec">
+							{% for item2 in item.images_group %}
+							<div class="img_items">
+								{% if item2.image_field.src %}
+								{% set sizeAttrs = 'width="{{ item2.image_field.width|escape_attr }}" height="{{ item2.image_field.height|escape_attr }}"' %}
+								{% if item2.image_field.size_type == 'auto' %}
+								{% set sizeAttrs = 'width="{{ item2.image_field.width|escape_attr }}" height="{{ item2.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+								{% elif item2.image_field.size_type == 'auto_custom_max' %}
+								{% set sizeAttrs = 'width="{{ item2.image_field.max_width|escape_attr }}" height="{{ item2.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+								{% endif %}
+								{% set loadingAttr = item2.image_field.loading != 'disabled' ? 'loading="{{ item2.image_field.loading|escape_attr }}"' : '' %}
+								<img src="{{ item2.image_field.src|escape_url }}" alt="{{ item2.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+								{% endif %}
+							</div>
+							{% endfor %}
+						</div>
+						{% elif item.bottom_content_type == 'normal_cnt'%}
+						<div class="btm_cmCnt">
+							{{ item.btm_content }}
+							<div class="btn_cols">
+								{% if item.buttons.button_type == 'stnd' %} 
+								{% set href = item.buttons.button_link.url.href %}
+								{% if item.buttons.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+								{% set href = "mailto:" + href %}
+								{% endif %}
+								<a class="	{{ item.buttons.theme }} hs-button"
+									 {% if item.buttons.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+									 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+									 {% else %}
+									 href="{{ href|escape_url }}"
+									 {% endif %}
+									 {% if item.buttons.button_link.open_in_new_tab %}
+									 target="_blank"
+									 {% endif %}
+									 {% if item.buttons.button_link.rel %}
+									 rel="{{ item.buttons.button_link.rel|escape_attr }}"
+									 {% endif %}
+									 >
+									{{ item.buttons.button_text }}
+								</a>
+								{% else %}
+								{% cta guid="{{ item.buttons.cta_field }}" %}
+								{% endif %}
+							</div>
+						</div>
+						{% endif %}
+					</div>
+					{% endif %}
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+
+</section>
+

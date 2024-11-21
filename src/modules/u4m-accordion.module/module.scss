@@ -1,70 +1,136 @@
 @import "../../css/_module-imports";
 
-section.u4m-accordion {
-
-  .intro {
-    @include center;
-    max-width: 768rem;
-    text-align: center;
-
-    h2 {
-      @include h2;
-    }
-
-    p {
-      @include b2;
+.u4m-accordion {
+  padding-top: 28px;
+  padding-bottom: 88px;
+  @include tabletvert {
+    padding-bottom: 28px;
+  }
+  .page-center {
+    .flex_row {
+      margin-left: -10px;
+      margin-right: -10px;
+      @include tabletvert {
+        margin-left: 0;
+        margin-right: 0;
+      }
     }
   }
 
-  .accordions {
-    @include center;
-    margin: 50rem auto;
+  .intro_cnt {
+    h6 {
+      font-weight: 400;
+      line-height: 1.6;
+      margin-top: 0;
+      margin-bottom: 24px;
+      @include size18;
+    }
+  }
 
-    details {
-      border-top: 1rem solid $gray2;
-      transition: background-color .2s;
-      cursor: pointer;
-
-      summary {
-        @include b2;
-        font-weight: bold;
-        margin: 0;
-        padding: 20rem 40rem 20rem 20rem;
-        position: relative;
-        list-style: none; // detail uses list style for summary, like ul > li
-
-        &:after {
-          content: '+';
-          font-size: 30rem;
-          font-weight: normal;
-          line-height: 1;
-          position: absolute;
-          right: 5%;
-          top: 50%;
-          transform: translateY(-50%);
-          transition: transform .2s ease-in-out;
+  .accordion-items {
+    padding-top: 40px;
+    .accordion-items-inn {
+      @include tabletmid {
+        .col6 {
+          width: 100%;
         }
       }
+    }
+  }
 
-      // open = 'active' state
-      &[open] {
-        summary {
-          &:after {
-            transform: translateY(-50%) rotate(45deg);
+  .accordion-top-row {
+    border-bottom: 1px solid $lightGray;
+    @include tabletvert {
+      text-align: center;
+    }
+  }
+
+  .accor-expand-btn {
+    text-align: right;
+    @include tabletvert {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .anchore-btn {
+      line-height: 1.5;
+      font-weight: 400;
+      color: $bodyColor;
+      @include size14;
+    }
+  }
+
+  .accord-item {
+    .accord-item-title {
+      h4 {
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        @include size28;
+        .item-count {
+          line-height: 1.5;
+          font-weight: 700;
+          padding-right: 20px;
+          @include size14;
+        }
+
+        .item-title {
+          padding-right: 10px;
+        }
+
+        .item-toggle-icon {
+          margin-left: auto;
+          width: 38px;
+          img {
+            width: 28px;
+            height: 28px;
+            margin-left: auto;
+            &.toggle-icon {
+              display: block;
+            }
+            &.open-icon {
+              display: none;
+            }
+          }
+          @include tabletmid {
+            display: block;
           }
         }
       }
+    }
 
-      &:hover {
-        background-color: $gray1;
+    &.active-item {
+      .accord-item-title {
+        h4 {
+          .item-toggle-icon {
+            img {
+              &.toggle-icon {
+                display: none;
+              }
+              &.open-icon {
+                display: block;
+              }
+            }
+          }
+        }
       }
+    }
 
-      &:last-child {
-        border-bottom: 1rem solid $gray2;
+    .accord-item-content {
+      font-weight: 400;
+      line-height: 1.6;
+      margin-top: 0;
+      margin-bottom: 40px;
+      display: none;
+      padding-left: 35px;
+      @include size18;
+      p:last-child {
+        margin-bottom: 0;
       }
-
-      div {
-        padding: 20rem;
+      &.hide {
+        display: none;
       }
     }
   }

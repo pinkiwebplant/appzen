@@ -1,0 +1,67 @@
+{% set moduleName = 'u4m-team' %}
+{% set imageMax = 1000 %}
+{% set bgImageMax = 1920 %}
+
+{% include "../partials/u4-module-includes.html" %}
+
+
+<div class="page-center">
+	{% if module.include_intro %} 
+	<div class='intro'>
+		<div class='intro_cnt'>
+			{{ module.intro_content }}
+		</div>
+	</div>
+	{% endif %}
+
+	<div class="flex_row {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.select_column_alignment }}{% endif %}">
+
+		{% for item in module.cards_group %}
+		<div class="card_item col3 col">
+			<div class="card_inner {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.card_background_color }}{% endif %}">
+				<h5 class="card_title">
+					{{ item.title }}
+				</h5>
+				<div class="card_content">
+					{{ item.content }}
+				</div>
+
+				{% set href = item.link.url.href %}
+				{% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+				{% set href = "mailto:" + href %}
+				{% endif %}
+				{% if item.include_link %}
+				<div class="arrow_link"> 
+					<a
+						 {% if item.link.url.type is equalto "CALL_TO_ACTION"  %}
+						 href="{{ href }}" 
+						 {% else %}
+						 href="{{ href|escape_url }}"
+						 {% endif %}
+						 {% if item.link.open_in_new_tab %}
+						 target="_blank"
+						 {% endif %}
+						 {% if item.link.rel %}
+						 rel="{{ item.link.rel|escape_attr }}"
+						 {% endif %}>
+						<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+							<path d="M5.5 1L10.5 6L5.5 11" stroke="#574D4A"/>
+							<path d="M10.5 6L0.5 6" stroke="#574D4A"/>
+						</svg>
+					</a>
+				</div>
+				{% endif %}
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+</div>
+
+
+
+</section>
+
+
+
+

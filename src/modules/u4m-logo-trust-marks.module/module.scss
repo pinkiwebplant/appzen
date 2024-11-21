@@ -1,145 +1,93 @@
 @import "../../css/_module-imports";
 
 section.u4m-logo-trust-marks {
-  margin: 100rem 0;
+  padding: 80px 0;
+
+  .intro.center {
+    text-align: center;
+  }
+  .intro.right {
+    text-align: right;
+  }
+
+  .intro {
+    h4 {
+      @include size28;
+      font-weight: 400;
+      line-height: 33.6px;
+    }
+  }
+
+  .logo_section {
+    .slider_enable {
+      display: block;
+    }
+    .logo_wrapper.slider_wrapper {
+      display: block;
+      .slick-track {
+        display: flex;
+        align-items: center;
+        img {
+          margin: 0;
+        }
+      }
+    }
+    .logo_wrapper {
+      padding: 20px 0;
+
+      .logo_items {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 120px;
+          filter: grayscale(1);
+          margin-bottom: 20px;
+          cursor: pointer;
+          transition: all 0.3s;
+          &:hover {
+            filter: unset;
+          }
+        }
+      }
+    }
+  }
+  .logo_section.theme_three {
+    .logo_wrapper {
+      .logo_items {
+        margin-bottom: 20px;
+        .logo_inner {
+          @include cardBase;
+          img {
+            margin: 0;
+            filter: unset;
+          }
+        }
+      }
+    }
+  }
+
+  .page-center > .flex_row {
+    justify-content: center;
+  }
 
   &.reverse-text {
     color: $white;
   }
-
-  .container {
-    @include center;
-
-    .intro {
-      @include centerSmall;
-      margin-bottom: 50rem;
-      padding: 0;
-
-      .heading {
-        @include h2;
-        text-align: center;
-      }
-
-      .subheading {
-        text-align: center;
-        @include b2;
-      }
+  @include tabletvert {
+    .col2,
+    .col4,
+    .col3 {
+      width: 33.333%;
+      padding: 0 10px;
     }
-
-    .splide {
-      &:not(.is-overflow) {
-        .splide__list {
-          .splide__slide:last-child {
-            margin: 0 !important;
-          }
-        }
-      }
-
-      .splide__track {
-        .splide__list {
-          transform: ease-in-out;
-
-          .splide__slide {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transform: translate3d(0, 0, 0);
-            backface-visibility: hidden;
-
-            img.logo {
-              width: auto;
-              height: 100%;
-              max-height: 80rem;
-              object-fit: contain;
-              object-position: center;
-
-              @include tablet {
-                max-height: 60rem;
-              }
-            }
-          }
-        }
-      }
-
-      .splide__arrows {
-        .splide__arrow {
-          background: $white;
-          opacity: 1;
-
-          &:hover {
-            svg {
-              fill: $action2;
-            }
-          }
-
-          svg {
-            fill: $black;
-          }
-
-          &.splide__arrow--prev {
-            left: -20rem;
-          }
-
-          &.splide__arrow--next {
-            right: -20rem;
-          }
-        }
-      }
-    }
-
-    .grid {
-      @include centerSmall;
-      padding: 0rem;
-
-      .grid__wrapper {
-        .grid__list {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          align-items: center;
-          margin: 0rem -10rem;
-
-          .grid__item {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: $white;
-            box-shadow: $shadow2;
-            padding: 20rem;
-            margin: 10rem;
-            transition: scale 0.3s ease-in-out;
-
-            @include tabletvert {
-              flex: 0 0 calc(50% - 20rem);
-            }
-
-            @include phone {
-              flex: 0 0 calc(100% - 20rem);
-              max-width: 300rem;
-            }
-
-            &.with-link {
-              transition: $animation1;
-
-              &:hover {
-                transform: scale(1.1);
-              }
-            }
-
-            img.logo {
-              width: 100%;
-              height: 100%;
-              max-height: 60rem;
-              object-fit: contain;
-              object-position: center;
-
-              @include tabletvert {
-                max-height: 50rem;
-              }
-            }
-          }
-        }
-      }
+  }
+  @include phone {
+    .col2,
+    .col4,
+    .col3 {
+      width: 50%;
     }
   }
 }

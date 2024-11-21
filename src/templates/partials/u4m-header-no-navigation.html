@@ -1,0 +1,33 @@
+<!--
+ templateType: global_partial
+ label:  Header no navigation
+ -->
+{% dnd_area "top_section" %}
+{% dnd_section full_width=true %} 
+{% dnd_column %}
+{% dnd_row
+  %} {% dnd_module path="../../modules/u4m-information-banner", label="Information Banner" width="12" %} {%
+  end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}
+{% end_dnd_area %}
+
+{% module "header_theme" path='../../modules/u4m-header-theme', label="Header Theme",export_to_template_context=True %}
+<header class="u4m-header lp {{ widget_data.header_theme.select_header_theme }}">
+	<div class="headerIn">
+		<div class="flex_row">
+			<div class="left_sec flex_row">
+				<div class="headerLogo darkLogo">
+					{% module "header_logo" path="@hubspot/logo", label="Header Logo",  img={src= "{{ get_asset_url('../../templates/images/appzen-logo.png') }}", width=200, override_inherited_src= true, alt="Appzen" } , link="/" %}
+				</div>
+				<div class="headerLogo lightLogo">
+					{% module "header_lt_logo" path="@hubspot/logo", label="Header Light Logo",  img={src= "{{ get_asset_url('../../templates/images/appzenLogoLight.png') }}", width=200, override_inherited_src= true, alt="Appzen" } , link="/" %}
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+{% dnd_area "bottom_section" %}{% end_dnd_area %}
+

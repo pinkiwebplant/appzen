@@ -1,56 +1,136 @@
 @import "../../css/_module-imports";
-section.u4m-form {
-  margin: 50rem 0;
-  &.reverse-text {
-    .left,
-    .right .form-wrap .heading {
-      color: $white;
+section.u4m-form-wrapper {
+  .flex_row {
+    align-items: center;
+  }
+
+  .left_content_wrapper {
+    padding-right: 20px;
+
+    @include tabletMin {
+      padding-right: 15%;
+      padding-left: 20px;
+    }
+
+    @include tabletmid {
+      width: 100%;
+    }
+
+    @include tabletmid {
+      padding-right: 0;
     }
   }
-  div.container {
-    @include center;
-    display: flex;
-    @include tabletvert {
-      display: block;
+
+  .advanced-form-wrapper {
+    @include tabletMin {
+      padding-left: 6.5%;
     }
-    div.left {
-      flex: 1 1 66.666666%;
-      margin-right: 100rem;
-      @include tabletvert {
-        margin-right: 0;
-      }
-      h1 {
-        @include h1;
-      }
-      h2 {
-        @include h2;
-      }
-      h3 {
-        @include h3;
+    @include tabletmid {
+      width: 100%;
+    }
+  }
+
+  .advanced-form-inner {
+    margin-top: 0;
+    margin-bottom: 0;
+    @include form;
+    .form-title {
+      @include h3;
+    }
+
+    @include tabletmid {
+      width: 100%;
+      margin: auto;
+      margin-top: 20px;
+      max-width: 100%;
+    }
+
+    padding: 53rem 50rem;
+
+    form {
+      margin-bottom: 0;
+    }
+
+    /* Labels */
+    .hs-form-field > label {
+      transform: translateY(0);
+      transform-origin: left top;
+      transition: transform 0.2s ease-in-out;
+      white-space: nowrap;
+      max-width: calc(100% - 24px);
+      overflow: hidden;
+      padding: 0 5px;
+      pointer-events: none;
+      position: absolute;
+      text-overflow: ellipsis;
+      top: 17px;
+      left: 27px;
+      font-size: 12rem;
+      font-weight: 700;
+      letter-spacing: 1rem;
+      line-height: 1.2;
+      pointer-events: auto;
+
+      @include tabletmid {
+        padding: 0;
+        left: 16px;
       }
     }
-    div.right {
-      .heading {
-        @include h4;
+    .hs-form-field.textExist > label,
+    .hs-form-field.focused > label {
+      font-weight: 600;
+      transform: scale(0.733) translateY(calc(-9px - 0.5em)) translate(-7px);
+      transform: scale(0.733) translateY(calc(-9px - 0.5em)) translate(-20px);
+      transform: scale(0.733) translateY(calc(-9px - 0.5em)) translate(0px);
+    }
+    .removeLabelEffect.hs-form-field > label,
+    .hs-fieldtype-file.hs-form-field > label,
+    .hs-fieldtype-select.hs-form-field > label,
+    .hs-fieldtype-radio.hs-form-field > label,
+    .hs-multiple_checkbox.hs-form-field > label,
+    .hs-fieldtype-checkbox.hs-form-field > label,
+    .hs-fieldtype-date.hs-form-field > label {
+      position: static;
+      transform: none;
+      padding: 0;
+      background: none;
+    }
+
+    @include tabletmidmin {
+      .hs-form-field > label {
+        top: 15px;
+        left: 16px;
       }
-      &.centered {
-        flex: 1 1 100%;
-        .heading {
-          text-align: center;
-        }
-        div.form {
-          flex: 1 1 100%;
-        }
+
+      .hs-form-field.textExist > label,
+      .hs-form-field.focused > label {
+        transform: scale(0.733) translateY(calc(-9px - 0.5em)) translate(-7px);
       }
-      div.form {
-        flex: 1 1 33.333333%;
-        form {
-          @include form;
-          .hs-button {
-            @include button;
-          }
-        }
+    }
+
+    .hs-form__virality-link {
+      margin-top: 20px;
+    }
+
+    .hs_submit {
+      margin-top: 36px;
+    }
+
+    form.hs-form {
+      .hs-button {
+        @include secondary;
+        margin-top: 0;
+        margin-bottom: 0;
       }
+      select {
+        font-size: 12rem;
+        font-weight: 700;
+        letter-spacing: 1rem;
+      }
+    }
+
+    div.legal-consent-container p {
+      margin: 0;
     }
   }
 }

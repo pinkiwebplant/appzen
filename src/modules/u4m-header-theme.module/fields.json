@@ -1,0 +1,15 @@
+[ {
+  "id" : "f3dcb318-492c-454c-c2bf-a83143d2fd69",
+  "name" : "select_header_theme",
+  "display_width" : null,
+  "label" : "Select Header Theme",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "drk", "Dark" ], [ "lt", "Light" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "drk"
+} ]

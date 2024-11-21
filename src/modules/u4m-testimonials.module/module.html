@@ -1,0 +1,86 @@
+{% set moduleName = 'u4m-testimonials' %}
+	{% set imageMax = 1000 %}
+	{% set bgImageMax = 1920 %}
+	
+	{% include "../partials/u4-module-includes.html" %}
+	
+	<div class="page-center {{ module.testimonials_type }}">
+		{% if module.testimonials_type == 'type1' %}
+		<div class="page-center-inner {% if module.module_overrides.inner_background_settings.enable_inner_background_color %} {{ module.module_overrides.inner_background_settings.select_background_color_type }} {% endif %}">
+			<div class="img-col">
+				{% for item in module.image_column.image %}
+				{% if item.src %}
+				<img class="img-{{loop.index}}" src="{{ item.src }}" alt="{{ item.alt }}">
+				{% endif %}
+				{% endfor %}
+				<div class="logo-img">
+					{% if module.image_column.logo_image.src %}
+					<img src="{{ module.image_column.logo_image.src }}" alt="{{ module.image_column.logo_image.alt }}" >
+					{% endif %}
+					<hr class="hr-spacer">
+				</div>
+	
+			</div>
+			<div class="content-col">
+				{{ module.content_column.content }}
+				<div class="content-button">
+					{% set href = module.content_column.button_link.url.href %}
+					{% if module.content_column.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+					{% set href = "mailto:" + href %}
+					{% endif %}
+					<a
+						 {% if module.content_column.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+						 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+						 {% else %}
+						 href="{{ href }}"
+						 {% endif %}
+						 {% if module.content_column.button_link.open_in_new_tab %}
+						 target="_blank"
+						 {% endif %}
+						 {% if module.content_column.button_link.rel %}
+						 rel="{{ module.content_column.button_link.rel }}"
+						 {% endif %}
+						 >
+						{{ module.content_column.button_text }} <img src="{{ get_asset_url('../../templates/images/arrow.png') }}" alt="arrow">
+					</a>
+				</div>
+			</div>
+		</div>
+		{% endif %}
+		{% if module.testimonials_type == 'type2' %}
+		<div class="page-center-inner {% if module.module_overrides.inner_background_settings.enable_inner_background_color %} {{ module.module_overrides.inner_background_settings.select_background_color_type }} {% endif %}">
+			<div class="content-col">
+				{{ module.content_column.content }}
+				{% if module.content_column.author_name or module.content_column.author_designation %}
+				<div class="testimonials-author">
+					<h6>{{ module.content_column.author_name }}<br><span> {{ module.content_column.author_designation }} </span> </h6>
+				</div>
+				{% endif %}
+		
+			</div>
+			{% if module.content_column.logo_image.src %}
+				<div class="logo-img">
+				<hr>
+					<img src="{{ module.content_column.logo_image.src }}" alt="{{ module.content_column.logo_image.alt }}">
+				</div>
+				{% endif %}
+			{% endif %}
+		</div>
+	</div>
+	
+	</section>
+	
+	{% require_css %}
+	{% if module.module_overrides.inner_background_settings.enable_inner_background_color %}
+	<style>
+		.{{name}} .page-center-inner{
+			{% if module.module_overrides.inner_background_settings.select_background_color_type == "custom" %}
+			background-color:rgba({{ module.module_overrides.inner_background_settings.background_color.color|convert_rgb }},{{ module.module_overrides.inner_background_settings.background_color.opacity*0.01 }});
+			{% endif %}
+		}
+	</style>
+	{% endif %}
+	{% end_require_css %}
+	
+	
+	

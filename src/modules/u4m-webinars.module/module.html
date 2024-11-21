@@ -1,0 +1,179 @@
+{% set moduleName = 'u4m-webinars' %}
+{% set imageMax = 1000 %}
+{% set bgImageMax = 1920 %}
+
+{% include "../partials/u4-module-includes.html" %}
+
+{% set table = hubdb_table_rows(module.select_table) %}
+<div class="wrapper">
+	<div class="page-center"> 
+		<div class="flex_row">
+			<div class="left_col col col7">
+				{% for row in table %}
+				{% if loop.index < 2 %}
+				<div class="webinars_first_item">
+					<div class="inner_wrapper">
+						{% if row.feature_image.url %}
+						<div class="img_wrapper">
+							<img src="{{ row.feature_image.url }}" alt="{{ row.name }}">
+						</div>
+						{% endif %}
+						<div class="cntnt_wrapper">
+							<div class="date_section">
+								{% for cat in row.event_status %}
+								<span class="{{ cat.name|lower|replace(' ', '-') }}">{{ cat.label }}</span>
+								{% endfor %}
+								<div class="date_sec">
+									<span>
+										{% for cat in row.event_status %}
+										{% if cat.label == 'Upcoming' or cat.label == 'Sold Out' %}
+										<img class="calendar" src="{{ get_asset_url('../../images/calendar_month.png') }}" alt="Calendar">
+										{% elif cat.label == 'On-Demand' %}
+										<img class="clock" src="{{ get_asset_url('../../images/clock.png') }}" alt="Clock">
+										{% endif %}
+										{% endfor %}
+									</span>
+									{% for cat in row.event_status %}
+									{% if cat.label == 'Upcoming' or cat.label == 'Sold Out' %}
+									{{ row.event_date_and_time|datetimeformat('%b %e, %Y') }}
+									{% elif cat.label == 'On-Demand' %}
+									<span class="reading-minutes">
+										{% set initialPostWords = row.content|striptags|wordcount %}
+										{% set calculatedPostWords = initialPostWords / 100 %}
+										{% set finishedPostWords = calculatedPostWords|divide(300)|round(2) %}
+										{% set number = finishedPostWords|round %}
+										{% if number < 1 %}
+										Less than one min
+										{% else %}
+										{{ finishedPostWords|round }} minutes
+										{% endif %}
+									</span>
+									{% endif %}
+									{% endfor %}
+								</div>
+							</div>
+							{% if row.name %}
+							<div class="title">
+								<h2>
+									{{ row.name }}
+								</h2>
+							</div>
+							{% endif %}
+							{% if row.content %}
+							<div class="content">
+								{{ row.content }}
+							</div>
+							{% endif %}
+							{% if row.link %}
+							<div class="btn_wrapper">
+								<div class="button_item">
+									<a href="{{ row.link }}" class="hs-button">
+										Sign Up
+									</a>
+								</div>
+							</div>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+				{% endif %}
+				{% endfor %}
+			</div>
+			<div class="right_col col col5">
+				<div class="webinars_item_wrap">
+					{% for row in table %}
+					{% if loop.index > 1 %}
+					<div class="webinars_item {% if row.video %} video_item {% endif %}">
+						<div class="webinars_inner_section flex_wrap">
+							{% if row.feature_image.url %}
+							<div class="image_sec">
+								{% if row.video %}
+								<img class="play_icon" src="{{ get_asset_url('../../images/play-button.png') }}" alt="Play Icon">
+								{% endif %}
+								<img src="{{ row.feature_image.url }}" alt="{{ row.name }}">
+							</div>
+							{% endif %}
+							<div class="right_content">
+								<div class="cntnt_wrapper">
+									<div class="date_section">
+										{% for cat in row.event_status %}
+										<span class="{{ cat.name|lower|replace(' ', '-') }}">{{ cat.label }}</span>
+										{% endfor %}
+										<div class="date_sec">
+											<span>
+												{% for cat in row.event_status %}
+												{% if cat.label == 'Upcoming' or cat.label == 'Sold Out' %}
+												<img class="calendar" src="{{ get_asset_url('../../images/calendar_month.png') }}" alt="Calendar">
+												{% elif cat.label == 'On-Demand' %}
+												<img class="clock" src="{{ get_asset_url('../../images/clock.png') }}" alt="Clock">
+												{% endif %}
+												{% endfor %}
+											</span>
+											{% for cat in row.event_status %}
+											{% if cat.label == 'Upcoming' or cat.label == 'Sold Out' %}
+											{{ row.event_date_and_time|datetimeformat('%b %e, %Y') }}
+											{% elif cat.label == 'On-Demand' %}
+											<span class="reading-minutes">
+												{% set initialPostWords = row.content|striptags|wordcount %}
+												{% set calculatedPostWords = initialPostWords / 100 %}
+												{% set finishedPostWords = calculatedPostWords|divide(300)|round(2) %}
+												{% set number = finishedPostWords|round %}
+												{% if number < 1 %}
+												Less than one min
+												{% else %}
+												{{ finishedPostWords|round }} minutes
+												{% endif %}
+											</span>
+											{% endif %}
+											{% endfor %}
+
+										</div>
+									</div>
+									{% if row.name %}
+									<div class="title">
+										<h5>
+											{{ row.name }}
+										</h5>
+									</div>
+									{% endif %}
+									{% if row.content %}
+									<div class="content">
+										{{ row.content }}
+									</div>
+									{% endif %}
+									{% if row.link %}
+									<div class="btn_wrapper">
+										<div class="button_item">
+											<a href="#">
+												<img src="{{ get_asset_url('../../images/dark-arrow.png') }}" alt="Arrow">
+											</a>
+										</div>
+									</div>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+						{% if row.video %}
+						<div class="popup_section">
+							<span class="close_icon">X</span>
+							<div class="page-center">
+								<div class="inner">
+									<iframe src="" data-src="{{ row.video }}" frameborder="0" allowfullscreen autoplay></iframe>
+								</div>
+							</div>
+						</div>
+						{% endif %}
+					</div>
+					{% endif %}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</section>
+
+
+

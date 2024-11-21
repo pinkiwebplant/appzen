@@ -1,0 +1,111 @@
+@import "../../css/_module-imports";
+
+.u4m-toptabber.dnd_padding {
+  padding: 103rem 0 0;
+  &.reverse-text {
+    .intro p {
+      color: $sectionbg;
+    }
+    .tab_cnt {
+      color: $sidebarplaceholder;
+    }
+  }
+  .intro {
+    text-align: center;
+    padding-bottom: 80px;
+    h1 {
+      margin-bottom: 15px;
+    }
+    p {
+      @include size18;
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+  .wrapper.tabcards {
+    .tabber_inr {
+      .toptab {
+        .slick-track {
+          width: 100% !important;
+          transform: none !important;
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: row-reverse;
+          .toptab_ttl {
+            cursor: pointer;
+          }
+        }
+      }
+      @include tabletvertmin {
+        .toptabber_cnt_wrap {
+          display: block;
+        }
+      }
+    }
+  }
+  .tabber_wrap {
+    .tabber_inr {
+      .tabs {
+        .toptab {
+          border: 1px solid #544d45;
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: row-reverse;
+          .toptab_ttl {
+            border-right: 1px solid #544d45;
+            width: 25%;
+            text-align: left;
+            padding: 30px 40px;
+            &:last-child {
+              border-right: 0;
+            }
+            @include tabletvert {
+              width: 100%;
+            }
+            .tab_txt {
+              @include size18;
+              line-height: 1.6;
+              font-weight: bold;
+              margin-bottom: 8px;
+            }
+            .tab_cnt {
+              line-height: 1.5;
+            }
+            .btn_row {
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+      .toptabber_cnt_wrap {
+        display: none;
+        border: 1px solid #544d45;
+        padding: 81rem 110rem 0;
+        border-top: 0;
+        @include tabletvert {
+          padding: 20rem;
+        }
+        .white_bg {
+          padding: 65px;
+          text-align: center;
+          @include tabletvert {
+            padding: 10rem;
+          }
+          .img img {
+            margin: 0 auto;
+          }
+        }
+      }
+      @include tabletvertmin {
+        &.mobile_tab {
+          display: none;
+        }
+      }
+      @include tabletvert {
+        &.desktop_tab {
+          display: none;
+        }
+      }
+    }
+  }
+}

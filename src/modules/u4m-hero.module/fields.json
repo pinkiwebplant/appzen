@@ -1,908 +1,799 @@
-[{
-    "default": false,
-    "display": "checkbox",
-    "display_width": null,
-    "id": "574c87c8-2c6d-7dc4-f2c9-908c2ee3357d",
-    "label": "Include Eyebrow",
-    "locked": false,
-    "name": "include_eyebrow",
-    "required": false,
-    "type": "boolean"
-  },
-  {
-    "allow_new_line": false,
-    "default": "Eyebrow text sample",
-    "display_width": null,
-    "id": "5b90a98e-e867-41fb-e035-f9c18744e9bf",
-    "label": "Eyebrow Text",
-    "locked": false,
-    "name": "eyebrow_text",
-    "required": false,
-    "show_emoji_picker": false,
-    "type": "text",
-    "validation_regex": "",
-    "visibility": {
-      "controlling_field": "574c87c8-2c6d-7dc4-f2c9-908c2ee3357d",
-      "controlling_value_regex": "true",
-      "operator": "EQUAL"
-    }
-  },
-  {
-    "default": false,
-    "display": "checkbox",
-    "display_width": null,
-    "id": "9e8270e0-18af-447c-6e66-06c900747806",
-    "label": "Smaller Heading",
-    "locked": false,
-    "name": "smaller_headline",
-    "required": false,
-    "type": "boolean"
-  },
-  {
-    "default": false,
-    "display": "checkbox",
-    "display_width": null,
-    "id": "c983c2d1-eea3-d9eb-431d-e406810448c5",
-    "label": "Left Align Text",
-    "locked": false,
-    "name": "left_align_text",
-    "required": false,
-    "type": "boolean",
-    "visibility": {
-      "controlling_field": "16cdad2f-2609-5c70-2b59-340155600cf8",
-      "controlling_value_regex": "true",
-      "operator": "NOT_EQUAL"
-    }
-  },
-  {
-    "allow_new_line": false,
-    "default": " Hero Heading",
-    "display_width": null,
-    "id": "26825ea0-61ad-0cc3-581e-d0608b81c87e",
-    "label": "Heading",
-    "locked": false,
-    "name": "heading",
-    "required": false,
-    "show_emoji_picker": false,
-    "type": "text",
-    "validation_regex": ""
-  },
-  {
-    "default": true,
-    "display": "checkbox",
-    "display_width": null,
-    "id": "ac22411f-eb94-6018-2330-048fb076a5b1",
-    "label": "Include Subheading",
-    "locked": false,
-    "name": "include_subheading",
-    "required": false,
-    "type": "boolean"
-  },
-  {
-    "allow_new_line": false,
-    "default": "Sub Text Goes Here",
-    "display_width": null,
-    "id": "a597bb63-8ab5-45df-764f-e2bb04b0de69",
-    "label": "Subheading",
-    "locked": false,
-    "name": "subtext",
-    "required": false,
-    "show_emoji_picker": false,
-    "type": "text",
-    "validation_regex": "",
-    "visibility": {
-      "controlling_field": "ac22411f-eb94-6018-2330-048fb076a5b1",
-      "controlling_value_regex": "true",
-      "operator": "EQUAL"
-    }
-  },
-  {
-    "choices": [
-      [
-        "none",
-        "None"
-      ],
-      [
-        "cta",
-        "Call-to-Action"
-      ],
-      [
-        "url",
-        "URL"
-      ]
-    ],
-    "default": "cta",
-    "display": "radio",
-    "display_width": null,
-    "id": "5d0a786f-27d4-7eed-4005-3f70c6ca6fc4",
-    "label": "Link Type",
-    "locked": false,
-    "name": "link_type",
-    "required": false,
-    "type": "choice"
-  },
-  {
-    "default": "83ddb7a9-cde2-47f5-90a8-2309258c3c46",
-    "display_width": null,
-    "id": "12e006aa-0155-72f6-8330-46c6d355519e",
-    "label": "Call-to-Action",
-    "locked": false,
-    "name": "call_to_action",
-    "required": false,
-    "type": "cta",
-    "visibility": {
-      "controlling_field": "5d0a786f-27d4-7eed-4005-3f70c6ca6fc4",
-      "controlling_value_regex": "cta",
-      "operator": "EQUAL"
-    }
-  },
-  {
-    "default": {
-      "url": {
-        "content_id": null,
-        "type": "EXTERNAL",
-        "href": ""
-      },
-      "open_in_new_tab": false,
-      "no_follow": false
+[ {
+  "id" : "b539ff2e-97fb-bcf5-fb52-54f4637137bf",
+  "name" : "left_content",
+  "display_width" : null,
+  "label" : "Left Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "e11646c3-2e91-9a3a-9e3a-dd68670b1b21",
+    "name" : "content",
+    "display_width" : null,
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<h4>Low-code process automation</h4>\n<h1>Build finance workflows at your speed.</h1>\n<p>Turn complex processes into automated solutions without writing code.</p>"
+  }, {
+    "id" : "01f93f2a-1e51-1e90-694f-422846df4779",
+    "name" : "include_button",
+    "display_width" : null,
+    "label" : "Include Button",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
+  }, {
+    "id" : "3e7b1290-a4fe-185f-91a8-e3efb4702570",
+    "name" : "buttons",
+    "display_width" : null,
+    "label" : "Buttons",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : "11fd103f-0013-fc61-5a7b-e46385c65700",
+      "default" : 1
     },
-    "display_width": null,
-    "id": "f41a436b-87af-2447-9c44-29b41169df47",
-    "label": "Link",
-    "locked": false,
-    "name": "link",
-    "required": false,
-    "show_advanced_rel_options": false,
-    "supported_types": [
-      "EXTERNAL",
-      "CONTENT",
-      "FILE",
-      "BLOG"
-    ],
-    "type": "link",
-    "visibility": {
-      "controlling_field": "5d0a786f-27d4-7eed-4005-3f70c6ca6fc4",
-      "controlling_value_regex": "url",
-      "operator": "EQUAL"
-    }
-  },
-  {
-    "allow_new_line": false,
-    "default": "Learn More",
-    "display_width": null,
-    "id": "7f054312-8720-cc43-0f2a-9df7359bf315",
-    "label": "Link Text",
-    "locked": false,
-    "name": "link_text",
-    "required": false,
-    "show_emoji_picker": false,
-    "type": "text",
-    "validation_regex": "",
-    "visibility": {
-      "controlling_field": "5d0a786f-27d4-7eed-4005-3f70c6ca6fc4",
-      "controlling_value_regex": "url",
-      "operator": "EQUAL"
-    }
-  },
-  {
-    "allow_new_line": false,
-    "display_width": null,
-    "help_text": "Add a custom ID to the link for easier event tracking.",
-    "id": "272bd45f-a4eb-cbf6-5b25-b001e5a06b47",
-    "label": "Link ID (Optional)",
-    "locked": false,
-    "name": "link_id",
-    "required": false,
-    "show_emoji_picker": false,
-    "type": "text",
-    "validation_regex": "",
-    "visibility": {
-      "controlling_field": "5d0a786f-27d4-7eed-4005-3f70c6ca6fc4",
-      "controlling_value_regex": "url",
-      "operator": "EQUAL"
-    }
-  },
-  {
-    "choices": [
-      [
-        "none",
-        "None"
-      ],
-      [
-        "cta",
-        "Call-to-Action"
-      ],
-      [
-        "url",
-        "URL"
-      ]
-    ],
-    "default": "none",
-    "display": "radio",
-    "display_width": null,
-    "id": "42c57aca-52e7-762b-ca82-c54ccc8684a5",
-    "label": "Link 2 Type",
-    "locked": false,
-    "name": "link_2_type",
-    "required": false,
-    "type": "choice"
-  },
-  {
-    "default": "83ddb7a9-cde2-47f5-90a8-2309258c3c46",
-    "display_width": null,
-    "id": "91b4ed0c-663c-a584-06a8-e82832aa649e",
-    "label": "Call-to-Action 2",
-    "locked": false,
-    "name": "call_to_action_2",
-    "required": false,
-    "type": "cta",
-    "visibility": {
-      "controlling_field": "42c57aca-52e7-762b-ca82-c54ccc8684a5",
-      "controlling_value_regex": "cta",
-      "operator": "EQUAL"
-    }
-  },
-  {
-    "default": {
-      "url": {
-        "content_id": null,
-        "type": "EXTERNAL",
-        "href": ""
-      },
-      "open_in_new_tab": false,
-      "no_follow": false
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "left_content.include_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
     },
-    "display_width": null,
-    "id": "c51e568e-ec3f-e8ec-a3a9-0939b8767a2a",
-    "label": "Link 2",
-    "locked": false,
-    "name": "link_2",
-    "required": false,
-    "show_advanced_rel_options": false,
-    "supported_types": [
-      "EXTERNAL",
-      "CONTENT",
-      "FILE",
-      "BLOG"
-    ],
-    "type": "link",
-    "visibility": {
-      "controlling_field": "42c57aca-52e7-762b-ca82-c54ccc8684a5",
-      "controlling_value_regex": "url",
-      "operator": "EQUAL"
-    }
-  },
-  {
-    "allow_new_line": false,
-    "default": "Learn More",
-    "display_width": null,
-    "id": "7523b423-33a1-3533-0ad7-442db464213a",
-    "label": "Link 2 Text",
-    "locked": false,
-    "name": "link_2_text",
-    "required": false,
-    "show_emoji_picker": false,
-    "type": "text",
-    "validation_regex": "",
-    "visibility": {
-      "controlling_field": "42c57aca-52e7-762b-ca82-c54ccc8684a5",
-      "controlling_value_regex": "url",
-      "operator": "EQUAL"
-    }
-  },
-  {
-    "allow_new_line": false,
-    "display_width": null,
-    "help_text": "Add a custom ID to the link for easier event tracking.",
-    "id": "367d6397-1b45-73cf-03a7-cb0ace99377c",
-    "label": "Link 2 ID (Optional)",
-    "locked": false,
-    "name": "link_2_id",
-    "required": false,
-    "show_emoji_picker": false,
-    "type": "text",
-    "validation_regex": "",
-    "visibility": {
-      "controlling_field": "42c57aca-52e7-762b-ca82-c54ccc8684a5",
-      "controlling_value_regex": "url",
-      "operator": "EQUAL"
-    }
-  },
-  {
-    "default": false,
-    "display": "checkbox",
-    "display_width": null,
-    "id": "16cdad2f-2609-5c70-2b59-340155600cf8",
-    "label": "Include Hero Image",
-    "locked": false,
-    "name": "include_hero_image",
-    "required": false,
-    "type": "boolean"
-  },
-  {
-    "choices": [
-      [
-        "none",
-        "None"
-      ],
-      [
-        "image",
-        "Image"
-      ],
-      [
-        "video",
-        "Video"
-      ]
-    ],
-    "default": "none",
-    "display": "radio",
-    "display_width": null,
-    "label": "Right Content",
-    "locked": false,
-    "name": "right_content",
-    "required": false,
-    "type": "choice",
-    "oldId": "42c57aca-52e7-762b-ca82-c54ccc8684a5",
-    "id": "4980833a-1448-b720-e9a5-1932b926cf31"
-  },
-  {
-    "default": {
-      "src": "https://cdn2.hubspot.net/hub/302335/hubfs/hero-cms-home.png",
-      "alt": "hero-cms-home",
-      "width": 800,
-      "height": 566
-    },
-    "display_width": null,
-    "id": "e2efee93-06ca-13cc-2047-49c735200fd0",
-    "label": "Hero Image",
-    "locked": false,
-    "name": "hero_image",
-    "required": false,
-    "resizable": false,
-    "responsive": false,
-    "show_loading": false,
-    "type": "image",
-    "visibility": {
-      "controlling_field": "4980833a-1448-b720-e9a5-1932b926cf31",
-      "controlling_value_regex": "image",
-      "operator": "EQUAL"
-    }
-  },
-  {
-    "type": "richtext",
-    "id": "f679660b-c90d-fb32-4aa9-f96acaf52b6e",
-    "label": "Video Embed",
-    "name": "video_embed",
-    "default": "{% video_player \"embed_player\" overrideable=False, type='scriptV4', hide_playlist=True, viral_sharing=False, embed_button=False, autoplay=False, hidden_controls=False, loop=False, muted=False, full_width=False, width='1920', height='1080', player_id='9212370285', style='' %}\n<p>&nbsp;</p>",
-    "visibility": {
-      "operator": "EQUAL",
-      "controlling_field": "4980833a-1448-b720-e9a5-1932b926cf31",
-      "controlling_value_regex": "video"
-    }
-  },
-  {
-    "default": {
-      "color": "#ffffff",
-      "opacity": 0
-    },
-    "display_width": null,
-    "id": "1cfd8f16-7662-4d98-6b5b-3816ed256cb9",
-    "label": "Overlay Color",
-    "locked": false,
-    "name": "overlay_color",
-    "required": false,
-    "type": "color"
-  },
-  {
-    "display": "text",
-    "display_width": null,
-    "id": "741f09da-3208-ee15-1cc9-39089b3953ac",
-    "label": "Minimum Height",
-    "locked": false,
-    "name": "minimum_height",
-    "required": false,
-    "step": 1,
-    "type": "number"
-  },
-  {
-    "children": [{
-        "default": false,
-        "display": "checkbox",
-        "display_width": null,
-        "help_text": "Toggle to override section ID and vertical margin. ",
-        "id": "enable_overrides",
-        "label": "Enable Overrides",
-        "locked": false,
-        "name": "enable_overrides",
-        "required": false,
-        "type": "boolean"
+    "children" : [ {
+      "id" : "11fd103f-0013-fc61-5a7b-e46385c65700",
+      "name" : "button_type",
+      "display_width" : null,
+      "label" : "Button Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "stnd", "Standard" ], [ "cta", "CTA" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "stnd"
+    }, {
+      "id" : "8fd1c5a5-7a28-8e43-5c80-65ca48c5d537",
+      "name" : "theme",
+      "display_width" : null,
+      "label" : "Theme",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "left_content.buttons.button_type",
+        "controlling_value_regex" : "stnd",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
       },
-      {
-        "allow_new_line": false,
-        "display_width": null,
-        "help_text": "The value you type here will be the anchor link for this section. Should be all lowercase and include dashes instead of spaces. This should be a unique value per module.",
-        "id": "module_overrides.section_id",
-        "label": "Section ID",
-        "locked": false,
-        "name": "section_id",
-        "required": false,
-        "show_emoji_picker": false,
-        "type": "text",
-        "validation_regex": "",
-        "visibility": {
-          "controlling_field": "enable_overrides",
-          "controlling_value_regex": "true",
-          "operator": "EQUAL"
-        }
+      "display" : "select",
+      "choices" : [ [ "primary", "Primary" ], [ "secondary", "Secondary" ], [ "tertiary", "Tertiary" ], [ "quaternary", "Quaternary" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "primary"
+    }, {
+      "id" : "ca18bd16-3680-030e-bd93-1f899fe1b32f",
+      "name" : "button_text",
+      "display_width" : null,
+      "label" : "Button Text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "left_content.buttons.button_type",
+        "controlling_value_regex" : "stnd",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
       },
-      {
-        "choices": [
-          [
-            "top-margin-default",
-            "Default"
-          ],
-          [
-            "top-margin-none",
-            "None"
-          ],
-          [
-            "top-margin-small",
-            "Small"
-          ],
-          [
-            "top-margin-medium",
-            "Medium"
-          ],
-          [
-            "top-margin-large",
-            "Large"
-          ],
-          [
-            "top-margin-custom",
-            "Custom"
-          ]
-        ],
-        "default": "top-margin-default",
-        "display": "select",
-        "display_width": null,
-        "id": "module_overrides.top_margin",
-        "label": "Top Margin",
-        "locked": false,
-        "name": "top_margin",
-        "required": false,
-        "type": "choice",
-        "visibility": {
-          "controlling_field": "enable_overrides",
-          "controlling_value_regex": "true",
-          "operator": "EQUAL"
-        }
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Request Demo"
+    }, {
+      "id" : "f6d5769b-83c4-cfc7-ac05-a3a5b5dd2f76",
+      "name" : "button_link",
+      "display_width" : null,
+      "label" : "Button Link",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "left_content.buttons.button_type",
+        "controlling_value_regex" : "stnd",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
       },
-      {
-        "default": 100,
-        "display": "text",
-        "display_width": null,
-        "id": "custom_top_margin",
-        "label": "Custom Top Margin",
-        "locked": false,
-        "name": "custom_top_margin",
-        "required": false,
-        "step": 1,
-        "type": "number",
-        "visibility": {
-          "controlling_field": "module_overrides.top_margin",
-          "controlling_value_regex": "top-margin-custom",
-          "operator": "EQUAL"
-        }
-      },
-      {
-        "default": 50,
-        "display": "text",
-        "display_width": null,
-        "id": "custom_top_margin_mobile",
-        "label": "Custom Top Margin Mobile",
-        "locked": false,
-        "name": "custom_top_margin_mobile",
-        "required": false,
-        "step": 1,
-        "type": "number",
-        "visibility": {
-          "controlling_field": "module_overrides.top_margin",
-          "controlling_value_regex": "top-margin-custom",
-          "operator": "EQUAL"
-        }
-      },
-      {
-        "choices": [
-          [
-            "bottom-margin-default",
-            "Default"
-          ],
-          [
-            "bottom-margin-none",
-            "None"
-          ],
-          [
-            "bottom-margin-small",
-            "Small"
-          ],
-          [
-            "bottom-margin-medium",
-            "Medium"
-          ],
-          [
-            "bottom-margin-large",
-            "Large"
-          ],
-          [
-            "bottom-margin-custom",
-            "Custom"
-          ]
-        ],
-        "default": "bottom-margin-default",
-        "display": "select",
-        "display_width": null,
-        "id": "module_overrides.bottom_margin",
-        "label": "Bottom Margin",
-        "locked": false,
-        "name": "bottom_margin",
-        "required": false,
-        "type": "choice",
-        "visibility": {
-          "controlling_field": "enable_overrides",
-          "controlling_value_regex": "true",
-          "operator": "EQUAL"
-        }
-      },
-      {
-        "default": 100,
-        "display": "text",
-        "display_width": null,
-        "id": "custom_bottom_margin",
-        "label": "Custom Bottom Margin",
-        "locked": false,
-        "name": "custom_bottom_margin",
-        "required": false,
-        "step": 1,
-        "type": "number",
-        "visibility": {
-          "controlling_field": "module_overrides.bottom_margin",
-          "controlling_value_regex": "bottom-margin-custom",
-          "operator": "EQUAL"
-        }
-      },
-      {
-        "default": 50,
-        "display": "text",
-        "display_width": null,
-        "id": "custom_bottom_margin_mobile",
-        "label": "Custom Bottom Margin Mobile",
-        "locked": false,
-        "name": "custom_bottom_margin_mobile",
-        "required": false,
-        "step": 1,
-        "type": "number",
-        "visibility": {
-          "controlling_field": "module_overrides.bottom_margin",
-          "controlling_value_regex": "bottom-margin-custom",
-          "operator": "EQUAL"
-        }
-      },
-      {
-        "choices": [
-          [
-            "top-padding-default",
-            "Default"
-          ],
-          [
-            "top-padding-none",
-            "None"
-          ],
-          [
-            "top-padding-small",
-            "Small"
-          ],
-          [
-            "top-padding-medium",
-            "Medium"
-          ],
-          [
-            "top-padding-large",
-            "Large"
-          ],
-          [
-            "top-padding-custom",
-            "Custom"
-          ]
-        ],
-        "default": "top-padding-default",
-        "display": "select",
-        "display_width": null,
-        "id": "module_overrides.top_padding",
-        "label": "Top Padding",
-        "locked": false,
-        "name": "top_padding",
-        "required": false,
-        "type": "choice",
-        "visibility": {
-          "controlling_field": "enable_overrides",
-          "controlling_value_regex": "true",
-          "operator": "EQUAL"
-        }
-      },
-      {
-        "default": 100,
-        "display": "text",
-        "display_width": null,
-        "id": "custom_top_padding",
-        "label": "Custom Top Padding",
-        "locked": false,
-        "name": "custom_top_padding",
-        "required": false,
-        "step": 1,
-        "type": "number",
-        "visibility": {
-          "controlling_field": "module_overrides.top_padding",
-          "controlling_value_regex": "top-padding-custom",
-          "operator": "EQUAL"
-        }
-      },
-      {
-        "default": 50,
-        "display": "text",
-        "display_width": null,
-        "id": "custom_top_padding_mobile",
-        "label": "Custom Top Padding Mobile",
-        "locked": false,
-        "name": "custom_top_padding_mobile",
-        "required": false,
-        "step": 1,
-        "type": "number",
-        "visibility": {
-          "controlling_field": "module_overrides.top_padding",
-          "controlling_value_regex": "top-padding-custom",
-          "operator": "EQUAL"
-        }
-      },
-      {
-        "choices": [
-          [
-            "bottom-padding-default",
-            "Default"
-          ],
-          [
-            "bottom-padding-none",
-            "None"
-          ],
-          [
-            "bottom-padding-small",
-            "Small"
-          ],
-          [
-            "bottom-padding-medium",
-            "Medium"
-          ],
-          [
-            "bottom-padding-large",
-            "Large"
-          ],
-          [
-            "bottom-padding-custom",
-            "Custom"
-          ]
-        ],
-        "default": "bottom-padding-default",
-        "display": "select",
-        "display_width": null,
-        "id": "module_overrides.bottom_padding",
-        "label": "Bottom Padding",
-        "locked": false,
-        "name": "bottom_padding",
-        "required": false,
-        "type": "choice",
-        "visibility": {
-          "controlling_field": "enable_overrides",
-          "controlling_value_regex": "true",
-          "operator": "EQUAL"
-        }
-      },
-      {
-        "default": 100,
-        "display": "text",
-        "display_width": null,
-        "id": "custom_bottom_padding",
-        "label": "Custom Bottom Padding",
-        "locked": false,
-        "name": "custom_bottom_padding",
-        "required": false,
-        "step": 1,
-        "type": "number",
-        "visibility": {
-          "controlling_field": "module_overrides.bottom_padding",
-          "controlling_value_regex": "bottom-padding-custom",
-          "operator": "EQUAL"
-        }
-      },
-      {
-        "default": 50,
-        "display": "text",
-        "display_width": null,
-        "id": "custom_bottom_padding_mobile",
-        "label": "Custom Bottom Padding Mobile",
-        "locked": false,
-        "name": "custom_bottom_padding_mobile",
-        "required": false,
-        "step": 1,
-        "type": "number",
-        "visibility": {
-          "controlling_field": "module_overrides.bottom_padding",
-          "controlling_value_regex": "bottom-padding-custom",
-          "operator": "EQUAL"
-        }
-      },
-      {
-        "default": {
-          "color": null,
-          "opacity": null
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
         },
-        "display_width": null,
-        "help_text": "If a module has formal settings for a background color they will take priority over this value.",
-        "id": "6c8bfd0e-1629-1268-e01c-17b4047ecfce",
-        "inline_help_text": "",
-        "label": "Background Color",
-        "locked": false,
-        "name": "background_color",
-        "required": false,
-        "type": "color",
-        "visibility": {
-          "controlling_field": "enable_overrides",
-          "controlling_value_regex": "true",
-          "operator": "EQUAL"
-        }
-      },
-      {
-        "default": {
-          "size_type": "auto",
-          "src": "",
-          "alt": null,
-          "loading": "disabled"
-        },
-        "display_width": null,
-        "help_text": "If a module has formal settings for a background image they will take priority over this value.",
-        "id": "878364f4-31ac-6917-e76f-65307d7d36e5",
-        "label": "Background Image",
-        "locked": false,
-        "name": "background_image",
-        "required": false,
-        "resizable": false,
-        "responsive": true,
-        "show_loading": false,
-        "type": "image",
-        "visibility": {
-          "controlling_field": "enable_overrides",
-          "controlling_value_regex": "true",
-          "operator": "EQUAL"
-        }
-      }, {
-        "choices": [
-          [
-            "top left",
-            "Top Left"
-          ],
-          [
-            "top center",
-            "Top Center"
-          ],
-          [
-            "top right",
-            "Top Right"
-          ],
-          [
-            "center left",
-            "Center Left"
-          ],
-          [
-            "center center",
-            "Center"
-          ],
-          [
-            "center right",
-            "Center Right"
-          ],
-          [
-            "bottom left",
-            "Bottom Left"
-          ],
-          [
-            "bottom center",
-            "Bottom Center"
-          ],
-          [
-            "bottom right",
-            "Bottom Right"
-          ]
-        ],
-        "default": "center center",
-        "display": "select",
-        "display_width": null,
-        "id": "background-image-position",
-        "label": "Select Background Image Position",
-        "locked": false,
-        "name": "background_image_position",
-        "required": false,
-        "type": "choice",
-        "visibility": {
-          "controlling_field": "enable_overrides",
-          "controlling_value_regex": "true",
-          "operator": "EQUAL"
-        }
-      },
-      {
-        "default": false,
-        "display": "checkbox",
-        "id": "lazy-background",
-        "inline_help_text": "If enabled, the background image will be loaded only when the module is in view.",
-        "label": "Lazy Load Background Image?",
-        "locked": false,
-        "name": "background_lazy",
-        "required": false,
-        "type": "boolean",
-        "visibility": {
-          "controlling_field": "enable_overrides",
-          "controlling_value_regex": "true",
-          "operator": "EQUAL"
-        }
-      },
-      {
-        "default": false,
-        "display": "checkbox",
-        "display_width": null,
-        "id": "3eccf45d-b0dc-4bac-42a0-f923e4405158",
-        "label": "Reverse Text",
-        "locked": false,
-        "name": "reverse_text",
-        "required": false,
-        "type": "boolean",
-        "visibility": {
-          "controlling_field": "enable_overrides",
-          "controlling_value_regex": "true",
-          "operator": "EQUAL"
-        }
+        "open_in_new_tab" : false,
+        "no_follow" : false
       }
-    ],
-    "default": {
-      "enable_overrides": false,
-      "top_margin": "top-margin-default",
-      "custom_top_margin": 100,
-      "custom_top_margin_mobile": 50,
-      "bottom_margin": "bottom-margin-default",
-      "custom_bottom_margin": 100,
-      "custom_bottom_margin_mobile": 50,
-      "top_padding": "top-padding-default",
-      "custom_top_padding": 100,
-      "custom_top_padding_mobile": 50,
-      "bottom_padding": "bottom-padding-default",
-      "custom_bottom_padding": 100,
-      "custom_bottom_padding_mobile": 50,
-      "background_color": {
-        "color": null,
-        "opacity": null
+    }, {
+      "id" : "9af91169-69d1-ce2b-aec1-82a403c539f6",
+      "name" : "cta_field",
+      "display_width" : null,
+      "label" : "CTA",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "left_content.buttons.button_type",
+        "controlling_value_regex" : "cta",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
       },
-      "background_image": {
-        "size_type": "auto",
-        "src": "",
-        "alt": null,
-        "loading": "disabled"
-      },
-      "reverse_text": false
-    },
-    "display_width": null,
-    "expanded": false,
-    "id": "module_overrides",
-    "label": "Module Overrides",
-    "locked": false,
-    "name": "module_overrides",
-    "required": false,
-    "tab": "CONTENT",
-    "type": "group"
+      "type" : "cta"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : [ {
+      "button_type" : "stnd",
+      "theme" : "primary",
+      "button_text" : "Request Demo",
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "content" : "<h4>Low-code process automation</h4>\n<h1>Build finance workflows at your speed.</h1>\n<p>Turn complex processes into automated solutions without writing code.</p>",
+    "include_button" : true,
+    "buttons" : [ {
+      "button_type" : "stnd",
+      "theme" : "primary",
+      "button_text" : "Request Demo",
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ]
   }
-]
+}, {
+  "id" : "1915430d-9d17-1675-0f86-710b445c4e26",
+  "name" : "right_content",
+  "display_width" : null,
+  "label" : "Right Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "2a7aca4c-e5f8-34d7-92b9-8bb9e0344af3",
+    "name" : "image_field",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/hero-banner-image.png",
+      "alt" : "Hero Image",
+      "loading" : "lazy",
+      "width" : 788,
+      "height" : 792,
+      "max_width" : 788,
+      "max_height" : 792
+    }
+  }, {
+    "id" : "35ca5174-41af-7999-abbe-a07cf6b8d9b0",
+    "name" : "overlay_image",
+    "display_width" : null,
+    "label" : "Overlay Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/hero-overlay-graphics.png",
+      "alt" : "Hero Overlay Graphics",
+      "loading" : "lazy",
+      "width" : 1098,
+      "height" : 317,
+      "max_width" : 1098,
+      "max_height" : 317
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/hero-banner-image.png",
+      "alt" : "Hero Image",
+      "loading" : "lazy",
+      "width" : 788,
+      "height" : 792,
+      "max_width" : 788,
+      "max_height" : 792
+    },
+    "overlay_image" : {
+      "size_type" : "auto",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/hero-overlay-graphics.png",
+      "alt" : "Hero Overlay Graphics",
+      "loading" : "lazy",
+      "width" : 1098,
+      "height" : 317,
+      "max_width" : 1098,
+      "max_height" : 317
+    }
+  }
+}, {
+  "id" : "module_overrides",
+  "name" : "module_overrides",
+  "display_width" : null,
+  "label" : "Module Overrides",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "enable_overrides",
+    "name" : "enable_overrides",
+    "display_width" : null,
+    "label" : "Enable Overrides",
+    "help_text" : "Toggle to override section ID and vertical margin. ",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
+  }, {
+    "id" : "module_overrides.section_id",
+    "name" : "section_id",
+    "display_width" : null,
+    "label" : "Section ID",
+    "help_text" : "The value you type here will be the anchor link for this section. Should be all lowercase and include dashes instead of spaces. This should be a unique value per module.",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : "enable_overrides",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "module_overrides.top_margin",
+    "name" : "top_margin",
+    "display_width" : null,
+    "label" : "Top Margin",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "enable_overrides",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "top-margin-default", "Default" ], [ "top-margin-none", "None" ], [ "top-margin-small", "Small" ], [ "top-margin-medium", "Medium" ], [ "top-margin-large", "Large" ], [ "top-margin-custom", "Custom" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "top-margin-default"
+  }, {
+    "id" : "custom_top_margin",
+    "name" : "custom_top_margin",
+    "display_width" : null,
+    "label" : "Custom Top Margin",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "module_overrides.top_margin",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "top-margin-custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "default" : 100
+  }, {
+    "id" : "custom_top_margin_mobile",
+    "name" : "custom_top_margin_mobile",
+    "display_width" : null,
+    "label" : "Custom Top Margin Mobile",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "module_overrides.top_margin",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "top-margin-custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "default" : 50
+  }, {
+    "id" : "module_overrides.bottom_margin",
+    "name" : "bottom_margin",
+    "display_width" : null,
+    "label" : "Bottom Margin",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "enable_overrides",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "bottom-margin-default", "Default" ], [ "bottom-margin-none", "None" ], [ "bottom-margin-small", "Small" ], [ "bottom-margin-medium", "Medium" ], [ "bottom-margin-large", "Large" ], [ "bottom-margin-custom", "Custom" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "bottom-margin-default"
+  }, {
+    "id" : "custom_bottom_margin",
+    "name" : "custom_bottom_margin",
+    "display_width" : null,
+    "label" : "Custom Bottom Margin",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "module_overrides.bottom_margin",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "bottom-margin-custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "default" : 100
+  }, {
+    "id" : "custom_bottom_margin_mobile",
+    "name" : "custom_bottom_margin_mobile",
+    "display_width" : null,
+    "label" : "Custom Bottom Margin Mobile",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "module_overrides.bottom_margin",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "bottom-margin-custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "default" : 50
+  }, {
+    "id" : "module_overrides.top_padding",
+    "name" : "top_padding",
+    "display_width" : null,
+    "label" : "Top Padding",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "enable_overrides",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "top-padding-default", "Default" ], [ "top-padding-none", "None" ], [ "top-padding-small", "Small" ], [ "top-padding-medium", "Medium" ], [ "top-padding-large", "Large" ], [ "top-padding-custom", "Custom" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "top-padding-default"
+  }, {
+    "id" : "custom_top_padding",
+    "name" : "custom_top_padding",
+    "display_width" : null,
+    "label" : "Custom Top Padding",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "module_overrides.top_padding",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "top-padding-custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "default" : 100
+  }, {
+    "id" : "custom_top_padding_mobile",
+    "name" : "custom_top_padding_mobile",
+    "display_width" : null,
+    "label" : "Custom Top Padding Mobile",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "module_overrides.top_padding",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "top-padding-custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "default" : 50
+  }, {
+    "id" : "module_overrides.bottom_padding",
+    "name" : "bottom_padding",
+    "display_width" : null,
+    "label" : "Bottom Padding",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "enable_overrides",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "bottom-padding-default", "Default" ], [ "bottom-padding-none", "None" ], [ "bottom-padding-small", "Small" ], [ "bottom-padding-medium", "Medium" ], [ "bottom-padding-large", "Large" ], [ "bottom-padding-custom", "Custom" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "bottom-padding-default"
+  }, {
+    "id" : "custom_bottom_padding",
+    "name" : "custom_bottom_padding",
+    "display_width" : null,
+    "label" : "Custom Bottom Padding",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "module_overrides.bottom_padding",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "bottom-padding-custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "default" : 100
+  }, {
+    "id" : "custom_bottom_padding_mobile",
+    "name" : "custom_bottom_padding_mobile",
+    "display_width" : null,
+    "label" : "Custom Bottom Padding Mobile",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "module_overrides.bottom_padding",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "bottom-padding-custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "default" : 50
+  }, {
+    "id" : "3acc8068-a3e9-1ee0-60c7-9dbf953422a4",
+    "name" : "background_settings",
+    "display_width" : null,
+    "label" : "Background Settings",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_overrides.enable_overrides",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "8c61112d-4e81-6eb2-c3da-f21a5bc9642e",
+      "name" : "background_type",
+      "display_width" : null,
+      "label" : "Background Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "image", "Image" ], [ "color", "Color" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "color"
+    }, {
+      "id" : "0b377766-45a1-d996-07a1-ed7902a91581",
+      "name" : "select_background_color_type",
+      "display_width" : null,
+      "label" : "Select Background Color",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "custom", "Custom" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "light_grey"
+    }, {
+      "id" : "6c8bfd0e-1629-1268-e01c-17b4047ecfce",
+      "name" : "background_color",
+      "display_width" : null,
+      "label" : "Background Color",
+      "help_text" : "If a module has formal settings for a background color they will take priority over this value.",
+      "inline_help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "enable_overrides",
+        "controlling_field_path" : "module_overrides.background_settings.select_background_color_type",
+        "controlling_value_regex" : "custom",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "color",
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
+    }, {
+      "id" : "5788e385-e7b8-15f0-9fae-fbaafc73a721",
+      "name" : "add_overlay",
+      "display_width" : null,
+      "label" : "Add Overlay",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "module_overrides.background_settings.background_type",
+        "controlling_value_regex" : "color",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "checkbox",
+      "type" : "boolean",
+      "default" : false
+    }, {
+      "id" : "878364f4-31ac-6917-e76f-65307d7d36e5",
+      "name" : "background_image",
+      "display_width" : null,
+      "label" : "Background Image",
+      "help_text" : "If a module has formal settings for a background image they will take priority over this value.",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "enable_overrides",
+        "controlling_field_path" : "module_overrides.background_settings.background_type",
+        "controlling_value_regex" : "image",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "responsive" : true,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
+      "default" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "disabled"
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "background_type" : "color",
+      "select_background_color_type" : "light_grey",
+      "background_color" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "add_overlay" : false,
+      "background_image" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "disabled"
+      }
+    }
+  }, {
+    "id" : "0f5dfea4-e3e1-1525-5a49-ca3ea7c5e7b2",
+    "name" : "enable_container_inner_background_color",
+    "display_width" : null,
+    "label" : "Enable Container Inner Background Color",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "id" : "6d3702dd-cf5f-afd3-ff26-7dec7f205a2a",
+    "name" : "container_inner_background_settings",
+    "display_width" : null,
+    "label" : "Container Inner Background Settings",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_overrides.enable_container_inner_background_color",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "8407cd25-4394-40f3-877f-39fc08a371f0",
+      "name" : "select_background_color_type",
+      "display_width" : null,
+      "label" : "Select Background Color",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "custom", "Custom" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "light_pink"
+    }, {
+      "id" : "99965f87-300c-427b-c8d1-5106060b24f7",
+      "name" : "background_color",
+      "display_width" : null,
+      "label" : "Background Color",
+      "help_text" : "If a module has formal settings for a background color they will take priority over this value.",
+      "inline_help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "enable_overrides",
+        "controlling_field_path" : "module_overrides.container_inner_background_settings.select_background_color_type",
+        "controlling_value_regex" : "custom",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "color",
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "select_background_color_type" : "light_pink",
+      "background_color" : {
+        "color" : null,
+        "opacity" : null
+      }
+    }
+  }, {
+    "id" : "b8ff09cf-3e4e-fe6d-88bc-95be48ab2e1e",
+    "name" : "reverse_text",
+    "display_width" : null,
+    "label" : "Reverse Text",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : false
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "enable_overrides" : true,
+    "top_margin" : "top-margin-default",
+    "custom_top_margin" : 100,
+    "custom_top_margin_mobile" : 50,
+    "bottom_margin" : "bottom-margin-default",
+    "custom_bottom_margin" : 100,
+    "custom_bottom_margin_mobile" : 50,
+    "top_padding" : "top-padding-default",
+    "custom_top_padding" : 100,
+    "custom_top_padding_mobile" : 50,
+    "bottom_padding" : "bottom-padding-default",
+    "custom_bottom_padding" : 100,
+    "custom_bottom_padding_mobile" : 50,
+    "background_settings" : {
+      "background_type" : "color",
+      "select_background_color_type" : "light_grey",
+      "background_color" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "add_overlay" : false,
+      "background_image" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "disabled"
+      }
+    },
+    "enable_container_inner_background_color" : false,
+    "container_inner_background_settings" : {
+      "select_background_color_type" : "light_pink",
+      "background_color" : {
+        "color" : null,
+        "opacity" : null
+      }
+    },
+    "reverse_text" : false
+  }
+} ]

@@ -1,102 +1,77 @@
 @import "../../css/_module-imports";
 
 section.u4m-cards {
-  margin-top: 100rem;
-  margin-bottom: 100rem;
+  .intro_cnt {
+    text-align: center;
+  }
 
-  &.reverse-text {
+  .card_inner {
+    @include cardBase;
+    width: 100%;
 
-    h2.heading,
-    h3.subheading {
-      color: $white;
+    .card_title {
+      margin-bottom: 15rem;
+    }
+
+    .card_content {
+      @include size14;
+      line-height: 150%;
+
+      p {
+        font: inherit;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
     }
   }
 
-  .heading {
-    @include center;
-    @include h2;
-    text-align: center;
-  }
-
-  .subheading {
-    @include center;
-    max-width: 1000rem;
-    @include b2;
-    font-weight: normal;
-    text-align: center;
-  }
-
-  .link {
-    text-align: center;
-
-    a {
-      @include button;
-    }
-  }
-
-  .wrapper {
-    @include center;
-    max-width: 1280rem;
+  .card_item {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
 
-    @include phone {
-      display: block;
+    @include tabletmid {
+      width: 50%;
+    }
+    @include tabletvert {
+      width: 100%;
     }
 
-    &.landscape {
-      div.card {
-        flex-direction: row;
+    .arrow_link {
+      text-align: right;
+      margin-top: 20px;
 
-        @include tabletvert {
-          flex-direction: column;
-        }
-
-        div.image.filled {
-          min-width: 200rem;
-        }
-
-        div.content {
-          @include phone {
-            margin-bottom: 0;
-
-            span.teaser {
-              margin-bottom: 0;
-            }
-          }
-        }
+      svg {
+        display: block;
+        width: 15px;
+      }
+      a {
+        display: inline-flex;
+        margin-left: auto;
+        width: 20px;
+        height: 20px;
+        align-items: center;
+        justify-content: center;
       }
     }
+  }
 
-    div.card {
-      @include card;
+  .flex_row {
+    row-gap: 20px;
+    justify-content: flex-end;
+
+    &.left {
+      justify-content: flex-start;
     }
-
-    &.two {
-      div.card {
-        flex-basis: calc(50% - 40rem);
-      }
+    &.center {
+      justify-content: center;
     }
+  }
 
-    &.three {
-      div.card {
-        flex-basis: calc(33.333% - 40rem);
-
-        @include tablet {
-          flex-basis: calc(50% - 40rem);
-        }
-      }
-    }
-
-    &.four {
-      div.card {
-        flex-basis: calc(25% - 40rem);
-
-        @include tablet {
-          flex-basis: calc(50% - 40rem);
-        }
-      }
+  &.reverse-text {
+    .card .title {
+      color: $white;
     }
   }
 }

@@ -1,0 +1,188 @@
+{% set moduleName = 'u4m-case-study-post' %}
+{% set imageMax = 1000 %}
+{% set bgImageMax = 1920 %}
+
+{% include "../partials/u4-module-includes.html" %}
+<div class="page-center"> 
+	<div class="post-body-inn">
+		<div class="flex_row">
+			{% if module.left_column.content_group %}
+			<div class="col9 col left-col">
+				<div class="post-content">
+					{% for item in module.left_column.content_group %}
+					{% if item.content %}
+					{{ item.content }}
+					{% endif %}
+					{% for item2 in item.image_group %}
+					{% if item2.image_field.src or item2.image_caption %}
+					<div class="post-img-row">
+						{% if item2.image_field.src %}
+						{% set loadingAttr = item2.image_field.loading != 'disabled' ? 'loading="{{ item2.image_field.loading|escape_attr }}"' : '' %}
+						<img src="{{ item2.image_field.src|escape_url }}"  class="post-cnt-img" alt="{{ item2.image_field.alt|escape_attr }}" {{ loadingAttr }}>
+						{% endif %}
+						{% if item2.image_caption %}
+						<p class="img-caption">
+							{{ item2.image_caption }}
+						</p>
+						{% endif %}
+					</div>
+					{% endif %}
+					{% endfor %}
+					{% endfor %}
+				</div>
+			</div>
+			{% endif %}			
+			<div class="{% if not module.left_column.content_group %} col12{% else %}col3{% endif %} col right-col post-sidebar">
+				<div class="post-sidebar-inn">
+					<div class="post-subscribe-row">
+						<div class="post-subscribe-inn">
+							<div class="post-subscribe-form sidebar-form">
+								{% if module.right_column.subscribe_form.form_title %}
+								<h6>
+									{{ module.right_column.subscribe_form.form_title }}
+								</h6>
+								{% endif %}
+								{% form
+	form_to_use="{{ module.right_column.subscribe_form.form_field.form_id }}"
+	response_response_type="{{ module.right_column.subscribe_form.form_field.response_type }}"
+	response_message="{{ module.right_column.subscribe_form.form_field.message }}"
+	response_redirect_id="{{ module.right_column.subscribe_form.form_field.redirect_id }}"
+	response_redirect_url="{{module.right_column.subscribe_form.form_field.redirect_url}}"
+	gotowebinar_webinar_key="{{ module.right_column.subscribe_form.form_field.gotowebinar_webinar_key }}"
+%}
+							</div>
+						</div>
+					</div>
+					<div class="post-counter-row">
+						<div class="post-counter-inn">
+							<div class="post-counter">
+								{% if module.right_column.counter.title %}
+								<h6>
+									{{ module.right_column.counter.title }}
+								</h6>
+								{% endif %}
+								<div class="post-counter-items">	
+									{% for item in module.right_column.counter.counter_items %}
+									<div class="post-counter-item">	
+										<h2>
+											{{ item.prefix }}<span class="number {% unless item.disable_counter_animation %}count2{% endunless %}">{{ item.count }}</span>{{ item.suffix }}
+										</h2>
+										{% if item.description %}
+										<p>
+											{{ item.description }}
+										</p>
+										{% endif %}
+									</div>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-share-row">
+						<div class="post-share-inn">
+							<div class="post-share">
+								<ul class="post-share-list">
+									{% if module.right_column.social_share.enable_share_link %}
+										<li class="share-icon">
+											{% set href = module.right_column.social_share.share_link.url.href %}
+											{% if module.right_column.social_share.share_link.url.type is equalto "EMAIL_ADDRESS" %}
+											{% set href = "mailto:" + href %}
+											{% endif %}
+											<a
+												 {% if module.right_column.social_share.share_link.url.type is equalto "CALL_TO_ACTION"  %}
+												 href="{{ href }}" 
+												 {% else %}
+												 href="{{ href|escape_url }}"
+												 {% endif %}
+												 {% if module.right_column.social_share.share_link.open_in_new_tab %}
+												 target="_blank"
+												 {% endif %}
+												 {% if module.right_column.social_share.share_link.rel %}
+												 rel="{{ module.right_column.social_share.share_link.rel|escape_attr }}"
+												 {% endif %}
+												 >
+											  <img src="{{ get_asset_url('../../images/share.png') }}" alt="Share">
+											</a>
+										</li>
+									{% endif %}
+									{% if module.right_column.social_share.enable_email %}
+									<li>
+										<a href="mailto:?subject={{content.absolute_url}}" target="_blank">
+											<img src="{{ get_asset_url('../../images/Email.png') }}" alt="Email">
+										</a>
+									</li>
+									{% endif %}
+									{% if module.right_column.social_share.enable_twitter %}
+									<li>
+										<a href="https://twitter.com/intent/tweet?url={{content.absolute_url}}&text={{ content.name|striptags }}" target="_blank">
+											<img src="{{ get_asset_url('../../images/X-icon.png') }}" alt="Twitter">
+										</a>
+									</li>
+									{% endif %}
+									{% if module.right_column.social_share.enable_linkedin %}
+									<li>
+										<a href="http://www.linkedin.com/shareArticle?mini=true&url={{ content.absolute_url }}&text={{ content.name|striptags }}" target="_blank">
+											<img src="{{ get_asset_url('../../images/linkedin-dark.png') }}" alt="Linkedin">
+										</a>
+									</li>
+									{% endif %}
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+</section>
+
+{% require_js %}
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		const counters = document.querySelectorAll(".{{name}} .count2");
+		const updateCount = (counter, target) => {
+			let count = 0;
+			const duration = 12000;
+			const increment = target / (duration / 100);
+			const step = () => {
+				count = Math.ceil(count + increment);
+				counter.textContent = count;
+
+				if (count < target) {
+					requestAnimationFrame(step);
+				} else {
+					counter.textContent = target;
+				}
+			};
+			requestAnimationFrame(step);
+		};
+
+		// IntersectionObserver to detect when the counter element is in view
+		const observer = new IntersectionObserver((entries, observer) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					const counter = entry.target;
+					const targetValue = parseInt(counter.textContent, 10);
+					if (!counter.hasAttribute('data-counted')) {
+						updateCount(counter, targetValue);
+						counter.setAttribute('data-counted', true);
+					}
+					observer.unobserve(counter);
+				}
+			});
+		}, { threshold: 0.5 });
+		counters.forEach(counter => {
+			observer.observe(counter);
+		});
+	});
+
+</script>
+
+{% end_require_js %}
+
+

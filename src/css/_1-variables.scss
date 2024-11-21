@@ -1,4 +1,15 @@
 // Colors - For transparency use rgba($action1, 0.5) = 50% opaque
+
+$sectionbg: #f5f1e8;
+$basecolor: #3d3533;
+$bodyColor: $basecolor;
+$dark: $basecolor;
+$yellowColor: #fef76c;
+$greybg: #f7f6f2;
+$lightGray: #e2ddd2;
+$darkGray: #7c7665;
+$LightPink: #fd807c;
+$dividercolor: #574d4a;
 $action1: #733bf7;
 $action2: #00a4bd;
 $black: #000000;
@@ -6,12 +17,24 @@ $white: #fff;
 $gray1: #edf0f2;
 $gray2: #cbd6e2;
 $gray3: #7c98b6;
-$sectionbg: #f5f1e8;
-$basecolor: #3d3533;
+
+$gray4: $lightGray;
+$gray5: $darkGray;
+$gray6: #7e7867;
+$sidebarplaceholder: #b6b0a2;
+$tagcolor: #746c60;
 $gradient1: linear-gradient(-45deg, $black 0%, $action2 50%);
 $font1: "Neue Haas Grotesk Text Pro";
+
+$fontHelvetica: "Helvetica";
+$fontRobot: "Roboto";
+
 $baseFontSize: 14rem;
 $baseLineHeight: 1.55; // Golden ratio
+$baseFontSize2: 12rem;
+$baseLineHeight2: 1.58333333;
+$baseFontSize3: 14rem;
+$baseLineHeight3: 1.5;
 // Border Radius
 $border1: 4rem;
 $border2: 5rem;
@@ -21,7 +44,10 @@ $shadow1: 0rem 1rem 12rem 0 rgba($black, 0.1);
 $shadow2: 0 5rem 25rem 0 rgba($black, 0.2);
 $shadow3: 0 10rem 50rem 0 rgba($black, 0.3);
 $textShadow1: 0 0 4rem rgba($black, 0.3);
+$shadow4: 0px 4px 20px rgba($black, 0.25);
 // Animation
 $animation1: 0.1s ease-in;
 $animation2: 0.25s ease-in;
 $animation3: 1s ease-in;
+
+$borderRadius: 12rem;

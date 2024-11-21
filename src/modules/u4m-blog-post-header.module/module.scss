@@ -1,0 +1,36 @@
+@import "../../css/_module-imports";
+
+section.u4m-blog-post-header {
+  padding-bottom: 75px;
+  .post-tag {
+    margin-bottom: 25px;
+    a {
+      color: inherit;
+      &:not(:first-child) {
+        margin-left: 5px;
+      }
+    }
+  }
+  .post-meta {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+    .author-img {
+      margin-right: 20px;
+      img {
+        width: 60px;
+        border-radius: 100%;
+      }
+    }
+    .author-name {
+      .author-link {
+        color: inherit;
+      }
+    }
+  }
+  .featured-img {
+    img {
+      width: 100%;
+    }
+  }
+}

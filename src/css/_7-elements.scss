@@ -24,6 +24,12 @@ body {
   font-weight: normal;
 }
 
+@mixin bodyContent {
+  font-size: $baseFontSize;
+  line-height: $baseLineHeight;
+  font-family: $font2;
+}
+
 body.lp-sign-up {
   margin-top: 0;
 }
@@ -62,14 +68,7 @@ h5 {
 h6 {
   @include h6;
 }
-.page-center,
-.dnd-section > .row-fluid {
-  @include center;
-}
-.dnd-section {
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
+
 @font-face {
   font-family: "Neue Haas Grotesk Text Pro";
   src:
@@ -328,9 +327,6 @@ div#hs-eu-cookie-confirmation.hs-cookie-notification-position-bottom.can-use-gra
 }
 
 // default p size
-p {
-  @include b3;
-}
 
 a {
   @include link;
@@ -507,3 +503,65 @@ a[href="javascript:;"] {
 section[class*="u4m-"] {
   scroll-margin-top: 150px;
 }
+
+.sectionbg {
+  background-color: $sectionbg;
+}
+
+.basecolor {
+  background-color: $basecolor;
+}
+
+.yellowColor,
+.yellow {
+  background-color: $yellowColor;
+}
+
+.lightGray {
+  background-color: $lightGray;
+}
+.darkGray {
+  background-color: $darkGray;
+}
+.light_pink {
+  background-color: $LightPink;
+}
+.brown {
+  background-color: $basecolor;
+}
+.grey {
+  background-color: $sectionbg;
+}
+.light_grey {
+  background-color: $greybg;
+}
+.reverse-text,
+.white {
+  color: $white;
+}
+
+.white_bg {
+  background-color: $white;
+}
+
+//
+
+.hs-button,
+.primary {
+  @include button;
+}
+.secondary {
+  @include secondary;
+}
+.tertiary {
+  @include tertiary;
+}
+.quaternary {
+  @include quaternary;
+}
+section {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+ 

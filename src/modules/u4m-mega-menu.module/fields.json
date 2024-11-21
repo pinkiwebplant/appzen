@@ -1,0 +1,1481 @@
+[ {
+  "id" : "ff658b8d-b4fc-b1c4-48c7-00f96b62142e",
+  "name" : "mega_menu",
+  "display_width" : null,
+  "label" : "Mega Menu",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "25f53046-0722-acd4-c52f-2757c1e33430",
+    "default" : 4
+  },
+  "children" : [ {
+    "id" : "25f53046-0722-acd4-c52f-2757c1e33430",
+    "name" : "menu_text",
+    "display_width" : null,
+    "label" : "Menu Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Platform"
+  }, {
+    "id" : "e5388399-185a-98a7-4e55-857dfa220d7e",
+    "name" : "menu_link",
+    "display_width" : null,
+    "label" : "Menu Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "67a86f0e-8ff3-0318-790f-639a6c1c18da",
+    "name" : "enable_child_menu",
+    "display_width" : null,
+    "label" : "Enable Child Menu",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
+  }, {
+    "id" : "e5f64d73-0936-bc1a-64a9-855aa5d2268e",
+    "name" : "menu_type",
+    "display_width" : null,
+    "label" : "Menu Type",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "mega_menu.enable_child_menu",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "tw", "Two Column" ], [ "fw", "Full Width" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "fw"
+  }, {
+    "id" : "31e544ce-e2bf-8454-4efe-1a3c3a300fca",
+    "name" : "child_menu",
+    "display_width" : null,
+    "label" : "Child Menu",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 3
+    },
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "mega_menu.enable_child_menu",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "6f006b6b-f07c-e943-7a8e-3eb8c3e18923",
+      "name" : "content_type",
+      "display_width" : null,
+      "label" : "Content Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "menu", "Menu" ], [ "blog", "Blog" ], [ "hubdb", "Hubdb" ], [ "card", "Card" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "menu"
+    }, {
+      "id" : "8d2c53ee-c807-4541-288d-ef729a46f78c",
+      "name" : "title",
+      "display_width" : null,
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "mega_menu.child_menu.content_type",
+        "controlling_value_regex" : "menu|blog|hubdb|card",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Accounts payable"
+    }, {
+      "id" : "6acdc9cb-0f4e-c1cd-4fc0-0aea9c10defe",
+      "name" : "menu_group",
+      "display_width" : null,
+      "label" : "Menu Group",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "mega_menu.child_menu.content_type",
+        "controlling_value_regex" : "menu",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "ddd90a38-c979-ec01-6418-b89539cffc4b",
+        "name" : "menu_items",
+        "display_width" : null,
+        "label" : "Menu Items",
+        "required" : false,
+        "locked" : false,
+        "occurrence" : {
+          "min" : null,
+          "max" : null,
+          "sorting_label_field" : "591040f5-5865-0bf0-7ba9-129bbbdc3a0d",
+          "default" : 2
+        },
+        "children" : [ {
+          "id" : "591040f5-5865-0bf0-7ba9-129bbbdc3a0d",
+          "name" : "menu_text",
+          "display_width" : null,
+          "label" : "Menu Text",
+          "required" : false,
+          "locked" : false,
+          "validation_regex" : "",
+          "allow_new_line" : false,
+          "show_emoji_picker" : false,
+          "type" : "text",
+          "default" : "Autonomous AP"
+        }, {
+          "id" : "7e32d7b8-2de4-6183-1f5b-044f0ee080f8",
+          "name" : "menu_link",
+          "display_width" : null,
+          "label" : "Menu Link",
+          "required" : false,
+          "locked" : false,
+          "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
+          "show_advanced_rel_options" : false,
+          "type" : "link",
+          "default" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "id" : "3b533892-5c48-da10-3961-9174db2893cf",
+          "name" : "add_description",
+          "display_width" : null,
+          "label" : "Add Description",
+          "required" : false,
+          "locked" : false,
+          "display" : "checkbox",
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "id" : "af0dd6e1-3d56-6335-4df7-da262afabe7c",
+          "name" : "description",
+          "display_width" : null,
+          "label" : "Description",
+          "required" : false,
+          "locked" : false,
+          "validation_regex" : "",
+          "visibility" : {
+            "controlling_field" : null,
+            "controlling_field_path" : "mega_menu.child_menu.menu_group.menu_items.add_description",
+            "controlling_value_regex" : "true",
+            "property" : null,
+            "operator" : "EQUAL",
+            "access" : null
+          },
+          "allow_new_line" : false,
+          "show_emoji_picker" : false,
+          "type" : "text",
+          "default" : "Automate your accounts payable workflow"
+        } ],
+        "tab" : "CONTENT",
+        "expanded" : false,
+        "group_occurrence_meta" : null,
+        "type" : "group",
+        "default" : [ {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        }, {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        } ]
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "default" : {
+        "menu_items" : [ {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        }, {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        } ]
+      }
+    }, {
+      "id" : "bc06dec9-4943-cf31-c7bf-ed6103b0be57",
+      "name" : "select_blog",
+      "display_width" : null,
+      "label" : "Select Blog",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "mega_menu.child_menu.content_type",
+        "controlling_value_regex" : "blog",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "blog"
+    }, {
+      "id" : "0a20c13c-6504-2e99-4031-22cf9f4186ee",
+      "name" : "select_hubdb_table",
+      "display_width" : null,
+      "label" : "Select HubDB table",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "mega_menu.child_menu.content_type",
+        "controlling_value_regex" : "hubdb",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "hubdbtable"
+    }, {
+      "id" : "34f018c9-201b-90a5-6e37-b14be1786798",
+      "name" : "hubdb_content_type",
+      "display_width" : null,
+      "label" : "HubDB Content Type",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "mega_menu.child_menu.content_type",
+        "controlling_value_regex" : "hubdb",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "type1", "Type 1" ], [ "type2", "Type 2" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "type1"
+    }, {
+      "id" : "5f88fd7b-1483-15b8-6004-5386de68a8d2",
+      "name" : "card",
+      "display_width" : null,
+      "label" : "Card",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "mega_menu.child_menu.content_type",
+        "controlling_value_regex" : "card",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "81a0c343-ac13-d7a8-fc0e-c7c46f9ac155",
+        "name" : "image",
+        "display_width" : null,
+        "label" : "Image",
+        "required" : false,
+        "locked" : false,
+        "responsive" : true,
+        "resizable" : false,
+        "show_loading" : false,
+        "type" : "image",
+        "default" : {
+          "size_type" : "auto",
+          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "alt" : "Getty Images",
+          "loading" : "lazy",
+          "width" : 666,
+          "height" : 794,
+          "max_width" : 666,
+          "max_height" : 794
+        }
+      }, {
+        "id" : "126cbe50-5a73-72a3-a24c-d48a6b8faa52",
+        "name" : "title",
+        "display_width" : null,
+        "label" : "Title",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "Title"
+      }, {
+        "id" : "2a3891ca-05d3-d745-8a5d-980cf987562b",
+        "name" : "content",
+        "display_width" : null,
+        "label" : "Content",
+        "required" : false,
+        "locked" : false,
+        "type" : "richtext",
+        "default" : "<p>Automate your accounts payable workflow</p>"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "default" : {
+        "image" : {
+          "size_type" : "auto",
+          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "alt" : "Getty Images",
+          "loading" : "lazy",
+          "width" : 666,
+          "height" : 794,
+          "max_width" : 666,
+          "max_height" : 794
+        },
+        "title" : "Title",
+        "content" : "<p>Automate your accounts payable workflow</p>"
+      }
+    }, {
+      "id" : "3e192809-9b4f-6193-118c-54342d89d003",
+      "name" : "number_of_posts",
+      "display_width" : null,
+      "label" : "Number Of Posts",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "mega_menu.child_menu.content_type",
+        "controlling_value_regex" : "hubdb|blog",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "display" : "text",
+      "max" : 3,
+      "step" : 1,
+      "type" : "number",
+      "default" : 3
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : [ {
+      "content_type" : "menu",
+      "title" : "Accounts payable",
+      "menu_group" : {
+        "title" : "Accounts payable",
+        "menu_items" : [ {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        }, {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        } ]
+      },
+      "hubdb_content_type" : "type1",
+      "card" : {
+        "image" : {
+          "size_type" : "auto",
+          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "alt" : "Getty Images",
+          "loading" : "lazy",
+          "width" : 666,
+          "height" : 794,
+          "max_width" : 666,
+          "max_height" : 794
+        },
+        "content" : "<p>Automate your accounts payable workflow</p>",
+        "title" : "Title"
+      },
+      "number_of_posts" : 3
+    }, {
+      "content_type" : "menu",
+      "title" : "Accounts payable",
+      "menu_group" : {
+        "title" : "Accounts payable",
+        "menu_items" : [ {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        }, {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        } ]
+      },
+      "hubdb_content_type" : "type1",
+      "card" : {
+        "image" : {
+          "size_type" : "auto",
+          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "alt" : "Getty Images",
+          "loading" : "lazy",
+          "width" : 666,
+          "height" : 794,
+          "max_width" : 666,
+          "max_height" : 794
+        },
+        "content" : "<p>Automate your accounts payable workflow</p>",
+        "title" : "Title"
+      },
+      "number_of_posts" : 3
+    }, {
+      "content_type" : "menu",
+      "title" : "Accounts payable",
+      "menu_group" : {
+        "title" : "Accounts payable",
+        "menu_items" : [ {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        }, {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        } ]
+      },
+      "hubdb_content_type" : "type1",
+      "card" : {
+        "image" : {
+          "size_type" : "auto",
+          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "alt" : "Getty Images",
+          "loading" : "lazy",
+          "width" : 666,
+          "height" : 794,
+          "max_width" : 666,
+          "max_height" : 794
+        },
+        "content" : "<p>Automate your accounts payable workflow</p>",
+        "title" : "Title"
+      },
+      "number_of_posts" : 3
+    } ]
+  }, {
+    "id" : "0754c0b7-6e81-4232-bc60-b4265adab575",
+    "name" : "bottom_section",
+    "display_width" : null,
+    "label" : "Bottom Section",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "mega_menu.menu_type",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "29f3183d-690d-c865-3234-d095f1baf2ca",
+      "name" : "items",
+      "display_width" : null,
+      "label" : "Items",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : null,
+        "sorting_label_field" : "393ebf64-48fb-a3cf-e1dc-19dffc74840a",
+        "default" : 2
+      },
+      "children" : [ {
+        "id" : "393ebf64-48fb-a3cf-e1dc-19dffc74840a",
+        "name" : "title",
+        "display_width" : null,
+        "label" : "Title",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "Integrations"
+      }, {
+        "id" : "ee55dcf9-fb12-851a-33fe-70639c4c7ca1",
+        "name" : "description",
+        "display_width" : null,
+        "label" : "Description",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "Seamlessly connect with your existing ERP systems "
+      }, {
+        "id" : "73fc31a7-2d07-2b3c-d188-cda15755ea9e",
+        "name" : "link",
+        "display_width" : null,
+        "label" : "Link",
+        "required" : false,
+        "locked" : false,
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
+        "show_advanced_rel_options" : false,
+        "type" : "link",
+        "default" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "",
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "default" : [ {
+        "title" : "Integrations",
+        "description" : "Seamlessly connect with your existing ERP systems ",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "",
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "title" : "Integrations",
+        "description" : "Seamlessly connect with your existing ERP systems ",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "",
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ]
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "items" : [ {
+        "title" : "Integrations",
+        "description" : "Seamlessly connect with your existing ERP systems ",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "",
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "title" : "Integrations",
+        "description" : "Seamlessly connect with your existing ERP systems ",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "",
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ]
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "menu_text" : "Platform",
+    "menu_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "enable_child_menu" : true,
+    "menu_type" : "fw",
+    "child_menu" : [ {
+      "content_type" : "menu",
+      "title" : "Accounts payable",
+      "menu_group" : {
+        "title" : "Accounts payable",
+        "menu_items" : [ {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        }, {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        } ]
+      },
+      "hubdb_content_type" : "type1",
+      "card" : {
+        "image" : {
+          "size_type" : "auto",
+          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "alt" : "Getty Images",
+          "loading" : "lazy",
+          "width" : 666,
+          "height" : 794,
+          "max_width" : 666,
+          "max_height" : 794
+        },
+        "content" : "<p>Automate your accounts payable workflow</p>",
+        "title" : "Title"
+      },
+      "number_of_posts" : 3
+    }, {
+      "content_type" : "menu",
+      "title" : "Accounts payable",
+      "menu_group" : {
+        "title" : "Accounts payable",
+        "menu_items" : [ {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        }, {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        } ]
+      },
+      "hubdb_content_type" : "type1",
+      "card" : {
+        "image" : {
+          "size_type" : "auto",
+          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "alt" : "Getty Images",
+          "loading" : "lazy",
+          "width" : 666,
+          "height" : 794,
+          "max_width" : 666,
+          "max_height" : 794
+        },
+        "content" : "<p>Automate your accounts payable workflow</p>",
+        "title" : "Title"
+      },
+      "number_of_posts" : 3
+    }, {
+      "content_type" : "menu",
+      "title" : "Accounts payable",
+      "menu_group" : {
+        "title" : "Accounts payable",
+        "menu_items" : [ {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        }, {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        } ]
+      },
+      "hubdb_content_type" : "type1",
+      "card" : {
+        "image" : {
+          "size_type" : "auto",
+          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "alt" : "Getty Images",
+          "loading" : "lazy",
+          "width" : 666,
+          "height" : 794,
+          "max_width" : 666,
+          "max_height" : 794
+        },
+        "content" : "<p>Automate your accounts payable workflow</p>",
+        "title" : "Title"
+      },
+      "number_of_posts" : 3
+    } ],
+    "bottom_section" : {
+      "items" : [ {
+        "title" : "Integrations",
+        "description" : "Seamlessly connect with your existing ERP systems ",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "",
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "title" : "Integrations",
+        "description" : "Seamlessly connect with your existing ERP systems ",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "",
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ]
+    }
+  }, {
+    "menu_text" : "Platform",
+    "menu_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "enable_child_menu" : true,
+    "menu_type" : "fw",
+    "child_menu" : [ {
+      "content_type" : "menu",
+      "title" : "Accounts payable",
+      "menu_group" : {
+        "title" : "Accounts payable",
+        "menu_items" : [ {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        }, {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        } ]
+      },
+      "hubdb_content_type" : "type1",
+      "card" : {
+        "image" : {
+          "size_type" : "auto",
+          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "alt" : "Getty Images",
+          "loading" : "lazy",
+          "width" : 666,
+          "height" : 794,
+          "max_width" : 666,
+          "max_height" : 794
+        },
+        "content" : "<p>Automate your accounts payable workflow</p>",
+        "title" : "Title"
+      },
+      "number_of_posts" : 3
+    }, {
+      "content_type" : "menu",
+      "title" : "Accounts payable",
+      "menu_group" : {
+        "title" : "Accounts payable",
+        "menu_items" : [ {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        }, {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        } ]
+      },
+      "hubdb_content_type" : "type1",
+      "card" : {
+        "image" : {
+          "size_type" : "auto",
+          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "alt" : "Getty Images",
+          "loading" : "lazy",
+          "width" : 666,
+          "height" : 794,
+          "max_width" : 666,
+          "max_height" : 794
+        },
+        "content" : "<p>Automate your accounts payable workflow</p>",
+        "title" : "Title"
+      },
+      "number_of_posts" : 3
+    }, {
+      "content_type" : "menu",
+      "title" : "Accounts payable",
+      "menu_group" : {
+        "title" : "Accounts payable",
+        "menu_items" : [ {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        }, {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        } ]
+      },
+      "hubdb_content_type" : "type1",
+      "card" : {
+        "image" : {
+          "size_type" : "auto",
+          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "alt" : "Getty Images",
+          "loading" : "lazy",
+          "width" : 666,
+          "height" : 794,
+          "max_width" : 666,
+          "max_height" : 794
+        },
+        "content" : "<p>Automate your accounts payable workflow</p>",
+        "title" : "Title"
+      },
+      "number_of_posts" : 3
+    } ],
+    "bottom_section" : {
+      "items" : [ {
+        "title" : "Integrations",
+        "description" : "Seamlessly connect with your existing ERP systems ",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "",
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "title" : "Integrations",
+        "description" : "Seamlessly connect with your existing ERP systems ",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "",
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ]
+    }
+  }, {
+    "menu_text" : "Platform",
+    "menu_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "enable_child_menu" : true,
+    "menu_type" : "fw",
+    "child_menu" : [ {
+      "content_type" : "menu",
+      "title" : "Accounts payable",
+      "menu_group" : {
+        "title" : "Accounts payable",
+        "menu_items" : [ {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        }, {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        } ]
+      },
+      "hubdb_content_type" : "type1",
+      "card" : {
+        "image" : {
+          "size_type" : "auto",
+          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "alt" : "Getty Images",
+          "loading" : "lazy",
+          "width" : 666,
+          "height" : 794,
+          "max_width" : 666,
+          "max_height" : 794
+        },
+        "content" : "<p>Automate your accounts payable workflow</p>",
+        "title" : "Title"
+      },
+      "number_of_posts" : 3
+    }, {
+      "content_type" : "menu",
+      "title" : "Accounts payable",
+      "menu_group" : {
+        "title" : "Accounts payable",
+        "menu_items" : [ {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        }, {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        } ]
+      },
+      "hubdb_content_type" : "type1",
+      "card" : {
+        "image" : {
+          "size_type" : "auto",
+          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "alt" : "Getty Images",
+          "loading" : "lazy",
+          "width" : 666,
+          "height" : 794,
+          "max_width" : 666,
+          "max_height" : 794
+        },
+        "content" : "<p>Automate your accounts payable workflow</p>",
+        "title" : "Title"
+      },
+      "number_of_posts" : 3
+    }, {
+      "content_type" : "menu",
+      "title" : "Accounts payable",
+      "menu_group" : {
+        "title" : "Accounts payable",
+        "menu_items" : [ {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        }, {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        } ]
+      },
+      "hubdb_content_type" : "type1",
+      "card" : {
+        "image" : {
+          "size_type" : "auto",
+          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "alt" : "Getty Images",
+          "loading" : "lazy",
+          "width" : 666,
+          "height" : 794,
+          "max_width" : 666,
+          "max_height" : 794
+        },
+        "content" : "<p>Automate your accounts payable workflow</p>",
+        "title" : "Title"
+      },
+      "number_of_posts" : 3
+    } ],
+    "bottom_section" : {
+      "items" : [ {
+        "title" : "Integrations",
+        "description" : "Seamlessly connect with your existing ERP systems ",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "",
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "title" : "Integrations",
+        "description" : "Seamlessly connect with your existing ERP systems ",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "",
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ]
+    }
+  }, {
+    "menu_text" : "Platform",
+    "menu_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "enable_child_menu" : true,
+    "menu_type" : "fw",
+    "child_menu" : [ {
+      "content_type" : "menu",
+      "title" : "Accounts payable",
+      "menu_group" : {
+        "title" : "Accounts payable",
+        "menu_items" : [ {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        }, {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        } ]
+      },
+      "hubdb_content_type" : "type1",
+      "card" : {
+        "image" : {
+          "size_type" : "auto",
+          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "alt" : "Getty Images",
+          "loading" : "lazy",
+          "width" : 666,
+          "height" : 794,
+          "max_width" : 666,
+          "max_height" : 794
+        },
+        "content" : "<p>Automate your accounts payable workflow</p>",
+        "title" : "Title"
+      },
+      "number_of_posts" : 3
+    }, {
+      "content_type" : "menu",
+      "title" : "Accounts payable",
+      "menu_group" : {
+        "title" : "Accounts payable",
+        "menu_items" : [ {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        }, {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        } ]
+      },
+      "hubdb_content_type" : "type1",
+      "card" : {
+        "image" : {
+          "size_type" : "auto",
+          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "alt" : "Getty Images",
+          "loading" : "lazy",
+          "width" : 666,
+          "height" : 794,
+          "max_width" : 666,
+          "max_height" : 794
+        },
+        "content" : "<p>Automate your accounts payable workflow</p>",
+        "title" : "Title"
+      },
+      "number_of_posts" : 3
+    }, {
+      "content_type" : "menu",
+      "title" : "Accounts payable",
+      "menu_group" : {
+        "title" : "Accounts payable",
+        "menu_items" : [ {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        }, {
+          "menu_text" : "Autonomous AP",
+          "menu_link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          },
+          "add_description" : false,
+          "description" : "Automate your accounts payable workflow"
+        } ]
+      },
+      "hubdb_content_type" : "type1",
+      "card" : {
+        "image" : {
+          "size_type" : "auto",
+          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "alt" : "Getty Images",
+          "loading" : "lazy",
+          "width" : 666,
+          "height" : 794,
+          "max_width" : 666,
+          "max_height" : 794
+        },
+        "content" : "<p>Automate your accounts payable workflow</p>",
+        "title" : "Title"
+      },
+      "number_of_posts" : 3
+    } ],
+    "bottom_section" : {
+      "items" : [ {
+        "title" : "Integrations",
+        "description" : "Seamlessly connect with your existing ERP systems ",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "",
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "title" : "Integrations",
+        "description" : "Seamlessly connect with your existing ERP systems ",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "",
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ]
+    }
+  } ]
+} ]
