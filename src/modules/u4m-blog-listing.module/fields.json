@@ -1,16 +1,346 @@
-[{
-  "id": "665e3202-ab27-e914-a6ec-953790f8fe95",
-  "name": "blog_menu",
-  "label": "Blog Menu",
-  "required": false,
-  "locked": true,
-  "type": "menu",
-  "default": 37302690329
+[ {
+  "id" : "200ba626-e0f7-3ac4-becc-d7f454b99e2e",
+  "name" : "recent_post",
+  "display_width" : null,
+  "label" : "Recent Post",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : true
 }, {
-  "id": "13a57d0f-fe03-f733-b11b-ff2c630e8ce8",
-  "name": "blog_resources_by_topic",
-  "label": "Blog Resources by Topic",
-  "required": false,
-  "locked": true,
-  "type": "hubdbtable"
-}]
+  "id" : "913dd942-0582-4c67-3374-f35a471381cc",
+  "name" : "sidebar_top_text",
+  "display_width" : null,
+  "label" : "Sidebar Top Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "All Blog Posts"
+}, {
+  "id" : "5510aa55-08e8-25ed-c7bc-b9d133fda9b0",
+  "name" : "site_search_boolean",
+  "display_width" : null,
+  "label" : "Site Search",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "f06dcb93-c17f-8f57-13b6-e790c1a3857c",
+  "name" : "site_search",
+  "display_width" : null,
+  "label" : "Site Search",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "site_search_boolean",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "d7644a33-944a-3b21-7faa-133195962602",
+    "name" : "field_label",
+    "display_width" : null,
+    "label" : "Label text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "e75bef76-6568-6550-8840-1d97bfc93c0b",
+    "name" : "placeholder",
+    "display_width" : null,
+    "label" : "Placeholder text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : ""
+  }, {
+    "id" : "132b5655-eccf-c251-9ed4-d04901e91987",
+    "name" : "include_search_button",
+    "display_width" : null,
+    "label" : "Include search button",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
+  }, {
+    "id" : "results",
+    "name" : "results",
+    "display_width" : null,
+    "label" : "Results",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "results.user_custom_search_results_template",
+      "name" : "use_custom_search_results_template",
+      "display_width" : null,
+      "label" : "Use custom search results page",
+      "inline_help_text" : "Turn this setting on to use a custom search results page instead of the default global search results page.",
+      "required" : false,
+      "locked" : false,
+      "display" : "toggle",
+      "type" : "boolean",
+      "default" : false
+    }, {
+      "id" : "results.path_id",
+      "name" : "path_id",
+      "display_width" : null,
+      "label" : "Search results page",
+      "inline_help_text" : "This is where people will go when they click to search their search term. Make sure to choose a page that contains the search results module.",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "results.user_custom_search_results_template",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "page"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "use_custom_search_results_template" : false
+    }
+  }, {
+    "id" : "346180f5-0d36-e8df-aca9-a74bfa2d79a4",
+    "name" : "content_types",
+    "display_width" : null,
+    "label" : "Search results include",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "71d525ff-37c4-6c64-1f96-d99dbb529816",
+      "name" : "website_pages",
+      "display_width" : null,
+      "label" : "Website pages",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : null,
+        "controlling_value_regex" : null,
+        "property" : null,
+        "operator" : "NOT_EMPTY",
+        "access" : {
+          "operator" : "HAS_ALL",
+          "scopes" : [ "sitepages-access" ]
+        }
+      },
+      "display" : "checkbox",
+      "type" : "boolean",
+      "default" : true
+    }, {
+      "id" : "d6212113-19b5-c9b9-2f92-12dfc122d00c",
+      "name" : "landing_pages",
+      "display_width" : null,
+      "label" : "Landing pages",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "default" : false
+    }, {
+      "id" : "7535615c-ed26-2e34-87ef-21c5c87ccbcb",
+      "name" : "blog_posts",
+      "display_width" : null,
+      "label" : "Blog posts",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "default" : true
+    }, {
+      "id" : "307d0eed-0cf9-7465-5715-a75c378ec61f",
+      "name" : "knowledge_articles",
+      "display_width" : null,
+      "label" : "Knowledge articles",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : null,
+        "controlling_value_regex" : null,
+        "property" : null,
+        "operator" : null,
+        "access" : {
+          "operator" : "HAS_ALL",
+          "scopes" : [ "service-knowledge-access" ]
+        }
+      },
+      "display" : "checkbox",
+      "type" : "boolean",
+      "default" : false
+    }, {
+      "id" : "content_types.case_studies",
+      "name" : "case_studies",
+      "display_width" : null,
+      "label" : "Case studies",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : null,
+        "controlling_value_regex" : null,
+        "property" : null,
+        "operator" : null,
+        "access" : {
+          "operator" : "HAS_ALL",
+          "scopes" : [ "case-study-access" ]
+        }
+      },
+      "display" : "checkbox",
+      "type" : "boolean",
+      "default" : false
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "website_pages" : true,
+      "landing_pages" : false,
+      "blog_posts" : true,
+      "knowledge_articles" : false,
+      "case_studies" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "placeholder" : "",
+    "include_search_button" : false,
+    "results" : {
+      "use_custom_search_results_template" : false
+    },
+    "content_types" : {
+      "website_pages" : true,
+      "landing_pages" : false,
+      "blog_posts" : true,
+      "knowledge_articles" : false,
+      "case_studies" : false
+    }
+  }
+}, {
+  "id" : "b9b03eb3-57d5-f016-32b5-e390fe869208",
+  "name" : "form",
+  "display_width" : null,
+  "label" : "Form",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "02282d24-c7ae-8dae-ce1f-5470e7269e46",
+    "name" : "form_title",
+    "display_width" : null,
+    "label" : "Form Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Subscribe to newsletter"
+  }, {
+    "id" : "27317412-4731-4f4e-9eca-d200d2775cd1",
+    "name" : "form",
+    "display_width" : null,
+    "label" : "Form",
+    "required" : false,
+    "locked" : false,
+    "type" : "form",
+    "default" : {
+      "form_id" : "22e56c99-1562-4318-8475-99f4a3009e15",
+      "response_type" : "inline",
+      "message" : "Thanks for submitting the form.",
+      "gotowebinar_webinar_key" : null,
+      "webinar_id" : null,
+      "webinar_source" : null,
+      "form_type" : "HUBSPOT"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "form_title" : "Subscribe to newsletter",
+    "form" : {
+      "form_id" : "22e56c99-1562-4318-8475-99f4a3009e15",
+      "response_type" : "inline",
+      "message" : "Thanks for submitting the form.",
+      "gotowebinar_webinar_key" : null,
+      "webinar_id" : null,
+      "webinar_source" : null,
+      "form_type" : "HUBSPOT"
+    }
+  }
+}, {
+  "id" : "77b8c171-b26c-db78-4d85-689e5e0c3671",
+  "name" : "post_item",
+  "display_width" : null,
+  "label" : "Post Item",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "8096bb6f-4724-758a-fa8d-8d0c63f035ff",
+    "name" : "post_title",
+    "display_width" : null,
+    "label" : "Post Title",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
+  }, {
+    "id" : "c3307075-93d4-378a-5eda-67c69a8f2fad",
+    "name" : "tag",
+    "display_width" : null,
+    "label" : "Tag",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
+  }, {
+    "id" : "75fa70b6-40dd-b007-735d-788c763c4724",
+    "name" : "arrow",
+    "display_width" : null,
+    "label" : "Arrow",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "post_title" : true,
+    "tag" : true,
+    "arrow" : true,
+    "description" : true
+  }
+} ]

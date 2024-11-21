@@ -1,472 +1,294 @@
 @import "../../css/_module-imports";
 
 section.u4m-blog-listing {
-  div.hero {
-    padding-top: 150rem;
-
-    h1.heading {
-      @include h1;
-      text-align: center;
-
-      body.author-listing & {
-        padding-bottom: 50rem;
-
-        .blog-title {
-          @include h4;
-          margin-bottom: 0;
+  padding-top: 60px;
+  .hs-search-field {
+    position: relative;
+    form {
+      margin-bottom: 12px;
+      position: relative;
+    }
+    button {
+      padding: 0;
+      background: transparent;
+      border: 0;
+      outline: none;
+    }
+    .hs-search-field__bar {
+      &.search-open {
+        .hs-search-field__input {
           display: block;
         }
-      }
-    }
-
-    div.wrapper {
-      @include center;
-      max-width: 1200rem;
-      margin: 0 auto;
-      margin-bottom: 50rem;
-
-      &.none {
-        display: none;
-      }
-
-      @include phone {
-        display: block;
-      }
-
-      body.author-listing &,
-      body.archive & {
-        display: none;
-      }
-
-      div.card {
-        @include featuredCard;
-
-        div.content {
-          .heading {
-            margin-bottom: 10rem;
-          }
-
-          div.read-time,
-          span.date {
-            @include b5;
-            text-transform: uppercase;
-          }
+        button {
+          position: absolute;
+          top: 0;
+          right: 5px;
+          height: 32px;
         }
       }
     }
   }
-
-  /*****************************************/
-  /* div.filter                            */
-  /*****************************************/
-  div.filter {
-    margin: 30rem 0;
-
-    body.author-listing & {
-      display: none;
-    }
-
-    div.mobile-menu {
-      display: none;
-      padding: 0 20rem;
-
-      @include tabletvert {
-        display: block;
-
-        select.menu-wrap {
-          border: 0;
-          border: 0;
-          border-radius: 4rem;
-          margin-top: 2rem;
-          margin-bottom: 20rem;
-          font-size: 16rem; // Note anything below 16rem will trigger the zoom feature on iOS
-          appearance: none;
-          background: url('//cdn2.hubspot.net/hubfs/302335/select-arrow.png') no-repeat;
-          background-size: 13rem 8rem;
-          background-position: 97% 51%;
-          border: 0;
-          border-radius: $border1;
-          margin-top: 2rem;
-          margin-bottom: 0;
-          font-size: 16rem; // Note anything below 16rem will trigger the zoom feature on iOS
-          background-color: $gray1;
-          padding: 10rem;
-          // Note anything below 16rem will trigger the zoom feature on iOS
-        }
-      }
-    }
-
-    div.menu {
-      @include center;
-      text-align: center;
-      padding-top: 2rem;
-
-      @include tabletvert {
-        &:not(.dynamic) {
-          display: none;
-        }
-      }
-
-      div.hs-menu-wrapper.hs-menu-flow-horizontal {
-        ul li a {
-          @include buttonSmall;
-          overflow: visible;
-          max-width: none;
-          background-color: $gray3;
-          margin-right: 21rem;
-          margin-bottom: 0;
-
-          @include tablet {
-            margin-right: 10rem;
-            padding: 10rem 10rem 9rem 10rem;
-            font-size: 14rem;
-          }
-
-          @include phone {
-            width: calc(50% - 13rem);
-            display: inline-block;
-            margin: 5rem;
-
-            &:last-child {
-              width: calc(100% - 13rem);
-            }
-          }
-
-          &:hover {
-            background-color: $black;
-          }
-        }
-
-        ul li.active a {
-          background-color: $black;
-        }
-
-        ul li:first-child.active a {
-          background-color: $gray3;
-          color: $white;
-        }
-
-        body:not(.topic) & ul li.active a {
-          background-color: $black;
-          color: $white;
-        }
-
-        ul {
-          padding: 0;
-          margin: 0;
-          line-height: normal;
-        }
-
-        li {
-          margin: 0;
-        }
-
-        ul ul li {
-          text-align: left;
-
-          @include phone {
-            text-align: center;
-          }
-
-          a {
-            @include b4;
-            margin: 0 15rem 20rem 15rem;
-          }
-        }
-
-        ul.hs-menu-children-wrapper {
-          padding-top: 20rem;
-          background-color: $white;
-        }
-
-        li.hs-menu-depth-2 .hs-menu-children-wrapper {
-          padding-top: 0;
-        }
-      }
-
-      /* Carret after Menu items with dropdown */
-      li.hs-menu-depth-1.hs-item-has-children>a:after {
-        position: relative;
-        top: -2rem;
-        content: "▼";
-        display: inline-block;
-        margin-left: 7rem;
-        font-size: 15rem;
-        font-weight: bold;
-      }
-
-      li.hs-menu-depth-2.hs-item-has-children>a:after {
-        position: relative;
-        top: 0;
-        content: ">";
-        margin-left: 7rem;
-        font-size: 15rem;
-      }
-
-      &.dynamic {
-        ul {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          justify-content: center;
-          list-style: none;
-          padding: 0;
-
-          li {
-            margin: 0 10px 10px;
-
-            a {
-              @include buttonSmall;
-              margin: 0;
-            }
-          }
-        }
-      }
-    }
+  .hs-search-field__input {
+    box-sizing: border-box;
+    width: 100%;
+    display: none;
+    border: 1px solid $lightGray;
+    border-radius: 8px;
+    padding-right: 30px;
+    outline: none;
   }
-
-  /*****************************************/
-  /* display: .author;                     */
-  /*****************************************/
-  div.author {
-    background-color: $gray1;
-    padding: 50rem 0;
-    margin-bottom: 80rem;
-
-    div.inner {
-      @include center;
-      max-width: 1160rem;
-      display: flex;
-      align-items: center;
-
-      @include phone {
-        display: block;
-      }
-
-      h2.name {}
-
-      div.avatar {
-        background-size: cover;
-        width: 300rem;
-        height: 300rem;
-        background-position: 50% 50%;
-        border-radius: 50%;
-        flex: 0 0 300rem;
-
-        @include phone {
-          width: 200rem;
-          height: 200rem;
-          margin: 0 auto 30rem auto;
-        }
-      }
-
-      .blog-author-text {
-        margin-left: 85rem;
-
-        @include phone {
-          margin: 0;
-        }
-      }
-
-      .header {
-        @include h5;
-      }
-
-      p.bio {
-        @include b4;
-      }
-
-      div.social {
-        a {
-          font-size: 24rem;
-          margin-right: 10rem;
-
-          svg {
-            fill: $black;
-          }
-
-          &:hover {
-            svg {
-              fill: $action1;
-            }
-          }
-        }
-      }
-    }
+  .hs-search-field__bar button svg {
+    width: 24px;
+    vertical-align: middle;
   }
-
-  /*****************************************/
-  /* div.posts             */
-  /*****************************************/
-  div.posts {
-    @include center;
-    max-width: 1200rem;
+  .hs-search-field__suggestions {
+    margin: 0;
     padding: 0;
+    list-style: none;
+  }
+  .hs-search-field--open .hs-search-field__suggestions {
+    border: 1px solid #000;
+  }
+  .hs-search-field__suggestions li {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+  .hs-search-field__suggestions #results-for {
+    font-weight: bold;
+  }
+  .hs-search-field__suggestions a,
+  .hs-search-field__suggestions #results-for {
+    display: block;
+  }
+  .hs-search-field__suggestions a:hover,
+  .hs-search-field__suggestions a:focus {
+    background-color: rgba(0, 0, 0, 0.1);
+    outline: none;
+  }
+  .blog-pagination {
+    display: block !important;
+    width: 100%;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    @include tabletvert {
+      padding: 0px;
+    }
+    a {
+      display: inline-block;
+      padding: 15px 20px;
+      border: 1px solid $lightGray;
+      color: inherit;
+      border-radius: 4px;
+    }
+  }
+  .blog-pagination {
+    .no-post {
+      display: none;
+    }
+  }
+  .listing-title {
+    max-width: 720px;
+    padding-bottom: 60px;
+    h1 {
+      margin: 0;
+    }
+  }
+  .blog-large-post-wrap {
+    padding-bottom: 90px;
+  }
+  .post-item.large-post {
     display: flex;
     flex-wrap: wrap;
-
-    @include phone {
-      display: block;
-      padding: 0 20rem;
+    column-gap: 100px;
+    align-items: center;
+    @include tabletvert {
+      column-gap: 0;
     }
-
-    a.blog-post-card {
-      @include blogCard;
-    }
-
-    .resource-card {
-      flex: 0 0 100%;
-      margin: 100rem 0;
-      padding: 50rem 20rem;
-      position: relative;
-      //height: 300rem;
-      overflow: visible;
-
-      @include phone {
-        padding: 30rem 0;
+    .post-featured-img {
+      width: calc(55% - 50px);
+      @include tabletvert {
+        width: 100%;
+        margin-bottom: 20px;
       }
-
-      &:after {
-        content: '';
-        position: absolute;
-        height: 100%;
-        width: 1920rem;
-        z-index: 0;
-        top: 0;
-        background-color: $gray1;
-        right: 50%;
-        transform: translateX(50%);
-      }
-
-      a {
-        position: relative;
-        z-index: 10;
-        display: flex;
-        flex-wrap: nowrap;
-        height: 100%;
-        align-items: center;
-
-        @include phone {
-          display: block;
-        }
-
-        .image {
-          flex: 0 0 300rem;
-          height: 100%;
-          margin-right: 50rem;
-          background-size: cover;
-          background-position: 50%;
-
-          @include phone {
-            height: 300rem;
-            margin: 0 auto 30rem auto;
-          }
-        }
-
-        .content {
-
-          h2,
-          span,
-          p {
-            color: $black;
-          }
-
-          span.type {
-            display: block;
-            @include b3;
-            margin-bottom: 0;
-            text-transform: uppercase;
-          }
-
-          h2.title {
-            @include h2;
-            margin-top: 0;
-          }
-
-          p {
-            @include b2;
-          }
-
-          span.link {
-            @include buttonSmall;
-          }
-        }
+      img {
+        width: 100%;
+        border-radius: 8px;
       }
     }
-  }
 
-  /********************************************/
-  /* .pagination-standard */
-  /********************************************/
-  div.pagination-standard {
-    text-align: center;
-    margin-top: 50rem;
-    margin-bottom: 100rem;
-
-    ul.pages {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      li {
-        background: none;
-        display: inline-block;
-        list-style: none;
-        background-image: none;
-
+    .post-content-col {
+      width: calc(45% - 50px);
+      @include tabletvert {
+        width: 100%;
+      }
+      .content-topic {
+        padding-bottom: 12px;
+        a.topic-link {
+          color: $tagcolor;
+          font-weight: 500;
+          font-size: $baseFontSize2;
+          text-transform: capitalize;
+        }
+      }
+      .post-title {
+        margin-bottom: 15px;
         a {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          margin: 0 5rem;
-          color: $black;
-          min-height: 55rem;
-          min-width: 55rem;
-          padding: 0;
-          background-color: $gray1;
-          font-weight: bold;
-
-          @include phone {
-            min-height: 35rem;
-            min-width: 35rem;
-          }
-
-          &:hover {
-            color: $white;
-            background-color: $action1;
-          }
-
+          color: inherit;
         }
-
-        &.disabled {
-          a {
-            display: none;
-          }
-        }
-
-        &.active {
-          a {
-            color: $white;
-            background-color: $action1;
-          }
+      }
+      .post-item-content {
+        padding-bottom: 28px;
+      }
+      .post-item-link {
+        text-align: right;
+        svg {
+          width: 10px;
+          height: 10px;
         }
       }
     }
   }
-
-  /********************************************/
-  /* .pagination-infinite */
-  /********************************************/
-  div.pagination-infinite {
-    text-align: center;
-
-    a.pagination-infinite_button {
-      @include center;
-      @include button;
-
-      .hide-next & {
-        display: none;
+  .blog-listing-wrap {
+    &::after,
+    &::before {
+      content: "";
+      display: table;
+    }
+    &::after {
+      clear: both;
+    }
+  }
+  .listing-sidebar {
+    max-width: 320px;
+    width: 100%;
+    padding-right: 20px;
+    float: left;
+    position: sticky;
+    top: 46px;
+    @include tabletvert {
+      max-width: 100%;
+      padding-right: 0;
+    }
+    > h6 {
+      margin: 0;
+      padding-bottom: 24px;
+      border-bottom: 1px solid $lightGray;
+      margin-bottom: 25px;
+      font-weight: 400;
+    }
+    .sidebar-tag {
+      margin-bottom: 40px;
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: $baseFontSize3;
+        li {
+          margin: 0;
+          letter-spacing: 0;
+          margin-bottom: 10px;
+          a {
+            display: inline-block;
+            padding: 8px 24px;
+            color: inherit;
+          }
+          &.active a {
+            border: 2px solid $sidebarplaceholder;
+            border-radius: 40px;
+          }
+        }
+      }
+    }
+    .sidebar-form {
+      h6 {
+        margin-bottom: 10px;
+      }
+      .form-title {
+        margin: 0;
+      }
+      form {
+        position: relative;
+        .hs_error_rollup {
+          display: none;
+        }
+        .hs-input {
+          border: 1px solid $lightGray;
+          border-radius: 8px;
+          padding: 20px 16px;
+          line-height: 1.55;
+          outline: none;
+          padding-right: 125px;
+          &::placeholder {
+            color: $sidebarplaceholder;
+          }
+        }
+        .hs-error-msgs {
+          margin: 0;
+          padding-left: 15px;
+          list-style: none;
+          margin-top: 10px;
+        }
+        .hs_submit.hs-submit {
+          position: absolute;
+          top: 0;
+          right: 10px;
+        }
+        .hs-button {
+          margin: 0;
+          margin: 7px 0;
+        }
+      }
+    }
+  }
+  .blog-listing-item-wrap {
+    width: calc(100% - 320px);
+    float: left;
+    padding-top: 46px;
+    @include tabletvert {
+      width: 100%;
+    }
+    .post-item {
+      display: flex;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      @include tabletmid {
+        width: 50%;
+      }
+      @include tabletvert {
+        width: 100%;
+      }
+    }
+    .card_inner {
+      @include cardBase;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      .content-topic {
+        padding-bottom: 12px;
+        a.topic-link {
+          color: $tagcolor;
+          font-size: 12rem;
+          font-weight: 500;
+          text-transform: capitalize;
+          &:not(:first-child) {
+            margin-left: 5px;
+          }
+        }
+      }
+      .post-title {
+        margin-bottom: 15px;
+        a {
+          color: inherit;
+        }
+      }
+      .post-item-link {
+        text-align: right;
+        margin-top: auto;
+        svg {
+          height: 10px;
+          width: 10px;
+        }
       }
     }
   }
