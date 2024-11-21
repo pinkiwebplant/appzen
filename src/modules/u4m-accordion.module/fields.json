@@ -426,7 +426,7 @@
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : "grey"
+      "default" : ""
     }, {
       "id" : "6c8bfd0e-1629-1268-e01c-17b4047ecfce",
       "name" : "background_color",
@@ -482,7 +482,7 @@
     "type" : "group",
     "default" : {
       "background_type" : "color",
-      "select_background_color_type" : "grey",
+      "select_background_color_type" : "",
       "background_color" : {
         "color" : null,
         "opacity" : null
@@ -551,7 +551,7 @@
     "custom_bottom_padding_mobile" : 50,
     "background_settings" : {
       "background_type" : "color",
-      "select_background_color_type" : "grey",
+      "select_background_color_type" : "",
       "background_color" : {
         "color" : null,
         "opacity" : null

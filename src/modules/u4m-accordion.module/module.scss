@@ -29,6 +29,13 @@
 
   .accordion-items {
     padding-top: 40px;
+    .accordion-items-inn {
+      @include tabletmid {
+        .col6 {
+          width: 100%;
+        }
+      }
+    }
   }
 
   .accordion-top-row {
@@ -52,16 +59,7 @@
     }
   }
 
-  .active-item {
-    &.active-item {
-      .toggle-icon {
-        display: block;
-      }
-      .open-icon {
-        display: none;
-      }
-    }
-
+  .accord-item {
     .accord-item-title {
       h4 {
         font-weight: 700;
@@ -69,6 +67,7 @@
         margin-bottom: 20px;
         display: flex;
         align-items: center;
+        cursor: pointer;
         @include size28;
         .item-count {
           line-height: 1.5;
@@ -83,34 +82,56 @@
 
         .item-toggle-icon {
           margin-left: auto;
-          display: contents;
+          width: 38px;
           img {
             width: 28px;
             height: 28px;
+            margin-left: auto;
+            &.toggle-icon {
+              display: block;
+            }
+            &.open-icon {
+              display: none;
+            }
           }
-          .toggle-icon {
-            display: none;
-          }
-          .open-icon {
+          @include tabletmid {
             display: block;
           }
         }
       }
     }
-  }
 
-  .accord-item-content {
-    font-weight: 400;
-    line-height: 1.6;
-    margin-top: 0;
-    margin-bottom: 40px;
-    display: none;
-    @include size18;
-    p:last-child {
-      margin-bottom: 0;
+    &.active-item {
+      .accord-item-title {
+        h4 {
+          .item-toggle-icon {
+            img {
+              &.toggle-icon {
+                display: none;
+              }
+              &.open-icon {
+                display: block;
+              }
+            }
+          }
+        }
+      }
     }
-    &.hide {
+
+    .accord-item-content {
+      font-weight: 400;
+      line-height: 1.6;
+      margin-top: 0;
+      margin-bottom: 40px;
       display: none;
+      padding-left: 35px;
+      @include size18;
+      p:last-child {
+        margin-bottom: 0;
+      }
+      &.hide {
+        display: none;
+      }
     }
   }
 }
