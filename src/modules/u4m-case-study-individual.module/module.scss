@@ -1,0 +1,84 @@
+@import "../../css/_module-imports";
+
+.u4m-case-study-indiviual {
+  position: relative;
+
+  .case_large_list {
+    row-gap: 78px;
+  }
+
+  .case_large_card {
+    position: relative;
+    width: 100%;
+  }
+
+  .case_large_bg {
+    min-height: 800px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    width: calc(100% - 60px);
+    position: relative;
+    @include tabletvert {
+      width: 100%;
+      min-height: 300px;
+      border-radius: 12px 12px 0 0;
+    }
+  }
+
+  .case_large_content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    max-width: 440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include tabletvert {
+      left: auto;
+      max-width: 100%;
+      position: relative;
+      top: auto;
+      height: auto;
+      right: auto;
+      width: 100%;
+    }
+  }
+
+  .inner_content_box {
+    background: #f7f6f2;
+    border-radius: 12px;
+    padding: 48px;
+    padding-top: 75px;
+
+    .card_title h4 {
+      font-size: 40px;
+      margin-bottom: 13px;
+    }
+
+    @include tabletvert {
+      border-radius: 0 0 12px 12px;
+      padding: 30px;
+    }
+  }
+
+  .case_card_meta {
+    margin-top: 117px;
+
+    span {
+      display: block;
+    }
+
+    .price {
+      @include h1;
+      margin-bottom: 5px;
+    }
+  }
+
+  .bottom_btm {
+    position: absolute;
+  }
+}

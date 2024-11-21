@@ -358,3 +358,46 @@
     }
   }
 }
+
+// ========== subsribe form
+
+@mixin sidebar-form {
+  h6 {
+    margin-bottom: 10px;
+  }
+  .form-title {
+    margin: 0;
+  }
+  form {
+    position: relative;
+    .hs_error_rollup {
+      display: none;
+    }
+    .hs-input {
+      border: 1px solid $lightGray;
+      border-radius: 8px;
+      padding: 20px 16px;
+      line-height: 1.55;
+      outline: none;
+      padding-right: 125px;
+      &::placeholder {
+        color: $sidebarplaceholder;
+      }
+    }
+    .hs-error-msgs {
+      margin: 0;
+      padding-left: 15px;
+      list-style: none;
+      margin-top: 10px;
+    }
+    .hs_submit.hs-submit {
+      position: absolute;
+      top: 0;
+      right: 10px;
+    }
+    .hs-button {
+      margin: 0;
+      margin: 7px 0;
+    }
+  }
+}
