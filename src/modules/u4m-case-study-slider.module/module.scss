@@ -1,0 +1,219 @@
+@import "../../css/_module-imports";
+
+.u4m-case-study-slider {
+  background: $basecolor;
+  padding: 58rem 0;
+  .case_large_bg {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 12rem;
+    min-height: 800rem;
+    position: relative;
+    width: 60vw;
+    overflow: hidden;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      background: $black;
+      opacity: 0.5;
+      transition: 0.3s all ease-in-out;
+    }
+    img {
+      display: none;
+    }
+  }
+  .slick-current {
+    .case_large_bg {
+      &:before {
+        opacity: 0;
+      }
+    }
+    .case_logo {
+      filter: none;
+    }
+  }
+  .bg_item {
+    padding: 0 10rem;
+  }
+  .mainSliderWrap {
+    position: relative;
+  }
+  .contentSliderWrap {
+    align-items: flex-start;
+    display: flex;
+    height: 100%;
+    max-width: 440rem;
+    position: absolute;
+    right: 12vw;
+    top: 0;
+    z-index: 99;
+    padding: 46rem 0;
+  }
+  .case_large_card {
+    background: $greybg;
+    border-radius: 12rem;
+    padding: 75rem 48rem 48rem;
+    width: 100%;
+    height: 100%;
+    .card_title {
+      h4 {
+        font-size: 40rem;
+        margin-bottom: 13rem;
+      }
+    }
+  }
+  .case_card_meta {
+    margin-top: auto;
+    span {
+      display: block;
+    }
+    .price {
+      font-family: $font1;
+      font-size: 78rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 5rem;
+      margin-top: 0;
+    }
+    div {
+      margin-top: 20rem;
+    }
+  }
+  .case_card_intro {
+    margin-bottom: 30rem;
+  }
+  .inner_content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .thumbSliderWrap {
+    .page-center {
+      max-width: 1120rem;
+    }
+  }
+  .case_logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20rem 10rem;
+    filter: brightness(0.5) grayscale(0);
+    min-height: 100%;
+    height: 120rem;
+    transition: all 0.3s ease-in-out;
+    img {
+      display: block;
+    }
+  }
+  .case_large_card > div,
+  .case_large_card > div > div,
+  .case_large_content,
+  .inner_content_box {
+    height: 100%;
+  }
+  .thumbSliderWrap {
+    padding-top: 30rem;
+  }
+
+  @include tablet {
+    .case_card_meta {
+      .price {
+        font-size: 48rem;
+      }
+    }
+    .contentSliderWrap {
+      align-items: center;
+    }
+    .case_large_card {
+      padding: 30rem;
+    }
+    .case_large_bg {
+      min-height: 70vh;
+    }
+    .inner_content {
+      height: 100%;
+    }
+  }
+
+  @include tabletvert {
+    .case_large_bg {
+      width: 80vw;
+    }
+    .contentSliderWrap {
+      right: 4vw;
+    }
+    .case_card_intro {
+      margin-bottom: 0;
+    }
+    .case_large_card {
+      .card_title {
+        h4 {
+          font-size: 30rem;
+        }
+      }
+    }
+    .inner_content_box {
+      overflow-y: auto;
+    }
+    .case_card_meta {
+      .price {
+        font-size: 38rem;
+        margin-bottom: 20rem;
+      }
+    }
+  }
+
+  @include phone {
+    .case_large_bg {
+      width: calc(100vw - 50rem);
+      min-height: 400rem;
+    }
+    .contentSliderWrap {
+      position: static;
+      padding: 0;
+      margin: -150rem auto 0;
+      max-width: calc(100vw - 70rem);
+      height: auto;
+    }
+    .case_large_card {
+      height: auto;
+      padding: 20rem;
+      .card_title {
+        h4 {
+          font-size: 24rem;
+        }
+      }
+    }
+    .bg_item {
+      padding: 0 5rem;
+    }
+    .case_card_meta {
+      .price {
+        font-size: 30rem;
+        margin-bottom: 10rem;
+      }
+      div {
+        margin-top: 0;
+        a {
+          &.secondary {
+            &.hs-button {
+              padding: 10rem;
+            }
+          }
+        }
+      }
+      .case_large_card > div,
+      .case_large_card > div > div,
+      .case_large_content,
+      .inner_content_box {
+        height: auto;
+      }
+    }
+  }
+}
