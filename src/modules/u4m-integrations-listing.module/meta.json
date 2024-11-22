@@ -5,9 +5,9 @@
   "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
   "module_id" : 183058409593,
   "js_assets" : [ {
-    "url" : "https://cdn2.hubspot.net/hubfs/302335/unified3/libraries/slick.min.js",
     "autoload" : true,
-    "name" : "slick.min.js"
+    "path" : "../../js/slick.js",
+    "name" : "slick.js"
   } ],
   "label" : "Integrations Listing",
   "is_available_for_new_content" : true

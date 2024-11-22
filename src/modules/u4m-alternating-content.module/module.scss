@@ -2,6 +2,7 @@
 
 .u4m-alternating-content-one {
   @include center;
+  border-radius: $borderRadius;
   .page-center {
     display: flex;
     flex-direction: column;
