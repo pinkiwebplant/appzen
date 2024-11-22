@@ -2,6 +2,10 @@
 
 section.u4m-case-study-listing {
   position: relative;
+  .noText {
+    font-size: 20rem;
+    margin: 0;
+  }
   .filter_sidebar {
     width: 150px;
     max-width: 100%;

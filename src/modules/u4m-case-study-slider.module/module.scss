@@ -217,12 +217,12 @@
           }
         }
       }
-      .case_large_card > div,
-      .case_large_card > div > div,
-      .case_large_content,
-      .inner_content_box {
-        height: auto;
-      }
+    }
+    .case_large_card > div,
+    .case_large_card > div > div,
+    .case_large_content,
+    .inner_content_box {
+      height: auto;
     }
   }
 }
