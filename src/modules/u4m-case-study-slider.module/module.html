@@ -1,148 +1,158 @@
 {% set moduleName = 'u4m-case-study-slider' %}
-	{% set imageMax = 1000 %}
-	{% set bgImageMax = 1920 %}
-	
-	{% include "../partials/u4-module-includes.html" %}
-	{% set table = module.select_hubdb_table %}
-	{% set query = "" %}
-	
-	{% set rows = hubdb_table_rows(table, query) %}
-	
-	<div class="mainSliderWrap">
-	  <div class="bgSlider">
-		{% for row in rows %}
-		<div class="bg_item">
-		  <div class="case_large_bg" style="background-image: url({{row.featured_image.url}})">
-			<img src="{{row.featured_image.url}}" alt="{{row.name|striptags }}" />
-		  </div>
-		</div>
-		{% endfor %}
-	  </div>
-	
-	  <div class="contentSliderWrap">
-		<div class="case_large_card contentSlider"> 
-		  {% for row in rows %}
-		  <div class="case_item">
-			<div class="case_large_content">
-			  <div class="inner_content_box">
-				<div class="inner_content">
-				  <div class="case_card_intro">
-					<div class="card_title">
-					  <h4>
-						{{row.name}}
-					  </h4>
-					</div>
-					<div class="card_desc">
-					  <p>
-						{{row.description}}
-					  </p>
-					</div>
-				  </div>
-				  <div class="case_card_meta">
-					<span class="price">{{row.price}}</span>
-					<span class="subtitle">{{row.subtitle}}</span>
-					{% if row.link %} 
-					<div>
-					  <a href="{{ row.link }}" class="secondary hs-button">
-						Case Study
-					  </a> 
-					</div>
-					{% endif %}
-				  </div>
-				</div>
-			  </div>
-			</div> 
-		  </div>  
-		  {% endfor %}
-		</div>
-	  </div>
-	
-	</div>
-	<div class="thumbSliderWrap">
-	  <div class="page-center">
-		<div class="thumbSlider">
-		  {% for row in rows %}
-		  <div class="case_small_card">
-			<div class="case_logo">
-			  <img src="{{ row.logo.url }}" alt="{{ row.name }}"/>
-			</div>
-		  </div>
-		  {% endfor %}
-		</div>
-	  </div>
-	</div>
-	
-	
-	</section>
-	
-	
-	
-	{% require_js %}
-	<script>
-	  $('.bgSlider').slick({ 
-		infinite: true,
-		slidesToShow: 3,
-		slidesToScroll: 1,
-		arrows: false, 
-		centerMode:true,
-		centerPadding:'20px',
-		variableWidth: true,
-		asNavFor: '.thumbSlider,.contentSlider', 	
-		autoplay: true,
-		autoplaySpeed: 2000,
-	  });
-	  $('.contentSlider').slick({
-		infinite: true,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		fade:true,
-		asNavFor: '.bgSlider,.thumbSlider',
-		dots: false, 
-		arrows:false,
-		responsive: [
-		  {
-			breakpoint: 540,
-			settings: {
-			  adaptiveHeight:true
-			}
-		  } 
-		]
-	  });
-	  $('.thumbSlider').slick({
-		infinite: true,
-		slidesToShow: 6,
-		slidesToScroll: 1,
-		asNavFor: '.bgSlider,.contentSlider',
-		dots: false, 
-		arrows:false,
-		centerMode:true,
-		centerPadding:'0',
-		responsive: [
-		  {
-			breakpoint: 1200,
-			settings: {
-			  slidesToShow: 5
-			}
-		  },
-		  {
-			breakpoint: 1024,
-			settings: {
-			  slidesToShow: 4
-			}
-		  },
-		  {
-			breakpoint: 767,
-			settings: {
-			  slidesToShow: 3
-			}
-		  },
-		  {
-			breakpoint: 580,
-			settings: {
-			  slidesToShow: 3
-			}
-		  } 
-		]
-	  });
-	</script>
-	{% end_require_js %}
+{% set imageMax = 1000 %}
+{% set bgImageMax = 1920 %}
+
+{% include "../partials/u4-module-includes.html" %}
+{% set table = module.select_hubdb_table %}
+{% set query = "" %}
+
+{% set rows = hubdb_table_rows(table, query) %}
+
+{% if module.title %}
+<div class="introContent">
+  <div class="page-center">
+    <h5>
+      {{ module.title }}
+    </h5>
+  </div>
+</div>
+{% endif %}
+
+<div class="mainSliderWrap">  
+  <div class="bgSlider">
+    {% for row in rows %}
+    <div class="bg_item">
+      <div class="case_large_bg" style="background-image: url({{row.featured_image.url}})">
+        <img src="{{row.featured_image.url}}" alt="{{row.name|striptags }}" />
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="contentSliderWrap">
+    <div class="case_large_card contentSlider"> 
+      {% for row in rows %}
+      <div class="case_item">
+        <div class="case_large_content">
+          <div class="inner_content_box">
+            <div class="inner_content">
+              <div class="case_card_intro">
+                <div class="card_title">
+                  <h4>
+                    {{row.name}}
+                  </h4>
+                </div>
+                <div class="card_desc">
+                  <p>
+                    {{row.description}}
+                  </p>
+                </div>
+              </div>
+              <div class="case_card_meta">
+                <span class="price">{{row.price}}</span>
+                <span class="subtitle">{{row.subtitle}}</span>
+                {% if row.link %} 
+                <div>
+                  <a href="{{ row.link }}" class="secondary hs-button">
+                    Case Study
+                  </a> 
+                </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>  
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
+<div class="thumbSliderWrap">
+  <div class="page-center">
+    <div class="thumbSlider">
+      {% for row in rows %}
+      <div class="case_small_card">
+        <div class="case_logo">
+          <img src="{{ row.logo.url }}" alt="{{ row.name }}"/>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+</section>
+
+
+
+{% require_js %}
+<script>
+  $('.bgSlider').slick({ 
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: false, 
+    centerMode:true,
+    centerPadding:'20px',
+    variableWidth: true,
+    asNavFor: '.thumbSlider,.contentSlider', 	
+    autoplay: true,
+    autoplaySpeed: 2000,
+  });
+  $('.contentSlider').slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade:true,
+    asNavFor: '.bgSlider,.thumbSlider',
+    dots: false, 
+    arrows:false,
+    responsive: [
+      {
+        breakpoint: 540,
+        settings: {
+          adaptiveHeight:true
+        }
+      } 
+    ]
+  });
+  $('.thumbSlider').slick({
+    infinite: true,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    asNavFor: '.bgSlider,.contentSlider',
+    dots: false, 
+    arrows:false,
+    centerMode:true,
+    centerPadding:'0',
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 5
+        }
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 580,
+        settings: {
+          slidesToShow: 3
+        }
+      } 
+    ]
+  });
+</script>
+{% end_require_js %}
