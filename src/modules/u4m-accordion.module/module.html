@@ -1,70 +1,109 @@
 {% set moduleName = 'u4m-accordion' %}
-		{% set imageMax = 1000 %}
-		{% set bgImageMax = 1920 %}
-		
-		{% include "../partials/u4-module-includes.html" %}
-	
+{% set imageMax = 1000 %}
+{% set bgImageMax = 1920 %}
+
+{% include "../partials/u4-module-includes.html" %}
+
 <div class="accordion-inner">
-		<div class="page-center"> 
-			<div class="accordion-top-row">
-				<div class="accordion-top-inn flex_row">
-					<div class="col col6 accordion-intro">
-						{% if module.include_intro %}
-						<div class='intro'>
-							<div class='intro_cnt'>
-								{{ module.intro_content }}
-							</div>
+	<div class="page-center"> 
+		<div class="accordion-top-row">
+			<div class="accordion-top-inn flex_row">
+				<div class="col col6 accordion-intro">
+					{% if module.include_intro %}
+					<div class='intro'>
+						<div class='intro_cnt'>
+							{{ module.intro_content }}
 						</div>
-						{% endif %}
 					</div>
-					{% if module.enable_expand_button %}
 					{% endif %}
-					<div class="col col6 accor-expand-btn">
-						<div class="accor-expand-btn-inn">
-							<div class="expand-btn">
-								<a href="javascript:void(0);" class="anchore-btn">{{ module.expand_button_text }}</a>
-							</div>
-						</div>
-					</div>
 				</div>
-			</div>
-			<div class="accordion-items">
-				<div class="accordion-items-inn flex_row">
-					<div class="col6 col spacer-col">
-					</div>
-					<div class="col6 col items-col">
-						<div class="items-row">
-							{% for item in module.accordion_items %}
-							<div class="accord-item">
-								{% if item.title %}
-								<div class="accord-item-title">
-									<h4>
-										{% if module.module_overrides.item_count_toggle %}
-										  <span class="item-count">{% if loop.index <= 9%}0{% endif %}{{loop.index}}</span>
-										{% endif %}
-										<span class="item-title">{{ item.title }}</span>
-										<span class="item-toggle-icon">
-										  <img src="{{ get_asset_url('../../images/carrot.png') }}" alt="Toggle" class="toggle-icon">
-											<img src="{{ get_asset_url('../../images/carrot-open.png') }}" alt="Open" class="open-icon">
-										</span>
-									</h4>
-								</div>
-								{% endif  %}
-								{% if item.content %}
-								<div class="accord-item-content">
-									{{ item.content }}
-								</div>
-								{% endif  %}
-							</div>
-							{% endfor %}
+				{% if module.enable_expand_button %}
+				{% endif %}
+				<div class="col col6 accor-expand-btn">
+					<div class="accor-expand-btn-inn">
+						<div class="expand-btn">
+							<a href="javascript:void(0);" class="anchore-btn">{{ module.expand_button_text }}</a>
+							<a href="javascript:void(0);" class="collapse-btn">{{ module.collapse_button_text }}</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<div class="accordion-items">
+			<div class="accordion-items-inn flex_row">
+				<div class="col6 col spacer-col">
+				</div>
+				<div class="col6 col items-col">
+					<div class="items-row">
+						{% for item in module.accordion_items %}
+						<div class="accord-item">
+							{% if item.title %}
+							<div class="accord-item-title">
+								<h4>
+									{% if module.module_overrides.item_count_toggle %}
+									<span class="item-count">{% if loop.index <= 9%}0{% endif %}{{loop.index}}</span>
+									{% endif %}
+									<span class="item-title">{{ item.title }}</span>
+									<span class="item-toggle-icon">
+										<img src="{{ get_asset_url('../../templates/images/carrot.png') }}" alt="Toggle" class="toggle-icon">
+										<img src="{{ get_asset_url('../../templates/images/carrot-open.png') }}" alt="Open" class="open-icon">
+									</span>
+								</h4>
+							</div>
+							{% endif  %}
+							{% if item.content %}
+							<div class="accord-item-content">
+								{{ item.content }}
+							</div>
+							{% endif  %}
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-	
-	
-	</section>
-	
-	
+
+
+</section>
+
+
+{% require_js %}
+
+<script>
+
+	let allExpanded{{ name }} = false; 
+
+	$(".{{name}} .expand-btn .anchore-btn").click(function () {
+		$(this).parent().find('.collapse-btn').show();
+	$(this).hide();
+	$(".accord-item-content").slideDown(250); 
+	$(".accord-item").addClass("active-item"); 
+	});
+
+
+	$('.{{name}} .expand-btn .collapse-btn').hide();
+		$(".{{name}} .expand-btn .collapse-btn").click(function () {
+		$(this).parent().find('.anchore-btn').show();
+	$(this).hide();
+	$(".accord-item-content").slideUp(250); 
+	$(".accord-item").removeClass("active-item"); 
+	});
+
+	$(".{{name}} .accord-item-title").click(function () {
+		if (!allExpanded{{ name }}) {
+		$(this).next().slideToggle(250);
+		$(this).parent().toggleClass("active-item");
+	} else {
+		$(this).next().slideToggle(250);
+		$(this).parent().siblings().removeClass("active-item");
+		$(this).parent().toggleClass("active-item");
+		$(this).parent().siblings().find(".accord-item-content").slideUp(250); 
+	}
+	});
+</script>
+
+{% end_require_js %}
+
+
