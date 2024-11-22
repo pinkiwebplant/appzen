@@ -1,17 +1,37 @@
+$(".filter_sidebar button").click(function (mn) {
+  mn.preventDefault();
+  $(this).parent().addClass("active").siblings().removeClass("active");
+  var winLoc = window.location.href.split("?")[0];
+  var btnVal = $(this).attr("data-tag");
+  var queryURL = winLoc + "?category=" + btnVal;
+  $.get(queryURL, function (response) {
+    var newItems = $(response).find(".case_listing_wrap .qryitem");
+    $(".case_listing_wrap").html(newItems);
+    if (newItems.length === 0) {
+      $(".noText").show();
+    } else {
+      $(".noText").hide();
+    }
+    var newPagination = $(response).find(".pagin .loadmore_btn");
+    $(".pagin").html(newPagination);
+  });
+});
 
-$('.filter_sidebar button').click(function() {
-	var value = $(this).attr('data-tag');
-	$(this).parents().siblings().removeClass('active');
+$(document).on("click", "#load-more", function (kk) {
+  kk.preventDefault();
+  var paginurl = $(this).attr("href");
+  $.get(paginurl, function (response) {
+    var newItems = $(response).find(".case_listing_wrap .qryitem");
+    $(".case_listing_wrap").append(newItems);
 
-	if ($(this).hasClass('active')) {
-		$(this).parents().removeClass('active');
-
-		$('.case_listing_wrap').load(window.location.href.split('?')[0] + '?category=-' + value + ' .case_listing_wrap > *');
-		$('.loadmore_btn').load(window.location.href.split('?')[0] + '?category=-' + value + ' .loadmore_btn > *');
-	} else {
-		$(this).parents().addClass('active');
-
-		$('.case_listing_wrap').load(window.location.href.split('?')[0] + '?category=' + value + ' .case_listing_wrap > *');
-		$('.loadmore_btn').load(window.location.href.split('?')[0] + '?category=' + value + ' .loadmore_btn > *');
-	}
+    var newPagination = $(response).find(".pagin .loadmore_btn");
+    if (newPagination.length > 0) {
+      $(".pagin").html(newPagination);
+    } else {
+      $(".pagin").empty();
+    }
+    //     $('html, body').animate({
+    //       scrollTop: $('.case_listing_wrap').offset().top
+    //     }, 500);
+  });
 });

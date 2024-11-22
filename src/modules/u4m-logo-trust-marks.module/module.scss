@@ -59,6 +59,8 @@ section.u4m-logo-trust-marks {
         margin-bottom: 20px;
         .logo_inner {
           @include cardBase;
+          padding: 22px 38px;
+          background-color: $white;
           img {
             margin: 0;
             filter: unset;

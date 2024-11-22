@@ -1,0 +1,11 @@
+<div class="sidebar-form">
+	{% form
+	title='{{ module.title }}'
+	form_to_use="{{ module.select_form.form_id }}"
+	response_response_type="{{ module.select_form.response_type }}"
+	response_message="{{ module.select_form.message }}"
+	response_redirect_id="{{ module.select_form.redirect_id }}"
+	response_redirect_url="{{module.select_form.redirect_url}}"
+	gotowebinar_webinar_key="{{ module.select_form.gotowebinar_webinar_key }}"
+%}
+</div>

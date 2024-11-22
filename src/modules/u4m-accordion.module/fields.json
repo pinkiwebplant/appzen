@@ -56,6 +56,26 @@
   "type" : "text",
   "default" : "Expand all"
 }, {
+  "id" : "f2da8ea0-c41b-d717-af9c-f5fcf66f76cb",
+  "name" : "collapse_button_text",
+  "display_width" : null,
+  "label" : "Collapse Button Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "enable_expand_button",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Collapse all"
+}, {
   "id" : "00c0f392-1a2a-e82f-2ce8-20ba57906245",
   "name" : "accordion_items",
   "display_width" : null,
@@ -66,7 +86,7 @@
     "min" : null,
     "max" : null,
     "sorting_label_field" : "d8655fe6-8cf2-e017-cdc9-8501211d70a1",
-    "default" : 1
+    "default" : 4
   },
   "children" : [ {
     "id" : "d8655fe6-8cf2-e017-cdc9-8501211d70a1",
@@ -95,6 +115,15 @@
   "group_occurrence_meta" : null,
   "type" : "group",
   "default" : [ {
+    "title" : "How does AppZen’s AI audit solution work?",
+    "content" : "<p>Leveraging patented AI technology, AppZen uses computer vision, deep learning, and natural language processing to automatically read and audit expense reports, receipts, invoices and contracts while cross-checking that information against hundreds of online data sources. Learn more about how the AppZen artificial intelligence platform works.</p>"
+  }, {
+    "title" : "How does AppZen’s AI audit solution work?",
+    "content" : "<p>Leveraging patented AI technology, AppZen uses computer vision, deep learning, and natural language processing to automatically read and audit expense reports, receipts, invoices and contracts while cross-checking that information against hundreds of online data sources. Learn more about how the AppZen artificial intelligence platform works.</p>"
+  }, {
+    "title" : "How does AppZen’s AI audit solution work?",
+    "content" : "<p>Leveraging patented AI technology, AppZen uses computer vision, deep learning, and natural language processing to automatically read and audit expense reports, receipts, invoices and contracts while cross-checking that information against hundreds of online data sources. Learn more about how the AppZen artificial intelligence platform works.</p>"
+  }, {
     "title" : "How does AppZen’s AI audit solution work?",
     "content" : "<p>Leveraging patented AI technology, AppZen uses computer vision, deep learning, and natural language processing to automatically read and audit expense reports, receipts, invoices and contracts while cross-checking that information against hundreds of online data sources. Learn more about how the AppZen artificial intelligence platform works.</p>"
   } ]

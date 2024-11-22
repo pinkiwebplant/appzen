@@ -1,100 +1,168 @@
 @import "../../css/_module-imports";
-section.u4m-alternating-content {
-  margin-top: 100rem;
-  margin-bottom: 100rem;
-  &.reverse-text {
-    .inner .content {
-      color: $white;
-    }
-  }
-  div.inner {
-    @include center;
+
+.u4m-alternating-content-one {
+  @include center;
+  border-radius: $borderRadius;
+  .page-center {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 50px 20px;
-    @include tablet {
-      display: block;
-    }
-    div.additional-content {
-      flex-direction: column;
-      flex: 1 1 50%;
-      @include tablet {
-        float: none;
-        width: 100%;
-      }
-      div.image {
-        //text-align: center;
-        img {
-          max-width: 600rem;
-          @include tablet {
-            max-width: 100%;
+    flex-direction: column;
+    gap: 40px;
+    @include centerMiddle;
+
+    .two_cols {
+      .inner_wrpp {
+        display: flex;
+        column-gap: 119px;
+        flex-wrap: wrap;
+
+        .left_col {
+          width: calc((100% - 57.76%) - 60px);
+
+          .cm_cnt {
+            h4 {
+              @include size28;
+              font-weight: 400;
+              line-height: 1.2;
+              margin-bottom: 20px;
+            }
+
+            h2 {
+              margin-bottom: 20px;
+
+              + {
+                p {
+                  margin-top: 0;
+                }
+              }
+            }
+
+            p {
+              &:last-child {
+                margin: 0;
+              }
+
+              @include b2;
+              font-weight: 400;
+              line-height: 1.6;
+              color: $basecolor;
+            }
+
+            margin-bottom: 40px;
+          }
+
+          .btm_btn {
+            a {
+              margin: 0;
+              display: flex;
+              width: auto;
+              gap: 10px;
+              align-items: center;
+
+              svg {
+                color: currentColor;
+
+                path {
+                  stroke: currentColor;
+                }
+              }
+            }
+
+            display: flex;
+          }
+
+          @include navbreak {
+            width: calc(50% - 25px);
+          }
+
+          @include tabletvert {
             width: 100%;
           }
         }
-      }
-      div.video {
-        flex: 1 1 50%;
-        h3 {
-          @include h6;
+
+        .right_col {
+          width: calc(57.76% - 60px);
+
+          @include navbreak {
+            width: calc(50% - 25px);
+          }
+
+          @include tabletvert {
+            width: 100%;
+          }
+
+          img {
+            height: 100% !important;
+            object-fit: cover;
+          }
         }
-        h4 {
-          @include b2;
-          font-weight: bold;
+
+        @include navbreak {
+          column-gap: 50px;
+        }
+
+        @include tabletvert {
+          flex-direction: column;
+          row-gap: 50px;
+        }
+
+        @include tabletvertmin {
+          &.left_align {
+            .left_col {
+              order: 2;
+            }
+          }
+        }
+
+        @include tabletvertmin {
+          &.left_align {
+            .right_col {
+              order: 1;
+            }
+          }
         }
       }
     }
-    div.content {
-      flex: 1 1 50%;
-      padding-left: 50rem;
-      @include tablet {
-        max-width: 100%;
+
+    .statistics.items {
+      hr {
+        margin: 0;
+        border-bottom: 1px solid $basecolor;
+        height: auto;
+      }
+
+      .flx {
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
         width: 100%;
-        margin-top: 0;
-        padding: 30rem 0;
-      }
-      .eyebrow {
-        @include eyebrow;
-      }
-      h2 {
-        margin-top: 0;
-        @include h5;
-        @include phone {
-          margin-bottom: 0;
+        max-width: 100%;
+        justify-content: space-between;
+        margin-top: 30px;
+        margin-bottom: 40px;
+
+        .statistics__item {
+          padding: 0;
+          max-width: 100%;
+          width: calc(50% - 30px);
+
+          .stats_wrap {
+            @include h2;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+
+            span.number {
+              word-break: break-word;
+            }
+          }
+
+          span.caption {
+            font-size: $baseFontSize3;
+            font-weight: 400;
+            line-height: 1.5;
+            display: block;
+          }
         }
-      }
-      h3 {
-        @include h6;
-      }
-      h4 {
-        @include b2;
-        font-weight: bold;
-      }
-      p {
-        @include b2;
-        &:last-of-type {
-          margin-bottom: 0;
-        }
-        @include phone {
-          @include b4;
-        }
-      }
-      a {
-        margin-bottom: 0;
-      }
-      span.url,
-      span.cta {
-        a {
-          @include buttonSmall;
-          margin-top: 35rem;
-        }
-      }
-    }
-    &.left {
-      flex-direction: row-reverse;
-      div.content {
-        padding-left: 0;
-        padding-right: 30rem;
       }
     }
   }

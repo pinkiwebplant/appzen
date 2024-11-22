@@ -4,6 +4,110 @@
 {% set iconSchedule ='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 <path d="M15.6462 16.3538L16.3538 15.6463L12.5 11.7918V7H11.5V12.2078L15.6462 16.3538ZM12.0033 21C10.7588 21 9.58867 20.7638 8.493 20.2915C7.3975 19.8192 6.4445 19.1782 5.634 18.3685C4.8235 17.5588 4.18192 16.6067 3.70925 15.512C3.23642 14.4175 3 13.2479 3 12.0033C3 10.7588 3.23617 9.58867 3.7085 8.493C4.18083 7.3975 4.82183 6.4445 5.6315 5.634C6.44117 4.8235 7.39333 4.18192 8.488 3.70925C9.5825 3.23642 10.7521 3 11.9967 3C13.2413 3 14.4113 3.23617 15.507 3.7085C16.6025 4.18083 17.5555 4.82183 18.366 5.6315C19.1765 6.44117 19.8181 7.39333 20.2908 8.488C20.7636 9.5825 21 10.7521 21 11.9967C21 13.2413 20.7638 14.4113 20.2915 15.507C19.8192 16.6025 19.1782 17.5555 18.3685 18.366C17.5588 19.1765 16.6067 19.8181 15.512 20.2908C14.4175 20.7636 13.2479 21 12.0033 21ZM12 20C14.2167 20 16.1042 19.2208 17.6625 17.6625C19.2208 16.1042 20 14.2167 20 12C20 9.78333 19.2208 7.89583 17.6625 6.3375C16.1042 4.77917 14.2167 4 12 4C9.78333 4 7.89583 4.77917 6.3375 6.3375C4.77917 7.89583 4 9.78333 4 12C4 14.2167 4.77917 16.1042 6.3375 17.6625C7.89583 19.2208 9.78333 20 12 20Z" fill="#746C60"/>
 </svg>'%}
+
+
+{% macro menuItem(item2) %}
+<div class="menuItem {{ item2.content_type }}">
+	<div class="menuItemTtl">{{ item2.title }}</div>
+	{% if item2.content_type=="menu" %}
+	{% for item3 in item2.menu_group.menu_items %}
+	<div class="childmenuItem{% if item3.add_description %} addDes{% endif %}">
+		{% set href = item3.menu_link.url.href %}
+		{% if item3.menu_link.url.type is equalto "EMAIL_ADDRESS" %}
+		{% set href = "mailto:" + href %}
+		{% endif %}
+		<a
+			 {% if item3.menu_link.url.type is equalto "CALL_TO_ACTION"  %}
+			 href="{{ href }}"
+			 {% else %}
+			 href="{{ href|escape_url }}"
+			 {% endif %}
+			 {% if item3.menu_link.open_in_new_tab %}
+			 target="_blank"
+			 {% endif %}
+			 {% if item3.menu_link.rel %}
+			 rel="{{ item3.menu_link.rel }}"
+			 {% endif %}
+			 >
+			<div class="childmenuItemttl">{{ item3.menu_text }}</div>
+			{% if item3.add_description %}
+			<div class="childmenuItemdes">{{ item3.description }}</div>
+			{% endif %}
+		</a>
+	</div>
+	{% endfor %}
+	{% endif %}
+
+	{% if item2.content_type=="blog" %}
+	{% set posts = blog_recent_posts(item2.select_blog, item2.number_of_posts) %} 
+	{% for blogitem in posts %}
+	<div class="blogCard {% if loop.first %} first{% endif %}">
+		{% if loop.first %}
+		{% if blogitem.featured_image %}
+		<div class="blogCardImg">
+			<div class="cardImgIn" style="background-image:url({{ blogitem.featured_image  }})"></div>
+		</div>
+		{% endif %}
+		{% endif %}
+		{% if blogitem.tag_list %}
+		<div class="blogCardTags">
+			{% for tag in blogitem.tag_list %}
+			{% if tag.name=="Featured" %}
+			{% else %}
+			{% if loop.first %}
+			<a class="topicTag" href="{{ blog_tag_url(group.id, tag.slug) }}" rel="tag">{{ tag.name }}</a>
+			{% endif %}
+			{% endif %}
+			{% endfor %}</div>{% endif %}
+		<div class="blogCardttl"><a href="{{ blogitem.absolute_url}}">{{ blogitem.name }}</a></div>
+	</div>
+	{% endfor %}
+	{% endif %}
+	{#   #}
+	{% if item2.content_type=="hubdb" %}
+	{% set table = item2.select_hubdb_table %}
+{% set query = 'orderBy=-hs_created_at' ~ '&limit=' ~ item2.number_of_posts %}
+{% set types = hubdb_table_rows(table,query) %}
+	{% for type in types %}
+	<div class="blogCard {{ item2.hubdb_content_type }}{% if loop.first %} first{% endif %}">
+		{% if loop.first %}
+		{% if type.image.url %}
+		<div class="blogCardImg">
+			<div class="cardImgIn" style="background-image:url({{ type.image.url }})"></div>
+		</div>
+		{% endif %}
+		{% endif %}
+		<div class="blogCardTags">
+			{% if item2.hubdb_content_type=="type1"%}
+			{{ type.topic.name }}
+			{% elif item2.hubdb_content_type=="type2"%}
+			{% if loop.first %}
+			{{ iconCalendar }} <span>Oct 5, 2023</span>
+			{% else %}
+			{{ iconSchedule }} <span>1 minute read</span>
+			{% endif %}
+			{% endif %}
+		</div>										
+		<div class="blogCardttl"><a href="{{ type.link }}">{{ type.name }}</a></div>
+	</div>
+	{% endfor %}
+	{% endif %}
+	{% if item2.content_type=="card" %}
+	<div class="cardItem">
+		<div class="cardItemIn">
+			{% if item2.card.image.src %}
+			<div class="cardImg">
+				<div class="cardImgIn" style="background-image:url({{ item2.card.image.src }})"></div>
+			</div>
+			{% endif %}
+			<div class="cardttl">{{ item2.card.title }}</div>
+			<div class="cardDes">{{ item2.card.content }}</div>
+		</div>
+	</div>
+	{% endif %}
+</div>
+{% endmacro %}
+
 <div class="megaMenu">
 	<div class="hs-megaMenu-wrapper">
 		<ul class="mobileHide">
@@ -41,102 +145,7 @@
 							<div class="flex_row topMenu">
 								{% for item2 in item.child_menu %}
 								{% if loop.index <= 3 %}
-								<div class="menuItem {{ item2.content_type }}">
-									<div class="menuItemTtl">{{ item2.title }}</div>
-									{% if item2.content_type=="menu" %}
-									{% for item3 in item2.menu_group.menu_items %}
-									<div class="childmenuItem{% if item3.add_description %} addDes{% endif %}">
-										{% set href = item3.menu_link.url.href %}
-										{% if item3.menu_link.url.type is equalto "EMAIL_ADDRESS" %}
-										{% set href = "mailto:" + href %}
-										{% endif %}
-										<a
-											 {% if item3.menu_link.url.type is equalto "CALL_TO_ACTION"  %}
-											 href="{{ href }}"
-											 {% else %}
-											 href="{{ href|escape_url }}"
-											 {% endif %}
-											 {% if item3.menu_link.open_in_new_tab %}
-											 target="_blank"
-											 {% endif %}
-											 {% if item3.menu_link.rel %}
-											 rel="{{ item3.menu_link.rel }}"
-											 {% endif %}
-											 >
-											<div class="childmenuItemttl">{{ item3.menu_text }}</div>
-											{% if item3.add_description %}
-											<div class="childmenuItemdes">{{ item3.description }}</div>
-											{% endif %}
-										</a>
-									</div>
-									{% endfor %}
-									{% elif item2.content_type=="blog" %}
-									{% set posts = blog_recent_posts(item2.select_blog, item2.number_of_posts) %} 
-									{% for blogitem in posts %}
-									<div class="blogCard {% if loop.first %} first{% endif %}">
-										{% if loop.first %}
-										{% if blogitem.featured_image %}
-										<div class="blogCardImg">
-											<div class="cardImgIn" style="background-image:url({{ blogitem.featured_image  }})"></div>
-										</div>
-										{% endif %}
-										{% endif %}
-										{% if blogitem.tag_list %}
-										<div class="blogCardTags">
-											{% for tag in blogitem.tag_list %}
-											{% if tag.name=="Featured" %}
-											{% else %}
-											{% if loop.first %}
-											<a class="topicTag" href="{{ blog_tag_url(group.id, tag.slug) }}" rel="tag">{{ tag.name }}</a>
-											{% endif %}
-											{% endif %}
-											{% endfor %}</div>{% endif %}
-										<div class="blogCardttl"><a href="{{ blogitem.absolute_url}}">{{ blogitem.name }}</a></div>
-									</div>
-									{% endfor %}
-									{% elif item2.content_type=="hubdb" %}
-									{% set table = item2.select_hubdb_table %}
-									{% set query = 'orderBy=-hs_created_at' ~ '&limit=' ~ item2.number_of_posts %}
-									{% set types = hubdb_table_rows(table,query) %}
-
-									{% for types in types %}
-
-									<div class="blogCard {{ item2.hubdb_content_type }}{% if loop.first %} first{% endif %}">
-										{% if loop.first %}
-										{% if types.image.url %}
-										<div class="blogCardImg">
-											<div class="cardImgIn" style="background-image:url({{ types.image.url }})"></div>
-										</div>
-										{% endif %}
-										{% endif %}
-										<div class="blogCardTags">
-											{% if item2.hubdb_content_type=="type1"%}
-											{{ types.topic.name }}
-											{% elif item2.hubdb_content_type=="type2"%}
-											{% if loop.first %}
-											{{ iconCalendar }} <span>Oct 5, 2023</span>
-											{% else %}
-											{{ iconSchedule }} <span>1 minute read</span>
-											{% endif %}
-											{% endif %}
-										</div>										
-										<div class="blogCardttl"><a href="{{ types.link}}">{{ types.name }}</a></div>
-									</div>
-									{% endfor %}
-									{% elif item2.content_type=="card" %}
-									<div class="cardItem">
-										<div class="cardItemIn">
-											{% if item2.card.image.src %}
-											<div class="cardImg">
-												<div class="cardImgIn" style="background-image:url({{ item2.card.image.src }})"></div>
-											</div>
-											{% endif %}
-											<div class="cardttl">{{ item2.card.title }}</div>
-											<div class="cardDes">{{ item2.card.content }}</div>
-										</div>
-									</div>
-									{% endif %}
-								</div>
+								{{ menuItem(item2)}}
 								{% endif %}
 								{% endfor %}
 							</div>
@@ -170,103 +179,7 @@
 						<div class="rightMenu">
 							{% for item2 in item.child_menu %}
 							{% if loop.index >= 4 %}
-							<div class="menuItem {{ item2.content_type }}">
-								<div class="menuItemTtl">{{ item2.title }}</div>
-								{% if item2.content_type=="menu" %}
-								{% for item3 in item2.menu_group.menu_items %}
-								<div class="childmenuItem{% if item3.add_description %} addDes{% endif %}">
-									{% set href = item3.menu_link.url.href %}
-									{% if item3.menu_link.url.type is equalto "EMAIL_ADDRESS" %}
-									{% set href = "mailto:" + href %}
-									{% endif %}
-									<a
-										 {% if item3.menu_link.url.type is equalto "CALL_TO_ACTION"  %}
-										 href="{{ href }}"
-										 {% else %}
-										 href="{{ href|escape_url }}"
-										 {% endif %}
-										 {% if item3.menu_link.open_in_new_tab %}
-										 target="_blank"
-										 {% endif %}
-										 {% if item3.menu_link.rel %}
-										 rel="{{ item3.menu_link.rel }}"
-										 {% endif %}
-										 >
-										<div class="childmenuItemttl">{{ item3.menu_text }}</div>
-										{% if item3.add_description %}
-										<div class="childmenuItemdes">{{ item3.description }}</div>
-										{% endif %}
-									</a>
-								</div>
-								{% endfor %}
-								{% elif item2.content_type=="blog" %}
-								{% set posts = blog_recent_posts(item2.select_blog, item2.number_of_posts) %} 
-								{% for blogitem in posts %}
-								<div class="blogCard {% if loop.first %} first{% endif %}">
-									{% if loop.first %}
-									{% if blogitem.featured_image %}
-									<div class="blogCardImg">
-										<div class="cardImgIn" style="background-image:url({{ blogitem.featured_image  }})"></div>
-									</div>
-									{% endif %}
-									{% endif %}
-									{% if blogitem.tag_list %}
-									<div class="blogCardTags">
-										{% for tag in blogitem.tag_list %}
-										{% if tag.name=="Featured" %}
-										{% else %}
-										{% if loop.first %}
-										<a class="topicTag" href="{{ blog_tag_url(group.id, tag.slug) }}" rel="tag">{{ tag.name }}</a>
-										{% endif %}
-										{% endif %}
-										{% endfor %}</div>{% endif %}
-									<div class="blogCardttl"><a href="{{ blogitem.absolute_url}}">{{ blogitem.name }}</a></div>
-								</div>
-								{% endfor %}
-								{% elif item2.content_type=="hubdb" %}
-								{% set table = item2.select_hubdb_table %}
-								{% set query = 'orderBy=-hs_created_at' ~ '&limit=' ~ item2.number_of_posts %}
-								{% set types = hubdb_table_rows(table,query) %}
-
-								{% for types in types %}
-
-								<div class="blogCard {{ item2.hubdb_content_type }}{% if loop.first %} first{% endif %}">
-									{% if loop.first %}
-									{% if types.image.url %}
-									<div class="blogCardImg">
-										<div class="cardImgIn" style="background-image:url({{ types.image.url }})"></div>
-									</div>
-									{% endif %}
-									{% endif %}
-									<div class="blogCardTags">
-										{% if item2.hubdb_content_type=="type1"%}
-										{{ types.topic.name }}
-										{% elif item2.hubdb_content_type=="type2"%}
-										{% if loop.first %}
-										{{ iconCalendar }} <span>Oct 5, 2023</span>
-										{% else %}
-										{{ iconSchedule }} 1 minute read
-										{% endif %}
-										{% endif %}
-									</div>									
-									<div class="blogCardttl"><a href="{{ types.link}}">{{ types.name }}</a></div>
-								</div>
-								{% endfor %}
-								{% elif item2.content_type=="card" %}
-								<div class="cardItem">
-									<div class="cardItemIn">
-
-										{% if item2.card.image.src %}
-										<div class="cardImg">
-											<div class="cardImgIn" style="background-image:url({{ item2.card.image.src }})"></div>
-										</div>
-										{% endif %}
-										<div class="cardttl">{{ item2.card.title }}</div>
-										<div class="cardDes">{{ item2.card.content }}</div>
-									</div>
-								</div>
-								{% endif %}
-							</div>
+							{{ menuItem(item2)}}
 							{% endif %}
 							{% endfor %}
 						</div>
@@ -274,104 +187,7 @@
 					{% elif item.menu_type=="fw" %}
 					<div class="flex_row">
 						{% for item2 in item.child_menu %}
-						<div class="menuItem {{ item2.content_type }}">
-							<div class="menuItemTtl">{{ item2.title }}</div>
-							{% if item2.content_type=="menu" %}
-							{% for item3 in item2.menu_group.menu_items %}
-							<div class="childmenuItem{% if item3.add_description %} addDes{% endif %}">
-								{% set href = item3.menu_link.url.href %}
-								{% if item3.menu_link.url.type is equalto "EMAIL_ADDRESS" %}
-								{% set href = "mailto:" + href %}
-								{% endif %}
-								<a
-									 {% if item3.menu_link.url.type is equalto "CALL_TO_ACTION"  %}
-									 href="{{ href }}"
-									 {% else %}
-									 href="{{ href|escape_url }}"
-									 {% endif %}
-									 {% if item3.menu_link.open_in_new_tab %}
-									 target="_blank"
-									 {% endif %}
-									 {% if item3.menu_link.rel %}
-									 rel="{{ item3.menu_link.rel }}"
-									 {% endif %}
-									 >
-									<div class="childmenuItemttl">{{ item3.menu_text }}</div>
-									{% if item3.add_description %}
-									<div class="childmenuItemdes">{{ item3.description }}</div>
-									{% endif %}
-								</a>
-							</div>
-							{% endfor %}
-							{% elif item2.content_type=="blog" %}
-							{% set posts = blog_recent_posts(item2.select_blog, item2.number_of_posts) %} 
-							{% for blogitem in posts %}
-							<div class="blogCard {% if loop.first %} first{% endif %}">
-								{% if loop.first %}
-								{% if blogitem.featured_image %}
-								<div class="blogCardImg">
-									<div class="cardImgIn" style="background-image:url({{ blogitem.featured_image  }})"></div>
-								</div>
-								{% endif %}
-								{% endif %}
-								{% if blogitem.tag_list %}
-								<div class="blogCardTags">
-									{% for tag in blogitem.tag_list %}
-									{% if tag.name=="Featured" %}
-									{% else %}
-									{% if loop.first %}
-									<a class="topicTag" href="{{ blog_tag_url(group.id, tag.slug) }}" rel="tag">{{ tag.name }}</a>
-									{% endif %}
-									{% endif %}
-									{% endfor %}</div>{% endif %}
-								<div class="blogCardttl"><a href="{{ blogitem.absolute_url}}">{{ blogitem.name }}</a></div>
-							</div>
-							{% endfor %}
-							{% elif item2.content_type=="hubdb" %}
-							{% set table = item2.select_hubdb_table %}
-							{% set query = 'orderBy=-hs_created_at' ~ '&limit=' ~ item2.number_of_posts %}
-							{% set types = hubdb_table_rows(table,query) %}
-
-							{% for types in types %}
-
-							<div class="blogCard {{ item2.hubdb_content_type }}{% if loop.first %} first{% endif %}">
-								{% if loop.first %}
-								{% if types.image.url %}
-								<div class="blogCardImg">
-									<div class="cardImgIn" style="background-image:url({{ types.image.url }})"></div>
-								</div>
-								{% endif %}
-								{% endif %}
-								<div class="blogCardTags">
-									{% if item2.hubdb_content_type=="type1"%}
-									{{ types.topic.name }}
-									{% elif item2.hubdb_content_type=="type2"%}
-									{% if loop.first %}
-									{{ iconCalendar }} <span>Oct 5, 2023</span>
-									{% else %}
-									{{ iconSchedule }} 1 minute read
-									{% endif %}
-									{% endif %}
-								</div>
-								<div class="blogCardttl"><a href="{{ types.link}}">{{ types.name }}</a></div>
-							</div>
-							{% endfor %}
-
-							{% elif item2.content_type=="card" %}
-							<div class="cardItem">
-								<div class="cardItemIn">
-
-									{% if item2.card.image.src %}
-									<div class="cardImg">
-										<div class="cardImgIn" style="background-image:url({{ item2.card.image.src }})"></div>
-									</div>
-									{% endif %}
-									<div class="cardttl">{{ item2.card.title }}</div>
-									<div class="cardDes">{{ item2.card.content }}</div>
-								</div>
-							</div>
-							{% endif %}
-						</div>
+						{{ menuItem(item2)}}
 						{% endfor %}
 					</div>
 					{% endif %}

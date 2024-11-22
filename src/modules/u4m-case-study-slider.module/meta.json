@@ -3,16 +3,17 @@
   "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
   "icon" : "https://8292614.fs1.hubspotusercontent-na1.net/hubfs/8292614/4.svg",
   "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
-  "module_id" : 183005771638,
+  "module_id" : 183057432724,
+  "css_assets" : [ {
+    "url" : "https://cdn2.hubspot.net/hubfs/302335/unified3/libraries/slick.min.js",
+    "autoload" : true,
+    "name" : "slick.min.js"
+  } ],
   "js_assets" : [ {
     "autoload" : true,
-    "path" : "../../js/jquery.js",
-    "name" : "jquery.js"
-  }, {
-    "autoload" : true,
-    "path" : "../../js/aos.js",
-    "name" : "aos.js"
+    "path" : "../../js/slick.js",
+    "name" : "slick.min.js"
   } ],
-  "label" : "Alternating Content One",
+  "label" : "Case Study Slider",
   "is_available_for_new_content" : true
 }

@@ -182,6 +182,7 @@ section.u4m-blog-listing {
     @include tabletvert {
       max-width: 100%;
       padding-right: 0;
+      position: static;
     }
     > h6 {
       margin: 0;

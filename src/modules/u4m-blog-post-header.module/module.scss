@@ -6,6 +6,7 @@ section.u4m-blog-post-header {
     margin-bottom: 25px;
     a {
       color: inherit;
+      text-transform: capitalize;
       &:not(:first-child) {
         margin-left: 5px;
       }
@@ -29,8 +30,13 @@ section.u4m-blog-post-header {
     }
   }
   .featured-img {
-    img {
-      width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 500px;
+    background-position: center;
+    @include tabletvert {
+      min-height: 250px;
     }
   }
 }

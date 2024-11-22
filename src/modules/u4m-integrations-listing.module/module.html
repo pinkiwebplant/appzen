@@ -78,7 +78,7 @@
 {% require_js %}
 <script>
 	{% if module.module_settings.enable_slider %}
-	$('.slider_wrapper').slick({
+	$('.{{ name }} .slider_wrapper').slick({
 		dots: false,
 		arrows: false,
 		infinite: true,
