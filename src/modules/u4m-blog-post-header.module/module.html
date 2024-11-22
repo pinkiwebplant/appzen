@@ -33,11 +33,9 @@
     {% endif %} {% endif %}
   </div>
   {% if content.post_list_summary_featured_image %}
-  <div class="featured-img">
-    <img
-      src="{{ content.post_list_summary_featured_image }}"
-      alt="{{ content.name | striptags }}"
-    />
-  </div>
+  <div
+    class="featured-img"
+    style="background-image:url({{ content.post_list_summary_featured_image }});"
+  ></div>
   {% endif %}
 </section>

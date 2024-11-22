@@ -1,10 +1,16 @@
 <section class="u4m-blog-listing">
   <div class="page-center">
-    {% if group.public_title %}
     <div class="listing-title">
+      {% if topic %}
+      <h1>{{ topic|capitalize | replace('-',' ') }}</h1>
+      {% elif blog_author %}
+      <h1>{{ blog_author }}</h1>
+      {% else %}
       <h1>{{ group.public_title }}</h1>
+      {% endif %}
     </div>
-    {% endif %} {% if module.recent_post %}
+
+    {% if module.recent_post %}
     <div class="blog-large-post-wrap">
       {% for content in contents %} {% if loop.index == 1 %}
       <div
@@ -12,10 +18,12 @@
       >
         {% if content.post_list_summary_featured_image %}
         <div class="post-featured-img">
-          <img
-            src="{{ content.post_list_summary_featured_image }}"
-            alt="{{ content.name | striptags }}"
-          />
+          <a href="{{content.absolute_url}}">
+            <img
+              src="{{ content.post_list_summary_featured_image }}"
+              alt="{{ content.name | striptags }}"
+            />
+          </a>
         </div>
         {% endif %}
         <div class="post-content-col">
@@ -26,7 +34,7 @@
               class="topic-link"
               href="{{ blog_tag_url(group.id, topic.slug) }}"
               >{{ topic.name }}</a
-            >{% if not loop.last %},{% endif %} {% endfor %}
+            >{% if not loop.last %} ,{% endif %} {% endfor %}
           </div>
           {% endif %}
           <h3 class="post-title">
@@ -36,8 +44,8 @@
           </h3>
 
           <div class="post-item-content">
-            {{ content.post_list_content|striptags|truncatehtml(250,'.' , false)
-            }}
+            {{ content.post_list_content|striptags|truncatehtml(250,'...' ,
+            false) }}
           </div>
           <div class="post-item-link">
             <a href="{{ content.absolute_url }}">

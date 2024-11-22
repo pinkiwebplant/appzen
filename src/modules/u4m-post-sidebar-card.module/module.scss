@@ -1,0 +1,113 @@
+@import "../../css/_module-imports";
+
+section.u4m-post-sidebar-card {
+  padding: 0;
+  .webinars_item {
+    border: 1px solid $lightGray;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 27px;
+    .flex_wrap {
+      .image_sec {
+        position: relative;
+        img {
+          max-width: 100%;
+          object-fit: cover;
+          width: 100%;
+        }
+        .play_icon {
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          top: 50%;
+          width: 66px;
+          height: 66px;
+          padding: 20px;
+          background: rgba(61, 53, 51, 0.9);
+          border-radius: 3.29px;
+          cursor: pointer;
+        }
+      }
+      .right_content {
+        padding: 10px;
+        .date_section {
+          display: flex;
+          gap: 5px;
+          align-items: center;
+          margin-bottom: 18px;
+          span.on-demand {
+            text-transform: capitalize;
+            padding: 2px 8px;
+            background-color: $sectionbg;
+            border-radius: 3px;
+          }
+        }
+        .date_sec {
+          font-size: 13px;
+          line-height: 20.8px;
+          color: #746c60;
+          img {
+            width: 24px;
+          }
+        }
+        .title h5 {
+          margin-bottom: 20px;
+          a {
+            color: inherit;
+          }
+        }
+        .btn_wrapper {
+          text-align: right;
+          margin-bottom: 10px;
+          img {
+            width: 15px;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+  .popup_section {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    transition: all 0.3s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .page-center {
+      width: 100%;
+      .inner {
+        padding-bottom: 56%;
+        position: relative;
+        width: 100%;
+        iframe {
+          width: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+        }
+      }
+    }
+    .close_icon {
+      position: absolute;
+      right: 30px;
+      top: 10px;
+      color: #fff;
+      font-size: 30px;
+      cursor: pointer;
+      line-height: 1;
+    }
+  }
+  .pop-active .popup_section {
+    visibility: visible;
+    opacity: 1;
+  }
+}
