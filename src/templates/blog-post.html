@@ -4,38 +4,37 @@
  label: Appzen - Blog Post
 -->
 {% extends './base.html' %} {% block body %}
-  <main id="main-content" class="body-container-wrapper">
-    <section class="u4m-blog-post">
-      {% module "u4m-blog-post-header" path="../modules/u4m-blog-post-header",
-      label="u4m-blog-post-header" %}
-      <div class="post-inner-wrap">
-        <div class="page-center">
-          <div class="post-content">{{ content.post_body }}</div>
-          <div class="post-sidebar">
-            <div class="sidebar-form">
-              {% form "sidebar-form"
-              form_to_use='82652a2f-4494-4bc8-b647-558da4843a1d', title='Subscribe
-              to newsletter' %}
-            </div>
+<main id="main-content" class="body-container-wrapper">
+  <section class="u4m-blog-post">
+    {% module "u4m-blog-post-header" path="../modules/u4m-blog-post-header",
+    label="u4m-blog-post-header" %}
+    <div class="post-inner-wrap">
+      <div class="page-center">
+        <div class="post-content">{{ content.post_body }}</div>
+        <div class="post-sidebar">
+          <div class="post-sidebar-in">
+            {% module "blog_subscribe" path="../modules/u4m-blog-subscribe",
+            label="Blog Subscribe" %}
             <div class="social-share">
               <h6>Share This Post</h6>
               <ul>
                 <li>
                   <a
-                     href="https://twitter.com/intent/tweet?url={{content.absolute_url}}&text={{ content.name | striptags }}" target="_blank"
-                     >
+                    href="https://twitter.com/intent/tweet?url={{content.absolute_url}}&text={{ content.name | striptags }}"
+                    target="_blank"
+                  >
                     <svg
-                         xmlns="http://www.w3.org/2000/svg"
-                         width="24"
-                         height="24"
-                         viewBox="0 0 24 24"
-                         fill="none"
-                         >
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
                       <g clip-path="url(#clip0_196_1623)">
                         <path
-                              d="M17.1761 4.24219H19.9362L13.9061 11.0196L21 20.2422H15.4456L11.0951 14.6488L6.11723 20.2422H3.35544L9.80517 12.993L3 4.24219H8.69545L12.6279 9.35481L17.1761 4.24219ZM16.2073 18.6176H17.7368L7.86441 5.78147H6.2232L16.2073 18.6176Z"
-                              fill="#3D3533"
-                              />
+                          d="M17.1761 4.24219H19.9362L13.9061 11.0196L21 20.2422H15.4456L11.0951 14.6488L6.11723 20.2422H3.35544L9.80517 12.993L3 4.24219H8.69545L12.6279 9.35481L17.1761 4.24219ZM16.2073 18.6176H17.7368L7.86441 5.78147H6.2232L16.2073 18.6176Z"
+                          fill="#3D3533"
+                        />
                       </g>
                       <defs>
                         <clipPath id="clip0_196_1623">
@@ -47,54 +46,98 @@
                 </li>
                 <li>
                   <a
-                     target="_blank"
-                     href="http://www.linkedin.com/shareArticle?mini=true&url={{content.absolute_url }}"
-                     >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="25" viewBox="0 0 21 25" fill="none">
+                    target="_blank"
+                    href="http://www.linkedin.com/shareArticle?mini=true&url={{content.absolute_url }}"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="21"
+                      height="25"
+                      viewBox="0 0 21 25"
+                      fill="none"
+                    >
                       <g clip-path="url(#clip0_14_1719)">
-                        <path d="M4.70156 21.5H0.346875V7.47969H4.70156V21.5ZM2.52187 5.56719C1.12969 5.56719 0 4.41406 0 3.02187C0 2.35303 0.265697 1.71158 0.73864 1.23864C1.21158 0.765697 1.85303 0.5 2.52187 0.5C3.19072 0.5 3.83217 0.765697 4.30511 1.23864C4.77805 1.71158 5.04375 2.35303 5.04375 3.02187C5.04375 4.41406 3.91406 5.56719 2.52187 5.56719ZM20.9953 21.5H16.65V14.675C16.65 13.0484 16.6172 10.9625 14.3859 10.9625C12.1219 10.9625 11.775 12.7297 11.775 14.5578V21.5H7.425V7.47969H11.6016V9.39219H11.6625C12.2438 8.29062 13.6641 7.12812 15.7828 7.12812C20.1891 7.12812 21 10.0297 21 13.7984V21.5H20.9953Z" fill="#574D4A"/>
+                        <path
+                          d="M4.70156 21.5H0.346875V7.47969H4.70156V21.5ZM2.52187 5.56719C1.12969 5.56719 0 4.41406 0 3.02187C0 2.35303 0.265697 1.71158 0.73864 1.23864C1.21158 0.765697 1.85303 0.5 2.52187 0.5C3.19072 0.5 3.83217 0.765697 4.30511 1.23864C4.77805 1.71158 5.04375 2.35303 5.04375 3.02187C5.04375 4.41406 3.91406 5.56719 2.52187 5.56719ZM20.9953 21.5H16.65V14.675C16.65 13.0484 16.6172 10.9625 14.3859 10.9625C12.1219 10.9625 11.775 12.7297 11.775 14.5578V21.5H7.425V7.47969H11.6016V9.39219H11.6625C12.2438 8.29062 13.6641 7.12812 15.7828 7.12812C20.1891 7.12812 21 10.0297 21 13.7984V21.5H20.9953Z"
+                          fill="#574D4A"
+                        />
                       </g>
                       <defs>
                         <clipPath id="clip0_14_1719">
-                          <rect width="21" height="24" fill="white" transform="translate(0 0.5)"/>
+                          <rect
+                            width="21"
+                            height="24"
+                            fill="white"
+                            transform="translate(0 0.5)"
+                          />
                         </clipPath>
                       </defs>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a href="http://www.facebook.com/share.php?u={{content.absolute_url }}" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="22" viewBox="0 0 13 22" fill="none">
+                  <a
+                    href="http://www.facebook.com/share.php?u={{content.absolute_url }}"
+                    target="_blank"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="13"
+                      height="22"
+                      viewBox="0 0 13 22"
+                      fill="none"
+                    >
                       <g clip-path="url(#clip0_14_1723)">
-                        <path d="M3.24961 12.776V21.5H7.96211V12.776H11.4762L12.2074 8.76465H7.96211V7.34551C7.96211 5.225 8.7868 4.41289 10.9155 4.41289C11.5777 4.41289 12.1099 4.4293 12.4187 4.46211V0.824023C11.8377 0.664062 10.4159 0.5 9.59523 0.5C5.25242 0.5 3.24961 2.57129 3.24961 7.03789V8.76465H0.568359V12.776H3.24961Z" fill="#574D4A"/>
+                        <path
+                          d="M3.24961 12.776V21.5H7.96211V12.776H11.4762L12.2074 8.76465H7.96211V7.34551C7.96211 5.225 8.7868 4.41289 10.9155 4.41289C11.5777 4.41289 12.1099 4.4293 12.4187 4.46211V0.824023C11.8377 0.664062 10.4159 0.5 9.59523 0.5C5.25242 0.5 3.24961 2.57129 3.24961 7.03789V8.76465H0.568359V12.776H3.24961Z"
+                          fill="#574D4A"
+                        />
                       </g>
                       <defs>
                         <clipPath id="clip0_14_1723">
-                          <rect width="13" height="21" fill="white" transform="translate(0 0.5)"/>
+                          <rect
+                            width="13"
+                            height="21"
+                            fill="white"
+                            transform="translate(0 0.5)"
+                          />
                         </clipPath>
                       </defs>
                     </svg>
                   </a>
+                </li>
+
                 <li>
                   <button class="copy-link-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="24" viewBox="0 0 29 24" fill="none">
-                      <path d="M26.2721 12.5256C28.8323 9.98751 28.8323 5.87716 26.2721 3.33908C24.0065 1.09298 20.4359 0.800989 17.8304 2.64728L17.7579 2.69669C17.1054 3.15939 16.9559 4.05783 17.4226 4.70021C17.8893 5.34259 18.7955 5.49533 19.4435 5.03263L19.516 4.98322C20.9705 3.9545 22.9598 4.11622 24.2195 5.36954C25.6468 6.78458 25.6468 9.0756 24.2195 10.4906L19.1354 15.5399C17.708 16.9549 15.3971 16.9549 13.9698 15.5399C12.7055 14.2865 12.5424 12.3145 13.5801 10.877L13.6299 10.8051C14.0966 10.1582 13.9426 9.25978 13.2946 8.80158C12.6466 8.34337 11.7359 8.49161 11.2737 9.134L11.2238 9.20587C9.35695 11.7844 9.65148 15.3242 11.9171 17.5703C14.4773 20.1084 18.6234 20.1084 21.1835 17.5703L26.2721 12.5256ZM2.72773 11.4744C0.167578 14.0125 0.167578 18.1229 2.72773 20.6609C4.99336 22.907 8.56398 23.199 11.1695 21.3527L11.242 21.3033C11.8945 20.8406 12.044 19.9422 11.5773 19.2998C11.1105 18.6574 10.2043 18.5047 9.55633 18.9674L9.48383 19.0168C8.0293 20.0455 6.04008 19.8838 4.78039 18.6305C3.35305 17.211 3.35305 14.9199 4.78039 13.5049L9.86445 8.46017C11.2918 7.04513 13.6027 7.04513 15.0301 8.46017C16.2943 9.71349 16.4574 11.6856 15.4198 13.1276L15.3699 13.1994C14.9032 13.8463 15.0573 14.7447 15.7052 15.2029C16.3532 15.6611 17.264 15.5129 17.7262 14.8705L17.776 14.7986C19.6429 12.2156 19.3484 8.67579 17.0827 6.4297C14.5226 3.89161 10.3765 3.89161 7.81633 6.4297L2.72773 11.4744Z" fill="#574D4A"/>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="29"
+                      height="24"
+                      viewBox="0 0 29 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M26.2721 12.5256C28.8323 9.98751 28.8323 5.87716 26.2721 3.33908C24.0065 1.09298 20.4359 0.800989 17.8304 2.64728L17.7579 2.69669C17.1054 3.15939 16.9559 4.05783 17.4226 4.70021C17.8893 5.34259 18.7955 5.49533 19.4435 5.03263L19.516 4.98322C20.9705 3.9545 22.9598 4.11622 24.2195 5.36954C25.6468 6.78458 25.6468 9.0756 24.2195 10.4906L19.1354 15.5399C17.708 16.9549 15.3971 16.9549 13.9698 15.5399C12.7055 14.2865 12.5424 12.3145 13.5801 10.877L13.6299 10.8051C14.0966 10.1582 13.9426 9.25978 13.2946 8.80158C12.6466 8.34337 11.7359 8.49161 11.2737 9.134L11.2238 9.20587C9.35695 11.7844 9.65148 15.3242 11.9171 17.5703C14.4773 20.1084 18.6234 20.1084 21.1835 17.5703L26.2721 12.5256ZM2.72773 11.4744C0.167578 14.0125 0.167578 18.1229 2.72773 20.6609C4.99336 22.907 8.56398 23.199 11.1695 21.3527L11.242 21.3033C11.8945 20.8406 12.044 19.9422 11.5773 19.2998C11.1105 18.6574 10.2043 18.5047 9.55633 18.9674L9.48383 19.0168C8.0293 20.0455 6.04008 19.8838 4.78039 18.6305C3.35305 17.211 3.35305 14.9199 4.78039 13.5049L9.86445 8.46017C11.2918 7.04513 13.6027 7.04513 15.0301 8.46017C16.2943 9.71349 16.4574 11.6856 15.4198 13.1276L15.3699 13.1994C14.9032 13.8463 15.0573 14.7447 15.7052 15.2029C16.3532 15.6611 17.264 15.5129 17.7262 14.8705L17.776 14.7986C19.6429 12.2156 19.3484 8.67579 17.0827 6.4297C14.5226 3.89161 10.3765 3.89161 7.81633 6.4297L2.72773 11.4744Z"
+                        fill="#574D4A"
+                      />
                     </svg>
                   </button>
                 </li>
               </ul>
             </div>
-            
-            {% module "u4m-post-sidebar-card" path="../modules/u4m-post-sidebar-card", label="u4m-post-sidebar-card" %}
+            {% module "u4m-post-sidebar-card"
+            path="../modules/u4m-post-sidebar-card",
+            label="u4m-post-sidebar-card" %}
           </div>
         </div>
       </div>
-      {% module "related-posts" path="../modules/u4m-related-posts",
-      label="u4m-related-posts" %}
-    </section>
-  </main>
-  {% endblock body %} {% require_js %}
-  <script>
+    </div>
+    {% module "related-posts" path="../modules/u4m-related-posts",
+    label="u4m-related-posts" %}
+  </section>
+</main>
+{% endblock body %} {% require_js %}
+<script>
   document.querySelectorAll(".copy-link-button").forEach(function (button) {
     button.addEventListener("click", function () {
       var tempInput = document.createElement("input");
@@ -105,6 +148,5 @@
       document.body.removeChild(tempInput);
     });
   });
-  </script>
-  {% end_require_js %}
-  
+</script>
+{% end_require_js %}
