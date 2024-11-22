@@ -33,6 +33,37 @@
           flex-direction: row-reverse;
           .toptab_ttl {
             cursor: pointer;
+            position: relative;
+            .timer {
+              border-radius: 0px 0px 0px 0px;
+              display: block;
+              height: 3px;
+              width: 100%;
+              visibility: hidden;
+              opacity: 0;
+              overflow: hidden;
+              position: absolute;
+              left: 0;
+              right: 0;
+              top: -1px;
+              i {
+                display: block;
+                width: 100%;
+                font: inherit;
+                position: absolute;
+                left: 0;
+                background: $yellowColor;
+                height: 100%;
+              }
+            }
+            &.slick-current .timer {
+              opacity: 1;
+              visibility: visible;
+              i {
+                animation-name: width;
+                animation-duration: 5s;
+              }
+            }
           }
         }
       }
@@ -47,21 +78,24 @@
     .tabber_inr {
       .tabs {
         .toptab {
-          border: 1px solid #544d45;
+          border: 1px solid $greyborder;
           display: flex;
           flex-wrap: wrap;
           flex-direction: row-reverse;
           .toptab_ttl {
-            border-right: 1px solid #544d45;
+            border-right: 1px solid $greyborder;
             width: 25%;
             text-align: left;
             padding: 30px 40px;
+            cursor: pointer;
             &:last-child {
               border-right: 0;
             }
             @include tabletvert {
               width: 100%;
+              border-right: 0;
             }
+
             .tab_txt {
               @include size18;
               line-height: 1.6;
@@ -75,15 +109,22 @@
               margin-top: 10px;
             }
           }
+          @include tabletvert {
+            .tab_acc_item {
+              border-bottom: 1px solid $greyborder;
+            }
+          }
         }
       }
       .toptabber_cnt_wrap {
         display: none;
-        border: 1px solid #544d45;
+        border: 1px solid $greyborder;
         padding: 81rem 110rem 0;
         border-top: 0;
+        border-bottom: 0;
         @include tabletvert {
           padding: 20rem;
+          border: 0;
         }
         .white_bg {
           padding: 65px;
@@ -107,5 +148,13 @@
         }
       }
     }
+  }
+}
+@keyframes width {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
   }
 }

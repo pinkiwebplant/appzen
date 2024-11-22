@@ -22,12 +22,15 @@
 					<div class="toptab" dir="rtl">
 						{% for item in module.tabber_slider %}
 						<div class="toptab_ttl">
+							<span class="timer">
+								<i></i>
+							</span>
 							<div class="tab_ttl_inr">
 								<div class="tab_txt">
 									{{ item.tab }}
 								</div>
 								<div class="tab_cnt">{{ item.content }}</div>
-									{% if item.include_button %}
+								{% if item.include_button %}
 								<div class="btn_row">
 									{% for item2 in item.buttons %}
 									{% if item2.button_type == 'stnd' %} 
@@ -64,17 +67,17 @@
 				</div>
 				<div class="toptabber_cnt_wrap" dir="rtl">
 					<div class="white_bg">
-					<div class="toptabber_cnt" dir="rtl">
-						{% for item in module.tabber_slider %}
-						<div class="tabber_cnt_inr">
-							<div class="img">
-								{% if item.select_image.src %}
-								<img src="{{ item.select_image.src }}" alt="{{ item.select_image.alt }}" >
-								{% endif %}
+						<div class="toptabber_cnt" dir="rtl">
+							{% for item in module.tabber_slider %}
+							<div class="tabber_cnt_inr">
+								<div class="img">
+									{% if item.select_image.src %}
+									<img src="{{ item.select_image.src }}" alt="{{ item.select_image.alt }}" >
+									{% endif %}
+								</div>
 							</div>
-						</div>
-						{% endfor %}
-					</div> 
+							{% endfor %}
+						</div> 
 					</div> 
 				</div>
 			</div>
@@ -96,6 +99,7 @@
 										{{ item.tab }}
 									</div>
 									<div class="tab_cnt">{{ item.content }}</div>
+									{% if item.include_button %}
 									<div class="btn_row">
 										{% for item2 in item.buttons %}
 										{% if item2.button_type == 'stnd' %} 
@@ -124,7 +128,8 @@
 										{% endfor %}
 
 									</div>
-								</div>>
+									{% endif %}
+								</div>
 							</div>
 
 							<div class="toptabber_cnt_wrap" {% if loop.index == "1" %} style="display: block;"{% endif %}>
@@ -183,7 +188,7 @@
 	$(".{{name}} .mobile_tab .toptab_ttl").click(function () {
 		var getId = $(this).parent().attr('data-tab-id');
 	$(this).parent().siblings().removeClass("active");
-	$(this).parent().siblings().find('.toptabber_cnt').slideUp();
+	$(this).parent().siblings().find('.toptabber_cnt_wrap').slideUp();
 	$(this).parent().toggleClass("active");
 	$(this).next().slideToggle();
 
