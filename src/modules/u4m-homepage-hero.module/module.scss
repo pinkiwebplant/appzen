@@ -1,0 +1,131 @@
+@import "../../css/_module-imports";
+
+section.u4m-homepage-hero {
+  padding-top: 85px;
+  padding-bottom: 60px;
+  .homepage-inner {
+    &.slider {
+      .banner-column {
+        .intro {
+          p,
+          ul {
+            max-width: 890px;
+          }
+        }
+        .intro_cnt {
+          padding-bottom: 25px;
+        }
+        .content-col {
+          padding-right: 15px;
+          @include tabletvert {
+            margin-bottom: 0px;
+            padding-right: 0px;
+          }
+        }
+      }
+      .img-col {
+        padding: 0;
+        .img-inner {
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          min-height: 640px;
+          border-radius: 10px;
+          @include tabletvert {
+            min-height: 360px;
+          }
+          .svg-box-wrap {
+            top: 0;
+            transform: translate(0px, 0%);
+            right: 0;
+            padding-right: 76px;
+            height: 100%;
+            @include tabletvert {
+              padding-right: 20px;
+            }
+            .svg-box {
+              padding: 36px 15px 36px 100px;
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              border-radius: 15px;
+              background-color: rgba($black, 0.4);
+              @include tabletvert {
+                padding: 20px 15px;
+              }
+              svg {
+                box-shadow: none;
+                @include tabletvert {
+                  max-width: 250px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .banner-column {
+    align-items: center;
+    .content-col {
+      padding-left: 15px;
+      padding-right: 42px;
+      @include tabletvert {
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+    .img-col {
+      padding-right: 15px;
+      padding-left: 42px;
+      @include tabletvert {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .img-inner {
+        position: relative;
+      }
+      img {
+        border-radius: 12px;
+        vertical-align: middle;
+      }
+      .svg-box-wrap {
+        display: flex;
+        position: absolute;
+        bottom: 5px;
+        z-index: 9;
+        right: 0;
+        width: 100%;
+        padding: 0 20px;
+        .svg-box {
+          position: relative;
+          > svg {
+            padding: 7.5px;
+            -webkit-box-shadow: inset 0px 0px 10px 15px rgba(255, 255, 255, 1);
+            -moz-box-shadow: inset 0px 0px 10px 15px rgba(255, 255, 255, 1);
+            box-shadow: inset 0px 0px 10px 15px rgba(255, 255, 255, 0.5);
+          }
+        }
+        .arrow {
+          display: flex;
+          align-items: center;
+          margin: 0 -7.5px;
+          z-index: 9;
+          &:last-child {
+            display: none;
+          }
+        }
+      }
+    }
+    .intro {
+      p {
+        @include size18;
+      }
+      p,
+      ul {
+        max-width: 390px;
+      }
+    }
+  }
+}
