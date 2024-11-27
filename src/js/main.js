@@ -41,3 +41,7 @@ $(window).on("load resize scroll", function (e) {
     $(".headerWrap").css("min-height", hdrHgtup + "px");
   });
 });
+
+$(".HeaderSticky ul.active-branch")
+  .parents("header.u4m-header")
+  .addClass("stickysec");
