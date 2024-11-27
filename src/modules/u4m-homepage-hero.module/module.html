@@ -73,12 +73,13 @@
 		{% for item in module.slider_item %}
 		<div class="banner-column ">
 			<div class="content-col">
+			{% if item.content_column.intro_content %}
 				<div class='intro'>
 					<div class='intro_cnt'>
 						{{ item.content_column.intro_content }}
 					</div>
 				</div>
-
+			{% endif %}
 				{% if item.content_column.include_button %}
 				<div class="btn_row">
 					{% for item2 in item.content_column.buttons %}
@@ -113,10 +114,8 @@
 			<div class="img-col">
 				<div class="img-inner" style="background-image:url({{ item.image_column.image.src }});">
 					<div class="svg-box-wrap" style="justify-content:{{ item.image_column.svg_alignment }};">
-
-						<div class="svg-box" data-aos="{{ item.image_column.animation_type }}" data-aos-delay="{{loop.index}}000">
+						<div class="svg-box">
 							{{ item.image_column.svg_item.svg_icon }}
-
 						</div>
 
 					</div>
@@ -143,7 +142,8 @@
 		autoplaySpeed: {{speed}} ,
 		slidesToShow: 1,
 		fade: true,
-		speed: 1000
+		speed: 1000,
+		arrows:false
 		});
 </script>
 {% end_require_js %}
