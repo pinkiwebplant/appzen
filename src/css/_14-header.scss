@@ -1,5 +1,13 @@
 header.u4m-header {
     padding: 13.5px 13px 12.5px;
+    position: absolute;
+    transition:
+        height 0.3s,
+        top 0.5s;
+    left: 0;
+    width: 100%;
+    background-color: $lightGreybg;
+    z-index: 10;
     .headerIn {
         position: relative;
         > .flex_row {
@@ -25,43 +33,157 @@ header.u4m-header {
                 justify-content: space-between;
                 align-items: center;
                 border-bottom: 1px solid $lightGray;
+                .headerLogo.sticky {
+                    display: none;
+                }
+            }
+        }
+
+        .HeaderSticky {
+            .hs-menu-wrapper {
+                > ul {
+                    > li {
+                        > a {
+                            display: none;
+                        }
+                        > ul {
+                            > li.active-branch {
+                                display: block;
+                                float: none;
+                                display: flex;
+                                justify-content: space-between;
+                                max-width: 1288px;
+                                margin: 0 auto;
+                            }
+                            > li {
+                                display: none;
+                                > ul {
+                                    > li {
+                                        > a {
+                                            padding: 12px 25px;
+                                            width: auto !important;
+                                            text-overflow: unset !important;
+                                            white-space: normal !important;
+                                            max-width: 100%;
+                                            cursor: pointer;
+                                            @include navbreakMin {
+                                                padding: 12px 45px;
+                                            }
+                                        }
+                                    }
+                                    display: flex;
+                                    gap: 8px;
+                                    max-width: 70%;
+                                    width: 100%;
+                                    @include navbreakMin {
+                                        max-width: calc(100% - 314px);
+                                    }
+                                    > li.active.active-branch {
+                                        > a {
+                                            background-color: $sectionbg;
+                                        }
+                                    }
+                                }
+                                > a {
+                                    max-width: 30%;
+                                    width: 100%;
+                                    font-family: $font1;
+                                    font-weight: 700;
+                                    font-size: 18px;
+                                    line-height: 160%;
+                                    width: 100% !important;
+                                    text-overflow: unset !important;
+                                    white-space: normal !important;
+                                    @include navbreakMin {
+                                        max-width: 314px;
+                                    }
+                                }
+                            }
+                        }
+                        display: none;
+                        border-bottom: 1px solid $lightGray;
+                        margin: 0;
+                        .hs-menu-children-wrapper {
+                            position: static !important;
+                        }
+                        ul {
+                            > li {
+                                > a {
+                                    color: $basecolor;
+                                }
+                            }
+                        }
+                    }
+                    > li.active-branch {
+                        display: block;
+                        float: none;
+                    }
+                    display: none;
+                    margin: 0;
+                    padding-top: 5px;
+                    li {
+                        margin: 0;
+                    }
+                }
+                > ul.active-branch {
+                    display: block;
+                }
+            }
+            @include tablet {
+                display: none;
             }
         }
     }
-    &:not(.lt) {
-        .headerLogo.lightLogo {
-            display: none;
-        }
-    }
 }
-header.u4m-header.lt {
-    .headerLogo.darkLogo {
-        display: none;
-    }
-    background: $basecolor;
-    .megaMenu {
-        .hs-megaMenu-wrapper {
-            > ul.mobileHide {
-                > li {
-                    a {
-                        color: $greybg;
-                    }
-                    &:last-child {
-                        > a {
-                            color: $sidebarplaceholder;
+.lt {
+    header.u4m-header {
+        .headerLogo {
+            img {
+                filter: invert(1) brightness(1.4);
+            }
+        }
+        background: $basecolor;
+        .megaMenu {
+            .hs-megaMenu-wrapper {
+                > ul.mobileHide {
+                    > li {
+                        a {
+                            color: $greybg;
+                        }
+                        &:last-child {
+                            > a {
+                                color: $sidebarplaceholder;
+                            }
+                        }
+                        &:hover {
+                            > a {
+                                color: $basecolor;
+                                background: $white;
+                            }
                         }
                     }
-                    &:hover {
+                    > li.childOpen {
                         > a {
                             color: $basecolor;
                             background: $white;
                         }
                     }
                 }
-                > li.childOpen {
-                    > a {
-                        color: $basecolor;
-                        background: $white;
+            }
+        }
+        .HeaderSticky {
+            .hs-menu-wrapper {
+                > ul {
+                    > li {
+                        ul {
+                            > li {
+                                &:not(.active) {
+                                    > a {
+                                        color: $white;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -404,6 +526,8 @@ html.hdrOpen {
             padding: 30px 20px;
             right: -13px;
             display: none;
+            max-height: calc(100vh - 100px);
+            overflow-y: auto;
         }
         .headerIn {
             > .flex_row {
@@ -512,6 +636,72 @@ html.hdrOpen {
                     }
                 }
             }
+        }
+    }
+}
+
+.headerWrap {
+    @include tabletmidmin {
+        min-height: 176px;
+    }
+    @include tabletmid {
+        min-height: 105px;
+    }
+    .row-fluid {
+        [class*="span"] {
+            min-height: 0;
+        }
+    }
+}
+
+body.anncmnt_hide {
+    .HeaderTopSec {
+        display: none !important;
+    }
+    .headerWrap {
+        min-height: 81px;
+        @include tabletmid {
+            min-height: 66px;
+        }
+    }
+}
+
+// body {
+//     opacity: 0;
+//     visibility: hidden;
+// }
+
+// .add-transition {
+//     opacity: 1;
+//     visibility: visible;
+//     transition:
+//         opacity 0.5s ease-in-out,
+//         visibility 0.5s ease-in-out;
+// }
+@keyframes headerDown {
+    from {
+        top: -100px;
+    }
+    to {
+        top: 0px;
+    }
+}
+
+.page-scrolled {
+    header.u4m-header {
+        position: fixed;
+        animation: headerDown 0.5s ease-out forwards;
+
+        .headerLogo {
+            &.sticky {
+                display: block !important;
+            }
+            &.normal {
+                display: none !important;
+            }
+        }
+        .headerMenu {
+            max-height: calc(100vh - 66px);
         }
     }
 }
