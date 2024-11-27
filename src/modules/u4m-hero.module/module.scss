@@ -44,6 +44,15 @@
 
   .right-content {
     text-align: center;
+    .right-content-inner {
+      position: relative;
+      .hero-overlay-image {
+      img{
+        left:0;
+        bottom: 10%;
+      }
+      }
+    }
     .hero-overlay-image {
       img {
         position: absolute;
