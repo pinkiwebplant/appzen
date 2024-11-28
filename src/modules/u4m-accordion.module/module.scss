@@ -135,4 +135,12 @@
       }
     }
   }
+
+  &.reverse-text {
+    .accor-expand-btn {
+      a {
+        color: $white;
+      }
+    }
+  }
 }

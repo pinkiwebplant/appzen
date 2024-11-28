@@ -27,7 +27,7 @@
   }
 }
 
-@mixin navbreakMin {
+@mixin navbreakMinMax {
   @media (max-width: 1070px) {
     @content;
   }

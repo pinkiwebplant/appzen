@@ -1,52 +1,19 @@
-{% set moduleName = 'u4m-alternating-content-one' %}
+
+{% if module.module_overrides.include_background_inside %}
+{% set iner_bg = " inner_bg_add "%}
+{% endif %}
+
+
+{% set moduleName = 'u4m-alternating-content-one'~iner_bg %}
 {% set imageMax = 1000 %}
 {% set bgImageMax = 1920 %}
 
 {% include "../partials/u4-module-includes.html" %}
 <div class="page-center">
-	{% if module.include_intro or module.include_intro  or module.include_button%} 
-	<div class="top_cnt">
-		{% if module.include_intro %} 
-		<div class='intro'>
-			<div class='intro_cnt'>
-				{{ module.intro_content }}
-			</div>
-		</div>
-		{% endif %}
-		{% if module.include_button %} 
-		<div class="btn_row">
-			{% for item in module.buttons %}
-			{% if item.button_type == 'stnd' %} 
-			{% set href = item.button_link.url.href %}
-			{% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
-			{% set href = "mailto:" + href %}
-			{% endif %}
-			<a class="{{ item.theme }} hs-button"
-				 {% if item.button_link.url.type is equalto "CALL_TO_ACTION"  %}
-				 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
-				 {% else %}
-				 href="{{ href|escape_url }}"
-				 {% endif %}
-				 {% if item.button_link.open_in_new_tab %}
-				 target="_blank"
-				 {% endif %}
-				 {% if item.button_link.rel %}
-				 rel="{{ item.button_link.rel|escape_attr }}"
-				 {% endif %}
-				 >
-				{{ item.button_text }}
-			</a>
-			{% else %}
-			{% cta guid="{{ item.cta_field }}" %}
-			{% endif %}
-			{% endfor %}
 
-		</div>
-		{% endif %}
-	</div>
-	{% endif %}
+	
 	<div class="two_cols">
-		<div class="inner_wrpp {{ module.module_settings.images_alignment }}_align">
+		<div class="inner_wrpp {{ module.module_overrides.images_alignment }}_align">
 			<div class="left_col">
 				<div class="cm_cnt">
 					{{ module.content_group.content }}
@@ -90,7 +57,7 @@
 						 >
 						{{ module.content_group.buttons_copy.button_text }}
 						{% if module.content_group.buttons_copy.include_arrow %}
-					{{ module.content_group.buttons_copy.arrow_image }}
+				<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M5.5 1L10.5 6L5.5 11" stroke="#3D3533"/><path d="M10.5 6L0.5 6" stroke="#3D3533"/></svg>
 						{% endif %}
 					</a>
 					{% else %}

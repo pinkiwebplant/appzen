@@ -14,10 +14,12 @@
 	</div>
 	{% endif %}
 
+	
+	
 	<div class="flex_row {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.select_column_alignment }}{% endif %}">
 
 		{% for item in module.cards_group %}
-		<div class="card_item col3 col">
+		<div class="card_item col3 col {% if module.module_overrides.reverse_text %}{% if module.module_overrides.use_card_content_theme_color %}themeColor{% endif %}{% endif %}">
 			<div class="card_inner {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.card_background_color }}{% endif %}">
 				<h5 class="card_title">
 					{{ item.title }}

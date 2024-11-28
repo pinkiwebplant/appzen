@@ -17,8 +17,7 @@
 					</div>
 					{% endif %}
 				</div>
-				{% if module.enable_expand_button %}
-				{% endif %}
+				{% if module.enable_expand_button and module.expand_button_text %}
 				<div class="col col6 accor-expand-btn">
 					<div class="accor-expand-btn-inn">
 						<div class="expand-btn">
@@ -27,6 +26,7 @@
 						</div>
 					</div>
 				</div>
+				{% endif %}
 			</div>
 		</div>
 		<div class="accordion-items">

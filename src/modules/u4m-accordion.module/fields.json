@@ -34,7 +34,7 @@
   "locked" : false,
   "display" : "checkbox",
   "type" : "boolean",
-  "default" : false
+  "default" : true
 }, {
   "id" : "59b0e593-e840-99e1-03bd-b97a02c16a9c",
   "name" : "expand_button_text",

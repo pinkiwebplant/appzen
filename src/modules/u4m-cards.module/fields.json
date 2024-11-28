@@ -612,6 +612,24 @@
     "display" : "checkbox",
     "type" : "boolean",
     "default" : false
+  }, {
+    "id" : "6e3d873e-d7f2-a340-0e9e-d8c382338165",
+    "name" : "use_card_content_theme_color",
+    "display_width" : null,
+    "label" : "Use Card Content Theme Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_overrides.reverse_text",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : false
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -647,6 +665,7 @@
         "loading" : "disabled"
       }
     },
-    "reverse_text" : false
+    "reverse_text" : false,
+    "use_card_content_theme_color" : false
   }
 } ]
