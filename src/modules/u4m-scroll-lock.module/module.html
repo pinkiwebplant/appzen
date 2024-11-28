@@ -1,0 +1,129 @@
+{% set moduleName = 'u4m-scroll-lock' %}
+{% set imageMax = 1000 %}
+{% set bgImageMax = 1920 %}
+
+{% include "../partials/u4-module-includes.html" %}
+{% if module.include_intro %}
+<div class='intro'>
+	<div class='intro_cnt page-center'>
+		{{ module.intro_content }}
+	</div>
+</div>
+{% endif %}
+
+
+<div class="wrapper">  
+	<div class="sticky_sec">			
+		<div class="page-center"> 
+			<div class="scroll_wrap">
+				<div class="slide_dots">
+					{% for item in module.slider %}
+					<div class="li {{ name }}tab{{ loop.index }} {% if loop.first %}active{% endif %}" data-id="{{ name }}tab{{ loop.index }}"></div>
+					{% endfor %}
+				</div>
+				<div class="scroll_slides">
+					{% for item in module.slider %}
+					<div class="scroll_slide {{ name }}tab{{ loop.index }} {% if loop.first %}active{% endif %}" data-index="tab{{ loop.index }}">
+						<div class="scroll_slide_inr flex_row">
+							<div class="scroll_cnt">
+								{{ item.content }}
+								{% if item.include_button %}
+								<div class="btn_row">
+									{% for item2 in item.buttons %}
+									{% if item2.button_type == 'stnd' %} 
+									{% set href = item2.button_link.url.href %}
+									{% if item2.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+									{% set href = "mailto:" + href %}
+									{% endif %}
+									<a class="{{ item2.theme }} hs-button"
+										 {% if item2.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+										 href="{{ href }}"
+										 {% else %}
+										 href="{{ href|escape_url }}"
+										 {% endif %}
+										 {% if item2.button_link.open_in_new_tab %}
+										 target="_blank"
+										 {% endif %}
+										 {% if item2.button_link.rel %}
+										 rel="{{ item2.button_link.rel|escape_attr }}"
+										 {% endif %}
+										 >
+										{{ item2.button_text }}
+									</a>
+									{% else %}
+									{% cta guid="{{ item2.cta_field }}" %}
+									{% endif %}
+									{% endfor %}
+
+								</div>
+								{% endif %}
+							</div>
+							<div class="scroll_img">
+								<div class="img_wrap" style="background-image:url({{ item.select_image.src }})">
+									{% if item.include_svg %}
+									<div class="box_border">
+										<div class="white_box">
+											<div class="box_svg">
+												{{ item.add_svg }}
+											</div>
+										</div>
+									</div>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="blank_slide">
+		<div class="blank_list">
+			{% for item in module.slider %}
+			<div class="blank_item {% if loop.first %}active{% endif %} {{ name }}tab{{ loop.index }}" data-tab="{{ name }}tab{{ loop.index }}">
+
+			</div>
+			{% endfor %}
+		</div>
+	</div> 
+</div>
+
+</section>
+
+
+{% require_js %}
+<script>
+	$(window).on('scroll', function () {
+		// Get the current scroll position
+		var scrollTop = $(window).scrollTop();
+
+		// Loop through each .blank_item
+		$('.blank_item').each(function () {
+			var $this = $(this);
+			var tag = $(this).attr('data-tab');
+			var itemOffset = $this.offset().top;
+			if (scrollTop + $(window).height() > itemOffset) {
+				$this.addClass('active');  
+				$('.' + tag).addClass('active');
+				$this.siblings('.blank_item').removeClass('active');
+				$('.' + tag).siblings('.scroll_slide').removeClass('active');
+				$('.' + tag).siblings('.li').removeClass('active');
+			}
+		});
+	});
+
+
+	$('.slide_dots .li').on('click', function(e) {
+		var dots = $(this).attr('data-id');
+		var targetOffset = $('.blank_item.' + dots).offset().top;
+		var windowHeight = $(window).height() - 80;  // Get the height of the viewport
+
+		// Subtract 100vh (viewport height) from the scroll position
+		$('html, body').animate({
+			scrollTop: targetOffset - windowHeight
+		});
+	});
+
+</script>
+{% end_require_js %}
