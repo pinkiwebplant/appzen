@@ -1,0 +1,149 @@
+{% set moduleName = 'u4m-homepage-hero' %}
+{% set imageMax = 1000 %}
+{% set bgImageMax = 1920 %}
+
+{% include "../partials/u4-module-includes.html" %}
+
+<div class="page-center">
+	<div class="homepage-inner {% if module.banner_type == 'slider'  %}slider	{% endif %}">
+		{% if module.banner_type == 'normal' %}
+		<div class="banner-column flex_row ">
+			<div class="col6 content-col">
+				<div class='intro'>
+					<div class='intro_cnt'>
+						{{ module.content_column.intro_content }}
+					</div>
+				</div>
+
+				{% if module.content_column.include_button %} 
+				<div class="btn_row">
+					{% for item in module.content_column.buttons %}
+					{% if item.button_type == 'stnd' %} 
+					{% set href = item.button_link.url.href %}
+					{% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+					{% set href = "mailto:" + href %}
+					{% endif %}
+					<a class="{{ item.theme }} hs-button"
+						 {% if item.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+						 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+						 {% else %}
+						 href="{{ href|escape_url }}"
+						 {% endif %}
+						 {% if item.button_link.open_in_new_tab %}
+						 target="_blank"
+						 {% endif %}
+						 {% if item.button_link.rel %}
+						 rel="{{ item.button_link.rel|escape_attr }}"
+						 {% endif %}
+						 >
+						{{ item.button_text }}
+					</a>
+					{% else %}
+					{% cta guid="{{ item.cta_field }}" %}
+					{% endif %}
+					{% endfor %}
+
+				</div>
+				{% endif %}
+			</div>
+			<div class="col6 img-col">
+				<div class="img-inner">
+					{% if module.image_column.image.src %}
+					<img src="{{ module.image_column.image.src|escape_url }}" alt="{{ module.image_column.image.alt|escape_attr }}">
+					{% endif %}
+					<div class="svg-box-wrap" style="justify-content:{{ module.image_column.svg_alignment }};">
+						{% for item in module.image_column.svg_item %}
+						<div class="svg-box" data-aos="{{ module.image_column.animation_type }}" data-aos-delay="{{loop.index}}000">
+							{{ item.svg_icon }}
+
+						</div>
+						<div class="arrow" data-aos="{{ module.image_column.animation_type }}" data-aos-delay="{{loop.index}}000">
+							<svg xmlns="http://www.w3.org/2000/svg" width="28" height="16" viewBox="0 0 28 16" fill="none">
+								<path d="M27.3376 8.70518C27.7395 8.30331 27.7395 7.65177 27.3376 7.24991L20.7889 0.701204C20.387 0.299342 19.7355 0.299342 19.3336 0.701204C18.9318 1.10306 18.9318 1.75461 19.3336 2.15647L25.1547 7.97754L19.3336 13.7986C18.9318 14.2005 18.9318 14.852 19.3336 15.2539C19.7355 15.6557 20.387 15.6557 20.7889 15.2539L27.3376 8.70518ZM0.428223 9.00657L26.61 9.00657L26.61 6.94851L0.428223 6.94851L0.428223 9.00657Z" fill="#F35F45"/>
+							</svg>
+						</div>
+						{% endfor %}
+					</div>
+
+				</div>
+			</div>
+		</div>
+		{% endif %}
+		{% if module.banner_type == 'slider'  %}
+		{% for item in module.slider_item %}
+		<div class="banner-column ">
+			<div class="content-col">
+			{% if item.content_column.intro_content %}
+				<div class='intro'>
+					<div class='intro_cnt'>
+						{{ item.content_column.intro_content }}
+					</div>
+				</div>
+			{% endif %}
+				{% if item.content_column.include_button %}
+				<div class="btn_row">
+					{% for item2 in item.content_column.buttons %}
+					{% if item2.button_type == 'stnd' %} 
+					{% set href = item2.button_link.url.href %}
+					{% if item2.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+					{% set href = "mailto:" + href %}
+					{% endif %}
+					<a class="{{ item2.theme }} hs-button"
+						 {% if item2.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+						 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+						 {% else %}
+						 href="{{ href|escape_url }}"
+						 {% endif %}
+						 {% if item2.button_link.open_in_new_tab %}
+						 target="_blank"
+						 {% endif %}
+						 {% if item2.button_link.rel %}
+						 rel="{{ item2.button_link.rel|escape_attr }}"
+						 {% endif %}
+						 >
+						{{ item2.button_text }}
+					</a>
+					{% else %}
+					{% cta guid="{{ item2.cta_field }}" %}
+					{% endif %}
+					{% endfor %}
+
+				</div>
+				{% endif %}
+			</div>
+			<div class="img-col">
+				<div class="img-inner" style="background-image:url({{ item.image_column.image.src }});">
+					<div class="svg-box-wrap" style="justify-content:{{ item.image_column.svg_alignment }};">
+						<div class="svg-box">
+							{{ item.image_column.svg_item.svg_icon }}
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+		{% endif %} 
+	</div>
+</div>
+
+
+</section>
+
+{% require_js %}
+<script>
+	{% set speed = module.slider_settings.autoplay_speed %}
+
+	$('.{{name}} .slider').slick({
+		dots: false,
+		infinite: true,
+		autoplay: true,
+		autoplaySpeed: {{speed}} ,
+		slidesToShow: 1,
+		fade: true,
+		speed: 1000,
+		arrows:false
+		});
+</script>
+{% end_require_js %}

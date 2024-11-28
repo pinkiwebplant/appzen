@@ -45,6 +45,9 @@
 			</div>
 			{% if module.right_content.image_field.src or module.right_content.overlay_image.src %}
 			<div class="{% if not module.right_content.image_field.src %}col5 {% else %}col7 {% endif %} col right-content">
+			{% if module.right_content.image_field.src %}
+			<div class="right-content-inner">
+			{% endif %}
 				{% if module.right_content.image_field.src %}
 				<div class="hero-image">
 					{% set loadingAttr = module.right_content.image_field.loading != 'disabled' ? 'loading="{{ module.right_content.image_field.loading|escape_attr }}"' : '' %}
@@ -57,6 +60,9 @@
 					<img src="{{ module.right_content.overlay_image.src|escape_url }}" alt="{{ module.right_content.overlay_image.alt|escape_attr }}" {{ loadingAttr }}>
 				</div>
 					{% endif %}
+					{% if module.right_content.image_field.src %}
+						</div>
+						{% endif %}
 			</div>
 			{% endif %}
 		</div>
