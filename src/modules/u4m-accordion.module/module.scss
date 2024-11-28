@@ -56,6 +56,9 @@
       font-weight: 400;
       color: $bodyColor;
       @include size14;
+      &.collapse-btn {
+        display: none;
+      }
     }
   }
 
