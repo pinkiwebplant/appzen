@@ -611,7 +611,7 @@
       "display_width" : null,
       "label" : "Add Overlay",
       "required" : false,
-      "locked" : false,
+      "locked" : true,
       "visibility" : {
         "controlling_field" : null,
         "controlling_field_path" : "module_overrides.background_settings.background_type",

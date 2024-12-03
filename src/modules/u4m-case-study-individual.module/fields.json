@@ -8,6 +8,17 @@
   "type" : "hubdbtable",
   "default" : 102672445
 }, {
+  "id" : "100a09f4-8dfe-d66c-ddc8-c948ccd58fb7",
+  "name" : "card_count",
+  "display_width" : null,
+  "label" : "Card Count",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "step" : 1,
+  "type" : "number",
+  "default" : 2
+}, {
   "id" : "module_overrides",
   "name" : "module_overrides",
   "display_width" : null,
