@@ -100,7 +100,7 @@
   "default" : {
     "include_heading" : true,
     "heading" : "Customer stories",
-    "include_view_all_link" : false,
+    "include_view_all_link" : true,
     "view_all_link_text" : "View All",
     "view_all_link" : {
       "url" : {
@@ -133,23 +133,6 @@
     "preset" : null,
     "type" : "choice",
     "default" : "recent"
-  }, {
-    "id" : "8ca17613-47f5-2fbc-273e-91cfb0c20498",
-    "name" : "resource_table",
-    "display_width" : null,
-    "label" : "Resource Table",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "resources.resource_type",
-      "controlling_value_regex" : "hubdb",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "type" : "hubdbtable",
-    "default" : ""
   }, {
     "id" : "ccae048e-d114-0724-3951-5882ccc1bcca",
     "name" : "category_name",
@@ -190,58 +173,6 @@
     "step" : 1,
     "type" : "number",
     "default" : 3
-  }, {
-    "id" : "cccae1e9-014e-3277-d2ee-67662f153e39",
-    "name" : "resources_by_title",
-    "display_width" : null,
-    "label" : "Resources By Title",
-    "required" : false,
-    "locked" : false,
-    "occurrence" : {
-      "min" : null,
-      "max" : null,
-      "sorting_label_field" : "ccee1857-82cf-5530-2f60-ad30f3c0920b",
-      "default" : 3
-    },
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "resources.resource_type",
-      "controlling_value_regex" : "custom",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "children" : [ {
-      "id" : "ccee1857-82cf-5530-2f60-ad30f3c0920b",
-      "name" : "select_resource",
-      "display_width" : null,
-      "label" : "Select Resource",
-      "required" : false,
-      "locked" : false,
-      "table_name_or_id" : "",
-      "display_columns" : [ "title" ],
-      "type" : "hubdbrow",
-      "default" : {
-        "id" : null
-      }
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "default" : [ {
-      "select_resource" : {
-        "id" : null
-      }
-    }, {
-      "select_resource" : {
-        "id" : null
-      }
-    }, {
-      "select_resource" : {
-        "id" : null
-      }
-    } ]
   }, {
     "id" : "be97cedc-2a28-8554-eedc-955fbb3b499d",
     "name" : "settings",
@@ -307,22 +238,8 @@
   "type" : "group",
   "default" : {
     "resource_type" : "recent",
-    "resource_table" : "",
     "category_name" : "Case Studies",
     "count" : 3,
-    "resources_by_title" : [ {
-      "select_resource" : {
-        "id" : null
-      }
-    }, {
-      "select_resource" : {
-        "id" : null
-      }
-    }, {
-      "select_resource" : {
-        "id" : null
-      }
-    } ],
     "settings" : {
       "include_featured_image" : true,
       "include_description" : true,

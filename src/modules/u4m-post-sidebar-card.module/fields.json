@@ -1,18 +1,4 @@
 [ {
-  "id" : "41971c9b-0ae8-ff39-08fb-f63c5764dfc3",
-  "name" : "select_post",
-  "display_width" : null,
-  "label" : "Select Post",
-  "required" : false,
-  "locked" : false,
-  "table_name_or_id" : "102672444",
-  "columns_to_fetch" : [ "feature_image", "event_date_and_time", "name", "link", "video", "content", "event_status" ],
-  "display_columns" : [ "name" ],
-  "type" : "hubdbrow",
-  "default" : {
-    "id" : 183045470537
-  }
-}, {
   "id" : "module_overrides",
   "name" : "module_overrides",
   "display_width" : null,
