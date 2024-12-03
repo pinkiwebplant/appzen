@@ -539,12 +539,12 @@
       "required" : false,
       "locked" : false,
       "display" : "select",
-      "choices" : [ [ "yellow", "Yellow" ], [ "black", "Black" ], [ "pink", "Pink" ], [ "grey", "Grey" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : "black"
+      "default" : "brown"
     }, {
       "id" : "6c8bfd0e-1629-1268-e01c-17b4047ecfce",
       "name" : "background_color",
@@ -567,7 +567,7 @@
         "color" : null,
         "opacity" : null
       }
-    },  {
+    }, {
       "id" : "878364f4-31ac-6917-e76f-65307d7d36e5",
       "name" : "background_image",
       "display_width" : null,
@@ -600,12 +600,11 @@
     "type" : "group",
     "default" : {
       "background_type" : "color",
-      "select_background_color_type" : "black",
+      "select_background_color_type" : "brown",
       "background_color" : {
         "color" : null,
         "opacity" : null
       },
-      "add_overlay" : false,
       "background_image" : {
         "size_type" : "auto",
         "src" : "",
@@ -707,12 +706,11 @@
     "custom_bottom_padding_mobile" : 50,
     "background_settings" : {
       "background_type" : "color",
-      "select_background_color_type" : "black",
+      "select_background_color_type" : "brown",
       "background_color" : {
         "color" : null,
         "opacity" : null
       },
-      "add_overlay" : false,
       "background_image" : {
         "size_type" : "auto",
         "src" : "",

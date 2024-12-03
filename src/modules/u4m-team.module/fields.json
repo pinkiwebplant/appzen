@@ -51,7 +51,7 @@
     "type" : "image",
     "default" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/team-member.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/team-member.png",
       "alt" : "team-member",
       "loading" : "lazy",
       "width" : 275,
@@ -237,7 +237,7 @@
   "default" : [ {
     "member_image" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/team-member.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/team-member.png",
       "alt" : "team-member",
       "loading" : "lazy",
       "width" : 275,
@@ -293,7 +293,7 @@
   }, {
     "member_image" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/team-member.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/team-member.png",
       "alt" : "team-member",
       "loading" : "lazy",
       "width" : 275,
@@ -349,7 +349,7 @@
   }, {
     "member_image" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/team-member.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/team-member.png",
       "alt" : "team-member",
       "loading" : "lazy",
       "width" : 275,

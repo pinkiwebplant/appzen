@@ -10,6 +10,15 @@
   "type" : "number",
   "default" : 2
 }, {
+  "id" : "b9d2f98a-e67e-710e-98aa-d307cbbb95ce",
+  "name" : "select_hubdb_table",
+  "display_width" : null,
+  "label" : "Select HubDB Table",
+  "required" : false,
+  "locked" : false,
+  "type" : "hubdbtable",
+  "default" : 103427390
+}, {
   "id" : "module_overrides",
   "name" : "module_overrides",
   "display_width" : null,

@@ -185,7 +185,7 @@
     "min" : null,
     "max" : null,
     "sorting_label_field" : "d048bed3-9787-11c2-489b-9e5266f54ca3",
-    "default" : 6
+    "default" : 10
   },
   "children" : [ {
     "id" : "d048bed3-9787-11c2-489b-9e5266f54ca3",
@@ -329,6 +329,58 @@
     },
     "change_logo_width" : false,
     "width" : 150
+  }, {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Workday.png",
+      "alt" : "Workday",
+      "loading" : "lazy",
+      "width" : 227,
+      "height" : 179,
+      "max_width" : 227,
+      "max_height" : 179
+    },
+    "change_logo_width" : false,
+    "width" : 150
+  }, {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Workday.png",
+      "alt" : "Workday",
+      "loading" : "lazy",
+      "width" : 227,
+      "height" : 179,
+      "max_width" : 227,
+      "max_height" : 179
+    },
+    "change_logo_width" : false,
+    "width" : 150
+  }, {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Workday.png",
+      "alt" : "Workday",
+      "loading" : "lazy",
+      "width" : 227,
+      "height" : 179,
+      "max_width" : 227,
+      "max_height" : 179
+    },
+    "change_logo_width" : false,
+    "width" : 150
+  }, {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Workday.png",
+      "alt" : "Workday",
+      "loading" : "lazy",
+      "width" : 227,
+      "height" : 179,
+      "max_width" : 227,
+      "max_height" : 179
+    },
+    "change_logo_width" : false,
+    "width" : 150
   } ]
 }, {
   "id" : "837f9b16-5eb7-c3b5-6cf0-eb38cf1928a2",
@@ -346,7 +398,7 @@
     "locked" : false,
     "display" : "checkbox",
     "type" : "boolean",
-    "default" : false
+    "default" : true
   }, {
     "id" : "b9ff1df2-5be6-e05d-69bb-cf7796ca1b9a",
     "name" : "slider_settings",
@@ -435,7 +487,7 @@
   "group_occurrence_meta" : null,
   "type" : "group",
   "default" : {
-    "enable_slider" : false,
+    "enable_slider" : true,
     "slider_settings" : {
       "slider_per_scroll" : 6,
       "slider_per_view" : 6

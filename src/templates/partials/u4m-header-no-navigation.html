@@ -3,33 +3,26 @@
  label:  Header no navigation
  -->
 <div class="headerWrap">
-  <div class="HeaderTopSec">
-    {% dnd_area "top_section" %} {% dnd_module
-    path="../../modules/u4m-information-banner", label="Information Banner" %}
-    {% end_dnd_module %} {% end_dnd_area %}
-  </div>
-  <header class="u4m-header">
-    <div class="headerIn">
-      <div class="flex_row">
-        <div class="left_sec flex_row">
-          <div class="headerLogo normal">
-            {% module "header_logo" path="@hubspot/logo", label="Header Logo",
-            img={src= "{{
-            get_asset_url('../../templates/images/appzen-logo.png') }}",
-            width=200, override_inherited_src= true, alt="Appzen" } , link="/"
-            %}
-          </div>
-          <div class="headerLogo sticky">
-            {% module "header_sticky_logo" path="@hubspot/logo", label="Header
-            Sticky Logo", img={src= "{{
-            get_asset_url('../../templates/images/AppzenScroll.png') }}",
-            width=52, override_inherited_src= true, alt="Appzen" } , link="/" %}
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-  <div class="HeaderBtmSec">
-    {% dnd_area "bottom_section" %}{% end_dnd_area %}
-  </div>
+	<div class="HeaderTopSec">
+		{% dnd_area "top_section" %}
+		{% dnd_module path="../../modules/u4m-information-banner", label="Information Banner" %} {% end_dnd_module %}
+		{% end_dnd_area %}
+	</div>
+	<header class="u4m-header">
+		<div class="headerIn">
+			<div class="flex_row">
+				<div class="left_sec flex_row">
+					<div class="headerLogo normal">
+						{% module "header_logo" path="@hubspot/logo", label="Header Logo",  img={src= "{{ get_asset_url('../../templates/images/appzen-logo.png') }}", width=200, override_inherited_src= true, alt="Appzen" } , link="/" %}
+					</div>
+					<div class="headerLogo sticky">
+						{% module "header_sticky_logo" path="@hubspot/logo", label="Header Sticky Logo",  img={src= "{{ get_asset_url('../../templates/images/AppzenScroll.png') }}", width=52, override_inherited_src= true, alt="Appzen" } , link="/" %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="HeaderBtmSec">
+		{% dnd_area "bottom_section" %}{% end_dnd_area %}
+	</div>
 </div>

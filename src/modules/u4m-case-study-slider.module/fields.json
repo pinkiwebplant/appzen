@@ -11,6 +11,15 @@
   "type" : "text",
   "default" : "Leading enterprise organizations run finance on AppZen"
 }, {
+  "id" : "fb7b8c92-586f-469e-e519-ef52d9359cdc",
+  "name" : "select_hubdb_table",
+  "display_width" : null,
+  "label" : "Select HubDB Table",
+  "required" : false,
+  "locked" : false,
+  "type" : "hubdbtable",
+  "default" : 103427390
+}, {
   "id" : "module_overrides",
   "name" : "module_overrides",
   "display_width" : null,
