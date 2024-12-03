@@ -24,7 +24,7 @@
     "access" : null
   },
   "type" : "richtext",
-  "default" : "<p>Key capabilities of Autonomous AP</p>"
+  "default" : "<p>Webinar Speakers</p>"
 }, {
   "id" : "9b93951c-8bd5-eb81-08d1-d55ee6de42ad",
   "name" : "cards_group",
@@ -39,6 +39,39 @@
     "default" : 3
   },
   "children" : [ {
+    "id" : "0375c33c-fb2c-231d-f5ce-9c42f12ad798",
+    "name" : "member_image",
+    "display_width" : null,
+    "label" : "Member Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/team-member.png",
+      "alt" : "team-member",
+      "loading" : "lazy",
+      "width" : 275,
+      "height" : 334,
+      "max_width" : 275,
+      "max_height" : 334
+    }
+  }, {
+    "id" : "4a89c5c3-a3c4-a0ab-83c5-a8454912fca9",
+    "name" : "member_name",
+    "display_width" : null,
+    "label" : "Member Name",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Firstname Lastname"
+  }, {
     "id" : "a4e157a2-f2bc-d775-903a-6c0e266716de",
     "name" : "title",
     "display_width" : null,
@@ -49,7 +82,7 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : "Easy stakeholder collaboration "
+    "default" : "Title Goes Here"
   }, {
     "id" : "1511a339-83bd-36ac-f85b-6c33cee45583",
     "name" : "content",
@@ -58,7 +91,7 @@
     "required" : false,
     "locked" : false,
     "type" : "richtext",
-    "default" : "<p>Boost communication with any employee or vendor to get questions answered and invoices processed faster</p>"
+    "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>"
   }, {
     "id" : "fdeaa751-b6cf-b575-2a38-795f814627ad",
     "name" : "include_link",
@@ -96,14 +129,126 @@
       "open_in_new_tab" : false,
       "no_follow" : false
     }
+  }, {
+    "id" : "c6fc7928-ec5a-5dc4-835a-115b0a0af660",
+    "name" : "social_icon",
+    "display_width" : null,
+    "label" : "Social Icon",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
+  }, {
+    "id" : "4a3b81d6-f58e-dadb-d6e2-5edcd0aa96a6",
+    "name" : "social_item",
+    "display_width" : null,
+    "label" : "Social Item",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : "d261c87f-171a-1e4e-c1c8-7cf1aa9af259",
+      "default" : 2
+    },
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "cards_group.social_icon",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "24bc104f-b96d-d99e-5725-b1797233fc9b",
+      "name" : "icon",
+      "display_width" : null,
+      "label" : "Icon",
+      "required" : false,
+      "locked" : false,
+      "icon_set" : "fontawesome-6.4.2",
+      "type" : "icon",
+      "default" : {
+        "name" : "X Twitter",
+        "unicode" : "e61b",
+        "type" : "REGULAR"
+      }
+    }, {
+      "id" : "d261c87f-171a-1e4e-c1c8-7cf1aa9af259",
+      "name" : "link",
+      "display_width" : null,
+      "label" : "Social Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : [ {
+      "icon" : {
+        "name" : "X Twitter",
+        "unicode" : "e61b",
+        "type" : "REGULAR"
+      },
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "icon" : {
+        "name" : "X Twitter",
+        "unicode" : "e61b",
+        "type" : "REGULAR"
+      },
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ]
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
   "default" : [ {
-    "title" : "Easy stakeholder collaboration ",
-    "content" : "<p>Boost communication with any employee or vendor to get questions answered and invoices processed faster</p>",
+    "member_image" : {
+      "size_type" : "auto",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/team-member.png",
+      "alt" : "team-member",
+      "loading" : "lazy",
+      "width" : 275,
+      "height" : 334,
+      "max_width" : 275,
+      "max_height" : 334
+    },
+    "member_name" : "Firstname Lastname",
+    "title" : "Title Goes Here",
+    "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>",
+    "include_link" : false,
     "link" : {
       "url" : {
         "content_id" : null,
@@ -113,23 +258,53 @@
       "open_in_new_tab" : false,
       "no_follow" : false
     },
-    "boolean_field" : false
-  },{
-    "title" : "Easy stakeholder collaboration ",
-    "content" : "<p>Boost communication with any employee or vendor to get questions answered and invoices processed faster</p>",
-    "link" : {
-      "url" : {
-        "content_id" : null,
-        "type" : "EXTERNAL",
-        "href" : ""
+    "social_icon" : true,
+    "social_item" : [ {
+      "icon" : {
+        "name" : "X Twitter",
+        "unicode" : "e61b",
+        "type" : "REGULAR"
       },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    },
-    "boolean_field" : false
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "icon" : {
+        "name" : "X Twitter",
+        "unicode" : "e61b",
+        "type" : "REGULAR"
+      },
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ]
   }, {
-    "title" : "Easy stakeholder collaboration ",
-    "content" : "<p>Boost communication with any employee or vendor to get questions answered and invoices processed faster</p>",
+    "member_image" : {
+      "size_type" : "auto",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/team-member.png",
+      "alt" : "team-member",
+      "loading" : "lazy",
+      "width" : 275,
+      "height" : 334,
+      "max_width" : 275,
+      "max_height" : 334
+    },
+    "member_name" : "Firstname Lastname",
+    "title" : "Title Goes Here",
+    "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>",
+    "include_link" : false,
     "link" : {
       "url" : {
         "content_id" : null,
@@ -139,7 +314,94 @@
       "open_in_new_tab" : false,
       "no_follow" : false
     },
-    "boolean_field" : false
+    "social_icon" : true,
+    "social_item" : [ {
+      "icon" : {
+        "name" : "X Twitter",
+        "unicode" : "e61b",
+        "type" : "REGULAR"
+      },
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "icon" : {
+        "name" : "X Twitter",
+        "unicode" : "e61b",
+        "type" : "REGULAR"
+      },
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ]
+  }, {
+    "member_image" : {
+      "size_type" : "auto",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/team-member.png",
+      "alt" : "team-member",
+      "loading" : "lazy",
+      "width" : 275,
+      "height" : 334,
+      "max_width" : 275,
+      "max_height" : 334
+    },
+    "member_name" : "Firstname Lastname",
+    "title" : "Title Goes Here",
+    "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>",
+    "include_link" : false,
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "social_icon" : true,
+    "social_item" : [ {
+      "icon" : {
+        "name" : "X Twitter",
+        "unicode" : "e61b",
+        "type" : "REGULAR"
+      },
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "icon" : {
+        "name" : "X Twitter",
+        "unicode" : "e61b",
+        "type" : "REGULAR"
+      },
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ]
   } ]
 }, {
   "id" : "module_overrides",

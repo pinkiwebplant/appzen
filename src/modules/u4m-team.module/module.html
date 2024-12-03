@@ -19,13 +19,50 @@
 		{% for item in module.cards_group %}
 		<div class="card_item col3 col">
 			<div class="card_inner {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.card_background_color }}{% endif %}">
-				<h5 class="card_title">
-					{{ item.title }}
+				{% if item.member_image.src %}
+				<div class="member-img">
+					<img src="{{ item.member_image.src|escape_url }}" alt="{{ item.member_image.alt|escape_attr }}" >
+				</div>
+				{% endif %}
+				<h5 class="member-name">
+					{{ item.member_name }}
 				</h5>
+				<p class="card_title">
+					{{ item.title }}
+				</p>
 				<div class="card_content">
 					{{ item.content }}
 				</div>
-
+				{% if item.social_icon %}
+				<div class="social-icon">
+					{% for item2 in item.social_item %}
+					{% set href = item2.link.url.href %}
+					{% if item2.link.url.type is equalto "EMAIL_ADDRESS" %}
+					{% set href = "mailto:" + href %}
+					{% endif %}
+					<a
+						 {% if item2.link.url.type is equalto "CALL_TO_ACTION"  %}
+						 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+						 {% else %}
+						 href="{{ href|escape_url }}"
+						 {% endif %}
+						 {% if item2.link.open_in_new_tab %}
+						 target="_blank"
+						 {% endif %}
+						 {% if item2.link.rel %}
+						 rel="{{ item2.link.rel|escape_attr }}"
+						 {% endif %}
+						 >
+						{% icon
+			name="{{ item2.icon.name }}"
+			style="{{ item2.icon.type }}"
+			unicode="{{ item2.icon.unicode }}"
+			icon_set="{{ item2.icon.icon_set }}"
+		%}
+					</a>
+					{% endfor %}
+				</div>
+				{% endif %}
 				{% set href = item.link.url.href %}
 				{% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
 				{% set href = "mailto:" + href %}
