@@ -6,7 +6,7 @@
   "required" : false,
   "locked" : false,
   "type" : "hubdbtable",
-  "default" : 102672444
+  "default" : ""
 }, {
   "id" : "module_overrides",
   "name" : "module_overrides",

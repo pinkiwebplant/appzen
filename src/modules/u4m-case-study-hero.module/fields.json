@@ -29,7 +29,7 @@
   "type" : "image",
   "default" : {
     "size_type" : "auto_custom_max",
-    "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/case-study-banner-image.jpg",
+    "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/case-study-banner-image.jpg",
     "alt" : "Case Study Banner Image",
     "loading" : "lazy",
     "width" : 2160,

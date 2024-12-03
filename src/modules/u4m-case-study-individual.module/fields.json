@@ -6,7 +6,7 @@
   "required" : false,
   "locked" : false,
   "type" : "hubdbtable",
-  "default" : 102672445
+  "default" : ""
 }, {
   "id" : "100a09f4-8dfe-d66c-ddc8-c948ccd58fb7",
   "name" : "card_count",

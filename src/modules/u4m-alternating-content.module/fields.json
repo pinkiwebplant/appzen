@@ -285,7 +285,7 @@
     "type" : "image",
     "default" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/abstraction.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/abstraction.png",
       "alt" : "abstraction",
       "loading" : "lazy",
       "width" : 1207,
@@ -301,7 +301,7 @@
   "default" : {
     "image_field" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/abstraction.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/abstraction.png",
       "alt" : "abstraction",
       "loading" : "lazy",
       "width" : 1207,

@@ -149,7 +149,7 @@
       "access" : null
     },
     "type" : "hubdbtable",
-    "default" : 103410178
+    "default" : ""
   }, {
     "id" : "ccae048e-d114-0724-3951-5882ccc1bcca",
     "name" : "category_name",
@@ -218,7 +218,7 @@
       "label" : "Select Resource",
       "required" : false,
       "locked" : false,
-      "table_name_or_id" : "103410178",
+      "table_name_or_id" : "",
       "display_columns" : [ "title" ],
       "type" : "hubdbrow",
       "default" : {
@@ -307,7 +307,7 @@
   "type" : "group",
   "default" : {
     "resource_type" : "recent",
-    "resource_table" : 103410178,
+    "resource_table" : "",
     "category_name" : "Case Studies",
     "count" : 3,
     "resources_by_title" : [ {

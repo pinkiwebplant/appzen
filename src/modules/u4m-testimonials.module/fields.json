@@ -46,7 +46,7 @@
     "type" : "image",
     "default" : [ {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/Testimonials-img.jfif",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Testimonials-img.jfif",
       "alt" : "Testimonials-img",
       "loading" : "lazy",
       "width" : 1200,
@@ -55,7 +55,7 @@
       "max_height" : 1495
     }, {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/Testimonials-img.jfif",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Testimonials-img.jfif",
       "alt" : "Testimonials-img",
       "loading" : "lazy",
       "width" : 1200,
@@ -76,7 +76,7 @@
     "type" : "image",
     "default" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/airbus%20logo.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/airbus%20logo.png",
       "alt" : "airbus logo",
       "loading" : "lazy",
       "width" : 228,
@@ -92,7 +92,7 @@
   "default" : {
     "image" : [ {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/Testimonials-img.jfif",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Testimonials-img.jfif",
       "alt" : "Testimonials-img",
       "loading" : "lazy",
       "width" : 1200,
@@ -101,7 +101,7 @@
       "max_height" : 1495
     }, {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/Testimonials-img.jfif",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Testimonials-img.jfif",
       "alt" : "Testimonials-img",
       "loading" : "lazy",
       "width" : 1200,
@@ -111,7 +111,7 @@
     } ],
     "logo_image" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/airbus%20logo.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/airbus%20logo.png",
       "alt" : "airbus logo",
       "loading" : "lazy",
       "width" : 228,
@@ -188,7 +188,7 @@
     "type" : "image",
     "default" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/airbus%20logo%20black.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/airbus%20logo%20black.png",
       "alt" : "airbus logo black",
       "loading" : "lazy",
       "width" : 458,
@@ -215,7 +215,7 @@
     },
     "logo_image" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/airbus%20logo%20black.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/airbus%20logo%20black.png",
       "alt" : "airbus logo black",
       "loading" : "lazy",
       "width" : 458,

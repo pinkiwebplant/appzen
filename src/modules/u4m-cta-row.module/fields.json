@@ -625,7 +625,7 @@
       "type" : "image",
       "default" : {
         "size_type" : "auto_custom_max",
-        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/pattern.png",
+        "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/pattern.png",
         "alt" : "pattern",
         "loading" : "lazy",
         "width" : 2525,
@@ -654,7 +654,7 @@
       "add_overlay_image" : false,
       "overlay_image" : {
         "size_type" : "auto_custom_max",
-        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/pattern.png",
+        "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/pattern.png",
         "alt" : "pattern",
         "loading" : "lazy",
         "width" : 2525,
@@ -717,7 +717,7 @@
       "add_overlay_image" : false,
       "overlay_image" : {
         "size_type" : "auto_custom_max",
-        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/pattern.png",
+        "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/pattern.png",
         "alt" : "pattern",
         "loading" : "lazy",
         "width" : 2525,

@@ -236,7 +236,7 @@
     "type" : "image",
     "default" : {
       "size_type" : "auto_custom_max",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/hero%20static%20banner.jfif",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/hero%20static%20banner.jfif",
       "alt" : "hero static banner",
       "loading" : "lazy",
       "width" : 4096,
@@ -317,7 +317,7 @@
   "default" : {
     "image" : {
       "size_type" : "auto_custom_max",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/hero%20static%20banner.jfif",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/hero%20static%20banner.jfif",
       "alt" : "hero static banner",
       "loading" : "lazy",
       "width" : 4096,
@@ -563,7 +563,7 @@
       "show_loading" : false,
       "type" : "image",
       "default" : {
-        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/hero%20slider%20img-1.jfif",
+        "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/hero%20slider%20img-1.jfif",
         "alt" : "hero slider img-1",
         "width" : 1560,
         "height" : 874,
@@ -618,7 +618,7 @@
     "type" : "group",
     "default" : {
       "image" : {
-        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/hero%20slider%20img-1.jfif",
+        "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/hero%20slider%20img-1.jfif",
         "alt" : "hero slider img-1",
         "width" : 1560,
         "height" : 874,
@@ -656,7 +656,7 @@
     },
     "image_column" : {
       "image" : {
-        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/hero%20slider%20img-1.jfif",
+        "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/hero%20slider%20img-1.jfif",
         "alt" : "hero slider img-1",
         "width" : 1560,
         "height" : 874,
@@ -689,7 +689,7 @@
     },
     "image_column" : {
       "image" : {
-        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/hero%20slider%20img-1.jfif",
+        "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/hero%20slider%20img-1.jfif",
         "alt" : "hero slider img-1",
         "width" : 1560,
         "height" : 874,

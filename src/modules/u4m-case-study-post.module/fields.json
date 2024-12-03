@@ -53,7 +53,7 @@
         "type" : "image",
         "default" : {
           "size_type" : "auto",
-          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/case-body-post-img.png",
+          "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/case-body-post-img.png",
           "alt" : "Case Body Post Image",
           "loading" : "lazy",
           "width" : 1115,

@@ -51,7 +51,7 @@
     "type" : "image",
     "default" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/Workday.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Workday.png",
       "alt" : "Workday",
       "loading" : "lazy",
       "width" : 227,
@@ -105,7 +105,7 @@
   "default" : [ {
     "image_field" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/Workday.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Workday.png",
       "alt" : "Workday",
       "loading" : "lazy",
       "width" : 227,
@@ -118,7 +118,7 @@
   }, {
     "image_field" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/Workday.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Workday.png",
       "alt" : "Workday",
       "loading" : "lazy",
       "width" : 227,
@@ -131,7 +131,7 @@
   }, {
     "image_field" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/Workday.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Workday.png",
       "alt" : "Workday",
       "loading" : "lazy",
       "width" : 227,
@@ -144,7 +144,7 @@
   }, {
     "image_field" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/Workday.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Workday.png",
       "alt" : "Workday",
       "loading" : "lazy",
       "width" : 227,
@@ -157,7 +157,7 @@
   }, {
     "image_field" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/Workday.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Workday.png",
       "alt" : "Workday",
       "loading" : "lazy",
       "width" : 227,
@@ -170,7 +170,7 @@
   }, {
     "image_field" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/Workday.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Workday.png",
       "alt" : "Workday",
       "loading" : "lazy",
       "width" : 227,
