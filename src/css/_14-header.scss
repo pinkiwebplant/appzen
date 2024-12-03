@@ -504,20 +504,34 @@ header.u4m-header {
         }
     }
 }
-html.hdrOpen {
-    &:before {
-        content: "";
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        z-index: 2;
-        background-color: $basecolor;
-        opacity: 0.4;
-        right: 0;
-        width: 100%;
-        height: 100%;
+@include tabletmidmin {
+    html.hdrOpen {
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: 2;
+            background-color: $basecolor;
+            opacity: 0.4;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+        overflow: hidden;
+        header.u4m-header:before {
+            background-color: #3d3533;
+            content: "";
+            height: 100%;
+            left: 0;
+            opacity: 0.4;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+            z-index: 2;
+        }
     }
-    overflow: hidden;
 }
 
 @include tabletmidmin {
@@ -685,18 +699,6 @@ body.anncmnt_hide {
     }
 }
 
-// body {
-//     opacity: 0;
-//     visibility: hidden;
-// }
-
-// .add-transition {
-//     opacity: 1;
-//     visibility: visible;
-//     transition:
-//         opacity 0.5s ease-in-out,
-//         visibility 0.5s ease-in-out;
-// }
 @keyframes headerDown {
     from {
         top: -100px;
@@ -722,5 +724,17 @@ body.anncmnt_hide {
         .headerMenu {
             max-height: calc(100vh - 66px);
         }
+    }
+}
+
+@include tabletmidmin {
+    .headerWrap.lp-header .headerIn > .flex_row {
+        min-height: 55px;
+    }
+}
+
+@include tabletmid {
+    .headerWrap.lp-header .headerIn > .flex_row {
+        min-height: 39.89px;
     }
 }

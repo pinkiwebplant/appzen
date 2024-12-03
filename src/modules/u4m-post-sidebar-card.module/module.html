@@ -4,101 +4,99 @@
 
 {% include "../partials/u4-module-includes.html" %}
 <div class="wrapper">
-	
-		<div class="flex_row">
-		
-				<div class="webinars_item_wrap">
 
-					<div class="webinars_item {% if module.select_post.columns.video %} video_item {% endif %}">
-						<div class="webinars_inner_section flex_wrap">
-							{% if module.select_post.columns.feature_image.url %}
-							<div class="image_sec">
-								{% if module.select_post.columns.video %}
-								<img class="play_icon" src="{{ get_asset_url('../../templates/images/play-button.png') }}" alt="Play Icon">
-								{% endif %}
-								<img src="{{ module.select_post.columns.feature_image.url }}" alt="{{ module.select_post.columns.name }}">
-							</div>
-							{% endif %}
-							<div class="right_content">
-								<div class="cntnt_wrapper">
-									<div class="date_section">
-										<span class="{{ module.select_post.columns.event_status.name|lower|replace(' ', '-') }}">{{ module.select_post.columns.event_status.name}}</span>
-										<div class="date_sec">
-											<span>
+  <div class="flex_row">
 
-												{% if module.select_post.columns.event_status.label == 'Upcoming' or module.select_post.columns.event_status.label == 'Sold Out' %}
-												<img class="calendar" src="{{ get_asset_url('../../templates/images/calendar_month.png') }}" alt="Calendar">
-												{% elif module.select_post.columns.event_status.label == 'On-Demand' %}
-												<img class="clock" src="{{ get_asset_url('../../templates/images/clock.png') }}" alt="Clock">
-												{% endif %}
+    <div class="webinars_item_wrap">
 
-											</span>
+      <div class="webinars_item {% if module.select_post.columns.video %} video_item {% endif %}">
+        <div class="webinars_inner_section flex_wrap">
+          {% if module.select_post.columns.feature_image.url %}
+          <div class="image_sec">
+            {% if module.select_post.columns.video %}
+            <img class="play_icon" src="{{ get_asset_url('../../templates/images/play-button.png') }}" alt="Play Icon">
+            {% endif %}
+            <img src="{{ module.select_post.columns.feature_image.url }}" alt="{{ module.select_post.columns.name }}">
+          </div>
+          {% endif %}
+          <div class="right_content">
+            <div class="cntnt_wrapper">
+              <div class="date_section">
+                <span class="{{ module.select_post.columns.event_status.name|lower|replace(' ', '-') }}">{{ module.select_post.columns.event_status.name}}</span>
+                <div class="date_sec">
+                  <span>
 
-											{% if module.select_post.columns.event_status.label == 'Upcoming' or module.select_post.columns.event_status.label == 'Sold Out' %}
-											{{ module.select_post.columns.event_status.event_date_and_time|datetimeformat('%b %e, %Y') }}
-											{% elif module.select_post.columns.event_status.label == 'On-Demand' %}
-											<span class="reading-minutes">
-												{% set initialPostWords = row.content|striptags|wordcount %}
-												{% set calculatedPostWords = initialPostWords / 100 %}
-												{% set finishedPostWords = calculatedPostWords|divide(300)|round(2) %}
-												{% set number = finishedPostWords|round %}
-												{% if number < 1 %}
-												Less than one min
-												{% else %}
-												{{ finishedPostWords|round }} minutes
-												{% endif %}
-											</span>
-											{% endif %}
+                    {% if module.select_post.columns.event_status.label == 'Upcoming' or module.select_post.columns.event_status.label == 'Sold Out' %}
+                    <img class="calendar" src="{{ get_asset_url('../../templates/images/calendar_month.png') }}" alt="Calendar">
+                    {% elif module.select_post.columns.event_status.label == 'On-Demand' %}
+                    <img class="clock" src="{{ get_asset_url('../../templates/images/clock.png') }}" alt="Clock">
+                    {% endif %}
+
+                  </span>
+
+                  {% if module.select_post.columns.event_status.label == 'Upcoming' or module.select_post.columns.event_status.label == 'Sold Out' %}
+                  {{ module.select_post.columns.event_status.event_date_and_time|datetimeformat('%b %e, %Y') }}
+                  {% elif module.select_post.columns.event_status.label == 'On-Demand' %}
+                  <span class="reading-minutes">
+                    {% set initialPostWords = row.content|striptags|wordcount %}
+                    {% set calculatedPostWords = initialPostWords / 100 %}
+                    {% set finishedPostWords = calculatedPostWords|divide(300)|round(2) %}
+                    {% set number = finishedPostWords|round %}
+                    {% if number < 1 %}
+                    Less than one min
+                    {% else %}
+                    {{ finishedPostWords|round }} minutes
+                    {% endif %}
+                  </span>
+                  {% endif %}
 
 
-										</div>
-									</div>
-									{% if module.select_post.columns.name %}
-									<div class="title">
-										<h5>
-										<a href="{{module.select_post.columns.link}}">
-											{{ module.select_post.columns.name }}
-											</a>
-										</h5>
-									</div>
-									{% endif %}
-									{% if module.select_post.columns.content %}
-									<div class="content">
-										{{ module.select_post.columns.content }}
-									</div>
-									{% endif %}
-									{% if module.select_post.columns.link %}
-									<div class="btn_wrapper">
-										<div class="button_item">
-											<a href="{{module.select_post.columns.link}}">
-												<img src="{{ get_asset_url('../../templates/images/dark-arrow.png') }}" alt="Arrow">
-											</a>
-										</div>
-									</div>
-									{% endif %}
-								</div>
-							</div>
-						</div>
-						{% if module.select_post.columns.video %}
-						<div class="popup_section">
-							<span class="close_icon">X</span>
-							<div class="page-center">
-								<div class="inner">
-									<iframe src="" data-src="{{ module.select_post.columns.video }}" frameborder="0" allowfullscreen autoplay></iframe>
-								</div>
-							</div>
-						</div>
-						{% endif %}
-					</div>
+                </div>
+              </div>
+              {% if module.select_post.columns.name %}
+              <div class="title">
+                <h5>
+                  <a href="{{module.select_post.columns.link}}">
+                    {{ module.select_post.columns.name }}
+                  </a>
+                </h5>
+              </div>
+              {% endif %}
+              {% if module.select_post.columns.content %}
+              <div class="content">
+                {{ module.select_post.columns.content }}
+              </div>
+              {% endif %}
+              {% if module.select_post.columns.link %}
+              <div class="btn_wrapper">
+                <div class="button_item">
+                  <a href="{{module.select_post.columns.link}}">
+                    <img src="{{ get_asset_url('../../templates/images/dark-arrow.png') }}" alt="Arrow">
+                  </a>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        {% if module.select_post.columns.video %}
+        <div class="popup_section">
+          <span class="close_icon">X</span>
+          <div class="page-center">
+            <div class="inner">
+              <iframe src="" data-src="{{ module.select_post.columns.video }}" frameborder="0" allowfullscreen autoplay></iframe>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      </div>
 
-				</div>
-		
-		</div>
+    </div>
+
+  </div>
 
 </div>
 
 
 </section>
 
-
-<!-- Select Post -->

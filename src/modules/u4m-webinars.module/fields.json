@@ -1,4 +1,13 @@
 [ {
+  "id" : "e34ec018-d110-fa0a-17b2-4c7d8e4f964c",
+  "name" : "select_table",
+  "display_width" : null,
+  "label" : "Select Table",
+  "required" : false,
+  "locked" : false,
+  "type" : "hubdbtable",
+  "default" : 103410200
+}, {
   "id" : "module_overrides",
   "name" : "module_overrides",
   "display_width" : null,

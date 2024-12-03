@@ -584,7 +584,7 @@
       "preset" : null,
       "type" : "choice",
       "default" : "right"
-    },  {
+    }, {
       "id" : "23415561-12f6-6e0e-8b09-3898351da598",
       "name" : "svg_item",
       "display_width" : null,

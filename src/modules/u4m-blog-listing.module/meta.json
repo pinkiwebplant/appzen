@@ -18,7 +18,7 @@
   "categories" : [ "functionality" ],
   "icon" : "../../../mV0_d-web-default-modules_hubspot/img/icon/edited-search-1.svg",
   "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
-  "module_id" : 175577279109,
+  "module_id" : 183455647154,
   "js_assets" : [ {
     "autoload" : true,
     "path" : "../../js/jquery.infinitescroll.min.js",

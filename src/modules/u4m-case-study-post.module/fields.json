@@ -200,7 +200,7 @@
       "locked" : false,
       "type" : "form",
       "default" : {
-        "form_id" : "82652a2f-4494-4bc8-b647-558da4843a1d",
+        "form_id" : "93e04a2c-1790-4fbe-9ec0-8772e8cbecb0",
         "response_type" : "inline",
         "message" : "Thanks for submitting the form.",
         "gotowebinar_webinar_key" : null,
@@ -216,7 +216,7 @@
     "default" : {
       "form_title" : "Subscribe to newsletter",
       "form_field" : {
-        "form_id" : "82652a2f-4494-4bc8-b647-558da4843a1d",
+        "form_id" : "93e04a2c-1790-4fbe-9ec0-8772e8cbecb0",
         "response_type" : "inline",
         "message" : "Thanks for submitting the form.",
         "gotowebinar_webinar_key" : null,
@@ -473,7 +473,7 @@
     "subscribe_form" : {
       "form_title" : "Subscribe to newsletter",
       "form_field" : {
-        "form_id" : "82652a2f-4494-4bc8-b647-558da4843a1d",
+        "form_id" : "93e04a2c-1790-4fbe-9ec0-8772e8cbecb0",
         "response_type" : "inline",
         "message" : "Thanks for submitting the form.",
         "gotowebinar_webinar_key" : null,

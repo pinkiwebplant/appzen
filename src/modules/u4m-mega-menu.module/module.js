@@ -30,3 +30,4 @@ $('.mobile-trigger').click(function(){
 	$('.desktopHide .childMenu').slideUp();
 	$('html').toggleClass('hdrOpenMob');
 });
+

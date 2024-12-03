@@ -1,4 +1,17 @@
 [ {
+  "id" : "1ec69304-4978-db51-6a31-4daeec94d147",
+  "name" : "select_post",
+  "display_width" : null,
+  "label" : "Select Post",
+  "required" : false,
+  "locked" : false,
+  "table_name_or_id" : "103410200",
+  "display_columns" : [ "name" ],
+  "type" : "hubdbrow",
+  "default" : {
+    "id" : 183455388293
+  }
+}, {
   "id" : "module_overrides",
   "name" : "module_overrides",
   "display_width" : null,
@@ -418,7 +431,7 @@
   "group_occurrence_meta" : null,
   "type" : "group",
   "default" : {
-    "enable_overrides" : true,
+    "enable_overrides" : false,
     "top_margin" : "top-margin-default",
     "custom_top_margin" : 100,
     "custom_top_margin_mobile" : 50,
