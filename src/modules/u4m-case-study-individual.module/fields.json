@@ -1,13 +1,4 @@
 [ {
-  "id" : "00c53efc-c39b-276b-862a-2973670b400e",
-  "name" : "select_hubdb_table",
-  "display_width" : null,
-  "label" : "Select HubDB Table",
-  "required" : false,
-  "locked" : false,
-  "type" : "hubdbtable",
-  "default" : ""
-}, {
   "id" : "100a09f4-8dfe-d66c-ddc8-c948ccd58fb7",
   "name" : "card_count",
   "display_width" : null,
