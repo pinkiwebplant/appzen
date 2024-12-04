@@ -134,6 +134,23 @@
     "type" : "choice",
     "default" : "recent"
   }, {
+    "id" : "3dd8f5f8-62ac-0edc-cc35-17f4bc055d93",
+    "name" : "resource_table",
+    "display_width" : null,
+    "label" : "Resource Table",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "resources.resource_type",
+      "controlling_value_regex" : "hubdb",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "hubdbtable",
+    "default" : 4825172
+  }, {
     "id" : "ccae048e-d114-0724-3951-5882ccc1bcca",
     "name" : "category_name",
     "display_width" : null,
@@ -231,6 +248,58 @@
       "include_tag" : false,
       "include_reading_minutes" : false
     }
+  }, {
+    "id" : "bced61ff-3c14-47cf-6d68-3e972385600c",
+    "name" : "resources_by_title",
+    "display_width" : null,
+    "label" : "Resources By Title",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 3
+    },
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "resources.resource_type",
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "2b18d6a6-6801-b462-ae44-9ac2a9747188",
+      "name" : "select_resource",
+      "display_width" : null,
+      "label" : "Select Resource",
+      "required" : false,
+      "locked" : false,
+      "table_name_or_id" : "4825172",
+      "display_columns" : [ "title" ],
+      "type" : "hubdbrow",
+      "default" : {
+        "id" : null
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : [ {
+      "select_resource" : {
+        "id" : null
+      }
+    }, {
+      "select_resource" : {
+        "id" : null
+      }
+    }, {
+      "select_resource" : {
+        "id" : null
+      }
+    } ]
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -238,6 +307,7 @@
   "type" : "group",
   "default" : {
     "resource_type" : "recent",
+    "resource_table" : 4825172,
     "category_name" : "Case Studies",
     "count" : 3,
     "settings" : {
@@ -245,7 +315,20 @@
       "include_description" : true,
       "include_tag" : false,
       "include_reading_minutes" : false
-    }
+    },
+    "resources_by_title" : [ {
+      "select_resource" : {
+        "id" : null
+      }
+    }, {
+      "select_resource" : {
+        "id" : null
+      }
+    }, {
+      "select_resource" : {
+        "id" : null
+      }
+    } ]
   }
 }, {
   "id" : "module_overrides",
