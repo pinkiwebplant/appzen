@@ -1,4 +1,26 @@
 [ {
+  "id" : "02e688d6-fbf2-5105-32f9-48277a676ad0",
+  "name" : "content_alignment",
+  "display_width" : null,
+  "label" : "Content Alignment",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "right_content.image_field",
+    "controlling_value_regex" : null,
+    "property" : "src",
+    "operator" : "EMPTY",
+    "access" : null
+  },
+  "display" : "select",
+  "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "left"
+}, {
   "id" : "b539ff2e-97fb-bcf5-fb52-54f4637137bf",
   "name" : "left_content",
   "display_width" : null,
