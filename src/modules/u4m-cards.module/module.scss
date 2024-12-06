@@ -1,13 +1,49 @@
 @import "../../css/_module-imports";
 
 section.u4m-cards {
-  .intro_cnt {
-    text-align: center;
+  .intro {
+    .intro_cnt,
+    &.center .intro_cnt {
+      text-align: center;
+    }
+    &.left .intro_cnt {
+      text-align: left;
+    }
+
+    &.right .intro_cnt {
+      text-align: right;
+    }
   }
 
   .card_inner {
     @include cardBase;
     width: 100%;
+
+    .icon_box {
+      text-align: left;
+      margin-bottom: 20rem;
+      font-size: 35rem;
+      height: 35rem;
+
+      span {
+        display: block;
+      }
+
+      img {
+        display: block;
+        width: 1em;
+      }
+
+      svg {
+        display: block;
+        width: 1em;
+        height: 1em;
+        fill: currentColor;
+      }
+      .material-symbols-outlined {
+        font-size: 1em;
+      }
+    }
 
     .card_title {
       margin-bottom: 15rem;
@@ -69,11 +105,12 @@ section.u4m-cards {
     }
   }
 
-  &.reverse-text {
-    .card .title {
+  .card_item {
+    &.revese_color * {
       color: $white;
     }
-    .card_item.themeColor {
+
+    &.theme_color * {
       color: $basecolor;
     }
   }

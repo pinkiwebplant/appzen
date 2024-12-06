@@ -135,13 +135,14 @@
     </div>
     {% if module.resources.resource_type == "custom" %}
     {% set data = module.resources.resources_by_title %}
-    <div class="flex_row">
+    <div class="flex_row resources_by_title_row">
       <div class="card_item col3 empty_div col {% if module.module_overrides.reverse_text %}{% if module.module_overrides.use_card_content_theme_color %}themeColor{% endif %}{% endif %}">
         <div class="card_inner {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.card_background_color }}{% endif %}">
         </div>
       </div>
       <div class="col9 flex_row {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.select_column_alignment }}{% endif %}">
         {% for item in data %}  
+        {% if item.select_resource.columns.title%} 
         <div class="card_item {% if item.select_resource.columns.format.name == 'Video' %} video_icon_display {% endif %} 
         {% if not  module.resources.settings.include_featured_image %} no_img_card {% endif %}
                     {% if not (module.resources.settings.include_tag || module.resources.settings.include_reading_minutes ) %} largefont {% endif %}
@@ -212,6 +213,7 @@
           </div>
   
         </div>
+          {% endif %}
         {% endfor %}
       </div>
     </div>

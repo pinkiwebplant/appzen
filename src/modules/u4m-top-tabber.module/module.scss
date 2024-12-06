@@ -88,12 +88,22 @@
           display: flex;
           flex-wrap: wrap;
           flex-direction: row-reverse;
+
+          &.counts_3 .toptab_ttl {
+            flex-grow: 1;
+          }
+
           .toptab_ttl {
             border-right: 1px solid $greyborder;
             width: 25%;
             text-align: left;
             padding: 30px 40px;
             cursor: pointer;
+
+            @include tablet {
+              padding: 20px;
+            }
+
             &:last-child {
               border-right: 0;
             }

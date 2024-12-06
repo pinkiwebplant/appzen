@@ -6,63 +6,96 @@
 
 
 <div class="page-center">
-	{% if module.include_intro %} 
-	<div class='intro'>
-		<div class='intro_cnt'>
-			{{ module.intro_content }}
-		</div>
-	</div>
-	{% endif %}
+  {% if module.include_intro %} 
+  <div class='intro {{ module.module_overrides.intro_content_alignment }}'>
+    <div class='intro_cnt'>
+      {{ module.intro_content }}
+    </div>
+  </div>
+  {% endif %}
 
-	
-	
-	<div class="flex_row {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.select_column_alignment }}{% endif %}">
 
-		{% for item in module.cards_group %}
-		<div class="card_item col3 col {% if module.module_overrides.reverse_text %}{% if module.module_overrides.use_card_content_theme_color %}themeColor{% endif %}{% endif %}">
-			<div class="card_inner {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.card_background_color }}{% endif %}">
-				<h5 class="card_title">
-					{{ item.title }}
-				</h5>
-				<div class="card_content">
-					{{ item.content }}
-				</div>
 
-				{% set href = item.link.url.href %}
-				{% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
-				{% set href = "mailto:" + href %}
-				{% endif %}
-				{% if item.include_link %}
-				<div class="arrow_link"> 
-					<a
-						 {% if item.link.url.type is equalto "CALL_TO_ACTION"  %}
-						 href="{{ href }}" 
-						 {% else %}
-						 href="{{ href|escape_url }}"
-						 {% endif %}
-						 {% if item.link.open_in_new_tab %}
-						 target="_blank"
-						 {% endif %}
-						 {% if item.link.rel %}
-						 rel="{{ item.link.rel|escape_attr }}"
-						 {% endif %}>
-						<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-							<path d="M5.5 1L10.5 6L5.5 11" stroke="#574D4A"/>
-							<path d="M10.5 6L0.5 6" stroke="#574D4A"/>
-						</svg>
-					</a>
-				</div>
-				{% endif %}
-			</div>
-		</div>
-		{% endfor %}
-	</div>
+  <div class="flex_row {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.select_column_alignment }}{% endif %}">
+
+    {% for item in module.cards_group %}
+    <div class="card_item col3 col {% if module.module_overrides.reverse_text %}{{ module.module_overrides.card_color_theme }}_color {% endif %}">
+      <div class="card_inner {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.card_background_color }}{% endif %}">
+
+
+
+        {% if item.select_icon_type %}
+        <div class="icon_box {{item.select_icon_type}}">
+
+          {% if item.image.src and item.select_icon_type == "image" %}
+          <span class="icon_img">
+            <img src="{{ item.image.src }}" alt="{{ item.image.alt }}">
+          </span>
+          {% endif %}
+
+          {% if item.icon.name and item.select_icon_type == "icon"%}
+          <span class="svg_icon">{% icon
+		name="{{ item.icon.name }}"
+		style="{{ item.icon.type }}"
+		unicode="{{ item.icon.unicode }}"
+		icon_set="{{ item.icon.icon_set }}"
+	%}</span> {% endif %}
+
+          {% if item.custom_icon and item.select_icon_type == "custom" %}
+          <span class="material-symbols-outlined">
+            {{ item.custom_icon }}
+          </span>
+          {% endif %}
+        </div>
+        {% endif %}
+
+        <h5 class="card_title">
+          {{ item.title }}
+        </h5>
+        <div class="card_content">
+          {{ item.content }}
+        </div>
+
+        {% set href = item.link.url.href %}
+        {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+        {% endif %}
+        {% if item.include_link %}
+        <div class="arrow_link"> 
+          <a
+             {% if item.link.url.type is equalto "CALL_TO_ACTION"  %}
+             href="{{ href }}" 
+             {% else %}
+             href="{{ href|escape_url }}"
+             {% endif %}
+             {% if item.link.open_in_new_tab %}
+             target="_blank"
+             {% endif %}
+             {% if item.link.rel %}
+             rel="{{ item.link.rel|escape_attr }}"
+             {% endif %}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M5.5 1L10.5 6L5.5 11" stroke="#574D4A"/>
+              <path d="M10.5 6L0.5 6" stroke="#574D4A"/>
+            </svg>
+          </a>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
 
 </div>
 
 
 
 </section>
+
+
+
+
+
 
 
 

@@ -1,11 +1,6 @@
 @import "../../css/_module-imports";
 
-
 .u4m-rich-text {
-  h3 {
-    margin-bottom: 20px;
-  }
-
   p {
     @include size18;
     font-weight: 400;
@@ -13,8 +8,16 @@
   }
 
   h4 {
-    @include size28;
     font-weight: 700;
     line-height: 1.2;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 20px;
   }
 }

@@ -42,6 +42,9 @@
 {% endif %}
 
 
+{% set getCount = module.tabber_slider|length %}
+
+
 <div class="wrapper {% if module.module_settings.enable_slider %}tabcards{% endif %}">
   <div class="page-center"> 
 
@@ -49,7 +52,7 @@
       <div class="tabber_inr desktop_tab"> 
 
         <div class="tabs">
-          <div class="toptab" dir="rtl">
+          <div class="toptab {% if getCount < 4%} counts_3 {% endif %}" dir="rtl">
             {% for item in module.tabber_slider %}
             <div class="toptab_ttl">
               <span class="timer">
@@ -97,7 +100,7 @@
         </div>
         <div class="toptabber_cnt_wrap" dir="rtl">
           <div class="white_bg">
-            <div class="toptabber_cnt" dir="rtl">
+            <div class="toptabber_cnt {% if getCount < 4%} counts_3 {% endif %}" dir="rtl">
               {% for item in module.tabber_slider %}
               <div class="tabber_cnt_inr">
                 <div class="img">
@@ -117,7 +120,7 @@
 
       <div class="tabber_inr mobile_tab"> 
         <div class="tabs">
-          <div class="toptab">
+          <div class="toptab {% if getCount < 4%} counts_3 {% endif %}">
             {% for item in module.tabber_slider %}
 
             <div class="tab_acc_item {{loop.index == 1 ? "active":''}}" data-tab-id="{{loop.index0}}" >
