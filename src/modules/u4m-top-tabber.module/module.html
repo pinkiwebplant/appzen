@@ -5,156 +5,186 @@
 {% include "../partials/u4-module-includes.html" %}
 {% if module.include_intro %}
 <div class='intro'>
-	<div class='intro_cnt page-center'>
-		{{ module.intro_content }}
-	</div>
+  <div class='intro_cnt page-center'>
+    {{ module.intro_content }}
+    {% if module.include_button %}
+    <div class="btn_row">
+      {% for item in module.buttons %}
+      {% if item.button_type == 'stnd' %} 
+      {% set href = item.button_link.url.href %}
+      {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+      {% endif %}
+      <a class="{{ item.theme }} hs-button"
+         {% if item.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+         href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+         {% else %}
+         href="{{ href|escape_url }}"
+         {% endif %}
+         {% if item.button_link.open_in_new_tab %}
+         target="_blank"
+         {% endif %}
+         {% if item.button_link.rel %}
+         rel="{{ item.button_link.rel|escape_attr }}"
+         {% endif %}
+         >
+        {{ item.button_text }}
+      </a>
+      {% else %}
+      {% cta guid="{{ item.cta_field }}" %}
+      {% endif %}
+      {% endfor %}
+
+    </div>
+    {% endif %}
+  </div>
 </div> 
 {% endif %}
 
 
 <div class="wrapper {% if module.module_settings.enable_slider %}tabcards{% endif %}">
-	<div class="page-center"> 
+  <div class="page-center"> 
 
-		<div class="tabber_wrap">
-			<div class="tabber_inr desktop_tab"> 
+    <div class="tabber_wrap">
+      <div class="tabber_inr desktop_tab"> 
 
-				<div class="tabs">
-					<div class="toptab" dir="rtl">
-						{% for item in module.tabber_slider %}
-						<div class="toptab_ttl">
-							<span class="timer">
-								<i></i>
-							</span>
-							<div class="tab_ttl_inr">
-								<div class="tab_txt">
-									{{ item.tab }}
-								</div>
-								<div class="tab_cnt">{{ item.content }}</div>
-								{% if item.include_button %}
-								<div class="btn_row">
-									{% for item2 in item.buttons %}
-									{% if item2.button_type == 'stnd' %} 
-									{% set href = item2.button_link.url.href %}
-									{% if item2.button_link.url.type is equalto "EMAIL_ADDRESS" %}
-									{% set href = "mailto:" + href %}
-									{% endif %}
-									<a class="{{ item2.theme }} hs-button"
-										 {% if item2.button_link.url.type is equalto "CALL_TO_ACTION"  %}
-										 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
-										 {% else %}
-										 href="{{ href|escape_url }}"
-										 {% endif %}
-										 {% if item2.button_link.open_in_new_tab %}
-										 target="_blank"
-										 {% endif %}
-										 {% if item2.button_link.rel %}
-										 rel="{{ item2.button_link.rel|escape_attr }}"
-										 {% endif %}
-										 >
-										{{ item2.button_text }}
-									</a>
-									{% else %}
-									{% cta guid="{{ item2.cta_field }}" %}
-									{% endif %}
-									{% endfor %}
+        <div class="tabs">
+          <div class="toptab" dir="rtl">
+            {% for item in module.tabber_slider %}
+            <div class="toptab_ttl">
+              <span class="timer">
+                <i></i>
+              </span>
+              <div class="tab_ttl_inr">
+                <div class="tab_txt">
+                  {{ item.tab }}
+                </div>
+                <div class="tab_cnt">{{ item.content }}</div>
+                {% if item.include_button %}
+                <div class="btn_row">
+                  {% for item2 in item.buttons %}
+                  {% if item2.button_type == 'stnd' %} 
+                  {% set href = item2.button_link.url.href %}
+                  {% if item2.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                  {% set href = "mailto:" + href %}
+                  {% endif %}
+                  <a class="{{ item2.theme }} hs-button"
+                     {% if item2.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+                     href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                     {% else %}
+                     href="{{ href|escape_url }}"
+                     {% endif %}
+                     {% if item2.button_link.open_in_new_tab %}
+                     target="_blank"
+                     {% endif %}
+                     {% if item2.button_link.rel %}
+                     rel="{{ item2.button_link.rel|escape_attr }}"
+                     {% endif %}
+                     >
+                    {{ item2.button_text }}
+                  </a>
+                  {% else %}
+                  {% cta guid="{{ item2.cta_field }}" %}
+                  {% endif %}
+                  {% endfor %}
 
-								</div>
-								{% endif %}
-							</div>
-						</div>
-						{% endfor %}
-					</div>
-				</div>
-				<div class="toptabber_cnt_wrap" dir="rtl">
-					<div class="white_bg">
-						<div class="toptabber_cnt" dir="rtl">
-							{% for item in module.tabber_slider %}
-							<div class="tabber_cnt_inr">
-								<div class="img">
-									{% if item.select_image.src %}
-									<img src="{{ item.select_image.src }}" alt="{{ item.select_image.alt }}" >
-									{% endif %}
-								</div>
-							</div>
-							{% endfor %}
-						</div> 
-					</div> 
-				</div>
-			</div>
-			{# desktop ends #}
+                </div>
+                {% endif %}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="toptabber_cnt_wrap" dir="rtl">
+          <div class="white_bg">
+            <div class="toptabber_cnt" dir="rtl">
+              {% for item in module.tabber_slider %}
+              <div class="tabber_cnt_inr">
+                <div class="img">
+                  {% if item.select_image.src %}
+                  <img src="{{ item.select_image.src }}" alt="{{ item.select_image.alt }}" >
+                  {% endif %}
+                </div>
+              </div>
+              {% endfor %}
+            </div> 
+          </div> 
+        </div>
+      </div>
+      {# desktop ends #}
 
-			{# mobile starts#}
+      {# mobile starts#}
 
-			<div class="tabber_inr mobile_tab"> 
-				<div class="tabs">
-					<div class="toptab">
-						{% for item in module.tabber_slider %}
+      <div class="tabber_inr mobile_tab"> 
+        <div class="tabs">
+          <div class="toptab">
+            {% for item in module.tabber_slider %}
 
-						<div class="tab_acc_item {{loop.index == 1 ? "active":''}}" data-tab-id="{{loop.index0}}" >
-
-
-							<div class="toptab_ttl">
-								<div class="tab_ttl_inr">
-									<div class="tab_txt">
-										{{ item.tab }}
-									</div>
-									<div class="tab_cnt">{{ item.content }}</div>
-									{% if item.include_button %}
-									<div class="btn_row">
-										{% for item2 in item.buttons %}
-										{% if item2.button_type == 'stnd' %} 
-										{% set href = item2.button_link.url.href %}
-										{% if item2.button_link.url.type is equalto "EMAIL_ADDRESS" %}
-										{% set href = "mailto:" + href %}
-										{% endif %}
-										<a class="{{ item2.theme }} hs-button"
-											 {% if item2.button_link.url.type is equalto "CALL_TO_ACTION"  %}
-											 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
-											 {% else %}
-											 href="{{ href|escape_url }}"
-											 {% endif %}
-											 {% if item2.button_link.open_in_new_tab %}
-											 target="_blank"
-											 {% endif %}
-											 {% if item2.button_link.rel %}
-											 rel="{{ item2.button_link.rel|escape_attr }}"
-											 {% endif %}
-											 >
-											{{ item2.button_text }}
-										</a>
-										{% else %}
-										{% cta guid="{{ item2.cta_field }}" %}
-										{% endif %}
-										{% endfor %}
-
-									</div>
-									{% endif %}
-								</div>
-							</div>
-
-							<div class="toptabber_cnt_wrap" {% if loop.index == "1" %} style="display: block;"{% endif %}>
-								<div class="white_bg">
-									<div class="tabber_cnt_inr">
-										<div class="img">
-											{% if item.select_image.src %}
-											<img src="{{ item.select_image.src }}" alt="{{ item.select_image.alt }}" >
-											{% endif %}
-										</div>
-									</div>
-								</div>
-							</div> 
-
-						</div>
-						{% endfor %}
-					</div>
-				</div>
+            <div class="tab_acc_item {{loop.index == 1 ? "active":''}}" data-tab-id="{{loop.index0}}" >
 
 
-			</div>
+              <div class="toptab_ttl">
+                <div class="tab_ttl_inr">
+                  <div class="tab_txt">
+                    {{ item.tab }}
+                  </div>
+                  <div class="tab_cnt">{{ item.content }}</div>
+                  {% if item.include_button %}
+                  <div class="btn_row">
+                    {% for item2 in item.buttons %}
+                    {% if item2.button_type == 'stnd' %} 
+                    {% set href = item2.button_link.url.href %}
+                    {% if item2.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                    {% set href = "mailto:" + href %}
+                    {% endif %}
+                    <a class="{{ item2.theme }} hs-button"
+                       {% if item2.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+                       href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                       {% else %}
+                       href="{{ href|escape_url }}"
+                       {% endif %}
+                       {% if item2.button_link.open_in_new_tab %}
+                       target="_blank"
+                       {% endif %}
+                       {% if item2.button_link.rel %}
+                       rel="{{ item2.button_link.rel|escape_attr }}"
+                       {% endif %}
+                       >
+                      {{ item2.button_text }}
+                    </a>
+                    {% else %}
+                    {% cta guid="{{ item2.cta_field }}" %}
+                    {% endif %}
+                    {% endfor %}
 
-		</div>
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
 
-	</div>
+              <div class="toptabber_cnt_wrap" {% if loop.index == "1" %} style="display: block;"{% endif %}>
+                <div class="white_bg">
+                  <div class="tabber_cnt_inr">
+                    <div class="img">
+                      {% if item.select_image.src %}
+                      <img src="{{ item.select_image.src }}" alt="{{ item.select_image.alt }}" >
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div> 
+
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
 </div>
 
 
@@ -164,35 +194,35 @@
 {% require_js %}
 <script>
 
-	$(".{{name}} .desktop_tab .toptabber_cnt").slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		arrows: false, 
-		asNavFor: ".{{name}} .desktop_tab .toptab",
-		autoplay: true,
-		rtl: true,
-		infnite:true,
-		autoplaySpeed: 5000,
-		});
-	$(".{{name}} .desktop_tab .toptab").slick({
-		slidesToShow: 4,
-		slidesToScroll: 1,
-		asNavFor: ".{{name}} .desktop_tab .toptabber_cnt",
-		dots: true,
-		rtl: true,
-		variableWidth: true,
-		focusOnSelect: true,
-		arrows: false,
-		});
+  $(".{{name}} .desktop_tab .toptabber_cnt").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false, 
+    asNavFor: ".{{name}} .desktop_tab .toptab",
+    autoplay: true,
+    rtl: true,
+    infnite:true,
+    autoplaySpeed: 5000,
+    });
+  $(".{{name}} .desktop_tab .toptab").slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    asNavFor: ".{{name}} .desktop_tab .toptabber_cnt",
+    dots: true,
+    rtl: true,
+    variableWidth: true,
+    focusOnSelect: true,
+    arrows: false,
+    });
 
-	$(".{{name}} .mobile_tab .toptab_ttl").click(function () {
-		var getId = $(this).parent().attr('data-tab-id');
-	$(this).parent().siblings().removeClass("active");
-	$(this).parent().siblings().find('.toptabber_cnt_wrap').slideUp();
-	$(this).parent().toggleClass("active");
-	$(this).next().slideToggle();
+  $(".{{name}} .mobile_tab .toptab_ttl").click(function () {
+    var getId = $(this).parent().attr('data-tab-id');
+  $(this).parent().siblings().removeClass("active");
+  $(this).parent().siblings().find('.toptabber_cnt_wrap').slideUp();
+  $(this).parent().toggleClass("active");
+  $(this).next().slideToggle();
 
-	});
+  });
 
 
 </script>
