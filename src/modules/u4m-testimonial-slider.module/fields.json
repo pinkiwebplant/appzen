@@ -972,7 +972,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "white_bg", "White" ], [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ],[ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -1068,7 +1068,7 @@
       "required" : false,
       "locked" : false,
       "display" : "select",
-      "choices" : [ [ "white_bg", "White" ], [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ],[ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,

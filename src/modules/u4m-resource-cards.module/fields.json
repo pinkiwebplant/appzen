@@ -172,6 +172,58 @@
     "type" : "text",
     "default" : "Case Studies"
   }, {
+    "id" : "bced61ff-3c14-47cf-6d68-3e972385600c",
+    "name" : "resources_by_title",
+    "display_width" : null,
+    "label" : "Resources By Title",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 3
+    },
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "resources.resource_type",
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "2b18d6a6-6801-b462-ae44-9ac2a9747188",
+      "name" : "select_resource",
+      "display_width" : null,
+      "label" : "Select Resource",
+      "required" : false,
+      "locked" : false,
+      "table_name_or_id" : "4825172",
+      "display_columns" : [ "title" ],
+      "type" : "hubdbrow",
+      "default" : {
+        "id" : null
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : [ {
+      "select_resource" : {
+        "id" : null
+      }
+    }, {
+      "select_resource" : {
+        "id" : null
+      }
+    }, {
+      "select_resource" : {
+        "id" : null
+      }
+    } ]
+  }, {
     "id" : "426cd412-0466-923c-e63b-812b0ef54c0f",
     "name" : "count",
     "display_width" : null,
@@ -248,58 +300,6 @@
       "include_tag" : false,
       "include_reading_minutes" : false
     }
-  }, {
-    "id" : "bced61ff-3c14-47cf-6d68-3e972385600c",
-    "name" : "resources_by_title",
-    "display_width" : null,
-    "label" : "Resources By Title",
-    "required" : false,
-    "locked" : false,
-    "occurrence" : {
-      "min" : null,
-      "max" : null,
-      "sorting_label_field" : null,
-      "default" : 3
-    },
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "resources.resource_type",
-      "controlling_value_regex" : "custom",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "children" : [ {
-      "id" : "2b18d6a6-6801-b462-ae44-9ac2a9747188",
-      "name" : "select_resource",
-      "display_width" : null,
-      "label" : "Select Resource",
-      "required" : false,
-      "locked" : false,
-      "table_name_or_id" : "4825172",
-      "display_columns" : [ "title" ],
-      "type" : "hubdbrow",
-      "default" : {
-        "id" : null
-      }
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "default" : [ {
-      "select_resource" : {
-        "id" : null
-      }
-    }, {
-      "select_resource" : {
-        "id" : null
-      }
-    }, {
-      "select_resource" : {
-        "id" : null
-      }
-    } ]
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -309,13 +309,6 @@
     "resource_type" : "recent",
     "resource_table" : 4825172,
     "category_name" : "Case Studies",
-    "count" : 3,
-    "settings" : {
-      "include_featured_image" : true,
-      "include_description" : true,
-      "include_tag" : false,
-      "include_reading_minutes" : false
-    },
     "resources_by_title" : [ {
       "select_resource" : {
         "id" : null
@@ -328,7 +321,14 @@
       "select_resource" : {
         "id" : null
       }
-    } ]
+    } ],
+    "count" : 3,
+    "settings" : {
+      "include_featured_image" : true,
+      "include_description" : true,
+      "include_tag" : false,
+      "include_reading_minutes" : false
+    }
   }
 }, {
   "id" : "module_overrides",
@@ -646,7 +646,7 @@
       "access" : null
     },
     "display" : "select",
-    "choices" : [ [ "yellow", "Yellow" ], [ "black", "Black" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "white_bg", "White" ] ],
+    "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ],[ "white_bg", "White" ], [ "custom", "Custom" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
@@ -697,7 +697,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "yellow", "Yellow" ], [ "black", "Black" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ],[ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,

@@ -16,6 +16,10 @@
     @include tabletmid {
       padding-right: 0;
     }
+    code {
+      white-space: normal;
+      margin: 0;
+    }
     h6 {
       line-height: 1.6;
       margin-bottom: 20px;

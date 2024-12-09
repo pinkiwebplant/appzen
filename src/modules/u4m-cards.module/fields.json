@@ -599,7 +599,7 @@
       "access" : null
     },
     "display" : "select",
-    "choices" : [ [ "yellow", "Yellow" ], [ "black", "Black" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "white_bg", "White" ] ],
+    "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ],[ "white_bg", "White" ], [ "custom", "Custom" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
@@ -610,7 +610,7 @@
     "name" : "card_color_theme",
     "display_width" : null,
     "label" : "Card Color Theme",
-    "required" : false,
+    "required" : true,
     "locked" : false,
     "visibility" : {
       "controlling_field" : null,
@@ -672,7 +672,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "yellow", "Yellow" ], [ "black", "Black" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ],[ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,

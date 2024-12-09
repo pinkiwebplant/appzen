@@ -19,7 +19,7 @@
   <div class="flex_row {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.select_column_alignment }}{% endif %}">
 
     {% for item in module.cards_group %}
-    <div class="card_item col3 col {% if module.module_overrides.reverse_text %}{{ module.module_overrides.card_color_theme }}_color {% endif %}">
+    <div class="card_item col3 col {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.card_color_theme }}_color {% endif %}">
       <div class="card_inner {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.card_background_color }}{% endif %}">
 
 
