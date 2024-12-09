@@ -5,13 +5,28 @@
 {% include "../partials/u4-module-includes.html" %}
 
 <div class="wrapper">
-	<div class="page-center"> 
-		<div class="top_rich_text">
-			{{ module.rich_text_field }}
-		</div>
-	</div>
+  <div class="page-center"> 
+    <div class="top_rich_text">
+      {{ module.rich_text_field }}
+    </div>
+  </div>
 </div>
 
+
+{% if module.module_overrides.enable_overrides and  module.module_overrides.change_container_size %}
+{% require_css%}
+<style>
+  .{{moduleName}}.{{name}} .page-center{
+    {% if  module.module_overrides.container_settings.container_size == "full" %}
+    max-width: 100%;
+    {% endif %}
+    {% if  module.module_overrides.container_settings.container_size == "custom" %}
+    max-width: {{ module.module_overrides.container_settings.custom_container }}px;
+    {% endif %}
+  }
+</style>
+{% end_require_css%}
+{% endif %}
 
 </section>
 
