@@ -554,8 +554,16 @@
       "label" : "Select Background Color",
       "required" : false,
       "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "module_overrides.background_settings.background_type",
+        "controlling_value_regex" : "color",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
       "display" : "select",
-      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ],[ "white_bg", "White" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -629,6 +637,24 @@
       }
     }
   }, {
+    "id" : "9a1cae2c-8967-2b27-4d26-c132c3907a1f",
+    "name" : "enable_inner_background_color",
+    "display_width" : null,
+    "label" : "Enable Inner Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_overrides.enable_overrides",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : false
+  }, {
     "id" : "439a7857-1750-f344-80b6-7c2785c4d1ed",
     "name" : "inner_background_settings",
     "display_width" : null,
@@ -637,7 +663,7 @@
     "locked" : false,
     "visibility" : {
       "controlling_field" : null,
-      "controlling_field_path" : "module_overrides.enable_overrides",
+      "controlling_field_path" : "module_overrides.enable_inner_background_color",
       "controlling_value_regex" : "true",
       "property" : null,
       "operator" : "EQUAL",
@@ -651,7 +677,7 @@
       "required" : false,
       "locked" : false,
       "display" : "select",
-      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ],[ "white_bg", "White" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -734,6 +760,7 @@
         "loading" : "disabled"
       }
     },
+    "enable_inner_background_color" : false,
     "inner_background_settings" : {
       "select_background_color_type" : "yellow",
       "background_color" : {

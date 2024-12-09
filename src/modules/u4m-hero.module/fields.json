@@ -598,8 +598,16 @@
       "label" : "Select Background Color",
       "required" : false,
       "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "module_overrides.background_settings.background_type",
+        "controlling_value_regex" : "color",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
       "display" : "select",
-      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ],[ "white_bg", "White" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -627,24 +635,6 @@
         "color" : null,
         "opacity" : null
       }
-    }, {
-      "id" : "5788e385-e7b8-15f0-9fae-fbaafc73a721",
-      "name" : "add_overlay",
-      "display_width" : null,
-      "label" : "Add Overlay",
-      "required" : false,
-      "locked" : true,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "module_overrides.background_settings.background_type",
-        "controlling_value_regex" : "color",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "display" : "checkbox",
-      "type" : "boolean",
-      "default" : false
     }, {
       "id" : "878364f4-31ac-6917-e76f-65307d7d36e5",
       "name" : "background_image",
@@ -683,7 +673,6 @@
         "color" : null,
         "opacity" : null
       },
-      "add_overlay" : false,
       "background_image" : {
         "size_type" : "auto",
         "src" : "",
@@ -724,7 +713,7 @@
       "required" : false,
       "locked" : false,
       "display" : "select",
-      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ],[ "white_bg", "White" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -800,7 +789,6 @@
         "color" : null,
         "opacity" : null
       },
-      "add_overlay" : false,
       "background_image" : {
         "size_type" : "auto",
         "src" : "",
