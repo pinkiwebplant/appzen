@@ -101,28 +101,29 @@
 												 rel="{{ module.right_column.social_share.share_link.rel|escape_attr }}"
 												 {% endif %}
 												 >
-											  <img src="{{ get_asset_url('../../images/share.png') }}" alt="Share">
+
+											  <img src="{{ get_asset_url('../../templates/images/share.png') }}" alt="Share">
 											</a>
 										</li>
 									{% endif %}
 									{% if module.right_column.social_share.enable_email %}
 									<li>
 										<a href="mailto:?subject={{content.absolute_url}}" target="_blank">
-											<img src="{{ get_asset_url('../../images/Email.png') }}" alt="Email">
+											<img src="{{ get_asset_url('../../templates/images/Email.png') }}" alt="Email">
 										</a>
 									</li>
 									{% endif %}
 									{% if module.right_column.social_share.enable_twitter %}
 									<li>
 										<a href="https://twitter.com/intent/tweet?url={{content.absolute_url}}&text={{ content.name|striptags }}" target="_blank">
-											<img src="{{ get_asset_url('../../images/X-icon.png') }}" alt="Twitter">
+											<img src="{{ get_asset_url('../../templates/images/X-icon.png') }}" alt="Twitter">
 										</a>
 									</li>
 									{% endif %}
 									{% if module.right_column.social_share.enable_linkedin %}
 									<li>
 										<a href="http://www.linkedin.com/shareArticle?mini=true&url={{ content.absolute_url }}&text={{ content.name|striptags }}" target="_blank">
-											<img src="{{ get_asset_url('../../images/linkedin-dark.png') }}" alt="Linkedin">
+											<img src="{{ get_asset_url('../../templates/images/linkedin-dark.png') }}" alt="Linkedin">
 										</a>
 									</li>
 									{% endif %}

@@ -478,6 +478,16 @@
     "type" : "number",
     "default" : 50
   }, {
+    "id" : "573ae768-b1c6-9165-cc09-523d659e2b6a",
+    "name" : "include_background_inside",
+    "display_width" : null,
+    "label" : "Include Background Inside",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
+  }, {
     "id" : "3acc8068-a3e9-1ee0-60c7-9dbf953422a4",
     "name" : "background_settings",
     "display_width" : null,
@@ -522,7 +532,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -615,7 +625,7 @@
       "type" : "image",
       "default" : {
         "size_type" : "auto_custom_max",
-        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/pattern.png",
+        "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/pattern.png",
         "alt" : "pattern",
         "loading" : "lazy",
         "width" : 2525,
@@ -644,7 +654,7 @@
       "add_overlay_image" : false,
       "overlay_image" : {
         "size_type" : "auto_custom_max",
-        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/pattern.png",
+        "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/pattern.png",
         "alt" : "pattern",
         "loading" : "lazy",
         "width" : 2525,
@@ -690,6 +700,7 @@
     "bottom_padding" : "bottom-padding-default",
     "custom_bottom_padding" : 100,
     "custom_bottom_padding_mobile" : 50,
+    "include_background_inside" : true,
     "background_settings" : {
       "background_type" : "color",
       "select_background_color_type" : "yellow",
@@ -706,7 +717,7 @@
       "add_overlay_image" : false,
       "overlay_image" : {
         "size_type" : "auto_custom_max",
-        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/pattern.png",
+        "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/pattern.png",
         "alt" : "pattern",
         "loading" : "lazy",
         "width" : 2525,

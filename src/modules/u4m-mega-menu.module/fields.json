@@ -317,10 +317,10 @@
       },
       "type" : "hubdbtable"
     }, {
-      "id" : "34f018c9-201b-90a5-6e37-b14be1786798",
-      "name" : "hubdb_content_type",
+      "id" : "0279de14-5d81-fdfd-e4aa-486427414d9e",
+      "name" : "hubdb_setttings",
       "display_width" : null,
-      "label" : "HubDB Content Type",
+      "label" : "Hubdb Settings",
       "required" : false,
       "locked" : false,
       "visibility" : {
@@ -331,13 +331,91 @@
         "operator" : "EQUAL",
         "access" : null
       },
-      "display" : "select",
-      "choices" : [ [ "type1", "Type 1" ], [ "type2", "Type 2" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "default" : "type1"
+      "children" : [ {
+        "id" : "a1ecd86f-85d3-73a3-72c1-5f567de500bf",
+        "name" : "column_feature_image",
+        "display_width" : null,
+        "label" : "Column Featured Image",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "image"
+      }, {
+        "id" : "babc1d4a-5d3d-afb0-3c21-e6db537aae79",
+        "name" : "column_title",
+        "display_width" : null,
+        "label" : "Column Title",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "title"
+      }, {
+        "id" : "0ca2f1c5-6ae0-cdbd-8186-7a34b5cfff3b",
+        "name" : "column_topic",
+        "display_width" : null,
+        "label" : "Column Topic",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "categories"
+      }, {
+        "id" : "0b71adb5-d498-8aac-93ab-8532d4321ce8",
+        "name" : "column_date",
+        "display_width" : null,
+        "label" : "Column Date",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : ""
+      }, {
+        "id" : "bb8811fe-ca03-646a-377c-1e9c82f30523",
+        "name" : "column_link",
+        "display_width" : null,
+        "label" : "Column Link",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "link"
+      }, {
+        "id" : "039ecec9-fed4-247b-bf5c-fe8191448b38",
+        "name" : "column_read_minutes",
+        "display_width" : null,
+        "label" : "Column Read Minutes",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : ""
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "default" : {
+        "column_feature_image" : "image",
+        "column_title" : "title",
+        "column_topic" : "categories",
+        "column_date" : "",
+        "column_link" : "link",
+        "column_read_minutes" : ""
+      }
     }, {
       "id" : "5f88fd7b-1483-15b8-6004-5386de68a8d2",
       "name" : "card",
@@ -366,7 +444,7 @@
         "type" : "image",
         "default" : {
           "size_type" : "auto",
-          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/GettyImages.png",
           "alt" : "Getty Images",
           "loading" : "lazy",
           "width" : 666,
@@ -403,7 +481,7 @@
       "default" : {
         "image" : {
           "size_type" : "auto",
-          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/GettyImages.png",
           "alt" : "Getty Images",
           "loading" : "lazy",
           "width" : 666,
@@ -472,11 +550,18 @@
           "description" : "Automate your accounts payable workflow"
         } ]
       },
-      "hubdb_content_type" : "type1",
+      "hubdb_setttings" : {
+        "column_feature_image" : "image",
+        "column_title" : "title",
+        "column_topic" : "categories",
+        "column_date" : "",
+        "column_link" : "link",
+        "column_read_minutes" : ""
+      },
       "card" : {
         "image" : {
           "size_type" : "auto",
-          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/GettyImages.png",
           "alt" : "Getty Images",
           "loading" : "lazy",
           "width" : 666,
@@ -521,11 +606,18 @@
           "description" : "Automate your accounts payable workflow"
         } ]
       },
-      "hubdb_content_type" : "type1",
+      "hubdb_setttings" : {
+        "column_feature_image" : "image",
+        "column_title" : "title",
+        "column_topic" : "categories",
+        "column_date" : "",
+        "column_link" : "link",
+        "column_read_minutes" : ""
+      },
       "card" : {
         "image" : {
           "size_type" : "auto",
-          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/GettyImages.png",
           "alt" : "Getty Images",
           "loading" : "lazy",
           "width" : 666,
@@ -570,11 +662,18 @@
           "description" : "Automate your accounts payable workflow"
         } ]
       },
-      "hubdb_content_type" : "type1",
+      "hubdb_setttings" : {
+        "column_feature_image" : "image",
+        "column_title" : "title",
+        "column_topic" : "categories",
+        "column_date" : "",
+        "column_link" : "link",
+        "column_read_minutes" : ""
+      },
       "card" : {
         "image" : {
           "size_type" : "auto",
-          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/GettyImages.png",
           "alt" : "Getty Images",
           "loading" : "lazy",
           "width" : 666,
@@ -771,11 +870,18 @@
           "description" : "Automate your accounts payable workflow"
         } ]
       },
-      "hubdb_content_type" : "type1",
+      "hubdb_setttings" : {
+        "column_feature_image" : "image",
+        "column_title" : "title",
+        "column_topic" : "categories",
+        "column_date" : "",
+        "column_link" : "link",
+        "column_read_minutes" : ""
+      },
       "card" : {
         "image" : {
           "size_type" : "auto",
-          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/GettyImages.png",
           "alt" : "Getty Images",
           "loading" : "lazy",
           "width" : 666,
@@ -820,11 +926,18 @@
           "description" : "Automate your accounts payable workflow"
         } ]
       },
-      "hubdb_content_type" : "type1",
+      "hubdb_setttings" : {
+        "column_feature_image" : "image",
+        "column_title" : "title",
+        "column_topic" : "categories",
+        "column_date" : "",
+        "column_link" : "link",
+        "column_read_minutes" : ""
+      },
       "card" : {
         "image" : {
           "size_type" : "auto",
-          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/GettyImages.png",
           "alt" : "Getty Images",
           "loading" : "lazy",
           "width" : 666,
@@ -869,11 +982,18 @@
           "description" : "Automate your accounts payable workflow"
         } ]
       },
-      "hubdb_content_type" : "type1",
+      "hubdb_setttings" : {
+        "column_feature_image" : "image",
+        "column_title" : "title",
+        "column_topic" : "categories",
+        "column_date" : "",
+        "column_link" : "link",
+        "column_read_minutes" : ""
+      },
       "card" : {
         "image" : {
           "size_type" : "auto",
-          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/GettyImages.png",
           "alt" : "Getty Images",
           "loading" : "lazy",
           "width" : 666,
@@ -959,11 +1079,18 @@
           "description" : "Automate your accounts payable workflow"
         } ]
       },
-      "hubdb_content_type" : "type1",
+      "hubdb_setttings" : {
+        "column_feature_image" : "image",
+        "column_title" : "title",
+        "column_topic" : "categories",
+        "column_date" : "",
+        "column_link" : "link",
+        "column_read_minutes" : ""
+      },
       "card" : {
         "image" : {
           "size_type" : "auto",
-          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/GettyImages.png",
           "alt" : "Getty Images",
           "loading" : "lazy",
           "width" : 666,
@@ -1008,11 +1135,18 @@
           "description" : "Automate your accounts payable workflow"
         } ]
       },
-      "hubdb_content_type" : "type1",
+      "hubdb_setttings" : {
+        "column_feature_image" : "image",
+        "column_title" : "title",
+        "column_topic" : "categories",
+        "column_date" : "",
+        "column_link" : "link",
+        "column_read_minutes" : ""
+      },
       "card" : {
         "image" : {
           "size_type" : "auto",
-          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/GettyImages.png",
           "alt" : "Getty Images",
           "loading" : "lazy",
           "width" : 666,
@@ -1057,11 +1191,18 @@
           "description" : "Automate your accounts payable workflow"
         } ]
       },
-      "hubdb_content_type" : "type1",
+      "hubdb_setttings" : {
+        "column_feature_image" : "image",
+        "column_title" : "title",
+        "column_topic" : "categories",
+        "column_date" : "",
+        "column_link" : "link",
+        "column_read_minutes" : ""
+      },
       "card" : {
         "image" : {
           "size_type" : "auto",
-          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/GettyImages.png",
           "alt" : "Getty Images",
           "loading" : "lazy",
           "width" : 666,
@@ -1147,11 +1288,18 @@
           "description" : "Automate your accounts payable workflow"
         } ]
       },
-      "hubdb_content_type" : "type1",
+      "hubdb_setttings" : {
+        "column_feature_image" : "image",
+        "column_title" : "title",
+        "column_topic" : "categories",
+        "column_date" : "",
+        "column_link" : "link",
+        "column_read_minutes" : ""
+      },
       "card" : {
         "image" : {
           "size_type" : "auto",
-          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/GettyImages.png",
           "alt" : "Getty Images",
           "loading" : "lazy",
           "width" : 666,
@@ -1196,11 +1344,18 @@
           "description" : "Automate your accounts payable workflow"
         } ]
       },
-      "hubdb_content_type" : "type1",
+      "hubdb_setttings" : {
+        "column_feature_image" : "image",
+        "column_title" : "title",
+        "column_topic" : "categories",
+        "column_date" : "",
+        "column_link" : "link",
+        "column_read_minutes" : ""
+      },
       "card" : {
         "image" : {
           "size_type" : "auto",
-          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/GettyImages.png",
           "alt" : "Getty Images",
           "loading" : "lazy",
           "width" : 666,
@@ -1245,11 +1400,18 @@
           "description" : "Automate your accounts payable workflow"
         } ]
       },
-      "hubdb_content_type" : "type1",
+      "hubdb_setttings" : {
+        "column_feature_image" : "image",
+        "column_title" : "title",
+        "column_topic" : "categories",
+        "column_date" : "",
+        "column_link" : "link",
+        "column_read_minutes" : ""
+      },
       "card" : {
         "image" : {
           "size_type" : "auto",
-          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/GettyImages.png",
           "alt" : "Getty Images",
           "loading" : "lazy",
           "width" : 666,
@@ -1335,11 +1497,18 @@
           "description" : "Automate your accounts payable workflow"
         } ]
       },
-      "hubdb_content_type" : "type1",
+      "hubdb_setttings" : {
+        "column_feature_image" : "image",
+        "column_title" : "title",
+        "column_topic" : "categories",
+        "column_date" : "",
+        "column_link" : "link",
+        "column_read_minutes" : ""
+      },
       "card" : {
         "image" : {
           "size_type" : "auto",
-          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/GettyImages.png",
           "alt" : "Getty Images",
           "loading" : "lazy",
           "width" : 666,
@@ -1384,11 +1553,18 @@
           "description" : "Automate your accounts payable workflow"
         } ]
       },
-      "hubdb_content_type" : "type1",
+      "hubdb_setttings" : {
+        "column_feature_image" : "image",
+        "column_title" : "title",
+        "column_topic" : "categories",
+        "column_date" : "",
+        "column_link" : "link",
+        "column_read_minutes" : ""
+      },
       "card" : {
         "image" : {
           "size_type" : "auto",
-          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/GettyImages.png",
           "alt" : "Getty Images",
           "loading" : "lazy",
           "width" : 666,
@@ -1433,11 +1609,18 @@
           "description" : "Automate your accounts payable workflow"
         } ]
       },
-      "hubdb_content_type" : "type1",
+      "hubdb_setttings" : {
+        "column_feature_image" : "image",
+        "column_title" : "title",
+        "column_topic" : "categories",
+        "column_date" : "",
+        "column_link" : "link",
+        "column_read_minutes" : ""
+      },
       "card" : {
         "image" : {
           "size_type" : "auto",
-          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/GettyImages.png",
+          "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/GettyImages.png",
           "alt" : "Getty Images",
           "loading" : "lazy",
           "width" : 666,

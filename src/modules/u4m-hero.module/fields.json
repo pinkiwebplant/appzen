@@ -1,4 +1,26 @@
 [ {
+  "id" : "02e688d6-fbf2-5105-32f9-48277a676ad0",
+  "name" : "content_alignment",
+  "display_width" : null,
+  "label" : "Content Alignment",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "right_content.image_field",
+    "controlling_value_regex" : null,
+    "property" : "src",
+    "operator" : "EMPTY",
+    "access" : null
+  },
+  "display" : "select",
+  "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "left"
+}, {
   "id" : "b539ff2e-97fb-bcf5-fb52-54f4637137bf",
   "name" : "left_content",
   "display_width" : null,
@@ -206,7 +228,7 @@
     "type" : "image",
     "default" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/hero-banner-image.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/hero-banner-image.png",
       "alt" : "Hero Image",
       "loading" : "lazy",
       "width" : 788,
@@ -227,7 +249,7 @@
     "type" : "image",
     "default" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/hero-overlay-graphics.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/hero-overlay-graphics.png",
       "alt" : "Hero Overlay Graphics",
       "loading" : "lazy",
       "width" : 1098,
@@ -243,7 +265,7 @@
   "default" : {
     "image_field" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/hero-banner-image.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/hero-banner-image.png",
       "alt" : "Hero Image",
       "loading" : "lazy",
       "width" : 788,
@@ -253,7 +275,7 @@
     },
     "overlay_image" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/hero-overlay-graphics.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/hero-overlay-graphics.png",
       "alt" : "Hero Overlay Graphics",
       "loading" : "lazy",
       "width" : 1098,
@@ -576,8 +598,16 @@
       "label" : "Select Background Color",
       "required" : false,
       "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "module_overrides.background_settings.background_type",
+        "controlling_value_regex" : "color",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
       "display" : "select",
-      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -605,24 +635,6 @@
         "color" : null,
         "opacity" : null
       }
-    }, {
-      "id" : "5788e385-e7b8-15f0-9fae-fbaafc73a721",
-      "name" : "add_overlay",
-      "display_width" : null,
-      "label" : "Add Overlay",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "module_overrides.background_settings.background_type",
-        "controlling_value_regex" : "color",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "display" : "checkbox",
-      "type" : "boolean",
-      "default" : false
     }, {
       "id" : "878364f4-31ac-6917-e76f-65307d7d36e5",
       "name" : "background_image",
@@ -661,7 +673,6 @@
         "color" : null,
         "opacity" : null
       },
-      "add_overlay" : false,
       "background_image" : {
         "size_type" : "auto",
         "src" : "",
@@ -702,7 +713,7 @@
       "required" : false,
       "locked" : false,
       "display" : "select",
-      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -778,7 +789,6 @@
         "color" : null,
         "opacity" : null
       },
-      "add_overlay" : false,
       "background_image" : {
         "size_type" : "auto",
         "src" : "",

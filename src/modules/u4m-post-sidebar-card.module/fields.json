@@ -1,16 +1,15 @@
 [ {
-  "id" : "41971c9b-0ae8-ff39-08fb-f63c5764dfc3",
+  "id" : "1ec69304-4978-db51-6a31-4daeec94d147",
   "name" : "select_post",
   "display_width" : null,
   "label" : "Select Post",
   "required" : false,
   "locked" : false,
-  "table_name_or_id" : "102672444",
-  "columns_to_fetch" : [ "feature_image", "event_date_and_time", "name", "link", "video", "content", "event_status" ],
+  "table_name_or_id" : "103410200",
   "display_columns" : [ "name" ],
   "type" : "hubdbrow",
   "default" : {
-    "id" : 183045470537
+    "id" : 183455388293
   }
 }, {
   "id" : "module_overrides",
@@ -335,7 +334,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -432,7 +431,7 @@
   "group_occurrence_meta" : null,
   "type" : "group",
   "default" : {
-    "enable_overrides" : true,
+    "enable_overrides" : false,
     "top_margin" : "top-margin-default",
     "custom_top_margin" : 100,
     "custom_top_margin_mobile" : 50,

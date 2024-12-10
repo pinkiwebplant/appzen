@@ -39,6 +39,82 @@
     "default" : 4
   },
   "children" : [ {
+    "id" : "dd3e646e-b888-353f-3724-73fa229415f7",
+    "name" : "select_icon_type",
+    "display_width" : null,
+    "label" : "Select Icon Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "icon", "Icon" ], [ "image", "Image" ], [ "custom", "Custom" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice"
+  }, {
+    "id" : "021b2fb9-9ca7-4463-e984-93fa61105ca6",
+    "name" : "icon",
+    "display_width" : null,
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "cards_group.select_icon_type",
+      "controlling_value_regex" : "icon",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "icon_set" : "fontawesome-5.14.0",
+    "type" : "icon",
+    "default" : { }
+  }, {
+    "id" : "68c48393-933e-8bd2-0e05-4a8046d2af10",
+    "name" : "image",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "cards_group.select_icon_type",
+      "controlling_value_regex" : "image",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "2caf8b97-b63e-834b-72e3-5815fb072136",
+    "name" : "custom_icon",
+    "display_width" : null,
+    "label" : "Custom Icon",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "cards_group.select_icon_type",
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "person"
+  }, {
     "id" : "a4e157a2-f2bc-d775-903a-6c0e266716de",
     "name" : "title",
     "display_width" : null,
@@ -102,8 +178,17 @@
   "group_occurrence_meta" : null,
   "type" : "group",
   "default" : [ {
+    "icon" : { },
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "custom_icon" : "person",
     "title" : "Easy stakeholder collaboration ",
     "content" : "<p>Boost communication with any employee or vendor to get questions answered and invoices processed faster</p>",
+    "include_link" : false,
     "link" : {
       "url" : {
         "content_id" : null,
@@ -112,11 +197,19 @@
       },
       "open_in_new_tab" : false,
       "no_follow" : false
-    },
-    "boolean_field" : false
+    }
   }, {
+    "icon" : { },
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "custom_icon" : "person",
     "title" : "Easy stakeholder collaboration ",
     "content" : "<p>Boost communication with any employee or vendor to get questions answered and invoices processed faster</p>",
+    "include_link" : false,
     "link" : {
       "url" : {
         "content_id" : null,
@@ -125,11 +218,19 @@
       },
       "open_in_new_tab" : false,
       "no_follow" : false
-    },
-    "boolean_field" : false
+    }
   }, {
+    "icon" : { },
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "custom_icon" : "person",
     "title" : "Easy stakeholder collaboration ",
     "content" : "<p>Boost communication with any employee or vendor to get questions answered and invoices processed faster</p>",
+    "include_link" : false,
     "link" : {
       "url" : {
         "content_id" : null,
@@ -138,11 +239,19 @@
       },
       "open_in_new_tab" : false,
       "no_follow" : false
-    },
-    "boolean_field" : false
+    }
   }, {
+    "icon" : { },
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "custom_icon" : "person",
     "title" : "Easy stakeholder collaboration ",
     "content" : "<p>Boost communication with any employee or vendor to get questions answered and invoices processed faster</p>",
+    "include_link" : false,
     "link" : {
       "url" : {
         "content_id" : null,
@@ -151,9 +260,37 @@
       },
       "open_in_new_tab" : false,
       "no_follow" : false
-    },
-    "boolean_field" : false
+    }
   } ]
+}, {
+  "id" : "437b5ae7-9470-530a-f2f5-4f3ee219f9b9",
+  "name" : "module_settings",
+  "display_width" : null,
+  "label" : "Module Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "8f239160-b11a-feb2-9f53-af00c3724961",
+    "name" : "column_width",
+    "display_width" : null,
+    "label" : "Column Width",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "col6", "Two" ], [ "col4", "Three" ], [ "col3", "Four" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "col3"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "column_width" : "col3"
+  }
 }, {
   "id" : "module_overrides",
   "name" : "module_overrides",
@@ -433,6 +570,27 @@
     "type" : "number",
     "default" : 50
   }, {
+    "id" : "0e2e0315-7452-e548-8515-9e132a9cbc87",
+    "name" : "intro_content_alignment",
+    "display_width" : null,
+    "label" : "Intro Content Alignment",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_overrides.enable_overrides",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "right", "Right" ], [ "center", "Center" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice"
+  }, {
     "id" : "8c1b8a52-b908-5731-2956-0ee376edf287",
     "name" : "select_column_alignment",
     "display_width" : null,
@@ -470,12 +628,34 @@
       "access" : null
     },
     "display" : "select",
-    "choices" : [ [ "yellow", "Yellow" ], [ "black", "Black" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "white_bg", "White" ] ],
+    "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
     "default" : "white_bg"
+  }, {
+    "id" : "e12b743e-d0c9-d31c-c72d-16ff8d46576c",
+    "name" : "card_color_theme",
+    "display_width" : null,
+    "label" : "Card Color Theme",
+    "required" : true,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_overrides.enable_overrides",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "theme", "Theme" ], [ "revese", "Reverse text" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "theme"
   }, {
     "id" : "3acc8068-a3e9-1ee0-60c7-9dbf953422a4",
     "name" : "background_settings",
@@ -521,7 +701,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "yellow", "Yellow" ], [ "black", "Black" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -633,6 +813,7 @@
     "custom_bottom_padding_mobile" : 50,
     "select_column_alignment" : "right",
     "card_background_color" : "white_bg",
+    "card_color_theme" : "theme",
     "background_settings" : {
       "background_type" : "",
       "select_background_color_type" : "",

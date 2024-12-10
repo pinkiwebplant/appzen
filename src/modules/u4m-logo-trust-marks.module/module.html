@@ -4,93 +4,100 @@
 
 {% include "../partials/u4-module-includes.html" %}
 
-	<div class="top-section {{ module.module_settings.select_theme_type }}">
-	<div class="page-center">
+<div class="top-section {{ module.module_settings.select_theme_type }}">
+  <div class="page-center">
 
-		{% if module.include_intro %}
-		<div class='intro {{ module.module_settings.title_alignment }}'>
-			<div class='intro_cnt'>
-				{{ module.intro_content }}
-			</div>
-		</div>
-		{% endif %}
-	</div>
+    {% if module.include_intro %}
+    <div class='intro {{ module.module_settings.title_alignment }}'>
+      <div class='intro_cnt'>
+        {{ module.intro_content }}
+      </div>
+    </div>
+    {% endif %}
+  </div>
 </div>
 
-<div class="logo_section {{ module.module_settings.select_theme_type }}">
-	<div class="page-center">
-		<div class="flex_row {% if module.module_settings.enable_slider %} slider_enable {% endif %}">
-			<div class="logo_wrapper flex_row {% if module.module_settings.enable_slider %}slider_wrapper{% endif %} {{ module.module_overrides.inner_background_settings.select_background_color_type }}">
-				{% for item in module.logo_items %}
-				<div class="logo_items col {{ module.module_settings.select_column_count }}">
-					{% if item.image_field.src %}
-					<div class="logo_inner">
-						{% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
-						{% if item.image_field.size_type == 'auto' %}
-						{% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
-						{% elif item.image_field.size_type == 'auto_custom_max' %}
-						{% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
-						{% endif %}
-						{% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
-						<img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }} {% if item.change_logo_width %}style="width: {{ item.width }}px;"{% endif %}>
-					</div>
-					{% endif %}
-				</div>
-				{% endfor %}
 
-			</div>
-		</div>
-	</div>
+
+<div class="logo_section {{ module.module_settings.select_theme_type }}">
+  <div class="page-center">
+    <div class="flex_row {% if module.module_settings.enable_slider %} slider_enable {% endif %}">
+      <div class="logo_wrapper flex_row {% if module.module_settings.enable_slider %}slider_wrapper{% endif %} {% if module.module_overrides.enable_overrides and module.module_overrides.include_inner_background %}{{ module.module_overrides.inner_background_settings.select_background_color_type }}{% endif %}">
+        {% for item in module.logo_items %}
+        <div class="logo_items col {{ module.module_settings.select_column_count }}">
+          {% if item.image_field.src %}
+          <div class="logo_inner">
+            {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+            {% if item.image_field.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% elif item.image_field.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+            <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }} {% if item.change_logo_width %}style="width: {{ item.width }}px;"{% endif %}>
+          </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
 </div>
 
 
 </section>
-
+{% if module.module_overrides.enable_overrides %}
+{% if module.module_overrides.include_inner_background %}
 {% require_css %}
 <style>
-	.{{ name }} .logo_wrapper{
-		background-color: {{module.module_overrides.inner_background_settings.background_color.rgb}}
-	}
+  .{{ name }} .logo_wrapper{
+    background-color: {{module.module_overrides.inner_background_settings.background_color.rgba}}
+  }
 </style>
 {% end_require_css %}
+{% endif %}
+{% endif %}
+
+
 {% require_js %}
 <script>
-	{% if module.module_settings.enable_slider %}
-	$('.{{ name }} .slider_wrapper').slick({
-		dots: false,
-		arrows: false,
-		infinite: true,
-		slidesToShow: {{ module.module_settings.slider_settings.slider_per_view }},
-		slidesToScroll: {{ module.module_settings.slider_settings.slider_per_scroll }},
-		autoplay: true,
-		autoplaySpeed: 0,
-		speed: 20000,
-		pauseOnHover: false,
-		cssEase: 'linear',
-		responsive: [
-		{
-		breakpoint: 1024,
-		settings: {
-		slidesToShow: 3,
-		slidesToScroll: 3,
-	}
-														 },
-														 {
-														 breakpoint: 600,
-														 settings: {
-														 slidesToShow: 2,
-														 slidesToScroll: 2
-														 }
-	},
-		{
-			breakpoint: 480,
-				settings: {
-					slidesToShow: 1,
-						slidesToScroll: 1
-				}
-		}
-	]
-	});
-	{% endif %}
+  {% if module.module_settings.enable_slider %}
+  $('.{{ name }} .slider_wrapper').slick({
+    dots: false,
+    arrows: false,
+    infinite: true,
+    slidesToShow: {{ module.module_settings.slider_settings.slider_per_view }},
+    slidesToScroll: {{ module.module_settings.slider_settings.slider_per_scroll }},
+    autoplay: true,
+    autoplaySpeed: 0,
+    speed: 20000,
+    pauseOnHover: false,
+    cssEase: 'linear',
+    responsive: [
+    {
+    breakpoint: 1024,
+    settings: {
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    }
+  },
+    {
+      breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+            slidesToScroll: 2
+        }
+    },
+      {
+        breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+              slidesToScroll: 1
+          }
+      }
+  ]
+  });
+  {% endif %}
 </script>
 {% end_require_js %}

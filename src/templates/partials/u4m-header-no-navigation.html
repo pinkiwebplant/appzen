@@ -2,11 +2,11 @@
  templateType: global_partial
  label:  Header no navigation
  -->
-<div class="headerWrap">
+<div class="headerWrap lp-header">
   <div class="HeaderTopSec">
-    {% dnd_area "top_section" %} {% dnd_module
-    path="../../modules/u4m-information-banner", label="Information Banner" %}
-    {% end_dnd_module %} {% end_dnd_area %}
+    {% dnd_area "top_section" %}
+    {% dnd_module path="../../modules/u4m-information-banner", label="Information Banner" %} {% end_dnd_module %}
+    {% end_dnd_area %}
   </div>
   <header class="u4m-header">
     <div class="headerIn">
@@ -25,6 +25,7 @@
             get_asset_url('../../templates/images/AppzenScroll.png') }}",
             width=52, override_inherited_src= true, alt="Appzen" } , link="/" %}
           </div>
+
         </div>
       </div>
     </div>

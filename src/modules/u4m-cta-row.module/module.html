@@ -1,7 +1,13 @@
-{% set moduleName = 'u4m-cta-row' %}
+{% if module.module_overrides.include_background_inside %}
+{% set iner_bg = " inner_bg_add "%}
+{% endif %}
+
+
+{% set moduleName = 'u4m-cta-row'~iner_bg  %}
 {% set imageMax = 1000 %}
 {% set bgImageMax = 1920 %}
 
+	
 {% include "../partials/u4-module-includes.html" %}
 <div class="wrapper {% if module.module_settings.center_content %}centercnt{% endif %} ">
 	<div class="wrapper_inr">

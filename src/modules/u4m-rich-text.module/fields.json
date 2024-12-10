@@ -6,7 +6,7 @@
   "required" : false,
   "locked" : false,
   "type" : "richtext",
-  "default" : "<h3>Built for NetSuite</h3>\n<p>“Implementing AppZen was straightforward. The direct integration got us up and running quickly, without needing additional staff or consultants. Within the first quarter, we saw ROI. It's rare to find an enterprise solution that delivers this much value with so little overhead.”</p>\n<h4>Syncing master data between AppZen and NetSuite</h4>\n<p>AppZen’s pre-built integration syncs the master list data between [NetSuite] and AppZen, including vendors, GL accounts, POs, custom fields, bill data, and more.</p>\n<p>&nbsp;</p>\n<img src=\"https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/CleanShot%202024-11-12%20at%2013.25.38%201.png\" width=\"750\" height=\"505\" loading=\"lazy\" alt=\"CleanShot 2024-11-12 at 13.25.38 1\" style=\"height: auto; max-width: 100%; width: 750px;\">"
+  "default" : "<h3>Built for NetSuite</h3>\n<p>“Implementing AppZen was straightforward. The direct integration got us up and running quickly, without needing additional staff or consultants. Within the first quarter, we saw ROI. It's rare to find an enterprise solution that delivers this much value with so little overhead.”</p>\n<h4>Syncing master data between AppZen and NetSuite</h4>\n<p>AppZen’s pre-built integration syncs the master list data between [NetSuite] and AppZen, including vendors, GL accounts, POs, custom fields, bill data, and more.</p>\n<p>&nbsp;</p>\n<img src=\"https://www.appzen.com/hubfs/Appzen-u4m/images/CleanShot%202024-11-12%20at%2013.25.38%201.png\" width=\"750\" height=\"505\" loading=\"lazy\" alt=\"CleanShot 2024-11-12 at 13.25.38 1\" style=\"height: auto; max-width: 100%; width: 750px;\">"
 }, {
   "id" : "module_overrides",
   "name" : "module_overrides",
@@ -286,6 +286,84 @@
     "type" : "number",
     "default" : 50
   }, {
+    "id" : "a3d4672c-cebe-750c-3c76-71870ed9c7ca",
+    "name" : "change_container_size",
+    "display_width" : null,
+    "label" : "Change Container Size",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_overrides.enable_overrides",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "id" : "0ef37bc9-6657-0c1a-f9fc-df07e5dc5856",
+    "name" : "container_settings",
+    "display_width" : null,
+    "label" : "Container Settings",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_overrides.change_container_size",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "021847e0-e6c9-d3a5-a0cb-60ef734103e7",
+      "name" : "container_size",
+      "display_width" : null,
+      "label" : "Container Size",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "full", "Full Width" ], [ "custom", "Custom" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "full"
+    }, {
+      "id" : "8ffc24cd-eb25-93f9-f2e3-e4bb5c190d94",
+      "name" : "custom_container",
+      "display_width" : null,
+      "label" : "Custom Container",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "module_overrides.container_settings.container_size",
+        "controlling_value_regex" : "custom",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "slider",
+      "min" : 300,
+      "max" : 1900,
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number",
+      "default" : 750
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "container_size" : "full",
+      "custom_container" : 750
+    }
+  }, {
     "id" : "3acc8068-a3e9-1ee0-60c7-9dbf953422a4",
     "name" : "background_settings",
     "display_width" : null,
@@ -330,7 +408,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -440,6 +518,11 @@
     "bottom_padding" : "bottom-padding-default",
     "custom_bottom_padding" : 100,
     "custom_bottom_padding_mobile" : 50,
+    "change_container_size" : false,
+    "container_settings" : {
+      "container_size" : "full",
+      "custom_container" : 750
+    },
     "background_settings" : {
       "background_type" : "color",
       "select_background_color_type" : "grey",

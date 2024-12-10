@@ -1,8 +1,11 @@
 @import "../../css/_module-imports";
 
 .u4m-alternating-content-one {
-  @include center;
-  border-radius: $borderRadius;
+  &.inner_bg_add {
+    @include center;
+    border-radius: $borderRadius;
+  }
+
   .page-center {
     display: flex;
     flex-direction: column;
@@ -162,6 +165,29 @@
             line-height: 1.5;
             display: block;
           }
+        }
+      }
+    }
+  }
+
+  //
+
+  &.reverse-text {
+    .page-center {
+      .two_cols {
+        .inner_wrpp {
+          .left_col {
+            .cm_cnt {
+              p {
+                color: $white;
+              }
+            }
+          }
+        }
+      }
+      .statistics.items {
+        hr {
+          border-bottom: 1px solid $white;
         }
       }
     }

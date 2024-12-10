@@ -2,7 +2,7 @@
   "global" : false,
   "content_types" : [ "BLOG_POST" ],
   "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
-  "module_id" : 183053170198,
+  "module_id" : 183455928940,
   "label" : "Blog Post Header",
   "is_available_for_new_content" : true
 }

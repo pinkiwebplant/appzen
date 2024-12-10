@@ -1,87 +1,85 @@
 @import "../../css/_module-imports";
 
-
-
 .u4m-two-column {
-    .wrapper {
-        .page-center {
-            .btn_row {
-                margin-bottom: 30px;
+  .wrapper {
+    .page-center {
+      .btn_row {
+        margin-bottom: 30px;
+      }
+
+      .cm_cards {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+
+        .items {
+          width: calc(50% - 10px);
+
+          .inner_cnt {
+            padding: 94px 85px 80px 90px;
+            border: 1px solid $lightGray;
+            text-align: center;
+            height: 100%;
+            border-radius: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 30px;
+
+            .top_cnt {
+              width: 100%;
             }
 
-            .cm_cards {
+            .btm_cnt {
+              .img_sec {
                 display: flex;
-                gap: 20px;
+                gap: 37px;
+                row-gap: 10px;
                 flex-wrap: wrap;
+                justify-content: space-between;
 
-                .items {
-                    width: calc(50% - 10px);
-
-                    .inner_cnt {
-                        padding: 94px 85px 80px 90px;
-                        border: 1px solid $lightGray;
-                        text-align: center;
-                        height: 100%;
-                        border-radius: 12px;
-                        display: flex;
-                        flex-wrap: wrap;
-                        row-gap: 30px;
-
-                        .top_cnt {
-                            width: 100%;
-                        }
-
-                        .btm_cnt {
-                            .img_sec {
-                                display: flex;
-                                gap: 37px;
-                                row-gap: 10px;
-                                flex-wrap: wrap;
-                                justify-content: space-between;
-
-                                .img_items {
-                                    width: calc(33.3% - 25px);
-                                }
-
-                                @include tabletmid {
-                                    gap: 30px;
-                                    row-gap: 30px;
-                                }
-                            }
-
-                            .btn_cols {
-                                margin-top: 50px;
-                            }
-
-                            p {
-                                font-family: $fontRobot;
-                                @include size18;
-                                font-weight: 400;
-                                line-height: 1.5;
-                                text-align: center;
-
-                                &:last-child {
-                                    margin: 0;
-                                }
-                            }
-
-                            width: 100%;
-                        }
-
-                        @include navbreak {
-                            padding: 45px;
-                        }
-
-                        @include navbreakMin {
-                            padding: 30px;
-                        }
-                    }
-
-                    @include tabletmid {
-                        width: 100%;
-                    }
+                .img_items {
+                  width: calc(33.3% - 25px);
                 }
+
+                @include tabletmid {
+                  gap: 30px;
+                  row-gap: 30px;
+                }
+              }
+
+              .btn_cols {
+                margin-top: 50px;
+              }
+
+              p {
+                font-family: $fontRobot;
+                @include size18;
+                font-weight: 400;
+                line-height: 1.5;
+                text-align: center;
+
+                &:last-child {
+                  margin: 0;
+                }
+              }
+
+              width: 100%;
             }
+
+            @include navbreak {
+              padding: 45px;
+            }
+
+            @include navbreakMinMax {
+              padding: 30px;
+            }
+          }
+
+          @include tabletmid {
+            width: 100%;
+          }
         }
+      }
     }
+  }
 }

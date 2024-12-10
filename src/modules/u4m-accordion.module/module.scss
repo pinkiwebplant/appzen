@@ -56,6 +56,9 @@
       font-weight: 400;
       color: $bodyColor;
       @include size14;
+      &.collapse-btn {
+        display: none;
+      }
     }
   }
 
@@ -132,6 +135,14 @@
       }
       &.hide {
         display: none;
+      }
+    }
+  }
+
+  &.reverse-text {
+    .accor-expand-btn {
+      a {
+        color: $white;
       }
     }
   }

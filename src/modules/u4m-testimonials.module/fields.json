@@ -46,7 +46,7 @@
     "type" : "image",
     "default" : [ {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/Testimonials-img.jfif",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Testimonials-img.jfif",
       "alt" : "Testimonials-img",
       "loading" : "lazy",
       "width" : 1200,
@@ -55,7 +55,7 @@
       "max_height" : 1495
     }, {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/Testimonials-img.jfif",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Testimonials-img.jfif",
       "alt" : "Testimonials-img",
       "loading" : "lazy",
       "width" : 1200,
@@ -76,7 +76,7 @@
     "type" : "image",
     "default" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/airbus%20logo.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/airbus%20logo.png",
       "alt" : "airbus logo",
       "loading" : "lazy",
       "width" : 228,
@@ -92,7 +92,7 @@
   "default" : {
     "image" : [ {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/Testimonials-img.jfif",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Testimonials-img.jfif",
       "alt" : "Testimonials-img",
       "loading" : "lazy",
       "width" : 1200,
@@ -101,7 +101,7 @@
       "max_height" : 1495
     }, {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/Testimonials-img.jfif",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Testimonials-img.jfif",
       "alt" : "Testimonials-img",
       "loading" : "lazy",
       "width" : 1200,
@@ -111,7 +111,7 @@
     } ],
     "logo_image" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/airbus%20logo.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/airbus%20logo.png",
       "alt" : "airbus logo",
       "loading" : "lazy",
       "width" : 228,
@@ -144,6 +144,14 @@
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "testimonials_type",
+      "controlling_value_regex" : "type2",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
@@ -155,6 +163,14 @@
     "label" : "Button Link",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "testimonials_type",
+      "controlling_value_regex" : "type1",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
     "show_advanced_rel_options" : false,
     "type" : "link",
@@ -188,7 +204,7 @@
     "type" : "image",
     "default" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/airbus%20logo%20black.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/airbus%20logo%20black.png",
       "alt" : "airbus logo black",
       "loading" : "lazy",
       "width" : 458,
@@ -215,7 +231,7 @@
     },
     "logo_image" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/airbus%20logo%20black.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/airbus%20logo%20black.png",
       "alt" : "airbus logo black",
       "loading" : "lazy",
       "width" : 458,
@@ -538,13 +554,21 @@
       "label" : "Select Background Color",
       "required" : false,
       "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "module_overrides.background_settings.background_type",
+        "controlling_value_regex" : "color",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
       "display" : "select",
-      "choices" : [ [ "yellow", "Yellow" ], [ "black", "Black" ], [ "pink", "Pink" ], [ "grey", "Grey" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : "black"
+      "default" : "brown"
     }, {
       "id" : "6c8bfd0e-1629-1268-e01c-17b4047ecfce",
       "name" : "background_color",
@@ -567,7 +591,7 @@
         "color" : null,
         "opacity" : null
       }
-    },  {
+    }, {
       "id" : "878364f4-31ac-6917-e76f-65307d7d36e5",
       "name" : "background_image",
       "display_width" : null,
@@ -600,12 +624,11 @@
     "type" : "group",
     "default" : {
       "background_type" : "color",
-      "select_background_color_type" : "black",
+      "select_background_color_type" : "brown",
       "background_color" : {
         "color" : null,
         "opacity" : null
       },
-      "add_overlay" : false,
       "background_image" : {
         "size_type" : "auto",
         "src" : "",
@@ -613,6 +636,24 @@
         "loading" : "disabled"
       }
     }
+  }, {
+    "id" : "9a1cae2c-8967-2b27-4d26-c132c3907a1f",
+    "name" : "enable_inner_background_color",
+    "display_width" : null,
+    "label" : "Enable Inner Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_overrides.enable_overrides",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : false
   }, {
     "id" : "439a7857-1750-f344-80b6-7c2785c4d1ed",
     "name" : "inner_background_settings",
@@ -622,7 +663,7 @@
     "locked" : false,
     "visibility" : {
       "controlling_field" : null,
-      "controlling_field_path" : "module_overrides.enable_overrides",
+      "controlling_field_path" : "module_overrides.enable_inner_background_color",
       "controlling_value_regex" : "true",
       "property" : null,
       "operator" : "EQUAL",
@@ -636,7 +677,7 @@
       "required" : false,
       "locked" : false,
       "display" : "select",
-      "choices" : [ [ "yellow", "Yellow" ], [ "black", "Black" ], [ "pink", "Pink" ], [ "grey", "Grey" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -707,12 +748,11 @@
     "custom_bottom_padding_mobile" : 50,
     "background_settings" : {
       "background_type" : "color",
-      "select_background_color_type" : "black",
+      "select_background_color_type" : "brown",
       "background_color" : {
         "color" : null,
         "opacity" : null
       },
-      "add_overlay" : false,
       "background_image" : {
         "size_type" : "auto",
         "src" : "",
@@ -720,6 +760,7 @@
         "loading" : "disabled"
       }
     },
+    "enable_inner_background_color" : false,
     "inner_background_settings" : {
       "select_background_color_type" : "yellow",
       "background_color" : {

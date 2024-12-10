@@ -6,6 +6,9 @@
   position: relative;
   &.reverse-text {
     min-height: 754px;
+    &.withoutBg {
+      min-height: auto;
+    }
   }
 
   .hero-without-img {
@@ -14,6 +17,14 @@
         img {
           bottom: 10.7%;
         }
+      }
+    }
+    .left-content {
+      &.concenter {
+        text-align: center;
+      }
+      &.conright {
+        text-align: right;
       }
     }
   }
@@ -47,10 +58,10 @@
     .right-content-inner {
       position: relative;
       .hero-overlay-image {
-      img{
-        left:0;
-        bottom: 10%;
-      }
+        img {
+          left: 0;
+          bottom: 10%;
+        }
       }
     }
     .hero-overlay-image {

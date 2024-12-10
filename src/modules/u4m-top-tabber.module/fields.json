@@ -26,6 +26,155 @@
   "type" : "richtext",
   "default" : "<h1>Finance. Reimagined.</h1>\n<p>Finally, finance teams can focus on what matters</p>"
 }, {
+  "id" : "69e6e3d6-6a0a-e626-f6c8-75b49a09cefc",
+  "name" : "include_button",
+  "display_width" : null,
+  "label" : "Include Button",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "d6da249a-a6dd-ebcd-24f8-6350edb3b052",
+  "name" : "buttons",
+  "display_width" : null,
+  "label" : "Buttons",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "11fd103f-0013-fc61-5a7b-e46385c65700",
+    "default" : 1
+  },
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "include_button",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "8052aa5d-9972-2e28-c028-22fa9fd7cd80",
+    "name" : "button_type",
+    "display_width" : null,
+    "label" : "Button Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "stnd", "Standard" ], [ "cta", "CTA" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "stnd"
+  }, {
+    "id" : "4e3cac2f-3bcf-b257-d7f3-1fad37354f39",
+    "name" : "theme",
+    "display_width" : null,
+    "label" : "Theme",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "buttons.button_type",
+      "controlling_value_regex" : "stnd",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "primary", "Primary" ], [ "secondary", "Secondary" ], [ "tertiary", "Tertiary" ], [ "quaternary", "Quaternary" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "quaternary"
+  }, {
+    "id" : "c3a1d7a3-f884-2136-ed27-83583ed91389",
+    "name" : "button_text",
+    "display_width" : null,
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "buttons.button_type",
+      "controlling_value_regex" : "stnd",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Get this Product"
+  }, {
+    "id" : "d55b4f8e-b981-248e-9e05-a7a473562a9e",
+    "name" : "button_link",
+    "display_width" : null,
+    "label" : "Button Link",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "buttons.button_type",
+      "controlling_value_regex" : "stnd",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "0b54b874-ee7c-c51a-89d1-f826d209622f",
+    "name" : "cta_field",
+    "display_width" : null,
+    "label" : "CTA",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "buttons.button_type",
+      "controlling_value_regex" : "cta",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "cta"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "button_type" : "stnd",
+    "theme" : "quaternary",
+    "button_text" : "Get this Product",
+    "button_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ]
+}, {
   "id" : "d56b4ea1-a525-dcf8-2139-6de21f13ddb2",
   "name" : "tabber_slider",
   "display_width" : null,
@@ -204,7 +353,7 @@
     "type" : "image",
     "default" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Voltaiq/Images/Menuimg4.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Menuimg4.png",
       "alt" : "tabber",
       "loading" : "lazy",
       "width" : 603,
@@ -248,7 +397,7 @@
     } ],
     "select_image" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Voltaiq/Images/Menuimg4.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Menuimg4.png",
       "alt" : "tabber",
       "loading" : "lazy",
       "width" : 603,
@@ -276,7 +425,7 @@
     } ],
     "select_image" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Voltaiq/Images/Menuimg4.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Menuimg4.png",
       "alt" : "tabber",
       "loading" : "lazy",
       "width" : 603,
@@ -304,7 +453,7 @@
     } ],
     "select_image" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Voltaiq/Images/Menuimg4.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Menuimg4.png",
       "alt" : "tabber",
       "loading" : "lazy",
       "width" : 603,
@@ -332,7 +481,7 @@
     } ],
     "select_image" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Voltaiq/Images/Menuimg4.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Menuimg4.png",
       "alt" : "tabber",
       "loading" : "lazy",
       "width" : 603,
@@ -690,7 +839,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,

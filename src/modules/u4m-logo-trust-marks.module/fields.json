@@ -36,7 +36,7 @@
     "min" : null,
     "max" : null,
     "sorting_label_field" : "d048bed3-9787-11c2-489b-9e5266f54ca3",
-    "default" : 6
+    "default" : 12
   },
   "children" : [ {
     "id" : "d048bed3-9787-11c2-489b-9e5266f54ca3",
@@ -51,7 +51,7 @@
     "type" : "image",
     "default" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/Workday.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Workday.png",
       "alt" : "Workday",
       "loading" : "lazy",
       "width" : 227,
@@ -105,7 +105,7 @@
   "default" : [ {
     "image_field" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/Workday.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Workday.png",
       "alt" : "Workday",
       "loading" : "lazy",
       "width" : 227,
@@ -118,7 +118,7 @@
   }, {
     "image_field" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/Workday.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Workday.png",
       "alt" : "Workday",
       "loading" : "lazy",
       "width" : 227,
@@ -131,7 +131,7 @@
   }, {
     "image_field" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/Workday.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Workday.png",
       "alt" : "Workday",
       "loading" : "lazy",
       "width" : 227,
@@ -144,7 +144,7 @@
   }, {
     "image_field" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/Workday.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Workday.png",
       "alt" : "Workday",
       "loading" : "lazy",
       "width" : 227,
@@ -157,7 +157,7 @@
   }, {
     "image_field" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/Workday.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Workday.png",
       "alt" : "Workday",
       "loading" : "lazy",
       "width" : 227,
@@ -170,7 +170,85 @@
   }, {
     "image_field" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/Workday.png",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Workday.png",
+      "alt" : "Workday",
+      "loading" : "lazy",
+      "width" : 227,
+      "height" : 179,
+      "max_width" : 227,
+      "max_height" : 179
+    },
+    "change_logo_width" : false,
+    "width" : 150
+  }, {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Workday.png",
+      "alt" : "Workday",
+      "loading" : "lazy",
+      "width" : 227,
+      "height" : 179,
+      "max_width" : 227,
+      "max_height" : 179
+    },
+    "change_logo_width" : false,
+    "width" : 150
+  }, {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Workday.png",
+      "alt" : "Workday",
+      "loading" : "lazy",
+      "width" : 227,
+      "height" : 179,
+      "max_width" : 227,
+      "max_height" : 179
+    },
+    "change_logo_width" : false,
+    "width" : 150
+  }, {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Workday.png",
+      "alt" : "Workday",
+      "loading" : "lazy",
+      "width" : 227,
+      "height" : 179,
+      "max_width" : 227,
+      "max_height" : 179
+    },
+    "change_logo_width" : false,
+    "width" : 150
+  }, {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Workday.png",
+      "alt" : "Workday",
+      "loading" : "lazy",
+      "width" : 227,
+      "height" : 179,
+      "max_width" : 227,
+      "max_height" : 179
+    },
+    "change_logo_width" : false,
+    "width" : 150
+  }, {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Workday.png",
+      "alt" : "Workday",
+      "loading" : "lazy",
+      "width" : 227,
+      "height" : 179,
+      "max_width" : 227,
+      "max_height" : 179
+    },
+    "change_logo_width" : false,
+    "width" : 150
+  }, {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Workday.png",
       "alt" : "Workday",
       "loading" : "lazy",
       "width" : 227,
@@ -284,7 +362,7 @@
     "id" : "bc0ae8c4-84c9-939b-5be8-a83403a3d962",
     "name" : "title_alignment",
     "display_width" : null,
-    "label" : "Title Alignment",
+    "label" : "Intro Content Alignment",
     "required" : false,
     "locked" : false,
     "display" : "select",
@@ -293,7 +371,7 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
-    "default" : "left"
+    "default" : "center"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -307,7 +385,7 @@
     },
     "select_theme_type" : "theme_one",
     "select_column_count" : "col2",
-    "title_alignment" : "left"
+    "title_alignment" : "center"
   }
 }, {
   "id" : "module_overrides",
@@ -632,7 +710,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -712,9 +790,17 @@
     "label" : "Include Inner Background",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_overrides.enable_overrides",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "display" : "checkbox",
     "type" : "boolean",
-    "default" : true
+    "default" : false
   }, {
     "id" : "bf94a5aa-d92c-e3f7-d0e6-24341f5c011d",
     "name" : "inner_background_settings",
@@ -738,7 +824,7 @@
       "required" : false,
       "locked" : false,
       "display" : "select",
-      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -829,7 +915,7 @@
         "loading" : "disabled"
       }
     },
-    "include_inner_background" : true,
+    "include_inner_background" : false,
     "inner_background_settings" : {
       "select_background_color_type" : "grey",
       "background_color" : {

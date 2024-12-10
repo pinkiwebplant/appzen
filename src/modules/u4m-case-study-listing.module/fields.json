@@ -1,12 +1,12 @@
 [ {
-  "id" : "00c53efc-c39b-276b-862a-2973670b400e",
+  "id" : "1f84aa0c-a3a2-34c8-f4b7-b92d18a32e18",
   "name" : "select_hubdb_table",
   "display_width" : null,
   "label" : "Select HubDB Table",
   "required" : false,
   "locked" : false,
   "type" : "hubdbtable",
-  "default" : 102672445
+  "default" : 103427390
 }, {
   "id" : "module_overrides",
   "name" : "module_overrides",
@@ -330,7 +330,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,

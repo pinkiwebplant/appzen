@@ -1,5 +1,13 @@
 @import "../../css/_module-imports";
 section.u4m-form-wrapper {
+  &.reverse-text {
+    color: inherit;
+
+    .intro_cnt * {
+      color: $white;
+    }
+  }
+
   .flex_row {
     align-items: center;
   }

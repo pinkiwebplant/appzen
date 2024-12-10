@@ -11,14 +11,14 @@
   "type" : "text",
   "default" : "Leading enterprise organizations run finance on AppZen"
 }, {
-  "id" : "00c53efc-c39b-276b-862a-2973670b400e",
+  "id" : "fb7b8c92-586f-469e-e519-ef52d9359cdc",
   "name" : "select_hubdb_table",
   "display_width" : null,
   "label" : "Select HubDB Table",
   "required" : false,
   "locked" : false,
   "type" : "hubdbtable",
-  "default" : 102672445
+  "default" : 103427390
 }, {
   "id" : "module_overrides",
   "name" : "module_overrides",
@@ -325,7 +325,7 @@
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : ""
+      "default" : "color"
     }, {
       "id" : "0b377766-45a1-d996-07a1-ed7902a91581",
       "name" : "select_background_color_type",
@@ -342,12 +342,12 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : ""
+      "default" : "brown"
     }, {
       "id" : "6c8bfd0e-1629-1268-e01c-17b4047ecfce",
       "name" : "background_color",
@@ -402,8 +402,8 @@
     "group_occurrence_meta" : null,
     "type" : "group",
     "default" : {
-      "background_type" : "",
-      "select_background_color_type" : "",
+      "background_type" : "color",
+      "select_background_color_type" : "brown",
       "background_color" : {
         "color" : null,
         "opacity" : null
@@ -453,8 +453,8 @@
     "custom_bottom_padding" : 100,
     "custom_bottom_padding_mobile" : 50,
     "background_settings" : {
-      "background_type" : "",
-      "select_background_color_type" : "",
+      "background_type" : "color",
+      "select_background_color_type" : "brown",
       "background_color" : {
         "color" : null,
         "opacity" : null

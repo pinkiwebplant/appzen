@@ -8,297 +8,341 @@
 
 {% macro menuItem(item2) %}
 <div class="menuItem {{ item2.content_type }}">
-	<div class="menuItemTtl">{{ item2.title }}</div>
-	{% if item2.content_type=="menu" %}
-	{% for item3 in item2.menu_group.menu_items %}
-	<div class="childmenuItem{% if item3.add_description %} addDes{% endif %}">
-		{% set href = item3.menu_link.url.href %}
-		{% if item3.menu_link.url.type is equalto "EMAIL_ADDRESS" %}
-		{% set href = "mailto:" + href %}
-		{% endif %}
-		<a
-			 {% if item3.menu_link.url.type is equalto "CALL_TO_ACTION"  %}
-			 href="{{ href }}"
-			 {% else %}
-			 href="{{ href|escape_url }}"
-			 {% endif %}
-			 {% if item3.menu_link.open_in_new_tab %}
-			 target="_blank"
-			 {% endif %}
-			 {% if item3.menu_link.rel %}
-			 rel="{{ item3.menu_link.rel }}"
-			 {% endif %}
-			 >
-			<div class="childmenuItemttl">{{ item3.menu_text }}</div>
-			{% if item3.add_description %}
-			<div class="childmenuItemdes">{{ item3.description }}</div>
-			{% endif %}
-		</a>
-	</div>
-	{% endfor %}
-	{% endif %}
+  <div class="menuItemTtl">{{ item2.title }}</div>
+  {% if item2.content_type=="menu" %}
+  {% for item3 in item2.menu_group.menu_items %}
+  <div class="childmenuItem{% if item3.add_description %} addDes{% endif %}">
+    {% set href = item3.menu_link.url.href %}
+    {% if item3.menu_link.url.type is equalto "EMAIL_ADDRESS" %}
+    {% set href = "mailto:" + href %}
+    {% endif %}
+    <a
+       {% if item3.menu_link.url.type is equalto "CALL_TO_ACTION"  %}
+       href="{{ href }}"
+       {% else %}
+       href="{{ href|escape_url }}"
+       {% endif %}
+       {% if item3.menu_link.open_in_new_tab %}
+       target="_blank"
+       {% endif %}
+       {% if item3.menu_link.rel %}
+       rel="{{ item3.menu_link.rel }}"
+       {% endif %}
+       >
+      <div class="childmenuItemttl">{{ item3.menu_text }}</div>
+      {% if item3.add_description %}
+      <div class="childmenuItemdes">{{ item3.description }}</div>
+      {% endif %}
+    </a>
+  </div>
+  {% endfor %}
+  {% endif %}
 
-	{% if item2.content_type=="blog" %}
-	{% set posts = blog_recent_posts(item2.select_blog, item2.number_of_posts) %} 
-	{% for blogitem in posts %}
-	<div class="blogCard {% if loop.first %} first{% endif %}">
-		{% if loop.first %}
-		{% if blogitem.featured_image %}
-		<div class="blogCardImg">
-			<div class="cardImgIn" style="background-image:url({{ blogitem.featured_image  }})"></div>
-		</div>
-		{% endif %}
-		{% endif %}
-		{% if blogitem.tag_list %}
-		<div class="blogCardTags">
-			{% for tag in blogitem.tag_list %}
-			{% if tag.name=="Featured" %}
-			{% else %}
-			{% if loop.first %}
-			<a class="topicTag" href="{{ blog_tag_url(group.id, tag.slug) }}" rel="tag">{{ tag.name }}</a>
-			{% endif %}
-			{% endif %}
-			{% endfor %}</div>{% endif %}
-		<div class="blogCardttl"><a href="{{ blogitem.absolute_url}}">{{ blogitem.name }}</a></div>
-	</div>
-	{% endfor %}
-	{% endif %}
-	{#   #}
-	{% if item2.content_type=="hubdb" %}
-	{% set table = item2.select_hubdb_table %}
-{% set query = 'orderBy=-hs_created_at' ~ '&limit=' ~ item2.number_of_posts %}
-{% set types = hubdb_table_rows(table,query) %}
-	{% for type in types %}
-	<div class="blogCard {{ item2.hubdb_content_type }}{% if loop.first %} first{% endif %}">
-		{% if loop.first %}
-		{% if type.image.url %}
-		<div class="blogCardImg">
-			<div class="cardImgIn" style="background-image:url({{ type.image.url }})"></div>
-		</div>
-		{% endif %}
-		{% endif %}
-		<div class="blogCardTags">
-			{% if item2.hubdb_content_type=="type1"%}
-			{{ type.topic.name }}
-			{% elif item2.hubdb_content_type=="type2"%}
-			{% if loop.first %}
-			{{ iconCalendar }} <span>Oct 5, 2023</span>
-			{% else %}
-			{{ iconSchedule }} <span>1 minute read</span>
-			{% endif %}
-			{% endif %}
-		</div>										
-		<div class="blogCardttl"><a href="{{ type.link }}">{{ type.name }}</a></div>
-	</div>
-	{% endfor %}
-	{% endif %}
-	{% if item2.content_type=="card" %}
-	<div class="cardItem">
-		<div class="cardItemIn">
-			{% if item2.card.image.src %}
-			<div class="cardImg">
-				<div class="cardImgIn" style="background-image:url({{ item2.card.image.src }})"></div>
-			</div>
-			{% endif %}
-			<div class="cardttl">{{ item2.card.title }}</div>
-			<div class="cardDes">{{ item2.card.content }}</div>
-		</div>
-	</div>
-	{% endif %}
+  {% if item2.content_type=="blog" %}
+  {% set posts = blog_recent_posts(item2.select_blog, item2.number_of_posts) %} 
+  {% for blogitem in posts %}
+  <div class="blogCard {% if loop.first %} first{% endif %}">
+    {% if loop.first %}
+    {% if blogitem.featured_image %}
+    <div class="blogCardImg">
+      <div class="cardImgIn" style="background-image:url({{ blogitem.featured_image  }})"></div>
+    </div>
+    {% endif %}
+    {% endif %}
+    {% if blogitem.tag_list %}
+    <div class="blogCardTags">
+      {% for tag in blogitem.tag_list %}
+      {% if tag.name=="Featured" %}
+      {% else %}
+      {% if loop.first %}
+      <a class="topicTag" href="{{ blog_tag_url(group.id, tag.slug) }}" rel="tag">{{ tag.name }}</a>
+      {% endif %}
+      {% endif %}
+      {% endfor %}</div>{% endif %}
+    <div class="blogCardttl"><a href="{{ blogitem.absolute_url}}">{{ blogitem.name }}</a></div>
+  </div>
+  {% endfor %}
+  {% endif %}
+  {#   #}
+  {% if item2.content_type=="hubdb" %}
+  {% set table = item2.select_hubdb_table %}
+  {% set query = 'orderBy=-hs_created_at' ~ '&limit=' ~ item2.number_of_posts %}
+  {% set types = hubdb_table_rows(table,query) %}
+  {% for type in types %} 
+  <div class="blogCard {{ item2.hubdb_content_type }}{% if loop.first %} first{% endif %}">
+    {% if loop.first %}
+    {% if type[item2.hubdb_setttings.column_feature_image].url %}
+    <div class="blogCardImg">
+      <div class="cardImgIn" style="background-image:url({{type[item2.hubdb_setttings.column_feature_image].url}})"></div>
+    </div>
+    {% endif %}
+    {% endif %}
+    <div class="blogCardTags">
+      {% if type[item2.hubdb_setttings.column_topic].name %}
+      {{ type[item2.hubdb_setttings.column_topic].name }}
+      {% endif %}
+      {% if type[item2.hubdb_setttings.column_date] || type[item2.hubdb_setttings.column_read_minutes] %}
+      {% if loop.first %}
+      {% if type[item2.hubdb_setttings.column_date] %}
+      {{ iconCalendar }} <span>{{ type[item2.hubdb_setttings.column_date]|datetimeformat("%B %e, %Y")}}</span>
+      {% endif %}
+      {% else %}
+      {% if type[item2.hubdb_setttings.column_read_minutes] %}
+      {{ iconSchedule }} <span>
+      {% set initialPostWords = type[item2.hubdb_setttings.column_read_minutes]|striptags|wordcount %}
+      {% set calculatedPostWords = (initialPostWords/100) * 100 %}
+      {% set finishedPostWords = calculatedPostWords|divide(300)|round(2) %}
+      {% set number = finishedPostWords|round %}
+      {% if number == 1 %}
+      {{ finishedPostWords|round }} minute
+      {% elif number < 1 %}
+      Less than a minute
+      {% else %}
+      {{ finishedPostWords|round }} minutes
+      {% endif %}</span>
+      {% endif %}
+      {% endif %}
+      {% endif %}
+    </div>					
+    <div class="blogCardttl">
+      {% if type[item2.hubdb_setttings.column_link] %}
+      {% if type[item2.hubdb_setttings.column_link] == 'hs_path' %}
+      {% set href = request.full_url ~ '/' ~ type.hs_path %}
+      {% else %}
+      {% set href = type[item2.hubdb_setttings.column_link] %}
+      {% endif %}
+      <a href="{{ href }}">
+        {{ type[item2.hubdb_setttings.column_title] }}
+      </a>
+      {% else %}
+      {{ type[item2.hubdb_setttings.column_title] }}
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+  {% endif %}
+  {% if item2.content_type=="card" %}
+  <div class="cardItem">
+    <div class="cardItemIn">
+      {% if item2.card.image.src %}
+      <div class="cardImg">
+        <div class="cardImgIn" style="background-image:url({{ item2.card.image.src }})"></div>
+      </div>
+      {% endif %}
+      <div class="cardttl">{{ item2.card.title }}</div>
+      <div class="cardDes">{{ item2.card.content }}</div>
+    </div>
+  </div>
+  {% endif %}
 </div>
 {% endmacro %}
 
 <div class="megaMenu">
-	<div class="hs-megaMenu-wrapper">
-		<ul class="mobileHide">
-			{% for item in module.mega_menu %}
-			<li class="menuItem{% if item.enable_child_menu %} hsChildmenu{% endif %}">
-				{% set href = item.menu_link.url.href %}
-				{% if item.menu_link.url.type is equalto "EMAIL_ADDRESS" %}
-				{% set href = "mailto:" + href %}
-				{% endif %}
-				<a
-					 {% if item.menu_link.url.type is equalto "CALL_TO_ACTION"  %}
-					 href="{{ href }}"
-					 {% else %}
-					 href="{{ href|escape_url }}"
-					 {% endif %}
-					 {% if item.menu_link.open_in_new_tab %}
-					 target="_blank"
-					 {% endif %}
-					 {% if item.menu_link.rel %}
-					 rel="{{ item.menu_link.rel }}"
-					 {% endif %}
-					 >
-					{{ item.menu_text }}
-					{% if item.enable_child_menu %}
-					<div class="childTrigger"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 10 7" fill="none">
-						<path d="M9.35498 1.32227L4.99985 5.6774L0.644714 1.32227" stroke="#B6B0A2"/>
-						</svg></div>
-					{% endif %}
-				</a>
-				{% if item.enable_child_menu %}
-				<ul class="childMenu {{ item.menu_type }}">
-					{% if item.menu_type=="tw" %}
-					<div class="flex_row">
-						<div class="leftMenu">
-							<div class="flex_row topMenu">
-								{% for item2 in item.child_menu %}
-								{% if loop.index <= 3 %}
-								{{ menuItem(item2)}}
-								{% endif %}
-								{% endfor %}
-							</div>
-							<div class="bottomPane flex_row">
-								{% for item2 in item.bottom_section.items %}
-								<div class="btnmItem">
-									{% set href = item2.link.url.href %}
-									{% if item2.link.url.type is equalto "EMAIL_ADDRESS" %}
-									{% set href = "mailto:" + href %}
-									{% endif %}
-									<a
-										 {% if item2.link.url.type is equalto "CALL_TO_ACTION"  %}
-										 href="{{ href }}"
-										 {% else %}
-										 href="{{ href|escape_url }}"
-										 {% endif %}
-										 {% if item2.link.open_in_new_tab %}
-										 target="_blank"
-										 {% endif %}
-										 {% if item2.link.rel %}
-										 rel="{{ item2.link.rel|escape_attr }}"
-										 {% endif %}
-										 >
-										<div class="btnmItemttl">{{ item2.title }}</div>
-										<div class="btnmItemdes">{{ item2.description }}</div>
-									</a>
-								</div>
-								{% endfor %}
-							</div>
-						</div>
-						<div class="rightMenu">
-							{% for item2 in item.child_menu %}
-							{% if loop.index >= 4 %}
-							{{ menuItem(item2)}}
-							{% endif %}
-							{% endfor %}
-						</div>
-					</div>
-					{% elif item.menu_type=="fw" %}
-					<div class="flex_row">
-						{% for item2 in item.child_menu %}
-						{{ menuItem(item2)}}
-						{% endfor %}
-					</div>
-					{% endif %}
-				</ul>
-				{% endif %}
-			</li>
-			{% endfor %}
-		</ul>
-		<ul class="desktopHide">
-			{% for item in module.mega_menu %}
-			<li class="menuItem{% if item.enable_child_menu %} hsChildmenu{% endif %}">
-				{% set href = item.menu_link.url.href %}
-				{% if item.menu_link.url.type is equalto "EMAIL_ADDRESS" %}
-				{% set href = "mailto:" + href %}
-				{% endif %}
-				<a
-					 {% if item.menu_link.url.type is equalto "CALL_TO_ACTION"  %}
-					 href="{{ href }}"
-					 {% else %}
-					 href="{{ href|escape_url }}"
-					 {% endif %}
-					 {% if item.menu_link.open_in_new_tab %}
-					 target="_blank"
-					 {% endif %}
-					 {% if item.menu_link.rel %}
-					 rel="{{ item.menu_link.rel }}"
-					 {% endif %}
-					 >
-					{{ item.menu_text }}
+  <div class="hs-megaMenu-wrapper">
+    <ul class="mobileHide">
+      {% for item in module.mega_menu %}
+      <li class="menuItem{% if item.enable_child_menu %} hsChildmenu{% endif %}">
+        {% set href = item.menu_link.url.href %}
+        {% if item.menu_link.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+        {% endif %}
+        <a
+           {% if item.menu_link.url.type is equalto "CALL_TO_ACTION"  %}
+           href="{{ href }}"
+           {% else %}
+           href="{{ href|escape_url }}"
+           {% endif %}
+           {% if item.menu_link.open_in_new_tab %}
+           target="_blank"
+           {% endif %}
+           {% if item.menu_link.rel %}
+           rel="{{ item.menu_link.rel }}"
+           {% endif %}
+           >
+          {{ item.menu_text }}
+          {% if item.enable_child_menu %}
+          <div class="childTrigger"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 10 7" fill="none">
+            <path d="M9.35498 1.32227L4.99985 5.6774L0.644714 1.32227" stroke="#B6B0A2"/>
+            </svg></div>
+          {% endif %}
+        </a>
+        {% if item.enable_child_menu %}
+        <ul class="childMenu {{ item.menu_type }}">
+          {% if item.menu_type=="tw" %}
+          <div class="flex_row">
+            <div class="leftMenu">
+              <div class="flex_row topMenu">
+                {% for item2 in item.child_menu %}
+                {% if loop.index <= 3 %}
+                {{ menuItem(item2)}}
+                {% endif %}
+                {% endfor %}
+              </div>
+              <div class="bottomPane flex_row">
+                {% for item2 in item.bottom_section.items %}
+                <div class="btnmItem">
+                  {% set href = item2.link.url.href %}
+                  {% if item2.link.url.type is equalto "EMAIL_ADDRESS" %}
+                  {% set href = "mailto:" + href %}
+                  {% endif %}
+                  <a
+                     {% if item2.link.url.type is equalto "CALL_TO_ACTION"  %}
+                     href="{{ href }}"
+                     {% else %}
+                     href="{{ href|escape_url }}"
+                     {% endif %}
+                     {% if item2.link.open_in_new_tab %}
+                     target="_blank"
+                     {% endif %}
+                     {% if item2.link.rel %}
+                     rel="{{ item2.link.rel|escape_attr }}"
+                     {% endif %}
+                     >
+                    <div class="btnmItemttl">{{ item2.title }}</div>
+                    <div class="btnmItemdes">{{ item2.description }}</div>
+                  </a>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="rightMenu">
+              {% for item2 in item.child_menu %}
+              {% if loop.index >= 4 %}
+              {{ menuItem(item2)}}
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          {% elif item.menu_type=="fw" %}
+          <div class="flex_row">
+            {% for item2 in item.child_menu %}
+            {{ menuItem(item2)}}
+            {% endfor %}
+          </div>
+          {% endif %}
+        </ul>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    <ul class="desktopHide">
+      {% for item in module.mega_menu %}
+      <li class="menuItem{% if item.enable_child_menu %} hsChildmenu{% endif %}">
+        {% set href = item.menu_link.url.href %}
+        {% if item.menu_link.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+        {% endif %}
+        <a
+           {% if item.menu_link.url.type is equalto "CALL_TO_ACTION"  %}
+           href="{{ href }}"
+           {% else %}
+           href="{{ href|escape_url }}"
+           {% endif %}
+           {% if item.menu_link.open_in_new_tab %}
+           target="_blank"
+           {% endif %}
+           {% if item.menu_link.rel %}
+           rel="{{ item.menu_link.rel }}"
+           {% endif %}
+           >
+          {{ item.menu_text }}
 
-				</a>
-				{% if item.enable_child_menu %}
-				<div class="childTrigger"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 10 7" fill="none">
-					<path d="M9.35498 1.32227L4.99985 5.6774L0.644714 1.32227" stroke="#B6B0A2"/>
-					</svg></div>
-				{% endif %}
-				{% if item.enable_child_menu %}
-				<ul class="childMenu {{ item.menu_type }}">
+        </a>
+        {% if item.enable_child_menu %}
+        <div class="childTrigger"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 10 7" fill="none">
+          <path d="M9.35498 1.32227L4.99985 5.6774L0.644714 1.32227" stroke="#B6B0A2"/>
+          </svg></div>
+        {% endif %}
+        {% if item.enable_child_menu %}
+        <ul class="childMenu {{ item.menu_type }}">
 
-					{% for item2 in item.child_menu %}
-					<li>
-						<div class="menuItemTtl">{{ item2.title }}</div>
-						<ul>
-							{% if item2.content_type=="menu" %}
-							{% for item3 in item2.menu_group.menu_items %}
-							<li>
-								{% set href = item3.menu_link.url.href %}
-								{% if item3.menu_link.url.type is equalto "EMAIL_ADDRESS" %}
-								{% set href = "mailto:" + href %}
-								{% endif %}
-								<a
-									 {% if item3.menu_link.url.type is equalto "CALL_TO_ACTION"  %}
-									 href="{{ href }}"
-									 {% else %}
-									 href="{{ href|escape_url }}"
-									 {% endif %}
-									 {% if item3.menu_link.open_in_new_tab %}
-									 target="_blank"
-									 {% endif %}
-									 {% if item3.menu_link.rel %}
-									 rel="{{ item3.menu_link.rel }}"
-									 {% endif %}
-									 >{{ item3.menu_text }}
-								</a>
-							</li>
-							{% endfor %}
-							{% elif item2.content_type=="blog" %}
-							{% set posts = blog_recent_posts(item2.select_blog, item2.number_of_posts) %} 
-							{% for blogitem in posts %}
-							<li><a href="{{ blogitem.absolute_url}}">{{ blogitem.name }}</a></li>
-							{% endfor %}
-							{% elif item2.content_type=="hubdb" %}
-							{% set table = item2.select_hubdb_table %}
-							{% set query = 'orderBy=-hs_created_at' ~ '&limit=' ~ item2.number_of_posts %}
-							{% set types = hubdb_table_rows(table,query) %}
-							{% for types in types %}
-							<li><a href="{{ types.link}}">{{ types.name }}</a></li>
-							{% endfor %}
-							{% elif item2.content_type=="card" %}
-							<li>{{ item2.card.title }}</li>
-							{% endif %}
-						</ul>
-					</li>
-					{% endfor %}
-					{% if item.menu_type=="tw" %}
-					{% for item2 in item.bottom_section.items %}
-					<li>
-						{% set href = item2.link.url.href %}
-						{% if item2.link.url.type is equalto "EMAIL_ADDRESS" %}
-						{% set href = "mailto:" + href %}
-						{% endif %}
-						<a
-							 {% if item2.link.url.type is equalto "CALL_TO_ACTION"  %}
-							 href="{{ href }}"
-							 {% else %}
-							 href="{{ href|escape_url }}"
-							 {% endif %}
-							 {% if item2.link.open_in_new_tab %}
-							 target="_blank"
-							 {% endif %}
-							 {% if item2.link.rel %}
-							 rel="{{ item2.link.rel|escape_attr }}"
-							 {% endif %}
-							 >{{ item2.title }}</a>
-					</li>
-					{% endfor %}
-					{% endif %}
-				</ul>
-				{% endif %}
-			</li>
-			{% endfor %}
-		</ul>
-	</div>
+          {% for item2 in item.child_menu %}
+          <li>
+            <div class="menuItemTtl">{{ item2.title }}</div>
+            <ul>
+              {% if item2.content_type=="menu" %}
+              {% for item3 in item2.menu_group.menu_items %}
+              <li>
+                {% set href = item3.menu_link.url.href %}
+                {% if item3.menu_link.url.type is equalto "EMAIL_ADDRESS" %}
+                {% set href = "mailto:" + href %}
+                {% endif %}
+                <a
+                   {% if item3.menu_link.url.type is equalto "CALL_TO_ACTION"  %}
+                   href="{{ href }}"
+                   {% else %}
+                   href="{{ href|escape_url }}"
+                   {% endif %}
+                   {% if item3.menu_link.open_in_new_tab %}
+                   target="_blank"
+                   {% endif %}
+                   {% if item3.menu_link.rel %}
+                   rel="{{ item3.menu_link.rel }}"
+                   {% endif %}
+                   >{{ item3.menu_text }}
+                </a>
+              </li>
+              {% endfor %}
+              {% elif item2.content_type=="blog" %}
+              {% set posts = blog_recent_posts(item2.select_blog, item2.number_of_posts) %} 
+              {% for blogitem in posts %}
+              <li><a href="{{ blogitem.absolute_url}}">{{ blogitem.name }}</a></li>
+              {% endfor %}
+              {% elif item2.content_type=="hubdb" %}
+              {% set table = item2.select_hubdb_table %}
+              {% set query = 'orderBy=-hs_created_at' ~ '&limit=' ~ item2.number_of_posts %}
+              {% set types = hubdb_table_rows(table,query) %}
+              {% for type in types %}
+              {% if type[item2.hubdb_setttings.column_link] %}
+              {% if type[item2.hubdb_setttings.column_link] == 'hs_path' %}
+              {% set href = request.full_url ~ '/' ~ type.hs_path %}
+              {% else %}
+              {% set href = type[item2.hubdb_setttings.column_link] %}
+              {% endif %}
+             <li> <a href="{{ href }}">
+                {{ type[item2.hubdb_setttings.column_title] }}
+              </a>
+               </li>
+              {% else %}
+
+              <li>{{ type[item2.hubdb_setttings.column_title] }}</li>
+              {% endif %}
+              {% endfor %}
+              {% elif item2.content_type=="card" %}
+              <li>{{ item2.card.title }}</li>
+              {% endif %}
+            </ul>
+          </li>
+          {% endfor %}
+          {% if item.menu_type=="tw" %}
+          {% for item2 in item.bottom_section.items %}
+          <li>
+            {% set href = item2.link.url.href %}
+            {% if item2.link.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+            {% endif %}
+            <a
+               {% if item2.link.url.type is equalto "CALL_TO_ACTION"  %}
+               href="{{ href }}"
+               {% else %}
+               href="{{ href|escape_url }}"
+               {% endif %}
+               {% if item2.link.open_in_new_tab %}
+               target="_blank"
+               {% endif %}
+               {% if item2.link.rel %}
+               rel="{{ item2.link.rel|escape_attr }}"
+               {% endif %}
+               >{{ item2.title }}</a>
+          </li>
+          {% endfor %}
+          {% endif %}
+        </ul>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
 </div>
+
+

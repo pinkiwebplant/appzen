@@ -16,7 +16,7 @@
       "min" : null,
       "max" : null,
       "sorting_label_field" : "87f8ff0a-8d67-f3ae-3583-45065eb8a518",
-      "default" : null
+      "default" : 2
     },
     "children" : [ {
       "id" : "87f8ff0a-8d67-f3ae-3583-45065eb8a518",
@@ -38,7 +38,7 @@
         "min" : null,
         "max" : null,
         "sorting_label_field" : "0a523122-01e5-10fc-18a3-12810b1405b8",
-        "default" : null
+        "default" : 1
       },
       "children" : [ {
         "id" : "f7f5476a-8ee2-b6c0-745d-ce593942fbf1",
@@ -53,7 +53,7 @@
         "type" : "image",
         "default" : {
           "size_type" : "auto",
-          "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Appzen/Image/case-body-post-img.png",
+          "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/case-body-post-img.png",
           "alt" : "Case Body Post Image",
           "loading" : "lazy",
           "width" : 1115,
@@ -78,20 +78,92 @@
       "expanded" : false,
       "group_occurrence_meta" : null,
       "type" : "group",
-      "default" : [ ]
+      "default" : [ {
+        "image_field" : {
+          "size_type" : "auto",
+          "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/case-body-post-img.png",
+          "alt" : "Case Body Post Image",
+          "loading" : "lazy",
+          "width" : 1115,
+          "height" : 627,
+          "max_width" : 1115,
+          "max_height" : 627
+        },
+        "image_caption" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu neque finibus, venenatis sapien sed,"
+      } ]
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
     "group_occurrence_meta" : null,
     "type" : "group",
-    "default" : [ ]
+    "default" : [ {
+      "content" : "<h6>Problem</h6>\n<h3>A fragmented card and expense management system yielded limited visibility and missed savings</h3>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu neque finibus, venenatis sapien sed, fermentum urna. Vivamus semper feugiat augue ut cursus. Vestibulum sed ligula sit amet dui fringilla auctor. Donec malesuada non nunc a ornare.</p>\n<p>Nam et placerat metus, sed maximus sapien. Curabitur enim nisl, lobortis vel lobortis vitae, pulvinar non est. Vivamus ac erat posuere erat gravida finibus. Nullam nec dictum ligula. Nulla ut eleifend est. Morbi aliquam ultrices erat nec eleifend. Donec sagittis felis dui.</p>",
+      "image_group" : [ {
+        "image_field" : {
+          "size_type" : "auto",
+          "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/case-body-post-img.png",
+          "alt" : "Case Body Post Image",
+          "loading" : "lazy",
+          "width" : 1115,
+          "height" : 627,
+          "max_width" : 1115,
+          "max_height" : 627
+        },
+        "image_caption" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu neque finibus, venenatis sapien sed,"
+      } ]
+    }, {
+      "content" : "<h6>Problem</h6>\n<h3>A fragmented card and expense management system yielded limited visibility and missed savings</h3>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu neque finibus, venenatis sapien sed, fermentum urna. Vivamus semper feugiat augue ut cursus. Vestibulum sed ligula sit amet dui fringilla auctor. Donec malesuada non nunc a ornare.</p>\n<p>Nam et placerat metus, sed maximus sapien. Curabitur enim nisl, lobortis vel lobortis vitae, pulvinar non est. Vivamus ac erat posuere erat gravida finibus. Nullam nec dictum ligula. Nulla ut eleifend est. Morbi aliquam ultrices erat nec eleifend. Donec sagittis felis dui.</p>",
+      "image_group" : [ {
+        "image_field" : {
+          "size_type" : "auto",
+          "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/case-body-post-img.png",
+          "alt" : "Case Body Post Image",
+          "loading" : "lazy",
+          "width" : 1115,
+          "height" : 627,
+          "max_width" : 1115,
+          "max_height" : 627
+        },
+        "image_caption" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu neque finibus, venenatis sapien sed,"
+      } ]
+    } ]
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
   "default" : {
-    "content_group" : [ ]
+    "content_group" : [ {
+      "content" : "<h6>Problem</h6>\n<h3>A fragmented card and expense management system yielded limited visibility and missed savings</h3>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu neque finibus, venenatis sapien sed, fermentum urna. Vivamus semper feugiat augue ut cursus. Vestibulum sed ligula sit amet dui fringilla auctor. Donec malesuada non nunc a ornare.</p>\n<p>Nam et placerat metus, sed maximus sapien. Curabitur enim nisl, lobortis vel lobortis vitae, pulvinar non est. Vivamus ac erat posuere erat gravida finibus. Nullam nec dictum ligula. Nulla ut eleifend est. Morbi aliquam ultrices erat nec eleifend. Donec sagittis felis dui.</p>",
+      "image_group" : [ {
+        "image_field" : {
+          "size_type" : "auto",
+          "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/case-body-post-img.png",
+          "alt" : "Case Body Post Image",
+          "loading" : "lazy",
+          "width" : 1115,
+          "height" : 627,
+          "max_width" : 1115,
+          "max_height" : 627
+        },
+        "image_caption" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu neque finibus, venenatis sapien sed,"
+      } ]
+    }, {
+      "content" : "<h6>Problem</h6>\n<h3>A fragmented card and expense management system yielded limited visibility and missed savings</h3>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu neque finibus, venenatis sapien sed, fermentum urna. Vivamus semper feugiat augue ut cursus. Vestibulum sed ligula sit amet dui fringilla auctor. Donec malesuada non nunc a ornare.</p>\n<p>Nam et placerat metus, sed maximus sapien. Curabitur enim nisl, lobortis vel lobortis vitae, pulvinar non est. Vivamus ac erat posuere erat gravida finibus. Nullam nec dictum ligula. Nulla ut eleifend est. Morbi aliquam ultrices erat nec eleifend. Donec sagittis felis dui.</p>",
+      "image_group" : [ {
+        "image_field" : {
+          "size_type" : "auto",
+          "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/case-body-post-img.png",
+          "alt" : "Case Body Post Image",
+          "loading" : "lazy",
+          "width" : 1115,
+          "height" : 627,
+          "max_width" : 1115,
+          "max_height" : 627
+        },
+        "image_caption" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu neque finibus, venenatis sapien sed,"
+      } ]
+    } ]
   }
 }, {
   "id" : "8972e837-57d2-4390-30f1-9b3a102c15bf",
@@ -128,7 +200,7 @@
       "locked" : false,
       "type" : "form",
       "default" : {
-        "form_id" : "82652a2f-4494-4bc8-b647-558da4843a1d",
+        "form_id" : "93e04a2c-1790-4fbe-9ec0-8772e8cbecb0",
         "response_type" : "inline",
         "message" : "Thanks for submitting the form.",
         "gotowebinar_webinar_key" : null,
@@ -144,7 +216,7 @@
     "default" : {
       "form_title" : "Subscribe to newsletter",
       "form_field" : {
-        "form_id" : "82652a2f-4494-4bc8-b647-558da4843a1d",
+        "form_id" : "93e04a2c-1790-4fbe-9ec0-8772e8cbecb0",
         "response_type" : "inline",
         "message" : "Thanks for submitting the form.",
         "gotowebinar_webinar_key" : null,
@@ -183,7 +255,7 @@
         "min" : null,
         "max" : null,
         "sorting_label_field" : "3cf491f2-ff12-565a-31aa-16b5ade4a17e",
-        "default" : 1
+        "default" : 4
       },
       "children" : [ {
         "id" : "3708f4e7-e5fa-31c4-e0b2-bb73899d55df",
@@ -242,6 +314,21 @@
         "prefix" : "$",
         "count" : 136,
         "suffix" : "K"
+      }, {
+        "prefix" : "$",
+        "count" : 136,
+        "suffix" : "K",
+        "description" : "Expense audits annually"
+      }, {
+        "prefix" : "$",
+        "count" : 136,
+        "suffix" : "K",
+        "description" : "Expense audits annually"
+      }, {
+        "prefix" : "$",
+        "count" : 136,
+        "suffix" : "K",
+        "description" : "Expense audits annually"
       } ]
     }, {
       "id" : "a7b4de97-f485-27eb-8a60-9b19c5dcd529",
@@ -265,6 +352,21 @@
         "prefix" : "$",
         "count" : 136,
         "suffix" : "K"
+      }, {
+        "prefix" : "$",
+        "count" : 136,
+        "suffix" : "K",
+        "description" : "Expense audits annually"
+      }, {
+        "prefix" : "$",
+        "count" : 136,
+        "suffix" : "K",
+        "description" : "Expense audits annually"
+      }, {
+        "prefix" : "$",
+        "count" : 136,
+        "suffix" : "K",
+        "description" : "Expense audits annually"
       } ],
       "disable_counter_animation" : false
     }
@@ -371,7 +473,7 @@
     "subscribe_form" : {
       "form_title" : "Subscribe to newsletter",
       "form_field" : {
-        "form_id" : "82652a2f-4494-4bc8-b647-558da4843a1d",
+        "form_id" : "93e04a2c-1790-4fbe-9ec0-8772e8cbecb0",
         "response_type" : "inline",
         "message" : "Thanks for submitting the form.",
         "gotowebinar_webinar_key" : null,
@@ -387,6 +489,21 @@
         "prefix" : "$",
         "count" : 136,
         "suffix" : "K"
+      }, {
+        "prefix" : "$",
+        "count" : 136,
+        "suffix" : "K",
+        "description" : "Expense audits annually"
+      }, {
+        "prefix" : "$",
+        "count" : 136,
+        "suffix" : "K",
+        "description" : "Expense audits annually"
+      }, {
+        "prefix" : "$",
+        "count" : 136,
+        "suffix" : "K",
+        "description" : "Expense audits annually"
       } ],
       "disable_counter_animation" : false
     },
@@ -729,7 +846,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,

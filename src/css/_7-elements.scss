@@ -72,20 +72,28 @@ h6 {
 @font-face {
   font-family: "Neue Haas Grotesk Text Pro";
   src:
-    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.eot') }}") format("eot"),
-    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.woff') }}") format("woff"),
-    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.woff2') }}") format("woff2"),
-    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.ttf') }}") format("ttf");
+    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.eot') }}")
+      format("eot"),
+    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.woff') }}")
+      format("woff"),
+    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.woff2') }}")
+      format("woff2"),
+    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.ttf') }}")
+      format("ttf");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "Neue Haas Grotesk Text Pro";
   src:
-    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Light.eot') }}") format("eot"),
-    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Light.woff') }}") format("woff"),
-    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Light.woff2') }}") format("woff2"),
-    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Light.ttf') }}") format("ttf");
+    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Light.eot') }}")
+      format("eot"),
+    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Light.woff') }}")
+      format("woff"),
+    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Light.woff2') }}")
+      format("woff2"),
+    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Light.ttf') }}")
+      format("ttf");
   font-weight: 400;
   font-style: normal;
 }
@@ -534,6 +542,10 @@ section[class*="u4m-"] {
 
 .white_bg {
   background-color: $white;
+}
+
+.black {
+  background-color: $black;
 }
 
 //

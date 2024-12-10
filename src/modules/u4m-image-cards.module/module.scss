@@ -4,7 +4,7 @@
     .top_cnt {
         padding: 131px 0 85px 0;
 
-        @include navbreakMin {
+        @include navbreakMinMax {
             padding: 50px 0 50px;
         }
 
@@ -62,7 +62,7 @@
                         }
                     }
 
-                    @include navbreakMin {
+                    @include navbreakMinMax {
                         padding: 20px;
                     }
 
