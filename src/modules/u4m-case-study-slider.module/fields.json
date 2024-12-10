@@ -325,7 +325,7 @@
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : ""
+      "default" : "color"
     }, {
       "id" : "0b377766-45a1-d996-07a1-ed7902a91581",
       "name" : "select_background_color_type",
@@ -347,7 +347,7 @@
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : ""
+      "default" : "brown"
     }, {
       "id" : "6c8bfd0e-1629-1268-e01c-17b4047ecfce",
       "name" : "background_color",
@@ -402,8 +402,8 @@
     "group_occurrence_meta" : null,
     "type" : "group",
     "default" : {
-      "background_type" : "",
-      "select_background_color_type" : "",
+      "background_type" : "color",
+      "select_background_color_type" : "brown",
       "background_color" : {
         "color" : null,
         "opacity" : null
@@ -453,8 +453,8 @@
     "custom_bottom_padding" : 100,
     "custom_bottom_padding_mobile" : 50,
     "background_settings" : {
-      "background_type" : "",
-      "select_background_color_type" : "",
+      "background_type" : "color",
+      "select_background_color_type" : "brown",
       "background_color" : {
         "color" : null,
         "opacity" : null

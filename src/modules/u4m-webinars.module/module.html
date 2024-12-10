@@ -11,173 +11,318 @@
 
 
 {% include "../partials/u4-module-includes.html" %}
+{# {% set table = hubdb_table_rows(module.select_table) %} #}
 
+{% set table = module.select_table %}
+{% set category ="Webinars"%}
+{% set count = module.number_of_posts %}
+{% set category_query = 'orderBy=-hs_created_at&categories__in=' ~ category ~ '&limit=' ~ count %}
+{% set data = hubdb_table_rows(table,category_query) %}
+
+
+{# {% if module.webinars_type=="recent"%}
 {% set table = hubdb_table_rows(module.select_table) %}
-<div class="wrapper">
-	<div class="page-center"> 
-		<div class="flex_row">
-			<div class="left_col col col7">
-				{% for row in table %}
-				{% if loop.index < 2 %}
-				<div class="webinars_first_item">
-					<div class="inner_wrapper">
-						{% if row.feature_image.url %}
-						<div class="img_wrapper">
-							<img src="{{ row.feature_image.url }}" alt="{{ row.name }}">
-						</div>
-						{% endif %}
-						<div class="cntnt_wrapper">
-							<div class="date_section">
-								{% for cat in row.event_status %}
-								<span class="{{ cat.name|lower|replace(' ', '-') }}">{{ cat.label }}</span>
-								{% endfor %}
-								<div class="date_sec">
-									<span>
-										{% for cat in row.event_status %}
-										{% if cat.label == 'Upcoming' or cat.label == 'Sold Out' %}
-										{{ iconCalendar }}
-										{% elif cat.label == 'On-Demand' %}
-										{{ iconSchedule }}
-										{% endif %}
-										{% endfor %}
-									</span>
-									{% for cat in row.event_status %}
-									{% if cat.label == 'Upcoming' or cat.label == 'Sold Out' %}
-									{{ row.event_date_and_time|datetimeformat('%b %e, %Y') }}
-									{% elif cat.label == 'On-Demand' %}
-									<span class="reading-minutes">
-										{% set initialPostWords = row.content|striptags|wordcount %}
-										{% set calculatedPostWords = initialPostWords / 100 %}
-										{% set finishedPostWords = calculatedPostWords|divide(300)|round(2) %}
-										{% set number = finishedPostWords|round %}
-										{% if number < 1 %}
-										Less than one min
-										{% else %}
-										{{ finishedPostWords|round }} minutes
-										{% endif %}
-									</span>
-									{% endif %}
-									{% endfor %}
-								</div>
-							</div>
-							{% if row.name %}
-							<div class="title">
-								<h2>
-									{{ row.name }}
-								</h2>
-							</div>
-							{% endif %}
-							{% if row.content %}
-							<div class="content">
-								{{ row.content }}
-							</div>
-							{% endif %}
-							{% if row.link %}
-							<div class="btn_wrapper">
-								<div class="button_item">
-									<a href="{{ row.link }}" class="hs-button">
-										Sign Up
-									</a>
-								</div>
-							</div>
-							{% endif %}
-						</div>
-					</div>
-				</div>
-				{% endif %}
-				{% endfor %}
-			</div>
-			<div class="right_col col col5">
-				<div class="webinars_item_wrap">
-					{% for row in table %}
-					{% if loop.index > 1 %}
-					<div class="webinars_item {% if row.video %} video_item {% endif %}">
-						<div class="webinars_inner_section flex_wrap">
-							{% if row.feature_image.url %}
-							<div class="image_sec">
-								{% if row.video %}
-								<img class="play_icon" src="{{ get_asset_url('../../templates/images/play-button.png') }}" alt="Play Icon">
-								{% endif %}
-								<img src="{{ row.feature_image.url }}" alt="{{ row.name }}">
-							</div>
-							{% endif %}
-							<div class="right_content">
-								<div class="cntnt_wrapper">
-									<div class="date_section">
-										{% for cat in row.event_status %}
-										<span class="{{ cat.name|lower|replace(' ', '-') }}">{{ cat.label }}</span>
-										{% endfor %}
-										<div class="date_sec">
-											<span>
-												{% for cat in row.event_status %}
-												{% if cat.label == 'Upcoming' or cat.label == 'Sold Out' %}
-												{{ iconCalendar }}
-												{% elif cat.label == 'On-Demand' %}
-												{{ iconSchedule }}
-												{% endif %}
-												{% endfor %}
-											</span>
-											{% for cat in row.event_status %}
-											{% if cat.label == 'Upcoming' or cat.label == 'Sold Out' %}
-											{{ row.event_date_and_time|datetimeformat('%b %e, %Y') }}
-											{% elif cat.label == 'On-Demand' %}
-											<span class="reading-minutes">
-												{% set initialPostWords = row.content|striptags|wordcount %}
-												{% set calculatedPostWords = initialPostWords / 100 %}
-												{% set finishedPostWords = calculatedPostWords|divide(300)|round(2) %}
-												{% set number = finishedPostWords|round %}
-												{% if number < 1 %}
-												Less than one min
-												{% else %}
-												{{ finishedPostWords|round }} minutes
-												{% endif %}
-											</span>
-											{% endif %}
-											{% endfor %}
+{% elif module.webinars_type=="custom"%}
+{% set table = module.webibars_by_title %}
+{% endif %} #}
 
-										</div>
-									</div>
-									{% if row.name %}
-									<div class="title">
-										<h5>
-											{{ row.name }}
-										</h5>
-									</div>
-									{% endif %}
-									{% if row.content %}
-									<div class="content">
-										{{ row.content }}
-									</div>
-									{% endif %}
-									{% if row.link %}
-									<div class="btn_wrapper">
-										<div class="button_item">
-											<a href="#">
-												{{ arrowIcon }}
-											</a>
-										</div>
-									</div>
-									{% endif %}
-								</div>
-							</div>
-						</div>
-						{% if row.video %}
-						<div class="popup_section">
-							<span class="close_icon">X</span>
-							<div class="page-center">
-								<div class="inner">
-									<iframe src="" data-src="{{ row.video }}" frameborder="0" allowfullscreen autoplay></iframe>
-								</div>
-							</div>
-						</div>
-						{% endif %}
-					</div>
-					{% endif %}
-					{% endfor %}
-				</div>
-			</div>
-		</div>
-	</div>
+{% if module.include_intro %}
+<div class='intro'>
+  <div class='intro_cnt page-center'>
+    {{ module.intro_content }}
+  </div>
+</div>
+{% endif %}
+
+<div class="wrapper">
+  <div class="page-center"> 
+    <div class="flex_row">
+      <div class="left_col col col7">
+        {% for row in data %}
+        {% if loop.index < 2 %}
+        {% if row %}
+        <div class="webinars_first_item">
+          <div class="inner_wrapper">
+            {% if row.image.url %}
+            <div class="img_wrapper">
+              <img src="{{ row.image.url }}" alt="{{ row.title }}">
+            </div>
+            {% endif %}
+            <div class="cntnt_wrapper">
+              <div class="date_section">
+                <span class="{{ row.categories.name|lower|replace(' ', '-') }}">{{ row.categories.name }}</span>
+                <div class="date_sec">
+                  <span>
+                    {{ iconCalendar }} {{ row.publish_date|datetimeformat('%b %e, %Y') }}
+                  </span>
+                  <span class="reading-minutes">
+                    {{ iconSchedule }}
+                    {% set initialPostWords = row.description|striptags|wordcount %}
+                    {% set calculatedPostWords = initialPostWords / 100 %}
+                    {% set finishedPostWords = calculatedPostWords|divide(300)|round(2) %}
+                    {% set number = finishedPostWords|round %}
+                    {% if number < 1 %}
+                    Less than one min
+                    {% else %}
+                    {{ finishedPostWords|round }} minutes
+                    {% endif %}
+                  </span>
+                </div>
+              </div>
+              {% if row.title %}
+              <div class="title">
+                <h2>
+                  {{ row.title }}
+                </h2>
+              </div>
+              {% endif %}
+              {% if row.description %}
+              <div class="content">
+                {{ row.description|striptags|truncatehtml(150, '...')}}
+              </div>
+              {% endif %}
+              {% if row.hs_path %}
+              <div class="btn_wrapper">
+                <div class="button_item">
+                  <a href="{{request.full_url}}/{{ row.hs_path }}" class="hs-button">
+                    Sign Up
+                  </a>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+      </div>
+      <div class="right_col col col5">
+        <div class="webinars_item_wrap">
+          {% for row in data %}
+          {% if loop.index > 1 %}
+          {% if row %}
+          <div class="webinars_item">
+            <div class="webinars_inner_section flex_wrap">
+              {% if row.image.url %}
+              <div class="image_sec">
+                <img src="{{ row.image.url }}" alt="{{ row.title }}">
+              </div>
+              {% endif %}
+              <div class="right_content">
+                <div class="cntnt_wrapper">
+                  <div class="date_section">
+                    <span class="{{ row.categories.name|lower|replace(' ', '-') }}">{{ row.categories.name }}</span>
+                    <div class="date_sec">
+                     <span>       {{ iconCalendar }} {{ row.publish_date|datetimeformat('%b %e, %Y') }}</span>
+                    </div>
+                  </div>
+                  {% if row.title %}
+                  <div class="title">
+                    <h5>
+                      {{ row.title }}
+                    </h5>
+                  </div>
+                  {% endif %}
+                  {% if row.description %}
+                  <div class="content">
+                    {{ row.description|striptags|truncatehtml(150, '...')}}
+                  </div>
+                  {% endif %}
+                  {% if row.hs_path %}
+                  <div class="btn_wrapper">
+                    <div class="button_item">
+                      <a href="{{request.full_url}}/{{ row.hs_path }}">
+                        {{ arrowIcon }}
+                      </a>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            {% if row.video %}
+            <div class="popup_section">
+              <span class="close_icon">X</span>
+              <div class="page-center">
+                <div class="inner">
+                  <iframe src="" data-src="{{ row.video }}" frameborder="0" allowfullscreen autoplay></iframe>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+          {% endif %}
+          {% endif %}
+          {% endfor %}
+
+        </div>
+      </div>
+
+      {#
+      Old Code
+      <div class="left_col col col7">
+        {% for row in table %}
+        {% if module.webinars_type=="custom"%}
+        {% set row =  row.select_row.columns %}
+        {% endif %}
+        {% if loop.index < 2 %}
+        {% if row %}
+        <div class="webinars_first_item">
+          <div class="inner_wrapper">
+            {% if row.feature_image.url %}
+            <div class="img_wrapper">
+              <img src="{{ row.feature_image.url }}" alt="{{ row.name }}">
+            </div>
+            {% endif %}
+            <div class="cntnt_wrapper">
+              <div class="date_section">
+                <span class="{{ row.event_status.name|lower|replace(' ', '-') }}">{{ row.event_status.label }}</span>
+                <div class="date_sec">
+                  <span>
+                    {% if row.event_status.label == 'Upcoming' or row.event_status.label == 'Sold Out' %}
+                    {{ iconCalendar }}
+                    {% elif row.event_status.label == 'On-Demand' %}
+                    {{ iconSchedule }}
+                    {% endif %}
+                  </span>
+                  {% if row.event_status.label == 'Upcoming' or row.event_status.label == 'Sold Out' %}
+                  {{ row.event_date_and_time|datetimeformat('%b %e, %Y') }}
+                  {% elif row.event_status.label == 'On-Demand' %}
+                  <span class="reading-minutes">
+                    {% set initialPostWords = row.content|striptags|wordcount %}
+                    {% set calculatedPostWords = initialPostWords / 100 %}
+                    {% set finishedPostWords = calculatedPostWords|divide(300)|round(2) %}
+                    {% set number = finishedPostWords|round %}
+                    {% if number < 1 %}
+                    Less than one min
+                    {% else %}
+                    {{ finishedPostWords|round }} minutes
+                    {% endif %}
+                  </span>
+                  {% endif %}
+                </div>
+              </div>
+              {% if row.name %}
+              <div class="title">
+                <h2>
+                  {{ row.name }}
+                </h2>
+              </div>
+              {% endif %}
+              {% if row.content %}
+              <div class="content">
+                {{ row.content }}
+              </div>
+              {% endif %}
+              {% if row.link %}
+              <div class="btn_wrapper">
+                <div class="button_item">
+                  <a href="{{ row.link }}" class="hs-button">
+                    Sign Up
+                  </a>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+      </div>
+      <div class="right_col col col5">
+        <div class="webinars_item_wrap">
+          {% for row in table %}
+          {% if module.webinars_type=="custom"%}
+          {% set row =  row.select_row.columns %}
+          {% endif %}
+          {% if loop.index > 1 %}
+          {% if row %}
+          <div class="webinars_item {% if row.video %} video_item {% endif %}">
+            <div class="webinars_inner_section flex_wrap">
+              {% if row.feature_image.url %}
+              <div class="image_sec">
+                {% if row.video %}
+                <img class="play_icon" src="{{ get_asset_url('../../templates/images/play-button.png') }}" alt="Play Icon">
+                {% endif %}
+                <img src="{{ row.feature_image.url }}" alt="{{ row.name }}">
+              </div>
+              {% endif %}
+              <div class="right_content">
+                <div class="cntnt_wrapper">
+                  <div class="date_section">
+                    <span class="{{ row.event_status.name|lower|replace(' ', '-') }}">{{ row.event_status.label }}</span>
+                    <div class="date_sec">
+                      <span>
+                        {% if row.event_status.label == 'Upcoming' or row.event_status.label == 'Sold Out' %}
+                        {{ iconCalendar }}
+                        {% elif row.event_status.label == 'On-Demand' %}
+                        {{ iconSchedule }}
+                        {% endif %}
+                      </span>
+                      {% if row.event_status.label == 'Upcoming' or row.event_status.label == 'Sold Out' %}
+                      {{ row.event_date_and_time|datetimeformat('%b %e, %Y') }}
+                      {% elif row.event_status.label == 'On-Demand' %}
+                      <span class="reading-minutes">
+                        {% set initialPostWords = row.content|striptags|wordcount %}
+                        {% set calculatedPostWords = initialPostWords / 100 %}
+                        {% set finishedPostWords = calculatedPostWords|divide(300)|round(2) %}
+                        {% set number = finishedPostWords|round %}
+                        {% if number < 1 %}
+                        Less than one min
+                        {% else %}
+                        {{ finishedPostWords|round }} minutes
+                        {% endif %}
+                      </span>
+                      {% endif %}
+
+                    </div>
+                  </div>
+                  {% if row.name %}
+                  <div class="title">
+                    <h5>
+                      {{ row.name }}
+                    </h5>
+                  </div>
+                  {% endif %}
+                  {% if row.content %}
+                  <div class="content">
+                    {{ row.content }}
+                  </div>
+                  {% endif %}
+                  {% if row.link %}
+                  <div class="btn_wrapper">
+                    <div class="button_item">
+                      <a href="#">
+                        {{ arrowIcon }}
+                      </a>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            {% if row.video %}
+            <div class="popup_section">
+              <span class="close_icon">X</span>
+              <div class="page-center">
+                <div class="inner">
+                  <iframe src="" data-src="{{ row.video }}" frameborder="0" allowfullscreen autoplay></iframe>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+          {% endif %}
+          {% endif %}
+          {% endfor %}
+
+        </div>
+      </div>
+      #}
+    </div>
+  </div>
 </div>
 
 

@@ -6,7 +6,7 @@
 	
 	<div class="page-center {{ module.testimonials_type }}">
 		{% if module.testimonials_type == 'type1' %}
-		<div class="page-center-inner {% if module.module_overrides.enable_inner_background_color %} {{ module.module_overrides.inner_background_settings.select_background_color_type }} {% endif %}">
+		<div class="page-center-inner {% if module.module_overrides.enable_inner_background_color %} {{ module.module_overrides.inner_background_settings.select_background_color_type }} addcolor {% endif %}">
 			<div class="img-col">
 				{% for item in module.image_column.image %}
 				{% if item.src %}

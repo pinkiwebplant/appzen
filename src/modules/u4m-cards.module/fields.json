@@ -263,6 +263,35 @@
     }
   } ]
 }, {
+  "id" : "437b5ae7-9470-530a-f2f5-4f3ee219f9b9",
+  "name" : "module_settings",
+  "display_width" : null,
+  "label" : "Module Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "8f239160-b11a-feb2-9f53-af00c3724961",
+    "name" : "column_width",
+    "display_width" : null,
+    "label" : "Column Width",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "col6", "Two" ], [ "col4", "Three" ], [ "col3", "Four" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "col3"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "column_width" : "col3"
+  }
+}, {
   "id" : "module_overrides",
   "name" : "module_overrides",
   "display_width" : null,
