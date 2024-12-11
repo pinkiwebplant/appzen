@@ -251,7 +251,7 @@ section.u4m-blog-post {
         }
       }
       blockquote {
-        border-left: 8px solid #dadfff;
+        border-left: 8px solid $blockqouteborder;
         margin: 100px 0;
         @include size28;
         padding-left: 40px;

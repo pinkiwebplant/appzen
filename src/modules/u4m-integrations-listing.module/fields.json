@@ -246,6 +246,25 @@
     "suffix" : "px",
     "type" : "number",
     "default" : 150
+  }, {
+    "id" : "1967f414-b877-4632-90e9-51d73c070978",
+    "name" : "link",
+    "display_width" : null,
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -263,7 +282,16 @@
       "max_height" : 179
     },
     "change_logo_width" : false,
-    "width" : 150
+    "width" : 150,
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
   }, {
     "image_field" : {
       "size_type" : "auto",
@@ -276,7 +304,16 @@
       "max_height" : 179
     },
     "change_logo_width" : false,
-    "width" : 150
+    "width" : 150,
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
   }, {
     "image_field" : {
       "size_type" : "auto",
@@ -289,7 +326,16 @@
       "max_height" : 179
     },
     "change_logo_width" : false,
-    "width" : 150
+    "width" : 150,
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
   }, {
     "image_field" : {
       "size_type" : "auto",
@@ -302,7 +348,16 @@
       "max_height" : 179
     },
     "change_logo_width" : false,
-    "width" : 150
+    "width" : 150,
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
   }, {
     "image_field" : {
       "size_type" : "auto",
@@ -315,7 +370,16 @@
       "max_height" : 179
     },
     "change_logo_width" : false,
-    "width" : 150
+    "width" : 150,
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
   }, {
     "image_field" : {
       "size_type" : "auto",
@@ -328,7 +392,16 @@
       "max_height" : 179
     },
     "change_logo_width" : false,
-    "width" : 150
+    "width" : 150,
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
   }, {
     "image_field" : {
       "size_type" : "auto",
@@ -341,7 +414,16 @@
       "max_height" : 179
     },
     "change_logo_width" : false,
-    "width" : 150
+    "width" : 150,
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
   }, {
     "image_field" : {
       "size_type" : "auto",
@@ -354,7 +436,16 @@
       "max_height" : 179
     },
     "change_logo_width" : false,
-    "width" : 150
+    "width" : 150,
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
   }, {
     "image_field" : {
       "size_type" : "auto",
@@ -367,7 +458,16 @@
       "max_height" : 179
     },
     "change_logo_width" : false,
-    "width" : 150
+    "width" : 150,
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
   }, {
     "image_field" : {
       "size_type" : "auto",
@@ -380,7 +480,16 @@
       "max_height" : 179
     },
     "change_logo_width" : false,
-    "width" : 150
+    "width" : 150,
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
   } ]
 }, {
   "id" : "837f9b16-5eb7-c3b5-6cf0-eb38cf1928a2",

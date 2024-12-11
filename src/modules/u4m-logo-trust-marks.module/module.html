@@ -1,4 +1,7 @@
-{% set moduleName = 'u4m-logo-trust-marks' %}
+{% if module.module_overrides.include_background_inside %}
+{% set iner_bg = " inner_bg_add "%}
+{% endif %}
+{% set moduleName = 'u4m-logo-trust-marks'~iner_bg %}
 {% set imageMax = 1000 %}
 {% set bgImageMax = 1920 %}
 
@@ -17,7 +20,9 @@
   </div>
 </div>
 
+{% if module.module_settings.select_theme_type=="theme_three" %}
 
+{% endif %}
 
 <div class="logo_section {{ module.module_settings.select_theme_type }}">
   <div class="page-center">

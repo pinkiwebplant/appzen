@@ -72,28 +72,20 @@ h6 {
 @font-face {
   font-family: "Neue Haas Grotesk Text Pro";
   src:
-    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.eot') }}")
-      format("eot"),
-    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.woff') }}")
-      format("woff"),
-    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.woff2') }}")
-      format("woff2"),
-    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.ttf') }}")
-      format("ttf");
+    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.eot') }}") format("eot"),
+    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.woff') }}") format("woff"),
+    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.ttf') }}") format("ttf");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "Neue Haas Grotesk Text Pro";
   src:
-    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Light.eot') }}")
-      format("eot"),
-    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Light.woff') }}")
-      format("woff"),
-    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Light.woff2') }}")
-      format("woff2"),
-    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Light.ttf') }}")
-      format("ttf");
+    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Light.eot') }}") format("eot"),
+    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Light.woff') }}") format("woff"),
+    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Light.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Light.ttf') }}") format("ttf");
   font-weight: 400;
   font-style: normal;
 }
@@ -335,6 +327,24 @@ a {
 blockquote,
 blockquote p {
   @include blockquote;
+}
+
+blockquote {
+  border-left: 8px solid $blockqouteborder;
+  margin: 100px 0;
+  @include size28;
+  padding-left: 40px;
+  color: inherit;
+  font-weight: 400;
+  max-width: 100%;
+  p {
+    @include size28;
+    color: inherit;
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0;
+    max-width: 100%;
+  }
 }
 
 em {
