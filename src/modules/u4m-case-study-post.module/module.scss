@@ -35,9 +35,11 @@
       margin-bottom: 0;
     }
     .post-img-row {
+      margin-bottom: 30px;
       .post-cnt-img {
         margin-top: 100px;
         margin-bottom: 20px;
+        border-radius: $borderRadius;
         @include tabletmid {
           margin-top: 20px;
         }

@@ -2,7 +2,10 @@
 
 section.u4m-logo-trust-marks {
   padding: 80px 0;
-
+  &.inner_bg_add {
+    @include center;
+    padding: 110rem 73rem;
+  }
   .intro.center {
     text-align: center;
   }
