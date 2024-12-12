@@ -114,16 +114,16 @@
   }
 }, {
   "id" : "2c103900-897c-8684-c630-3baa77a98e79",
-  "name" : "resources",
+  "name" : "integrations",
   "display_width" : null,
-  "label" : "Resources",
+  "label" : "Integrations",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "89624b07-b8a3-319e-5698-f1deaac3a302",
-    "name" : "resource_type",
+    "name" : "integrations_type",
     "display_width" : null,
-    "label" : "Resource Type",
+    "label" : "Integrations Type",
     "required" : false,
     "locked" : false,
     "display" : "select",
@@ -135,33 +135,33 @@
     "default" : "recent"
   }, {
     "id" : "3dd8f5f8-62ac-0edc-cc35-17f4bc055d93",
-    "name" : "resource_table",
+    "name" : "integrations_table",
     "display_width" : null,
-    "label" : "Resource Table",
+    "label" : "Integrations Table",
     "required" : false,
     "locked" : true,
     "visibility" : {
       "controlling_field" : null,
-      "controlling_field_path" : "resources.resource_type",
+      "controlling_field_path" : "integrations.integrations_type",
       "controlling_value_regex" : "recent|category",
       "property" : null,
       "operator" : "MATCHES_REGEX",
       "access" : null
     },
     "type" : "hubdbtable",
-    "default" : 4825172
+    "default" : 5409197
   }, {
     "id" : "ccae048e-d114-0724-3951-5882ccc1bcca",
     "name" : "category_name",
     "display_width" : null,
     "label" : "Category Name",
-    "inline_help_text" : "Enter the category name from the table such as \"Case Studies\" , \"Videos\", etc.",
+    "inline_help_text" : "Enter the category name from the table such as \"invoice\" , \"expense\", etc.",
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
     "visibility" : {
       "controlling_field" : null,
-      "controlling_field_path" : "resources.resource_type",
+      "controlling_field_path" : "integrations.integrations_type",
       "controlling_value_regex" : "category",
       "property" : null,
       "operator" : "EQUAL",
@@ -170,12 +170,12 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : ""
+    "default" : "invoice"
   }, {
-    "id" : "bced61ff-3c14-47cf-6d68-3e972385600c",
-    "name" : "resources_by_title",
+    "id" : "45b21946-e572-b033-08ba-243f7a1b522a",
+    "name" : "integrations_by_title",
     "display_width" : null,
-    "label" : "Resources By Title",
+    "label" : "Integrations By Title",
     "required" : false,
     "locked" : false,
     "occurrence" : {
@@ -186,24 +186,25 @@
     },
     "visibility" : {
       "controlling_field" : null,
-      "controlling_field_path" : "resources.resource_type",
+      "controlling_field_path" : "integrations.integrations_type",
       "controlling_value_regex" : "custom",
       "property" : null,
       "operator" : "EQUAL",
       "access" : null
     },
     "children" : [ {
-      "id" : "2b18d6a6-6801-b462-ae44-9ac2a9747188",
-      "name" : "select_resource",
+      "id" : "e14e8c9e-1bdd-a46e-2236-c00b07466100",
+      "name" : "select_integrations",
       "display_width" : null,
-      "label" : "Select Resource",
+      "label" : "Select Integrations",
       "required" : false,
       "locked" : false,
-      "table_name_or_id" : "4825172",
+      "table_name_or_id" : "5409197",
+      "columns_to_fetch" : [ "hs_name", "logo_image", "integration_type", "title", "hs_path", "publish_date", "headline", "long_content_1" ],
       "display_columns" : [ "title" ],
       "type" : "hubdbrow",
       "default" : {
-        "id" : 178769264713
+        "id" : 72004897052
       }
     } ],
     "tab" : "CONTENT",
@@ -211,16 +212,16 @@
     "group_occurrence_meta" : null,
     "type" : "group",
     "default" : [ {
-      "select_resource" : {
-        "id" : 178769264713
+      "select_integrations" : {
+        "id" : 72004897052
       }
     }, {
-      "select_resource" : {
-        "id" : 178769264713
+      "select_integrations" : {
+        "id" : 72004897052
       }
     }, {
-      "select_resource" : {
-        "id" : 178769264713
+      "select_integrations" : {
+        "id" : 72004897052
       }
     } ]
   }, {
@@ -232,7 +233,7 @@
     "locked" : false,
     "visibility" : {
       "controlling_field" : null,
-      "controlling_field_path" : "resources.resource_type",
+      "controlling_field_path" : "integrations.integrations_type",
       "controlling_value_regex" : "custom",
       "property" : null,
       "operator" : "NOT_EQUAL",
@@ -306,20 +307,20 @@
   "group_occurrence_meta" : null,
   "type" : "group",
   "default" : {
-    "resource_type" : "recent",
-    "resource_table" : 4825172,
-    "category_name" : "",
-    "resources_by_title" : [ {
-      "select_resource" : {
-        "id" : 178769264713
+    "integrations_type" : "recent",
+    "integrations_table" : 5409197,
+    "category_name" : "invoice",
+    "integrations_by_title" : [ {
+      "select_integrations" : {
+        "id" : 72004897052
       }
     }, {
-      "select_resource" : {
-        "id" : 178769264713
+      "select_integrations" : {
+        "id" : 72004897052
       }
     }, {
-      "select_resource" : {
-        "id" : 178769264713
+      "select_integrations" : {
+        "id" : 72004897052
       }
     } ],
     "count" : 3,

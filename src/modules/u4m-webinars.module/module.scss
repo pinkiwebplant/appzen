@@ -100,6 +100,7 @@
             max-width: 100%;
             object-fit: cover;
             width: 100%;
+            object-position: right;
             @include tabletmid {
               height: 220px;
             }
