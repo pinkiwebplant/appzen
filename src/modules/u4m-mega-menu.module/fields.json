@@ -693,14 +693,6 @@
     "label" : "Bottom Section",
     "required" : false,
     "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "mega_menu.menu_type",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
     "children" : [ {
       "id" : "29f3183d-690d-c865-3234-d095f1baf2ca",
       "name" : "items",

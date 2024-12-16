@@ -1,0 +1,27 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Resource Page
+-->
+{% extends './base.html' %}
+
+{% block body %}
+<main class="body-container-wrapper resourceWrap">
+  {% if dynamic_page_hubdb_row %}
+
+
+  {% module "resource_post" path="../modules/u4m-resource-post", label="Resource Post" %}
+
+  {% elif dynamic_page_hubdb_table_id %}
+  {% dnd_area "resource_listing" %} 
+  {% dnd_section full_width=true %} 
+  {% dnd_column %}
+  {% dnd_row
+  %} {% dnd_module path='../modules/u4m-resource-cards', label='Resource Cards' width="12" %} {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {% end_dnd_area %}
+  {% endif %}
+</main>
+{% endblock body %}

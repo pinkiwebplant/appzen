@@ -19,17 +19,6 @@
         }
       }
     }
-    .left-content {
-      &.concenter {
-        text-align: center;
-        width: 100%;
-        max-width: 900px;
-        margin: 0 auto;
-      }
-      &.conright {
-        text-align: right;
-      }
-    }
   }
 
   .hero-content {
@@ -55,7 +44,23 @@
       width: 100%;
     }
   }
-
+  .flexcenter.flex_row {
+    gap: 30px;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .left-content {
+    &.concenter {
+      text-align: center;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    &.conright {
+      text-align: right;
+    }
+  }
   .right-content {
     text-align: center;
     .right-content-inner {
