@@ -130,6 +130,25 @@
       "type" : "text",
       "default" : "Accounts payable"
     }, {
+      "id" : "bb7872c7-4d89-15cf-4aaf-a2b20046336e",
+      "name" : "title_link",
+      "display_width" : null,
+      "label" : "Title Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
       "id" : "6acdc9cb-0f4e-c1cd-4fc0-0aea9c10defe",
       "name" : "menu_group",
       "display_width" : null,
@@ -572,7 +591,16 @@
         "content" : "<p>Automate your accounts payable workflow</p>",
         "title" : "Title"
       },
-      "number_of_posts" : 3
+      "number_of_posts" : 3,
+      "link_field" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
     }, {
       "content_type" : "menu",
       "title" : "Accounts payable",
@@ -628,7 +656,16 @@
         "content" : "<p>Automate your accounts payable workflow</p>",
         "title" : "Title"
       },
-      "number_of_posts" : 3
+      "number_of_posts" : 3,
+      "link_field" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
     }, {
       "content_type" : "menu",
       "title" : "Accounts payable",
@@ -684,7 +721,16 @@
         "content" : "<p>Automate your accounts payable workflow</p>",
         "title" : "Title"
       },
-      "number_of_posts" : 3
+      "number_of_posts" : 3,
+      "link_field" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
     } ]
   }, {
     "id" : "0754c0b7-6e81-4232-bc60-b4265adab575",
@@ -693,6 +739,14 @@
     "label" : "Bottom Section",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "mega_menu.menu_type",
+      "controlling_value_regex" : "tw",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "children" : [ {
       "id" : "29f3183d-690d-c865-3234-d095f1baf2ca",
       "name" : "items",
