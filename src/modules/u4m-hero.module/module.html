@@ -11,12 +11,12 @@
 	
 	<div class="page-center">
 		<div class="hero-inner-container  {% if not module.right_content.image_field.src %} hero-without-img {% endif %} {% if module.module_overrides.enable_container_inner_background_color %} hero-inner-content {{ module.module_overrides.container_inner_background_settings.select_background_color_type }} {% endif %}  flex_row">
-			<div class="{% if not module.right_content.image_field.src and not module.right_content.overlay_image.src  %}col12 con{{ module.content_alignment }}{% elif not module.right_content.image_field.src %} col7 {% else %}col5 {% endif %} col left-content">
+			<div class="{% if not module.right_content.image_field.src and not module.right_content.overlay_image.src  %}col12 con{{ module.content_alignment }}  {% elif not module.right_content.image_field.src %} col7 {% else %} col5 {% endif %} col left-content">
 				{% if module.left_content.content %}
 				<div class="hero-content">
 					{{ module.left_content.content }}
 				</div>
-				{% endif %}
+				{% endif %} 
 				{% if module.left_content.include_button %} 
 				<div class="btn_row">
 					{% for item in module.left_content.buttons %}
@@ -49,7 +49,7 @@
 				{% endif %}
 			</div>
 			{% if module.right_content.image_field.src or module.right_content.overlay_image.src %}
-			<div class="{% if not module.right_content.image_field.src %}col5 {% else %}col7 {% endif %} col right-content">
+			<div class="{% if not module.right_content.image_field.src %} col5 {% else %}col7 {% endif %} col right-content">
 			{% if module.right_content.image_field.src %}
 			<div class="right-content-inner">
 			{% endif %}
