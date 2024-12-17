@@ -283,7 +283,7 @@
 
 @mixin secondary {
   @include button;
-  border: 2px solid $basecolor;
+  border: 1px solid $basecolor;
   background-color: transparent;
   &:hover,
   &:focus {

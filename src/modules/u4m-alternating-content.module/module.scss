@@ -1,17 +1,22 @@
 @import "../../css/_module-imports";
 
 .u4m-alternating-content-one {
+  width: calc(100% - 40px);
+  padding: 110rem 0;
   &.inner_bg_add {
     @include center;
     border-radius: $borderRadius;
+    @include tabletvertmin {
+      padding-left: 73rem;
+      padding-right: 73rem;
+    }
   }
 
   .page-center {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    @include centerMiddle;
-
+    padding: 0;
     .two_cols {
       .inner_wrpp {
         display: flex;

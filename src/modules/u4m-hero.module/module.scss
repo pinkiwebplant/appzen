@@ -49,12 +49,16 @@
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
+    .col7 {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
   }
   .left-content {
     &.concenter {
       text-align: center;
-      width: 100%;
-      max-width: 900px;
+      width: 100% !important;
+      max-width: 900px !important;
       margin: 0 auto;
     }
     &.conright {
@@ -112,10 +116,10 @@
     .hero-inner-container {
       &.hero-without-img {
         .col5 {
-          width: 41.666666666%;
+          width: 50%;
         }
         .col7 {
-          width: 58.333333333%;
+          width: 50%;
         }
       }
       .col5 {
@@ -126,7 +130,20 @@
       }
     }
   }
+  @include tabletmidmin {
+    .hero-inner-container.flex_row {
+      justify-content: space-between;
 
+      .col5 {
+        width: 50%;
+        max-width: 579px;
+      }
+      .col7 {
+        width: 50%;
+        max-width: 535px;
+      }
+    }
+  }
   @include tabletvert {
     .hero-inner-container {
       row-gap: 20px;

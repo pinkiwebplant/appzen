@@ -4,6 +4,10 @@
     @include center;
     padding: 110rem 73rem;
     border-radius: $borderRadius;
+    width: calc(100% - 40px);
+    @include tabletvert {
+      padding: 110rem 20rem;
+    }
   }
 
   &:not(.inner_bg_add) {
