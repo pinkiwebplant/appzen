@@ -4,7 +4,7 @@
 
 {% include "../partials/u4-module-includes.html" %}
 
-<div class="page-center">
+<div class="page-center {% if module.banner_type == 'slider'  %}pageslider	{% endif %}">
 	<div class="homepage-inner {% if module.banner_type == 'slider'  %}slider	{% endif %}">
 		{% if module.banner_type == 'normal' %}
 		<div class="banner-column flex_row ">

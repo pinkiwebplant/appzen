@@ -8,7 +8,25 @@
 
 {% macro menuItem(item2) %}
 <div class="menuItem {{ item2.content_type }}">
-  <div class="menuItemTtl">{{ item2.title }}</div>
+  <div class="menuItemTtl">
+    {% set href = item2.title_link.url.href %}
+		{% if item2.title_link.url.type is equalto "EMAIL_ADDRESS" %}
+		  {% set href = "mailto:" + href %}
+		{% endif %}
+		<a
+		  {% if item2.title_link.url.type is equalto "CALL_TO_ACTION"  %}
+		    href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+		  {% else %}
+		    href="{{ href|escape_url }}"
+		  {% endif %}
+		  {% if item2.title_link.open_in_new_tab %}
+		    target="_blank"
+		  {% endif %}
+		  {% if item2.title_link.rel %}
+		    rel="{{ item2.title_link.rel|escape_attr }}"
+		  {% endif %}
+		  >
+      {{ item2.title }}</a></div>
   {% if item2.content_type=="menu" %}
   {% for item3 in item2.menu_group.menu_items %}
   <div class="childmenuItem{% if item3.add_description %} addDes{% endif %}">
@@ -258,7 +276,27 @@
 
           {% for item2 in item.child_menu %}
           <li>
-            <div class="menuItemTtl">{{ item2.title }}</div>
+            <div class="menuItemTtl">
+              {% set href = item2.title_link.url.href %}
+		{% if item2.title_link.url.type is equalto "EMAIL_ADDRESS" %}
+		  {% set href = "mailto:" + href %}
+		{% endif %}
+		<a
+		  {% if item2.title_link.url.type is equalto "CALL_TO_ACTION"  %}
+		    href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+		  {% else %}
+		    href="{{ href|escape_url }}"
+		  {% endif %}
+		  {% if item2.title_link.open_in_new_tab %}
+		    target="_blank"
+		  {% endif %}
+		  {% if item2.title_link.rel %}
+		    rel="{{ item2.title_link.rel|escape_attr }}"
+		  {% endif %}
+		  >
+              {{ item2.title }}
+              </a>
+      </div>
             <ul>
               {% if item2.content_type=="menu" %}
               {% for item3 in item2.menu_group.menu_items %}

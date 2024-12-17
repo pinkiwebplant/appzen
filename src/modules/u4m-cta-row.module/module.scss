@@ -4,6 +4,10 @@
     @include center;
     padding: 110rem 73rem;
     border-radius: $borderRadius;
+    width: calc(100% - 40px);
+    @include tabletvert {
+      padding: 110rem 20rem;
+    }
   }
 
   &:not(.inner_bg_add) {
@@ -49,11 +53,19 @@
       display: flex;
       align-items: flex-start;
       gap: 19px;
+      @include tabletmid {
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+      }
       @include phone {
         flex-direction: column;
         gap: 0;
         text-align: center;
         align-items: center;
+      }
+      a {
+        white-space: nowrap;
       }
     }
   }

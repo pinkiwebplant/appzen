@@ -5,14 +5,6 @@
   "label" : "Content Alignment",
   "required" : false,
   "locked" : false,
-  "visibility" : {
-    "controlling_field" : null,
-    "controlling_field_path" : "right_content.image_field",
-    "controlling_value_regex" : null,
-    "property" : "src",
-    "operator" : "EMPTY",
-    "access" : null
-  },
   "display" : "select",
   "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
   "multiple" : false,
@@ -607,7 +599,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Lvory Soft" ], [ "light_grey", "Lvory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ],  [ "light_pink", "Coral" ],   [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -713,7 +705,7 @@
       "required" : false,
       "locked" : false,
       "display" : "select",
-      "choices" : [ [ "yellow", "Yellow" ], [ "brown", "Brown" ], [ "light_pink", "Light Pink" ], [ "grey", "Grey" ], [ "light_grey", "Light Grey" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Lvory Soft" ], [ "light_grey", "Lvory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ],  [ "light_pink", "Coral" ],   [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,

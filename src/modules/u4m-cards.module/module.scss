@@ -18,6 +18,8 @@ section.u4m-cards {
   .card_inner {
     @include cardBase;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 
     .icon_box {
       text-align: left;
@@ -52,6 +54,7 @@ section.u4m-cards {
     .card_content {
       @include size14;
       line-height: 150%;
+      margin-bottom: 20px;
 
       p {
         font: inherit;
@@ -73,10 +76,9 @@ section.u4m-cards {
     @include tabletvert {
       width: 100%;
     }
-
     .arrow_link {
       text-align: right;
-      margin-top: 20px;
+      margin-top: auto;
 
       svg {
         display: block;
@@ -85,10 +87,10 @@ section.u4m-cards {
       a {
         display: inline-flex;
         margin-left: auto;
-        width: 20px;
-        height: 20px;
+        min-height: 20px;
         align-items: center;
         justify-content: center;
+        gap: 5px;
       }
     }
   }

@@ -36,7 +36,6 @@
           transform: none !important;
           display: flex;
           flex-wrap: wrap;
-          flex-direction: row-reverse;
           .toptab_ttl {
             cursor: pointer;
             position: relative;
@@ -87,8 +86,7 @@
           border: 1px solid $greyborder;
           display: flex;
           flex-wrap: wrap;
-          flex-direction: row-reverse;
-
+          direction: inherit;
           &.counts_3 .toptab_ttl {
             flex-grow: 1;
           }

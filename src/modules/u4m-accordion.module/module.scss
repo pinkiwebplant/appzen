@@ -77,6 +77,10 @@
           font-weight: 700;
           padding-right: 20px;
           @include size14;
+          align-self: flex-start;
+          @include tabletvertmin {
+            padding-top: 1px;
+          }
         }
 
         .item-title {
