@@ -49,6 +49,11 @@
       display: flex;
       align-items: flex-start;
       gap: 19px;
+      @include tabletmid {
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+      }
       @include phone {
         flex-direction: column;
         gap: 0;

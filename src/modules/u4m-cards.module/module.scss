@@ -76,12 +76,6 @@ section.u4m-cards {
     @include tabletvert {
       width: 100%;
     }
-    &.col4 .card_inner {
-      min-height: 250px;
-    }
-    &.col6 .card_inner {
-      min-height: 350px;
-    }
     .arrow_link {
       text-align: right;
       margin-top: auto;

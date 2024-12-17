@@ -12,14 +12,14 @@
 <div class="wrapper {% if module.module_settings.center_content %}centercnt{% endif %} ">
 	<div class="wrapper_inr">
 		{% if module.include_content %}
-		<div class='cnt_wrap'>
+		<div class='cnt_wrap span8'>
 			<div class='cnt_wrap_inr'>
 				{{ module.content }}
 			</div>
 		</div>
 		{% endif %}
 		{% if module.include_button %} 
-		<div class="btn_row">
+		<div class="btn_row span4">
 			{% for item in module.buttons %}
 			{% if item.button_type == 'stnd' %} 
 			{% set href = item.button_link.url.href %}
