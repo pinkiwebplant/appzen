@@ -10,7 +10,7 @@ section.u4m-integrations-listing {
     text-align: right;
   }
   .top-section {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
   }
   .intro {
     h2 {
@@ -45,6 +45,7 @@ section.u4m-integrations-listing {
     }
     .logo_wrapper {
       padding: 20px 0;
+      row-gap: 20px;
 
       .logo_items {
         display: flex;
@@ -63,26 +64,16 @@ section.u4m-integrations-listing {
   }
   .logo_items .logo_inner {
     @include cardBase;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-bottom: 20px;
     background-color: $white;
+    aspect-ratio: 1 / 1;
   }
 
   .page-center > .flex_row {
     justify-content: center;
-  }
-  .flex_row {
-    &.slider_enable {
-      .logo_items {
-        .logo_inner {
-          height: 130px;
-        }
-      }
-    }
   }
 
   &.reverse-text {
@@ -111,7 +102,6 @@ section.u4m-integrations-listing {
       width: 50%;
     }
     .logo_section .logo_wrapper .logo_items .logo_inner {
-      height: 130px;
       padding: 10px;
       img {
         margin: 0;

@@ -63,14 +63,18 @@
 							<img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
 							{% endif %}
 						</div>
+						{% if item.supertitle  %}
 						<div class="super_title">
 							<p>
 								{{ item.supertitle }}
 							</p>
 						</div>
+						{% endif %}
+						{% if item.content %}
 						<div class="cnt">
 							{{ item.content }}
 						</div>
+					{% endif %}
 						<div class="cm_btns">
 							{% if item.buttons.button_type == 'stnd' %} 
 							{% set href = item.buttons.button_link.url.href %}

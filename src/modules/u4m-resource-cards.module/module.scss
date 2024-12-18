@@ -49,6 +49,14 @@ section.u4m-res-cards {
     height: 100%;
     display: flex;
     flex-direction: column;
+    position: relative;
+    .absLink {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
     .card_title {
       margin-bottom: 15rem;
     }

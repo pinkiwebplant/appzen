@@ -95,8 +95,17 @@
   </div>
 </div>
 </section>
-
-
+{% if module.module_settings.items_height %}
+{% require_css %}
+<style>
+  {% scope_css %}
+  .u4m-integrations-listing .logo_items .logo_inner{
+    height:{{ module.module_settings.items_height }}px;
+  }
+  {% end_scope_css %}
+</style>
+{% end_require_css %}
+{% endif %}
 {% require_js %}
 <script>
   {% if module.module_settings.enable_slider %}
@@ -125,14 +134,7 @@
           slidesToShow: 2,
             slidesToScroll: 2
         }
-    },
-      {
-        breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-              slidesToScroll: 1
-          }
-      }
+    }
   ]
   });
   {% endif %}

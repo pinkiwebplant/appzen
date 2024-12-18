@@ -16,6 +16,10 @@
     @include tabletmid {
       padding-right: 0;
     }
+    blockquote {
+      margin: 40px 0;
+      border-left: 8px solid $LightPink;
+    }
     code {
       white-space: normal;
       margin: 0;

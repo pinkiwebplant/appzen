@@ -29,6 +29,10 @@
       justify-content: center;
       text-align: center;
       flex-wrap: wrap;
+      .btn_row {
+        width: 100%;
+        justify-content: center;
+      }
     }
   }
   .wrapper_inr {
