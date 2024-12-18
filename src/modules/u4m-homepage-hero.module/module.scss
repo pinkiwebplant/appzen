@@ -50,7 +50,7 @@ section.u4m-homepage-hero {
         .img-inner {
           background-repeat: no-repeat;
           background-size: cover;
-          background-position: center;
+          background-position: top;
           min-height: 640px;
           border-radius: 10px;
           @include tabletvert {

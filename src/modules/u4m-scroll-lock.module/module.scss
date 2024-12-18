@@ -68,7 +68,10 @@
       position: absolute;
       width: 100%;
       top: 50%;
-      transform: translateY(-50%);
+      @include tabletvertmin {
+        transform: translateY(-50%);
+      }
+
       left: 0;
       transition: all 0.3s linear;
       @include tabletmid {

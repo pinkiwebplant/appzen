@@ -82,27 +82,6 @@
   "required" : false,
   "locked" : false,
   "children" : [ {
-    "id" : "bd0d3f5b-f4a4-94e0-32b8-ef78a65ee56d",
-    "name" : "form_bg_image",
-    "display_width" : null,
-    "label" : "Form Bg Image",
-    "required" : false,
-    "locked" : false,
-    "responsive" : true,
-    "resizable" : true,
-    "show_loading" : false,
-    "type" : "image",
-    "default" : {
-      "size_type" : "auto_custom_max",
-      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Form_20BG_20_281_29.png",
-      "alt" : "Form BG (1)",
-      "loading" : "lazy",
-      "width" : 2558,
-      "height" : 1552,
-      "max_width" : 2000,
-      "max_height" : 1213.4480062548866
-    }
-  }, {
     "id" : "35485e7f-d1d1-72a4-1156-59cdb08cff9f",
     "name" : "header",
     "display_width" : null,
@@ -137,16 +116,6 @@
   "group_occurrence_meta" : null,
   "type" : "group",
   "default" : {
-    "form_bg_image" : {
-      "size_type" : "auto_custom_max",
-      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Form_20BG_20_281_29.png",
-      "alt" : "Form BG (1)",
-      "loading" : "lazy",
-      "width" : 2558,
-      "height" : 1552,
-      "max_width" : 2000,
-      "max_height" : 1213.4480062548866
-    },
     "header" : "Want to know more about the ",
     "popup_form" : {
       "form_id" : "b0a2a8c4-fd67-48aa-8669-d93211371d39",
@@ -495,7 +464,7 @@
       "access" : null
     },
     "display" : "select",
-    "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Lvory Soft" ], [ "light_grey", "Lvory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ],  [ "light_pink", "Coral" ],   [ "white_bg", "White" ], [ "custom", "Custom" ] ],
+    "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Ivory Soft" ], [ "light_grey", "Ivory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ], [ "light_pink", "Coral" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
@@ -568,7 +537,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Lvory Soft" ], [ "light_grey", "Lvory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ],  [ "light_pink", "Coral" ],   [ "white_bg", "White" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Ivory Soft" ], [ "light_grey", "Ivory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ], [ "light_pink", "Coral" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,

@@ -12,7 +12,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 12rem;
-    min-height: 800rem;
+    min-height: 640rem;
     position: relative;
     width: 60vw;
     overflow: hidden;
@@ -43,7 +43,7 @@
     }
   }
   .bg_item {
-    padding: 0 10rem;
+    padding: 0 18rem;
   }
   .mainSliderWrap {
     position: relative;
@@ -58,6 +58,7 @@
     top: 0;
     z-index: 99;
     padding: 46rem 0;
+    max-height: 640px;
   }
   .case_large_card {
     background: $greybg;
@@ -110,7 +111,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20rem 10rem;
+    padding: 20rem 40rem;
     filter: brightness(0.5) grayscale(0);
     min-height: 100%;
     height: 120rem;
@@ -124,6 +125,9 @@
   .case_large_content,
   .inner_content_box {
     height: 100%;
+  }
+  .case_large_content {
+    overflow-y: auto;
   }
   .thumbSliderWrap {
     padding-top: 30rem;

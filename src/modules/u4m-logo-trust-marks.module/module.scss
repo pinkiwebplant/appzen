@@ -37,6 +37,7 @@ section.u4m-logo-trust-marks {
     }
     .logo_wrapper {
       padding: 20px 0;
+      row-gap: 20px;
 
       .logo_items {
         display: flex;
@@ -46,7 +47,6 @@ section.u4m-logo-trust-marks {
         img {
           width: 120px;
           filter: grayscale(1);
-          margin-bottom: 20px;
           cursor: pointer;
           transition: all 0.3s;
         }
@@ -56,11 +56,17 @@ section.u4m-logo-trust-marks {
   .logo_section.theme_three {
     .logo_wrapper {
       .logo_items {
-        margin-bottom: 20px;
         .logo_inner {
           @include cardBase;
           padding: 22px 38px;
           background-color: $white;
+          aspect-ratio: 1 / 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @include phone {
+            padding: 20px;
+          }
           img {
             margin: 0;
             filter: unset;
@@ -77,6 +83,15 @@ section.u4m-logo-trust-marks {
   &.reverse-text {
     color: $white;
   }
+  @include laptop {
+    .col2,
+    .col4,
+    .col3 {
+      width: 25%;
+      padding: 0 10px;
+    }
+  }
+
   @include tabletvert {
     .col2,
     .col4,

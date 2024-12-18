@@ -6,7 +6,7 @@ header.u4m-header {
     top 0.5s;
   left: 0;
   width: 100%;
-  background-color: $lightGreybg;
+  background-color: $greybg;
   z-index: 100;
   .headerIn {
     position: relative;
@@ -26,6 +26,7 @@ header.u4m-header {
           align-items: center;
           justify-content: center;
           width: 100%;
+          background-color: $LightPink;
         }
       }
       .left_sec {
@@ -231,7 +232,7 @@ header.u4m-header {
         }
         &:last-child {
           > a {
-            color: $sidebarplaceholder;
+            color: $tagcolor;
           }
         }
         &:not(:last-child) {
@@ -458,9 +459,9 @@ header.u4m-header {
             &:after {
               position: absolute;
               content: "";
-              bottom: 0;
+              top: 0;
               width: 100%;
-              border-bottom: 4px solid $yellowColor;
+              border-bottom: 4px solid $LightPink;
               left: 0;
             }
           }
@@ -477,9 +478,9 @@ header.u4m-header {
           &:after {
             position: absolute;
             content: "";
-            bottom: 0;
+            top: 0;
             width: 100%;
-            border-bottom: 4px solid $yellowColor;
+            border-bottom: 4px solid $LightPink;
             left: 0;
           }
         }
@@ -664,6 +665,7 @@ header.u4m-header {
             justify-content: center;
             cursor: pointer;
             transition: 0.2s all ease-in;
+            z-index: 22;
           }
         }
         > li.childOpenMob {

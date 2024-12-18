@@ -64,6 +64,11 @@
     &.conright {
       text-align: right;
     }
+    &.conleft.col12 {
+      p {
+        max-width: 687px;
+      }
+    }
   }
   .right-content {
     text-align: center;
