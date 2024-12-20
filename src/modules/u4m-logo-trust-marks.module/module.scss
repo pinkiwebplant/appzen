@@ -38,7 +38,9 @@ section.u4m-logo-trust-marks {
     .logo_wrapper {
       padding: 20px 0;
       row-gap: 20px;
-
+      @include laptop {
+        justify-content: center;
+      }
       .logo_items {
         display: flex;
         align-items: center;

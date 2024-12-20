@@ -34,6 +34,10 @@
     p {
       @include size18;
       line-height: 1.6;
+      a {
+        color: inherit;
+        text-decoration: underline;
+      }
     }
     p:last-child {
       margin-bottom: 0;
@@ -51,6 +55,15 @@
       .img-caption {
         @include size14;
         line-height: 1.5;
+      }
+    }
+  }
+  &.reverse-text {
+    .post-content {
+      p {
+        a {
+          color: $yellowColor;
+        }
       }
     }
   }

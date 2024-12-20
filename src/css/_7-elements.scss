@@ -89,6 +89,259 @@ h6 {
   font-weight: 400;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Neue Haas Grotesk Display Pro";
+  src:
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.woff') }}") format("woff"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.ttf') }}") format("truetype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.svg') }}") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/*
+
+@font-face {
+  // font-family: "NHaasGroteskDSPro46LtIt";
+  font-family: "Neue Haas Grotesk Display Pro";
+  src:url("{{ get_asset_url('../fonts/NHaasGroteskDSPro46LtIt.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('../fonts/NHaasGroteskDSPro46LtIt.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('../fonts/NHaasGroteskDSPro46LtIt.woff') }}") format("woff"),
+    url("{{ get_asset_url('../fonts/NHaasGroteskDSPro46LtIt.ttf') }}") format("truetype"),
+    url("{{ get_asset_url('../fonts/NHaasGroteskDSPro46LtIt.svg') }}") format("svg");
+}
+
+@font-face {
+  // font-family: "NHaasGroteskTXPro76BdIt";
+  font-family: "Neue Haas Grotesk Display Pro";
+  src:
+    url("{{ get_asset_url('../fonts/NHaasGroteskTXPro76BdIt.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('../fonts/NHaasGroteskTXPro76BdIt.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('../fonts/NHaasGroteskTXPro76BdIt.woff') }}") format("woff"),
+    url("{{ get_asset_url('../fonts/NHaasGroteskTXPro76BdIt.ttf') }}") format("truetype"),
+    url("{{ get_asset_url('../fonts/NHaasGroteskTXPro76BdIt.svg') }}") format("svg");
+}
+
+@font-face {
+  // font-family: "NHaasGroteskDSPro96BlkIt";
+  font-family: "Neue Haas Grotesk Display Pro";
+  src:
+    url("{{ get_asset_url('../fonts/NHaasGroteskDSPro96BlkIt.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('../fonts/NHaasGroteskDSPro96BlkIt.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('../fonts/NHaasGroteskDSPro96BlkIt.woff') }}") format("woff"),
+    url("{{ get_asset_url('../fonts/NHaasGroteskDSPro96BlkIt.ttf') }}") format("truetype"),
+    url("{{ get_asset_url('../fonts/NHaasGroteskDSPro96BlkIt.svg') }}") format("svg");
+}
+
+@font-face {
+
+  font-family: "Neue Haas Grotesk Display Pro";
+  src:
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro35XLt.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro35XLt.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro35XLt.woff') }}") format("woff"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro35XLt.ttf') }}") format("truetype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro35XLt.svg') }}") format("svg");
+}
+
+@font-face {
+
+  font-family: "Neue Haas Grotesk Display Pro";
+  src:
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro26ThIt.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro26ThIt.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro26ThIt.woff') }}") format("woff"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro26ThIt.ttf') }}") format("truetype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro26ThIt.svg') }}") format("svg");
+}
+
+@font-face {
+
+  font-family: "Neue Haas Grotesk Display Pro";
+  src:
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro66MdIt.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro66MdIt.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro66MdIt.woff') }}") format("woff"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro66MdIt.ttf') }}") format("truetype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro66MdIt.svg') }}") format("svg");
+}
+
+@font-face {
+
+  font-family: "Neue Haas Grotesk Display Pro";
+  src:
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro95Blk.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro95Blk.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro95Blk.woff') }}") format("woff"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro95Blk.ttf') }}") format("truetype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro95Blk.svg') }}") format("svg");
+}
+
+@font-face {
+
+  font-family: "Neue Haas Grotesk Display Pro";
+  src:
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro55Rg.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro55Rg.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro55Rg.woff') }}") format("woff"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro55Rg.ttf') }}") format("truetype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro55Rg.svg') }}") format("svg");
+}
+
+@font-face {
+  
+  font-family: "Neue Haas Grotesk Display Pro";
+  src:
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.woff') }}") format("woff"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.ttf') }}") format("truetype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.svg') }}") format("svg");
+}
+
+@font-face {
+
+  font-family: "Neue Haas Grotesk Display Pro";
+  src:
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro45Lt.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro45Lt.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro45Lt.woff') }}") format("woff"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro45Lt.ttf') }}") format("truetype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro45Lt.svg') }}") format("svg");
+}
+
+@font-face {
+
+  font-family: "Neue Haas Grotesk Text Pro";
+  src:
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro65Md.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro65Md.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro65Md.woff') }}") format("woff"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro65Md.ttf') }}") format("truetype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro65Md.svg') }}") format("svg");
+}
+
+@font-face {
+
+  font-family: "Neue Haas Grotesk Display Pro";
+  src:
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro36XLtIt.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro36XLtIt.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro36XLtIt.woff') }}") format("woff"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro36XLtIt.ttf') }}") format("truetype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro36XLtIt.svg') }}") format("svg");
+}
+
+@font-face {
+
+  font-family: "Neue Haas Grotesk Display Pro";
+  src:
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro15UltTh.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro15UltTh.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro15UltTh.woff') }}") format("woff"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro15UltTh.ttf') }}") format("truetype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro15UltTh.svg') }}") format("svg");
+}
+
+@font-face {
+
+  font-family: "Neue Haas Grotesk Display Pro";
+  src:
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro65Md.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro65Md.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro65Md.woff') }}") format("woff"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro65Md.ttf') }}") format("truetype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro65Md.svg') }}") format("svg");
+}
+
+@font-face {
+
+  font-family: "Neue Haas Grotesk Display Pro";
+  src:
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro76BdIt.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro76BdIt.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro76BdIt.woff') }}") format("woff"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro76BdIt.ttf') }}") format("truetype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro76BdIt.svg') }}") format("svg");
+}
+
+@font-face {
+
+  font-family: "Neue Haas Grotesk Text Pro";
+  src:
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro56It.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro56It.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro56It.woff') }}") format("woff"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro56It.ttf') }}") format("truetype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro56It.svg') }}") format("svg");
+}
+
+@font-face {
+ 
+  font-family: "Neue Haas Grotesk Display Pro";
+  src:
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro25Th.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro25Th.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro25Th.woff') }}") format("woff"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro25Th.ttf') }}") format("truetype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro25Th.svg') }}") format("svg");
+}
+
+@font-face {
+
+  font-family: "Neue Haas Grotesk Display Pro";
+  src:
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro16UltThIt.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro16UltThIt.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro16UltThIt.woff') }}") format("woff"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro16UltThIt.ttf') }}") format("truetype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro16UltThIt.svg') }}") format("svg");
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Text Pro";
+  src:
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro75Bd.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro75Bd.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro75Bd.woff') }}") format("woff"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro75Bd.ttf') }}") format("truetype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro75Bd.svg') }}") format("svg");
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Text Pro";
+  src:
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.woff') }}") format("woff"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.ttf') }}") format("truetype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.svg') }}") format("svg");
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Display Pro";
+  src:
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro56It.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro56It.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro56It.woff') }}") format("woff"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro56It.ttf') }}") format("truetype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro56It.svg') }}") format("svg");
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Text Pro";
+  src:
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro66MdIt.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro66MdIt.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro66MdIt.woff') }}") format("woff"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro66MdIt.ttf') }}") format("truetype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro66MdIt.svg') }}") format("svg");
+}
+*/
+
 //Set in Typography Mixins
 p:first-child,
 h1:first-child,
@@ -582,3 +835,4 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
