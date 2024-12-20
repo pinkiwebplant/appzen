@@ -1,12 +1,13 @@
 @import "../../css/_module-imports";
 
 section.u4m-related-posts {
+  margin-top: 50px;
   .reated-top-content {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     @include tabletvert {
-        width: 100%;
+      width: 100%;
     }
   }
 
