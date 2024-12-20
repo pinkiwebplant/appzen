@@ -692,7 +692,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Ivory Soft" ], [ "light_grey", "Ivory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ],  [ "light_pink", "Coral" ],   [ "white_bg", "White" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Ivory Soft" ], [ "light_grey", "Ivory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ], [ "light_pink", "Coral" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -766,6 +766,88 @@
       }
     }
   }, {
+    "id" : "92d25ad3-0c9d-7cb3-fa87-246f31491d0a",
+    "name" : "card_background_settings",
+    "display_width" : null,
+    "label" : "Highlighted Card Background Settings",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_overrides.enable_overrides",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "fa01cf30-2fb0-3f89-6231-9f9325d141ac",
+      "name" : "select_background_color_type",
+      "display_width" : null,
+      "label" : "Select Background Color",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Ivory Soft" ], [ "light_grey", "Ivory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ], [ "light_pink", "Coral" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "light_grey"
+    }, {
+      "id" : "bd08c1dc-7224-6783-0f0c-4578d911306e",
+      "name" : "background_color",
+      "display_width" : null,
+      "label" : "Background Color",
+      "help_text" : "If a module has formal settings for a background color they will take priority over this value.",
+      "inline_help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "enable_overrides",
+        "controlling_field_path" : "module_overrides.card_background_settings.select_background_color_type",
+        "controlling_value_regex" : "custom",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "color",
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
+    }, {
+      "id" : "0470980f-ee85-3abb-aa6f-3226d8b956e3",
+      "name" : "reverse_text",
+      "display_width" : null,
+      "label" : "Reverse Text",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "module_overrides.enable_overrides",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "checkbox",
+      "type" : "boolean",
+      "default" : false
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "select_background_color_type" : "light_grey",
+      "background_color" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "reverse_text" : false
+    }
+  }, {
     "id" : "b8ff09cf-3e4e-fe6d-88bc-95be48ab2e1e",
     "name" : "reverse_text",
     "display_width" : null,
@@ -815,6 +897,14 @@
         "alt" : null,
         "loading" : "disabled"
       }
+    },
+    "card_background_settings" : {
+      "select_background_color_type" : "light_grey",
+      "background_color" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "reverse_text" : false
     },
     "reverse_text" : false
   }

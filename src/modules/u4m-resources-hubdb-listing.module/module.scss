@@ -1,0 +1,185 @@
+@import "../../css/_module-imports";
+
+section.u4m-resHub-listing {
+  position: relative;
+  .noText {
+    font-size: 20rem;
+    margin: 0;
+  }
+  .filter_sidebar {
+    width: 150px;
+    max-width: 100%;
+
+    @include tabletmid {
+      width: 250px;
+    }
+
+    @include tabletvert {
+      width: 100%;
+    }
+  }
+
+  .filter_item {
+    @include tabletvertmin {
+      width: 100%;
+    }
+  }
+
+  .case_listing_column {
+    width: calc(100% - 150px);
+
+    @include tabletmid {
+      width: calc(100% - 250px);
+    }
+
+    @include tabletvert {
+      width: 100%;
+    }
+  }
+
+  .case_listing_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 40px;
+  }
+
+  .card_img {
+    border-radius: 8px;
+    overflow: hidden;
+    min-height: 300px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 24px;
+    &:after {
+      content: "";
+      display: block;
+      padding-bottom: 143%;
+      transition: .3s;
+    }
+    &:hover {
+        &:after {
+            background-color: rgba(0, 0, 0, .5);
+        }
+    }
+  }
+
+  .case_card {
+    @include tabletmid {
+      width: 50%;
+    }
+
+    @include tabletvert {
+      width: 100%;
+    }
+  }
+
+  .inner_wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    .logo {
+      width: 100%;
+      padding: 30px 26px;
+      img {
+        max-width: 95px;
+      }
+
+      @include tabletmid {
+        padding: 20px;
+      }
+    }
+
+    .hover_content_wrap {
+      width: 100%;
+      margin-top: auto;
+      padding: 30px 26px;
+      transform: translateY(100%);
+      transition: 0.2s ease;
+
+      @include tabletmid {
+        padding: 20px;
+      }
+
+      span {
+        display: block;
+      }
+
+      .price {
+        @include h2;
+        color: $white;
+        margin-bottom: 5px;
+      }
+
+      .subtitle {
+        color: $white;
+      }
+    }
+
+    &:hover .hover_content_wrap {
+      transform: translateY(0%);
+
+    }
+  }
+
+  .card_title {
+    h4 {
+      @include size28;
+      font-weight: 400;
+      margin-bottom: 0;
+
+      @include tablet {
+        @include size18;
+      }
+    }
+  }
+
+  .loadmore_btn {
+    margin-top: 80px;
+
+    a {
+      margin: 0;
+    }
+  }
+
+  .filter_sidebar_inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    @include tabletvert {
+      margin-bottom: 20px;
+      justify-content: center;
+    }
+
+    .filter_item {
+      button {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18.2px;
+        letter-spacing: 0.03em;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        border-radius: 40px;
+        -webkit-appearance: none;
+        text-transform: capitalize;
+        display: block;
+        padding: 9px 20px;
+        border: 2px solid transparent;
+        text-align: left;
+      }
+
+      &.active button {
+        border-color: #b6b0a2;
+      }
+    }
+  }
+}

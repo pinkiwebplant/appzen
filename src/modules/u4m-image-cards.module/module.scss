@@ -67,10 +67,6 @@
           @include navbreakMinMax {
             padding: 20px;
           }
-
-          @include tabletvert {
-            padding: 0px;
-          }
         }
 
         @include tabletvert {

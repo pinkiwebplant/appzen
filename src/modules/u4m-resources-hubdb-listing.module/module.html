@@ -1,0 +1,168 @@
+{% set moduleName = 'u4m-resHub-listing' %}
+{% set imageMax = 1000 %}
+{% set bgImageMax = 1920 %}
+
+{% include "../partials/u4-module-includes.html" %}
+
+{% set table = module.select_hubdb_table %} 
+{% set batch_num = 9 %}
+{% if not request.query_dict.page %}
+{% set page_num = 1 %}
+{% set offset_num = 0 %}
+{% elif request.query_dict.page %}
+{% set page_num = request.query_dict.page %}
+{% set offset_num = page_num|add(-1) * batch_num %}
+{% endif %}
+
+
+{% set query = 'orderBy=-hs_created_at&limit='~ batch_num ~ "&offset=" ~ offset_num   %}
+
+{% if request.query_dict.categories &&  request.query_dict.categories != "all"  %}
+{% set query =  query ~ '&categories__in=' ~ request.query_dict.categories %} 
+{% endif %}
+
+{% set rows = hubdb_table_rows(table, query) %}
+
+<div class="page-center resoHub">
+  <div class="flex_row">
+    <div class="filter_sidebar">
+      <div class="filter_sidebar_inner">
+        <div class="filter_item active">
+          <button data-tag="" >
+            All
+          </button>
+        </div>
+        {% for tag in hubdb_table_column(table, 'categories').options %}
+        <div class="filter_item">
+          <button data-tag="{{tag.name}}">
+            {{tag.name}}
+          </button>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="case_listing_column">	 
+      <div class="case_listing_wrap">  
+        {% for row in rows %}
+        {% if row.image.url %}
+        {% set bgImag = row.image.url %}
+        {% else %}
+        {% set bgImag = 'https://www.appzen.com/hubfs/image-placeholder-customer-story-1.png' %}
+        {% endif %}
+        <div class="case_card qryitem col4 col category" data-category="{% for tag in row.categories %}{{tag.name}}{% if not loop.last %}, {% endif %}{% endfor %}">
+          <div class="case_card_inner">
+            <div class="card_img" style="background-image: url({{bgImag}})">
+              <div class="inner_wrapper">
+                {% if row.logo_image.url %}
+                <span class="logo">
+                  <img src="{{row.logo_image.url}}" allt="{{ row.hs_name }}"/>
+                </span>
+                {% endif %} 
+                <div class="hover_content_wrap">
+                  <div class="hover_content">
+                    <span class="price">{% for tag in row.categories %}{{tag.name}}{% if not loop.last %}, {% endif %}{% endfor %}</span>
+                    <span class="subtitle">{{row.description|striptags|truncatehtml(100, '...', false) }}</span>
+                  </div>
+                </div> 
+              </div>
+            </div> 
+            <div class="card_title">
+              <h4>
+                {{row.hs_name}}
+              </h4>
+            </div> 
+          </div>
+        </div>
+        {% endfor %} 
+      </div>   
+      <p class="noText" style="display:none;">
+        No integration found. Try again
+      </p>
+
+      {% set nav = hubdb_table_rows(table, query) %}
+      {% set total_pages = nav|length|divide(batch_num)%}
+      {% set more_pages = nav|length % batch_num %}
+      {% if more_pages == 0 %}
+      {% set total_pages = total_pages %}
+      {% else %}
+      {% set total_pages = total_pages + 1 %}
+      {% endif %}
+
+      {# set the number of pages #}
+      {% if nav|length % batch_num == 0 %}
+      {% set total_pages = (nav|length / batch_num) %}
+      {% else %}
+      {% set total_pages = (nav|length / batch_num)|round('floor') + 1 %}
+      {% endif %}
+
+
+      {% set typesPage = request.query_dict.categories %} 
+      {% if typesPage %}
+      {% set typesQuery = "&categories=" ~ typesPage %}
+      {% set paginationQuery = typesQuery %}
+      {% else %}    
+      {% set typesQuery = "" %}
+      {% endif %}
+
+
+      <div class="pagin">
+        {% if total_pages > more_pages %}
+        <div class="loadmore_btn col pagination-wrapper">
+          <a class="prev page-numbers secondary" id="load-more" 
+             href="{{ content.absolute_url}}?page={{ page_num|add(1) }}{{ paginationQuery }}">
+            Load More
+          </a>
+        </div>  
+        {% endif %}
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+</section>
+{% require_js %}
+<script>
+$(".resoHub .filter_sidebar button").click(function (mn) {
+  mn.preventDefault();
+  $(this).parent().addClass("active").siblings().removeClass("active");
+  var winLoc = window.location.href.split("?")[0];
+  var btnVal = $(this).attr("data-tag");
+  var queryURL = winLoc + "?categories=" + btnVal;
+  $.get(queryURL, function (response) {
+    var newItems = $(response).find(".resoHub .case_listing_wrap .qryitem");
+    $(".resoHub .case_listing_wrap").html(newItems);
+    if (newItems.length === 0) {
+      $(".resoHub .noText").show();
+    } else {
+      $(".resoHub .noText").hide();
+    }
+    var newPagination = $(response).find(".resoHub .pagin .loadmore_btn");
+    $(".resoHub .pagin").html(newPagination);
+  });
+});
+
+$(document).on("click", ".resoHub #load-more", function (kk) {
+  kk.preventDefault();
+  var paginurl = $(this).attr("href");
+  $.get(paginurl, function (response) {
+    var newItems = $(response).find(".resoHub .case_listing_wrap .qryitem");
+    $(".resoHub .case_listing_wrap").append(newItems);
+
+    var newPagination = $(response).find(".resoHub .pagin .loadmore_btn");
+    if (newPagination.length > 0) {
+      $(".resoHub .pagin").html(newPagination);
+    } else {
+      $(".resoHub .pagin").empty();
+    }
+    //     $('html, body').animate({
+    //       scrollTop: $('.case_listing_wrap').offset().top
+    //     }, 500);
+  });
+});
+
+</script>
+{% end_require_js %}

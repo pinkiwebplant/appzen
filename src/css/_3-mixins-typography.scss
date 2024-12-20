@@ -1,6 +1,6 @@
 //heading styles
 @mixin h1 {
-  font-family: $font1;
+  font-family: $font2;
   font-size: 78rem;
   font-weight: bold;
   margin-bottom: 30rem;
@@ -18,7 +18,7 @@
 }
 
 @mixin h2 {
-  font-family: $font1;
+  font-family: $font2;
   font-size: 56rem;
   font-weight: bold;
   margin-bottom: 30rem;
@@ -35,7 +35,7 @@
 }
 
 @mixin h3 {
-  font-family: $font1;
+  font-family: $font2;
   font-size: 42rem;
   font-weight: bold;
   margin-bottom: 30rem;

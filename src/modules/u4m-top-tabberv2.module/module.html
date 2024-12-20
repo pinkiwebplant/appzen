@@ -31,7 +31,7 @@
 				</div>
 				<div class="tabber_cnt" dir="rtl">
 					{% for item in module.tabber_slider %}
-					<div class="tabber_cnt_inr">
+					<div class="tabber_cnt_inr {% if module.module_overrides.enable_overrides %} {{ module.module_overrides.card_background_settings.select_background_color_type }}_act{% if module.module_overrides.card_background_settings.reverse_text %} act_rev{% endif %}{% endif %}">
 						<div class="tabber_flex flex_row">
 							<div class="tabber_col cnt"> 
 								{{ item.tab_content.content }}
@@ -95,9 +95,9 @@
 									{{ item.tab }}
 								</div>
 							</div>
-
+							
 							<div class="tabber_cnt" {% if loop.index == "1" %} style="display: block;"{% endif%}>
-								<div class="tabber_cnt_inr">
+								<div class="tabber_cnt_inr{% if module.module_overrides.enable_overrides %} {{ module.module_overrides.card_background_settings.select_background_color_type }}_act{% if module.module_overrides.card_background_settings.reverse_text %} act_rev{% endif %}{% endif %}">
 									<div class="tabber_flex">
 										<div class="tabber_col cnt"> 
 											{{ item.tab_content.content }}
@@ -198,4 +198,16 @@
 
 </script>
 {% end_require_js %}
-
+{% if module.module_overrides.enable_overrides %} 
+{% if module.module_overrides.card_background_settings.select_background_color_type =="custom"%}
+{% require_css %}
+<style>
+{% scope_css %}
+  .u4m-top-tabber .tabber_cnt_inr.custom_act{
+    background-color:{{ module.module_overrides.card_background_settings.background_color.rgba }}
+  }
+{% end_scope_css %}
+</style>
+{% end_require_css %}
+{% endif %}
+{% endif %}
