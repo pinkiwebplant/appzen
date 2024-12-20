@@ -1,6 +1,6 @@
 @import "../../css/_module-imports";
 
-section.u4m-case-study-listing {
+section.u4m-resHub-listing {
   position: relative;
   .noText {
     font-size: 20rem;
@@ -56,6 +56,12 @@ section.u4m-case-study-listing {
       content: "";
       display: block;
       padding-bottom: 143%;
+      transition: .3s;
+    }
+    &:hover {
+        &:after {
+            background-color: rgba(0, 0, 0, .5);
+        }
     }
   }
 
@@ -119,6 +125,7 @@ section.u4m-case-study-listing {
 
     &:hover .hover_content_wrap {
       transform: translateY(0%);
+
     }
   }
 
@@ -167,6 +174,7 @@ section.u4m-case-study-listing {
         display: block;
         padding: 9px 20px;
         border: 2px solid transparent;
+        text-align: left;
       }
 
       &.active button {

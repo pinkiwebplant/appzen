@@ -56,7 +56,13 @@ section.u4m-case-study-listing {
       content: "";
       display: block;
       padding-bottom: 143%;
+      transition: .3s;
     }
+    &:hover {
+      &:after {
+          background-color: rgba(0, 0, 0, .5);
+      }
+  }
   }
 
   .case_card {

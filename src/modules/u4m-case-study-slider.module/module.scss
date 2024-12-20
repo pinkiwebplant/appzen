@@ -1,6 +1,11 @@
 @import "../../css/_module-imports";
 
 .u4m-case-study-slider {
+  &.reverse-text {
+    .case_logo {
+      filter: invert(1) !important;
+    }
+  }
   padding: 58rem 0;
   .introContent h4 {
     margin: 0 0 50px;
