@@ -4,6 +4,9 @@
   display: block;
   position: relative;
   .post-body-inn {
+    @include tabletmidmin {
+      margin: 0 -10px;
+    }
     @include tabletmid {
       .col9,
       .col3 {

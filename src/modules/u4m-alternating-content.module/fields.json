@@ -273,12 +273,30 @@
   "required" : false,
   "locked" : false,
   "children" : [ {
+    "id" : "bfb8f0a5-9877-67d6-542d-35d2431997d4",
+    "name" : "enable_svg_animation",
+    "display_width" : null,
+    "label" : "Enable SVG Animation",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : false
+  }, {
     "id" : "d2bb9727-b452-0bbc-7b9c-ff0a632758ec",
     "name" : "image_field",
     "display_width" : null,
     "label" : "Image",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "media_group.enable_svg_animation",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "responsive" : true,
     "resizable" : false,
     "show_loading" : false,
@@ -293,12 +311,33 @@
       "max_width" : 1207,
       "max_height" : 1126
     }
+  }, {
+    "id" : "8f97245e-b01a-d8bc-9665-586e99396949",
+    "name" : "json_source_url",
+    "display_width" : null,
+    "label" : "JSON Source URL",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "media_group.enable_svg_animation",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "https://assets8.lottiefiles.com/packages/lf20_hluo7ags.json"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
   "default" : {
+    "enable_svg_animation" : false,
     "image_field" : {
       "size_type" : "auto",
       "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/abstraction.png",
@@ -308,7 +347,8 @@
       "height" : 1126,
       "max_width" : 1207,
       "max_height" : 1126
-    }
+    },
+    "json_source_url" : "https://assets8.lottiefiles.com/packages/lf20_hluo7ags.json"
   }
 }, {
   "id" : "module_overrides",
@@ -657,7 +697,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Ivory Soft" ], [ "light_grey", "Ivory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ],  [ "light_pink", "Coral" ],   [ "white_bg", "White" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Ivory Soft" ], [ "light_grey", "Ivory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ], [ "light_pink", "Coral" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,

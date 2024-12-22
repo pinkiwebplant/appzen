@@ -5,6 +5,7 @@
   padding: 110rem 0;
   &.inner_bg_add {
     @include center;
+    max-width: 1288px;
     border-radius: $borderRadius;
     @include tabletvertmin {
       padding-left: 20rem;

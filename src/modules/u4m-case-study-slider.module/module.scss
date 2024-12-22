@@ -19,7 +19,7 @@
     border-radius: 12rem;
     min-height: 640rem;
     position: relative;
-    width: 60vw;
+    width: 65vw;
     overflow: hidden;
     &:before {
       content: "";
@@ -29,7 +29,7 @@
       right: 0;
       bottom: 0;
       z-index: 1;
-      background: $black;
+      background: $greybg;
       opacity: 0.5;
       transition: 0.3s all ease-in-out;
     }
@@ -45,6 +45,7 @@
     }
     .case_logo {
       filter: none;
+      opacity: 1;
     }
   }
   .bg_item {
@@ -121,6 +122,7 @@
     min-height: 100%;
     height: 120rem;
     transition: all 0.3s ease-in-out;
+    opacity: .5;
     img {
       display: block;
     }

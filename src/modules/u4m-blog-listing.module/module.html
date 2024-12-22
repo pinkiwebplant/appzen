@@ -69,7 +69,11 @@
     <div class="blog-listing-wrap">
       <div class="listing-sidebar">
         {% if module.sidebar_top_text %}
-        <h6>{{ module.sidebar_top_text }}</h6>
+        <h6>
+          <a href="{{ group.absolute_url }}" style="color: inherit"
+            >{{ module.sidebar_top_text }}</a
+          >
+        </h6>
         {% endif %} {% if module.site_search_boolean %}
         <div class="site-search">
           {# Need help setting up site search? Start here:

@@ -11,7 +11,7 @@
 
 <div class="page-center">
 	<div class="hero-inner-container  flex{{ module.content_alignment }} {% if not module.right_content.image_field.src %} hero-without-img {% endif %} {% if module.module_overrides.enable_container_inner_background_color %} hero-inner-content {{ module.module_overrides.container_inner_background_settings.select_background_color_type }} {% endif %}  flex_row">
-		<div class=" con{{ module.content_alignment }} {% if not module.right_content.image_field.src %} {% if module.right_content.overlay_image.src %}col7{% else %}col12{% endif%} {% else %}col5 {% endif %} col left-content">
+		<div class=" con{{ module.content_alignment }} {% if not module.right_content.image_field.src && not module.right_content.enable_svg_animation %} {% if module.right_content.overlay_image.src %}col7{% else %}col12{% endif%} {% else %}col5 {% endif %} col left-content">
 			{% if module.left_content.content %}
 			<div class="hero-content">
 				{{ module.left_content.content }}
@@ -48,11 +48,16 @@
 			</div>
 			{% endif %}
 		</div>
-		{% if module.right_content.image_field.src || module.right_content.overlay_image.src %}
-		<div class="{% if not module.right_content.image_field.src %}{% if module.right_content.overlay_image.src %}col5{% else %}col12{% endif%} {% else %}col7 {% endif %} col right-content">
-		{% if module.right_content.image_field.src %}
+		{% if module.right_content.image_field.src || module.right_content.overlay_image.src || module.right_content.enable_svg_animation %}
+		<div class="{% if not module.right_content.image_field.src %}{% if module.right_content.overlay_image.src %}col5{% else %}col12{% endif%} {% else %}col7 {% endif %} col right-content {% if module.right_content.enable_svg_animation %}col7{% endif %}">
+		{% if module.right_content.image_field.src || module.right_content.enable_svg_animation %}
 		<div class="right-content-inner">
 		{% endif %}
+      {% if module.right_content.enable_svg_animation %}
+      <div class="contain">
+        <lottie-player src="{{ module.right_content.upload_json_file }}" speed="1" loop autoplay></lottie-player>
+    </div>
+      {% else %}
 			{% if module.right_content.image_field.src %}
 			<div class="hero-image">
 				{% set loadingAttr = module.right_content.image_field.loading != 'disabled' ? 'loading="{{ module.right_content.image_field.loading|escape_attr }}"' : '' %}
@@ -65,7 +70,8 @@
 				<img src="{{ module.right_content.overlay_image.src|escape_url }}" alt="{{ module.right_content.overlay_image.alt|escape_attr }}" {{ loadingAttr }}>
 			</div>
 				{% endif %}
-				{% if module.right_content.image_field.src %}
+      {% endif %}
+				{% if module.right_content.image_field.src || module.right_content.enable_svg_animation %}
 					</div>
 					{% endif %}
 		</div>
@@ -74,9 +80,9 @@
 </div>
 
 </section>
-
-
-
+{% if module.right_content.enable_svg_animation %}
+{{ require_js('https://unpkg.com/@lottiefiles/lottie-player@0.5.1/dist/lottie-player.js') }}
+{% endif %}
 
 
 {% require_css %}
