@@ -2,6 +2,7 @@
 
 section.u4m-blog-listing {
   padding-top: 60px;
+  padding-bottom: 80px;
   .hs-search-field {
     position: relative;
     form {
@@ -242,6 +243,7 @@ section.u4m-blog-listing {
       width: 100%;
       display: flex;
       flex-direction: column;
+      min-height: 206px;
       .content-topic {
         padding-bottom: 12px;
         a.topic-link {

@@ -4,6 +4,7 @@
   padding-top: 99px;
   padding-bottom: 99px;
   position: relative;
+  overflow: hidden;
   &.reverse-text {
     min-height: 754px;
     &.withoutBg {
@@ -13,9 +14,13 @@
 
   .hero-without-img {
     .right-content {
+      position: relative;
       .hero-overlay-image {
         img {
-          bottom: 10.7%;
+          bottom: -20px;
+          right: 0;
+          max-width: none;
+          width: 730px;
         }
       }
     }
@@ -76,8 +81,11 @@
       position: relative;
       .hero-overlay-image {
         img {
-          left: 0;
-          bottom: 10%;
+          left: -111px;
+          right: auto;
+          bottom: 36px;
+          max-width: none;
+          width: 731px;
         }
       }
     }
@@ -138,14 +146,15 @@
   @include tabletmidmin {
     .hero-inner-container.flex_row {
       justify-content: space-between;
-
+      margin-left: -10px;
+      margin-right: -10px;
       .col5 {
         width: 50%;
         max-width: 579px;
       }
       .col7 {
         width: 50%;
-        max-width: 535px;
+        max-width: 758px;
       }
     }
   }

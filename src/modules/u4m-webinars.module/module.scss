@@ -1,6 +1,13 @@
 @import "../../css/_module-imports";
 
 .u4m-webinars {
+  @include tabletmidmin {
+    .page-center {
+      > .flex_row {
+        margin: 0 -10px;
+      }
+    }
+  }
   .left_col {
     padding-right: 40px;
     @include tabletmid {

@@ -17,8 +17,8 @@
 
 {% set query = 'orderBy=-hs_created_at&limit='~ batch_num ~ "&offset=" ~ offset_num   %}
 
-{% if request.query_dict.integration_type &&  request.query_dict.integration_type != "all"  %}
-{% set query =  query ~ '&integration_type__in=' ~ request.query_dict.integration_type %} 
+{% if request.query_dict.category &&  request.query_dict.category != "all"  %}
+{% set query =  query ~ '&category__in=' ~ request.query_dict.category %} 
 {% endif %}
 
 {% set rows = hubdb_table_rows(table, query) %}
@@ -32,7 +32,7 @@
             All
           </button>
         </div>
-        {% for tag in hubdb_table_column(table, 'integration_type').options %}
+        {% for tag in hubdb_table_column(table, 'category').options %}
         <div class="filter_item">
           <button data-tag="{{tag.name}}">
             {{tag.name}}
@@ -49,26 +49,27 @@
         {% else %}
         {% set bgImag = 'https://www.appzen.com/hubfs/image-placeholder-customer-story-1.png' %}
         {% endif %}
-        <div class="case_card qryitem col4 col category" data-category="{% for tag in row.integration_type %}{{tag.name}}{% if not loop.last %}, {% endif %}{% endfor %}">
+        <div class="case_card qryitem col4 col category" data-category="{% for tag in row.category %}{{tag.name}}{% if not loop.last %}, {% endif %}{% endfor %}">
           <div class="case_card_inner">
             <div class="card_img" style="background-image: url({{bgImag}})">
               <div class="inner_wrapper">
-                {% if row.logo_image.url %}
+              <a href="{{ row.link }}" class="absLink"></a>
+                {% if row.logo.url %}
                 <span class="logo">
-                  <img src="{{row.logo_image.url}}" allt="{{ row.hs_name }}"/>
+                  <img src="{{row.logo.url}}" allt="{{ row.name }}"/>
                 </span>
                 {% endif %} 
                 <div class="hover_content_wrap">
                   <div class="hover_content">
-                    <span class="price">{% for tag in row.integration_type %}{{tag.name|capitalize}}{% if not loop.last %}, {% endif %}{% endfor %}</span>
-                    <span class="subtitle">{{row.long_content_1|striptags|truncatehtml(100, '...', false) }}</span>
+                    <span class="price">{% for tag in row.category %}{{tag.name|capitalize}}{% if not loop.last %}, {% endif %}{% endfor %}</span>
+                    <span class="subtitle">{{row.description|striptags|truncatehtml(100, '...', false) }}</span>
                   </div>
                 </div> 
               </div>
             </div> 
             <div class="card_title">
               <h4>
-                {{row.hs_name}}
+              <a href="{{ row.link }}" style="color: inherit;">{{row.name}}</a>
               </h4>
             </div> 
           </div>
@@ -98,7 +99,7 @@
 
       {% set typesPage = request.query_dict.integration_type %} 
       {% if typesPage %}
-      {% set typesQuery = "&integration_type=" ~ typesPage %}
+      {% set typesQuery = "&category=" ~ typesPage %}
       {% set paginationQuery = typesQuery %}
       {% else %}    
       {% set typesQuery = "" %}
@@ -131,7 +132,7 @@ $(".integrHub .filter_sidebar button").click(function (mn) {
   $(this).parent().addClass("active").siblings().removeClass("active");
   var winLoc = window.location.href.split("?")[0];
   var btnVal = $(this).attr("data-tag");
-  var queryURL = winLoc + "?integration_type=" + btnVal;
+  var queryURL = winLoc + "?category=" + btnVal;
   $.get(queryURL, function (response) {
     var newItems = $(response).find(".integrHub .case_listing_wrap .qryitem");
     $(".integrHub .case_listing_wrap").html(newItems);

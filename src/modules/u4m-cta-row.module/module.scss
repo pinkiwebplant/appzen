@@ -2,6 +2,7 @@
 .u4m-cta-row.dnd_padding {
   &.inner_bg_add {
     @include center;
+    max-width: 1288px;
     padding: 110rem 73rem;
     border-radius: $borderRadius;
     width: calc(100% - 40px);

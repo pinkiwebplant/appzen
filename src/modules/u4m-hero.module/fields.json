@@ -208,12 +208,30 @@
   "required" : false,
   "locked" : false,
   "children" : [ {
+    "id" : "ddb95406-d5c9-78ba-ed71-e6a9cdf90666",
+    "name" : "enable_svg_animation",
+    "display_width" : null,
+    "label" : "Enable SVG Animation",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : false
+  }, {
     "id" : "2a7aca4c-e5f8-34d7-92b9-8bb9e0344af3",
     "name" : "image_field",
     "display_width" : null,
     "label" : "Image",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "right_content.enable_svg_animation",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "responsive" : true,
     "resizable" : false,
     "show_loading" : false,
@@ -235,6 +253,14 @@
     "label" : "Overlay Image",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "right_content.enable_svg_animation",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "responsive" : true,
     "resizable" : false,
     "show_loading" : false,
@@ -249,12 +275,33 @@
       "max_width" : 1098,
       "max_height" : 317
     }
+  }, {
+    "id" : "367bfd57-26b5-a68a-83b6-1f482bd66ee4",
+    "name" : "upload_json_file",
+    "display_width" : null,
+    "label" : "JSON Source URL",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "right_content.enable_svg_animation",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "https://assets8.lottiefiles.com/packages/lf20_hluo7ags.json"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
   "default" : {
+    "enable_svg_animation" : false,
     "image_field" : {
       "size_type" : "auto",
       "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/hero-banner-image.png",
@@ -274,7 +321,8 @@
       "height" : 317,
       "max_width" : 1098,
       "max_height" : 317
-    }
+    },
+    "upload_json_file" : "https://assets8.lottiefiles.com/packages/lf20_hluo7ags.json"
   }
 }, {
   "id" : "module_overrides",
@@ -599,7 +647,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Ivory Soft" ], [ "light_grey", "Ivory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ],  [ "light_pink", "Coral" ],   [ "white_bg", "White" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Ivory Soft" ], [ "light_grey", "Ivory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ], [ "light_pink", "Coral" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -705,7 +753,7 @@
       "required" : false,
       "locked" : false,
       "display" : "select",
-      "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Ivory Soft" ], [ "light_grey", "Ivory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ],  [ "light_pink", "Coral" ],   [ "white_bg", "White" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Ivory Soft" ], [ "light_grey", "Ivory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ], [ "light_pink", "Coral" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,

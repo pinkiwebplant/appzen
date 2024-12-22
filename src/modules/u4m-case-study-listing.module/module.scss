@@ -41,6 +41,9 @@ section.u4m-case-study-listing {
     display: flex;
     flex-wrap: wrap;
     row-gap: 40px;
+    @include tabletmidmin { 
+      margin: 0 -10px;
+    }
   }
 
   .card_img {
