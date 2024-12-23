@@ -28,6 +28,9 @@
       gap: 10px;
     }
   }
+  .wrapper.withoutSlider {
+    padding-bottom: 80px;
+  }
   .wrapper.tabcards {
     .tabber_inr {
       .toptab {
@@ -121,6 +124,9 @@
             }
             .btn_row {
               margin-top: 10px;
+            }
+            .imgWrap {
+                margin-top: 10px;
             }
           }
           @include tabletvert {

@@ -3,7 +3,7 @@
   &.inner_bg_add {
     @include center;
     max-width: 1288px;
-    padding: 110rem 73rem;
+    padding: 110rem 40rem;
     border-radius: $borderRadius;
     width: calc(100% - 40px);
     @include tabletvert {

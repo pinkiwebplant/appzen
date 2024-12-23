@@ -22,8 +22,10 @@
 	<div class="bgSlider">
 		{% for row in rows %}
 		<div class="bg_item" data-id="tab{{loop.index}}_{{name}}">
-			<div class="case_large_bg" style="background-image: url({{row.featured_image.url}})">
-				<img src="{{row.featured_image.url}}" alt="{{row.name|striptags }}" />
+			<div class="bg_item_inner">
+				<div class="case_large_bg" style="background-image: url({{row.featured_image.url}})">
+					<img src="{{row.featured_image.url}}" alt="{{row.name|striptags }}" />
+				</div>
 			</div>
 		</div>
 		{% endfor %}
@@ -82,71 +84,73 @@
 
 {% require_js %}
 <script>
-	$('.bgSlider').slick({ 
-		infinite: true,
-		slidesToShow: 3,
-		slidesToScroll: 1,
-		arrows: false, 
-		centerMode:true,
-		centerPadding:'20px',
-		variableWidth: true,
-		asNavFor: '.thumbSlider,.contentSlider', 	
-		autoplay: true,
-		autoplaySpeed: 4000,
-	});
-	$('.contentSlider').slick({
-		infinite: true,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		fade:true,
-		asNavFor: '.bgSlider,.thumbSlider',
-		dots: false, 
-		arrows:false,
-		responsive: [
-			{
-				breakpoint: 540,
-				settings: {
-					adaptiveHeight:true
-				}
-			} 
-		]
-	});
-	$('.thumbSlider').slick({
-		infinite: true,
-		slidesToShow: 6,
-		slidesToScroll: 1,
-		asNavFor: '.bgSlider,.contentSlider',
-		dots: false, 
-		arrows:false,
-		centerMode:false,
-		centerPadding:'0',
-		focusOnSelect: true,
-		responsive: [
-			{
-				breakpoint: 1200,
-				settings: {
-					slidesToShow: 5
-				}
-			},
-			{
-				breakpoint: 1024,
-				settings: {
-					slidesToShow: 4
-				}
-			},
-			{
-				breakpoint: 767,
-				settings: {
-					slidesToShow: 3
-				}
-			},
-			{
-				breakpoint: 580,
-				settings: {
-					slidesToShow: 3
-				}
-			} 
-		]
-	});
+$(document).ready(function(){
+$('.bgSlider').slick({ 
+infinite: true,
+slidesToShow: 3,
+slidesToScroll: 1,
+arrows: false, 
+centerMode:true,
+centerPadding:'20px',
+variableWidth: true,
+asNavFor: '.thumbSlider,.contentSlider', 	
+autoplay: true,
+autoplaySpeed: 4000,
+});
+$('.contentSlider').slick({
+infinite: true,
+slidesToShow: 1,
+slidesToScroll: 1,
+fade:true,
+asNavFor: '.bgSlider,.thumbSlider',
+dots: false, 
+arrows:false,
+responsive: [
+	{
+		breakpoint: 540,
+		settings: {
+			adaptiveHeight:true
+		}
+	} 
+]
+});
+$('.thumbSlider').slick({
+infinite: true,
+slidesToShow: 6,
+slidesToScroll: 1,
+asNavFor: '.bgSlider,.contentSlider',
+dots: false, 
+arrows:false,
+centerMode:false,
+centerPadding:'0',
+focusOnSelect: true,
+responsive: [
+	{
+		breakpoint: 1200,
+		settings: {
+			slidesToShow: 5
+		}
+	},
+	{
+		breakpoint: 1024,
+		settings: {
+			slidesToShow: 4
+		}
+	},
+	{
+		breakpoint: 767,
+		settings: {
+			slidesToShow: 3
+		}
+	},
+	{
+		breakpoint: 580,
+		settings: {
+			slidesToShow: 3
+		}
+	} 
+]
+});
+});
 </script>
 {% end_require_js %}

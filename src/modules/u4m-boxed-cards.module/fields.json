@@ -24,7 +24,7 @@
     "access" : null
   },
   "type" : "richtext",
-  "default" : "<h1>Finance. Reimagined.</h1>\n<p>Finally, finance teams can focus on what matters</p>"
+  "default" : "<h1>About low code</h1>"
 }, {
   "id" : "69e6e3d6-6a0a-e626-f6c8-75b49a09cefc",
   "name" : "include_button",
@@ -178,14 +178,14 @@
   "id" : "d56b4ea1-a525-dcf8-2139-6de21f13ddb2",
   "name" : "tabber_slider",
   "display_width" : null,
-  "label" : "Tabber Slider",
+  "label" : "Card Items",
   "required" : false,
   "locked" : false,
   "occurrence" : {
     "min" : null,
     "max" : 4,
     "sorting_label_field" : "99cae411-e3dc-e6ed-e3a6-141e0ae704d9",
-    "default" : 4
+    "default" : 3
   },
   "children" : [ {
     "id" : "99cae411-e3dc-e6ed-e3a6-141e0ae704d9",
@@ -198,7 +198,7 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : "Automate"
+    "default" : "Cross department automation"
   }, {
     "id" : "00cfb164-3eb1-acbe-b463-d6d979869034",
     "name" : "include_button",
@@ -209,6 +209,15 @@
     "display" : "checkbox",
     "type" : "boolean",
     "default" : false
+  }, {
+    "id" : "5fe6c6c4-8429-8cad-d266-45e6584eed03",
+    "name" : "content",
+    "display_width" : null,
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<p>Break down silos with workflows that span multiple departments. Enable business users outside finance to participate in automated processes while maintaining control and compliance.</p>"
   }, {
     "id" : "3e7b1290-a4fe-185f-91a8-e3efb4702570",
     "name" : "buttons",
@@ -348,47 +357,15 @@
         "no_follow" : false
       }
     } ]
-  }, {
-    "id" : "24d88c21-fc32-acfb-ca51-78f3f87be77d",
-    "name" : "select_image",
-    "display_width" : null,
-    "label" : "Select Image",
-    "required" : false,
-    "locked" : false,
-    "responsive" : true,
-    "resizable" : false,
-    "show_loading" : false,
-    "type" : "image",
-    "default" : {
-      "size_type" : "auto",
-      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Menuimg4.png",
-      "alt" : "tabber",
-      "loading" : "lazy",
-      "width" : 603,
-      "height" : 356,
-      "max_width" : 603,
-      "max_height" : 356
-    }
-  }, {
-    "id" : "97c2fda2-54f6-b28f-9b13-d7b755ffcd7f",
-    "name" : "content",
-    "display_width" : null,
-    "label" : "Content",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "default" : "Transform manual tasks into automated workflows. Our AI handles invoice processing, payments, and vendor communications with complete accuracy."
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
   "default" : [ {
-    "tab" : "Automate",
+    "tab" : "Cross department automation",
     "include_button" : false,
+    "content" : "<p>Break down silos with workflows that span multiple departments. Enable business users outside finance to participate in automated processes while maintaining control and compliance.</p>",
     "buttons" : [ {
       "button_type" : "stnd",
       "theme" : "quaternary",
@@ -402,21 +379,11 @@
         "open_in_new_tab" : false,
         "no_follow" : false
       }
-    } ],
-    "select_image" : {
-      "size_type" : "auto",
-      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Menuimg4.png",
-      "alt" : "tabber",
-      "loading" : "lazy",
-      "width" : 603,
-      "height" : 356,
-      "max_width" : 603,
-      "max_height" : 356
-    },
-    "content" : "Transform manual tasks into automated workflows. Our AI handles invoice processing, payments, and vendor communications with complete accuracy."
+    } ]
   }, {
-    "tab" : "Automate",
+    "tab" : "Built in AI function",
     "include_button" : false,
+    "content" : "<p>Access powerful AI capabilities through simple dropdown menus. Easily invoke pre-built functions for document understanding, risk assessment, and intelligent routing - just like using Excel formulas.</p>",
     "buttons" : [ {
       "button_type" : "stnd",
       "theme" : "quaternary",
@@ -430,21 +397,11 @@
         "open_in_new_tab" : false,
         "no_follow" : false
       }
-    } ],
-    "select_image" : {
-      "size_type" : "auto",
-      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Menuimg4.png",
-      "alt" : "tabber",
-      "loading" : "lazy",
-      "width" : 603,
-      "height" : 356,
-      "max_width" : 603,
-      "max_height" : 356
-    },
-    "content" : "Transform manual tasks into automated workflows. Our AI handles invoice processing, payments, and vendor communications with complete accuracy."
+    } ]
   }, {
-    "tab" : "Automate",
+    "tab" : "Point-and-click  simplicity",
     "include_button" : false,
+    "content" : "<p>Build sophisticated workflows using an intuitive, finance-friendly interface without any coding. Drag, drop, and connect your process steps using our process automation builder.</p>",
     "buttons" : [ {
       "button_type" : "stnd",
       "theme" : "quaternary",
@@ -458,72 +415,8 @@
         "open_in_new_tab" : false,
         "no_follow" : false
       }
-    } ],
-    "select_image" : {
-      "size_type" : "auto",
-      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Menuimg4.png",
-      "alt" : "tabber",
-      "loading" : "lazy",
-      "width" : 603,
-      "height" : 356,
-      "max_width" : 603,
-      "max_height" : 356
-    },
-    "content" : "Transform manual tasks into automated workflows. Our AI handles invoice processing, payments, and vendor communications with complete accuracy."
-  }, {
-    "tab" : "Automate",
-    "include_button" : false,
-    "buttons" : [ {
-      "button_type" : "stnd",
-      "theme" : "quaternary",
-      "button_text" : "Get this Product",
-      "button_link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    } ],
-    "select_image" : {
-      "size_type" : "auto",
-      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Menuimg4.png",
-      "alt" : "tabber",
-      "loading" : "lazy",
-      "width" : 603,
-      "height" : 356,
-      "max_width" : 603,
-      "max_height" : 356
-    },
-    "content" : "Transform manual tasks into automated workflows. Our AI handles invoice processing, payments, and vendor communications with complete accuracy."
+    } ]
   } ]
-}, {
-  "id" : "38a9bc85-0a21-1537-f2bd-10936fdbb405",
-  "name" : "module_settings",
-  "display_width" : null,
-  "label" : "Module Settings",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "18de0077-ab47-3dae-09e8-0fc477c6034c",
-    "name" : "enable_slider",
-    "display_width" : null,
-    "label" : "Enable Slider",
-    "required" : false,
-    "locked" : false,
-    "display" : "checkbox",
-    "type" : "boolean",
-    "default" : true
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "group_occurrence_meta" : null,
-  "type" : "group",
-  "default" : {
-    "enable_slider" : true
-  }
 }, {
   "id" : "module_overrides",
   "name" : "module_overrides",
@@ -847,12 +740,12 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Ivory Soft" ], [ "light_grey", "Ivory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ],  [ "light_pink", "Coral" ],   [ "white_bg", "White" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Ivory Soft" ], [ "light_grey", "Ivory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ], [ "light_pink", "Coral" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : "brown"
+      "default" : "lightGreybg"
     }, {
       "id" : "6c8bfd0e-1629-1268-e01c-17b4047ecfce",
       "name" : "background_color",
@@ -908,7 +801,7 @@
     "type" : "group",
     "default" : {
       "background_type" : "color",
-      "select_background_color_type" : "brown",
+      "select_background_color_type" : "lightGreybg",
       "background_color" : {
         "color" : null,
         "opacity" : null
@@ -937,7 +830,7 @@
     },
     "display" : "checkbox",
     "type" : "boolean",
-    "default" : true
+    "default" : false
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -959,7 +852,7 @@
     "custom_bottom_padding_mobile" : 50,
     "background_settings" : {
       "background_type" : "color",
-      "select_background_color_type" : "brown",
+      "select_background_color_type" : "lightGreybg",
       "background_color" : {
         "color" : null,
         "opacity" : null
@@ -971,6 +864,6 @@
         "loading" : "disabled"
       }
     },
-    "reverse_text" : true
+    "reverse_text" : false
   }
 } ]

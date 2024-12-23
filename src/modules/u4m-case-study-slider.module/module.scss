@@ -20,6 +20,9 @@
     min-height: 640rem;
     position: relative;
     width: 65vw;
+    @include large {
+      width: 50vw;
+    }
     overflow: hidden;
     &:before {
       content: "";
@@ -49,7 +52,9 @@
     }
   }
   .bg_item {
-    padding: 0 18rem;
+    .bg_item_inner {
+      padding: 0 18rem;
+    }
   }
   .mainSliderWrap {
     position: relative;
