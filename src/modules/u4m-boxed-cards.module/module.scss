@@ -1,0 +1,117 @@
+@import "../../css/_module-imports";
+
+.u4m-boxedCards.dnd_padding {
+  padding: 93rem 0 215rem;
+  &.reverse-text {
+    .intro p {
+      color: $sectionbg;
+    }
+    .tab_cnt {
+      color: $sidebarplaceholder;
+    }
+  }
+  .intro {
+    text-align: left;
+    padding-bottom: 89px;
+    h1 {
+      margin-bottom: 15px;
+    }
+    p {
+      @include size18;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .btn_row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 10px;
+    }
+  }
+  .tabber_wrap {
+    .tabber_inr {
+      .tabs {
+        .toptab {
+          display: flex;
+          flex-wrap: wrap;
+          direction: inherit;
+          .toptab_ttl {
+            border: 1px solid $lightGray;
+            width: 25%;
+            text-align: left;
+            padding: 30px 40px;
+            cursor: pointer;
+            &:not(:last-child) {
+              border-right: 0;
+              @include tablet {
+                border-right: 1px solid $lightGray;
+              }
+            }
+
+            @include tablet {
+              padding: 20px;
+              width: 50%;
+              margin-right: -1px;
+              margin-bottom: -1px;
+            }
+            @include tabletvert {
+              width: 100%;
+            }
+
+            .tab_txt {
+              @include size18;
+              line-height: 1.6;
+              font-weight: bold;
+              margin-bottom: 8px;
+            }
+            .tab_cnt {
+              line-height: 1.5;
+            }
+            .btn_row {
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+      .toptabber_cnt_wrap {
+        display: none;
+        border: 1px solid $greyborder;
+        padding: 81rem 110rem 0;
+        border-top: 0;
+        border-bottom: 0;
+        @include tabletvert {
+          padding: 20rem;
+          border: 0;
+        }
+        .white_bg {
+          padding: 65px;
+          text-align: center;
+          @include tabletvert {
+            padding: 10rem;
+          }
+          .img img {
+            margin: 0 auto;
+          }
+        }
+      }
+      @include tabletvertmin {
+        &.mobile_tab {
+          display: none;
+        }
+      }
+      @include tabletvert {
+        &.desktop_tab {
+          display: none;
+        }
+      }
+    }
+  }
+}
+@keyframes width {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
