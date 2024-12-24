@@ -85,7 +85,15 @@
   {% if item2.content_type=="hubdb" %}
   {% set table = item2.select_hubdb_table %}
   {% set query = 'orderBy=-hs_created_at' ~ '&limit=' ~ item2.number_of_posts %}
+  
+  {% set category = item2.hubdb_setttings.topic_name %}
+  {% set category_query = 'orderBy=-hs_created_at&categories__in=' ~ category ~ '&limit=' ~ item2.number_of_posts %}
+  
+  {% if item2.hubdb_setttings.resource_type == "recent" %}
   {% set types = hubdb_table_rows(table,query) %}
+  {% elif item2.hubdb_setttings.resource_type == "category" %}
+  {% set types = hubdb_table_rows(table,category_query) %}
+  {% endif %}
   {% for type in types %} 
   <div class="blogCard {{ item2.hubdb_content_type }}{% if loop.first %} first{% endif %}">
     {% if loop.first %}

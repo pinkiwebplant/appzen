@@ -33,9 +33,11 @@
     {% endif %} {% endif %}
   </div>
   {% if content.post_list_summary_featured_image %}
-  <div
-    class="featured-img"
-    style="background-image:url({{ content.post_list_summary_featured_image }});"
-  ></div>
+  <div class="page-center">
+    <div
+      class="featured-img"
+      style="background-image:url({{ content.post_list_summary_featured_image }});"
+    ></div>
+  </div>
   {% endif %}
 </section>

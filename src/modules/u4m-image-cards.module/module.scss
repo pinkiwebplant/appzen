@@ -18,6 +18,10 @@
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
+      row-gap: 48px;
+      @include tablet {
+        row-gap: 20px;
+      }
 
       .items {
         width: calc(50% - 10px);
