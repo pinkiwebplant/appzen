@@ -5,6 +5,7 @@ section.u4m-logo-trust-marks {
   &.inner_bg_add {
     @include center;
     padding: 110rem 73rem;
+    border-radius: 12rem;
   }
   .intro.center {
     text-align: center;

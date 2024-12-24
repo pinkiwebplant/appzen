@@ -206,6 +206,12 @@
     font-size: 30rem;
   }
 }
+@mixin size68 {
+  font-size: 68rem;
+  @include tabletvert {
+    font-size: 30rem;
+  }
+}
 @mixin size18 {
   font-size: 18rem;
 }

@@ -8,7 +8,7 @@ section.u4m-homepage-hero {
       .banner-column {
         .intro {
           h1 {
-            @include size75;
+            @include size68;
           }
           p,
           ul {
@@ -155,6 +155,14 @@ section.u4m-homepage-hero {
       ul {
         max-width: 390px;
       }
+    }
+  }
+  .pageslider {
+    padding-left: 0px;
+    padding-right: 0px;
+    .banner-column {
+      margin-left: 0px;
+     margin-right: 0px;
     }
   }
 }
