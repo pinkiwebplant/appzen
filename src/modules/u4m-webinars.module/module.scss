@@ -30,6 +30,9 @@
     gap: 5px;
     align-items: center;
     margin-bottom: 18px;
+    @include tabletvert {
+      flex-direction: column;
+    }
   }
   .date_sec {
     font-size: 13px;
@@ -38,6 +41,9 @@
     gap: 2px;
     display: flex;
     align-items: center;
+    @include tabletvert {
+      gap: 5px;
+    }
     span {
       > svg {
         vertical-align: middle;

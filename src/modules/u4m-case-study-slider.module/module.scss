@@ -128,6 +128,9 @@
     height: 120rem;
     transition: all 0.3s ease-in-out;
     opacity: .5;
+    @include tabletvert {
+      padding: 20rem 20rem;
+    }
     img {
       display: block;
     }
