@@ -5,6 +5,9 @@
 		.top_cnt {
 			margin-bottom: 52px;
 			padding-left: 48px;
+			@include tabletvert {
+				padding-left: 0;
+			  }
 		}
 
 		.btm_cards {
@@ -139,7 +142,7 @@
 			height: 100%;
 
 			@include tabletvert {
-				padding: 15px;
+				padding: 15px 0;
 			}
 		}
 	}
