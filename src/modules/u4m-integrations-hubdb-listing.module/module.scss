@@ -1,6 +1,6 @@
 @import "../../css/_module-imports";
 
-section.u4m-case-study-listing {
+section.u4m-inteHub-listing {
   position: relative;
   .noText {
     font-size: 20rem;
@@ -49,9 +49,8 @@ section.u4m-case-study-listing {
   .card_img {
     border-radius: 8px;
     overflow: hidden;
-    min-height: 300px;
     position: relative;
-    background-size: cover;
+    background-size: 95%;
     background-position: center;
     background-repeat: no-repeat;
     margin-bottom: 24px;
@@ -73,7 +72,7 @@ section.u4m-case-study-listing {
       width: 50%;
     }
 
-    @include tabletvert {
+    @include phone {
       width: 100%;
     }
   }
