@@ -6,15 +6,21 @@
   {% include "../partials/u4-module-includes.html" %}
   
   {% if dynamic_page_hubdb_row %}
+    {% require_js %}
   <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
   <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/froogaloop.js"></script> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+    {% end_require_js %}
+    {% require_css %}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
   <style>
-    .hero-module.hero-master.hero-margin-bottom{
+    .hero-module.hero-master.hero-margin-bottom,
+    .u4m-hero{
       display: none;
     }
   </style>
+    {% end_require_css %}
+  {% require_js %}
   <script>
     var title_app =  '{{dynamic_page_hubdb_row.title}}';
     var app_backend_value = '{{dynamic_page_hubdb_row.backend_value}}';
@@ -24,6 +30,12 @@
       //    $("[name='appstore']").val(app_backend_value).change();
     })
   </script>
+{% end_require_js %}
+{% require_js %}
+  <script>
+    document.querySelector('.u4m-hero').style.display = 'none';
+  </script>
+{% end_require_js %}
   {% if dynamic_page_hubdb_row.live == "0" %}
   <meta name="robots" content="noindex, nofollow">
   {% endif %}
@@ -129,7 +141,8 @@
   </script>
   
   {% elif dynamic_page_hubdb_table_id %}
-  
+
+
   <div class="appstore-main-container">
   <div class='container page-center'>
       <div class="section-heading-text">

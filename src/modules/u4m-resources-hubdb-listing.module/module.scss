@@ -27,6 +27,7 @@ section.u4m-resHub-listing {
 
   .case_listing_column {
     width: calc(100% - 150px);
+    padding: 0 10px;
 
     @include tabletmid {
       width: calc(100% - 250px);
@@ -34,6 +35,7 @@ section.u4m-resHub-listing {
 
     @include tabletvert {
       width: 100%;
+      padding: 0;
     }
   }
 
@@ -181,13 +183,14 @@ section.u4m-resHub-listing {
         -webkit-appearance: none;
         text-transform: capitalize;
         display: block;
-        padding: 9px 20px;
+        padding: 9px 0px;
         border: 2px solid transparent;
         text-align: left;
       }
 
       &.active button {
         border-color: #b6b0a2;
+        padding: 9px 20px;
       }
     }
   }

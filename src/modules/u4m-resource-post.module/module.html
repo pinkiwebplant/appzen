@@ -3,10 +3,15 @@
   {% set moduleName = 'resourcepostBnr' %}
   {% set imageMax = 1000 %}
   {% set bgImageMax = 1920 %}
+  {% set listingPath = '/resources' %}
 
   {% include "../partials/u4-module-includes.html" %}
   <div class="page-center">
     <div class="intro_content col">
+    <a href='{{ listingPath }}' class='all-resources'>
+    <img src='https://www.appzen.com/hubfs/Appzen-u4m/images/backarrow.webp' width='20' style='
+    filter: invert(1); display: inline-block;vertical-align: middle;' alt="star">
+    &nbsp; ALL Resources</a> 
       <div class="post-details"> 
         <small>{{ dynamic_page_hubdb_row.categories.name }}</small>
         <h3>{{ dynamic_page_hubdb_row.title }}</h3>

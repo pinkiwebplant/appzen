@@ -26,6 +26,7 @@ section.u4m-inteHub-listing {
   }
 
   .case_listing_column {
+    padding: 0 10px;
     width: calc(100% - 150px);
 
     @include tabletmid {
@@ -34,6 +35,7 @@ section.u4m-inteHub-listing {
 
     @include tabletvert {
       width: 100%;
+      padding: 0;
     }
   }
 
@@ -54,13 +56,26 @@ section.u4m-inteHub-listing {
     background-position: center;
     background-repeat: no-repeat;
     margin-bottom: 24px;
+    aspect-ratio: 1 / 1;
+    border: 1px solid #e2ddd2;
+    display: flex;
+    width: 100%;
+    align-items: center;
     &:after {
       content: "";
       display: block;
       padding-bottom: 100%;
-      transition: .3s;
+      transition: .3s;   
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
     }
     &:hover {
+      .hover_content_wrap {
+        transform: translateY(0%);
+      }
       &:after {
           background-color: rgba(0, 0, 0, .5);
       }
@@ -70,22 +85,19 @@ section.u4m-inteHub-listing {
   .case_card {
     @include tabletmid {
       width: 50%;
+      padding-left: 10px;
+      padding-right: 10px;
     }
 
     @include phone {
-      width: 100%;
+      width: 100%;   
+      padding-left: 0px;
+      padding-right: 0px;
     }
   }
 
   .inner_wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
     .absLink {
       position: absolute;
       display: block;
@@ -95,10 +107,9 @@ section.u4m-inteHub-listing {
     }
     .logo {
       width: 100%;
-      padding: 30px 26px;
-      img {
-        max-width: 95px;
-      }
+      display: block;
+      padding: 30px;
+      text-align: center;
 
       @include tabletmid {
         padding: 20px;
@@ -111,6 +122,9 @@ section.u4m-inteHub-listing {
       padding: 30px 26px;
       transform: translateY(100%);
       transition: 0.2s ease;
+      position: absolute;   
+      z-index: 1;
+      bottom: 0;
 
       @include tabletmid {
         padding: 20px;
@@ -129,10 +143,6 @@ section.u4m-inteHub-listing {
       .subtitle {
         color: $white;
       }
-    }
-
-    &:hover .hover_content_wrap {
-      transform: translateY(0%);
     }
   }
 
@@ -179,12 +189,13 @@ section.u4m-inteHub-listing {
         -webkit-appearance: none;
         text-transform: capitalize;
         display: block;
-        padding: 9px 20px;
+        padding: 9px 0;
         border: 2px solid transparent;
       }
 
       &.active button {
         border-color: #b6b0a2;
+        padding: 9px 20px;
       }
     }
   }

@@ -51,7 +51,7 @@
         {% endif %}
         <div class="case_card qryitem col4 col category" data-category="{% for tag in row.category %}{{tag.name}}{% if not loop.last %}, {% endif %}{% endfor %}">
           <div class="case_card_inner">
-            <div class="card_img" style="background-image: url({{bgImag}})">
+            <div class="card_img">
               <div class="inner_wrapper">
               <a href="{{ row.link }}" class="absLink"></a>
                 {% if row.logo.url %}
@@ -62,7 +62,6 @@
                 <div class="hover_content_wrap">
                   <div class="hover_content">
                     <span class="price">{% for tag in row.category %}{{tag.name|capitalize}}{% if not loop.last %}, {% endif %}{% endfor %}</span>
-                    <span class="subtitle">{{row.description|striptags|truncatehtml(100, '...', false) }}</span>
                   </div>
                 </div> 
               </div>

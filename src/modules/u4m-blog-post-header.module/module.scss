@@ -35,6 +35,8 @@ section.u4m-blog-post-header {
     width: 100%;
     min-height: 500px;
     background-position: center;
+    max-width: 740px;
+    margin: 0 auto;
     @include tabletvert {
       min-height: 250px;
     }
