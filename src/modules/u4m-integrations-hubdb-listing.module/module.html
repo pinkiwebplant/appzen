@@ -76,7 +76,7 @@
         {% endfor %} 
       </div>   
       <p class="noText" style="display:none;">
-        No integration found. Try again
+       Nothing Found. Please try a different search.
       </p>
 
       {% set nav = hubdb_table_rows(table, query) %}
@@ -126,42 +126,89 @@
 </section>
 {% require_js %}
 <script>
-$(".integrHub .filter_sidebar button").click(function (mn) {
-  mn.preventDefault();
-  $(this).parent().addClass("active").siblings().removeClass("active");
-  var winLoc = window.location.href.split("?")[0];
-  var btnVal = $(this).attr("data-tag");
-  var queryURL = winLoc + "?category=" + btnVal;
-  $.get(queryURL, function (response) {
-    var newItems = $(response).find(".integrHub .case_listing_wrap .qryitem");
-    $(".integrHub .case_listing_wrap").html(newItems);
-    if (newItems.length === 0) {
-      $(".integrHub .noText").show();
-    } else {
-      $(".integrHub .noText").hide();
-    }
-    var newPagination = $(response).find(".integrHub .pagin .loadmore_btn");
-    $(".integrHub .pagin").html(newPagination);
-  });
-});
+$(document).ready(function () {
+  const filterSidebarSelector = ".integrHub .filter_sidebar button";
+  const caseListingWrapSelector = ".integrHub .case_listing_wrap";
+  const paginationSelector = ".integrHub .pagin";
+  const noTextSelector = ".integrHub .noText";
 
-$(document).on("click", ".integrHub #load-more", function (kk) {
-  kk.preventDefault();
-  var paginurl = $(this).attr("href");
-  $.get(paginurl, function (response) {
-    var newItems = $(response).find(".integrHub .case_listing_wrap .qryitem");
-    $(".integrHub .case_listing_wrap").append(newItems);
+  // Helper function to update URL query parameters
+  function updateQueryParam(key, value) {
+    const url = new URL(window.location.href);
+    url.searchParams.set(key, value);
+    window.history.pushState(null, "", url.toString());
+  }
 
-    var newPagination = $(response).find(".integrHub .pagin .loadmore_btn");
-    if (newPagination.length > 0) {
-      $(".integrHub .pagin").html(newPagination);
-    } else {
-      $(".integrHub .pagin").empty();
-    }
-    //     $('html, body').animate({
-    //       scrollTop: $('.case_listing_wrap').offset().top
-    //     }, 500);
+  // Helper function to fetch and update content
+  function fetchFilteredContent(query) {
+    const baseUrl = window.location.href.split("?")[0];
+    const queryURL = `${baseUrl}?category=${query}`;
+
+    $.get(queryURL, function (response) {
+      // Update the filtered content
+      const newItems = $(response).find(`${caseListingWrapSelector} .qryitem`);
+      $(caseListingWrapSelector).html(newItems);
+
+      // Show/hide no results text
+      if (newItems.length === 0) {
+        $(noTextSelector).show();
+      } else {
+        $(noTextSelector).hide();
+      }
+
+      // Update pagination
+      const newPagination = $(response).find(`${paginationSelector} .loadmore_btn`);
+      if (newPagination.length > 0) {
+        $(paginationSelector).html(newPagination);
+      } else {
+        $(paginationSelector).empty();
+      }
+    });
+  }
+
+  // Click event for filter buttons
+  $(filterSidebarSelector).click(function (e) {
+    e.preventDefault();
+
+    const btnVal = $(this).attr("data-tag");
+    $(this).parent().addClass("active").siblings().removeClass("active");
+
+    // Update the URL and fetch the filtered content
+    updateQueryParam("category", btnVal);
+    fetchFilteredContent(btnVal);
   });
+
+  // Click event for "load more" button
+  $(document).on("click", `${paginationSelector} #load-more`, function (e) {
+    e.preventDefault();
+
+    const paginurl = $(this).attr("href");
+    $.get(paginurl, function (response) {
+      // Append new items to the current list
+      const newItems = $(response).find(`${caseListingWrapSelector} .qryitem`);
+      $(caseListingWrapSelector).append(newItems);
+
+      // Update pagination if available
+      const newPagination = $(response).find(`${paginationSelector} .loadmore_btn`);
+      if (newPagination.length > 0) {
+        $(paginationSelector).html(newPagination);
+      } else {
+        $(paginationSelector).empty();
+      }
+    });
+  });
+
+  // Initialize active state and filter on page load
+  const urlParams = new URLSearchParams(window.location.search);
+  const activeCategory = urlParams.get("category");
+  if (activeCategory) {
+    $(`${filterSidebarSelector}[data-tag="${activeCategory}"]`)
+      .parent()
+      .addClass("active")
+      .siblings()
+      .removeClass("active");
+    fetchFilteredContent(activeCategory);
+  }
 });
 
 </script>

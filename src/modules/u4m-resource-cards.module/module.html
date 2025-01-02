@@ -122,14 +122,14 @@
             {% endif %} 
           </div>
           <div class="arrow_link"> 
-            <a href="{{ request.full_url }}/{{ item.hs_path }}" >
+            <a href="/resources/{{ item.hs_path }}" >
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <path d="M5.5 1L10.5 6L5.5 11" stroke="#574D4A"/>
                 <path d="M10.5 6L0.5 6" stroke="#574D4A"/>
               </svg>
             </a>
           </div> 
-          <a href="{{ request.full_url }}/{{ item.hs_path }}" class="absLink" ></a>
+          <a href="/resources/{{ item.hs_path }}" class="absLink" ></a>
         </div>
       </div>
       {% endfor %} 
@@ -207,14 +207,14 @@
             {% endif %} 
           </div>
           <div class="arrow_link"> 
-            <a href="{{ request.full_url }}/{{ item.select_resource.columns.hs_path }}" >
+            <a href="/resources/{{ item.select_resource.columns.hs_path }}" >
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <path d="M5.5 1L10.5 6L5.5 11" stroke="#574D4A"/>
                 <path d="M10.5 6L0.5 6" stroke="#574D4A"/>
               </svg>
             </a>
           </div> 
-          <a href="{{ request.full_url }}/{{ item.select_resource.columns.hs_path }}" class="absLink" ></a>
+          <a href="/resources/{{ item.select_resource.columns.hs_path }}" class="absLink" ></a>
         </div>
 
       </div>
