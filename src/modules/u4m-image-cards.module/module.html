@@ -51,7 +51,7 @@
 				{% for item in module.items_group %}
 				<div class="items">
 					<div class="inner_items">
-						<div class="img">
+						<div class="img" style="border-radius: {{ module.module_settings.image_corner_radius }}px;">
 							{% if item.image_field.src %}
 							{% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
 							{% if item.image_field.size_type == 'auto' %}
