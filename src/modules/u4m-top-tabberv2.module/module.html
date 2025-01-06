@@ -12,7 +12,7 @@
 {% endif %}
 
  
-<div class="wrapper">
+<div class="wrapper updatedJs">
 	<div class="page-center"> 
 
 		<div class="tabber_wrap">
@@ -171,7 +171,7 @@
 		asNavFor: ".{{name}} .desktop_tab .tab",
 		autoplay: true,
 		rtl: true,
-		infnite:true,
+		infinite:true,
 		autoplaySpeed: {{ module.module_settings.speed }},
 		});
 	$(".{{name}} .desktop_tab .tab").slick({
@@ -183,6 +183,7 @@
 		variableWidth: true,
 		focusOnSelect: true,
 		arrows: false,
+		infinite:false,
 		});
 
 	$(".{{name}} .mobile_tab .tab_ttl").click(function () {
