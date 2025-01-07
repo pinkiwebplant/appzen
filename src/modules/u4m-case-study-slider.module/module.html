@@ -24,7 +24,7 @@
 		<div class="bg_item" data-id="tab{{loop.index}}_{{name}}">
 			<div class="bg_item_inner">
 				<div class="case_large_bg" style="background-image: url({{row.featured_image.url}})">
-					<img src="{{row.featured_image.url}}" alt="{{row.name|striptags }}" />
+				<a href="{{ row.link }}" class="absLink"></a><img src="{{row.featured_image.url}}" alt="{{row.name|striptags }}" />
 				</div>
 			</div>
 		</div>
@@ -35,6 +35,7 @@
 		<div class="case_large_card contentSlider"> 
 			{% for row in rows %}
 			<div class="case_item" data-id="tab{{loop.index}}_{{name}}">
+			<a href="{{ row.link }}" class="absLink"></a>
 				<div class="case_large_content">
 					<div class="inner_content_box">
 						<div class="inner_content">
