@@ -53,6 +53,7 @@
           <div class="case_card_inner">
             <div class="card_img" style="background-image: url({{bgImag}})">
               <div class="inner_wrapper">
+              <a href="{{ row.link }}" class="absLink"></a>
                 {% if row.logo.url %}
                 <span class="logo">
                   <img src="{{row.logo.url}}" allt="{{ row.name }}"/>
@@ -68,7 +69,7 @@
             </div> 
             <div class="card_title">
               <h4>
-                {{row.name}}
+                <a href="{{ row.link }}" style="color: inherit;">{{row.name}}</a>
               </h4>
             </div> 
           </div>
