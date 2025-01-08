@@ -49,7 +49,7 @@
         {% else %}
         {% set bgImag = 'https://www.appzen.com/hubfs/image-placeholder-customer-story-1.png' %}
         {% endif %}
-        <div class="case_card qryitem col4 col category" data-category="{% for tag in row.category %}{{tag.name}}{% if not loop.last %}, {% endif %}{% endfor %}">
+        <div class="case_card qryitem col3 col category" data-category="{% for tag in row.category %}{{tag.name}}{% if not loop.last %}, {% endif %}{% endfor %}">
           <div class="case_card_inner">
             <div class="card_img">
               <div class="inner_wrapper">
@@ -67,9 +67,9 @@
               </div>
             </div> 
             <div class="card_title">
-              <h4>
+              <p>
               <a href="{{ row.link }}" style="color: inherit;">{{row.name}}</a>
-              </h4>
+              </p>
             </div> 
           </div>
         </div>

@@ -37,6 +37,9 @@
               font-weight: 400;
               line-height: 1.2;
               margin-bottom: 20px;
+              @include tabletvert {
+                @include size18;
+              }
             }
 
             h2 {
