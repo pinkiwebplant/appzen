@@ -68,8 +68,8 @@
 			{% if module.media_group.image_field.src || module.media_group.enable_svg_animation %}
 			<div class="right_col">
         {% if module.media_group.enable_svg_animation %}
-        <div class="contain">
-          <lottie-player src="{{ module.media_group.json_source_url }}" speed="1" loop autoplay></lottie-player>
+        <div class="svgAnimationWrap">
+          {{ module.media_group.animated_svg }}
         </div>
         {% else %}
 				{% set sizeAttrs = 'width="{{ module.media_group.image_field.width|escape_attr }}" height="{{ module.media_group.image_field.height|escape_attr }}"' %}
@@ -89,9 +89,7 @@
 </div>
 
 </section>
-{% if module.media_group.enable_svg_animation %}
-{{ require_js('https://unpkg.com/@lottiefiles/lottie-player@0.5.1/dist/lottie-player.js') }}
-{% endif %}
+
 {% require_js %}
 <script>
 	{

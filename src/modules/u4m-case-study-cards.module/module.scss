@@ -24,13 +24,6 @@ section.u4m-res-cards {
     gap: 20rem;
   }
 
-  @include tabletMin {
-    .largefont .card_title {
-      font-size: 28rem;
-      line-height: 1.2;
-      word-break: break-word;
-    }
-  }
 
   .intro_cnt {
     text-align: center;
