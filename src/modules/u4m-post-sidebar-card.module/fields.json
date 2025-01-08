@@ -5,11 +5,11 @@
   "label" : "Select Post",
   "required" : false,
   "locked" : false,
-  "table_name_or_id" : "103410200",
-  "display_columns" : [ "name" ],
+  "table_name_or_id" : "4825172",
+  "display_columns" : [ "title" ],
   "type" : "hubdbrow",
   "default" : {
-    "id" : 183455388293
+    "id" : 182686906644
   }
 }, {
   "id" : "module_overrides",
@@ -334,7 +334,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Ivory Soft" ], [ "light_grey", "Ivory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ],  [ "light_pink", "Coral" ],   [ "white_bg", "White" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Ivory Soft" ], [ "light_grey", "Ivory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ], [ "light_pink", "Coral" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,

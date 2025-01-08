@@ -147,7 +147,7 @@
     "visibility" : {
       "controlling_field" : null,
       "controlling_field_path" : "testimonials_type",
-      "controlling_value_regex" : "type2",
+      "controlling_value_regex" : "type1",
       "property" : null,
       "operator" : "EQUAL",
       "access" : null
@@ -563,7 +563,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Ivory Soft" ], [ "light_grey", "Ivory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ],  [ "light_pink", "Coral" ],   [ "white_bg", "White" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Ivory Soft" ], [ "light_grey", "Ivory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ], [ "light_pink", "Coral" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -677,7 +677,7 @@
       "required" : false,
       "locked" : false,
       "display" : "select",
-      "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Ivory Soft" ], [ "light_grey", "Ivory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ],  [ "light_pink", "Coral" ],   [ "white_bg", "White" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Ivory Soft" ], [ "light_grey", "Ivory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ], [ "light_pink", "Coral" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,

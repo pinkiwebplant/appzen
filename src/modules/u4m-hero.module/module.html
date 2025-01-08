@@ -54,9 +54,9 @@
 		<div class="right-content-inner">
 		{% endif %}
       {% if module.right_content.enable_svg_animation %}
-      <div class="contain">
-        <lottie-player src="{{ module.right_content.upload_json_file }}" speed="1" loop autoplay></lottie-player>
-    </div>
+      <div class="svgAnimationWrap">
+        {{ module.right_content.animated_svg }}
+      </div>
       {% else %}
 			{% if module.right_content.image_field.src %}
 			<div class="hero-image">
@@ -80,9 +80,7 @@
 </div>
 
 </section>
-{% if module.right_content.enable_svg_animation %}
-{{ require_js('https://unpkg.com/@lottiefiles/lottie-player@0.5.1/dist/lottie-player.js') }}
-{% endif %}
+
 
 
 {% require_css %}
