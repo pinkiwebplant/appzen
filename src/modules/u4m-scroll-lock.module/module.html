@@ -20,7 +20,7 @@
 						{% for item in module.slider %}
 						<div id="sticky_slide_{{ loop.index }}" class="scroll_slide ct-div-block floating-media-card flex_row">
 							{# <div class="scroll_slide_inr flex_row"> #}
-								<div class="scroll_cnt floating-media-card-content">
+								<div class="scroll_cnt floating-media-card-content {{ module.module_overrides.background_settings.select_background_color_type }}">
 									{{ item.content }}
 									{% if item.include_button %}
 									<div class="btn_row">

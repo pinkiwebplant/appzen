@@ -93,13 +93,16 @@
         .item-toggle-icon {
           margin-left: auto;
           width: 38px;
-          img {
+          span {
+            border: 1px solid #E2DDD2;
+            border-radius: 100%;
             width: 28px;
-            max-width: 28px;
             height: 28px;
-            margin-left: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             &.toggle-icon {
-              display: block;
+              display: flex;
             }
             &.open-icon {
               display: none;
@@ -116,12 +119,12 @@
       .accord-item-title {
         h4 {
           .item-toggle-icon {
-            img {
+            span {
               &.toggle-icon {
                 display: none;
               }
               &.open-icon {
-                display: block;
+                display: flex;
               }
             }
           }

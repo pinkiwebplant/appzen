@@ -137,6 +137,24 @@
     "type" : "richtext",
     "default" : "<p>AppZen’s AI has given us superhuman powers in accounts payable. We're processing invoices faster than ever, catching errors we used to miss, and staying compliant without breaking a sweat. It’s like having a financial Swiss Army knife at our fingertips.</p>"
   }, {
+    "id" : "6d4122e9-37e8-e51e-1fd3-4679bf4fe53d",
+    "name" : "enable_button",
+    "display_width" : null,
+    "label" : "Enable Button",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "testimonials_type",
+      "controlling_value_regex" : "type1",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
+  }, {
     "id" : "13168ab9-7d56-ebbd-362a-cebc4a46b7b2",
     "name" : "button_text",
     "display_width" : null,
@@ -146,8 +164,8 @@
     "validation_regex" : "",
     "visibility" : {
       "controlling_field" : null,
-      "controlling_field_path" : "testimonials_type",
-      "controlling_value_regex" : "type1",
+      "controlling_field_path" : "content_column.enable_button",
+      "controlling_value_regex" : "true",
       "property" : null,
       "operator" : "EQUAL",
       "access" : null
@@ -165,8 +183,8 @@
     "locked" : false,
     "visibility" : {
       "controlling_field" : null,
-      "controlling_field_path" : "testimonials_type",
-      "controlling_value_regex" : "type1",
+      "controlling_field_path" : "content_column.enable_button",
+      "controlling_value_regex" : "true",
       "property" : null,
       "operator" : "EQUAL",
       "access" : null
@@ -219,6 +237,7 @@
   "type" : "group",
   "default" : {
     "content" : "<p>AppZen’s AI has given us superhuman powers in accounts payable. We're processing invoices faster than ever, catching errors we used to miss, and staying compliant without breaking a sweat. It’s like having a financial Swiss Army knife at our fingertips.</p>",
+    "enable_button" : true,
     "button_text" : "Case study",
     "button_link" : {
       "url" : {

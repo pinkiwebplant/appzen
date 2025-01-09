@@ -23,28 +23,30 @@
 			</div>
 			<div class="content-col">
 				{{ module.content_column.content }}
-				<div class="content-button">
-					{% set href = module.content_column.button_link.url.href %}
-					{% if module.content_column.button_link.url.type is equalto "EMAIL_ADDRESS" %}
-					{% set href = "mailto:" + href %}
-					{% endif %}
-					<a
-						 {% if module.content_column.button_link.url.type is equalto "CALL_TO_ACTION"  %}
-						 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
-						 {% else %}
-						 href="{{ href }}"
-						 {% endif %}
-						 {% if module.content_column.button_link.open_in_new_tab %}
-						 target="_blank"
-						 {% endif %}
-						 {% if module.content_column.button_link.rel %}
-						 rel="{{ module.content_column.button_link.rel }}"
-						 {% endif %}
-						 >
-						{{ module.content_column.button_text }} <img src="{{ get_asset_url('../../templates/images/arrow.png') }}" alt="arrow">
-					</a>
-				</div>
-			</div>
+        {% if module.content_column.enable_button %}
+        <div class="content-button">
+          {% set href = module.content_column.button_link.url.href %}
+          {% if module.content_column.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% endif %}
+          <a
+             {% if module.content_column.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+             href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+             {% else %}
+             href="{{ href }}"
+             {% endif %}
+             {% if module.content_column.button_link.open_in_new_tab %}
+             target="_blank"
+             {% endif %}
+             {% if module.content_column.button_link.rel %}
+             rel="{{ module.content_column.button_link.rel }}"
+             {% endif %}
+             >
+            {{ module.content_column.button_text }} <img src="{{ get_asset_url('../../templates/images/arrow.png') }}" alt="arrow">
+          </a>
+        </div>
+        {% endif %}
+      </div>
 		</div>
 		{% endif %}
 		{% if module.testimonials_type == 'type2' %}
