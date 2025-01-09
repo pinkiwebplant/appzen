@@ -5,7 +5,7 @@
 {% include "../partials/u4-module-includes.html" %}
 
 {% set table = module.select_hubdb_table %} 
-{% set batch_num = 9 %}
+{% set batch_num = 8 %}
 {% if not request.query_dict.page %}
 {% set page_num = 1 %}
 {% set offset_num = 0 %}
@@ -59,11 +59,11 @@
                   <img src="{{row.logo.url}}" allt="{{ row.name }}"/>
                 </span>
                 {% endif %} 
-                <div class="hover_content_wrap">
+                {# <div class="hover_content_wrap">
                   <div class="hover_content">
                     <span class="price">{% for tag in row.category %}{{tag.name|capitalize}}{% if not loop.last %}, {% endif %}{% endfor %}</span>
                   </div>
-                </div> 
+                </div>  #}
               </div>
             </div> 
             <div class="card_title">

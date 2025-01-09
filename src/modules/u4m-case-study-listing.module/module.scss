@@ -5,13 +5,17 @@ section.u4m-case-study-listing {
   .noText {
     font-size: 20rem;
     margin: 0;
+    @include tabletmidmin {
+      padding-left: 20px;
+    }
   }
   .filter_sidebar {
-    width: 150px;
+    min-width: 150px;
+    width: calc(100% - 1088px);
     max-width: 100%;
 
     @include tabletmid {
-      width: 250px;
+      width: 200px;
     }
 
     @include tabletvert {
@@ -28,9 +32,10 @@ section.u4m-case-study-listing {
   .case_listing_column {
     width: calc(100% - 150px);
     padding: 0 10px;
+    max-width: 1088px;
 
     @include tabletmid {
-      width: calc(100% - 250px);
+      width: calc(100% - 200px);
     }
 
     @include tabletvert {
@@ -44,7 +49,7 @@ section.u4m-case-study-listing {
     flex-wrap: wrap;
     row-gap: 40px;
     @include tabletmidmin {
-      margin: 0 -15px;
+      margin-right: -30px;
       .case_card {
         padding-left: 15px;
         padding-right: 15px;
@@ -61,7 +66,7 @@ section.u4m-case-study-listing {
     background-position: center;
     background-repeat: no-repeat;
     margin-bottom: 31px;
-    max-height: 480px;
+    max-height: 460px;
     &:after {
       content: "";
       display: block;
@@ -155,6 +160,9 @@ section.u4m-case-study-listing {
 
   .loadmore_btn {
     margin-top: 80px;
+    @include tabletmidmin {
+      padding-left: 35px;
+    }
 
     a {
       margin: 0;
@@ -184,13 +192,18 @@ section.u4m-case-study-listing {
         -webkit-appearance: none;
         text-transform: capitalize;
         display: block;
-        padding: 9px 0px;
+        padding: 9px 24px;
         border: 2px solid transparent;
+        @include tabletvert {
+          padding: 9px;
+        }
       }
 
       &.active button {
         border-color: #b6b0a2;
-        padding: 9px 20px;
+        @include tabletvert {
+          padding: 9px 24px;
+        }
       }
     }
   }

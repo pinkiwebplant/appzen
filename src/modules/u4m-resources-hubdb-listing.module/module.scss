@@ -7,11 +7,12 @@ section.u4m-resHub-listing {
     margin: 0;
   }
   .filter_sidebar {
-    width: 150px;
+    min-width: 150px;
+    width: calc(100% - 1068px);
     max-width: 100%;
 
     @include tabletmid {
-      width: 250px;
+      width: 200px;
     }
 
     @include tabletvert {
@@ -28,9 +29,10 @@ section.u4m-resHub-listing {
   .case_listing_column {
     width: calc(100% - 150px);
     padding: 0 10px;
+    max-width: 1068px;
 
     @include tabletmid {
-      width: calc(100% - 250px);
+      width: calc(100% - 200px);
     }
 
     @include tabletvert {
@@ -60,7 +62,7 @@ section.u4m-resHub-listing {
     &:after {
       content: "";
       display: block;
-      padding-bottom: 143%;
+      padding-bottom: 137%;
       transition: .3s;
     }
     &:hover {
@@ -183,14 +185,19 @@ section.u4m-resHub-listing {
         -webkit-appearance: none;
         text-transform: capitalize;
         display: block;
-        padding: 9px 0px;
+        padding: 9px 24px;
         border: 2px solid transparent;
         text-align: left;
+        @include tabletvert {
+          padding: 9px;
+        }
       }
 
       &.active button {
         border-color: #b6b0a2;
-        padding: 9px 20px;
+        @include tabletvert {
+          padding: 9px 24px;
+        }
       }
     }
   }
