@@ -64,7 +64,7 @@ section.u4m-inteHub-listing {
     width: 100%;
     align-items: center;
     &:after {
-      // content: "";
+      content: "";
       display: block;
       padding-bottom: 100%;
       transition: .3s;   
@@ -73,6 +73,7 @@ section.u4m-inteHub-listing {
       height: 100%;
       top: 0;
       left: 0;
+      opacity: .1;
     }
     &:hover {
       .hover_content_wrap {
@@ -106,6 +107,8 @@ section.u4m-inteHub-listing {
       width: 100%;
       height: 100%;
       z-index: 1;
+      top: 0;
+      left: 0;
     }
     .logo {
       width: 100%;
@@ -193,6 +196,7 @@ section.u4m-inteHub-listing {
         display: block;
         padding: 9px 24px;
         border: 2px solid transparent;
+        text-align: left;
         @include tabletvert {
           padding: 9px;
         }

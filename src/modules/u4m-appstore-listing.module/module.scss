@@ -85,40 +85,57 @@ section.u4m-appstore-listing {
         position: relative;
         padding-top: 180px;
         padding-bottom: 100px;
+        .bgInnerWrap {
+            border-radius: 12px;
+            padding: 50px;
+            @include tabletmidmin {
+                justify-content: space-between;
+                padding: 83px 118px;
+                max-width: calc(100% - 40px);
+                margin: 0 auto;
+            }
+            @include tabletvert {
+                padding: 50px 20px;
+            }
+        }
+        
     }
     .detail-page-banner.no-video {
-        padding-top: 154px;
         padding-bottom: 75px;
-        background: $basecolor;
+        // background: $basecolor;
     }
-    .detail-page-banner.no-video .detail-page-content {
-        margin-top: -53px;
-    }
-    .detail-page-content {
-        text-align: center;
-        color: $white;
-        position: relative;
-        z-index: 2;
-    }
+    // .detail-page-banner.no-video .detail-page-content {
+    //     margin-top: -53px;
+    // }
+    // .detail-page-content {
+    //     text-align: center;
+    //     color: $white;
+    //     position: relative;
+    //     z-index: 2;
+    // }
 
     .detail-page-content h1 {
-        color: $white;
-        font-weight: 600;
-        font-size: 42px;
+        font-weight: 700;
+        font-size: 40pt;
         line-height: 110%;
     }
     .detail-page-content p {
-        color: $white;
         font-weight: 400;
         font-size: 18px;
         line-height: 140%;
-        max-width: 65%;
-        margin: 0 auto;
+        max-width: 687px;    
+        margin-top: 0;
+        margin-bottom: 29px;
     }
     .main-detail-page > div {
-        padding: 0;
-        max-width: 730px;
+        padding: 0 158px;
         position: relative;
+        @include tabletmid {
+            padding: 0 70px;
+        }
+        @include tabletvert {
+            padding: 0 40px;
+        }
     }
     .main-detail-page img {
         vertical-align: middle;
@@ -185,7 +202,11 @@ text-align: center;
         line-height: 110%;
         color: $basecolor;
         display: inline-block;
-        margin-top: 30px;
+        margin-top: 10px;
+        margin-bottom: 18px;
+        img {
+            filter: invert(1);
+        }
     }
 
     .request-integration-inner {
@@ -212,14 +233,6 @@ text-align: center;
         background-color: $black;
         border-color: $black;
     }
-
-    .request-integration-section {
-        padding-top: 100px;
-        padding-bottom: 100px;
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-    }
     .request-integration-section > .page-center {
         padding-left: 5%;
         padding-right: 5%;
@@ -228,6 +241,12 @@ text-align: center;
     .request-form-popup {
         form {
             @include form;
+            margin-bottom: 0;
+            select {
+                font-size: 13rem !important;
+                font-weight: 400;
+                line-height: 1.61;
+            }
         }
     }
 
@@ -243,13 +262,13 @@ text-align: center;
         border-radius: 8px;
         overflow: hidden;
     }
-    .detail-page-banner .all-inegrations {
-        color: $white;
-        margin-top: 0;
-        margin-bottom: 30px;
-        position: relative;
-        left: -100px;
-    }
+    // .detail-page-banner .all-inegrations {
+    //     color: $white;
+    //     margin-top: 0;
+    //     margin-bottom: 30px;
+    //     position: relative;
+    //     left: -100px;
+    // }
 
     .video-popup-block > a {
         display: block;
@@ -423,7 +442,6 @@ text-align: center;
             padding-left: 216px;
             .search-inner-block {
                 align-items: center;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
                 display: flex;
                 justify-content: center;
                 margin: 0 auto;
@@ -441,7 +459,8 @@ text-align: center;
                     width: calc(100% - 88px) !important;
                     padding: 13px 14px;
                     outline: none;
-                    border: none;
+                    border: 1px solid $lightGray;
+                    border-right: 0;
                     &::-webkit-input-placeholder {
                         color: $gray3;
                     }
@@ -460,6 +479,7 @@ text-align: center;
                         margin: 0;
                         border: none;
                         border-radius: 0;
+                        padding: 16rem 20rem;
                     }
                 }
             }
@@ -540,7 +560,7 @@ text-align: center;
                     border-radius: 12rem;
                     padding: 20px;
                     width: 100%;
-                    background-color: $lightGreybg;
+                    background-color: $white;
                     .card-icon {
                         margin: 0 0 8px;
                     }
@@ -618,26 +638,22 @@ text-align: center;
                 padding-left: 0;
             }
         }
-        .main-detail-page > div {
-            padding: 0 30px;
-        }
         .request-integration-inner {
             padding: 50px;
         }
     }
 
     @include tabletvert {
-        .main-detail-page > div {
-            padding: 0 15px;
-        }
         .request-integration-inner {
             padding: 30px;
         }
         .detail-page-banner {
-            padding-top: 100px;
+            padding-top: 50px;
+            padding-bottom: 0;
         }
         .detail-page-banner.no-video {
-            padding-top: 100px;
+            padding-top: 50px;
+            padding-bottom: 0;
         }
         .detail-page-banner.no-video .detail-page-content {
             margin-top: 0;

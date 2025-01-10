@@ -75,6 +75,13 @@ section.u4m-logo-trust-marks {
             filter: unset;
           }
         }
+        &.col4 {
+          .logo_inner {
+            @include phone {
+             padding: 22px 38px;
+            }
+          }
+        }
       }
     }
   }
@@ -88,7 +95,6 @@ section.u4m-logo-trust-marks {
   }
   @include laptop {
     .col2,
-    .col4,
     .col3 {
       width: 25%;
       padding: 0 10px;
@@ -97,17 +103,23 @@ section.u4m-logo-trust-marks {
 
   @include tabletvert {
     .col2,
-    .col4,
     .col3 {
+      width: 33.333%;
+      padding: 0 10px;
+    }
+    .col4 {
       width: 33.333%;
       padding: 0 10px;
     }
   }
   @include phone {
     .col2,
-    .col4,
     .col3 {
       width: 50%;
+    }
+    .col4 {
+      width: 100%;
+      padding: 0 10px;
     }
   }
 }
