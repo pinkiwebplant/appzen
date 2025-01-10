@@ -146,6 +146,24 @@
     "type" : "boolean",
     "default" : false
   }, {
+    "id" : "79c282ba-c6e3-20bf-4a46-bae34d54dd9b",
+    "name" : "include_arrow",
+    "display_width" : null,
+    "label" : "Include Arrow",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "cards_group.include_link",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
+  }, {
     "id" : "0542d00c-e6b6-aa48-1532-7c16689533cf",
     "name" : "link_text",
     "display_width" : null,
@@ -208,6 +226,7 @@
     "title" : "Easy stakeholder collaboration ",
     "content" : "<p>Boost communication with any employee or vendor to get questions answered and invoices processed faster</p>",
     "include_link" : false,
+    "include_arrow" : true,
     "link" : {
       "url" : {
         "content_id" : null,
@@ -229,6 +248,7 @@
     "title" : "Easy stakeholder collaboration ",
     "content" : "<p>Boost communication with any employee or vendor to get questions answered and invoices processed faster</p>",
     "include_link" : false,
+    "include_arrow" : true,
     "link" : {
       "url" : {
         "content_id" : null,
@@ -250,6 +270,7 @@
     "title" : "Easy stakeholder collaboration ",
     "content" : "<p>Boost communication with any employee or vendor to get questions answered and invoices processed faster</p>",
     "include_link" : false,
+    "include_arrow" : true,
     "link" : {
       "url" : {
         "content_id" : null,
@@ -271,6 +292,7 @@
     "title" : "Easy stakeholder collaboration ",
     "content" : "<p>Boost communication with any employee or vendor to get questions answered and invoices processed faster</p>",
     "include_link" : false,
+    "include_arrow" : true,
     "link" : {
       "url" : {
         "content_id" : null,
@@ -647,7 +669,7 @@
       "access" : null
     },
     "display" : "select",
-    "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Ivory Soft" ], [ "light_grey", "Ivory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ],  [ "light_pink", "Coral" ],   [ "white_bg", "White" ], [ "custom", "Custom" ] ],
+    "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Ivory Soft" ], [ "light_grey", "Ivory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ], [ "light_pink", "Coral" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
@@ -720,7 +742,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Ivory Soft" ], [ "light_grey", "Ivory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ],  [ "light_pink", "Coral" ],   [ "white_bg", "White" ], [ "custom", "Custom" ] ],
+      "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Ivory Soft" ], [ "light_grey", "Ivory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ], [ "light_pink", "Coral" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,

@@ -21,7 +21,20 @@
     {% for item in module.cards_group %}
     <div class="card_item {{ module.module_settings.column_width }} col {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.card_color_theme }}_color {% endif %}">
       <div class="card_inner {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.card_background_color }}{% endif %}">
-
+      {% if item.include_link %}
+          <a
+             {% if item.link.url.type is equalto "CALL_TO_ACTION"  %}
+             href="{{ href }}" 
+             {% else %}
+             href="{{ href|escape_url }}"
+             {% endif %}
+             {% if item.link.open_in_new_tab %}
+             target="_blank"
+             {% endif %}
+             {% if item.link.rel %}
+             rel="{{ item.link.rel|escape_attr }}"
+             {% endif %} class="absLink"></a>
+            {% endif %}
 
 
         {% if item.select_icon_type %}
@@ -75,10 +88,12 @@
              rel="{{ item.link.rel|escape_attr }}"
              {% endif %}>
             <span>{{ item.link_text }}</span>
+            {% if item.include_arrow %}
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
               <path d="M5.5 1L10.5 6L5.5 11" stroke="#574D4A"/>
               <path d="M10.5 6L0.5 6" stroke="#574D4A"/>
             </svg>
+          {% endif %}
           </a>
         </div>
         {% endif %}
