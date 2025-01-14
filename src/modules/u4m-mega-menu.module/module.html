@@ -13,7 +13,7 @@
   {% if item2.title_link.url.type is equalto "EMAIL_ADDRESS" %}
     {% set href = "mailto:" + href %}
   {% endif %}
-  {% if href %}
+  
   <div class="menuItemTtl">
 		<a
 		  {% if item2.title_link.url.type is equalto "CALL_TO_ACTION"  %}
@@ -27,9 +27,8 @@
 		  {% if item2.title_link.rel %}
 		    rel="{{ item2.title_link.rel|escape_attr }}"
 		  {% endif %}
-		  >
+    {% if not href %}style=" cursor: text; "{% endif %}>
       {{ item2.title }}</a></div>
-    {% endif %}
   {% if item2.content_type=="menu" %}
   {% for item3 in item2.menu_group.menu_items %}
   <div class="childmenuItem{% if item3.add_description %} addDes{% endif %}">
@@ -49,7 +48,7 @@
        {% if item3.menu_link.rel %}
        rel="{{ item3.menu_link.rel }}"
        {% endif %}
-       >
+      {% if not href %}style=" cursor: text; "{% endif %}>
       <div class="childmenuItemttl">{{ item3.menu_text }}</div>
       {% if item3.add_description %}
       <div class="childmenuItemdes">{{ item3.description }}</div>

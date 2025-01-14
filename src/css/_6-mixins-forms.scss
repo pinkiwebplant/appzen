@@ -13,9 +13,9 @@
   h3 {
     @include h6;
   }
-
   div.legal-consent-container {
     p,
+    .hs-richtext,
     .hs-form-booleancheckbox label {
       @include b6;
     }
@@ -255,8 +255,7 @@
 
         span {
           position: relative;
-          top: 2rem;
-          font-size: 14rem;
+          margin-left: 0;
         }
       }
     }

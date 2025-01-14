@@ -71,6 +71,8 @@ section.u4m-case-study-listing {
       content: "";
       display: block;
       padding-bottom: 143%;
+      background-color: $basecolor;
+      opacity: 0.15;
     }
   }
 
@@ -93,6 +95,7 @@ section.u4m-case-study-listing {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
+    z-index: 1;
     .absLink {
       position: absolute;
       width: 100%;

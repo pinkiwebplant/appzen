@@ -59,6 +59,10 @@
                   <video width="500" height="500" style="margin: auto; width: 100%; height: auto;" id="my-video-01" class="video-js vjs-default-skin vjs-theme-forest vjs-big-play-centered" autoplay="autoplay" muted="true" loop="loop" preload="auto" rel="preload" poster="https://dummyimage.com/300/ffffff/ffffff" src="{{ item.select_video }}" type="video/mp4" data-setup="{}" playsinline="true" gt="" video=""></video>
                 </div>
               </div>
+              {% elif item.media_type == 'animated_svg' %}
+              <div class="scroll_img floating-media-card-image svgAnimationWrap">
+                {{ item.animated_svg }}
+              </div>
               {% else %}
               <div class="scroll_img floating-media-card-image">
                 <div class="img_wrap " >

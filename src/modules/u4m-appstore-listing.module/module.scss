@@ -10,6 +10,9 @@ section.u4m-appstore-listing {
     .appstore-main-container .search-inner-block input {
         margin: 0;
     }
+    .appstore-main-container .search-inner-block ::placeholder {
+        color: $basecolor !important;
+    }
     .custom_app {
         order: 1;
     }
@@ -439,7 +442,9 @@ text-align: center;
         }
         .search-block {
             margin: 0 0 30px;
-            padding-left: 216px;
+            padding-left: 0;
+            width: calc(100% - 275px);
+            margin-left: auto;
             .search-inner-block {
                 align-items: center;
                 display: flex;
@@ -447,6 +452,7 @@ text-align: center;
                 margin: 0 auto;
                 max-width: 518px;
                 width: 100%;
+                margin-left: 0;
 
                 input {
                     background: $white;
@@ -480,6 +486,10 @@ text-align: center;
                         border: none;
                         border-radius: 0;
                         padding: 16rem 20rem;
+                        background-color: $LightPink;
+                        &:hover {
+                            background-color: $LightPink;
+                        }
                     }
                 }
             }
@@ -655,6 +665,10 @@ text-align: center;
         .detail-page-banner.no-video {
             padding-top: 50px;
             padding-bottom: 0;
+        }
+        .appstore-main-container .search-block {
+            margin-left: 0;
+            width: 100%;
         }
         .detail-page-banner.no-video .detail-page-content {
             margin-top: 0;

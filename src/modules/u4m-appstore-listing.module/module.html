@@ -179,7 +179,7 @@
                 {% endfor %}
               </ul>
             </div>
-            {# <div class="filter-block">
+            <div class="filter-block">
               <p class="filter-title">MASTERMIND PLATFORM APPS</p>
               <ul id='options-filter-products' class="option-set" data-group="filter-product">
                 {% set types2 = hubdb_table_column(5391476, "app_type").options %}
@@ -188,7 +188,7 @@
                   <label for='all-product'>ALL</label>
                 </li>
                 {% for choice in types2 %}
-                {% if choice.label != 'Base Apps' %}
+                {% if choice.label != 'Base Apps' and choice.label != 'Custom Apps' %}
                   <li>
                     <input type="radio" id="{{choice.name|lower|replace("&","")|replace(" ","_")|replace("__","_")}}" name="product" value="{{choice.name|lower|replace("&","")|replace(" ","_")|replace("__","_")}}" style='display:none;'>
                     <label for="{{choice.name|lower|replace("&","")|replace(" ","_")|replace("__","_")}}">  {{choice.name}}</label>
@@ -196,7 +196,7 @@
                 {% endif %}
                 {% endfor %}
               </ul>
-            </div> #}
+            </div>
             {% if module.app_detail %}
             <div class='app-listing app-listing-new'>
               {% for item in module.app_detail %}
