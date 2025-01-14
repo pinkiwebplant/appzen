@@ -179,7 +179,7 @@
                 {% endfor %}
               </ul>
             </div>
-            <div class="filter-block">
+            {# <div class="filter-block">
               <p class="filter-title">MASTERMIND PLATFORM APPS</p>
               <ul id='options-filter-products' class="option-set" data-group="filter-product">
                 {% set types2 = hubdb_table_column(5391476, "app_type").options %}
@@ -196,7 +196,7 @@
                 {% endif %}
                 {% endfor %}
               </ul>
-            </div>
+            </div> #}
             {% if module.app_detail %}
             <div class='app-listing app-listing-new'>
               {% for item in module.app_detail %}
@@ -209,7 +209,7 @@
           </div>
   
           <div class="card-main-container" id="pagination-2">
-            <div class="sort-block">
+            {# <div class="sort-block">
               <div class="dropdown">
                 <select id='sortby'>
                   <option value='date' selected >Recently Added</option>
@@ -218,7 +218,7 @@
                 </select>
                 <span class='sort-text'>Sort by</span>
               </div>
-            </div>
+            </div> #}
             <div class="card-container" id='container'>
               {% if request.domain == "www.appzen.com" %}
               {% set queryparam = "&orderBy=-publish_date&live=1" %}
@@ -231,7 +231,7 @@
                 <div class="card-inner-block ">
                   <div class='card-details'>
                     <div class="card-title">
-                      <p>{% if row.app_type.name == 'Premium App' %}<img src='https://www.appzen.com/hubfs/Appzen-u4m/images/shape.webp' alt="shape">&nbsp; {% elif row.app_type.name == 'Custom App' %}<img src='https://www.appzen.com/hubfs/Appzen-u4m/images/shape.webp' alt="shape">&nbsp; {% endif %}{{row.app_type.name}}</p>
+                      {# <p>{% if row.app_type.name == 'Premium App' %}<img src='https://www.appzen.com/hubfs/Appzen-u4m/images/shape.webp' alt="shape">&nbsp; {% elif row.app_type.name == 'Custom App' %}<img src='https://www.appzen.com/hubfs/Appzen-u4m/images/shape.webp' alt="shape">&nbsp; {% endif %}{{row.app_type.name}}</p> #}
                       <h6 class='title'>{{row.title}}</h6>
                     </div>
                     <div class="card-text">

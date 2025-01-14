@@ -97,6 +97,7 @@
 
         .right_col {
           width: calc(57.76% - 60px);
+          text-align: center;
 
           @include navbreak {
             width: calc(50% - 25px);
@@ -104,11 +105,6 @@
 
           @include tabletvert {
             width: 100%;
-          }
-
-          img {
-            height: 100% !important;
-            object-fit: cover;
           }
         }
 

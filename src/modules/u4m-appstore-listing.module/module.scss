@@ -489,9 +489,10 @@ text-align: center;
     .filter-card-inner-container {
         display: flex;
         justify-content: space-between;
+        padding-top: 20px;
         .filter-block {
             margin-right: 30px;
-            margin-top: 50px;
+            margin-top: 0px;
             p.filter-title {
                 color: $basecolor;
                 display: inline-block;

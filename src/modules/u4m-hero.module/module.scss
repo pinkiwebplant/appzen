@@ -81,11 +81,16 @@
       position: relative;
       .hero-overlay-image {
         img {
-          left: -111px;
-          right: auto;
-          bottom: 36px;
-          max-width: none;
-          width: 731px;
+          bottom: 40px;
+          left: auto;
+          max-width: 100%;
+          right: -20px;
+          width: 100%;
+          @include tabletvert {
+            right:-10px;
+            bottom: 20px;
+            width: 500px;
+          }
         }
       }
     }
