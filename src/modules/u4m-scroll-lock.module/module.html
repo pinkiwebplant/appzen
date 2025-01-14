@@ -53,22 +53,29 @@
 									</div>
 									{% endif %}
 								</div>
-								{% if item.select_image.src %}
-								<div class="scroll_img floating-media-card-image">
-									<div class="img_wrap " >
-									<img src="{{ item.select_image.src }}" alt="{{ item.select_image.alt }}"/>
-										{% if item.include_svg %}
-										<div class="box_border">
-											<div class="white_box">
-												<div class="box_svg">
-													{{ item.add_svg }}
-												</div>
-											</div>
-										</div>
-										{% endif %}
-									</div>
-								</div>
-							{% endif %}
+              {% if item.media_type == 'vid' %}
+              <div class="scroll_img floating-media-card-image video">
+                <div class="img_wrap vidWrap">
+                  <video width="500" height="500" style="margin: auto; width: 100%; height: auto;" id="my-video-01" class="video-js vjs-default-skin vjs-theme-forest vjs-big-play-centered" autoplay="autoplay" muted="true" loop="loop" preload="auto" rel="preload" poster="https://dummyimage.com/300/ffffff/ffffff" src="{{ item.select_video }}" type="video/mp4" data-setup="{}" playsinline="true" gt="" video=""></video>
+                </div>
+              </div>
+              {% else %}
+              <div class="scroll_img floating-media-card-image">
+                <div class="img_wrap " >
+                  <img src="{{ item.select_image.src }}" alt="{{ item.select_image.alt }}"/>
+                  {% if item.include_svg %}
+                  <div class="box_border">
+                    <div class="white_box">
+					
+                      <div class="box_svg">
+                        {{ item.add_svg }}
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+              {% endif %}
 							{# </div> #}
 						</div>
 						{% endfor %}

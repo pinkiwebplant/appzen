@@ -8,11 +8,13 @@
 
 {% macro menuItem(item2) %}
 <div class="menuItem {{ item2.content_type }}">
+
+{% set href = item2.title_link.url.href %}
+  {% if item2.title_link.url.type is equalto "EMAIL_ADDRESS" %}
+    {% set href = "mailto:" + href %}
+  {% endif %}
+  {% if href %}
   <div class="menuItemTtl">
-    {% set href = item2.title_link.url.href %}
-		{% if item2.title_link.url.type is equalto "EMAIL_ADDRESS" %}
-		  {% set href = "mailto:" + href %}
-		{% endif %}
 		<a
 		  {% if item2.title_link.url.type is equalto "CALL_TO_ACTION"  %}
 		    href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
@@ -27,6 +29,7 @@
 		  {% endif %}
 		  >
       {{ item2.title }}</a></div>
+    {% endif %}
   {% if item2.content_type=="menu" %}
   {% for item3 in item2.menu_group.menu_items %}
   <div class="childmenuItem{% if item3.add_description %} addDes{% endif %}">
