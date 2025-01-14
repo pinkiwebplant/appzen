@@ -37,7 +37,9 @@
             margin-bottom: 20px;
             overflow: hidden;
           }
-
+          h4 {
+            margin-bottom: 15rem;
+          }
           .super_title {
             p {
               @include size19;

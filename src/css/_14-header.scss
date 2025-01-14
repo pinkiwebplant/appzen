@@ -200,6 +200,9 @@ header.u4m-header {
 }
 .megaMenu {
   .hs-megaMenu-wrapper {
+    a[href="javascript:;"] {
+        cursor: text !important;
+    }
     > ul.mobileHide {
       display: flex;
       > li {
@@ -634,12 +637,21 @@ header.u4m-header {
         .menuItemTtl {
           @include size16;
           font-weight: 700;
-          margin-bottom: 10px;
+          margin-bottom: 0;
+        }
+        > li{
+          padding-top: 10px;
+          padding-bottom: 10px;
         }
         li {
           margin: 0;
           ul {
             padding-left: 10px;
+            li {
+              a {
+                padding: 5px 0;
+              }
+            }
           }
           a {
             padding: 10px 0;
