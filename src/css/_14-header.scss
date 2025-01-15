@@ -2,8 +2,8 @@ header.u4m-header {
   padding: 13.5px 13px 0px;
   position: absolute;
   transition:
-  height 0.3s,
-  top 0.5s;
+    height 0.3s,
+    top 0.5s;
   left: 0;
   width: 100%;
   background-color: $lightGreybg;
@@ -201,7 +201,7 @@ header.u4m-header {
 .megaMenu {
   .hs-megaMenu-wrapper {
     a[href="javascript:;"] {
-        cursor: text !important;
+      cursor: text !important;
     }
     > ul.mobileHide {
       display: flex;
@@ -457,6 +457,23 @@ header.u4m-header {
             }
           }
         }
+
+        &.childLength1 {
+          position: relative;
+          & > .childMenu {
+            width: 250px;
+            padding-left: 20px;
+            padding-right: 20px;
+            max-width: 250px;
+            left: 0;
+            right: 0;
+
+            > .flex_row .menuItem {
+              max-width: 100%;
+            }
+          }
+        }
+
         &:hover {
           > a {
             position: relative;
@@ -639,7 +656,7 @@ header.u4m-header {
           font-weight: 700;
           margin-bottom: 0;
         }
-        > li{
+        > li {
           padding-top: 10px;
           padding-bottom: 10px;
         }

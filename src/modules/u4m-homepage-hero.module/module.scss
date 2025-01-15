@@ -9,6 +9,7 @@ section.u4m-homepage-hero {
         .intro {
           h1 {
             @include size68;
+            margin-bottom: 10px;
           }
           p,
           ul {
@@ -21,6 +22,7 @@ section.u4m-homepage-hero {
         }
         .intro_cnt {
           padding-bottom: 25px;
+          padding-bottom: 55px;
         }
         .content-col {
           padding-right: 0;
@@ -165,7 +167,7 @@ section.u4m-homepage-hero {
     padding-right: 0px;
     .banner-column {
       margin-left: 0px;
-     margin-right: 0px;
+      margin-right: 0px;
     }
   }
 }

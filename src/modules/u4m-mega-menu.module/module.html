@@ -169,7 +169,10 @@
   <div class="hs-megaMenu-wrapper">
     <ul class="mobileHide">
       {% for item in module.mega_menu %}
-      <li class="menuItem{% if item.enable_child_menu %} hsChildmenu{% endif %}">
+      
+      {% set childLength = item.child_menu|length %}
+      
+      <li class="menuItem{% if item.enable_child_menu %} hsChildmenu{% endif %} childLength{{childLength}}">
         {% set href = item.menu_link.url.href %}
         {% if item.menu_link.url.type is equalto "EMAIL_ADDRESS" %}
         {% set href = "mailto:" + href %}
