@@ -1,0 +1,275 @@
+@import "../../css/_module-imports";
+
+section.u4m-resHub-listing-v2 {
+  position: relative;
+  .noText {
+    font-size: 20rem;
+    margin: 0;
+  }
+  .filter_sidebar {
+    min-width: 150px;
+    width: calc(100% - 1068px);
+    max-width: 100%;
+
+    @include tabletmid {
+      width: 200px;
+    }
+
+    @include tabletvert {
+      width: 100%;
+    }
+  }
+
+  .filter_item {
+    @include tabletvertmin {
+      width: 100%;
+    }
+  }
+
+  .case_listing_column {
+    width: calc(100% - 150px);
+    padding: 0 10px;
+    max-width: 1068px;
+
+    @include tabletmid {
+      width: calc(100% - 200px);
+    }
+
+    @include tabletvert {
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  .case_listing_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 40px;
+    @include tabletmidmin { 
+      margin: 0 -10px;
+    }
+    .card_cont_btm {
+      padding: 20rem 12.5rem 0;
+    }
+  }
+  .case_card {
+    @include tabletmid {
+      width: 50%;
+    }
+
+    @include tabletvert {
+      width: 100%;
+    }
+  }
+
+  .card_inner {
+    @include cardBase;
+    width: 100%;
+    padding: 7.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .absLink {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+    .card_title {
+      margin-bottom: 15rem;
+    }
+
+    .card_img {
+      width: 100%;
+      border-radius: 4rem;
+      overflow: hidden;
+    }
+
+    .card_img_inner {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      padding-bottom: 100%;
+      position: relative;
+    }
+
+    .card_meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16rem;
+    }
+
+    .card_tag {
+      background: #f5f1e8;
+      border-radius: 4rem;
+      padding: 4px 8px 4px;
+      display: inline-block;
+      line-height: 1.36;
+      font-size: 12rem;
+      font-weight: 500;
+    }
+
+    .card_read_minutes {
+      padding: 4px 0;
+      color: #746c60;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 5rem;
+      line-height: 1.36;
+      font-size: 12rem;
+    }
+    .play_btn {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      height: 80px;
+      width: 80px;
+      background: currentColor;
+      border-radius: 4rem;
+      opacity: 0.9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg path {
+        fill: $sectionbg;
+      }
+    }
+
+    .card_content {
+      @include size14;
+      line-height: 150%;
+
+      p {
+        font: inherit;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .card_item {
+    @include tabletmid {
+      width: 50%;
+    }
+    @include tabletvert {
+      width: 100%;
+    }
+
+    .arrow_link {
+      text-align: right;
+      margin-top: auto;
+      padding: 20rem 12.5rem;
+
+      svg {
+        display: block;
+        width: 15px;
+      }
+      a {
+        display: inline-flex;
+        margin-left: auto;
+        width: 20px;
+        height: 20px;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  .card_title {
+    h4 {
+      @include size28;
+      font-weight: 400;
+      margin-bottom: 0;
+
+      @include tablet {
+        @include size18;
+      }
+    }
+  }
+
+  .loadmore_btn {
+    margin-top: 80px;
+
+    a {
+      margin: 0;
+    }
+  }
+
+  .filter_sidebar_inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    @include tabletvert {
+      margin-bottom: 20px;
+      justify-content: center;
+    }
+
+    .filter_item {
+      button {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18.2px;
+        letter-spacing: 0.03em;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        border-radius: 40px;
+        -webkit-appearance: none;
+        text-transform: capitalize;
+        display: block;
+        padding: 9px 24px;
+        border: 2px solid transparent;
+        text-align: left;
+        @include tabletvert {
+          padding: 9px;
+        }
+      }
+
+      &.active button {
+        border-color: #b6b0a2;
+        @include tabletvert {
+          padding: 9px 24px;
+        }
+      }
+    }
+  }
+  @include tabletvert {
+    .card_inner .card_img_inner {
+      padding-bottom: 50%;
+    }
+
+    .card_inner .play_btn {
+      width: 50px;
+      height: 50px;
+      padding: 15px 13px 15px 18px;
+    }
+  }
+  &.reverse-text {
+    .card .title {
+      color: $white;
+    }
+    .card_item.themeColor {
+      color: $basecolor;
+    }
+    .filter_item {
+      button {
+        color: $white;
+      }
+    }
+    .loadmore_btn a {
+      color: $white;
+      border-color: currentColor;
+    }
+  }
+}
