@@ -19,6 +19,7 @@
 
   &.overlay_bg {
     background-size: 98%;
+    background-size: cover;
     @include navbreak {
       background-size: cover;
     }

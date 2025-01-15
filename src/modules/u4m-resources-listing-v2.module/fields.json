@@ -1,55 +1,22 @@
 [ {
-  "id" : "2f10bd6e-cf85-1cf6-5a4f-fa75e1e78238",
-  "name" : "include_intro",
-  "label" : "Include Intro",
+  "id" : "1f84aa0c-a3a2-34c8-f4b7-b92d18a32e18",
+  "name" : "select_hubdb_table",
+  "label" : "Select HubDB Table",
   "required" : false,
   "locked" : false,
-  "display" : "checkbox",
-  "type" : "boolean",
+  "type" : "hubdbtable",
   "display_width" : null,
-  "default" : false
+  "default" : 4825172
 }, {
-  "id" : "50143178-d9f5-ba07-4078-39f5f1abb0d4",
-  "name" : "intro_content",
-  "label" : "Intro Content",
+  "id" : "4e0637e9-b670-1351-2eb0-572cc9497752",
+  "name" : "card_settings",
+  "label" : "Card Settings",
   "required" : false,
   "locked" : false,
-  "visibility" : {
-    "controlling_field" : null,
-    "controlling_field_path" : "include_intro",
-    "controlling_value_regex" : "true",
-    "property" : null,
-    "operator" : "EQUAL",
-    "access" : null
-  },
-  "type" : "richtext",
-  "display_width" : null,
-  "default" : "<h1>Heading</h1>"
-}, {
-  "id" : "27770a94-f378-7f40-818c-6479cab43c83",
-  "name" : "slider",
-  "label" : "Slider",
-  "required" : false,
-  "locked" : false,
-  "occurrence" : {
-    "min" : null,
-    "max" : null,
-    "sorting_label_field" : "e317f91d-b555-b6f7-292b-d28b4b624bd7",
-    "default" : 4
-  },
   "children" : [ {
-    "id" : "e317f91d-b555-b6f7-292b-d28b4b624bd7",
-    "name" : "content",
-    "label" : "Content",
-    "required" : false,
-    "locked" : false,
-    "type" : "richtext",
-    "display_width" : null,
-    "default" : "<h3>Automate invoice GL coding</h3>\n<p>Assign GL codes and allocations with AI Agents that instantly and accurately process non-PO-backed invoices across locations, departments, cost centers, and line items without human intervention. AppZen automatically captures and classifies all invoice details, freeing your AP team to focus on strategic work.</p>"
-  }, {
-    "id" : "01f93f2a-1e51-1e90-694f-422846df4779",
-    "name" : "include_button",
-    "label" : "Include Button",
+    "id" : "5bc9dc1c-bd2a-4df3-51c9-b49933a15ed1",
+    "name" : "include_featured_image",
+    "label" : "Include Featured Image",
     "required" : false,
     "locked" : false,
     "display" : "checkbox",
@@ -57,197 +24,45 @@
     "display_width" : null,
     "default" : true
   }, {
-    "id" : "3e7b1290-a4fe-185f-91a8-e3efb4702570",
-    "name" : "buttons",
-    "label" : "Buttons",
+    "id" : "9282de8e-b64a-7c89-c919-2591dab74cc1",
+    "name" : "include_description",
+    "label" : "Include Description",
     "required" : false,
     "locked" : false,
-    "occurrence" : {
-      "min" : null,
-      "max" : null,
-      "sorting_label_field" : "11fd103f-0013-fc61-5a7b-e46385c65700",
-      "default" : 1
-    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "7edd0e2d-0316-7e44-340b-6182124dc9e9",
+    "name" : "include_tag",
+    "label" : "Include Tag",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "e6c9d821-d013-7cfc-b807-538a507d379a",
+    "name" : "include_reading_minutes",
+    "label" : "Include Reading Minutes",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "af8a3271-9d7c-3be9-3c24-e50e0bf53c99",
+    "name" : "use_card_content_theme_color",
+    "label" : "Use Card Content Theme Color",
+    "required" : false,
+    "locked" : false,
     "visibility" : {
       "controlling_field" : null,
-      "controlling_field_path" : "slider.include_button",
+      "controlling_field_path" : "module_overrides.reverse_text",
       "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "children" : [ {
-      "id" : "11fd103f-0013-fc61-5a7b-e46385c65700",
-      "name" : "button_type",
-      "label" : "Button Type",
-      "required" : false,
-      "locked" : false,
-      "display" : "select",
-      "choices" : [ [ "stnd", "Standard" ], [ "cta", "CTA" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "display_width" : null,
-      "default" : "stnd"
-    }, {
-      "id" : "8fd1c5a5-7a28-8e43-5c80-65ca48c5d537",
-      "name" : "theme",
-      "label" : "Theme",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "slider.buttons.button_type",
-        "controlling_value_regex" : "stnd",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "display" : "select",
-      "choices" : [ [ "primary", "Primary" ], [ "secondary", "Secondary" ], [ "tertiary", "Tertiary" ], [ "quaternary", "Quaternary" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "display_width" : null,
-      "default" : "primary"
-    }, {
-      "id" : "ca18bd16-3680-030e-bd93-1f899fe1b32f",
-      "name" : "button_text",
-      "label" : "Button Text",
-      "required" : false,
-      "locked" : false,
-      "validation_regex" : "",
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "slider.buttons.button_type",
-        "controlling_value_regex" : "stnd",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "allow_new_line" : false,
-      "show_emoji_picker" : false,
-      "type" : "text",
-      "display_width" : null,
-      "default" : "Learn More"
-    }, {
-      "id" : "f6d5769b-83c4-cfc7-ac05-a3a5b5dd2f76",
-      "name" : "button_link",
-      "label" : "Button Link",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "slider.buttons.button_type",
-        "controlling_value_regex" : "stnd",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
-      "show_advanced_rel_options" : false,
-      "type" : "link",
-      "display_width" : null,
-      "default" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    }, {
-      "id" : "9af91169-69d1-ce2b-aec1-82a403c539f6",
-      "name" : "cta_field",
-      "label" : "CTA",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "slider.buttons.button_type",
-        "controlling_value_regex" : "cta",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "type" : "cta",
-      "display_width" : null
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "display_width" : null,
-    "default" : [ {
-      "button_type" : "stnd",
-      "theme" : "primary",
-      "button_text" : "Learn More",
-      "button_link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    } ]
-  }, {
-    "id" : "3d650f4f-e86a-33e5-92e1-d152a7bb16ac",
-    "name" : "media_type",
-    "label" : "Media Type",
-    "required" : false,
-    "locked" : false,
-    "display" : "select",
-    "choices" : [ [ "img", "Image" ], [ "vid", "Video" ], [ "animated_svg", "Animated SVG" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "display_width" : null,
-    "default" : "img"
-  }, {
-    "id" : "6edc987c-608e-5656-0cba-032b6732b680",
-    "name" : "select_image",
-    "label" : "Select Image",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "slider.media_type",
-      "controlling_value_regex" : "img",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "responsive" : true,
-    "resizable" : false,
-    "show_loading" : false,
-    "type" : "image",
-    "display_width" : null,
-    "default" : {
-      "size_type" : "auto",
-      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Automate%20invoice%20GL%20coding.png",
-      "alt" : "Automate invoice GL coding",
-      "loading" : "lazy",
-      "width" : 1246,
-      "height" : 1125,
-      "max_width" : 1246,
-      "max_height" : 1125
-    }
-  }, {
-    "id" : "1c7e290d-f53a-704b-a0e9-d0d7bf1b9457",
-    "name" : "include_svg",
-    "label" : "Include SVG",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "slider.media_type",
-      "controlling_value_regex" : "img",
       "property" : null,
       "operator" : "EQUAL",
       "access" : null
@@ -256,182 +71,19 @@
     "type" : "boolean",
     "display_width" : null,
     "default" : false
-  }, {
-    "id" : "de5e9736-2a00-11f2-e57c-c15e764bc13a",
-    "name" : "add_svg",
-    "label" : "Add Svg",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "slider.include_svg",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "display_width" : null
-  }, {
-    "picker" : "video",
-    "id" : "354d5c3d-bd4a-594e-68d2-5387a741566a",
-    "name" : "select_video",
-    "label" : "Select Video",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "slider.media_type",
-      "controlling_value_regex" : "vid",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "type" : "file",
-    "display_width" : null
-  }, {
-    "picker" : "file",
-    "id" : "c4de1fcf-8458-9584-eea1-cfae802c1a48",
-    "name" : "animated_svg",
-    "label" : "Animated SVG",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "slider.media_type",
-      "controlling_value_regex" : "animated_svg",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "type" : "file",
-    "display_width" : null
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
   "display_width" : null,
-  "default" : [ {
-    "content" : "<h3>Automate invoice GL coding</h3>\n<p>Assign GL codes and allocations with AI Agents that instantly and accurately process non-PO-backed invoices across locations, departments, cost centers, and line items without human intervention. AppZen automatically captures and classifies all invoice details, freeing your AP team to focus on strategic work.</p>",
-    "include_button" : true,
-    "buttons" : [ {
-      "button_type" : "stnd",
-      "theme" : "primary",
-      "button_text" : "Learn More",
-      "button_link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    } ],
-    "media_type" : "img",
-    "select_image" : {
-      "size_type" : "auto",
-      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Automate%20invoice%20GL%20coding.png",
-      "alt" : "Automate invoice GL coding",
-      "loading" : "lazy",
-      "width" : 1246,
-      "height" : 1125,
-      "max_width" : 1246,
-      "max_height" : 1125
-    },
-    "include_svg" : false
-  }, {
-    "content" : "<h3>Automate invoice GL coding</h3>\n<p>Assign GL codes and allocations with AI Agents that instantly and accurately process non-PO-backed invoices across locations, departments, cost centers, and line items without human intervention. AppZen automatically captures and classifies all invoice details, freeing your AP team to focus on strategic work.</p>",
-    "include_button" : true,
-    "buttons" : [ {
-      "button_type" : "stnd",
-      "theme" : "primary",
-      "button_text" : "Learn More",
-      "button_link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    } ],
-    "media_type" : "img",
-    "select_image" : {
-      "size_type" : "auto",
-      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Automate%20invoice%20GL%20coding.png",
-      "alt" : "Automate invoice GL coding",
-      "loading" : "lazy",
-      "width" : 1246,
-      "height" : 1125,
-      "max_width" : 1246,
-      "max_height" : 1125
-    },
-    "include_svg" : false
-  }, {
-    "content" : "<h3>Automate invoice GL coding</h3>\n<p>Assign GL codes and allocations with AI Agents that instantly and accurately process non-PO-backed invoices across locations, departments, cost centers, and line items without human intervention. AppZen automatically captures and classifies all invoice details, freeing your AP team to focus on strategic work.</p>",
-    "include_button" : true,
-    "buttons" : [ {
-      "button_type" : "stnd",
-      "theme" : "primary",
-      "button_text" : "Learn More",
-      "button_link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    } ],
-    "media_type" : "img",
-    "select_image" : {
-      "size_type" : "auto",
-      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Automate%20invoice%20GL%20coding.png",
-      "alt" : "Automate invoice GL coding",
-      "loading" : "lazy",
-      "width" : 1246,
-      "height" : 1125,
-      "max_width" : 1246,
-      "max_height" : 1125
-    },
-    "include_svg" : false
-  }, {
-    "content" : "<h3>Automate invoice GL coding</h3>\n<p>Assign GL codes and allocations with AI Agents that instantly and accurately process non-PO-backed invoices across locations, departments, cost centers, and line items without human intervention. AppZen automatically captures and classifies all invoice details, freeing your AP team to focus on strategic work.</p>",
-    "include_button" : true,
-    "buttons" : [ {
-      "button_type" : "stnd",
-      "theme" : "primary",
-      "button_text" : "Learn More",
-      "button_link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    } ],
-    "media_type" : "img",
-    "select_image" : {
-      "size_type" : "auto",
-      "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Automate%20invoice%20GL%20coding.png",
-      "alt" : "Automate invoice GL coding",
-      "loading" : "lazy",
-      "width" : 1246,
-      "height" : 1125,
-      "max_width" : 1246,
-      "max_height" : 1125
-    },
-    "include_svg" : false
-  } ]
+  "default" : {
+    "include_featured_image" : true,
+    "include_description" : true,
+    "include_tag" : false,
+    "include_reading_minutes" : false,
+    "use_card_content_theme_color" : false
+  }
 }, {
   "id" : "module_overrides",
   "name" : "module_overrides",
@@ -448,7 +100,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : false
+    "default" : true
   }, {
     "id" : "module_overrides.section_id",
     "name" : "section_id",
@@ -852,7 +504,7 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "enable_overrides" : false,
+    "enable_overrides" : true,
     "top_margin" : "top-margin-default",
     "custom_top_margin" : 100,
     "custom_top_margin_mobile" : 50,

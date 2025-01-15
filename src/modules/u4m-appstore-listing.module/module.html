@@ -179,7 +179,7 @@
                 {% endfor %}
               </ul>
             </div>
-            <div class="filter-block">
+            {# <div class="filter-block">
               <p class="filter-title">MASTERMIND PLATFORM APPS</p>
               <ul id='options-filter-products' class="option-set" data-group="filter-product">
                 {% set types2 = hubdb_table_column(5391476, "app_type").options %}
@@ -196,7 +196,7 @@
                 {% endif %}
                 {% endfor %}
               </ul>
-            </div>
+            </div> #}
             {% if module.app_detail %}
             <div class='app-listing app-listing-new'>
               {% for item in module.app_detail %}
