@@ -54,6 +54,7 @@ section.u4m-homepage-hero {
           background-size: cover;
           background-position: top;
           min-height: 640px;
+          min-height: 600px;
           border-radius: 10px;
           @include tabletvert {
             min-height: 360px;
