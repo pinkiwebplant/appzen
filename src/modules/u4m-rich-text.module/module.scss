@@ -1,6 +1,15 @@
 @import "../../css/_module-imports";
 
 .u4m-rich-text {
+  iframe.lever-iframe {
+    max-width: 1288px;
+    border: 0px none;
+    margin: 0px auto;
+    display: block;
+    width: 100% !important;
+    background-color: #fefdf9;
+  }
+
   p {
     @include size18;
     font-weight: 400;

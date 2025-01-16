@@ -1,4 +1,5 @@
 @import "../../css/_module-imports";
+
 section.u4m-form-wrapper {
   &.reverse-text {
     color: inherit;
@@ -33,6 +34,7 @@ section.u4m-form-wrapper {
     @include tabletMin {
       padding-left: 6.5%;
     }
+
     @include tabletmid {
       width: 100%;
     }
@@ -42,6 +44,7 @@ section.u4m-form-wrapper {
     margin-top: 0;
     margin-bottom: 0;
     @include form;
+
     .form-title {
       @include h3;
     }
@@ -59,8 +62,12 @@ section.u4m-form-wrapper {
       margin-bottom: 0;
     }
 
+    .hs-form-field {
+      position: relative;
+    }
+
     /* Labels */
-    .hs-form-field > label {
+    .hs-form-field>label {
       transform: translateY(0);
       transform-origin: left top;
       transition: transform 0.2s ease-in-out;
@@ -84,20 +91,22 @@ section.u4m-form-wrapper {
         left: 16px;
       }
     }
-    .hs-form-field.textExist > label,
-    .hs-form-field.focused > label {
+
+    .hs-form-field.textExist>label,
+    .hs-form-field.focused>label {
       font-weight: 600;
       transform: scale(0.733) translateY(calc(-9px - 0.5em)) translate(-7px);
       transform: scale(0.733) translateY(calc(-9px - 0.5em)) translate(-20px);
       transform: scale(0.733) translateY(calc(-9px - 0.5em)) translate(0px);
     }
-    .removeLabelEffect.hs-form-field > label,
-    .hs-fieldtype-file.hs-form-field > label,
-    .hs-fieldtype-select.hs-form-field > label,
-    .hs-fieldtype-radio.hs-form-field > label,
-    .hs-multiple_checkbox.hs-form-field > label,
-    .hs-fieldtype-checkbox.hs-form-field > label,
-    .hs-fieldtype-date.hs-form-field > label {
+
+    .removeLabelEffect.hs-form-field>label,
+    .hs-fieldtype-file.hs-form-field>label,
+    .hs-fieldtype-select.hs-form-field>label,
+    .hs-fieldtype-radio.hs-form-field>label,
+    .hs-multiple_checkbox.hs-form-field>label,
+    .hs-fieldtype-checkbox.hs-form-field>label,
+    .hs-fieldtype-date.hs-form-field>label {
       position: static;
       transform: none;
       padding: 0;
@@ -105,13 +114,13 @@ section.u4m-form-wrapper {
     }
 
     @include tabletmidmin {
-      .hs-form-field > label {
+      .hs-form-field>label {
         top: 15px;
         left: 16px;
       }
 
-      .hs-form-field.textExist > label,
-      .hs-form-field.focused > label {
+      .hs-form-field.textExist>label,
+      .hs-form-field.focused>label {
         transform: scale(0.733) translateY(calc(-9px - 0.5em)) translate(-7px);
       }
     }
@@ -130,6 +139,7 @@ section.u4m-form-wrapper {
         margin-top: 0;
         margin-bottom: 0;
       }
+
       select {
         font-size: 12rem;
         font-weight: 400;

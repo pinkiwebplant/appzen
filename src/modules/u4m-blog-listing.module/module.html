@@ -1,12 +1,14 @@
 <section class="u4m-blog-listing">
   <div class="page-center">
-    <div class="listing-title">
+  {# requested post-launch to remove the blog title from the blog listing page. I'm only removing from primary listing so author/topic pages don't get messed up. #}
+    <div class="listing-title" {% if topic %}{% elif blog_author %}{% else %} style="display:none;" {% endif %}>
       {% if topic %}
       <h1>{{ topic|capitalize | replace('-',' ') }}</h1>
       {% elif blog_author %}
       <h1>{{ blog_author }}</h1>
       {% else %}
-      <h1>{{ group.public_title }}</h1>
+        {# requested post-launch to remove the blog title from the blog listing page. I'm only removing from primary listing so author/topic pages don't get messed up. #}
+      <h1 style="display:none;">{{ group.public_title }}</h1>
       {% endif %}
     </div>
 

@@ -16,7 +16,7 @@
 
 
 
-  <div class="flex_row {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.select_column_alignment }}{% endif %}">
+  <div class="flex_row {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.select_column_alignment }}{% endif %} card-count_{{ module.cards_group|length }}  card-col-width_{{ module.module_settings.column_width }}">
 
     {% for item in module.cards_group %}
     <div class="card_item {{ module.module_settings.column_width }} col {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.card_color_theme }}_color {% endif %}">
