@@ -2,14 +2,17 @@
 
 section.u4m-logo-trust-marks {
   padding: 80px 0;
+
   &.inner_bg_add {
     @include center;
     padding: 110rem 73rem;
     border-radius: 12rem;
   }
+
   .intro.center {
     text-align: center;
   }
+
   .intro.right {
     text-align: right;
   }
@@ -26,36 +29,55 @@ section.u4m-logo-trust-marks {
     .slider_enable {
       display: block;
     }
+
     .logo_wrapper.slider_wrapper {
       display: block;
+
       .slick-track {
         display: flex;
         align-items: center;
+
         img {
           margin: 0;
         }
       }
     }
+
     .logo_wrapper {
       padding: 20px 0;
       row-gap: 20px;
+
       @include laptop {
         justify-content: center;
       }
+
       .logo_items {
         display: flex;
         align-items: center;
         justify-content: center;
 
+        &:not(.slick-slide) {
+          img {
+            cursor: default;
+          }
+        }
+
+        &.slick-slide {
+          img {
+            cursor: pointer;
+          }
+        }
+
         img {
           width: 120px;
           filter: grayscale(1);
-          cursor: pointer;
+          // cursor: pointer;
           transition: all 0.3s;
         }
       }
     }
   }
+
   .logo_section.theme_three {
     .logo_wrapper {
       .logo_items {
@@ -67,18 +89,21 @@ section.u4m-logo-trust-marks {
           display: flex;
           align-items: center;
           justify-content: center;
+
           @include phone {
             padding: 20px;
           }
+
           img {
             margin: 0;
             filter: unset;
           }
         }
+
         &.col4 {
           .logo_inner {
             @include phone {
-             padding: 22px 38px;
+              padding: 22px 38px;
             }
           }
         }
@@ -86,14 +111,16 @@ section.u4m-logo-trust-marks {
     }
   }
 
-  .page-center > .flex_row {
+  .page-center>.flex_row {
     justify-content: center;
   }
 
   &.reverse-text {
     color: $white;
   }
+
   @include laptop {
+
     .col2,
     .col3 {
       width: 25%;
@@ -102,21 +129,26 @@ section.u4m-logo-trust-marks {
   }
 
   @include tabletvert {
+
     .col2,
     .col3 {
       width: 33.333%;
       padding: 0 10px;
     }
+
     .col4 {
       width: 33.333%;
       padding: 0 10px;
     }
   }
+
   @include phone {
+
     .col2,
     .col3 {
       width: 50%;
     }
+
     .col4 {
       width: 100%;
       padding: 0 10px;

@@ -1,24 +1,22 @@
 [ {
   "id" : "b7e163b7-8228-cc0e-a461-89d3797d3f45",
   "name" : "intro_content",
-  "display_width" : null,
   "label" : "Intro Content",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "93a0e20f-0839-7b90-2504-8adcf73b3e44",
     "name" : "include_heading",
-    "display_width" : null,
     "label" : "Include Heading",
     "required" : false,
     "locked" : false,
     "display" : "checkbox",
     "type" : "boolean",
+    "display_width" : null,
     "default" : true
   }, {
     "id" : "f1ed9ce7-0c4f-162d-1695-a3bd2ddf43bb",
     "name" : "heading",
-    "display_width" : null,
     "label" : "Heading",
     "required" : false,
     "locked" : false,
@@ -34,21 +32,21 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
+    "display_width" : null,
     "default" : "Customer stories"
   }, {
     "id" : "010df980-8488-a9d0-f175-5494fc0ef4dc",
     "name" : "include_view_all_link",
-    "display_width" : null,
     "label" : "Include View All Link",
     "required" : false,
     "locked" : false,
     "display" : "checkbox",
     "type" : "boolean",
+    "display_width" : null,
     "default" : true
   }, {
     "id" : "8df7fae0-8fa8-ddbf-0b51-7342fa2da286",
     "name" : "view_all_link_text",
-    "display_width" : null,
     "label" : "View All Link Text",
     "required" : false,
     "locked" : false,
@@ -64,11 +62,11 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
+    "display_width" : null,
     "default" : "View All"
   }, {
     "id" : "7e66790d-1e1b-77ee-31e4-25d7e96ca8d5",
     "name" : "view_all_link",
-    "display_width" : null,
     "label" : "View All Link",
     "required" : false,
     "locked" : false,
@@ -83,11 +81,12 @@
     "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
     "show_advanced_rel_options" : false,
     "type" : "link",
+    "display_width" : null,
     "default" : {
       "url" : {
-        "content_id" : null,
-        "type" : "EXTERNAL",
-        "href" : ""
+        "content_id" : 183785956436,
+        "href" : null,
+        "type" : "CONTENT"
       },
       "open_in_new_tab" : false,
       "no_follow" : false
@@ -97,6 +96,7 @@
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
+  "display_width" : null,
   "default" : {
     "include_heading" : true,
     "heading" : "Customer stories",
@@ -104,9 +104,9 @@
     "view_all_link_text" : "View All",
     "view_all_link" : {
       "url" : {
-        "content_id" : null,
-        "type" : "EXTERNAL",
-        "href" : ""
+        "content_id" : 183785956436,
+        "href" : null,
+        "type" : "CONTENT"
       },
       "open_in_new_tab" : false,
       "no_follow" : false
@@ -115,14 +115,12 @@
 }, {
   "id" : "2c103900-897c-8684-c630-3baa77a98e79",
   "name" : "resources",
-  "display_width" : null,
   "label" : "Case Study",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "89624b07-b8a3-319e-5698-f1deaac3a302",
     "name" : "resource_type",
-    "display_width" : null,
     "label" : "Case Study Type",
     "required" : false,
     "locked" : false,
@@ -132,11 +130,11 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
+    "display_width" : null,
     "default" : "recent"
   }, {
     "id" : "3dd8f5f8-62ac-0edc-cc35-17f4bc055d93",
     "name" : "resource_table",
-    "display_width" : null,
     "label" : "Case Study Table",
     "required" : false,
     "locked" : true,
@@ -149,11 +147,11 @@
       "access" : null
     },
     "type" : "hubdbtable",
+    "display_width" : null,
     "default" : 103427390
   }, {
     "id" : "ccae048e-d114-0724-3951-5882ccc1bcca",
     "name" : "category_name",
-    "display_width" : null,
     "label" : "Category Name",
     "inline_help_text" : "Enter the category name from the table such as \"finance\" , \"technology\", etc.",
     "required" : false,
@@ -170,11 +168,11 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
+    "display_width" : null,
     "default" : "finance"
   }, {
     "id" : "bced61ff-3c14-47cf-6d68-3e972385600c",
     "name" : "resources_by_title",
-    "display_width" : null,
     "label" : "Case Study By Title",
     "required" : false,
     "locked" : false,
@@ -195,13 +193,13 @@
     "children" : [ {
       "id" : "2b18d6a6-6801-b462-ae44-9ac2a9747188",
       "name" : "select_resource",
-      "display_width" : null,
       "label" : "Select Case Study",
       "required" : false,
       "locked" : false,
       "table_name_or_id" : "103427390",
       "display_columns" : [ ],
       "type" : "hubdbrow",
+      "display_width" : null,
       "default" : {
         "id" : null
       }
@@ -210,6 +208,7 @@
     "expanded" : false,
     "group_occurrence_meta" : null,
     "type" : "group",
+    "display_width" : null,
     "default" : [ {
       "select_resource" : {
         "id" : null
@@ -226,7 +225,6 @@
   }, {
     "id" : "426cd412-0466-923c-e63b-812b0ef54c0f",
     "name" : "count",
-    "display_width" : null,
     "label" : "Count",
     "required" : false,
     "locked" : false,
@@ -241,49 +239,50 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
+    "display_width" : null,
     "default" : 3
   }, {
     "id" : "be97cedc-2a28-8554-eedc-955fbb3b499d",
     "name" : "settings",
-    "display_width" : null,
     "label" : "Settings",
     "required" : false,
     "locked" : false,
     "children" : [ {
       "id" : "bd420b08-4fc2-0ddf-e22b-1d1b49992eb3",
       "name" : "include_featured_image",
-      "display_width" : null,
       "label" : "Include Featured Image",
       "required" : false,
       "locked" : false,
       "display" : "checkbox",
       "type" : "boolean",
+      "display_width" : null,
       "default" : true
     }, {
       "id" : "f9b562f6-c731-def8-ccaa-0134ff2c51d7",
       "name" : "include_description",
-      "display_width" : null,
       "label" : "Include Description",
       "required" : false,
       "locked" : false,
       "display" : "checkbox",
       "type" : "boolean",
+      "display_width" : null,
       "default" : true
     }, {
       "id" : "880dc6e8-91aa-70c4-7795-d017018b053d",
       "name" : "include_tag",
-      "display_width" : null,
       "label" : "Include Tag",
       "required" : false,
       "locked" : false,
       "display" : "checkbox",
       "type" : "boolean",
+      "display_width" : null,
       "default" : true
     } ],
     "tab" : "CONTENT",
     "expanded" : true,
     "group_occurrence_meta" : null,
     "type" : "group",
+    "display_width" : null,
     "default" : {
       "include_featured_image" : true,
       "include_description" : true,
@@ -294,10 +293,11 @@
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
+  "display_width" : null,
   "default" : {
     "resource_type" : "recent",
     "resource_table" : 103427390,
-    "category_name" : "",
+    "category_name" : "finance",
     "resources_by_title" : [ {
       "select_resource" : {
         "id" : null
@@ -321,25 +321,23 @@
 }, {
   "id" : "module_overrides",
   "name" : "module_overrides",
-  "display_width" : null,
   "label" : "Module Overrides",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "enable_overrides",
     "name" : "enable_overrides",
-    "display_width" : null,
     "label" : "Enable Overrides",
     "help_text" : "Toggle to override section ID and vertical margin. ",
     "required" : false,
     "locked" : false,
     "display" : "checkbox",
     "type" : "boolean",
+    "display_width" : null,
     "default" : true
   }, {
     "id" : "module_overrides.section_id",
     "name" : "section_id",
-    "display_width" : null,
     "label" : "Section ID",
     "help_text" : "The value you type here will be the anchor link for this section. Should be all lowercase and include dashes instead of spaces. This should be a unique value per module.",
     "required" : false,
@@ -355,11 +353,11 @@
     },
     "allow_new_line" : false,
     "show_emoji_picker" : false,
-    "type" : "text"
+    "type" : "text",
+    "display_width" : null
   }, {
     "id" : "module_overrides.top_margin",
     "name" : "top_margin",
-    "display_width" : null,
     "label" : "Top Margin",
     "required" : false,
     "locked" : false,
@@ -377,11 +375,11 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
+    "display_width" : null,
     "default" : "top-margin-default"
   }, {
     "id" : "custom_top_margin",
     "name" : "custom_top_margin",
-    "display_width" : null,
     "label" : "Custom Top Margin",
     "required" : false,
     "locked" : false,
@@ -396,11 +394,11 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
+    "display_width" : null,
     "default" : 100
   }, {
     "id" : "custom_top_margin_mobile",
     "name" : "custom_top_margin_mobile",
-    "display_width" : null,
     "label" : "Custom Top Margin Mobile",
     "required" : false,
     "locked" : false,
@@ -415,11 +413,11 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
+    "display_width" : null,
     "default" : 50
   }, {
     "id" : "module_overrides.bottom_margin",
     "name" : "bottom_margin",
-    "display_width" : null,
     "label" : "Bottom Margin",
     "required" : false,
     "locked" : false,
@@ -437,11 +435,11 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
+    "display_width" : null,
     "default" : "bottom-margin-default"
   }, {
     "id" : "custom_bottom_margin",
     "name" : "custom_bottom_margin",
-    "display_width" : null,
     "label" : "Custom Bottom Margin",
     "required" : false,
     "locked" : false,
@@ -456,11 +454,11 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
+    "display_width" : null,
     "default" : 100
   }, {
     "id" : "custom_bottom_margin_mobile",
     "name" : "custom_bottom_margin_mobile",
-    "display_width" : null,
     "label" : "Custom Bottom Margin Mobile",
     "required" : false,
     "locked" : false,
@@ -475,11 +473,11 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
+    "display_width" : null,
     "default" : 50
   }, {
     "id" : "module_overrides.top_padding",
     "name" : "top_padding",
-    "display_width" : null,
     "label" : "Top Padding",
     "required" : false,
     "locked" : false,
@@ -497,11 +495,11 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
+    "display_width" : null,
     "default" : "top-padding-default"
   }, {
     "id" : "custom_top_padding",
     "name" : "custom_top_padding",
-    "display_width" : null,
     "label" : "Custom Top Padding",
     "required" : false,
     "locked" : false,
@@ -516,11 +514,11 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
+    "display_width" : null,
     "default" : 100
   }, {
     "id" : "custom_top_padding_mobile",
     "name" : "custom_top_padding_mobile",
-    "display_width" : null,
     "label" : "Custom Top Padding Mobile",
     "required" : false,
     "locked" : false,
@@ -535,11 +533,11 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
+    "display_width" : null,
     "default" : 50
   }, {
     "id" : "module_overrides.bottom_padding",
     "name" : "bottom_padding",
-    "display_width" : null,
     "label" : "Bottom Padding",
     "required" : false,
     "locked" : false,
@@ -557,11 +555,11 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
+    "display_width" : null,
     "default" : "bottom-padding-default"
   }, {
     "id" : "custom_bottom_padding",
     "name" : "custom_bottom_padding",
-    "display_width" : null,
     "label" : "Custom Bottom Padding",
     "required" : false,
     "locked" : false,
@@ -576,11 +574,11 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
+    "display_width" : null,
     "default" : 100
   }, {
     "id" : "custom_bottom_padding_mobile",
     "name" : "custom_bottom_padding_mobile",
-    "display_width" : null,
     "label" : "Custom Bottom Padding Mobile",
     "required" : false,
     "locked" : false,
@@ -595,11 +593,11 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
+    "display_width" : null,
     "default" : 50
   }, {
     "id" : "8c1b8a52-b908-5731-2956-0ee376edf287",
     "name" : "select_column_alignment",
-    "display_width" : null,
     "label" : "Select Column Alignment",
     "required" : false,
     "locked" : false,
@@ -617,11 +615,11 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
+    "display_width" : null,
     "default" : "right"
   }, {
     "id" : "19f9e36e-6554-7c45-7aab-6b1d7ec82615",
     "name" : "card_background_color",
-    "display_width" : null,
     "label" : "Card Background Color",
     "required" : false,
     "locked" : false,
@@ -639,11 +637,11 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
+    "display_width" : null,
     "default" : "white_bg"
   }, {
     "id" : "3acc8068-a3e9-1ee0-60c7-9dbf953422a4",
     "name" : "background_settings",
-    "display_width" : null,
     "label" : "Background Settings",
     "required" : false,
     "locked" : false,
@@ -658,7 +656,6 @@
     "children" : [ {
       "id" : "8c61112d-4e81-6eb2-c3da-f21a5bc9642e",
       "name" : "background_type",
-      "display_width" : null,
       "label" : "Background Type",
       "required" : false,
       "locked" : false,
@@ -668,11 +665,11 @@
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
+      "display_width" : null,
       "default" : ""
     }, {
       "id" : "0b377766-45a1-d996-07a1-ed7902a91581",
       "name" : "select_background_color_type",
-      "display_width" : null,
       "label" : "Select Background Color",
       "required" : false,
       "locked" : false,
@@ -690,11 +687,11 @@
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
+      "display_width" : null,
       "default" : ""
     }, {
       "id" : "6c8bfd0e-1629-1268-e01c-17b4047ecfce",
       "name" : "background_color",
-      "display_width" : null,
       "label" : "Background Color",
       "help_text" : "If a module has formal settings for a background color they will take priority over this value.",
       "inline_help_text" : "",
@@ -709,6 +706,7 @@
         "access" : null
       },
       "type" : "color",
+      "display_width" : null,
       "default" : {
         "color" : null,
         "opacity" : null
@@ -716,7 +714,6 @@
     }, {
       "id" : "878364f4-31ac-6917-e76f-65307d7d36e5",
       "name" : "background_image",
-      "display_width" : null,
       "label" : "Background Image",
       "help_text" : "If a module has formal settings for a background image they will take priority over this value.",
       "required" : false,
@@ -733,6 +730,7 @@
       "resizable" : false,
       "show_loading" : false,
       "type" : "image",
+      "display_width" : null,
       "default" : {
         "size_type" : "auto",
         "src" : "",
@@ -744,6 +742,7 @@
     "expanded" : false,
     "group_occurrence_meta" : null,
     "type" : "group",
+    "display_width" : null,
     "default" : {
       "background_type" : "",
       "select_background_color_type" : "",
@@ -761,7 +760,6 @@
   }, {
     "id" : "b8ff09cf-3e4e-fe6d-88bc-95be48ab2e1e",
     "name" : "reverse_text",
-    "display_width" : null,
     "label" : "Reverse Text",
     "required" : false,
     "locked" : false,
@@ -775,11 +773,11 @@
     },
     "display" : "checkbox",
     "type" : "boolean",
+    "display_width" : null,
     "default" : false
   }, {
     "id" : "6e3d873e-d7f2-a340-0e9e-d8c382338165",
     "name" : "use_card_content_theme_color",
-    "display_width" : null,
     "label" : "Use Card Content Theme Color",
     "required" : false,
     "locked" : false,
@@ -793,12 +791,14 @@
     },
     "display" : "checkbox",
     "type" : "boolean",
+    "display_width" : null,
     "default" : false
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
+  "display_width" : null,
   "default" : {
     "enable_overrides" : true,
     "top_margin" : "top-margin-default",

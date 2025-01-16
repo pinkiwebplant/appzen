@@ -3,45 +3,55 @@
 .u4m-webinars {
   @include tabletmidmin {
     .page-center {
-      > .flex_row {
+      >.flex_row {
         margin: 0 -10px;
       }
     }
   }
+
   .left_col {
     padding-right: 40px;
+
     @include tabletmid {
       padding-right: 0;
       margin-bottom: 20px;
     }
+
     .img_wrapper {
       padding-bottom: 20px;
+
       img {
         border-radius: 8px;
       }
     }
+
     .title {
       h3 {
         margin-bottom: 13rem;
       }
     }
+
     .btn_wrapper {
       margin-top: 10px;
     }
+
     .webinars_first_item {
       position: sticky;
       top: 20px;
     }
   }
+
   .date_section {
     display: flex;
     gap: 5px;
     align-items: center;
     margin-bottom: 10px;
+
     @include tabletvert {
       flex-direction: column;
     }
   }
+
   .date_sec {
     font-size: 13px;
     line-height: 20.8px;
@@ -49,24 +59,29 @@
     gap: 2px;
     display: flex;
     align-items: center;
+
     @include tabletvert {
       gap: 5px;
     }
+
     span {
-      > svg {
+      >svg {
         vertical-align: middle;
         position: relative;
         top: -2px;
       }
     }
   }
+
   .title h2 {
     margin-bottom: 13px;
   }
+
   .content p {
     font-size: 14px;
     line-height: 21px;
   }
+
   .upcoming {
     font-size: 12px;
     background: $yellowColor;
@@ -76,6 +91,7 @@
     display: inline-block;
     font-weight: 500;
   }
+
   .sold_out {
     border: 1px solid $lightGray;
     padding: 3px 8px;
@@ -84,6 +100,7 @@
     line-height: 19.2px;
     font-weight: 500;
   }
+
   .on-demand {
     padding: 3px 8px;
     border-radius: 3px;
@@ -93,30 +110,38 @@
     background: $sectionbg;
     color: $basecolor;
   }
+
   .right_col {
     .webinars_item {
       border: 1px solid $lightGray;
       border-radius: 8px;
       padding: 7px;
       margin-bottom: 20px;
+      position: relative;
+
       .flex_wrap {
         display: flex;
         justify-content: space-between;
         column-gap: 37px;
+
         @include tabletmid {
           column-gap: 20px;
         }
+
         @include phone {
           flex-wrap: wrap;
           gap: 20px;
         }
+
         .image_sec {
           flex: 0 0 36.333%;
           position: relative;
           min-width: 200px;
+
           @include phone {
             flex: 0 0 100%;
           }
+
           img {
             height: 100%;
             min-height: 200px;
@@ -125,13 +150,16 @@
             width: 100%;
             object-position: right;
             border-radius: 4px;
+
             @include tabletmid {
               height: 220px;
             }
+
             @include phone {
               height: auto;
             }
           }
+
           .play_icon {
             position: absolute;
             left: 50%;
@@ -145,32 +173,48 @@
             cursor: pointer;
           }
         }
+
         .right_content {
           flex: 1;
           padding-right: 25px;
           padding-top: 25px;
+
           .cntnt_wrapper {
             display: flex;
             flex-direction: column;
             height: 100%;
-            > * {
+
+            >* {
               width: 100%;
             }
-          .title h5 {
-            margin: 0;
-          }
-          .btn_wrapper {
-            text-align: right;
-            margin-top: auto;
-            img {
-              width: 15px;
+
+            .title h5 {
+              margin: 0;
+            }
+
+            .btn_wrapper {
+              text-align: right;
+              margin-top: auto;
+
+              a.webinar-link:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+              }
+
+              img {
+                width: 15px;
+              }
             }
           }
-        }
         }
       }
     }
   }
+
   .popup_section {
     position: fixed;
     left: 0;
@@ -185,11 +229,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
     .page-center {
       width: 100%;
+
       .inner {
         padding-bottom: 56%;
         position: relative;
+
         iframe {
           width: 100%;
           position: absolute;
@@ -199,6 +246,7 @@
         }
       }
     }
+
     .close_icon {
       position: absolute;
       right: 30px;
@@ -209,33 +257,43 @@
       line-height: 1;
     }
   }
+
   .pop-active .popup_section {
     visibility: visible;
     opacity: 1;
   }
+
   @include tabletmid {
     .flex_row .col7 {
       width: 100%;
     }
+
     .flex_row .col5 {
       width: 100%;
     }
   }
+
   &.reverse-text {
     .date_sec {
       color: $white;
+
       span {
-        > svg {
+        >svg {
           path {
             fill: $white;
           }
         }
       }
     }
+
     .webinars_item {
+
+
       .right_content {
         .btn_wrapper {
           .button_item {
+
+
             svg {
               path {
                 stroke: $white;

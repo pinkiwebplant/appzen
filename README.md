@@ -1,6 +1,6 @@
-# Appzen - v1.6.1
+# Appzen-u4m - v1.6.1
 
-# Appzen for the HubSpot CMS by New Breed
+# Appzen-u4m for the HubSpot CMS by New Breed
 
 Copyright 2024 New Breed - newbreedrevenue.com
 Last Updated - 10-30-2024
@@ -22,33 +22,33 @@ hs hubdb create u4-resource-library.json
 #### Upload entire project
 
 ```
-hs upload src Appzen
+hs upload src Appzen-u4m
 ```
 
 #### Watch entire project
 
 ```
-hs watch src Appzen
+hs watch src Appzen-u4m
 ```
 
 #### Fetch entire project with overwriting
 
 ```
-hs fetch Appzen src -o
+hs fetch Appzen-u4m src -o
 ```
 
 #### Fetch a specific module add -o to the end to overwrite files
 
 ```
-hs fetch Appzen/modules/u4m-000.module src/modules/u4m-000.module -o
+hs fetch Appzen-u4m/modules/u4m-000.module src/modules/u4m-000.module -o
 ```
 
-hs fetch Appzen/modules/u4m-cards-side.module src/modules/u4m-cards-side.module -o
+hs fetch Appzen-u4m/modules/u4m-cards-side.module src/modules/u4m-cards-side.module -o
 
 #### Watch entire folder on non-default portal (portal names are set in hubspot.config.yml)
 
 ```
-hs watch --account=hug_vt src Appzen
+hs watch --account=hug_vt src Appzen-u4m
 ```
 
 #### Fetch a HubDB table (the numbers are the ID of the table)
