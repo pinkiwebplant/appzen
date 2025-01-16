@@ -93,6 +93,8 @@
         .item-toggle-icon {
           margin-left: auto;
           width: 38px;
+          display: flex;
+          justify-content: flex-end;
           span {
             border: 1px solid #E2DDD2;
             border-radius: 100%;
@@ -109,7 +111,7 @@
             }
           }
           @include tabletmid {
-            display: block;
+            display: flex;
           }
         }
       }

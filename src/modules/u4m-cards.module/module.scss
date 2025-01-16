@@ -89,9 +89,6 @@ section.u4m-cards {
     display: flex;
     flex-wrap: wrap;
 
-    @include tabletmid {
-      width: 50%;
-    }
 
     @include tabletvert {
       width: 100%;

@@ -335,6 +335,10 @@ section.u4m-blog-post {
         letter-spacing: 0.25rem;
         line-height: 1.2;
       }
+      
+      .hs-input {
+          text-overflow: ellipsis;
+      }
     }
   }
 }

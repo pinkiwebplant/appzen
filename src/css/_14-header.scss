@@ -98,8 +98,10 @@ header.u4m-header {
                   width: 100% !important;
                   text-overflow: unset !important;
                   white-space: normal !important;
+                  padding-left: 3px;
                   @include navbreakMin {
                     max-width: 314px;
+                    padding-left: 3px;
                   }
                 }
               }
