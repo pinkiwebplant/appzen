@@ -89,6 +89,7 @@ section.u4m-testimonials {
     flex-wrap: wrap;
     @include tabletmid {
       width: 100%;
+      justify-content: start;
     }
     img.img-1 {
       border-radius: 12px;
@@ -130,6 +131,7 @@ section.u4m-testimonials {
         max-width: 100%;
       }
       @include tabletmid {
+        text-align: left;
         .hr-spacer {
           margin-bottom: 32px;
         }

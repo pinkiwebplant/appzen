@@ -2,6 +2,14 @@
 
 section.u4m-blog-post-header {
   padding-bottom: 75px;
+  .page-center {
+    .InnerWrpa {
+      max-width: calc(100% - 320px);
+      @include tablet {
+        max-width: 100%;
+      }
+    }
+  }
   .post-tag {
     margin-bottom: 25px;
     a {
@@ -35,7 +43,7 @@ section.u4m-blog-post-header {
     width: 100%;
     min-height: 500px;
     background-position: center;
-    max-width: 740px;
+    max-width: 900px;
     margin: 0;
     @include tabletvert {
       min-height: 250px;
