@@ -5,9 +5,10 @@
 		.top_cnt {
 			margin-bottom: 52px;
 			padding-left: 48px;
+
 			@include tabletvert {
 				padding-left: 0;
-			  }
+			}
 		}
 
 		.btm_cards {
@@ -23,6 +24,7 @@
 						.top_img {
 							margin-bottom: 40px;
 							max-width: 141px;
+
 							img {
 								filter: grayscale(1);
 							}
@@ -112,7 +114,8 @@
 			height: 43px;
 
 			@include tabletvert {
-				left: 75%;
+				left: 80%;
+				bottom: 0;
 			}
 
 			&:before {

@@ -1,5 +1,7 @@
 @import "../../css/_module-imports";
+
 section.u4m-appstore-listing {
+
     .custom_app,
     .premium_app,
     .standard_app,
@@ -7,36 +9,46 @@ section.u4m-appstore-listing {
         display: flex;
         flex-wrap: wrap;
     }
+
     .appstore-main-container .search-inner-block input {
         margin: 0;
     }
+
     .appstore-main-container .search-inner-block ::placeholder {
         color: $basecolor !important;
     }
+
     .custom_app {
         order: 1;
     }
+
     .premium_app {
         order: 2;
     }
+
     .standard_app {
         order: 3;
     }
+
     .base_model {
         order: 4;
     }
+
     .hero-module.hero-master p {
         font-weight: 600;
         font-size: 20px;
         line-height: 140%;
     }
+
     .breadcrumb-link:after {
         display: none;
     }
-    .filter-block ul li input:checked + label,
-    ul.dropdown-menu li input:checked + label {
+
+    .filter-block ul li input:checked+label,
+    ul.dropdown-menu li input:checked+label {
         border-bottom: 2px solid $darkGray;
     }
+
     .filter-block ul li label,
     ul.dropdown-menu li label {
         cursor: pointer;
@@ -48,6 +60,7 @@ section.u4m-appstore-listing {
     .filtered {
         display: none;
     }
+
     select#sortby {
         width: 200px !important;
         border: 0;
@@ -68,9 +81,11 @@ section.u4m-appstore-listing {
         display: inline-block;
         outline: none !important;
     }
+
     .sort-block .dropdown {
         position: relative;
     }
+
     .sort-block .dropdown .sort-text {
         position: absolute;
         top: 50%;
@@ -88,25 +103,30 @@ section.u4m-appstore-listing {
         position: relative;
         padding-top: 180px;
         padding-bottom: 100px;
+
         .bgInnerWrap {
             border-radius: 12px;
             padding: 50px;
+
             @include tabletmidmin {
                 justify-content: space-between;
                 padding: 83px 118px;
                 max-width: calc(100% - 40px);
                 margin: 0 auto;
             }
+
             @include tabletvert {
                 padding: 50px 20px;
             }
         }
-        
+
     }
+
     .detail-page-banner.no-video {
         padding-bottom: 75px;
         // background: $basecolor;
     }
+
     // .detail-page-banner.no-video .detail-page-content {
     //     margin-top: -53px;
     // }
@@ -122,28 +142,34 @@ section.u4m-appstore-listing {
         font-size: 40pt;
         line-height: 110%;
     }
+
     .detail-page-content p {
         font-weight: 400;
         font-size: 18px;
         line-height: 140%;
-        max-width: 687px;    
+        max-width: 687px;
         margin-top: 0;
         margin-bottom: 29px;
     }
-    .main-detail-page > div {
+
+    .main-detail-page>div {
         padding: 0 158px;
         position: relative;
+
         @include tabletmid {
             padding: 0 70px;
         }
+
         @include tabletvert {
             padding: 0 40px;
         }
     }
+
     .main-detail-page img {
         vertical-align: middle;
         border-radius: 8px;
     }
+
     /* .detail-page-image {
 text-align: center;
 } */
@@ -151,6 +177,7 @@ text-align: center;
         padding-top: 30px;
         padding-bottom: 30px;
     }
+
     .detail-content h1,
     .detail-content h2,
     .detail-content h3,
@@ -159,12 +186,14 @@ text-align: center;
     .detail-content h6 {
         color: $basecolor;
     }
+
     .detail-content p {
         font-weight: 400;
         font-size: 17px;
         line-height: 150%;
         color: $basecolor;
     }
+
     .sidebar-card {
         background: $white;
         box-shadow:
@@ -191,14 +220,17 @@ text-align: center;
         line-height: 130%;
         color: $basecolor;
     }
+
     .main-detail-page {
         margin-top: -50px;
         padding-bottom: 50px;
     }
+
     .main-detail-page.no-video {
         margin-top: 28px;
         padding-bottom: 50px;
     }
+
     a.all-inegrations {
         font-weight: 600;
         font-size: 13.44px;
@@ -207,6 +239,7 @@ text-align: center;
         display: inline-block;
         margin-top: 10px;
         margin-bottom: 18px;
+
         img {
             filter: invert(1);
         }
@@ -217,6 +250,7 @@ text-align: center;
         padding: 100px 200px;
         text-align: center;
     }
+
     .request-header h2 {
         font-weight: 600;
         font-size: 32px;
@@ -236,7 +270,8 @@ text-align: center;
         background-color: $black;
         border-color: $black;
     }
-    .request-integration-section > .page-center {
+
+    .request-integration-section>.page-center {
         padding-left: 5%;
         padding-right: 5%;
     }
@@ -245,6 +280,7 @@ text-align: center;
         form {
             @include form;
             margin-bottom: 0;
+
             select {
                 font-size: 13rem !important;
                 font-weight: 400;
@@ -261,10 +297,12 @@ text-align: center;
         width: 100%;
         height: 100%;
     }
+
     .detail-page-image.detail-video {
         border-radius: 8px;
         overflow: hidden;
     }
+
     // .detail-page-banner .all-inegrations {
     //     color: $white;
     //     margin-top: 0;
@@ -273,12 +311,12 @@ text-align: center;
     //     left: -100px;
     // }
 
-    .video-popup-block > a {
+    .video-popup-block>a {
         display: block;
         position: relative;
     }
 
-    .video-popup-block > a.popup-video-btn .play-video {
+    .video-popup-block>a.popup-video-btn .play-video {
         position: absolute;
         left: 50%;
         top: 50%;
@@ -292,9 +330,11 @@ text-align: center;
     form.hs-form label {
         font-size: 14px;
     }
+
     form.hs-form input[type="checkbox"] {
         margin-left: 17px;
     }
+
     .legal-consent-container .hs-form-booleancheckbox-display input {
         margin-left: 0px !important;
     }
@@ -314,6 +354,7 @@ text-align: center;
         justify-content: center;
         margin-bottom: 0;
     }
+
     .overlay-video {
         position: absolute;
         width: 100%;
@@ -324,33 +365,41 @@ text-align: center;
         align-items: center;
         justify-content: center;
     }
+
     .overlay-video div {
         align-self: center;
         justify-self: center;
         user-select: none;
     }
+
     .overlay-video div img {
         transition: 0.25s all ease;
         filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.4));
     }
+
     .overlay-video:hover div img {
         transition: 0.25s all ease;
     }
+
     .overlay-video:hover {
         cursor: pointer;
     }
+
     .overlay-video:hover div img {
         transform: scale(1.1);
     }
+
     #pause-button div {
         opacity: 0;
         transition: 0.5s all ease;
     }
+
     #pause-button:hover div,
     #pause-button:active div,
     #pause-button:focus div {
         opacity: 1;
     }
+
     .hidden {
         display: none;
     }
@@ -361,23 +410,27 @@ text-align: center;
     form.hs-form .hs-fieldtype-radio {
         width: 100%;
     }
+
     .card-details .card-title p {
         margin: 0px 0px 10px;
     }
+
     .app-listing {
         margin-top: 50px;
         margin-right: 50px;
         margin-bottom: 30px;
     }
+
     .app-card p {
         font-size: 14px;
         line-height: 18px;
         color: $basecolor;
     }
 
-    .app-listing > div + div {
+    .app-listing>div+div {
         margin-top: 20px;
     }
+
     .app-bottom-content {
         margin-top: 40px;
         padding-top: 12px;
@@ -390,6 +443,7 @@ text-align: center;
         line-height: 18px;
         color: $basecolor;
     }
+
     .app-listing-new {
         display: block !important;
     }
@@ -408,7 +462,7 @@ text-align: center;
         color: $basecolor;
     }
 
-    .app-listing.app-listing-new > div + div {
+    .app-listing.app-listing-new>div+div {
         margin-top: 28px;
     }
 
@@ -417,9 +471,11 @@ text-align: center;
         width: 150px !important;
         filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.4));
     }
+
     body a.popup-video-btn:hover img.play-video {
         width: 158px !important;
     }
+
     .hs-form-02ecf852-b974-4c38-9cfd-a62e20251e70_06051c83-835b-4da7-add8-be62ff986be0 fieldset {
         max-width: 100%;
     }
@@ -434,17 +490,20 @@ text-align: center;
     .appstore-main-container {
         padding-top: 60px;
         padding-bottom: 60px;
+
         .section-heading-text {
             h4 {
                 margin: 60px 0 100px;
                 text-align: center;
             }
         }
+
         .search-block {
             margin: 0 0 30px;
             padding-left: 0;
             width: calc(100% - 215px);
             margin-left: auto;
+
             .search-inner-block {
                 align-items: center;
                 display: flex;
@@ -467,19 +526,24 @@ text-align: center;
                     outline: none;
                     border: 1px solid $lightGray;
                     border-right: 0;
+
                     &::-webkit-input-placeholder {
                         color: $gray3;
                     }
+
                     &:-ms-input-placeholder {
                         color: $gray3;
                     }
+
                     &::placeholder {
                         color: $gray3;
                     }
                 }
+
                 .button-block {
                     max-width: 88px;
                     width: 100%;
+
                     button {
                         @include button;
                         margin: 0;
@@ -487,6 +551,7 @@ text-align: center;
                         border-radius: 0;
                         padding: 16rem 20rem;
                         background-color: $LightPink;
+
                         &:hover {
                             background-color: $LightPink;
                         }
@@ -500,9 +565,11 @@ text-align: center;
         display: flex;
         justify-content: space-between;
         padding-top: 20px;
+
         .filter-block {
             margin-right: 30px;
             margin-top: 0px;
+
             p.filter-title {
                 color: $basecolor;
                 display: inline-block;
@@ -512,10 +579,12 @@ text-align: center;
                 line-height: 10px;
                 margin: 0 0 20px;
             }
+
             ul {
                 list-style: none;
                 margin: 0;
                 padding: 0;
+
                 li {
                     color: $darkGray;
                     font-size: 13px;
@@ -531,12 +600,14 @@ text-align: center;
         display: flex;
         justify-content: flex-end;
         margin-bottom: 17px;
+
         ul.dropdown-menu {
             display: none;
         }
 
         .dropdown {
             outline: none !important;
+
             .select {
                 color: $basecolor;
                 font-size: 13.44px;
@@ -547,6 +618,7 @@ text-align: center;
                 appearance: none;
                 display: inline-block;
                 outline: none !important;
+
                 .fa {
                     font-size: 10px;
                     font-weight: 400;
@@ -558,10 +630,12 @@ text-align: center;
 
     .card-main-container {
         width: calc(100% - 216px);
+
         .card-container {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
+
             .card-block {
                 width: calc((100% - 40px) / 3);
                 position: relative;
@@ -572,9 +646,11 @@ text-align: center;
                     padding: 20px;
                     width: 100%;
                     background-color: $white;
+
                     .card-icon {
                         margin: 0 0 8px;
                     }
+
                     .card-title {
                         h6 {
                             color: $basecolor;
@@ -584,6 +660,7 @@ text-align: center;
                             margin: 0 0 8px;
                         }
                     }
+
                     .card-text {
                         p {
                             color: $basecolor;
@@ -597,15 +674,18 @@ text-align: center;
                             -webkit-box-orient: vertical;
                         }
                     }
+
                     .card-link-block {
                         padding-top: 10px;
                         line-height: 0;
                         min-height: 0;
+
                         a {
                             color: $basecolor;
                             font-size: 13.44px;
                             font-weight: 600;
                             line-height: 110%;
+
                             svg {
                                 font-size: 10px;
                                 font-weight: 400;
@@ -615,6 +695,7 @@ text-align: center;
                         }
                     }
                 }
+
                 &:hover {
                     .card-link-block {
                         a {
@@ -645,10 +726,12 @@ text-align: center;
 
         .appstore-main-container {
             padding-bottom: 60px;
+
             .search-block {
                 padding-left: 0;
             }
         }
+
         .request-integration-inner {
             padding: 50px;
         }
@@ -658,31 +741,39 @@ text-align: center;
         .request-integration-inner {
             padding: 30px;
         }
+
         .detail-page-banner {
             padding-top: 50px;
             padding-bottom: 0;
         }
+
         .detail-page-banner.no-video {
             padding-top: 50px;
             padding-bottom: 0;
         }
+
         .appstore-main-container .search-block {
             margin-left: 0;
             width: 100%;
         }
+
         .detail-page-banner.no-video .detail-page-content {
             margin-top: 0;
         }
+
         .request-integration-section {
             padding: 50px 0px;
         }
+
         .detail-page-content h1 {
             font-size: 32px;
         }
+
         .detail-page-content p {
             font-size: 20px;
             max-width: 100%;
         }
+
         .detail-page-banner .all-inegrations {
             left: 0;
         }
@@ -700,21 +791,27 @@ text-align: center;
         .filter-card-inner-container {
             flex-direction: column;
         }
+
         .card-main-container {
             width: 100%;
         }
+
         .filter-block {
             margin-right: 0;
         }
+
         .card-main-container .card-container .card-block {
             width: 100%;
         }
+
         .sort-block {
             justify-content: flex-start;
         }
+
         .request-form {
             padding: 50px 20px 20px 20px;
         }
+
         .request-header h2 {
             font-size: 22px;
         }

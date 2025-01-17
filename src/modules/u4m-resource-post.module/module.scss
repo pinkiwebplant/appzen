@@ -1,12 +1,15 @@
 @import "../../css/_module-imports";
+
 .HeaderSticky ul {
     margin: 0;
 }
+
 .u4m-resource-post {
     .resourcepostBnr {
         .post-details {
             padding: 100px 0;
             text-align: center;
+
             h3 {
                 margin: 0;
             }
@@ -19,6 +22,7 @@
         padding: 40px;
         margin: -100px auto 80px;
         max-width: calc(820px + 5%);
+
         .post-related-articles {
             margin-top: 50rem;
         }
@@ -74,6 +78,7 @@
         height: 100%;
         display: flex;
         flex-direction: column;
+
         .card_title {
             margin-bottom: 15rem;
         }
@@ -121,6 +126,7 @@
             line-height: 1.36;
             font-size: 12rem;
         }
+
         .play_btn {
             position: absolute;
             top: 0;
@@ -158,9 +164,11 @@
 
     .card_item {
         width: calc((100% - 40px) / 3);
+
         @include tabletmid {
             width: calc((100% - 20px) / 2);
         }
+
         @include tabletvert {
             width: 100%;
         }
@@ -174,6 +182,7 @@
                 display: block;
                 width: 15px;
             }
+
             a {
                 display: inline-flex;
                 margin-left: auto;
@@ -193,6 +202,7 @@
         .card .title {
             color: $white;
         }
+
         .card_item.themeColor {
             color: $basecolor;
         }
@@ -201,9 +211,11 @@
     .no_img_card .card_cont_btm {
         padding: 0;
     }
+
     .no_img_card .card_inner {
         padding: 20rem;
     }
+
     .no_img_card .card_tag {
         background: #fef76c;
     }

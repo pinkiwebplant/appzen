@@ -13,7 +13,7 @@
 	
 	
 	<div class="wrapper  ">  
-		<div class="sticky_sec  ct-section floating-content-media container-medium preload-assets">			
+		<div class="sticky_sec  ct-section floating-content-media container-medium preload-assets" data-scroll-reset>			
 			<div class="page-center ct-section-inner-wrap " > 
 				<div class="scroll_wrap ct-div-block"> 
 					<div id="sticky_slide_wrap" class="scroll_slides floating-media-cards ct-div-block">
@@ -91,4 +91,28 @@
 	 
 	</section>
 	
-	
+	{% require_js %}
+		<script>
+// Add resize handler to reset scroll positions
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    const scrollSection = document.querySelector('[data-scroll-reset]');
+    if (scrollSection) {
+      // Reset scroll position
+      window.scrollTo({
+        top: scrollSection.offsetTop,
+        behavior: 'instant'
+      });
+      
+      // Reset any transforms on slides
+      const slides = document.querySelectorAll('.scroll_slide');
+      slides.forEach(slide => {
+        slide.style.transform = '';
+      });
+    }
+  }, 250); // Debounce resize events
+});		
+		</script>
+	{% end_require_js %}

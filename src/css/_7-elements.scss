@@ -6,13 +6,14 @@
 
 /* Keep background from scrolling when menu is open */
 html.menu-open {
-  overflow-y: hidden;
+  // overflow-y: hidden;
 }
 
 /* Keep background from scrolling when menu is open */
 html {
   display: block;
   opacity: 1;
+  overflow-x: hidden;
 }
 
 /* make html visible after Firefox flash in hack */
@@ -71,34 +72,32 @@ h6 {
 
 @font-face {
   font-family: "Neue Haas Grotesk Text Pro";
-  src:
-    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.eot') }}") format("eot"),
-    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.woff') }}") format("woff"),
-    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.woff2') }}") format("woff2"),
-    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.ttf') }}") format("ttf");
+  src: url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.eot') }}") format("eot"),
+  url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.woff') }}") format("woff"),
+  url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.woff2') }}") format("woff2"),
+  url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.ttf') }}") format("ttf");
   font-weight: 700;
   font-style: normal;
 }
+
 @font-face {
   font-family: "Neue Haas Grotesk Text Pro";
-  src:
-    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.eot') }}") format("embedded-opentype"),
-    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.woff2') }}") format("woff2"),
-    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.woff') }}") format("woff"),
-    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.ttf') }}") format("truetype"),
-    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.svg') }}") format("svg");
+  src: url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.eot') }}") format("embedded-opentype"),
+  url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.woff2') }}") format("woff2"),
+  url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.woff') }}") format("woff"),
+  url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.ttf') }}") format("truetype"),
+  url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.svg') }}") format("svg");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Neue Haas Grotesk Display Pro";
-  src:
-    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.eot') }}") format("embedded-opentype"),
-    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.woff2') }}") format("woff2"),
-    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.woff') }}") format("woff"),
-    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.ttf') }}") format("truetype"),
-    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.svg') }}") format("svg");
+  src: url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.eot') }}") format("embedded-opentype"),
+  url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.woff2') }}") format("woff2"),
+  url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.woff') }}") format("woff"),
+  url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.ttf') }}") format("truetype"),
+  url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.svg') }}") format("svg");
   font-weight: 700;
   font-style: normal;
 }
@@ -351,6 +350,7 @@ blockquote {
   color: inherit;
   font-weight: 400;
   max-width: 100%;
+
   p {
     @include size28;
     color: inherit;
@@ -471,7 +471,7 @@ code {
   border-radius: 0;
 }
 
-pre > code {
+pre>code {
   display: block;
   padding: 1rem 15rem;
   white-space: pre;
@@ -544,21 +544,27 @@ section[class*="u4m-"] {
 .lightGray {
   background-color: $lightGray;
 }
+
 .darkGray {
   background-color: $darkGray;
 }
+
 .light_pink {
   background-color: $LightPink;
 }
+
 .brown {
   background-color: $basecolor;
 }
+
 .grey {
   background-color: $sectionbg;
 }
+
 .light_grey {
   background-color: $greybg;
 }
+
 .reverse-text,
 .white {
   color: $white;
@@ -582,15 +588,19 @@ section[class*="u4m-"] {
 .primary {
   @include button;
 }
+
 .secondary {
   @include secondary;
 }
+
 .tertiary {
   @include tertiary;
 }
+
 .quaternary {
   @include quaternary;
 }
+
 section {
   background-position: center center;
   background-repeat: no-repeat;
