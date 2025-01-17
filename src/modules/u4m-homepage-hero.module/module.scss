@@ -3,6 +3,7 @@
 section.u4m-homepage-hero {
   padding-top: 42px;
   padding-bottom: 60px;
+
   .homepage-inner {
     &.slider {
       .banner-column {
@@ -11,27 +12,33 @@ section.u4m-homepage-hero {
             @include size68;
             margin-bottom: 10px;
           }
+
           p,
           ul {
             max-width: 890px;
             line-height: 1.6;
           }
+
           p {
             margin: 0;
           }
         }
+
         .intro_cnt {
           padding-bottom: 25px;
           padding-bottom: 55px;
         }
+
         .content-col {
           padding-right: 0;
           padding-left: 20px;
+
           @include tabletvert {
             margin-bottom: 0px;
             padding-right: 0px;
           }
         }
+
         &.slick-active {
           .img-col {
             .img-inner {
@@ -47,8 +54,14 @@ section.u4m-homepage-hero {
           }
         }
       }
+
       .img-col {
         padding: 0;
+
+        @include laptop {
+          padding: 0 20px;
+        }
+
         .img-inner {
           background-repeat: no-repeat;
           background-size: cover;
@@ -56,18 +69,22 @@ section.u4m-homepage-hero {
           min-height: 640px;
           min-height: 600px;
           border-radius: 10px;
+
           @include tabletvert {
             min-height: 360px;
           }
+
           .svg-box-wrap {
             top: 0;
             transform: translate(0px, 0%);
             right: 0;
             padding-right: 76px;
             height: 100%;
+
             @include tabletvert {
               padding-right: 20px;
             }
+
             .svg-box {
               padding: 36px 15px 36px 100px;
               position: absolute;
@@ -78,11 +95,14 @@ section.u4m-homepage-hero {
               transition: all 0.3s ease-in-out;
               opacity: 0;
               visibility: hidden;
+
               @include tabletvert {
                 padding: 20px 15px;
               }
+
               svg {
                 box-shadow: none;
+
                 @include tabletvert {
                   max-width: 250px;
                 }
@@ -93,38 +113,47 @@ section.u4m-homepage-hero {
       }
     }
   }
+
   .banner-column {
     align-items: center;
     margin-left: -15px;
     margin-right: -15px;
+
     @include tabletvert {
       margin-left: 0px;
       margin-right: 0px;
     }
+
     .content-col {
       padding-left: 15px;
       padding-right: 42px;
+
       @include tabletvert {
         padding-left: 0;
         padding-right: 0;
         margin-bottom: 20px;
       }
     }
+
     .img-col {
       padding-right: 15px;
       padding-left: 25px;
+
       @include tabletvert {
         padding-left: 0;
         padding-right: 0;
       }
+
       .img-inner {
         position: relative;
         overflow: hidden;
       }
+
       img {
         border-radius: 12px;
         vertical-align: middle;
       }
+
       .svg-box-wrap {
         display: flex;
         position: absolute;
@@ -133,39 +162,47 @@ section.u4m-homepage-hero {
         right: 0;
         width: 100%;
         padding: 0 20px;
+
         .svg-box {
           position: relative;
-          > svg {
+
+          >svg {
             padding: 7.5px;
             -webkit-box-shadow: inset 0px 0px 10px 15px rgba(255, 255, 255, 1);
             -moz-box-shadow: inset 0px 0px 10px 15px rgba(255, 255, 255, 1);
             box-shadow: inset 0px 0px 10px 15px rgba(255, 255, 255, 0.5);
           }
         }
+
         .arrow {
           display: flex;
           align-items: center;
           margin: 0 -7.5px;
           z-index: 9;
+
           &:last-child {
             display: none;
           }
         }
       }
     }
+
     .intro {
       p {
         @include size18;
       }
+
       p,
       ul {
         max-width: 390px;
       }
     }
   }
+
   .pageslider {
     padding-left: 0px;
     padding-right: 0px;
+
     .banner-column {
       margin-left: 0px;
       margin-right: 0px;

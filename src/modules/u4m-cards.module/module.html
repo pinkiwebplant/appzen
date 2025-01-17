@@ -22,6 +22,10 @@
     <div class="card_item {{ module.module_settings.column_width }} col {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.card_color_theme }}_color {% endif %}">
       <div class="card_inner {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.card_background_color }}{% endif %}">
       {% if item.include_link %}
+        {% set href = item.link.url.href %}
+	{% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+	  {% set href = "mailto:" + href %}
+	{% endif %}
           <a
              {% if item.link.url.type is equalto "CALL_TO_ACTION"  %}
              href="{{ href }}" 

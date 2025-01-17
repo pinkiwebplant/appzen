@@ -1,6 +1,10 @@
 <div class="social_share_cnt">
 	<div class="inner_items">
 		{% for item in module.items_group %}
+			{% set href = item.link_field.url.href %}
+				{% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+				  {% set href = "mailto:" + href %}
+				{% endif %}
 		<div class="items">
 			<a
 				 {% if item.link_field.url.type is equalto "CALL_TO_ACTION"  %}

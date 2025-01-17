@@ -19,9 +19,18 @@
     </div>
   </div> 
   </section>
+
 <section class="post-content-wrapper resources-content">
   <div class="post-content">
+    {% if dynamic_page_hubdb_row.label_for_button_1 %}
+    <h4 style="margin-bottom: 16rem;">{{ dynamic_page_hubdb_row.label_for_button_1 }}</h4>
+    {% endif %}
     {{ dynamic_page_hubdb_row.description }}
+    {% if (dynamic_page_hubdb_row.button_1_text) and (dynamic_page_hubdb_row.button1_link) %}
+    <div style="margin-top:20rem;">
+    <a class="primary hs-button" href="{{ dynamic_page_hubdb_row.button1_link }}">{{ dynamic_page_hubdb_row.button_1_text }}</a>
+    </div>  
+    {% endif %}
   </div>
 
 

@@ -23,6 +23,12 @@ section.u4m-form-wrapper {
 
     @include tabletmid {
       width: 100%;
+
+      img.mobile-hide {
+        position: absolute;
+        transform: translate(-15px, 0px);
+        width: 120px;
+      }
     }
 
     @include tabletmid {
@@ -37,6 +43,7 @@ section.u4m-form-wrapper {
 
     @include tabletmid {
       width: 100%;
+      position: relative;
     }
   }
 
@@ -64,6 +71,14 @@ section.u4m-form-wrapper {
 
     .hs-form-field {
       position: relative;
+    }
+
+    select.hs-input {
+      color: $black;
+
+      * {
+        color: $black;
+      }
     }
 
     /* Labels */

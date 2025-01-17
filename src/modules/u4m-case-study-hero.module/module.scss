@@ -1,7 +1,11 @@
 @import "../../css/_module-imports";
 
 .u4m-case-study-hero {
-  padding-top: 20px;
+  padding-top: 40px;
+
+  @include phone {
+    padding-top: 30px;
+  }
 
   .flex_row {
     padding-bottom: 50px;
@@ -11,6 +15,7 @@
         @include tabletmid {
           padding-right: 20px;
         }
+
         @include tabletvert {
           padding-right: 0;
         }
@@ -20,8 +25,13 @@
     .right_section {
       padding-top: 52px;
 
+      @include phone {
+        padding-top: 40px;
+      }
+
       .flex_row {
         padding: 0;
+
         ul {
           padding: 0;
           margin: 0;
@@ -43,10 +53,12 @@
               line-height: 21px;
             }
           }
+
           li:last-child {
             margin: 0;
           }
         }
+
         ul:first-child {
           padding-right: 15px;
         }
@@ -59,6 +71,10 @@
   }
 
   .banner_section {
+    @include laptop {
+      padding: 0 20px;
+    }
+
     .banner_inner_section {
       display: flex;
       align-items: center;
@@ -69,6 +85,7 @@
       border-radius: 12px;
     }
   }
+
   &.reverse-text * {
     color: $white;
   }
