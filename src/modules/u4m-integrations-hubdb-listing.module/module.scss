@@ -80,7 +80,7 @@ section.u4m-inteHub-listing {
         transform: translateY(0%);
       }
       &:after {
-          background-color: rgba(0, 0, 0, .5);
+          background-color: $greybg;
       }
   }
   }

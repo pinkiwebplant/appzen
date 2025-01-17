@@ -6,14 +6,84 @@
 
 .u4m-resource-post {
     .resourcepostBnr {
+        padding: 40px 0 150px;
         .post-details {
-            padding: 100px 0;
+            max-width: calc(820px + 5%);
             text-align: center;
 
             h3 {
                 margin: 0;
             }
         }
+    }
+    .featuredImageWrap {
+        .featuredImageCon {
+            position: relative;
+            cursor: pointer;
+            display: inline-block;
+            margin-bottom: 30px;
+            .play-icon {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 50px;
+              height: 50px;
+              background:rgba(0, 0, 0, 0.6);
+              border-radius: 50%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+          
+              &::before {
+                content: '';
+                display: block;
+                width: 0;
+                height: 0;
+                border-left: 15px solid $white;
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+              }
+            }
+          }
+          
+          .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+          
+            .iframe-container {
+                height: 90vw;
+                position: relative;
+                width: 90%;
+                max-width: 800px;
+                max-height: 600px;
+          
+              iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+              }
+            }
+          
+            .close-btn {
+              position: absolute;
+              top: 20px;
+              right: 20px;
+              color: #fff;
+              font-size: 24px;
+              font-weight: bold;
+              cursor: pointer;
+              z-index: 1001;
+            }
+          }
     }
 
     .resources-content {
@@ -78,6 +148,15 @@
         height: 100%;
         display: flex;
         flex-direction: column;
+        position: relative;
+        a.absLink {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            z-index: 1;
+        }
 
         .card_title {
             margin-bottom: 15rem;
