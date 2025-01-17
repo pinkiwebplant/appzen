@@ -1,4 +1,4 @@
-section.u4m-404-error,
+
 section.u4m-500-error {
   @include center;
   margin: 150rem auto;
@@ -10,6 +10,28 @@ section.u4m-500-error {
 
   @include phone {
     margin: 50rem auto 70rem auto;
+  }
+}
+section.u4m-404-error {
+  @include center;
+  margin: 50rem auto;
+  text-align: center;
+  .innerBgCon {
+    @include center;max-width: 1288px;
+    background-color: $lightGreybg;
+    padding: 110rem 40rem;
+    border-radius: $borderRadius;
+    width: calc(100% - 40px);
+    @include tabletvert {
+      padding: 110rem 20rem;
+    }
+    p {
+      @include b1;
+    }
+  
+    @include phone {
+      margin: 50rem auto 70rem auto;
+    }
   }
 }
 
