@@ -15,22 +15,36 @@ section.u4m-500-error {
 section.u4m-404-error {
   @include center;
   margin: 50rem auto;
-  text-align: center;
+  text-align: left;
   .innerBgCon {
-    @include center;max-width: 1288px;
-    background-color: $lightGreybg;
-    padding: 110rem 40rem;
-    border-radius: $borderRadius;
-    width: calc(100% - 40px);
-    @include tabletvert {
-      padding: 110rem 20rem;
-    }
-    p {
-      @include b1;
-    }
-  
-    @include phone {
-      margin: 50rem auto 70rem auto;
+      @include center;max-width: 1288px;
+      background-color: #F3EFE6;
+      padding: 110rem 40rem;
+      border-radius: $borderRadius;
+      @include tabletvert {
+        padding: 110rem 20rem;
+      }
+
+    .innerBg {
+      max-width: 50%;
+      @include tablet {
+        max-width: 100%;
+      }
+      h4 {
+        @include size28;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        @include tabletvert {
+          @include size18;
+        }
+      }
+      p {
+        @include b1;
+      }
+    
+      @include phone {
+        margin: 50rem auto 70rem auto;
+      }
     }
   }
 }

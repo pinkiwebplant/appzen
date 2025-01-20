@@ -9,25 +9,25 @@
 {% macro menuItem(item2) %}
 <div class="menuItem {{ item2.content_type }}">
 
-{% set href = item2.title_link.url.href %}
+  {% set href = item2.title_link.url.href %}
   {% if item2.title_link.url.type is equalto "EMAIL_ADDRESS" %}
-    {% set href = "mailto:" + href %}
+  {% set href = "mailto:" + href %}
   {% endif %}
-  
+
   <div class="menuItemTtl">
-		<a
-		  {% if item2.title_link.url.type is equalto "CALL_TO_ACTION"  %}
-		    href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
-		  {% else %}
-		    href="{{ href|escape_url }}"
-		  {% endif %}
-		  {% if item2.title_link.open_in_new_tab %}
-		    target="_blank"
-		  {% endif %}
-		  {% if item2.title_link.rel %}
-		    rel="{{ item2.title_link.rel|escape_attr }}"
-		  {% endif %}
-    {% if not href %}style=" cursor: text; "{% endif %}>
+    <a
+       {% if item2.title_link.url.type is equalto "CALL_TO_ACTION"  %}
+       href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+       {% else %}
+       href="{{ href|escape_url }}"
+       {% endif %}
+       {% if item2.title_link.open_in_new_tab %}
+       target="_blank"
+       {% endif %}
+       {% if item2.title_link.rel %}
+       rel="{{ item2.title_link.rel|escape_attr }}"
+       {% endif %}
+       {% if not href %}style=" cursor: text; "{% endif %}>
       {{ item2.title }}</a></div>
   {% if item2.content_type=="menu" %}
   {% for item3 in item2.menu_group.menu_items %}
@@ -48,7 +48,7 @@
        {% if item3.menu_link.rel %}
        rel="{{ item3.menu_link.rel }}"
        {% endif %}
-      {% if not href %}style=" cursor: text; "{% endif %}>
+       {% if not href %}style=" cursor: text; "{% endif %}>
       <div class="childmenuItemttl">{{ item3.menu_text }}</div>
       {% if item3.add_description %}
       <div class="childmenuItemdes">{{ item3.description }}</div>
@@ -87,10 +87,10 @@
   {% if item2.content_type=="hubdb" %}
   {% set table = item2.select_hubdb_table %}
   {% set query = 'orderBy=-hs_created_at' ~ '&limit=' ~ item2.number_of_posts %}
-  
+
   {% set category = item2.hubdb_setttings.topic_name %}
   {% set category_query = 'orderBy=-hs_created_at&categories__in=' ~ category ~ '&limit=' ~ item2.number_of_posts %}
-  
+
   {% if item2.hubdb_setttings.resource_type == "recent" %}
   {% set types = hubdb_table_rows(table,query) %}
   {% elif item2.hubdb_setttings.resource_type == "category" %}
@@ -169,9 +169,9 @@
   <div class="hs-megaMenu-wrapper">
     <ul class="mobileHide">
       {% for item in module.mega_menu %}
-      
+
       {% set childLength = item.child_menu|length %}
-      
+
       <li class="menuItem{% if item.enable_child_menu %} hsChildmenu{% endif %} childLength{{childLength}} {% if item.menu_link.url.href %} has-link{% else %} no-link{% endif %}" >
         {% set href = item.menu_link.url.href %}
         {% if item.menu_link.url.type is equalto "EMAIL_ADDRESS" %}
@@ -291,25 +291,25 @@
           <li>
             <div class="menuItemTtl">
               {% set href = item2.title_link.url.href %}
-		{% if item2.title_link.url.type is equalto "EMAIL_ADDRESS" %}
-		  {% set href = "mailto:" + href %}
-		{% endif %}
-		<a
-		  {% if item2.title_link.url.type is equalto "CALL_TO_ACTION"  %}
-		    href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
-		  {% else %}
-		    href="{{ href|escape_url }}"
-		  {% endif %}
-		  {% if item2.title_link.open_in_new_tab %}
-		    target="_blank"
-		  {% endif %}
-		  {% if item2.title_link.rel %}
-		    rel="{{ item2.title_link.rel|escape_attr }}"
-		  {% endif %}
-		  >
-              {{ item2.title }}
+              {% if item2.title_link.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+              {% endif %}
+              <a
+                 {% if item2.title_link.url.type is equalto "CALL_TO_ACTION"  %}
+                 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                 {% else %}
+                 href="{{ href|escape_url }}"
+                 {% endif %}
+                 {% if item2.title_link.open_in_new_tab %}
+                 target="_blank"
+                 {% endif %}
+                 {% if item2.title_link.rel %}
+                 rel="{{ item2.title_link.rel|escape_attr }}"
+                 {% endif %}
+                 >
+                {{ item2.title }}
               </a>
-      </div>
+            </div>
             <ul>
               {% if item2.content_type=="menu" %}
               {% for item3 in item2.menu_group.menu_items %}
@@ -318,7 +318,7 @@
                 {% if item3.menu_link.url.type is equalto "EMAIL_ADDRESS" %}
                 {% set href = "mailto:" + href %}
                 {% endif %}
-                <a
+                <a class="item3 type-menu"
                    {% if item3.menu_link.url.type is equalto "CALL_TO_ACTION"  %}
                    href="{{ href }}"
                    {% else %}
@@ -337,25 +337,39 @@
               {% elif item2.content_type=="blog" %}
               {% set posts = blog_recent_posts(item2.select_blog, item2.number_of_posts) %} 
               {% for blogitem in posts %}
-              <li><a href="{{ blogitem.absolute_url}}">{{ blogitem.name }}</a></li>
+              <li>
+                <a class="item3 type-blog" href="{{ blogitem.absolute_url}}">{{ blogitem.name }}</a>
+              </li>
               {% endfor %}
               {% elif item2.content_type=="hubdb" %}
               {% set table = item2.select_hubdb_table %}
               {% set query = 'orderBy=-hs_created_at' ~ '&limit=' ~ item2.number_of_posts %}
+
+              {% set category = item2.hubdb_setttings.topic_name %}
+              {% set category_query = 'orderBy=-hs_created_at&categories__in=' ~ category ~ '&limit=' ~ item2.number_of_posts %}
+
+              {% if item2.hubdb_setttings.resource_type == "recent" %}
               {% set types = hubdb_table_rows(table,query) %}
+              {% elif item2.hubdb_setttings.resource_type == "category" %}
+              {% set types = hubdb_table_rows(table,category_query) %}
+              {% endif %}
+              
+              
               {% for type in types %}
+              
+
               {% if type[item2.hubdb_setttings.column_link] %}
               {% if type[item2.hubdb_setttings.column_link] == 'hs_path' %}
               {% set href = request.full_url ~ '/' ~ type.hs_path %}
               {% else %}
               {% set href = type[item2.hubdb_setttings.column_link] %}
               {% endif %}
-             <li> <a href="{{ href }}">
-                {{ type[item2.hubdb_setttings.column_title] }}
-              </a>
-               </li>
+              <li>
+                <a class="item3 type-hubdb" href="/resources/{{ href }}">
+                  {{ type[item2.hubdb_setttings.column_title] }}
+                </a>
+              </li>
               {% else %}
-
               <li>{{ type[item2.hubdb_setttings.column_title] }}</li>
               {% endif %}
               {% endfor %}

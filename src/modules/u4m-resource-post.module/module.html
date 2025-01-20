@@ -22,49 +22,19 @@
 
 <section class="post-content-wrapper resources-content">
   <div class="post-content">
-  {% if dynamic_page_hubdb_row.format.name == 'Video' or dynamic_page_hubdb_row.image.url %}
-  <div class="featuredImageWrap {{ dynamic_page_hubdb_row.format.name }}">
-      <div class="featuredImageCon">
-      <img src="{{ dynamic_page_hubdb_row.image.url }}" alt="Featured Image" />
-      {% if dynamic_page_hubdb_row.format.name == 'Video' %}<div class="play-icon"></div>{% endif %}
-      </div>
-      {% if dynamic_page_hubdb_row.format.name == 'Video' %}
-      <div class="lightbox" id="lightbox">
-          <span class="close-btn">&times;</span>
+    {% if dynamic_page_hubdb_row.format.name == 'Video' or dynamic_page_hubdb_row.image.url %}
+      <div class="featuredImageWrap {{ dynamic_page_hubdb_row.format.name }}">
+        <div class="featuredImageCon">
+        {% if dynamic_page_hubdb_row.format.name == 'Video' %}
           <div class="iframe-container">
-           {{ dynamic_page_hubdb_row.video }}
+          {{ dynamic_page_hubdb_row.video }}
           </div>
-      </div>
-      {% endif %}
-      {% if dynamic_page_hubdb_row.format.name == 'Video' %}
-        {% require_js %}
-          <script>
-          const imageContainer = document.querySelector('.featuredImageCon');
-          const lightbox = document.getElementById('lightbox');
-          const iframe = lightbox.querySelector('.iframe-container iframe');
-          const closeButton = lightbox.querySelector('.close-btn');
-          if(iframe) {
-            let originalSrc = iframe.src;
-            function openLightbox() {
-            const url = new URL(iframe.src);
-              url.searchParams.set('autoplay', '1');
-              iframe.src = url.toString();
-              lightbox.style.display = 'flex';
-            }
-            function closeLightbox() {
-              iframe.src = originalSrc;
-              lightbox.style.display = 'none';
-            }
-          
-            imageContainer.addEventListener('click', openLightbox);
-            closeButton.addEventListener('click', closeLightbox);
-          
-            }
-        </script>
-        {% end_require_js %}
+        {% else %}
+          <img src="{{ dynamic_page_hubdb_row.image.url }}" alt="Featured Image" />
         {% endif %}
-    </div>
-  {% endif %}
+      </div>
+      </div>
+    {% endif %}
     {% if dynamic_page_hubdb_row.label_for_button_1 %}
     <h4 style="margin-bottom: 16rem;">{{ dynamic_page_hubdb_row.label_for_button_1 }}</h4>
     {% endif %}
