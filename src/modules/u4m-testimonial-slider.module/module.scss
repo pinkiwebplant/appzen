@@ -22,11 +22,16 @@
 						height: 100%;
 
 						.top_img {
-							margin-bottom: 40px;
 							max-width: 141px;
+							height: 60px;
+							display: flex;
+							align-items: center;
+							margin-bottom: 20px;
 
 							img {
 								filter: grayscale(1);
+								width: auto;
+    							max-height: 60px;
 							}
 						}
 

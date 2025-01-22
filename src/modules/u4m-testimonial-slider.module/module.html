@@ -3,7 +3,7 @@
 {% set bgImageMax = 1920 %}
 
 {% include "../partials/u4-module-includes.html" %}
-<div class="wrapper">
+<div class="wrapper {{ name }}">
   <div class="page-center"> 
     {% if module.include_intro or  module.include_button %}
     <div class="top_cnt">
@@ -61,7 +61,7 @@
                 {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
                 {% endif %}
                 {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
-                <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}"  {{ sizeAttrs }}>
               </div>
               {% endif %}
               {% if item.content %}
@@ -149,3 +149,57 @@
   {% end_scope_css %}
 </style>
 {% end_require_css %}
+
+
+
+
+{% require_js %}
+
+<script>
+
+
+  $('.{{ name }} .test-slider').slick({
+    centerMode: true,            // Centers the current slide
+    slidesToShow: 3,             // Shows 3 slides at a time
+    centerPadding: '0',          // No padding for the center item (fully visible)
+    focusOnSelect: true,         // Allows the user to select the item (optional)
+    infinite: true,   
+    arrow: true,    // Infinite loop of slides
+    responsive: [
+    {
+    breakpoint: 768,         // When screen width is 768px or smaller
+    settings: {
+    slidesToShow: 1,       // Show 1 slide for screens smaller than 768px
+    }
+  },
+    {
+      breakpoint: 992,         // When screen width is between 768px and 991px
+        settings: {
+          slidesToShow: 2,       // Show 2 slides between 768px and 991px
+        }
+    }
+  ]
+  });
+
+</script>
+<script>
+
+
+//   $(document).ready(function() {
+//     $('.{{ name }}  .content').matchHeightNew();
+//   });
+
+  
+  
+   $(document).ready(function () {
+     $('.u4m-testimonial-slider .{{ name }} .page-center .btm_cards .items .content').matchHeight();
+     $('.u4m-testimonial-slider .{{ name }} .page-center .btm_cards .items .author_cnt').matchHeight();
+  });
+
+</script>
+
+
+  
+
+{% end_require_js %}
+
