@@ -5,11 +5,12 @@
 {% include "../partials/u4-module-includes.html" %}
 
 <div class="page-center">
-	<div class="flex_row ">
+	<div class="flex_row {% if module.include_form %} has-form{% endif %} {% if module.include_intro %} has-intro {% endif %}">
 
 		{% if module.include_intro %}
 		<div class='intro left_content_wrapper {% if module.include_form %}col6{% endif %}'>
-			<div class='intro_cnt'>
+			<div class='intro_cnt {% if module.narrower_content %} narrower{% endif %}'>
+        
 				{{ module.intro_content }}
 			</div>
 		</div>

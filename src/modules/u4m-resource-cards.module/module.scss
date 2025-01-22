@@ -4,6 +4,7 @@ section.u4m-res-cards {
   .intro_content {
     display: flex;
     justify-content: space-between;
+    padding: 0;
 
     .top_heading {
       font-size: 18px;
@@ -12,6 +13,10 @@ section.u4m-res-cards {
     .view_all_link a {
       color: inherit;
     }
+  }
+
+  .flex_row {
+    margin: 0 -10px;
   }
 
   .card_cont_btm {
@@ -42,6 +47,7 @@ section.u4m-res-cards {
     display: flex;
     flex-direction: column;
     position: relative;
+
     .absLink {
       position: absolute;
       width: 100%;
@@ -49,6 +55,7 @@ section.u4m-res-cards {
       top: 0;
       left: 0;
     }
+
     .card_title {
       margin-bottom: 15rem;
     }
@@ -95,6 +102,7 @@ section.u4m-res-cards {
       line-height: 1.36;
       font-size: 12rem;
     }
+
     .play_btn {
       position: absolute;
       top: 0;
@@ -134,6 +142,7 @@ section.u4m-res-cards {
     @include tabletmid {
       width: 50%;
     }
+
     @include tabletvert {
       width: 100%;
     }
@@ -147,6 +156,7 @@ section.u4m-res-cards {
         display: block;
         width: 15px;
       }
+
       a {
         display: inline-flex;
         margin-left: auto;
@@ -165,15 +175,27 @@ section.u4m-res-cards {
     &.left {
       justify-content: flex-start;
     }
+
     &.center {
       justify-content: center;
     }
+
+    // .grouped-content {
+    //   &:first-of-type {
+    //     margin-left: -10rem;
+    //   }
+
+    //   &:last-of-type {
+    //     margin-right: -10rem;
+    //   }
+    // }
   }
 
   &.reverse-text {
     .card .title {
       color: $white;
     }
+
     .card_item.themeColor {
       color: $basecolor;
     }
@@ -182,12 +204,15 @@ section.u4m-res-cards {
   .no_img_card .card_cont_btm {
     padding: 0;
   }
+
   .no_img_card .card_inner {
     padding: 20rem;
   }
+
   .no_img_card .card_tag {
     background: #fef76c;
   }
+
   .card_item.no_img_card .arrow_link {
     padding: 0;
   }

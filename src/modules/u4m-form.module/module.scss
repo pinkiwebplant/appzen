@@ -11,18 +11,35 @@ section.u4m-form-wrapper {
 
   .flex_row {
     align-items: center;
+
+    &.has-form.has-intro {
+      justify-content: space-between;
+      flex-wrap: nowrap;
+
+      @include tabletmid {
+        flex-wrap: wrap;
+      }
+    }
   }
 
   .left_content_wrapper {
-    padding-right: 20px;
+    //padding-right: 20px;
 
-    @include tabletMin {
-      padding-right: 15%;
-      padding-left: 20px;
+    // @include tabletMin {
+    //   padding-right: 15%;
+    //   padding-left: 20px;
+    // }
+    max-width: 633rem;
+    width: 100%;
+
+    @include tablet {
+      padding-right: 50px
     }
 
     @include tabletmid {
       width: 100%;
+      max-width: unset;
+      padding-right: unset;
 
       img.mobile-hide {
         position: absolute;
@@ -33,6 +50,16 @@ section.u4m-form-wrapper {
 
     @include tabletmid {
       padding-right: 0;
+    }
+
+    .intro_cnt {
+      &.narrower {
+        margin-left: 110rem;
+
+        @include tabletmid {
+          margin-left: unset;
+        }
+      }
     }
   }
 

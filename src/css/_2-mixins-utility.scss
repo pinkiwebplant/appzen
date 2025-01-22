@@ -10,11 +10,13 @@
     @content;
   }
 }
+
 @mixin tabletvert {
   @media (max-width: 767px) {
     @content;
   }
 }
+
 @mixin tablet {
   @media (max-width: 1024px) {
     @content;
@@ -46,16 +48,26 @@
   }
 }
 
+
+@mixin gridHide {
+  @media (max-width: 1330px) {
+    @content;
+  }
+}
+
+
 @mixin laptop {
   @media (max-width: 1440px) {
     @content;
   }
 }
+
 @mixin tabletmidmin {
   @media (min-width: 992px) {
     @content;
   }
 }
+
 @mixin tabletmid {
   @media (max-width: 991px) {
     @content;
@@ -67,11 +79,13 @@
     @content;
   }
 }
+
 @mixin laptopvert {
   @media (max-width: 1600px) {
     @content;
   }
 }
+
 @mixin desktop {
   @media (max-width: 1920px) {
     @content;
@@ -85,7 +99,9 @@
 }
 
 @mixin ie {
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+  @media all and (-ms-high-contrast: none),
+  (-ms-high-contrast: active) {
     @content;
   }
 }
@@ -139,6 +155,19 @@
   max-width: 1328rem;
   padding-left: 20rem;
   padding-right: 20rem;
+}
+
+@mixin center2 {
+  @include center;
+  max-width: 1100rem;
+}
+
+@mixin center2noPad {
+  max-width: 1070rem;
+  width: 100%;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @mixin centerSmall {

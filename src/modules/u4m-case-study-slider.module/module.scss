@@ -6,29 +6,47 @@
       filter: invert(1) !important;
     }
   }
+
   padding: 58rem 0;
-  .introContent{
+
+  .introContent {
     max-width: 1112rem;
     margin: 0 auto;
-      h4 {
+
+    h4 {
       margin: 0 0 50px;
       font-size: 28rem;
       line-height: 1.2;
       font-weight: 400;
     }
   }
+
   .case_large_bg {
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 12rem;
     min-height: 640rem;
+    width: 988rem;
     position: relative;
-    width: 65vw;
+
+    width: auto;
+    aspect-ratio: 988/640;
+    transform: translateX(-110px);
+
+    @include gridHide {
+      width: 65vw;
+      aspect-ratio: unset;
+      transform: unset;
+    }
+
+
     @include large {
       width: 50vw;
     }
+
     overflow: hidden;
+
     &:before {
       content: "";
       position: absolute;
@@ -41,6 +59,7 @@
       opacity: 0.5;
       transition: 0.3s all ease-in-out;
     }
+
     .absLink {
       position: absolute;
       width: 100%;
@@ -50,47 +69,88 @@
       cursor: pointer;
       z-index: 1;
     }
+
     img {
       display: none;
     }
   }
+
   .slick-current {
     .case_large_bg {
       &:before {
         opacity: 0;
       }
     }
+
     .case_logo {
       filter: none;
       opacity: 1;
     }
   }
+
   .bg_item {
     .bg_item_inner {
       padding: 0 18rem;
     }
   }
+
   .mainSliderWrap {
     position: relative;
   }
+
   .contentSliderWrap {
+    // align-items: flex-start;
+    // display: flex;
+    // height: 100%;
+    // width: 100%;
+    // max-width: 440rem;
+    // position: absolute;
+    // right: 13vw;
+    // top: 0;
+    // z-index: 99;
+    // padding: 46rem 0;
+    // max-height: 640px;
     align-items: flex-start;
     display: flex;
     height: 100%;
-    max-width: 440rem;
-    position: absolute;
-    right: 12vw;
-    top: 0;
-    z-index: 99;
-    padding: 46rem 0;
     max-height: 640px;
+    max-width: 1070px;
+    padding: 46rem 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: flex-end;
+
+    @include gridHide {
+      max-width: 1110rem;
+      padding-left: 20rem;
+      padding-right: 20rem;
+    }
+
+    @include phone {
+      left: unset;
+      transform: unset;
+      justify-content: unset;
+    }
+
   }
+
   .case_large_card {
     background: $white;
     border-radius: 12rem;
     padding: 75rem 48rem 48rem;
     width: 100%;
     height: 100%;
+    max-width: 450rem;
+
+    @include phone {
+      max-width: unset;
+    }
+
     .absLink {
       position: absolute;
       width: 100%;
@@ -99,7 +159,8 @@
       top: 0;
       cursor: pointer;
       z-index: 1;
-  }
+    }
+
     .card_title {
       h4 {
         font-size: 40rem;
@@ -107,11 +168,14 @@
       }
     }
   }
+
   .case_card_meta {
     margin-top: auto;
+
     span {
       display: block;
     }
+
     .price {
       font-family: $font2;
       font-size: 78rem;
@@ -120,13 +184,16 @@
       margin-bottom: 5rem;
       margin-top: 0;
     }
+
     div {
       margin-top: 20rem;
     }
   }
+
   .case_card_intro {
     margin-bottom: 30rem;
   }
+
   .inner_content {
     height: 100%;
     display: flex;
@@ -136,11 +203,13 @@
       color: $basecolor;
     }
   }
+
   .thumbSliderWrap {
     .page-center {
       max-width: 1120rem;
     }
   }
+
   .case_logo {
     display: flex;
     align-items: center;
@@ -154,23 +223,28 @@
     transition: all .3s ease-in-out;
     max-width: 120px;
     margin: 0 auto;
+
     @include tabletvert {
       padding: 20rem 20rem;
     }
+
     img {
       display: block;
       width: 120px;
     }
   }
-  .case_large_card > div,
-  .case_large_card > div > div,
+
+  .case_large_card>div,
+  .case_large_card>div>div,
   .case_large_content,
   .inner_content_box {
     height: 100%;
   }
+
   .case_large_content {
     overflow-y: auto;
   }
+
   .thumbSliderWrap {
     padding-top: 30rem;
   }
@@ -181,15 +255,19 @@
         font-size: 48rem;
       }
     }
+
     .contentSliderWrap {
       align-items: center;
     }
+
     .case_large_card {
       padding: 30rem;
     }
+
     .case_large_bg {
       min-height: 70vh;
     }
+
     .inner_content {
       height: 100%;
     }
@@ -199,12 +277,15 @@
     .case_large_bg {
       width: 80vw;
     }
+
     .contentSliderWrap {
       right: 4vw;
     }
+
     .case_card_intro {
       margin-bottom: 0;
     }
+
     .case_large_card {
       .card_title {
         h4 {
@@ -212,9 +293,11 @@
         }
       }
     }
+
     .inner_content_box {
       overflow-y: auto;
     }
+
     .case_card_meta {
       .price {
         font-size: 38rem;
@@ -228,6 +311,7 @@
       width: calc(100vw - 50rem);
       min-height: 400rem;
     }
+
     .contentSliderWrap {
       position: static;
       padding: 0;
@@ -235,25 +319,31 @@
       max-width: calc(100vw - 70rem);
       height: auto;
     }
+
     .case_large_card {
       height: auto;
       padding: 20rem;
+
       .card_title {
         h4 {
           font-size: 24rem;
         }
       }
     }
+
     .bg_item {
       padding: 0 5rem;
     }
+
     .case_card_meta {
       .price {
         font-size: 30rem;
         margin-bottom: 10rem;
       }
+
       div {
         margin-top: 0;
+
         a {
           &.secondary {
             &.hs-button {
@@ -263,8 +353,9 @@
         }
       }
     }
-    .case_large_card > div,
-    .case_large_card > div > div,
+
+    .case_large_card>div,
+    .case_large_card>div>div,
     .case_large_content,
     .inner_content_box {
       height: auto;

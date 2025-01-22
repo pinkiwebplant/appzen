@@ -4,6 +4,7 @@ section.u4m-res-cards {
   .intro_content {
     display: flex;
     justify-content: space-between;
+    padding: 0;
 
     .top_heading {
       font-size: 18px;
@@ -12,6 +13,10 @@ section.u4m-res-cards {
     .view_all_link a {
       color: inherit;
     }
+  }
+
+  .flex_row {
+    margin: 0 -10px;
   }
 
   .card_cont_btm {
@@ -175,6 +180,16 @@ section.u4m-res-cards {
     &.center {
       justify-content: center;
     }
+
+    //     .grouped-content {
+    //   &:first-of-type {
+    //     margin-left: -10rem;
+    //   }
+
+    //   &:last-of-type {
+    //     margin-right: -10rem;
+    //   }
+    // }
   }
 
   &.reverse-text {

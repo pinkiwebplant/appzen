@@ -19,6 +19,25 @@ isAvailableForNewContent: false
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=person" />
   </head>
   <body class="{{ builtin_body_classes }} {% if request.full_url is string_containing "/author/" %} author-listing {% endif %}">
+  {% if request.post_dict.grid %}
+  <div class="hidden-grid">
+    <div class="grid-contain">
+        <div class="hidden-col">col</div>
+        <div class="hidden-col">col</div>
+        <div class="hidden-col">col</div>
+        <div class="hidden-col">col</div>
+        <div class="hidden-col">col</div>
+        <div class="hidden-col">col</div>
+        <div class="hidden-col">col</div>
+        <div class="hidden-col">col</div>
+        <div class="hidden-col">col</div>
+        <div class="hidden-col">col</div>
+        <div class="hidden-col">col</div>
+        <div class="hidden-col">col</div>                                        
+    </div>
+  </div>
+  {% else %}
+  {% endif %}
     {% block header %}
     {% module "header_theme" path='../modules/u4m-header-theme', label="Header Theme",export_to_template_context=True %}
     <div class="{{ widget_data.header_theme.select_header_theme }}">

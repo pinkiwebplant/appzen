@@ -3,94 +3,125 @@
 section.u4m-testimonials {
   padding-top: 100rem;
   padding-bottom: 100rem;
+
   &.reverse-text {
     .content-col {
       color: $sectionbg;
+
       .content-button {
         a {
           color: $sectionbg;
         }
       }
     }
+
     .hr-spacer {
       border-top-color: $dividercolor;
     }
   }
+
+  & .type1 {
+    .page-center-inner {
+      justify-content: flex-end;
+      max-width: 1288rem;
+
+      @include gridHide {
+        justify-content: center;
+      }
+    }
+  }
+
   & .type2 {
     .page-center-inner {
       column-gap: normal;
       padding: 142px 78px 70px 108px;
       border-radius: 12px;
       min-height: 800px;
+
       @include tablet {
         padding: 30px;
         min-height: auto;
       }
+
       .content-col {
         width: 100%;
       }
+
       .content-col {
         max-width: 860px;
         margin: 0 auto;
+
         .testimonials-author {
           span {
             font-weight: 400;
           }
         }
       }
+
       .logo-img {
         width: 100%;
         text-align: right;
         display: flex;
         align-items: flex-end;
         margin-top: 70px;
+
         @include tablet {
           margin-top: 20px;
         }
+
         hr {
           margin: 0;
           width: 100%;
           margin-right: 20px;
           border-top-color: $dividercolor;
+
           @include tablet {
             display: none;
           }
         }
+
         img {
           max-width: 230px;
         }
       }
     }
   }
+
   .page-center-inner {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     column-gap: 5%;
+
     &.padd_inn {
       padding: 20px;
       border-radius: 12px;
+
       .img-col {
         img.img-2 {
           max-width: 64%;
         }
       }
     }
+
     &.addcolor {
       padding: 15px;
       border-radius: 12px;
     }
   }
+
   .img-col {
     justify-content: end;
     display: flex;
     align-items: center;
     width: 45%;
     flex-wrap: wrap;
+
     @include tabletmid {
       width: 100%;
       justify-content: start;
     }
+
     img.img-1 {
       border-radius: 12px;
       max-width: 200px;
@@ -98,6 +129,7 @@ section.u4m-testimonials {
       position: relative;
       min-height: 260px;
       object-fit: cover;
+
       @include tablet {
         max-width: 180px;
         min-height: 200px;
@@ -106,43 +138,54 @@ section.u4m-testimonials {
       @include tabletmid {
         max-width: 20%;
       }
+
       @include phone {
         max-width: 44%;
         min-height: auto;
       }
     }
+
     img.img-2 {
       border-radius: 12px;
       max-width: 65%;
       width: 100%;
       margin-left: -50px;
+
       @include tabletmid {
         max-width: 50%;
       }
+
       @include phone {
         max-width: 65%;
       }
     }
+
     .logo-img {
       text-align: right;
       width: 100%;
       max-width: 530px;
+
       @include tablet {
         max-width: 100%;
       }
+
       @include tabletmid {
         text-align: left;
+
         .hr-spacer {
           margin-bottom: 32px;
         }
       }
+
       @include phone {
         text-align: left;
+
         .hr-spacer {
           border: 0;
           margin-bottom: 0px;
         }
       }
+
       img {
         max-width: 150px;
         padding-top: 32px;
@@ -156,19 +199,24 @@ section.u4m-testimonials {
       margin-bottom: 0;
     }
   }
+
   .content-col {
     width: 50%;
+
     @include tabletmid {
       width: 100%;
     }
+
     p {
       @include size28;
     }
+
     .content-button {
       a {
         border: 1px solid;
         padding: 13rem 20rem;
         border-radius: 4rem;
+
         img {
           max-width: 10px;
           vertical-align: middle;
@@ -177,24 +225,30 @@ section.u4m-testimonials {
       }
     }
   }
+
   @include navbreakMin {
     .type1 {
       .page-center-inner {
-        max-width: 1228px;
+        max-width: 1288px;
         margin: 0 auto;
         gap: 76px;
+
         .img-col {
           max-width: 539px;
           width: 100%;
+
           .logo-img {
             margin-left: auto;
           }
+
           .hr-spacer {
             margin: 33px 0 0;
           }
+
           img.img-1 {
             margin-right: -43px;
           }
+
           img.img-2 {
             margin-left: 0;
             object-fit: cover;
@@ -202,8 +256,10 @@ section.u4m-testimonials {
             max-width: calc(100% - 159px);
           }
         }
+
         .content-col {
-          max-width: calc(100% - 615px);
+          // max-width: calc(100% - 615px);
+          max-width: 634rem;
           width: 100%;
         }
       }

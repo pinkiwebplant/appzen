@@ -1,4 +1,5 @@
 @import "../../css/_module-imports";
+
 .u4m-cta-row.dnd_padding {
   &.inner_bg_add {
     @include center;
@@ -6,6 +7,7 @@
     padding: 110rem 40rem;
     border-radius: $borderRadius;
     width: calc(100% - 40px);
+
     @include tabletvert {
       padding: 110rem 20rem;
     }
@@ -20,6 +22,7 @@
   &.overlay_bg {
     background-size: 98%;
     background-size: cover;
+
     @include navbreak {
       background-size: cover;
     }
@@ -27,49 +30,82 @@
 
   .wrapper.centercnt {
     .wrapper_inr {
+
       flex-direction: column;
       justify-content: center;
       text-align: center;
       flex-wrap: wrap;
+
       .btn_row {
         width: 100%;
         justify-content: center;
       }
     }
   }
+
+  .wrapper:not(.centercnt) {
+    .span8 {
+      max-width: 633rem;
+      width: 100%;
+    }
+
+    .span4 {
+      transform: translateX(54rem);
+      flex-wrap: wrap;
+      max-width: 360rem;
+      width: 100%;
+
+      @include gridHide {
+        transform: unset;
+      }
+
+      a {
+        margin: 0;
+      }
+    }
+  }
+
   .wrapper_inr {
+    @include center2noPad;
     display: flex;
     justify-content: space-between;
     align-items: center;
     justify-content: space-between;
     column-gap: 20px;
+
     @include tabletmid {
       flex-direction: column;
       text-align: center;
     }
+
     .cnt_wrap {
       h2 {
         margin-bottom: 15px;
       }
+
       p {
         margin-bottom: 10px;
       }
     }
+
     .btn_row {
       display: flex;
       align-items: flex-start;
       gap: 19px;
+
       @include tabletmid {
         align-items: center;
         width: 100%;
         justify-content: center;
       }
+
       @include phone {
         flex-direction: column;
         gap: 0;
         text-align: center;
         align-items: center;
       }
+
       a {
         white-space: nowrap;
       }

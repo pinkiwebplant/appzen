@@ -22,7 +22,7 @@
 {% endif %}
 
 
-<div class="page-center">
+<div class="page-center tes">
   {% if module.intro_content.include_view_all_link || module.intro_content.include_heading %}
   <div class="intro_content col">
     {% if module.intro_content.include_heading %}
@@ -55,16 +55,16 @@
   {% endif %}
   {% if module.resources.resource_type == "recent" ||  module.resources.resource_type == "category" %} 
   <div class="flex_row">
-    <div class="card_item col3 empty_div col {% if module.module_overrides.reverse_text %}{% if module.module_overrides.use_card_content_theme_color %}themeColor{% endif %}{% endif %}">
+    <div class="grouped-content card_item col3 empty_div col {% if module.module_overrides.reverse_text %}{% if module.module_overrides.use_card_content_theme_color %}themeColor{% endif %}{% endif %}">
       <div class="card_inner {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.card_background_color }}{% endif %}">
       </div>
     </div>
-    <div class="col9 flex_row {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.select_column_alignment }}{% endif %}">
+    
       {% for item in data %}
       <div class="card_item {% if item.format.name == 'Video' %} video_icon_display {% endif %} 
                   {% if not  module.resources.settings.include_featured_image %} no_img_card {% endif %}
                   {% if not (module.resources.settings.include_tag || module.resources.settings.include_reading_minutes) %} largefont {% endif %}
-                  col4 col {% if module.module_overrides.reverse_text %}{% if module.module_overrides.use_card_content_theme_color %}themeColor{% endif %}{% endif %}">
+                  col3 col {% if module.module_overrides.reverse_text %}{% if module.module_overrides.use_card_content_theme_color %}themeColor{% endif %}{% endif %}">
         <div class="card_inner {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.card_background_color }}{% endif %}">
           {% if module.resources.settings.include_featured_image %}
           {% if item.image.url %}
@@ -134,23 +134,23 @@
       </div>
       {% endfor %} 
 
-    </div>
+   
   </div>
   {% endif %}
   {% if module.resources.resource_type == "custom" %}
   {% set data = module.resources.resources_by_title %}
   <div class="flex_row resources_by_title_row">
-    <div class="card_item col3 empty_div col {% if module.module_overrides.reverse_text %}{% if module.module_overrides.use_card_content_theme_color %}themeColor{% endif %}{% endif %}">
+    <div class="grouped-content card_item col3 empty_div col {% if module.module_overrides.reverse_text %}{% if module.module_overrides.use_card_content_theme_color %}themeColor{% endif %}{% endif %}">
       <div class="card_inner {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.card_background_color }}{% endif %}">
       </div>
     </div>
-    <div class="col9 flex_row {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.select_column_alignment }}{% endif %}">
+   
       {% for item in data %}  
       {% if item.select_resource.columns.title %} 
       <div class="card_item {% if item.select_resource.columns.format.name == 'Video' %} video_icon_display {% endif %} 
                   {% if not  module.resources.settings.include_featured_image %} no_img_card {% endif %}
                   {% if not (module.resources.settings.include_tag || module.resources.settings.include_reading_minutes ) %} largefont {% endif %}
-                  col4 col {% if module.module_overrides.reverse_text %}{% if module.module_overrides.use_card_content_theme_color %}themeColor{% endif %}{% endif %}">
+                  col3 col {% if module.module_overrides.reverse_text %}{% if module.module_overrides.use_card_content_theme_color %}themeColor{% endif %}{% endif %}">
 
         <div class="card_inner {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.card_background_color }}{% endif %}">
           {% if module.resources.settings.include_featured_image %}
@@ -220,7 +220,7 @@
       </div>
       {% endif %}
       {% endfor %}
-    </div>
+    
   </div>
   {% endif %}
 </div>

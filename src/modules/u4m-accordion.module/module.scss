@@ -3,13 +3,32 @@
 .u4m-accordion {
   padding-top: 28px;
   padding-bottom: 88px;
+
   @include tabletvert {
     padding-bottom: 28px;
   }
+
   .page-center {
     .flex_row {
-      margin-left: -10px;
-      margin-right: -10px;
+
+      // margin-left: -10px;
+      // margin-right: -10px;
+      .col {
+        padding: 0;
+
+        &.spacer-col {
+          width: 48%;
+        }
+
+        &.items-col {
+          width: 52%;
+
+          @include tabletmid {
+            width: 100%;
+          }
+        }
+      }
+
       @include tabletvert {
         margin-left: 0;
         margin-right: 0;
@@ -29,6 +48,7 @@
 
   .accordion-items {
     padding-top: 40px;
+
     .accordion-items-inn {
       @include tabletmid {
         .col6 {
@@ -40,6 +60,7 @@
 
   .accordion-top-row {
     border-bottom: 1px solid $lightGray;
+
     @include tabletvert {
       text-align: center;
     }
@@ -47,15 +68,18 @@
 
   .accor-expand-btn {
     text-align: right;
+
     @include tabletvert {
       text-align: center;
       margin-bottom: 28px;
     }
+
     a {
       line-height: 1.5;
       font-weight: 400;
       color: $bodyColor;
       @include size14;
+
       &.collapse-btn {
         display: none;
       }
@@ -66,6 +90,7 @@
     &:not(:last-child) {
       padding-bottom: 40px;
     }
+
     .accord-item-title {
       h4 {
         font-weight: 700;
@@ -75,12 +100,14 @@
         align-items: start;
         cursor: pointer;
         @include size28;
+
         .item-count {
           line-height: 1.5;
           font-weight: 700;
           padding-right: 20px;
           @include size14;
           align-self: flex-start;
+
           @include tabletvertmin {
             padding-top: 1px;
           }
@@ -95,6 +122,7 @@
           width: 38px;
           display: flex;
           justify-content: flex-end;
+
           span {
             border: 1px solid #E2DDD2;
             border-radius: 100%;
@@ -103,13 +131,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
             &.toggle-icon {
               display: flex;
             }
+
             &.open-icon {
               display: none;
             }
           }
+
           @include tabletmid {
             display: flex;
           }
@@ -125,6 +156,7 @@
               &.toggle-icon {
                 display: none;
               }
+
               &.open-icon {
                 display: flex;
               }
@@ -142,9 +174,11 @@
       display: none;
       padding-left: 35px;
       @include size18;
+
       p:last-child {
         margin-bottom: 0;
       }
+
       &.hide {
         display: none;
       }
