@@ -15,7 +15,7 @@ header.u4m-header {
     margin: 0 auto;
     padding: 0 13rem;
 
-    >.flex_row {
+    > .flex_row {
       justify-content: space-between;
       gap: 12px;
 
@@ -51,14 +51,14 @@ header.u4m-header {
 
     .HeaderSticky {
       .hs-menu-wrapper {
-        >ul {
-          >li {
-            >a {
+        > ul {
+          > li {
+            > a {
               display: none;
             }
 
-            >ul {
-              >li.active-branch {
+            > ul {
+              > li.active-branch {
                 display: block;
                 float: none;
                 display: flex;
@@ -67,12 +67,12 @@ header.u4m-header {
                 margin: 0 auto;
               }
 
-              >li {
+              > li {
                 display: none;
 
-                >ul {
-                  >li {
-                    >a {
+                > ul {
+                  > li {
+                    > a {
                       padding: 12px 25px;
                       width: auto !important;
                       text-overflow: unset !important;
@@ -95,14 +95,14 @@ header.u4m-header {
                     max-width: calc(100% - 314px);
                   }
 
-                  >li.active.active-branch {
-                    >a {
+                  > li.active.active-branch {
+                    > a {
                       background-color: $sectionbg;
                     }
                   }
                 }
 
-                >a {
+                > a {
                   max-width: 30%;
                   width: 100%;
                   font-family: $font1;
@@ -131,15 +131,15 @@ header.u4m-header {
             }
 
             ul {
-              >li {
-                >a {
+              > li {
+                > a {
                   color: $basecolor;
                 }
               }
             }
           }
 
-          >li.active-branch {
+          > li.active-branch {
             display: block;
             float: none;
           }
@@ -153,7 +153,7 @@ header.u4m-header {
           }
         }
 
-        >ul.active-branch {
+        > ul.active-branch {
           display: block;
         }
       }
@@ -181,28 +181,28 @@ header.u4m-header {
 
     .megaMenu {
       .hs-megaMenu-wrapper {
-        >ul.mobileHide {
-          >li {
+        > ul.mobileHide {
+          > li {
             a {
               color: $greybg;
             }
 
             &:last-child {
-              >a {
+              > a {
                 // color: $sidebarplaceholder;
               }
             }
 
             &:hover {
-              >a {
+              > a {
                 color: $basecolor;
                 background: $white;
               }
             }
           }
 
-          >li.childOpen {
-            >a {
+          > li.childOpen {
+            > a {
               color: $basecolor;
               background: $white;
             }
@@ -213,12 +213,12 @@ header.u4m-header {
 
     .HeaderSticky {
       .hs-menu-wrapper {
-        >ul {
-          >li {
+        > ul {
+          > li {
             ul {
-              >li {
+              > li {
                 &:not(.active) {
-                  >a {
+                  > a {
                     color: $white;
                   }
                 }
@@ -237,19 +237,18 @@ header.u4m-header {
       cursor: text !important;
     }
 
-    >ul.mobileHide {
+    > ul.mobileHide {
       display: flex;
 
-      >li {
+      > li {
         margin: 0;
         min-width: 120px;
 
         &.no-link {
-          >a {
-
+          > a {
             .childTrigger {
               &:before {
-                content: '';
+                content: "";
                 position: absolute;
                 width: 120rem;
                 height: 100%;
@@ -262,7 +261,7 @@ header.u4m-header {
           }
         }
 
-        >a {
+        > a {
           padding: 18px 14px;
           width: 100%;
           font-family: $font1;
@@ -294,25 +293,25 @@ header.u4m-header {
         }
 
         &:last-child {
-          >a {
+          > a {
             // color: $tagcolor;
           }
         }
 
         &:not(:last-child) {
-          >a {
+          > a {
             border-right: 1px solid $lightGray;
             border-top: 1px solid $lightGray;
           }
         }
 
         &:first-child {
-          >a {
+          > a {
             border-left: 1px solid $lightGray;
           }
         }
 
-        >.childMenu {
+        > .childMenu {
           right: 0;
           position: absolute;
           top: calc(100% + 9.5px);
@@ -323,7 +322,7 @@ header.u4m-header {
           z-index: 3;
           display: none;
 
-          >.flex_row {
+          > .flex_row {
             .menuItemTtl {
               font-family: $font1;
               font-weight: 400;
@@ -390,11 +389,11 @@ header.u4m-header {
                 color: $tagcolor;
                 margin-bottom: 8px;
 
-                >a {
+                > a {
                   color: inherit;
                 }
 
-                >span {
+                > span {
                   line-height: 1;
                   margin-top: 4px;
                 }
@@ -408,7 +407,7 @@ header.u4m-header {
                 line-height: 150%;
                 color: $basecolor;
 
-                >a {
+                > a {
                   color: inherit;
                 }
               }
@@ -466,8 +465,8 @@ header.u4m-header {
           }
         }
 
-        >.childMenu.fw {
-          >.flex_row {
+        > .childMenu.fw {
+          > .flex_row {
             margin: 0 -20px;
 
             .menuItem {
@@ -485,7 +484,7 @@ header.u4m-header {
           max-width: 100%;
         }
 
-        >.childMenu.tw {
+        > .childMenu.tw {
           width: 1027px;
           width: 1027px;
           max-width: 100%;
@@ -529,7 +528,7 @@ header.u4m-header {
               }
             }
 
-            >.bottomPane {
+            > .bottomPane {
               .btnmItem {
                 font-family: $font1;
                 font-style: normal;
@@ -553,7 +552,7 @@ header.u4m-header {
         &.childLength1 {
           position: relative;
 
-          &>.childMenu {
+          & > .childMenu {
             width: 250px;
             padding-left: 20px;
             padding-right: 20px;
@@ -561,14 +560,14 @@ header.u4m-header {
             left: 0;
             right: 0;
 
-            >.flex_row .menuItem {
+            > .flex_row .menuItem {
               max-width: 100%;
             }
           }
         }
 
         &:hover {
-          >a {
+          > a {
             position: relative;
             z-index: 6;
             background: $white;
@@ -585,12 +584,12 @@ header.u4m-header {
         }
       }
 
-      >li.childOpen {
-        >.childMenu {
+      > li.childOpen {
+        > .childMenu {
           display: block;
         }
 
-        >a {
+        > a {
           position: relative;
           z-index: 6;
           background: $white;
@@ -606,8 +605,8 @@ header.u4m-header {
         }
       }
 
-      >li.active {
-        >a {
+      > li.active {
+        > a {
           position: relative;
           z-index: 6;
           background: $white;
@@ -696,7 +695,7 @@ header.u4m-header {
     }
 
     .headerIn {
-      >.flex_row {
+      > .flex_row {
         .left_sec {
           border-bottom: none;
         }
@@ -769,7 +768,7 @@ header.u4m-header {
           margin-bottom: 0;
         }
 
-        >li {
+        > li {
           padding-top: 10px;
           padding-bottom: 10px;
         }
@@ -795,12 +794,12 @@ header.u4m-header {
         }
       }
 
-      >ul.desktopHide {
-        >li {
+      > ul.desktopHide {
+        > li {
           margin: 0;
           position: relative;
 
-          >a {
+          > a {
             display: block;
             padding: 10px 0;
             color: $basecolor;
@@ -821,7 +820,7 @@ header.u4m-header {
           }
         }
 
-        >li.childOpenMob {
+        > li.childOpenMob {
           .childTrigger {
             transform: rotate(180deg);
           }
@@ -897,13 +896,19 @@ body.anncmnt_hide {
 }
 
 @include tabletmidmin {
-  .headerWrap.lp-header .headerIn>.flex_row {
+  .headerWrap.lp-header .headerIn > .flex_row {
     min-height: 55px;
   }
 }
 
 @include tabletmid {
-  .headerWrap.lp-header .headerIn>.flex_row {
+  .headerWrap.lp-header .headerIn > .flex_row {
     min-height: 39.89px;
+  }
+}
+
+.headerWrap {
+  @include tabletmid {
+    min-height: 53.3px;
   }
 }

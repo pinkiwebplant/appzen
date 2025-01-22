@@ -16,7 +16,7 @@ footer.cmftr.u4m-footer {
     margin: 0 auto;
     padding: 0 20px;
     a[href="javascript:;"] {
-        cursor: text !important;
+      cursor: text !important;
     }
     .btm_cnt {
       display: flex;
@@ -56,12 +56,13 @@ footer.cmftr.u4m-footer {
         .btm_menu {
           .hs-menu-wrapper {
             > ul {
+              font-size: $baseFontSize2;
               gap: 12px;
               display: flex;
               list-style: none;
               padding: 0;
               margin: 0;
-
+              line-height: inherit;
               > li {
                 margin: 0;
                 float: unset;
@@ -72,6 +73,7 @@ footer.cmftr.u4m-footer {
                   font-weight: 400;
                   cursor: pointer;
                   color: $gray5;
+                  display: block;
                 }
               }
 

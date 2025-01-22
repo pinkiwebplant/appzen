@@ -41,20 +41,17 @@
   }
 }
 
-
 @mixin navbreakMin {
   @media (min-width: 1281px) {
     @content;
   }
 }
 
-
 @mixin gridHide {
   @media (max-width: 1330px) {
     @content;
   }
 }
-
 
 @mixin laptop {
   @media (max-width: 1440px) {
@@ -99,9 +96,7 @@
 }
 
 @mixin ie {
-
-  @media all and (-ms-high-contrast: none),
-  (-ms-high-contrast: active) {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     @content;
   }
 }
@@ -183,7 +178,7 @@
 // Links
 @mixin link {
   text-decoration: none;
-  /* Remove default underline */
+  // /* Remove default underline */
   color: $mainLinkColor;
   transition: $animation1;
   display: inline-block;

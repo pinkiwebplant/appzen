@@ -3,7 +3,7 @@
 .u4m-webinars {
   @include tabletmidmin {
     .page-center {
-      >.flex_row {
+      > .flex_row {
         margin: 0 -10px;
       }
     }
@@ -65,7 +65,7 @@
     }
 
     span {
-      >svg {
+      > svg {
         vertical-align: middle;
         position: relative;
         top: -2px;
@@ -148,7 +148,7 @@
             max-width: 100%;
             object-fit: cover;
             width: 100%;
-            object-position: right;
+            object-position: center;
             border-radius: 4px;
 
             @include tabletmid {
@@ -184,7 +184,7 @@
             flex-direction: column;
             height: 100%;
 
-            >* {
+            > * {
               width: 100%;
             }
 
@@ -197,7 +197,7 @@
               margin-top: auto;
 
               a.webinar-link:before {
-                content: '';
+                content: "";
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -278,7 +278,7 @@
       color: $white;
 
       span {
-        >svg {
+        > svg {
           path {
             fill: $white;
           }
@@ -287,13 +287,9 @@
     }
 
     .webinars_item {
-
-
       .right_content {
         .btn_wrapper {
           .button_item {
-
-
             svg {
               path {
                 stroke: $white;
