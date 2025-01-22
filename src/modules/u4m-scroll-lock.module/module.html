@@ -5,114 +5,132 @@
 	{% include "../partials/u4-module-includes.html" %}
 	{% if module.include_intro %}
 	<div class='intro'>
-		<div class='intro_cnt page-center'>
-			{{ module.intro_content }}
-		</div>
+	  <div class='intro_cnt page-center'>
+		{{ module.intro_content }}
+	  </div>
 	</div>
 	{% endif %}
 	
 	
 	<div class="wrapper  ">  
-		<div class="sticky_sec  ct-section floating-content-media container-medium preload-assets" data-scroll-reset>			
-			<div class="page-center ct-section-inner-wrap " > 
-				<div class="scroll_wrap ct-div-block"> 
-					<div id="sticky_slide_wrap" class="scroll_slides floating-media-cards ct-div-block">
-						{% for item in module.slider %}
-						<div id="sticky_slide_{{ loop.index }}" class="scroll_slide ct-div-block floating-media-card flex_row">
-							{# <div class="scroll_slide_inr flex_row"> #}
-								<div class="scroll_cnt floating-media-card-content {{ module.module_overrides.background_settings.select_background_color_type }}">
-									{{ item.content }}
-									{% if item.include_button %}
-									<div class="btn_row">
-										{% for item2 in item.buttons %}
-										{% if item2.button_type == 'stnd' %} 
-										{% set href = item2.button_link.url.href %}
-										{% if item2.button_link.url.type is equalto "EMAIL_ADDRESS" %}
-										{% set href = "mailto:" + href %}
-										{% endif %}
-										<a class="{{ item2.theme }} hs-button"
-											 {% if item2.button_link.url.type is equalto "CALL_TO_ACTION"  %}
-											 href="{{ href }}"
-											 {% else %}
-											 href="{{ href|escape_url }}"
-											 {% endif %}
-											 {% if item2.button_link.open_in_new_tab %}
-											 target="_blank"
-											 {% endif %}
-											 {% if item2.button_link.rel %}
-											 rel="{{ item2.button_link.rel|escape_attr }}"
-											 {% endif %}
-											 >
-											{{ item2.button_text }}
-										</a>
-										{% else %}
-										{% cta guid="{{ item2.cta_field }}" %}
-										{% endif %}
-										{% endfor %}
+	  <div class="sticky_sec  ct-section floating-content-media container-medium preload-assets" data-scroll-reset>			
+		<div class="page-center ct-section-inner-wrap " > 
+		  <div class="scroll_wrap ct-div-block"> 
+			<div id="sticky_slide_wrap" class="scroll_slides floating-media-cards ct-div-block">
+			  {% for item in module.slider %}
+			  <div id="sticky_slide_{{ loop.index }}" class="scroll_slide ct-div-block floating-media-card flex_row">
+				{# <div class="scroll_slide_inr flex_row"> #}
+				<div class="scroll_cnt floating-media-card-content {{ module.module_overrides.background_settings.select_background_color_type }}">
+				  {{ item.content }}
+				  {% if item.include_button %}
+				  <div class="btn_row">
+					{% for item2 in item.buttons %}
+					{% if item2.button_type == 'stnd' %} 
+					{% set href = item2.button_link.url.href %}
+					{% if item2.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+					{% set href = "mailto:" + href %}
+					{% endif %}
+					<a class="{{ item2.theme }} hs-button"
+					   {% if item2.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+					   href="{{ href }}"
+					   {% else %}
+					   href="{{ href|escape_url }}"
+					   {% endif %}
+					   {% if item2.button_link.open_in_new_tab %}
+					   target="_blank"
+					   {% endif %}
+					   {% if item2.button_link.rel %}
+					   rel="{{ item2.button_link.rel|escape_attr }}"
+					   {% endif %}
+					   >
+					  {{ item2.button_text }}
+					</a>
+					{% else %}
+					{% cta guid="{{ item2.cta_field }}" %}
+					{% endif %}
+					{% endfor %}
 	
-									</div>
-									{% endif %}
-								</div>
-              {% if item.media_type == 'vid' %}
-              <div class="scroll_img floating-media-card-image video">
-                <div class="img_wrap vidWrap">
-                  <video width="500" height="500" style="margin: auto; width: 100%; height: auto;" id="my-video-01" class="video-js vjs-default-skin vjs-theme-forest vjs-big-play-centered" autoplay="autoplay" muted="true" loop="loop" preload="auto" rel="preload" poster="https://dummyimage.com/300/ffffff/ffffff" src="{{ item.select_video }}" type="video/mp4" data-setup="{}" playsinline="true" gt="" video=""></video>
-                </div>
-              </div>
-              {% elif item.media_type == 'animated_svg' %}
-              <div class="scroll_img floating-media-card-image svgAnimationWrap {{ module.module_overrides.background_settings.select_background_color_type }}">
-                <iframe src="{{ item.animated_svg }}" height="500" width="500"></iframe>
-              </div>
-              {% else %}
-              <div class="scroll_img floating-media-card-image">
-                <div class="img_wrap " >
-                  <img src="{{ item.select_image.src }}" alt="{{ item.select_image.alt }}"/>
-                  {% if item.include_svg %}
-                  <div class="box_border">
-                    <div class="white_box">
-					
-                      <div class="box_svg">
-                        {{ item.add_svg }}
-                      </div>
-                    </div>
-                  </div>
-                  {% endif %}
-                </div>
-              </div>
-              {% endif %}
-							{# </div> #}
-						</div>
-						{% endfor %}
-					</div>
+				  </div>
+				  {% endif %}
 				</div>
+				{% if item.media_type == 'vid' %}
+				<div class="scroll_img floating-media-card-image video">
+				  <div class="img_wrap vidWrap">
+					<video width="500" height="500" style="margin: auto; width: 100%; height: auto;" id="my-video-01" class="video-js vjs-default-skin vjs-theme-forest vjs-big-play-centered" autoplay="autoplay" muted="true" loop="loop" preload="auto" rel="preload" poster="https://dummyimage.com/300/ffffff/ffffff" src="{{ item.select_video }}" type="video/mp4" data-setup="{}" playsinline="true" gt="" video=""></video>
+				  </div>
+				</div>
+				{% elif item.media_type == 'animated_svg' %}
+				<div class="scroll_img floating-media-card-image svgAnimationWrap {{ module.module_overrides.background_settings.select_background_color_type }}">
+				  <iframe src="{{ item.animated_svg }}" height="500" width="500"></iframe>
+				</div>
+				{% else %}
+				<div class="scroll_img floating-media-card-image">
+				  <div class="img_wrap " >
+					<img src="{{ item.select_image.src }}" alt="{{ item.select_image.alt }}"/>
+					{% if item.include_svg %}
+					<div class="box_border">
+					  <div class="white_box">
+	
+						<div class="box_svg">
+						  {{ item.add_svg }}
+						</div>
+					  </div>
+					</div>
+					{% endif %}
+				  </div>
+				</div>
+				{% endif %}
+				{# </div> #}
+			  </div>
+			  {% endfor %}
 			</div>
-		</div> 
+		  </div>
+		</div>
+	  </div> 
 	</div>
-	 
+	
 	</section>
 	
 	{% require_js %}
-		<script>
-// Add resize handler to reset scroll positions
-let resizeTimer;
-window.addEventListener('resize', () => {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(() => {
-    const scrollSection = document.querySelector('[data-scroll-reset]');
-    if (scrollSection) {
-      // Reset scroll position
-      window.scrollTo({
-        top: scrollSection.offsetTop,
-        behavior: 'instant'
-      });
-      
-      // Reset any transforms on slides
-      const slides = document.querySelectorAll('.scroll_slide');
-      slides.forEach(slide => {
-        slide.style.transform = '';
-      });
-    }
-  }, 250); // Debounce resize events
-});		
-		</script>
+	<script>
+	
+	
+	  function myFunction(x) {
+		if (x.matches) { // If media query matches
+	
+		} else {
+		   let resizeTimer;
+	  window.addEventListener('resize', () => {
+		clearTimeout(resizeTimer);
+		resizeTimer = setTimeout(() => {
+		  const scrollSection = document.querySelector('[data-scroll-reset]');
+		  if (scrollSection) {
+			// Reset scroll position
+			window.scrollTo({
+			  top: scrollSection.offsetTop,
+			  behavior: 'instant'
+			});
+	
+			// Reset any transforms on slides
+			const slides = document.querySelectorAll('.scroll_slide');
+			slides.forEach(slide => {
+			  slide.style.transform = '';
+			});
+		  }
+		}, 250); // Debounce resize events
+	  });	
+		}
+	  }
+	
+	  var x = window.matchMedia("(max-width: 767px)")
+	
+	  // Call listener function at run time
+	  myFunction(x);
+	
+	
+	  x.addEventListener("change", function() {
+		myFunction(x);
+	  });
+		
+	</script>
 	{% end_require_js %}

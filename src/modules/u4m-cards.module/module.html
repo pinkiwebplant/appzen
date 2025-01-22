@@ -115,7 +115,14 @@
 
 
 
-
+{% require_js %}
+  <script>
+    $(function () {
+      $(".u4m-cards.{{ name }} .card_inner .card_title").matchHeight();
+    });
+  </script>
+  {% end_require_js %}
+  
 
 
 
