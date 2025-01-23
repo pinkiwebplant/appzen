@@ -2,8 +2,13 @@
   "global" : false,
   "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
   "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
-  "module_id" : 183455647248,
-  "label" : "Case Study Hero",
+  "module_id" : 185268354951,
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../../js/matchHeight.js",
+    "name" : "matchHeight.js"
+  } ],
+  "label" : "Event Cards",
   "icon" : "https://8292614.fs1.hubspotusercontent-na1.net/hubfs/8292614/4.svg",
   "is_available_for_new_content" : true
 }
