@@ -33,9 +33,13 @@ section.u4m-blog-post-header {
 
     .author-img {
       margin-right: 20px;
+      border-radius: 100%;
+      overflow: hidden;
 
       img {
         width: 60px;
+        height: 60px;
+        object-fit: fill;
         // border-radius: 100%;
       }
     }
@@ -55,7 +59,7 @@ section.u4m-blog-post-header {
     background-position: center;
     max-width: 900px;
     margin: 0;
-
+    border-radius: $borderRadius;
     @include tabletvert {
       min-height: 250px;
     }
