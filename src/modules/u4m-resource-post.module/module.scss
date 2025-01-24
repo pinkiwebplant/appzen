@@ -107,6 +107,16 @@
         .post-related-articles {
             margin-top: 50rem;
         }
+        .postForm {
+            @include form;
+            margin-left: 0;
+            margin-right: 0;
+            max-width: 100%;
+            .input select {
+                font-size: 13rem;
+                color: inheri;
+            }
+        }
     }
 
     .intro_content {

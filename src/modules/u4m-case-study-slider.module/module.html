@@ -17,7 +17,71 @@
 	</div>
 </div>
 {% endif %}
+{% if module.select_post_type == 'pbt' %}
+{% set data = module.post_by_title %}
+<div class="mainSliderWrap">  
+	<div class="bgSlider">
+		{% for row in data %}
+		<div class="bg_item" data-id="tab{{loop.index}}_{{name}}">
+			<div class="bg_item_inner">
+				<div class="case_large_bg" style="background-image: url({{row.select_row.columns.featured_image.url}})">
+				<a href="{{ row.select_row.columns.link }}" class="absLink"></a><img src="{{row.select_row.columns.featured_image.url}}" alt="{{row.select_row.columns.name|striptags }}" />
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
 
+	<div class="contentSliderWrap">
+		<div class="case_large_card contentSlider"> 
+			{% for row in data %}
+			<div class="case_item" data-id="tab{{loop.index}}_{{name}}">
+			<a href="{{ row.select_row.columns.link }}" class="absLink"></a>
+				<div class="case_large_content">
+					<div class="inner_content_box">
+						<div class="inner_content">
+							<div class="case_card_intro">
+								<div class="card_title">
+									<h4>
+									<a href="{{ row.select_row.columns.link }}">
+									{{row.select_row.columns.name}}
+									</a>
+									</h4>
+								</div>
+								<div class="card_desc">
+									<p>
+										{{row.select_row.columns.description}}
+									</p>
+								</div>
+							</div>
+							<div class="case_card_meta">
+								<span class="price">{{row.select_row.columns.price}}</span>
+								<span class="subtitle">{{row.select_row.columns.subtitle}}</span>
+							</div>
+						</div>
+					</div>
+				</div> 
+			</div>  
+			{% endfor %}
+		</div>
+	</div>
+
+</div>
+<div class="thumbSliderWrap">
+	<div class="page-center">
+		<div class="thumbSlider">
+			{% for row in data %}
+			<div class="case_small_card" data-nav-id="tab{{loop.index}}_{{name}}">
+				<div class="case_logo">
+					<img src="{{ row.select_row.columns.logo.url }}" alt="{{ row.select_row.columns.name }}"/>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+{% else %}
 <div class="mainSliderWrap">  
 	<div class="bgSlider">
 		{% for row in rows %}
@@ -80,6 +144,7 @@
 	</div>
 </div>
 
+{% endif %}
 
 </section>
 
