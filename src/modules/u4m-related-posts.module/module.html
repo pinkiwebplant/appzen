@@ -29,7 +29,8 @@
               class="topic-link"
               href="{{ blog_tag_url(group.id, topic.slug) }}"
               >{{ topic.name }}</a
-            >{% if not loop.last %},{% endif %} {% endfor %}
+            >
+            {% endfor %}
           </div>
           {% endif %}
           <h5 class="post-title">

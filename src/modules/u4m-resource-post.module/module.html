@@ -44,6 +44,16 @@
     <a class="primary hs-button" href="{{ dynamic_page_hubdb_row.button1_link }}">{{ dynamic_page_hubdb_row.button_1_text }}</a>
     </div>  
     {% endif %}
+    <div class="postForm">
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+    <script>
+      hbspt.forms.create({
+        portalId: "{{ hub_id }}",
+        formId: "{{ dynamic_page_hubdb_row.gated_form }}",
+        css: ""
+      });
+    </script>
+    </div>
   </div>
 
 
