@@ -49,11 +49,16 @@
         {% else %}
         {% set bgImag = 'https://www.appzen.com/hubfs/image-placeholder-customer-story-1.png' %}
         {% endif %}
+        {% if row.alternative_url%}
+          {% set cardHref = row.alternative_url %}
+        {% else %}
+          {% set cardHref = "{{ request.full_url }}/{{ row.hs_path }}" %}
+        {% endif %}
         <div class="case_card qryitem col4 col category" data-category="{% for tag in row.categories %}{{tag.name}}{% if not loop.last %}, {% endif %}{% endfor %}">
           <div class="case_card_inner">
             <div class="card_img" style="background-image: url({{bgImag}})">
               <div class="inner_wrapper">
-              <a href="{{ request.full_url }}/{{ row.hs_path }}" class="absLink"></a>
+              <a href="{{ cardHref }}" class="absLink"></a>
                 {% if row.logo_image.url %}
                 <span class="logo">
                   <img src="{{row.logo_image.url}}" allt="{{ row.hs_name }}"/>
@@ -69,7 +74,7 @@
             </div> 
             <div class="card_title">
               <h4>
-              <a href="{{ request.full_url }}/{{ row.hs_path }}" style="color: inherit;">{{row.hs_name}}</a>
+              <a href="{{ cardHref }}" style="color: inherit;">{{row.hs_name}}</a>
               </h4>
             </div> 
           </div>

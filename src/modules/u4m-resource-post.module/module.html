@@ -39,11 +39,12 @@
     <h4 style="margin-bottom: 16rem;">{{ dynamic_page_hubdb_row.label_for_button_1 }}</h4>
     {% endif %}
     {{ dynamic_page_hubdb_row.description }}
-    {% if (dynamic_page_hubdb_row.button_1_text) and (dynamic_page_hubdb_row.button1_link) %}
+    {% if dynamic_page_hubdb_row.button_1_text and dynamic_page_hubdb_row.button1_link %}
     <div style="margin-top:20rem;">
     <a class="primary hs-button" href="{{ dynamic_page_hubdb_row.button1_link }}">{{ dynamic_page_hubdb_row.button_1_text }}</a>
     </div>  
     {% endif %}
+    {% if dynamic_page_hubdb_row.gated_form %}
     <div class="postForm">
     <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
     <script>
@@ -54,6 +55,7 @@
       });
     </script>
     </div>
+    {% endif %}
   </div>
 
 
@@ -77,7 +79,12 @@
                     {% if not  module.resources.settings.include_featured_image %} no_img_card {% endif %}
                     ">
           <div class="card_inner white_bg">
-          <a href="/resources/{{ item.hs_path }}" class="absLink"></a>
+          {% if dynamic_page_hubdb_row.alternative_url%}
+            {% set cardHref = dynamic_page_hubdb_row.alternative_url %}
+          {% else %}
+            {% set cardHref = "/resources/{{ item.hs_path }}" %}
+          {% endif %}
+          <a href="{{ cardHref }}" class="absLink"></a>
             {% if item.image.url %}
             <div class="card_img">
               <div class="card_img_inner" style="background-image:url({{ item.image.url }});">
@@ -103,7 +110,7 @@
             </div>
             {% if item.hs_path %}
             <div class="arrow_link"> 
-              <a href="/resources/{{ item.hs_path }}" >
+              <a href="{{ cardHref }}" >
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M5.5 1L10.5 6L5.5 11" stroke="#574D4A"/>
                   <path d="M10.5 6L0.5 6" stroke="#574D4A"/>

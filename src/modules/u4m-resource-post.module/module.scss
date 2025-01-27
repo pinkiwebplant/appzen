@@ -104,6 +104,10 @@
         margin: -100px auto 80px;
         max-width: calc(820px + 5%);
 
+        a {
+            text-decoration: underline;
+        }
+
         .post-related-articles {
             margin-top: 50rem;
         }
