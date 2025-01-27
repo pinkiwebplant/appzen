@@ -176,6 +176,11 @@ header.u4m-header {
         filter: invert(1) brightness(1.4);
       }
     }
+    .flex_row {
+      .left_sec {
+        border-color: $DarkHeaderBorder;
+      }
+    }
 
     background: $basecolor;
 
@@ -185,6 +190,7 @@ header.u4m-header {
           > li {
             a {
               color: $greybg;
+              border-color: $DarkHeaderBorder;
             }
 
             &:last-child {
