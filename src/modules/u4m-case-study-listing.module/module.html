@@ -23,7 +23,7 @@
 
 {% set rows = hubdb_table_rows(table, query) %}
 
-<div class="page-center">
+<div class="page-center caseListing updated">
   <div class="flex_row">
     <div class="filter_sidebar">
       <div class="filter_sidebar_inner">
@@ -49,7 +49,7 @@
         {% else %}
         {% set bgImag = row.featured_image.url %}
         {% endif %}
-        <div class="case_card qryitem col4 col {% for tag in tagsList%}{% if tag.name == row.category.name %}category{% else %}no-match{% endif %}{% endfor %}" data-category="{{row.category.name}}">
+        <div class="card_item case_card qryitem col4 col category {% for tag in tagsList%}{% if tag.name == row.category.name %}category{% else %}no-match{% endif %}{% endfor %}" data-category="{{row.category.name}}">
           <div class="case_card_inner">
             <div class="card_img" style="background-image: url({{bgImag}})">
               <div class="inner_wrapper">
@@ -126,4 +126,94 @@
 
 </section>
 
+{% require_js %}
+<script>
+
+
+$(document).ready(function () {
+  const filterSidebarSelector = ".caseListing .filter_sidebar button";
+  const caseListingWrapSelector = ".caseListing .case_listing_wrap";
+  const paginationSelector = ".caseListing .pagin";
+  const noTextSelector = ".caseListing .noText";
+
+  // Helper function to update URL query parameters
+  function updateQueryParam(key, value) {
+    const url = new URL(window.location.href);
+    url.searchParams.set(key, value);
+    window.history.pushState(null, "", url.toString());
+  }
+
+  // Helper function to fetch and update content
+  function fetchFilteredContent(query) {
+    const baseUrl = window.location.href.split("?")[0];
+    const queryURL = `${baseUrl}?category=${query}`;
+
+    $.get(queryURL, function (response) {
+      // Update the filtered content
+      const newItems = $(response).find(`${caseListingWrapSelector} .qryitem`);
+      $(caseListingWrapSelector).html(newItems);
+
+      // Show/hide no results text
+      if (newItems.length === 0) {
+        $(noTextSelector).show();
+      } else {
+        $(noTextSelector).hide();
+      }
+
+      // Update pagination
+      const newPagination = $(response).find(`${paginationSelector} .loadmore_btn`);
+      if (newPagination.length > 0) {
+        $(paginationSelector).html(newPagination);
+      } else {
+        $(paginationSelector).empty();
+      }
+    });
+  }
+
+  // Click event for filter buttons
+  $(filterSidebarSelector).click(function (e) {
+    e.preventDefault();
+
+    const btnVal = $(this).attr("data-tag");
+    $(this).parent().addClass("active").siblings().removeClass("active");
+
+    // Update the URL and fetch the filtered content
+    updateQueryParam("category", btnVal);
+    fetchFilteredContent(btnVal);
+  });
+
+  // Click event for "load more" button
+  $(document).on("click", `${paginationSelector} #load-more`, function (e) {
+    e.preventDefault();
+
+    const paginurl = $(this).attr("href");
+    $.get(paginurl, function (response) {
+      // Append new items to the current list
+      const newItems = $(response).find(`${caseListingWrapSelector} .qryitem`);
+      $(caseListingWrapSelector).append(newItems);
+
+      // Update pagination if available
+      const newPagination = $(response).find(`${paginationSelector} .loadmore_btn`);
+      if (newPagination.length > 0) {
+        $(paginationSelector).html(newPagination);
+      } else {
+        $(paginationSelector).empty();
+      }
+    });
+  });
+
+  // Initialize active state and filter on page load
+  const urlParams = new URLSearchParams(window.location.search);
+  const activeCategory = urlParams.get("category");
+  if (activeCategory) {
+    $(`${filterSidebarSelector}[data-tag="${activeCategory}"]`)
+      .parent()
+      .addClass("active")
+      .siblings()
+      .removeClass("active");
+    fetchFilteredContent(activeCategory);
+  }
+});
+</script>
+{% end_require_js %}
 
