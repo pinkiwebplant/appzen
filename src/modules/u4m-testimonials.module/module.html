@@ -29,7 +29,7 @@
           {% if module.content_column.button_link.url.type is equalto "EMAIL_ADDRESS" %}
           {% set href = "mailto:" + href %}
           {% endif %}
-          <a
+          <a class="text"
              {% if module.content_column.button_link.url.type is equalto "CALL_TO_ACTION"  %}
              href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
              {% else %}

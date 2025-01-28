@@ -9,10 +9,11 @@
   }
 
   .page-center {
+    .accordion-top-inn.flex_row{
+      flex-wrap: nowrap;
+    } 
     .flex_row {
-
-      // margin-left: -10px;
-      // margin-right: -10px;
+           
       .col {
         padding: 0;
 
@@ -61,16 +62,13 @@
   .accordion-top-row {
     border-bottom: 1px solid $lightGray;
 
-    @include tabletvert {
-      text-align: center;
-    }
+    
   }
 
   .accor-expand-btn {
     text-align: right;
 
-    @include tabletvert {
-      text-align: center;
+    @include tabletvert { 
       margin-bottom: 28px;
     }
 

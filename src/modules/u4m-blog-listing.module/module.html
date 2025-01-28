@@ -20,7 +20,7 @@
       >
         {% if content.post_list_summary_featured_image %}
         <div class="post-featured-img">
-          <a href="{{content.absolute_url}}">
+          <a class="text" href="{{content.absolute_url}}">
             <img
               src="{{ content.post_list_summary_featured_image }}"
               alt="{{ content.name | striptags }}"
@@ -36,11 +36,11 @@
               class="topic-link"
               href="{{ blog_tag_url(group.id, topic.slug) }}"
               >{{ topic.name }}</a
-            >{% if not loop.last %} ,{% endif %} {% endfor %}
+            >  {% endfor %}
           </div>
           {% endif %}
           <h3 class="post-title">
-            <a href="{{content.absolute_url}}" title="{{ content.name }}"
+            <a class="text" href="{{content.absolute_url}}" title="{{ content.name }}"
               >{{ content.name }}</a
             >
           </h3>
@@ -50,7 +50,7 @@
             false) }}
           </div>
           <div class="post-item-link">
-            <a href="{{ content.absolute_url }}">
+            <a class="text" href="{{ content.absolute_url }}">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"
@@ -72,7 +72,7 @@
       <div class="listing-sidebar">
         {% if module.sidebar_top_text %}
         <h6>
-          <a href="{{ group.absolute_url }}" style="color: inherit"
+          <a  class="text" href="{{ group.absolute_url }}" style="color: inherit"
             >{{ module.sidebar_top_text }}</a
           >
         </h6>
@@ -158,7 +158,7 @@
           <ul>
             {% for item in my_topics %}
             <li>
-              <a href="{{ blog_tag_url(group.id, item.slug) }}">{{ item }}</a>
+              <a  class="text" href="{{ blog_tag_url(group.id, item.slug) }}">{{ item }}</a>
             </li>
             {% endfor %}
           </ul>
@@ -189,17 +189,17 @@
                   class="topic-link"
                   href="{{ blog_tag_url(group.id, topic.slug) }}"
                   >{{ topic.name }}</a
-                >{% if not loop.last %},{% endif %} {% endfor %}
+                > {% endfor %}
               </div>
               {% endif %} {% endif %} {% if module.post_item.post_title %}
               <h5 class="post-title">
-                <a href="{{content.absolute_url}}" title="{{ content.name }}"
+                <a class="text" href="{{content.absolute_url}}" title="{{ content.name }}"
                   >{{ content.name }}</a
                 >
               </h5>
               {% endif %} {% if module.post_item.arrow %}
               <div class="post-item-link">
-                <a href="{{ content.absolute_url }}">
+                <a class="text" href="{{ content.absolute_url }}">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="12"

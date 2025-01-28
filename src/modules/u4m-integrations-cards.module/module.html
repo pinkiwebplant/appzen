@@ -37,7 +37,7 @@
       {% if module.intro_content.view_all_link.url.type is equalto "EMAIL_ADDRESS" %}
       {% set href = "mailto:" + href %}
       {% endif %}
-      <a
+      <a  class="text" 
          {% if module.intro_content.view_all_link.url.type is equalto "CALL_TO_ACTION"  %}
          href="{{ href }}"
          {% else %}
@@ -118,7 +118,7 @@
             {% endif %} 
           </div>
           <div class="arrow_link"> 
-            <a href="{{ request.full_url }}/{{ item.hs_path }}" >
+            <a  class="text" href="{{ request.full_url }}/{{ item.hs_path }}" >
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <path d="M5.5 1L10.5 6L5.5 11" stroke="#574D4A"/>
                 <path d="M10.5 6L0.5 6" stroke="#574D4A"/>
@@ -196,7 +196,7 @@
             {% endif %} 
           </div>
           <div class="arrow_link"> 
-            <a href="{{ request.full_url }}/{{ item.hs_path }}" >
+            <a class="text"  href="{{ request.full_url }}/{{ item.hs_path }}" >
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <path d="M5.5 1L10.5 6L5.5 11" stroke="#574D4A"/>
                 <path d="M10.5 6L0.5 6" stroke="#574D4A"/>

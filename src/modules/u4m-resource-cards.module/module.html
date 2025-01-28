@@ -36,7 +36,7 @@
       {% if module.intro_content.view_all_link.url.type is equalto "EMAIL_ADDRESS" %}
       {% set href = "mailto:" + href %}
       {% endif %}
-      <a
+      <a class="text" 
          {% if module.intro_content.view_all_link.url.type is equalto "CALL_TO_ACTION"  %}
          href="{{ href }}"
          {% else %}
@@ -127,7 +127,7 @@
             {% set cardHref = "/resources/{{ item.hs_path }}" %}
           {% endif %}
           <div class="arrow_link"> 
-            <a href="{{ cardHref }}" >
+            <a  class="text" href="{{ cardHref }}" >
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <path d="M5.5 1L10.5 6L5.5 11" stroke="#574D4A"/>
                 <path d="M10.5 6L0.5 6" stroke="#574D4A"/>
@@ -218,7 +218,7 @@
           {% endif %}
   
           <div class="arrow_link"> 
-            <a href="{{ cardHref }}" >
+            <a  class="text" href="{{ cardHref }}" >
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <path d="M5.5 1L10.5 6L5.5 11" stroke="#574D4A"/>
                 <path d="M10.5 6L0.5 6" stroke="#574D4A"/>

@@ -5,9 +5,7 @@
 // }
 
 /* Keep background from scrolling when menu is open */
-html.menu-open {
-  // overflow-y: hidden;
-}
+ 
 
 /* Keep background from scrolling when menu is open */
 html {
@@ -636,4 +634,7 @@ section {
       color: transparent;
     }
   }
+}
+main a:not([class]) {
+  text-decoration: underline;
 }
