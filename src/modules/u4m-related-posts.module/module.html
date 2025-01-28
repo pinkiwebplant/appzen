@@ -8,7 +8,7 @@
       {% endif %}
       <div class="view-all-text">
         <p>
-          <a href="{{ group.absolute_url }}"> {{ module.view_all_text }} </a>
+          <a  class="text" href="{{ group.absolute_url }}"> {{ module.view_all_text }} </a>
         </p>
       </div>
     </div>
@@ -34,12 +34,12 @@
           </div>
           {% endif %}
           <h5 class="post-title">
-            <a href="{{post.absolute_url}}" title="{{ post.name }}"
+            <a  class="text" href="{{post.absolute_url}}" title="{{ post.name }}"
               >{{ post.name }}</a
             >
           </h5>
           <div class="post-item-link">
-            <a href="{{ post.absolute_url }}">
+            <a  class="text"  href="{{ post.absolute_url }}">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"

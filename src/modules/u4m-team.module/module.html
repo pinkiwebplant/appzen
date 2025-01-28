@@ -40,7 +40,7 @@
 					{% if item2.link.url.type is equalto "EMAIL_ADDRESS" %}
 					{% set href = "mailto:" + href %}
 					{% endif %}
-					<a
+					<a class="text" 
 						 {% if item2.link.url.type is equalto "CALL_TO_ACTION"  %}
 						 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
 						 {% else %}
@@ -69,7 +69,7 @@
 				{% endif %}
 				{% if item.include_link %}
 				<div class="arrow_link"> 
-					<a
+					<a class="text" 
 						 {% if item.link.url.type is equalto "CALL_TO_ACTION"  %}
 						 href="{{ href }}" 
 						 {% else %}

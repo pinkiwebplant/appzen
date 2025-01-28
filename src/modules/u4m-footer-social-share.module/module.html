@@ -6,7 +6,7 @@
 				  {% set href = "mailto:" + href %}
 				{% endif %}
 		<div class="items">
-			<a
+			<a  class="text" 
 				 {% if item.link_field.url.type is equalto "CALL_TO_ACTION"  %}
 				 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
 				 {% else %}

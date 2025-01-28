@@ -193,11 +193,7 @@ header.u4m-header {
               border-color: $DarkHeaderBorder;
             }
 
-            &:last-child {
-              > a {
-                // color: $sidebarplaceholder;
-              }
-            }
+            
 
             &:hover {
               > a {
@@ -298,12 +294,7 @@ header.u4m-header {
           }
         }
 
-        &:last-child {
-          > a {
-            // color: $tagcolor;
-          }
-        }
-
+      
         &:not(:last-child) {
           > a {
             border-right: 1px solid $lightGray;
@@ -680,23 +671,23 @@ header.u4m-header {
     }
   }
 }
-
+ 
 @include tabletmid {
   header.u4m-header {
     .mobileHide {
       display: none !important;
-    }
-
-    .headerMenu {
+    } 
+    
+    .headerMenu {  
       position: absolute;
-      top: calc(100% + 12px);
-      background: $white;
+      top: 100%; 
+      background: $white;  
       z-index: 4;
       left: -13px;
-      padding: 30px 20px;
+      padding: 30px 20px; 
       right: -13px;
       display: none;
-      max-height: calc(100vh - 100px);
+      max-height: calc(100vh - 100px); 
       overflow-y: auto;
     }
 
