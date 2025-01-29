@@ -244,6 +244,41 @@
       "max_height" : 1333.49609375
     }
   }, {
+    "id" : "6578d920-9211-0e5e-95c0-ddf79cd1b974",
+    "name" : "change_mobile_image",
+    "label" : "Change Mobile Image",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "45fe845f-0dd8-d0cc-a51e-be68d2e9db12",
+    "name" : "mobile_image",
+    "label" : "Mobile Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "image_column.change_mobile_image",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
     "id" : "d9c262d3-b80c-8286-e38d-fd0bab3c5e35",
     "name" : "svg_alignment",
     "label" : "Svg Alignment",
@@ -324,6 +359,13 @@
       "height" : 2731,
       "max_width" : 2000,
       "max_height" : 1333.49609375
+    },
+    "change_mobile_image" : false,
+    "mobile_image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
     },
     "svg_alignment" : "right",
     "animation_type" : "fade-right",

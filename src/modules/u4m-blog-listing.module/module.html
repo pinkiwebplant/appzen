@@ -3,7 +3,12 @@
   {# requested post-launch to remove the blog title from the blog listing page. I'm only removing from primary listing so author/topic pages don't get messed up. #}
     <div class="listing-title" {% if topic %}{% elif blog_author %}{% else %} style="display:none;" {% endif %}>
       {% if topic %}
-      <h1>{{ topic|capitalize | replace('-',' ') }}</h1>
+        {% if topic == "finance-ai" %}
+      <h1 class="topic_title">Finance AI</h1>
+{% else %}
+  <h1 class="topic_title">{{ topic|capitalize| replace('-',' ') }}</h1>
+{% endif %}
+
       {% elif blog_author %}
       <h1>{{ blog_author }}</h1>
       {% else %}

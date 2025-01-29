@@ -5,109 +5,177 @@
 {% include "../partials/u4-module-includes.html" %}
 
 <div class='cm_cards'>
-	<div class='page-center'>
-<div class="top_cnt">
-			{% if module.include_intro %} 
-		<div class='intro'>
-			<div class='intro_cnt'>
-				{{ module.intro_content }}
-			</div>
-		</div>
-		{% endif %}
-		{% if module.include_button %} 
-		<div class="btn_row">
-			{% for item in module.buttons %}
-			{% if item.button_type == 'stnd' %} 
-			{% set href = item.button_link.url.href %}
-			{% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
-			{% set href = "mailto:" + href %}
-			{% endif %}
-			<a class="{{ item.theme }} hs-button"
-				 {% if item.button_link.url.type is equalto "CALL_TO_ACTION"  %}
-				 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
-				 {% else %}
-				 href="{{ href|escape_url }}"
-				 {% endif %}
-				 {% if item.button_link.open_in_new_tab %}
-				 target="_blank"
-				 {% endif %}
-				 {% if item.button_link.rel %}
-				 rel="{{ item.button_link.rel|escape_attr }}"
-				 {% endif %}
-				 >
-				{{ item.button_text }}
-			</a>
-			{% else %}
-			{% cta guid="{{ item.cta_field }}" %}
-			{% endif %}
-			{% endfor %}
+  <div class='page-center'>
+    <div class="top_cnt">
+      {% if module.include_intro %} 
+      <div class='intro'>
+        <div class='intro_cnt'>
+          {{ module.intro_content }}
+        </div>
+      </div>
+      {% endif %}
+      {% if module.include_button %} 
+      <div class="btn_row">
+        {% for item in module.buttons %}
+        {% if item.button_type == 'stnd' %} 
+        {% set href = item.button_link.url.href %}
+        {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+        {% endif %}
+        <a class="{{ item.theme }} hs-button"
+           {% if item.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+           href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+           {% else %}
+           href="{{ href|escape_url }}"
+           {% endif %}
+           {% if item.button_link.open_in_new_tab %}
+           target="_blank"
+           {% endif %}
+           {% if item.button_link.rel %}
+           rel="{{ item.button_link.rel|escape_attr }}"
+           {% endif %}
+           >
+          {{ item.button_text }}
+        </a>
+        {% else %}
+        {% cta guid="{{ item.cta_field }}" %}
+        {% endif %}
+        {% endfor %}
 
-		</div>
-		{% endif %}
-		</div>
+      </div>
+      {% endif %}
+    </div>
 
-		<div class="btm_cnt">
-			<div class="inner_cnt">
-				{% for item in module.items_group %}
-				<div class="items">
-					<div class="inner_items">
-						<div class="img" style="border-radius: {{ module.module_settings.image_corner_radius }}px;">
-							{% if item.image_field.src %}
-							{% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
-							{% if item.image_field.size_type == 'auto' %}
-							{% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
-							{% elif item.image_field.size_type == 'auto_custom_max' %}
-							{% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
-							{% endif %}
-							{% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
-							<img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
-							{% endif %}
-						</div>
-						{% if item.supertitle  %}
-						<div class="super_title">
-							<p>
-								{{ item.supertitle }}
-							</p>
-						</div>
-						{% endif %}
-						{% if item.content %}
-						<div class="cnt">
-							{{ item.content }}
-						</div>
-					{% endif %}
-						<div class="cm_btns">
-							{% if item.buttons.button_type == 'stnd' %} 
-							{% set href = item.buttons.button_link.url.href %}
-							{% if item.buttons.button_link.url.type is equalto "EMAIL_ADDRESS" %}
-							{% set href = "mailto:" + href %}
-							{% endif %}
-							<a class="	{{ item.buttons.theme }} hs-button"
-								 {% if item.buttons.button_link.url.type is equalto "CALL_TO_ACTION"  %}
-								 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
-								 {% else %}
-								 href="{{ href|escape_url }}"
-								 {% endif %}
-								 {% if item.buttons.button_link.open_in_new_tab %}
-								 target="_blank"
-								 {% endif %}
-								 {% if item.buttons.button_link.rel %}
-								 rel="{{ item.buttons.button_link.rel|escape_attr }}"
-								 {% endif %}
-								 >
-								{{ item.buttons.button_text }}
-							</a>
-							{% else %}
-							{% cta guid="{{ item.buttons.cta_field }}" %}
-							{% endif %}
-						</div>
-					</div>
-				</div>
-				{% endfor %}
-			</div>
-		</div>
+    <div class="btm_cnt">
+      <div class="inner_cnt">
+        {% for item in module.items_group %}
+        <div class="items it{{loop.index}}">
+          <div class="inner_items media{{item.select_media_type}}">
 
-	</div>
+            {% if item.select_media_type == "animated_svg" %}
+            <div class="animated_svg_wrap img_wrap {% if item.animated_svg_background.background_type == "image" %}img_bg{% endif %} {% if item.animated_svg_background.background_type == "color" %}{{ item.animated_svg_background.select_background_color == "custom" ? "custom_color" : item.animated_svg_background.select_background_color }}{% endif %}">
+              <iframe src="{{ item.animated_svg }}" height="500" width="500"></iframe>
+            </div>
+
+            {% else %}
+            <div class="img" style="border-radius: {{ module.module_settings.image_corner_radius }}px;">
+              {% if item.image_field.src %}
+              {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+              {% if item.image_field.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.image_field.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+              {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+              <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              {% endif %}
+            </div>
+
+            {% endif %}
+
+            {% if item.supertitle  %}
+            <div class="super_title">
+              <p>
+                {{ item.supertitle }}
+              </p>
+            </div>
+            {% endif %}
+            {% if item.content %}
+            <div class="cnt">
+              {{ item.content }}
+            </div>
+            {% endif %}
+            <div class="cm_btns">
+              {% if item.buttons.button_type == 'stnd' %} 
+              {% set href = item.buttons.button_link.url.href %}
+              {% if item.buttons.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+              {% endif %}
+              <a class="	{{ item.buttons.theme }} hs-button"
+                 {% if item.buttons.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+                 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                 {% else %}
+                 href="{{ href|escape_url }}"
+                 {% endif %}
+                 {% if item.buttons.button_link.open_in_new_tab %}
+                 target="_blank"
+                 {% endif %}
+                 {% if item.buttons.button_link.rel %}
+                 rel="{{ item.buttons.button_link.rel|escape_attr }}"
+                 {% endif %}
+                 >
+                {{ item.buttons.button_text }}
+              </a>
+              {% else %}
+              {% cta guid="{{ item.buttons.cta_field }}" %}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
 
 </div>
 </section>
+
+
+
+
+
+
+{% for item in module.items_group %}
+
+{% if item.select_media_type == "animated_svg" %}
+
+{% require_css %}
+<style>
+
+  .{{name}} .animated_svg_wrap iframe {
+    border: none;
+    display: table;
+    margin: 0 auto;
+  }
+
+  .{{name}} .animated_svg_wrap {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex ;
+
+    align-items: center;
+    justify-content: center;
+    max-width: 580px;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+
+
+
+
+  {% if item.animated_svg_background.select_background_color == "custom" %}
+  .{{name}} .it{{loop.index}} .animated_svg_wrap {
+    background-color : {{ item.animated_svg_background.custom_color.rgba }}
+  } 
+  {% endif %}
+
+  {% if item.animated_svg_background.background_type == "image" %}
+  .{{name}} .it{{loop.index}}  .animated_svg_wrap {
+    background-image : url({{ item.animated_svg_background.background_image.src }})
+  } 
+  {% endif %}
+
+</style>
+{% end_require_css %}
+{% endif %}
+
+
+{% endfor %}
 

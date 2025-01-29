@@ -27,13 +27,13 @@
              {% if item.button_link.url.type is equalto "CALL_TO_ACTION"  %}
              href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
              {% else %}
-             href="{{ href|escape_url }}"
+             href="{{ href }}"
              {% endif %}
              {% if item.button_link.open_in_new_tab %}
              target="_blank"
              {% endif %}
              {% if item.button_link.rel %}
-             rel="{{ item.button_link.rel|escape_attr }}"
+             rel="{{ item.button_link.rel }}"
              {% endif %}
              >
             {{ item.button_text }}
@@ -49,8 +49,16 @@
       <div class="col6 img-col">
         <div class="img-inner">
           {% if module.image_column.image.src %}
-          <img src="{{ module.image_column.image.src|escape_url }}" alt="{{ module.image_column.image.alt|escape_attr }}">
+          <img src="{{ module.image_column.image.src }}" alt="{{ module.image_column.image.alt }}" {% if module.image_column.change_mobile_image and module.image_column.mobile_image.src %}class="desktop_image"{% endif %}>
           {% endif %}
+
+          {% if module.image_column.change_mobile_image and module.image_column.mobile_image.src %}
+
+          <img class="mobile_image" src="{{ module.image_column.mobile_image.src }}" alt="{{ module.image_column.mobile_image.alt }}">
+
+          {% endif %}
+
+
           <div class="svg-box-wrap" style="justify-content:{{ module.image_column.svg_alignment }};">
             {% for item in module.image_column.svg_item %}
             {% if item.svg_icon%}
@@ -93,13 +101,13 @@
              {% if item2.button_link.url.type is equalto "CALL_TO_ACTION"  %}
              href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
              {% else %}
-             href="{{ href|escape_url }}"
+             href="{{ href }}"
              {% endif %}
              {% if item2.button_link.open_in_new_tab %}
              target="_blank"
              {% endif %}
              {% if item2.button_link.rel %}
-             rel="{{ item2.button_link.rel|escape_attr }}"
+             rel="{{ item2.button_link.rel }}"
              {% endif %}
              >
             {{ item2.button_text }}

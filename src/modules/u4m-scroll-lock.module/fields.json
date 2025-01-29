@@ -309,6 +309,119 @@
     },
     "type" : "file",
     "display_width" : null
+  }, {
+    "id" : "4a057322-9fb7-7846-8e4e-5a7e046b9159",
+    "name" : "animated_svg_background",
+    "label" : "Animated SVG Background",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "slider.media_type",
+      "controlling_value_regex" : "animated_svg",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "f893d570-7b72-3858-42cf-79483d8812ec",
+      "name" : "background_type",
+      "label" : "Background Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "image", "Image" ], [ "color", "Color" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null
+    }, {
+      "id" : "ee6578e3-f6ab-5a09-c549-de143f8fd74f",
+      "name" : "select_background_color",
+      "label" : "Select Background Color",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "slider.animated_svg_background.background_type",
+        "controlling_value_regex" : "color",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "brown", "Cacao" ], [ "lightGreybg", "Ivory Soft" ], [ "light_grey", "Ivory" ], [ "grey", "Bone" ], [ "yellow", "Cassava" ], [ "light_pink", "Coral" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "grey"
+    }, {
+      "id" : "d6f2a20b-7133-50c1-a888-65de8b202e05",
+      "name" : "background_image",
+      "label" : "Background Image",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "slider.animated_svg_background.background_type",
+        "controlling_value_regex" : "image",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "responsive" : true,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
+      }
+    }, {
+      "id" : "53fee64e-205b-ba83-5cfc-d7538d4b4831",
+      "name" : "custom_color",
+      "label" : "Custom Color",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "slider.animated_svg_background.select_background_color",
+        "controlling_value_regex" : "custom",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "select_background_color" : "grey",
+      "background_image" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
+      },
+      "custom_color" : {
+        "color" : null,
+        "opacity" : null
+      }
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -343,7 +456,16 @@
       "max_width" : 1246,
       "max_height" : 1125
     },
-    "include_svg" : false
+    "include_svg" : false,
+    "animated_svg_background" : {
+      "select_background_color" : "grey",
+      "background_image" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
+      }
+    }
   }, {
     "content" : "<h3>Automate invoice GL coding</h3>\n<p>Assign GL codes and allocations with AI Agents that instantly and accurately process non-PO-backed invoices across locations, departments, cost centers, and line items without human intervention. AppZen automatically captures and classifies all invoice details, freeing your AP team to focus on strategic work.</p>",
     "include_button" : true,
@@ -372,7 +494,16 @@
       "max_width" : 1246,
       "max_height" : 1125
     },
-    "include_svg" : false
+    "include_svg" : false,
+    "animated_svg_background" : {
+      "select_background_color" : "grey",
+      "background_image" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
+      }
+    }
   }, {
     "content" : "<h3>Automate invoice GL coding</h3>\n<p>Assign GL codes and allocations with AI Agents that instantly and accurately process non-PO-backed invoices across locations, departments, cost centers, and line items without human intervention. AppZen automatically captures and classifies all invoice details, freeing your AP team to focus on strategic work.</p>",
     "include_button" : true,
@@ -401,7 +532,16 @@
       "max_width" : 1246,
       "max_height" : 1125
     },
-    "include_svg" : false
+    "include_svg" : false,
+    "animated_svg_background" : {
+      "select_background_color" : "grey",
+      "background_image" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
+      }
+    }
   }, {
     "content" : "<h3>Automate invoice GL coding</h3>\n<p>Assign GL codes and allocations with AI Agents that instantly and accurately process non-PO-backed invoices across locations, departments, cost centers, and line items without human intervention. AppZen automatically captures and classifies all invoice details, freeing your AP team to focus on strategic work.</p>",
     "include_button" : true,
@@ -430,7 +570,16 @@
       "max_width" : 1246,
       "max_height" : 1125
     },
-    "include_svg" : false
+    "include_svg" : false,
+    "animated_svg_background" : {
+      "select_background_color" : "grey",
+      "background_image" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
+      }
+    }
   } ]
 }, {
   "id" : "module_overrides",

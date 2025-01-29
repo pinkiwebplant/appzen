@@ -1,10 +1,10 @@
 [ {
   "id" : "990a03c8-dbbb-0f76-ac32-d20164864fd9",
   "name" : "content",
-  "display_width" : null,
   "label" : "Content",
   "required" : false,
   "locked" : false,
   "type" : "richtext",
+  "display_width" : null,
   "default" : "<p>Las Vegas April 3, 2025 – AppZen user conference <a href=\"#\">Sign up today</a></p>"
 } ]
