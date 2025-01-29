@@ -61,7 +61,7 @@ section.u4m-homepage-hero {
         // @include laptop {
         //   padding: 0 20px;
         // }
-        @media(max-width:1330px) {
+        @media (max-width: 1330px) {
           padding: 0 20px;
         }
 
@@ -113,6 +113,17 @@ section.u4m-homepage-hero {
             }
           }
         }
+      }
+    }
+
+    .desktop_image {
+      @include tabletvert {
+        display: none;
+      }
+    }
+    .mobile_image {
+      @include tabletvertmin {
+        display: none;
       }
     }
   }
@@ -169,7 +180,7 @@ section.u4m-homepage-hero {
         .svg-box {
           position: relative;
 
-          >svg {
+          > svg {
             padding: 7.5px;
             -webkit-box-shadow: inset 0px 0px 10px 15px rgba(255, 255, 255, 1);
             -moz-box-shadow: inset 0px 0px 10px 15px rgba(255, 255, 255, 1);
