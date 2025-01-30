@@ -611,6 +611,41 @@
         "max_height" : 874
       }
     }, {
+      "id" : "bb6e8e72-f5e7-8187-1180-a930f63356a7",
+      "name" : "change_mobile_image",
+      "label" : "Change Mobile Image",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    }, {
+      "id" : "b06569e9-f9cd-c2d9-826c-978f85a66787",
+      "name" : "mobile_image",
+      "label" : "Mobile Image",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "slider_item.image_column.change_mobile_image",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "responsive" : true,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
+      }
+    }, {
       "id" : "82591e62-0775-0ca8-f218-8b97728b6b62",
       "name" : "svg_alignment",
       "label" : "Svg Alignment",
@@ -665,6 +700,13 @@
         "height" : 874,
         "max_width" : 1560,
         "max_height" : 874
+      },
+      "change_mobile_image" : false,
+      "mobile_image" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
       },
       "svg_alignment" : "right",
       "svg_item" : {
