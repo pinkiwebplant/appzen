@@ -80,7 +80,7 @@
     {% endif %}
     {% if module.banner_type == 'slider'  %}
     {% for item in module.slider_item %}
-    <div class="banner-column ">
+    <div class="banner-column slider{{loop.index}}">
       <div class="content-col">
         {% if item.content_column.intro_content %}
         <div class='intro'>
@@ -121,7 +121,7 @@
         {% endif %}
       </div>
       <div class="img-col">
-        <div class="img-inner" style="background-image:url({{ item.image_column.image.src }});">
+        <div class="img-inner" >
           <div class="svg-box-wrap" style="justify-content:{{ item.image_column.svg_alignment }};">
             {% if item.image_column.svg_item.svg_icon%}
             <div class="svg-box">
@@ -157,3 +157,31 @@
     });
 </script>
 {% end_require_js %}
+
+
+{% require_css %}
+{% for item in module.slider_item %}
+<style>
+  {% if item.image_column.change_mobile_image %}
+  .{{name}} .banner-column.slider{{loop.index}} .img-inner{
+    background-image:url({{ item.image_column.image.src }});
+  }
+  @media(max-width: 767px){
+    .{{name}} .banner-column.slider{{loop.index}} .img-inner{
+      background-image:url({{ item.image_column.mobile_image.src }});
+    }
+  }
+  {% else %}
+  .{{name}} .banner-column.slider{{loop.index}} .img-inner{
+    background-image:url({{ item.image_column.image.src }});
+  }
+  {% endif %}
+
+</style>
+{% endfor %}
+{% end_require_css %}
+
+
+
+
+

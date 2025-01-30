@@ -50,11 +50,16 @@
             {% endif %}
             <div class="cntnt_wrapper">
               <div class="date_section">
-                <span class="{{ row.categories.name|lower|replace(' ', '-') }}">{{ row.categories.name }}</span>
+                {#                 <span class="{{ row.categories.name|lower|replace(' ', '-') }}">{{ row.categories.name }}</span> #}
                 <div class="date_sec">
-                  <span>
-                    {{ iconCalendar }} {{ row.publish_date|datetimeformat('%b %e, %Y') }}
-                  </span>
+                  {#                                       {{ iconCalendar }} {{ row.publish_date|datetimeformat('%b %e, %Y') }} #}
+
+                  <span> {{ iconCalendar }} {{ row.webinar_date }}</span>
+
+
+
+
+                  {#
                   <span class="reading-minutes">
                     {{ iconSchedule }}
                     {% set initialPostWords = row.description|striptags|wordcount %}
@@ -66,7 +71,7 @@
                     {% else %}
                     {{ finishedPostWords|round }} minutes
                     {% endif %}
-                  </span>
+                  </span>#}
                 </div>
               </div>
               {% if row.title %}
@@ -112,9 +117,9 @@
               <div class="right_content">
                 <div class="cntnt_wrapper">
                   <div class="date_section">
-                    <span class="{{ row.categories.name|lower|replace(' ', '-') }}">{{ row.categories.name }}</span>
+                    {#                     <span class="{{ row.categories.name|lower|replace(' ', '-') }}">{{ row.categories.name }}</span> #}
                     <div class="date_sec">
-                     <span>       {{ iconCalendar }} {{ row.publish_date|datetimeformat('%b %e, %Y') }}</span>
+                      <span>       {{ iconCalendar }} {{ row.webinar_date }}</span>
                     </div>
                   </div>
                   {% if row.title %}
@@ -124,19 +129,26 @@
                     </h5>
                   </div>
                   {% endif %}
-                  {% if row.description %}
+                  {#                   {% if row.description %}
                   <div class="content">
                     {{ row.description|striptags|truncatehtml(150, '...')}}
                   </div>
-                  {% endif %}
+                  {% endif %} #}
                   {% if row.hs_path %}
+                  {% if module.select_small_card_link_type %}
                   <div class="btn_wrapper">
                     <div class="button_item">
-                      <a class="webinar-link" href="/resources/{{ row.hs_path }}">
-                        {{ arrowIcon }}
+                      {% if module.select_small_card_link_type == "button" %}
+                      <a class="hs-button" href="/resources/{{ row.hs_path }}">
+                        {{ module.small_card_button_text }}
                       </a>
+                      {% endif %}
+                      {% if module.select_small_card_link_type == "arrow" %}
+                      <a class="webinar-link" href="/resources/{{ row.hs_path }}">{{ arrowIcon }}</a> 
+                      {% endif %}
                     </div>
                   </div>
+                  {% endif %}
                   {% endif %}
                 </div>
               </div>
