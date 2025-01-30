@@ -314,6 +314,7 @@
     "id" : "d37fb309-1586-8e16-398b-2e18e500d42a",
     "name" : "animated_svg",
     "label" : "Animated SVG",
+    "inline_help_text" : "This will be hidden in UI when ‘Select Animated SVG File’ option is enabled.",
     "required" : false,
     "locked" : false,
     "visibility" : {
