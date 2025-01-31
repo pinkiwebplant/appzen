@@ -105,14 +105,21 @@
     </div>
     {% endif %}
     {% endif %}
-    <div class="blogCardTags">
-      {% if type[item2.hubdb_setttings.column_topic].name %}
+    <div class="blogCardTags webinars_tag">
+      {% if type[item2.hubdb_setttings.column_topic].name != "Webinars" %}
       {{ type[item2.hubdb_setttings.column_topic].name }}
       {% endif %}
+
+
       {% if type[item2.hubdb_setttings.column_date] || type[item2.hubdb_setttings.column_read_minutes] %}
       {% if loop.first %}
       {% if type[item2.hubdb_setttings.column_date] %}
+
+      {% if type[item2.hubdb_setttings.column_topic].name == "Webinars" %}
+      {{ iconCalendar }} <span>{{ type.webinar_date}}</span>
+      {% else %}
       {{ iconCalendar }} <span>{{ type[item2.hubdb_setttings.column_date]|datetimeformat("%B %e, %Y")}}</span>
+      {% endif %}
       {% endif %}
       {% else %}
       {% if type[item2.hubdb_setttings.column_read_minutes] %}
@@ -131,6 +138,7 @@
       {% endif %}
       {% endif %}
       {% endif %}
+
     </div>					
     <div class="blogCardttl">
       {% if type[item2.hubdb_setttings.column_link] %}
@@ -353,10 +361,10 @@
               {% elif item2.hubdb_setttings.resource_type == "category" %}
               {% set types = hubdb_table_rows(table,category_query) %}
               {% endif %}
-              
-              
+
+
               {% for type in types %}
-              
+
 
               {% if type[item2.hubdb_setttings.column_link] %}
               {% if type[item2.hubdb_setttings.column_link] == 'hs_path' %}

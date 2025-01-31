@@ -5,7 +5,6 @@
 // }
 
 /* Keep background from scrolling when menu is open */
- 
 
 /* Keep background from scrolling when menu is open */
 html {
@@ -70,32 +69,49 @@ h6 {
 
 @font-face {
   font-family: "Neue Haas Grotesk Text Pro";
-  src: url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.eot') }}") format("eot"),
-  url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.woff') }}") format("woff"),
-  url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.woff2') }}") format("woff2"),
-  url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.ttf') }}") format("ttf");
+  src:
+    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.eot') }}")
+      format("eot"),
+    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.woff') }}")
+      format("woff"),
+    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.woff2') }}")
+      format("woff2"),
+    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.ttf') }}")
+      format("ttf");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Neue Haas Grotesk Text Pro";
-  src: url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.eot') }}") format("embedded-opentype"),
-  url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.woff2') }}") format("woff2"),
-  url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.woff') }}") format("woff"),
-  url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.ttf') }}") format("truetype"),
-  url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.svg') }}") format("svg");
+  src:
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.eot') }}")
+      format("embedded-opentype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.woff2') }}")
+      format("woff2"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.woff') }}")
+      format("woff"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.ttf') }}")
+      format("truetype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.svg') }}")
+      format("svg");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Neue Haas Grotesk Display Pro";
-  src: url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.eot') }}") format("embedded-opentype"),
-  url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.woff2') }}") format("woff2"),
-  url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.woff') }}") format("woff"),
-  url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.ttf') }}") format("truetype"),
-  url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.svg') }}") format("svg");
+  src:
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.eot') }}")
+      format("embedded-opentype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.woff2') }}")
+      format("woff2"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.woff') }}")
+      format("woff"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.ttf') }}")
+      format("truetype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.svg') }}")
+      format("svg");
   font-weight: 700;
   font-style: normal;
 }
@@ -469,7 +485,7 @@ code {
   border-radius: 0;
 }
 
-pre>code {
+pre > code {
   display: block;
   padding: 1rem 15rem;
   white-space: pre;
@@ -628,7 +644,7 @@ section {
     margin: 0 auto;
 
     .hidden-col {
-      background-color: rgba(255, 0, 0, .1);
+      background-color: rgba(255, 0, 0, 0.1);
       width: 100%;
       height: 100%;
       color: transparent;
@@ -637,4 +653,23 @@ section {
 }
 main a:not([class]) {
   text-decoration: underline;
+}
+
+// heading style as per client asked
+
+h1:not([class]):has(+ p),
+h2:not([class]):has(+ p),
+h3:not([class]):has(+ p),
+h4:not([class]):has(+ p),
+h5:not([class]):has(+ p),
+h6:not([class]):has(+ p) {
+  margin-bottom: 0;
+}
+h1:not([class]) + p,
+h2:not([class]) + p,
+h3:not([class]) + p,
+h4:not([class]) + p,
+h5:not([class]) + p,
+h6:not([class]) + p {
+  margin-top: 0;
 }
