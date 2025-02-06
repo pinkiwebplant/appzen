@@ -237,7 +237,14 @@
 </div>
 </section>
 
-
+{% require_js %}
+  <script>
+    $(function () {
+      $(".u4m-res-cards .card_cont_btm .card_title").matchHeight();
+      $(".u4m-res-cards .card_cont_btm .card_content").matchHeight();
+    });
+  </script>
+  {% end_require_js %}
 
 
 

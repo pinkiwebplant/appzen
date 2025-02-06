@@ -67,10 +67,14 @@
     <div class="related-post-wrap">
       <div class="flex_row">
         {% set table = module.select_hubdb_table %}
-        {% set category = dynamic_page_hubdb_row.categories.name|urlencode %}
+        {% set products = [] %}
+        {% for item in dynamic_page_hubdb_row.products %}
+          {% do products.append(item.name|urlencode) %}
+        {% endfor %}
+        
         {% set title = dynamic_page_hubdb_row.title %}
-        {% if category != ""%}
-        {% set data = hubdb_table_rows(table,'limit=3&categories__in='~ category) %}
+        {% if products|length > 0 %}
+        {% set data = hubdb_table_rows(table,'limit=3&products__in='~ products|join(',')) %}
         {% set i = 0 %}
         {% for item in data %}
         

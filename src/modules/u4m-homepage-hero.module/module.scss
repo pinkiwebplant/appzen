@@ -48,6 +48,16 @@ section.u4m-homepage-hero {
                   opacity: 1;
                   visibility: visible;
                   transition-duration: 0.3s;
+                  min-width: 512px;
+                  min-height: 467px;
+                  text-align: center;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  @include tabletvert {
+                    min-height: 50%;
+                    min-width: 50%;
+                  }
                 }
               }
             }
