@@ -42,7 +42,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : false
+    "default" : true
   }, {
     "id" : "e6c9d821-d013-7cfc-b807-538a507d379a",
     "name" : "include_reading_minutes",
@@ -80,7 +80,7 @@
   "default" : {
     "include_featured_image" : true,
     "include_description" : true,
-    "include_tag" : false,
+    "include_tag" : true,
     "include_reading_minutes" : false,
     "use_card_content_theme_color" : false
   }

@@ -14,7 +14,7 @@
   <div class="flex_row">
 
     <div class="webinars_item_wrap">
-
+      {% if module.content_type == 'hbRow' %}
       <div class="webinars_item {% if module.select_post.columns.video %} video_item {% endif %}">
         <div class="webinars_inner_section flex_wrap">
           {% if module.select_post.columns.image.url %}
@@ -30,21 +30,9 @@
               <div class="date_section">
                 <span class="{{ module.select_post.columns.name|lower|replace(' ', '-') }}">{{ module.select_post.columns.categories.name }}</span>
                 <div class="date_sec">
-                <span>
-                  {{ iconCalendar }} {{ module.select_post.columns.publish_date|datetimeformat('%b %e, %Y') }}
+                  <span>
+                    {{ iconCalendar }} {{ module.select_post.columns.publish_date|datetimeformat('%b %e, %Y') }}
                   </span>
-                  {# <span class="reading-minutes">
-                    {{ iconSchedule }}
-                    {% set initialPostWords = module.select_post.columns.description|striptags|wordcount %}
-                    {% set calculatedPostWords = initialPostWords / 100 %}
-                    {% set finishedPostWords = calculatedPostWords|divide(300)|round(2) %}
-                    {% set number = finishedPostWords|round %}
-                    {% if number < 1 %}
-                    Less than one min
-                    {% else %}
-                    {{ finishedPostWords|round }} minutes
-                    {% endif %}
-                  </span> #}
 
 
                 </div>
@@ -86,7 +74,61 @@
         </div>
         {% endif %}
       </div>
+      {% else %}
+      {% if content.topic_list %}
+      {% set max_posts = 1 %}
+      {% set post_list = [] %}
+      {% for topic in content.topic_list %}
+      {% set post_list = post_list + blog_recent_topic_posts(module.select_blog, topic.slug, max_posts + 1 ) %}
+      {% if loop.last %}
+      {% set post_list = post_list|sort(true, false, 'publish_date')|unique('name') %}
+      {% set i = 0 %}
+      {% for post in post_list %}
+      {% if content.absolute_url != post.absolute_url and i < max_posts %}
+      <div class="webinars_item ">
+      <a class="absLink" href="{{ post.absolute_url }}"></a>
+        <div class="webinars_inner_section flex_wrap">
 
+          <div class="image_sec">
+            <img src="{{ post.post_list_summary_featured_image }}" alt="{{ post.name|striptags }}">
+          </div>
+          <div class="right_content">
+            <div class="cntnt_wrapper">
+              <div class="date_section">
+                {% if post.topic_list %}
+                {% for topic in post.topic_list %}
+                <span class="bgTopic">{{ topic.name }}</span>
+                {% endfor %}
+                {% endif %}
+                <div class="date_sec">
+                  <span>
+                    {{ iconCalendar }} {{ post.publish_date_local_time.strftime('%b %d, %Y') }}</span>
+                </div>
+              </div>
+              <div class="title">
+                <h5>
+                  <a class="text" href="{{ post.absolute_url }}">{{ post.name}}</a>
+                </h5>
+              </div>
+              {# <div class="content">{{ post.post_list_content|striptags|truncatehtml(250,'...' ,false) }}</div> #}
+              <div class="btn_wrapper">
+                <div class="button_item">
+                  <a class="text" href="{{ post.absolute_url }}">
+                    <img src="{{ get_asset_url('../../templates/images/dark-arrow.png') }}" alt="Arrow">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% set i = i + 1 %}
+      {% endif %}
+      {% endfor %}
+      {% endif %}
+      {% endfor %}
+      {% endif %}
+      {% endif %}
     </div>
 
   </div>
