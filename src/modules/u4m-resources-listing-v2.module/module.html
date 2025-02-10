@@ -33,17 +33,20 @@
           </button>
         </div>
         {% for tag in hubdb_table_column(table, 'categories').options %}
+        {% if tag.name != 'Webinars' %}
         <div class="filter_item">
           <button data-tag="{{tag.name}}">
             {{tag.name}}
           </button>
         </div>
+        {% endif %}
         {% endfor %}
       </div>
     </div>
     <div class="case_listing_column">	 
       <div class="case_listing_wrap">  
         {% for item in rows %}
+         {% if item.categories.name != 'Webinars' %}
         {% if item.image.url %}
         {% set bgImag = item.image.url %}
         {% else %}
@@ -122,6 +125,7 @@
         <a href="{{ cardHref }}" class="absLink" ></a>
       </div>
         </div>
+        {% endif %}
         {% endfor %} 
       </div>   
       <p class="noText" style="display:none;">

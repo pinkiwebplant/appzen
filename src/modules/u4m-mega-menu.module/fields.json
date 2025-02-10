@@ -354,7 +354,7 @@
         "required" : false,
         "locked" : false,
         "display" : "select",
-        "choices" : [ [ "recent", "Recent" ], [ "category", "Category Based Resources" ] ],
+        "choices" : [ [ "recent", "Recent" ], [ "category", "Category Based Resources" ], [ "post_by_title", "Post by Title" ] ],
         "multiple" : false,
         "reordering_enabled" : true,
         "preset" : null,
@@ -362,12 +362,60 @@
         "display_width" : null,
         "default" : "recent"
       }, {
+        "id" : "a8daa91b-e835-2453-34c0-aeff842e06d2",
+        "name" : "posts_by_title",
+        "label" : "Posts By Title",
+        "required" : false,
+        "locked" : false,
+        "occurrence" : {
+          "min" : null,
+          "max" : null,
+          "sorting_label_field" : "163fb377-606c-29c3-163f-5fa2f9dcdce5",
+          "default" : null
+        },
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "mega_menu.child_menu.hubdb_setttings.resource_type",
+          "controlling_value_regex" : "post_by_title",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "children" : [ {
+          "id" : "163fb377-606c-29c3-163f-5fa2f9dcdce5",
+          "name" : "select_row",
+          "label" : "Select Row",
+          "required" : false,
+          "locked" : false,
+          "table_name_or_id" : "4825172",
+          "display_columns" : [ "title" ],
+          "type" : "hubdbrow",
+          "display_width" : null,
+          "default" : {
+            "id" : null
+          }
+        } ],
+        "tab" : "CONTENT",
+        "expanded" : false,
+        "group_occurrence_meta" : null,
+        "type" : "group",
+        "display_width" : null,
+        "default" : [ ]
+      }, {
         "id" : "a1ecd86f-85d3-73a3-72c1-5f567de500bf",
         "name" : "column_feature_image",
         "label" : "Column Featured Image",
         "required" : false,
         "locked" : false,
         "validation_regex" : "",
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "mega_menu.child_menu.hubdb_setttings.resource_type",
+          "controlling_value_regex" : "post_by_title",
+          "property" : null,
+          "operator" : "NOT_EQUAL",
+          "access" : null
+        },
         "allow_new_line" : false,
         "show_emoji_picker" : false,
         "type" : "text",
@@ -380,6 +428,14 @@
         "required" : false,
         "locked" : false,
         "validation_regex" : "",
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "mega_menu.child_menu.hubdb_setttings.resource_type",
+          "controlling_value_regex" : "post_by_title",
+          "property" : null,
+          "operator" : "NOT_EQUAL",
+          "access" : null
+        },
         "allow_new_line" : false,
         "show_emoji_picker" : false,
         "type" : "text",
@@ -392,6 +448,14 @@
         "required" : false,
         "locked" : false,
         "validation_regex" : "",
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "mega_menu.child_menu.hubdb_setttings.resource_type",
+          "controlling_value_regex" : "post_by_title",
+          "property" : null,
+          "operator" : "NOT_EQUAL",
+          "access" : null
+        },
         "allow_new_line" : false,
         "show_emoji_picker" : false,
         "type" : "text",
@@ -424,6 +488,14 @@
         "required" : false,
         "locked" : false,
         "validation_regex" : "",
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "mega_menu.child_menu.hubdb_setttings.resource_type",
+          "controlling_value_regex" : "post_by_title",
+          "property" : null,
+          "operator" : "NOT_EQUAL",
+          "access" : null
+        },
         "allow_new_line" : false,
         "show_emoji_picker" : false,
         "type" : "text",
@@ -436,6 +508,14 @@
         "required" : false,
         "locked" : false,
         "validation_regex" : "",
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "mega_menu.child_menu.hubdb_setttings.resource_type",
+          "controlling_value_regex" : "post_by_title",
+          "property" : null,
+          "operator" : "NOT_EQUAL",
+          "access" : null
+        },
         "allow_new_line" : false,
         "show_emoji_picker" : false,
         "type" : "text",
@@ -448,6 +528,14 @@
         "required" : false,
         "locked" : false,
         "validation_regex" : "",
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "mega_menu.child_menu.hubdb_setttings.resource_type",
+          "controlling_value_regex" : "post_by_title",
+          "property" : null,
+          "operator" : "NOT_EQUAL",
+          "access" : null
+        },
         "allow_new_line" : false,
         "show_emoji_picker" : false,
         "type" : "text",
@@ -461,6 +549,7 @@
       "display_width" : null,
       "default" : {
         "resource_type" : "recent",
+        "posts_by_title" : [ ],
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
@@ -615,6 +704,7 @@
       },
       "hubdb_setttings" : {
         "resource_type" : "recent",
+        "posts_by_title" : [ ],
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
@@ -682,6 +772,7 @@
       },
       "hubdb_setttings" : {
         "resource_type" : "recent",
+        "posts_by_title" : [ ],
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
@@ -749,6 +840,7 @@
       },
       "hubdb_setttings" : {
         "resource_type" : "recent",
+        "posts_by_title" : [ ],
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
@@ -969,6 +1061,7 @@
       },
       "hubdb_setttings" : {
         "resource_type" : "recent",
+        "posts_by_title" : [ ],
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
@@ -1036,6 +1129,7 @@
       },
       "hubdb_setttings" : {
         "resource_type" : "recent",
+        "posts_by_title" : [ ],
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
@@ -1103,6 +1197,7 @@
       },
       "hubdb_setttings" : {
         "resource_type" : "recent",
+        "posts_by_title" : [ ],
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
@@ -1211,6 +1306,7 @@
       },
       "hubdb_setttings" : {
         "resource_type" : "recent",
+        "posts_by_title" : [ ],
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
@@ -1278,6 +1374,7 @@
       },
       "hubdb_setttings" : {
         "resource_type" : "recent",
+        "posts_by_title" : [ ],
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
@@ -1345,6 +1442,7 @@
       },
       "hubdb_setttings" : {
         "resource_type" : "recent",
+        "posts_by_title" : [ ],
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
@@ -1453,6 +1551,7 @@
       },
       "hubdb_setttings" : {
         "resource_type" : "recent",
+        "posts_by_title" : [ ],
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
@@ -1520,6 +1619,7 @@
       },
       "hubdb_setttings" : {
         "resource_type" : "recent",
+        "posts_by_title" : [ ],
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
@@ -1587,6 +1687,7 @@
       },
       "hubdb_setttings" : {
         "resource_type" : "recent",
+        "posts_by_title" : [ ],
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
@@ -1695,6 +1796,7 @@
       },
       "hubdb_setttings" : {
         "resource_type" : "recent",
+        "posts_by_title" : [ ],
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
@@ -1762,6 +1864,7 @@
       },
       "hubdb_setttings" : {
         "resource_type" : "recent",
+        "posts_by_title" : [ ],
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
@@ -1829,6 +1932,7 @@
       },
       "hubdb_setttings" : {
         "resource_type" : "recent",
+        "posts_by_title" : [ ],
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",

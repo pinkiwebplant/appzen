@@ -68,17 +68,7 @@
       <div class="cardImgIn" style="background-image:url({{ blogitem.featured_image  }})"></div>
     </div>
     {% endif %}
-    {% endif %}
-    {% if blogitem.tag_list %}
-    <div class="blogCardTags">
-      {% for tag in blogitem.tag_list %}
-      {% if tag.name=="Featured" %}
-      {% else %}
-      {% if loop.first %}
-      <a class="topicTag" href="{{ blog_tag_url(group.id, tag.slug) }}" rel="tag">{{ tag.name }}</a>
-      {% endif %}
-      {% endif %}
-      {% endfor %}</div>{% endif %}
+    {% endif %} 
     <div class="blogCardttl"><a href="{{ blogitem.absolute_url}}">{{ blogitem.name }}</a></div>
   </div>
   {% endfor %}
@@ -89,14 +79,48 @@
   {% set query = 'orderBy=-hs_created_at' ~ '&limit=' ~ item2.number_of_posts %}
 
   {% set category = item2.hubdb_setttings.topic_name %}
-  {% set category_query = 'orderBy=-hs_created_at&categories__in=' ~ category ~ '&limit=' ~ item2.number_of_posts %}
-
+  {% set category_query = 'orderBy=hs_created_at&categories__in=' ~ category ~ '&limit=' ~ item2.number_of_posts %}
+ 
   {% if item2.hubdb_setttings.resource_type == "recent" %}
   {% set types = hubdb_table_rows(table,query) %}
   {% elif item2.hubdb_setttings.resource_type == "category" %}
   {% set types = hubdb_table_rows(table,category_query) %}
+   {% elif item2.hubdb_setttings.resource_type == "post_by_title" %}
+  {% set types = item2.hubdb_setttings.posts_by_title %}
   {% endif %}
+  {% if item2.hubdb_setttings.resource_type == "post_by_title" %}
   {% for type in types %} 
+  
+  <div class="blogCard {{ item2.hubdb_content_type }}{% if loop.first %} first{% endif %}">
+    {% if loop.first %}
+    {% if type.select_row.columns.image.url %}
+    <div class="blogCardImg">
+      <div class="cardImgIn" style="background-image:url({{type.select_row.columns.image.url}})"></div>
+    </div>
+    {% endif %}
+    {% endif %}
+    <div class="blogCardTags webinars_tag"> 
+      {% if type.select_row.columns.webinar_date %}
+
+            {{ iconCalendar }} <span>{{ type.select_row.columns.webinar_date }}</span>
+            {% endif %}
+
+    </div>					
+    <div class="blogCardttl">
+      {% if type.select_row.columns.hs_path %}
+     
+      <a class="hubdbTableLink" href="/resources/{{ type.select_row.columns.hs_path }}">
+        {{ type.select_row.columns.title }}
+      </a>
+      {% else %}
+      {{ type.select_row.columns.title }}
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+  {% else %}
+  {% for type in types %} 
+  
   <div class="blogCard {{ item2.hubdb_content_type }}{% if loop.first %} first{% endif %}">
     {% if loop.first %}
     {% if type[item2.hubdb_setttings.column_feature_image].url %}
@@ -105,22 +129,18 @@
     </div>
     {% endif %}
     {% endif %}
-    <div class="blogCardTags webinars_tag">
-      {% if type[item2.hubdb_setttings.column_topic].name != "Webinars" %}
-      {{ type[item2.hubdb_setttings.column_topic].name }}
-      {% endif %}
-
-
+    <div class="blogCardTags webinars_tag"> 
       {% if type[item2.hubdb_setttings.column_date] || type[item2.hubdb_setttings.column_read_minutes] %}
-      {% if loop.first %}
-      {% if type[item2.hubdb_setttings.column_date] %}
+        {% if type[item2.hubdb_setttings.column_date] %}
 
-      {% if type[item2.hubdb_setttings.column_topic].name == "Webinars" %}
-      {{ iconCalendar }} <span>{{ type.webinar_date}}</span>
-      {% else %}
-      {{ iconCalendar }} <span>{{ type[item2.hubdb_setttings.column_date]|datetimeformat("%B %e, %Y")}}</span>
-      {% endif %}
-      {% endif %}
+          {% if type[item2.hubdb_setttings.column_topic].name == "Webinars" %}
+            {{ iconCalendar }} <span>{{ type.webinar_date}}</span>
+            {% else %}
+            {{ iconCalendar }} <span>{{ type[item2.hubdb_setttings.column_date]|datetimeformat("%B %e, %Y")}}</span>
+            {% endif %}
+        {% endif %}
+      {% if loop.first %}
+     
       {% else %}
       {% if type[item2.hubdb_setttings.column_read_minutes] %}
       {{ iconSchedule }} <span>
@@ -156,6 +176,7 @@
     </div>
   </div>
   {% endfor %}
+  {% endif %}
   {% endif %}
   {% if item2.content_type=="card" %}
   <div class="cardItem">
