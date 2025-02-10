@@ -85,8 +85,42 @@
   {% set types = hubdb_table_rows(table,query) %}
   {% elif item2.hubdb_setttings.resource_type == "category" %}
   {% set types = hubdb_table_rows(table,category_query) %}
+   {% elif item2.hubdb_setttings.resource_type == "post_by_title" %}
+  {% set types = item2.hubdb_setttings.posts_by_title %}
   {% endif %}
+  {% if item2.hubdb_setttings.resource_type == "post_by_title" %}
   {% for type in types %} 
+  
+  <div class="blogCard {{ item2.hubdb_content_type }}{% if loop.first %} first{% endif %}">
+    {% if loop.first %}
+    {% if type.select_row.columns.image.url %}
+    <div class="blogCardImg">
+      <div class="cardImgIn" style="background-image:url({{type.select_row.columns.image.url}})"></div>
+    </div>
+    {% endif %}
+    {% endif %}
+    <div class="blogCardTags webinars_tag"> 
+      {% if type.select_row.columns.webinar_date %}
+
+            {{ iconCalendar }} <span>{{ type.select_row.columns.webinar_date }}</span>
+            {% endif %}
+
+    </div>					
+    <div class="blogCardttl">
+      {% if type.select_row.columns.hs_path %}
+     
+      <a class="hubdbTableLink" href="/resources/{{ type.select_row.columns.hs_path }}">
+        {{ type.select_row.columns.title }}
+      </a>
+      {% else %}
+      {{ type.select_row.columns.title }}
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+  {% else %}
+  {% for type in types %} 
+  
   <div class="blogCard {{ item2.hubdb_content_type }}{% if loop.first %} first{% endif %}">
     {% if loop.first %}
     {% if type[item2.hubdb_setttings.column_feature_image].url %}
@@ -95,10 +129,7 @@
     </div>
     {% endif %}
     {% endif %}
-    <div class="blogCardTags webinars_tag">
-       
-
-
+    <div class="blogCardTags webinars_tag"> 
       {% if type[item2.hubdb_setttings.column_date] || type[item2.hubdb_setttings.column_read_minutes] %}
         {% if type[item2.hubdb_setttings.column_date] %}
 
@@ -145,6 +176,7 @@
     </div>
   </div>
   {% endfor %}
+  {% endif %}
   {% endif %}
   {% if item2.content_type=="card" %}
   <div class="cardItem">
