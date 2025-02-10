@@ -1,9 +1,7 @@
 header.u4m-header {
   padding: 13.5px 13px 0px;
   position: absolute;
-  transition:
-    height 0.3s,
-    top 0.5s;
+  transition: height 0.3s, top 0.5s;
   left: 0;
   width: 100%;
   background-color: $lightGreybg;
@@ -193,8 +191,6 @@ header.u4m-header {
               border-color: $DarkHeaderBorder;
             }
 
-            
-
             &:hover {
               > a {
                 color: $basecolor;
@@ -294,7 +290,6 @@ header.u4m-header {
           }
         }
 
-      
         &:not(:last-child) {
           > a {
             border-right: 1px solid $lightGray;
@@ -322,7 +317,7 @@ header.u4m-header {
           > .flex_row {
             .menuItemTtl {
               font-family: $font1;
-              font-weight: 400;
+              font-weight: 700;
               @include size12;
               line-height: 130%;
               color: $basecolor;
@@ -399,7 +394,7 @@ header.u4m-header {
               .blogCardttl {
                 font-family: $font1;
                 font-style: normal;
-                font-weight: 400;
+                font-weight: 700;
                 @include size12;
                 line-height: 150%;
                 color: $basecolor;
@@ -470,7 +465,7 @@ header.u4m-header {
               max-width: 33.33%;
               width: 100%;
               padding: 0 20px;
-              gap: 20px;
+              gap: 15px;
               display: flex;
               flex-direction: column;
             }
@@ -671,23 +666,23 @@ header.u4m-header {
     }
   }
 }
- 
+
 @include tabletmid {
   header.u4m-header {
     .mobileHide {
       display: none !important;
-    } 
-    
-    .headerMenu {  
+    }
+
+    .headerMenu {
       position: absolute;
-      top: 100%; 
-      background: $white;  
+      top: 100%;
+      background: $white;
       z-index: 4;
       left: -13px;
-      padding: 30px 20px; 
+      padding: 30px 20px;
       right: -13px;
       display: none;
-      max-height: calc(100vh - 100px); 
+      max-height: calc(100vh - 100px);
       overflow-y: auto;
     }
 

@@ -16,7 +16,7 @@
 {% set table = module.select_table %}
 {% set category ="Webinars"%}
 {% set count = module.number_of_posts %}
-{% set category_query = 'orderBy=-hs_created_at&categories__in=' ~ category ~ '&limit=' ~ count %}
+{% set category_query = 'orderBy=hs_created_at&categories__in=' ~ category ~ '&limit=' ~ count %}
 {% set data = hubdb_table_rows(table,category_query) %}
 
 

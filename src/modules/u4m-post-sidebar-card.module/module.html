@@ -27,16 +27,7 @@
           {% endif %}
           <div class="right_content">
             <div class="cntnt_wrapper">
-              <div class="date_section">
-                <span class="{{ module.select_post.columns.name|lower|replace(' ', '-') }}">{{ module.select_post.columns.categories.name }}</span>
-                <div class="date_sec">
-                  <span>
-                    {{ iconCalendar }} {{ module.select_post.columns.publish_date|datetimeformat('%b %e, %Y') }}
-                  </span>
-
-
-                </div>
-              </div>
+              
               {% if module.select_post.columns.title %}
               <div class="title">
                 <h5>
@@ -100,10 +91,7 @@
                 <span class="bgTopic">{{ topic.name }}</span>
                 {% endfor %}
                 {% endif %}
-                <div class="date_sec">
-                  <span>
-                    {{ iconCalendar }} {{ post.publish_date_local_time.strftime('%b %d, %Y') }}</span>
-                </div>
+                
               </div>
               <div class="title">
                 <h5>

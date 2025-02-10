@@ -37,7 +37,8 @@ section.u4m-blog-post {
       max-width: 1000rem;
 
       //margin: 50rem auto 50rem auto;
-      span.date {}
+      span.date {
+      }
 
       h1.title {
         @include h1;
@@ -80,7 +81,6 @@ section.u4m-blog-post {
     max-width: 1000rem;
 
     div.content {
-
       p,
       ul,
       ol {
@@ -128,7 +128,8 @@ section.u4m-blog-post {
       }
     }
 
-    div.topics {}
+    div.topics {
+    }
   }
 
   /*****************************************/
@@ -239,7 +240,6 @@ section.u4m-blog-post {
       column-gap: 20px;
 
       @include tablet {
-
         padding-left: 30px;
       }
 
@@ -269,13 +269,15 @@ section.u4m-blog-post {
       }
 
       blockquote {
-        border-left: 8px solid $blockqouteborder;
+        border-left: 10px solid $LightPink;
         margin: 100px 0;
         @include size28;
         padding-left: 40px;
         color: inherit;
         font-weight: 400;
         max-width: 100%;
+        line-height: 1.6;
+        padding-right: 40px;
 
         p {
           @include size28;
@@ -383,6 +385,5 @@ section.u4m-blog-post {
 body.hs-blog-listing {
   .body-container-wrapper {
     background-color: $greybg;
-
   }
 }

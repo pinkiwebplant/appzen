@@ -68,17 +68,7 @@
       <div class="cardImgIn" style="background-image:url({{ blogitem.featured_image  }})"></div>
     </div>
     {% endif %}
-    {% endif %}
-    {% if blogitem.tag_list %}
-    <div class="blogCardTags">
-      {% for tag in blogitem.tag_list %}
-      {% if tag.name=="Featured" %}
-      {% else %}
-      {% if loop.first %}
-      <a class="topicTag" href="{{ blog_tag_url(group.id, tag.slug) }}" rel="tag">{{ tag.name }}</a>
-      {% endif %}
-      {% endif %}
-      {% endfor %}</div>{% endif %}
+    {% endif %} 
     <div class="blogCardttl"><a href="{{ blogitem.absolute_url}}">{{ blogitem.name }}</a></div>
   </div>
   {% endfor %}
@@ -89,8 +79,8 @@
   {% set query = 'orderBy=-hs_created_at' ~ '&limit=' ~ item2.number_of_posts %}
 
   {% set category = item2.hubdb_setttings.topic_name %}
-  {% set category_query = 'orderBy=-hs_created_at&categories__in=' ~ category ~ '&limit=' ~ item2.number_of_posts %}
-
+  {% set category_query = 'orderBy=hs_created_at&categories__in=' ~ category ~ '&limit=' ~ item2.number_of_posts %}
+ 
   {% if item2.hubdb_setttings.resource_type == "recent" %}
   {% set types = hubdb_table_rows(table,query) %}
   {% elif item2.hubdb_setttings.resource_type == "category" %}
@@ -106,21 +96,20 @@
     {% endif %}
     {% endif %}
     <div class="blogCardTags webinars_tag">
-      {% if type[item2.hubdb_setttings.column_topic].name != "Webinars" %}
-      {{ type[item2.hubdb_setttings.column_topic].name }}
-      {% endif %}
+       
 
 
       {% if type[item2.hubdb_setttings.column_date] || type[item2.hubdb_setttings.column_read_minutes] %}
-      {% if loop.first %}
-      {% if type[item2.hubdb_setttings.column_date] %}
+        {% if type[item2.hubdb_setttings.column_date] %}
 
-      {% if type[item2.hubdb_setttings.column_topic].name == "Webinars" %}
-      {{ iconCalendar }} <span>{{ type.webinar_date}}</span>
-      {% else %}
-      {{ iconCalendar }} <span>{{ type[item2.hubdb_setttings.column_date]|datetimeformat("%B %e, %Y")}}</span>
-      {% endif %}
-      {% endif %}
+          {% if type[item2.hubdb_setttings.column_topic].name == "Webinars" %}
+            {{ iconCalendar }} <span>{{ type.webinar_date}}</span>
+            {% else %}
+            {{ iconCalendar }} <span>{{ type[item2.hubdb_setttings.column_date]|datetimeformat("%B %e, %Y")}}</span>
+            {% endif %}
+        {% endif %}
+      {% if loop.first %}
+     
       {% else %}
       {% if type[item2.hubdb_setttings.column_read_minutes] %}
       {{ iconSchedule }} <span>
