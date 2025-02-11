@@ -14,13 +14,13 @@
 {% set offset_num = page_num|add(-1) * batch_num %}
 {% endif %}
 
-
+{% set excluded_category = 'Webinars' %}
 {% set query = 'orderBy=-hs_created_at&limit='~ batch_num ~ "&offset=" ~ offset_num   %}
 
 {% if request.query_dict.categories &&  request.query_dict.categories != "all"  %}
 {% set query =  query ~ '&categories__in=' ~ request.query_dict.categories %} 
 {% endif %}
-
+{% set query = query ~ '&categories__nin=' ~ excluded_category %}
 {% set rows = hubdb_table_rows(table, query) %}
 
 <div class="page-center resoHub">
@@ -46,7 +46,6 @@
     <div class="case_listing_column">	 
       <div class="case_listing_wrap">  
         {% for item in rows %}
-         {% if item.categories.name != 'Webinars' %}
         {% if item.image.url %}
         {% set bgImag = item.image.url %}
         {% else %}
@@ -125,7 +124,6 @@
         <a href="{{ cardHref }}" class="absLink" ></a>
       </div>
         </div>
-        {% endif %}
         {% endfor %} 
       </div>   
       <p class="noText" style="display:none;">
