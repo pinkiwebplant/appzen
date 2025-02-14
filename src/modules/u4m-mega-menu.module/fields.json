@@ -100,7 +100,7 @@
       "required" : false,
       "locked" : false,
       "display" : "select",
-      "choices" : [ [ "menu", "Menu" ], [ "blog", "Blog" ], [ "hubdb", "Hubdb" ], [ "card", "Card" ], [ "button", "Button" ] ],
+      "choices" : [ [ "menu", "Menu" ], [ "blog", "Blog" ], [ "hubdb", "Hubdb" ], [ "card", "Card" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -655,6 +655,24 @@
       "display_width" : null,
       "default" : 3
     }, {
+      "id" : "4da31457-4d4f-939f-7ea1-2ce50e31f227",
+      "name" : "enable_button",
+      "label" : "Enable Button",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "mega_menu.child_menu.content_type",
+        "controlling_value_regex" : "hubdb",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    }, {
       "id" : "fd7cd447-f0b7-62a6-ead4-7fb8ea69694b",
       "name" : "button",
       "label" : "Button",
@@ -662,8 +680,8 @@
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
-        "controlling_field_path" : "mega_menu.child_menu.content_type",
-        "controlling_value_regex" : "button",
+        "controlling_field_path" : "mega_menu.child_menu.enable_button",
+        "controlling_value_regex" : "true",
         "property" : null,
         "operator" : "EQUAL",
         "access" : null
@@ -791,7 +809,7 @@
         "title" : "Title"
       },
       "number_of_posts" : 3,
-      "field_group" : {
+      "button" : {
         "text" : "Button",
         "link" : {
           "url" : {
@@ -802,7 +820,8 @@
           "open_in_new_tab" : false,
           "no_follow" : false
         }
-      }
+      },
+      "boolean_field" : false
     }, {
       "content_type" : "menu",
       "title" : "Accounts payable",
@@ -871,7 +890,7 @@
         "title" : "Title"
       },
       "number_of_posts" : 3,
-      "field_group" : {
+      "button" : {
         "text" : "Button",
         "link" : {
           "url" : {
@@ -882,7 +901,8 @@
           "open_in_new_tab" : false,
           "no_follow" : false
         }
-      }
+      },
+      "boolean_field" : false
     }, {
       "content_type" : "menu",
       "title" : "Accounts payable",
@@ -951,7 +971,7 @@
         "title" : "Title"
       },
       "number_of_posts" : 3,
-      "field_group" : {
+      "button" : {
         "text" : "Button",
         "link" : {
           "url" : {
@@ -962,7 +982,8 @@
           "open_in_new_tab" : false,
           "no_follow" : false
         }
-      }
+      },
+      "boolean_field" : false
     } ]
   }, {
     "id" : "0754c0b7-6e81-4232-bc60-b4265adab575",

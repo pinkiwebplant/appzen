@@ -92,7 +92,6 @@
   {% endif %}
   {% if item2.hubdb_setttings.resource_type == "post_by_title" %}
   {% for type in types %} 
-
   <div class="blogCard {{ item2.hubdb_content_type }}{% if loop.first %} first{% endif %}">
     {% if loop.first %}
     {% if type.select_row.columns.image.url %}
@@ -120,7 +119,6 @@
   {% endfor %}
   {% else %}
   {% for type in types %} 
-
   <div class="blogCard {{ item2.hubdb_content_type }}{% if loop.first %} first{% endif %}">
     {% if loop.first %}
     {% if type[item2.hubdb_setttings.column_feature_image].url %}
@@ -176,6 +174,11 @@
   </div>
   {% endfor %}
   {% endif %}
+  {% if item2.enable_button %}
+  <div class="itemBtn">
+    <a class="primary" href="{{ item2.button.texlinkt }}">{{ item2.button.text }}</a>
+  </div>
+  {% endif %}
   {% endif %}
   {% if item2.content_type=="card" %}
   <div class="cardItem">
@@ -188,11 +191,6 @@
       <div class="cardttl">{{ item2.card.title }}</div>
       <div class="cardDes">{{ item2.card.content }}</div>
     </div>
-  </div>
-  {% endif %}
-  {% if item2.content_type=="button" %}
-  <div class="itemBtn">
-    <a class="primary" href="{{ item2.button.texlinkt }}">{{ item2.button.text }}</a>
   </div>
   {% endif %}
 </div>
@@ -385,12 +383,23 @@
               {% set types = hubdb_table_rows(table,query) %}
               {% elif item2.hubdb_setttings.resource_type == "category" %}
               {% set types = hubdb_table_rows(table,category_query) %}
+              {% elif item2.hubdb_setttings.resource_type == "post_by_title" %}
+              {% set types = item2.hubdb_setttings.posts_by_title %}
               {% endif %}
-
-
+              {% if item2.hubdb_setttings.resource_type == "post_by_title" %}
+              {% for type in types %} 
+              {% if type.select_row.columns.hs_path %}
+              <li>
+                <a class="item3 type-hubdb" href="/resources/{{ type.select_row.columns.hs_path }}">
+                  {{ type.select_row.columns.title }}
+                </a>
+              </li>
+              {% else %}
+              <li>{{ type.select_row.columns.title }}</li>
+              {% endif %}
+              {% endfor %}
+              {% else %}
               {% for type in types %}
-
-
               {% if type[item2.hubdb_setttings.column_link] %}
               {% if type[item2.hubdb_setttings.column_link] == 'hs_path' %}
               {% set href = request.full_url ~ '/' ~ type.hs_path %}
@@ -408,6 +417,7 @@
               {% endfor %}
               {% elif item2.content_type=="card" %}
               <li>{{ item2.card.title }}</li>
+              {% endif %}
               {% endif %}
             </ul>
           </li>
