@@ -13,7 +13,6 @@
     }
   }
 
-
   &.reverse-text {
     min-height: 754px;
 
@@ -89,6 +88,11 @@
     &.conleft.col12 {
       p {
         max-width: 687px;
+      }
+    }
+    .btn_row {
+      a {
+        margin: 0;
       }
     }
   }

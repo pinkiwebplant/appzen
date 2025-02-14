@@ -19,6 +19,13 @@ section.u4m-blog-post-header {
     a {
       color: inherit;
       text-transform: capitalize;
+      border-radius: 4rem;
+      display: inline-block;
+      font-size: 12rem;
+      font-weight: 500;
+      line-height: 1.36;
+      padding: 4px 8px;
+      background: $yellowColor;
 
       &:not(:first-child) {
         margin-left: 5px;

@@ -6,7 +6,8 @@
         {% for topic in content.topic_list %}
         <a class="topic-link" href="{{ blog_tag_url(group.id, topic.slug) }}"
           >{{ topic.name }}</a
-        >{% if not loop.last %},{% endif %} {% endfor %}
+        >
+        {% endfor %}
       </div>
       {% endif %}
       <div class="post-title">
