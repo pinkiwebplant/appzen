@@ -1,7 +1,9 @@
 header.u4m-header {
   padding: 13.5px 13px 0px;
   position: absolute;
-  transition: height 0.3s, top 0.5s;
+  transition:
+    height 0.3s,
+    top 0.5s;
   left: 0;
   width: 100%;
   background-color: $lightGreybg;
@@ -453,6 +455,12 @@ header.u4m-header {
               display: flex;
               align-items: center;
               gap: 5px;
+            }
+          }
+          .itemBtn {
+            .primary {
+              background-color: $LightPink;
+              margin: 0;
             }
           }
         }

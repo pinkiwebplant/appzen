@@ -100,7 +100,7 @@
       "required" : false,
       "locked" : false,
       "display" : "select",
-      "choices" : [ [ "menu", "Menu" ], [ "blog", "Blog" ], [ "hubdb", "Hubdb" ], [ "card", "Card" ] ],
+      "choices" : [ [ "menu", "Menu" ], [ "blog", "Blog" ], [ "hubdb", "Hubdb" ], [ "card", "Card" ], [ "button", "Button" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -654,6 +654,69 @@
       "type" : "number",
       "display_width" : null,
       "default" : 3
+    }, {
+      "id" : "fd7cd447-f0b7-62a6-ead4-7fb8ea69694b",
+      "name" : "button",
+      "label" : "Button",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "mega_menu.child_menu.content_type",
+        "controlling_value_regex" : "button",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "75927b87-bc5b-0a83-36f4-c009b7f08abe",
+        "name" : "text",
+        "label" : "Text",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "Button"
+      }, {
+        "id" : "b9b3a519-b690-6fb3-47a3-0687071320a7",
+        "name" : "link",
+        "label" : "Link",
+        "required" : false,
+        "locked" : false,
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+        "show_advanced_rel_options" : false,
+        "type" : "link",
+        "display_width" : null,
+        "default" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
@@ -727,7 +790,19 @@
         "content" : "<p>Automate your accounts payable workflow</p>",
         "title" : "Title"
       },
-      "number_of_posts" : 3
+      "number_of_posts" : 3,
+      "field_group" : {
+        "text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
     }, {
       "content_type" : "menu",
       "title" : "Accounts payable",
@@ -795,7 +870,19 @@
         "content" : "<p>Automate your accounts payable workflow</p>",
         "title" : "Title"
       },
-      "number_of_posts" : 3
+      "number_of_posts" : 3,
+      "field_group" : {
+        "text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
     }, {
       "content_type" : "menu",
       "title" : "Accounts payable",
@@ -863,7 +950,19 @@
         "content" : "<p>Automate your accounts payable workflow</p>",
         "title" : "Title"
       },
-      "number_of_posts" : 3
+      "number_of_posts" : 3,
+      "field_group" : {
+        "text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
     } ]
   }, {
     "id" : "0754c0b7-6e81-4232-bc60-b4265adab575",
@@ -1084,7 +1183,17 @@
         "content" : "<p>Automate your accounts payable workflow</p>",
         "title" : "Title"
       },
-      "number_of_posts" : 3
+      "number_of_posts" : 3,
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "text" : "Button"
     }, {
       "content_type" : "menu",
       "title" : "Accounts payable",
@@ -1152,7 +1261,17 @@
         "content" : "<p>Automate your accounts payable workflow</p>",
         "title" : "Title"
       },
-      "number_of_posts" : 3
+      "number_of_posts" : 3,
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "text" : "Button"
     }, {
       "content_type" : "menu",
       "title" : "Accounts payable",
@@ -1220,7 +1339,17 @@
         "content" : "<p>Automate your accounts payable workflow</p>",
         "title" : "Title"
       },
-      "number_of_posts" : 3
+      "number_of_posts" : 3,
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "text" : "Button"
     } ],
     "bottom_section" : {
       "items" : [ {
@@ -1329,7 +1458,17 @@
         "content" : "<p>Automate your accounts payable workflow</p>",
         "title" : "Title"
       },
-      "number_of_posts" : 3
+      "number_of_posts" : 3,
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "text" : "Button"
     }, {
       "content_type" : "menu",
       "title" : "Accounts payable",
@@ -1397,7 +1536,17 @@
         "content" : "<p>Automate your accounts payable workflow</p>",
         "title" : "Title"
       },
-      "number_of_posts" : 3
+      "number_of_posts" : 3,
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "text" : "Button"
     }, {
       "content_type" : "menu",
       "title" : "Accounts payable",
@@ -1465,7 +1614,17 @@
         "content" : "<p>Automate your accounts payable workflow</p>",
         "title" : "Title"
       },
-      "number_of_posts" : 3
+      "number_of_posts" : 3,
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "text" : "Button"
     } ],
     "bottom_section" : {
       "items" : [ {
@@ -1574,7 +1733,17 @@
         "content" : "<p>Automate your accounts payable workflow</p>",
         "title" : "Title"
       },
-      "number_of_posts" : 3
+      "number_of_posts" : 3,
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "text" : "Button"
     }, {
       "content_type" : "menu",
       "title" : "Accounts payable",
@@ -1642,7 +1811,17 @@
         "content" : "<p>Automate your accounts payable workflow</p>",
         "title" : "Title"
       },
-      "number_of_posts" : 3
+      "number_of_posts" : 3,
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "text" : "Button"
     }, {
       "content_type" : "menu",
       "title" : "Accounts payable",
@@ -1710,7 +1889,17 @@
         "content" : "<p>Automate your accounts payable workflow</p>",
         "title" : "Title"
       },
-      "number_of_posts" : 3
+      "number_of_posts" : 3,
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "text" : "Button"
     } ],
     "bottom_section" : {
       "items" : [ {
@@ -1819,7 +2008,17 @@
         "content" : "<p>Automate your accounts payable workflow</p>",
         "title" : "Title"
       },
-      "number_of_posts" : 3
+      "number_of_posts" : 3,
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "text" : "Button"
     }, {
       "content_type" : "menu",
       "title" : "Accounts payable",
@@ -1887,7 +2086,17 @@
         "content" : "<p>Automate your accounts payable workflow</p>",
         "title" : "Title"
       },
-      "number_of_posts" : 3
+      "number_of_posts" : 3,
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "text" : "Button"
     }, {
       "content_type" : "menu",
       "title" : "Accounts payable",
@@ -1955,7 +2164,17 @@
         "content" : "<p>Automate your accounts payable workflow</p>",
         "title" : "Title"
       },
-      "number_of_posts" : 3
+      "number_of_posts" : 3,
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "text" : "Button"
     } ],
     "bottom_section" : {
       "items" : [ {

@@ -13,7 +13,8 @@
   {% if item2.title_link.url.type is equalto "EMAIL_ADDRESS" %}
   {% set href = "mailto:" + href %}
   {% endif %}
-
+  {% if item2.content_type=="button" %}
+  {% else %}
   <div class="menuItemTtl">
     <a
        {% if item2.title_link.url.type is equalto "CALL_TO_ACTION"  %}
@@ -29,6 +30,7 @@
        {% endif %}
        {% if not href %}style=" cursor: text; "{% endif %}>
       {{ item2.title }}</a></div>
+  {% endif %}
   {% if item2.content_type=="menu" %}
   {% for item3 in item2.menu_group.menu_items %}
   <div class="childmenuItem{% if item3.add_description %} addDes{% endif %}">
@@ -80,17 +82,17 @@
 
   {% set category = item2.hubdb_setttings.topic_name %}
   {% set category_query = 'orderBy=hs_created_at&categories__in=' ~ category ~ '&limit=' ~ item2.number_of_posts %}
- 
+
   {% if item2.hubdb_setttings.resource_type == "recent" %}
   {% set types = hubdb_table_rows(table,query) %}
   {% elif item2.hubdb_setttings.resource_type == "category" %}
   {% set types = hubdb_table_rows(table,category_query) %}
-   {% elif item2.hubdb_setttings.resource_type == "post_by_title" %}
+  {% elif item2.hubdb_setttings.resource_type == "post_by_title" %}
   {% set types = item2.hubdb_setttings.posts_by_title %}
   {% endif %}
   {% if item2.hubdb_setttings.resource_type == "post_by_title" %}
   {% for type in types %} 
-  
+
   <div class="blogCard {{ item2.hubdb_content_type }}{% if loop.first %} first{% endif %}">
     {% if loop.first %}
     {% if type.select_row.columns.image.url %}
@@ -99,16 +101,14 @@
     </div>
     {% endif %}
     {% endif %}
+    {% if type.select_row.columns.webinar_date %}
     <div class="blogCardTags webinars_tag"> 
-      {% if type.select_row.columns.webinar_date %}
-
-            {{ iconCalendar }} <span>{{ type.select_row.columns.webinar_date }}</span>
-            {% endif %}
-
-    </div>					
+      {{ iconCalendar }} <span>{{ type.select_row.columns.webinar_date }}</span>
+    </div>		
+    {% endif %}
     <div class="blogCardttl">
       {% if type.select_row.columns.hs_path %}
-     
+
       <a class="hubdbTableLink" href="/resources/{{ type.select_row.columns.hs_path }}">
         {{ type.select_row.columns.title }}
       </a>
@@ -120,7 +120,7 @@
   {% endfor %}
   {% else %}
   {% for type in types %} 
-  
+
   <div class="blogCard {{ item2.hubdb_content_type }}{% if loop.first %} first{% endif %}">
     {% if loop.first %}
     {% if type[item2.hubdb_setttings.column_feature_image].url %}
@@ -131,16 +131,16 @@
     {% endif %}
     <div class="blogCardTags webinars_tag"> 
       {% if type[item2.hubdb_setttings.column_date] || type[item2.hubdb_setttings.column_read_minutes] %}
-        {% if type[item2.hubdb_setttings.column_date] %}
+      {% if type[item2.hubdb_setttings.column_date] %}
 
-          {% if type[item2.hubdb_setttings.column_topic].name == "Webinars" %}
-            {{ iconCalendar }} <span>{{ type.webinar_date}}</span>
-            {% else %}
-            {{ iconCalendar }} <span>{{ type[item2.hubdb_setttings.column_date]|datetimeformat("%B %e, %Y")}}</span>
-            {% endif %}
-        {% endif %}
+      {% if type[item2.hubdb_setttings.column_topic].name == "Webinars" %}
+      {{ iconCalendar }} <span>{{ type.webinar_date}}</span>
+      {% else %}
+      {{ iconCalendar }} <span>{{ type[item2.hubdb_setttings.column_date]|datetimeformat("%B %e, %Y")}}</span>
+      {% endif %}
+      {% endif %}
       {% if loop.first %}
-     
+
       {% else %}
       {% if type[item2.hubdb_setttings.column_read_minutes] %}
       {{ iconSchedule }} <span>
@@ -158,7 +158,6 @@
       {% endif %}
       {% endif %}
       {% endif %}
-
     </div>					
     <div class="blogCardttl">
       {% if type[item2.hubdb_setttings.column_link] %}
@@ -189,6 +188,11 @@
       <div class="cardttl">{{ item2.card.title }}</div>
       <div class="cardDes">{{ item2.card.content }}</div>
     </div>
+  </div>
+  {% endif %}
+  {% if item2.content_type=="button" %}
+  <div class="itemBtn">
+    <a class="primary" href="{{ item2.button.texlinkt }}">{{ item2.button.text }}</a>
   </div>
   {% endif %}
 </div>
