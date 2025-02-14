@@ -1,41 +1,49 @@
 @import "../../css/_module-imports";
-.information-banner {
-  text-align: center;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 130%;
-  color: $sectionbg;
-  padding: 12px 40px;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  background-color: $basecolor;
-  .closeTrigger {
-    position: absolute;
-    right: 14px;
-    cursor: pointer;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    svg {
-      * {
-        stroke: $white;
+.informationbannerWrap {
+  padding: 0 13rem;
+  .page-center {
+    max-width: 1440px;
+    padding: 0 13rem;
+    .information-banner {
+      text-align: center;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 130%;
+      color: $sectionbg;
+      padding: 12px 40px;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      background-color: $basecolor;
+      border-radius: 8rem;
+      .closeTrigger {
+        position: absolute;
+        right: 14px;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+          * {
+            stroke: $white;
+          }
+        }
+      }
+      p {
+        a {
+          color: $yellowColor;
+          text-decoration: underline;
+          margin-left: 5px;
+        }
+        margin: 0;
+      }
+
+      .container > *:last-child {
+        margin-bottom: 0;
       }
     }
-  }
-  p {
-    a {
-      color: $yellowColor;
-      text-decoration: underline;
-      margin-left: 5px;
-    }
-    margin: 0;
-  }
-
-  .container > *:last-child {
-    margin-bottom: 0;
   }
 }
 body.anncmnt_hide {

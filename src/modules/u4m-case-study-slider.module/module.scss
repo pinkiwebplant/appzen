@@ -67,6 +67,7 @@
       top: 0;
       cursor: pointer;
       z-index: 1;
+      display: none;
     }
 
     img {
@@ -75,6 +76,9 @@
   }
 
   .slick-current {
+    .absLink {
+      display: block;
+    }
     .case_large_bg {
       &:before {
         opacity: 0;
