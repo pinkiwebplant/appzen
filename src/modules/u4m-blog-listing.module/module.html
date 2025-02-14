@@ -1,19 +1,34 @@
 <section class="u4m-blog-listing">
   <div class="page-center">
-  {# requested post-launch to remove the blog title from the blog listing page. I'm only removing from primary listing so author/topic pages don't get messed up. #}
-    <div class="listing-title" {% if topic %}{% elif blog_author %}{% else %} style="display:none;" {% endif %}>
-      {% if topic %}
-        {% if topic == "finance-ai" %}
+    {# requested post-launch to remove the blog title from the blog listing
+    page. I'm only removing from primary listing so author/topic pages don't get
+    messed up. #}
+    <div
+      class="listing-title"
+      {%
+      if
+      topic
+      %}{%
+      elif
+      blog_author
+      %}{%
+      else
+      %}
+      style="display: none"
+      {%
+      endif
+      %}
+    >
+      {% if topic %} {% if topic == "finance-ai" %}
       <h1 class="topic_title">Finance AI</h1>
-{% else %}
-  <h1 class="topic_title">{{ topic|capitalize| replace('-',' ') }}</h1>
-{% endif %}
-
-      {% elif blog_author %}
-      <h1>{{ blog_author }}</h1>
       {% else %}
-        {# requested post-launch to remove the blog title from the blog listing page. I'm only removing from primary listing so author/topic pages don't get messed up. #}
-      <h1 style="display:none;">{{ group.public_title }}</h1>
+      <h1 class="topic_title">{{ topic|capitalize| replace('-',' ') }}</h1>
+      {% endif %} {% elif blog_author %}
+      <h1>{{ blog_author }}</h1>
+      {% else %} {# requested post-launch to remove the blog title from the blog
+      listing page. I'm only removing from primary listing so author/topic pages
+      don't get messed up. #}
+      <h1 style="display: none">{{ group.public_title }}</h1>
       {% endif %}
     </div>
 
@@ -41,11 +56,15 @@
               class="topic-link"
               href="{{ blog_tag_url(group.id, topic.slug) }}"
               >{{ topic.name }}</a
-            >  {% endfor %}
+            >
+            {% endfor %}
           </div>
           {% endif %}
           <h3 class="post-title">
-            <a class="text" href="{{content.absolute_url}}" title="{{ content.name }}"
+            <a
+              class="text"
+              href="{{content.absolute_url}}"
+              title="{{ content.name }}"
               >{{ content.name }}</a
             >
           </h3>
@@ -77,7 +96,7 @@
       <div class="listing-sidebar">
         {% if module.sidebar_top_text %}
         <h6>
-          <a  class="text" href="{{ group.absolute_url }}" style="color: inherit"
+          <a class="text" href="{{ group.absolute_url }}" style="color: inherit"
             >{{ module.sidebar_top_text }}</a
           >
         </h6>
@@ -163,7 +182,9 @@
           <ul>
             {% for item in my_topics %}
             <li>
-              <a  class="text" href="{{ blog_tag_url(group.id, item.slug) }}">{{ item }}</a>
+              <a class="text" href="{{ blog_tag_url(group.id, item.slug) }}"
+                >{{ item }}</a
+              >
             </li>
             {% endfor %}
           </ul>
@@ -187,18 +208,30 @@
           {% for content in contents %}
           <div class="post-item col4 col">
             <div class="post-content-col card_inner">
-              {% if module.post_item.tag %} {% if content.topic_list %}
+              {% if content.featured_image %}
+              <div class="card_img">
+                <div
+                  class="card_img_inner"
+                  style="background-image:url({{ content.featured_image }});"
+                ></div>
+              </div>
+              {% endif %} {% if module.post_item.tag %} {% if content.topic_list
+              %}
               <div class="content-topic">
                 {% for topic in content.topic_list %}
                 <a
                   class="topic-link"
                   href="{{ blog_tag_url(group.id, topic.slug) }}"
                   >{{ topic.name }}</a
-                > {% endfor %}
+                >
+                {% endfor %}
               </div>
               {% endif %} {% endif %} {% if module.post_item.post_title %}
               <h5 class="post-title">
-                <a class="text" href="{{content.absolute_url}}" title="{{ content.name }}"
+                <a
+                  class="text"
+                  href="{{content.absolute_url}}"
+                  title="{{ content.name }}"
                   >{{ content.name }}</a
                 >
               </h5>
