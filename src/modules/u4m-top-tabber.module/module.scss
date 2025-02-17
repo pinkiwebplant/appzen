@@ -147,11 +147,8 @@
           border: 0;
         }
         .white_bg {
-          padding: 65px;
+          padding: 0;
           text-align: center;
-          @include tabletvert {
-            padding: 10rem;
-          }
           .img img {
             margin: 0 auto;
           }
