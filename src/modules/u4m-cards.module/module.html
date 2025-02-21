@@ -8,7 +8,7 @@
 <div class="page-center">
   {% if module.include_intro %} 
   <div class='intro {{ module.module_overrides.intro_content_alignment }}'>
-    <div class='intro_cnt' {% if module.module_settings.intro_content_width %}style="width:{{ module.module_settings.intro_content_width }}%"{% endif %}>
+    <div class='intro_cnt'>
       {{ module.intro_content }}
     </div>
   </div>
@@ -111,12 +111,33 @@
 
 
 </section>
+{% if module.module_settings.intro_content_width %}
+{% require_css %}
+<style>
+  @media(min-width:768px){
+    .u4m-cards.{{ name }} .page-center>.intro>.intro_cnt{
+      width:{{ module.module_settings.intro_content_width }}%;
+    }
 
+    section.u4m-cards .intro.center .intro_cnt {
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    section.u4m-cards .intro.right .intro_cnt {
+      margin-left:auto;
+    }
+
+
+  }
+</style>
+{% end_require_css %}
+{% endif %}
 {% require_js %}
 <script>
   $(function () {
     $(".u4m-cards.{{ name }} .card_inner .card_title").matchHeight();
-  });
+      });
 </script>
 {% end_require_js %}
 
