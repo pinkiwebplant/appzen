@@ -24,6 +24,7 @@ section.u4m-post-sidebar-card {
           max-width: 100%;
           object-fit: cover;
           width: 100%;
+          border-radius: 4rem;
         }
         .play_icon {
           position: absolute;
@@ -67,7 +68,7 @@ section.u4m-post-sidebar-card {
           line-height: 20.8px;
           color: #746c60;
           gap: 2px;
-          display: flex;    
+          display: flex;
           align-items: center;
           img {
             width: 24px;

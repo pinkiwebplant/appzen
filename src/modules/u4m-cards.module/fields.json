@@ -323,6 +323,19 @@
     "type" : "choice",
     "display_width" : null,
     "default" : "col3"
+  }, {
+    "id" : "f8df7ce9-ad7e-d904-94c1-717d2acd96dc",
+    "name" : "intro_content_width",
+    "label" : "Intro Content Width",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 25,
+    "max" : 100,
+    "step" : 1,
+    "suffix" : "%",
+    "type" : "number",
+    "display_width" : null
   } ],
   "tab" : "CONTENT",
   "expanded" : false,

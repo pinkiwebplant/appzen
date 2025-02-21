@@ -206,6 +206,7 @@
       <div class="blog-listing-item-wrap">
         <div class="blog-listing-item flex_row">
           {% for content in contents %}
+          {% if loop.index > 1 %}
           <div class="post-item col4 col">
             <div class="post-content-col card_inner">
               {% if content.featured_image %}
@@ -253,7 +254,7 @@
               {% endif %}
             </div>
           </div>
-
+            {% endif %}
           {% endfor %}
         </div>
         {% if not simple_list_page %}
