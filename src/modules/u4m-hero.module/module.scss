@@ -95,6 +95,16 @@
         margin: 0;
       }
     }
+    .hero-content {
+      h1:not([class]):has(+ p),
+      h2:not([class]):has(+ p),
+      h3:not([class]):has(+ p),
+      h4:not([class]):has(+ p),
+      h5:not([class]):has(+ p),
+      h6:not([class]):has(+ p) {
+        margin-bottom: 30rem;
+      }
+    }
   }
 
   .right-content {

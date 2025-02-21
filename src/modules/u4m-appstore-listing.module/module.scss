@@ -1,7 +1,6 @@
 @import "../../css/_module-imports";
 
 section.u4m-appstore-listing {
-
     .custom_app,
     .premium_app,
     .standard_app,
@@ -44,16 +43,28 @@ section.u4m-appstore-listing {
         display: none;
     }
 
-    .filter-block ul li input:checked+label,
-    ul.dropdown-menu li input:checked+label {
-        border-bottom: 2px solid $darkGray;
+    .filter-block ul li input:checked + label,
+    ul.dropdown-menu li input:checked + label {
+        // border-bottom: 2px solid $darkGray;
+        border-color: $darkGray;
     }
 
     .filter-block ul li label,
     ul.dropdown-menu li label {
         cursor: pointer;
         display: inline-block;
-        padding-bottom: 3px;
+        -webkit-appearance: none;
+        background: transparent;
+        border: 2px solid transparent;
+        border-radius: 40px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0.03em;
+        line-height: 18.2px;
+        padding: 9px 24px;
+        text-align: left;
+        text-transform: capitalize;
     }
 
     .hide,
@@ -119,7 +130,6 @@ section.u4m-appstore-listing {
                 padding: 50px 20px;
             }
         }
-
     }
 
     .detail-page-banner.no-video {
@@ -152,7 +162,7 @@ section.u4m-appstore-listing {
         margin-bottom: 29px;
     }
 
-    .main-detail-page>div {
+    .main-detail-page > div {
         padding: 0 158px;
         position: relative;
 
@@ -271,7 +281,7 @@ text-align: center;
         border-color: $black;
     }
 
-    .request-integration-section>.page-center {
+    .request-integration-section > .page-center {
         padding-left: 5%;
         padding-right: 5%;
     }
@@ -311,12 +321,12 @@ text-align: center;
     //     left: -100px;
     // }
 
-    .video-popup-block>a {
+    .video-popup-block > a {
         display: block;
         position: relative;
     }
 
-    .video-popup-block>a.popup-video-btn .play-video {
+    .video-popup-block > a.popup-video-btn .play-video {
         position: absolute;
         left: 50%;
         top: 50%;
@@ -427,7 +437,7 @@ text-align: center;
         color: $basecolor;
     }
 
-    .app-listing>div+div {
+    .app-listing > div + div {
         margin-top: 20px;
     }
 
@@ -462,7 +472,7 @@ text-align: center;
         color: $basecolor;
     }
 
-    .app-listing.app-listing-new>div+div {
+    .app-listing.app-listing-new > div + div {
         margin-top: 28px;
     }
 
@@ -512,20 +522,26 @@ text-align: center;
                 max-width: 518px;
                 width: 100%;
                 margin-left: 0;
+                position: relative;
 
                 input {
                     background: $white;
-                    border-radius: 2px 0 0 2px;
+                    border-radius: 8rem 0 0 8rem;
                     border-right: none;
                     color: $basecolor;
                     @include size16;
                     font-weight: 400;
                     line-height: 22px;
-                    width: calc(100% - 88px) !important;
+                    // width: calc(100% - 88px) !important;
                     padding: 13px 14px;
                     outline: none;
                     border: 1px solid $lightGray;
-                    border-right: 0;
+                    // border-right: 0;
+                    width: 100%;
+                    border-radius: 8px;
+                    line-height: 1.55;
+                    outline: none;
+                    padding: 20px 99px 20px 16px;
 
                     &::-webkit-input-placeholder {
                         color: $gray3;
@@ -541,16 +557,19 @@ text-align: center;
                 }
 
                 .button-block {
-                    max-width: 88px;
-                    width: 100%;
-
+                    // max-width: 88px;
+                    // width: 100%;
+                    position: absolute;
+                    right: 10px;
+                    top: 0;
                     button {
                         @include button;
                         margin: 0;
                         border: none;
-                        border-radius: 0;
                         padding: 16rem 20rem;
                         background-color: $LightPink;
+                        // border-radius: 0 12rem 12rem 0;
+                        margin: 7px 0;
 
                         &:hover {
                             background-color: $LightPink;
@@ -565,10 +584,31 @@ text-align: center;
         display: flex;
         justify-content: space-between;
         padding-top: 20px;
+        @include tabletvert {
+            flex-wrap: wrap;
+        }
+        .filter-block-container {
+            min-width: 150px;
+            width: calc(100% - 1068px);
+            max-width: 100%;
+            @include navbreak {
+                width: 25%;
+            }
+            // @include tabletmid {
+            //     width: 200px;
+            // }
 
+            @include tabletvert {
+                width: 100%;
+                padding-bottom: 20px;
+            }
+        }
         .filter-block {
             margin-right: 30px;
             margin-top: 0px;
+            @include tabletvert {
+                margin-right: 0;
+            }
 
             p.filter-title {
                 color: $basecolor;
@@ -584,13 +624,19 @@ text-align: center;
                 list-style: none;
                 margin: 0;
                 padding: 0;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
 
                 li {
-                    color: $darkGray;
-                    font-size: 13px;
-                    font-weight: 700;
-                    line-height: 10px;
-                    margin: 0 0 16px;
+                    width: 100%;
+                    margin: 0;
+                    @include tabletvert {
+                        width: auto;
+                    }
+                    @include phone {
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -629,7 +675,20 @@ text-align: center;
     }
 
     .card-main-container {
-        width: calc(100% - 216px);
+        width: calc(100% - 150px);
+        padding: 0 10px;
+        max-width: 1068px;
+        @include navbreak {
+            width: 75%;
+        }
+        // @include tabletmid {
+        //     width: calc(100% - 200px);
+        // }
+
+        @include tabletvert {
+            width: 100%;
+            padding: 0;
+        }
 
         .card-container {
             display: flex;

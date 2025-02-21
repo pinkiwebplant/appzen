@@ -1,362 +1,359 @@
 @import "../../css/_module-imports";
 
 section.u4m-blog-listing {
-//padding-top: 60px;
-padding-bottom: 80px;
+  //padding-top: 60px;
+  padding-bottom: 80px;
 
-.hs-search-field {
-  position: relative;
-
-  form {
-    margin-bottom: 12px;
+  .hs-search-field {
     position: relative;
+
+    form {
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    button {
+      padding: 0;
+      background: transparent;
+      border: 0;
+      outline: none;
+      display: none;
+    }
+
+    button.search-icon {
+      margin-left: 20px;
+      display: block;
+    }
+
+    .hs-search-field__bar {
+      &.search-open {
+        .hs-search-field__input {
+          display: block;
+        }
+
+        .search-icon {
+          display: none;
+        }
+
+        button {
+          position: absolute;
+          top: 0;
+          right: 5px;
+          height: 32px;
+          display: block;
+        }
+      }
+    }
   }
 
-  button {
-    padding: 0;
-    background: transparent;
-    border: 0;
-    outline: none;
+  .hs-search-field__input {
+    box-sizing: border-box;
+    width: 100%;
     display: none;
+    border: 1px solid $lightGray;
+    border-radius: 8px;
+    padding-right: 30px;
+    outline: none;
+
+    &::placeholder {
+      color: $sidebarplaceholder;
+    }
   }
 
-  button.search-icon {
-    margin-left: 20px;
+  .hs-search-field__bar button svg {
+    width: 24px;
+    vertical-align: middle;
+  }
+
+  .hs-search-field__suggestions {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .hs-search-field--open .hs-search-field__suggestions {
+    border: 1px solid $lightGray;
+    padding: 10px;
+  }
+
+  .hs-search-field__suggestions li {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hs-search-field__suggestions #results-for {
+    font-weight: bold;
+  }
+
+  .hs-search-field__suggestions a,
+  .hs-search-field__suggestions #results-for {
     display: block;
   }
 
-  .hs-search-field__bar {
-    &.search-open {
-      .hs-search-field__input {
-        display: block;
-      }
-
-      .search-icon {
-        display: none;
-      }
-
-      button {
-        position: absolute;
-        top: 0;
-        right: 5px;
-        height: 32px;
-        display: block;
-      }
-    }
-  }
-}
-
-.hs-search-field__input {
-  box-sizing: border-box;
-  width: 100%;
-  display: none;
-  border: 1px solid $lightGray;
-  border-radius: 8px;
-  padding-right: 30px;
-  outline: none;
-
-  &::placeholder {
-    color: $sidebarplaceholder;
-  }
-}
-
-.hs-search-field__bar button svg {
-  width: 24px;
-  vertical-align: middle;
-}
-
-.hs-search-field__suggestions {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.hs-search-field--open .hs-search-field__suggestions {
-  border: 1px solid $lightGray;
-  padding: 10px;
-}
-
-.hs-search-field__suggestions li {
-  display: block;
-  margin: 0;
-  padding: 0;
-}
-
-.hs-search-field__suggestions #results-for {
-  font-weight: bold;
-}
-
-.hs-search-field__suggestions a,
-.hs-search-field__suggestions #results-for {
-  display: block;
-}
-
-.hs-search-field__suggestions a:hover,
-.hs-search-field__suggestions a:focus {
-  background-color: rgba(0, 0, 0, 0.1);
-  outline: none;
-}
-
-.blog-pagination {
-  display: block !important;
-  width: 100%;
-  padding: 0 10px;
-  margin-bottom: 20px;
-
-  @include tabletvert {
-    padding: 0px;
+  .hs-search-field__suggestions a:hover,
+  .hs-search-field__suggestions a:focus {
+    background-color: rgba(0, 0, 0, 0.1);
+    outline: none;
   }
 
-  a {
-    display: inline-block;
-    padding: 15px 20px;
-    border: 1px solid $lightGray;
-    color: inherit;
-    border-radius: 4px;
-  }
-}
-
-.blog-pagination {
-  .no-post {
-    display: none;
-  }
-}
-
-.listing-title {
-  max-width: 720px;
-  padding-bottom: 60px;
-
-  h1 {
-    margin: 0;
-  }
-}
-
-.blog-large-post-wrap {
-  padding-bottom: 90px;
-}
-
-.post-item.large-post {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 100px;
-  align-items: center;
-
-  @include tabletvert {
-    column-gap: 0;
-  }
-
-  .post-featured-img {
-    width: calc(55% - 50px);
+  .blog-pagination {
+    display: block !important;
+    width: 100%;
+    padding: 0 10px;
+    margin-bottom: 20px;
 
     @include tabletvert {
-      width: 100%;
-      margin-bottom: 20px;
+      padding: 0px;
     }
 
-    img {
-      width: 100%;
-      border-radius: 8px;
+    a {
+      display: inline-block;
+      padding: 15px 20px;
+      border: 1px solid $lightGray;
+      color: inherit;
+      border-radius: 4px;
+    }
+  }
+
+  .blog-pagination {
+    .no-post {
+      display: none;
     }
   }
 
-  .post-content-col {
-    width: calc(45% - 50px);
+  .listing-title {
+    max-width: 720px;
+    padding-bottom: 60px;
 
-    @include tabletvert {
-      width: 100%;
-    }
-
-    .content-topic {
-      padding-bottom: 12px;
-      display: flex;
-          flex-wrap: wrap;
-          gap: 5px;
-
-      a.topic-link {
-        color: $tagcolor;
-        font-weight: 500;
-        font-size: $baseFontSize2;
-        text-transform: capitalize; 
-        border-radius: 4rem;
-        display: inline-block; 
-        line-height: 1.36;
-        padding: 4px 8px;
-        background-color: $yellowColor;
-      }
-    }
-
-    .post-title {
-      margin-bottom: 15px;
-
-      a {
-        color: inherit;
-      }
-    }
-
-    .post-item-content {
-      padding-bottom: 28px;
-    }
-
-    .post-item-link {
-      text-align: right;
-
-      svg {
-        width: 10px;
-        height: 10px;
-      }
-    }
-  }
-}
-
-.blog-listing-wrap {
-
-  &::after,
-  &::before {
-    content: "";
-    display: table;
-  }
-
-  &::after {
-    clear: both;
-  }
-}
-
-.listing-sidebar {
-  max-width: 320px;
-  width: 100%;
-  padding-right: 20px;
-  float: left;
-  position: sticky;
-  top: 46px;
-
-  @include tabletvert {
-    max-width: 100%;
-    padding-right: 0;
-    position: static;
-  }
-
-  >h6 {
-    margin: 0;
-    padding-bottom: 24px;
-    border-bottom: 1px solid $lightGray;
-    margin-bottom: 25px;
-    font-weight: 400;
-  }
-
-  .sidebar-tag {
-    margin-bottom: 40px;
-
-    ul {
+    h1 {
       margin: 0;
-      padding: 0;
-      list-style: none;
-      font-size: $baseFontSize3;
+    }
+  }
 
-      li {
-        margin: 0;
-        letter-spacing: 0;
-        margin-bottom: 10px;
+  .blog-large-post-wrap {
+    padding-bottom: 90px;
+  }
+
+  .post-item.large-post {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 100px;
+    align-items: center;
+
+    @include tabletvert {
+      column-gap: 0;
+    }
+
+    .post-featured-img {
+      width: calc(55% - 50px);
+
+      @include tabletvert {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      img {
+        width: 100%;
+        border-radius: 8px;
+      }
+    }
+
+    .post-content-col {
+      width: calc(45% - 50px);
+
+      @include tabletvert {
+        width: 100%;
+      }
+
+      .content-topic {
+        padding-bottom: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+
+        a.topic-link {
+          color: $tagcolor;
+          font-weight: 500;
+          font-size: $baseFontSize2;
+          text-transform: capitalize;
+          border-radius: 4rem;
+          display: inline-block;
+          line-height: 1.36;
+          padding: 4px 8px;
+          background-color: $yellowColor;
+        }
+      }
+
+      .post-title {
+        margin-bottom: 15px;
 
         a {
-          display: inline-block;
-          padding: 8px 24px;
           color: inherit;
-          text-transform: capitalize;
         }
+      }
 
-        &.active a {
-          border: 2px solid $sidebarplaceholder;
-          border-radius: 40px;
-          padding: 8px 24px;
+      .post-item-content {
+        padding-bottom: 28px;
+      }
+
+      .post-item-link {
+        text-align: right;
+
+        svg {
+          width: 10px;
+          height: 10px;
         }
       }
     }
   }
 
-  .sidebar-form {
-    @include sidebar-form;
-  }
-}
-
-.blog-listing-item-wrap {
-  width: calc(100% - 320px);
-  float: left;
-  padding-top: 46px;
-
-  @include tabletvert {
-    width: 100%;
-  }
-
-  .post-item {
-    display: flex;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-
-    @include tabletmid {
-      width: 50%;
+  .blog-listing-wrap {
+    &::after,
+    &::before {
+      content: "";
+      display: table;
     }
+
+    &::after {
+      clear: both;
+    }
+  }
+
+  .listing-sidebar {
+    max-width: 320px;
+    width: 100%;
+    padding-right: 20px;
+    float: left;
+    position: sticky;
+    top: 46px;
+
+    @include tabletvert {
+      max-width: 100%;
+      padding-right: 0;
+      position: static;
+    }
+
+    > h6 {
+      margin: 0;
+      padding-bottom: 24px;
+      border-bottom: 1px solid $lightGray;
+      margin-bottom: 25px;
+      font-weight: 400;
+    }
+
+    .sidebar-tag {
+      margin-bottom: 40px;
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: $baseFontSize3;
+
+        li {
+          margin: 0;
+          letter-spacing: 0;
+          margin-bottom: 10px;
+
+          a {
+            display: inline-block;
+            padding: 8px 24px;
+            color: inherit;
+            text-transform: capitalize;
+          }
+
+          &.active a {
+            border: 2px solid $sidebarplaceholder;
+            border-radius: 40px;
+            padding: 8px 24px;
+          }
+        }
+      }
+    }
+
+    .sidebar-form {
+      @include sidebar-form;
+    }
+  }
+
+  .blog-listing-item-wrap {
+    width: calc(100% - 320px);
+    float: left;
+    padding-top: 46px;
 
     @include tabletvert {
       width: 100%;
     }
-  }
 
-  .card_inner {
-    @include cardBase;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    min-height: 206px;
-    .card_img {
-      border-radius: 4rem;
-      overflow: hidden;
-      width: 100%;
-      margin-bottom: 20px;
-      .card_img_inner {
-        background-position: 50%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        padding-bottom: 100%;
-        position: relative;
-    }
-    }
-    .content-topic {
-      padding-bottom: 12px;
+    .post-item {
       display: flex;
-          flex-wrap: wrap;
-          gap: 5px;
-      a.topic-link { 
-        color: $tagcolor;
-        font-weight: 500;
-        font-size: $baseFontSize2;
-        text-transform: capitalize; 
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+
+      @include tabletmid {
+        width: 50%;
+      }
+
+      @include tabletvert {
+        width: 100%;
+      }
+    }
+
+    .card_inner {
+      @include cardBase;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      min-height: 206px;
+      .card_img {
         border-radius: 4rem;
-        display: inline-block; 
-        line-height: 1.36;
-        padding: 4px 8px;
-        background-color: $yellowColor;
-
-         
+        overflow: hidden;
+        width: 100%;
+        margin-bottom: 20px;
+        .card_img_inner {
+          background-position: 50%;
+          background-repeat: no-repeat;
+          background-size: cover;
+          padding-bottom: 100%;
+          position: relative;
+        }
       }
-    }
-
-    .post-title {
-      margin-bottom: 15px;
-
-      a {
-        color: inherit;
+      .content-topic {
+        padding-bottom: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        a.topic-link {
+          color: $tagcolor;
+          font-weight: 500;
+          font-size: $baseFontSize2;
+          text-transform: capitalize;
+          border-radius: 4rem;
+          display: inline-block;
+          line-height: 1.36;
+          padding: 4px 8px;
+          background-color: $yellowColor;
+        }
       }
-    }
 
-    .post-item-link {
-      text-align: right;
-      margin-top: auto;
+      .post-title {
+        margin-bottom: 15px;
 
-      svg {
-        height: 10px;
-        width: 10px;
+        a {
+          color: inherit;
+        }
+      }
+
+      .post-item-link {
+        text-align: right;
+        margin-top: auto;
+
+        svg {
+          height: 10px;
+          width: 10px;
+        }
       }
     }
   }
-}
 }

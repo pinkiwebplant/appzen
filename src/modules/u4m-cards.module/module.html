@@ -8,7 +8,7 @@
 <div class="page-center">
   {% if module.include_intro %} 
   <div class='intro {{ module.module_overrides.intro_content_alignment }}'>
-    <div class='intro_cnt'>
+    <div class='intro_cnt' {% if module.module_settings.intro_content_width %}style="width:{{ module.module_settings.intro_content_width }}%"{% endif %}>
       {{ module.intro_content }}
     </div>
   </div>
@@ -21,24 +21,24 @@
     {% for item in module.cards_group %}
     <div class="card_item {{ module.module_settings.column_width }} col {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.card_color_theme }}_color {% endif %}">
       <div class="card_inner {% if module.module_overrides.enable_overrides %}{{ module.module_overrides.card_background_color }}{% endif %}">
-      {% if item.include_link %}
+        {% if item.include_link %}
         {% set href = item.link.url.href %}
-	{% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
-	  {% set href = "mailto:" + href %}
-	{% endif %}
-          <a
-             {% if item.link.url.type is equalto "CALL_TO_ACTION"  %}
-             href="{{ href }}" 
-             {% else %}
-             href="{{ href|escape_url }}"
-             {% endif %}
-             {% if item.link.open_in_new_tab %}
-             target="_blank"
-             {% endif %}
-             {% if item.link.rel %}
-             rel="{{ item.link.rel|escape_attr }}"
-             {% endif %} class="absLink"></a>
-            {% endif %}
+        {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+        {% endif %}
+        <a
+           {% if item.link.url.type is equalto "CALL_TO_ACTION"  %}
+           href="{{ href }}" 
+           {% else %}
+           href="{{ href|escape_url }}"
+           {% endif %}
+           {% if item.link.open_in_new_tab %}
+           target="_blank"
+           {% endif %}
+           {% if item.link.rel %}
+           rel="{{ item.link.rel|escape_attr }}"
+           {% endif %} class="absLink"></a>
+        {% endif %}
 
 
         {% if item.select_icon_type %}
@@ -97,7 +97,7 @@
               <path d="M5.5 1L10.5 6L5.5 11" stroke="#574D4A"/>
               <path d="M10.5 6L0.5 6" stroke="#574D4A"/>
             </svg>
-          {% endif %}
+            {% endif %}
           </a>
         </div>
         {% endif %}
@@ -112,17 +112,14 @@
 
 </section>
 
-
-
-
 {% require_js %}
-  <script>
-    $(function () {
-      $(".u4m-cards.{{ name }} .card_inner .card_title").matchHeight();
-    });
-  </script>
-  {% end_require_js %}
-  
+<script>
+  $(function () {
+    $(".u4m-cards.{{ name }} .card_inner .card_title").matchHeight();
+  });
+</script>
+{% end_require_js %}
+
 
 
 

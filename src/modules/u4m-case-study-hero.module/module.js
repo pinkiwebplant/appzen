@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ".u4m-case-study-hero .banner_section"
   );
   const bannerImage = bannerSection.querySelector("img");
-  const pageCenter = document.querySelector(".page-center");
+  const pageCenter = document.querySelector(".banner_inner_section");
 
   const setInitialStyles = () => {
     bannerImage.style.transition = "width 0.4s linear, transform 0.4s ease"; // Ensure smooth transition is applied
@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Get the width of `.page-center`
     const pageCenterWidth = pageCenter.offsetWidth;
-
     if (triggerPoint <= 0) {
       // Calculate the scroll progress relative to the trigger point
       const progress = Math.min(
@@ -34,21 +33,25 @@ document.addEventListener("DOMContentLoaded", function () {
       if (progress < 1) {
         // Zoom out effect: Interpolate width from 100% to page-center width
         const width =
-          100 - progress * (100 - (pageCenterWidth / window.innerWidth) * 100);
+              100 - progress * (100 - (pageCenterWidth / window.innerWidth) * 100);
         bannerImage.style.width = `${width}%`;
-      } else {
+      } 
+      else {
         // Stuck at page-center width
         bannerImage.style.width = `${pageCenterWidth}px`;
       }
-    } else {
+    } 
+    else {
       // Reset image to full width when scrolling back up
       bannerImage.style.width = "100%";
     }
   };
 
-  // Apply initial styles and attach event listeners
+  window.onload = () => {
+   setInitialStyles();
+  };
   setInitialStyles();
-  window.addEventListener("scroll", handleScroll);
-  window.addEventListener("resize", handleScroll);
-  handleScroll();
+  window.addEventListener("scroll", handleScroll,handleScroll);
+  window.addEventListener("resize", handleScroll,handleScroll);
+//   handleScroll();
 });
