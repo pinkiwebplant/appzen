@@ -77,7 +77,12 @@
               {% if row.title %}
               <div class="title">
                 <h3>
-                  <a  class="" href="/resources/{{ row.hs_path }}" style="color: inherit;">{{ row.title }}</a>
+                {% if row.alternative_url%}
+                  {% set cardHref = row.alternative_url %}
+                {% else %}
+                  {% set cardHref = "/resources/{{ row.hs_path }}" %}
+                {% endif %}
+                  <a class="" href="{{ cardHref }}" style="color: inherit;">{{ row.title }}</a>
                 </h3>
               </div>
               {% endif %}
@@ -86,10 +91,15 @@
                 {{ row.description|striptags|truncatehtml(150, '...')}}
               </div>
               {% endif %}
-              {% if row.hs_path %}
+              {% if row.hs_path or row.alternative_url  %}
               <div class="btn_wrapper">
                 <div class="button_item">
-                  <a href="/resources/{{ row.hs_path }}" class="hs-button">
+                {% if row.alternative_url%}
+                  {% set cardHref = row.alternative_url %}
+                {% else %}
+                  {% set cardHref = "/resources/{{ row.hs_path }}" %}
+                {% endif %}
+                  <a href="{{ cardHref }}" class="hs-button">
                     Sign Up
                   </a>
                 </div>
@@ -134,17 +144,22 @@
                     {{ row.description|striptags|truncatehtml(150, '...')}}
                   </div>
                   {% endif %} #}
-                  {% if row.hs_path %}
+                  {% if row.hs_path or row.alternative_url  %}
                   {% if module.select_small_card_link_type %}
                   <div class="btn_wrapper">
                     <div class="button_item">
+                    {% if row.alternative_url%}
+                      {% set cardHref = row.alternative_url %}
+                    {% else %}
+                      {% set cardHref = "/resources/{{ row.hs_path }}" %}
+                    {% endif %}
                       {% if module.select_small_card_link_type == "button" %}
-                      <a class="hs-button" href="/resources/{{ row.hs_path }}">
+                      <a class="hs-button" href="{{ cardHref }}">
                         {{ module.small_card_button_text }}
                       </a>
                       {% endif %}
                       {% if module.select_small_card_link_type == "arrow" %}
-                      <a class="webinar-link" href="/resources/{{ row.hs_path }}">{{ arrowIcon }}</a> 
+                      <a class="webinar-link" href="{{ cardHref }}">{{ arrowIcon }}</a> 
                       {% endif %}
                     </div>
                   </div>

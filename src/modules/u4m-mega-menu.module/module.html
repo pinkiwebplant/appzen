@@ -106,9 +106,13 @@
     </div>		
     {% endif %}
     <div class="blogCardttl">
-      {% if type.select_row.columns.hs_path %}
-
-      <a class="hubdbTableLink" href="/resources/{{ type.select_row.columns.hs_path }}">
+      {% if type.select_row.columns.hs_path or type.select_row.columns.alternative_url %}
+        {% if type.select_row.columns.alternative_url %}
+        {% set cardHref = type.select_row.columns.alternative_url %}
+          {% else %}
+            {% set cardHref = "/resources/{{ type.select_row.columns.hs_path }}" %}
+          {% endif %}
+      <a class="hubdbTableLink" href="{{ cardHref }}">
         {{ type.select_row.columns.title }}
       </a>
       {% else %}
@@ -158,13 +162,16 @@
       {% endif %}
     </div>					
     <div class="blogCardttl">
+
       {% if type[item2.hubdb_setttings.column_link] %}
       {% if type[item2.hubdb_setttings.column_link] == 'hs_path' %}
-      {% set href = request.full_url ~ '/' ~ type.hs_path %}
+        {% set href = '/resources/{{ type.hs_path }}' %}
+      {% elif type[item2.hubdb_setttings.column_link] == 'alternative_url' %}
+        {% set href = type.alternative_url %}
       {% else %}
       {% set href = type[item2.hubdb_setttings.column_link] %}
       {% endif %}
-      <a class="hubdbTableLink" href="/resources/{{ href }}">
+      <a class="hubdbTableLink hrefTested " href="{{ href }}">
         {{ type[item2.hubdb_setttings.column_title] }}
       </a>
       {% else %}
@@ -388,9 +395,14 @@
               {% endif %}
               {% if item2.hubdb_setttings.resource_type == "post_by_title" %}
               {% for type in types %} 
-              {% if type.select_row.columns.hs_path %}
+              {% if type.select_row.columns.hs_path or type.select_row.columns.alternative_url%}
+                {% if type.select_row.columns.alternative_url %}
+                  {% set cardHref = type.select_row.columns.alternative_url %}
+                {% else %}
+                  {% set cardHref = "/resources/{{ type.select_row.columns.hs_path }}" %}
+                {% endif %}
               <li>
-                <a class="item3 type-hubdb" href="/resources/{{ type.select_row.columns.hs_path }}">
+                <a class="item3 type-hubdb alternativeTest" href="{{ cardHref }}">
                   {{ type.select_row.columns.title }}
                 </a>
               </li>
@@ -400,14 +412,16 @@
               {% endfor %}
               {% else %}
               {% for type in types %}
-              {% if type[item2.hubdb_setttings.column_link] %}
-              {% if type[item2.hubdb_setttings.column_link] == 'hs_path' %}
-              {% set href = request.full_url ~ '/' ~ type.hs_path %}
-              {% else %}
-              {% set href = type[item2.hubdb_setttings.column_link] %}
-              {% endif %}
+                {% if type[item2.hubdb_setttings.column_link] %}
+                  {% if type[item2.hubdb_setttings.column_link] == 'hs_path' %}
+                    {% set href = '/resources/{{ type.hs_path }}' %}
+                  {% elif type[item2.hubdb_setttings.column_link] == 'alternative_url' %}
+                    {% set href = type.alternative_url %}
+                  {% else %}
+                  {% set href = type[item2.hubdb_setttings.column_link] %}
+                  {% endif %}
               <li>
-                <a class="item3 type-hubdb" href="/resources/{{ href }}">
+                <a class="item3 type-hubdb hrefTested" href="{{ href }}">
                   {{ type[item2.hubdb_setttings.column_title] }}
                 </a>
               </li>
