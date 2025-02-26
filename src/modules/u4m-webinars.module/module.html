@@ -16,7 +16,7 @@
 {% set table = module.select_table %}
 {% set category ="Webinars"%}
 {% set count = module.number_of_posts %}
-{% set category_query = 'orderBy=hs_created_at&categories__in=' ~ category ~ '&limit=' ~ count %}
+{% set category_query = 'orderBy=webinar_date&categories__in=' ~ category ~ '&limit=' ~ count %}
 {% set data = hubdb_table_rows(table,category_query) %}
 
 
@@ -54,34 +54,33 @@
                 <div class="date_sec">
                   {#                                       {{ iconCalendar }} {{ row.publish_date|datetimeformat('%b %e, %Y') }} #}
 
-                  <span> {{ iconCalendar }} {{ row.webinar_date }}</span>
+                  {#                   <span> {{ iconCalendar }} {{ row.webinar_date }}</span> #}
 
 
-
-
-                  {#
-                  <span class="reading-minutes">
-                    {{ iconSchedule }}
-                    {% set initialPostWords = row.description|striptags|wordcount %}
-                    {% set calculatedPostWords = initialPostWords / 100 %}
-                    {% set finishedPostWords = calculatedPostWords|divide(300)|round(2) %}
-                    {% set number = finishedPostWords|round %}
-                    {% if number < 1 %}
-                    Less than one min
-                    {% else %}
-                    {{ finishedPostWords|round }} minutes
+                  <span>{{ iconCalendar }} {{ row.webinar_date|datetimeformat('%A, %B') }} {% set day = row.webinar_date|datetimeformat('%e') %}
+                    {% if day >= 4 and day <= 20 %}
+                    {% set day = day + "th" %}
+                    {% elif day >= 24 and day <= 30 %}
+                    {% set day = day + "th" %}
+                    {% elif day == 1 or day == 21 or day == 31 %}
+                    {% set day = day + "st" %}
+                    {% elif day == 2 or day == 22 %}
+                    {% set day = day + "nd" %}
+                    {% elif day == 3 or day == 23 %}
+                    {% set day = day + "rd" %}
                     {% endif %}
-                  </span>#}
+                    {{ day }}</span>
+
                 </div>
               </div>
               {% if row.title %}
               <div class="title">
                 <h3>
-                {% if row.alternative_url%}
+                  {% if row.alternative_url%}
                   {% set cardHref = row.alternative_url %}
-                {% else %}
+                  {% else %}
                   {% set cardHref = "/resources/{{ row.hs_path }}" %}
-                {% endif %}
+                  {% endif %}
                   <a class="" href="{{ cardHref }}" style="color: inherit;">{{ row.title }}</a>
                 </h3>
               </div>
@@ -94,11 +93,11 @@
               {% if row.hs_path or row.alternative_url  %}
               <div class="btn_wrapper">
                 <div class="button_item">
-                {% if row.alternative_url%}
+                  {% if row.alternative_url%}
                   {% set cardHref = row.alternative_url %}
-                {% else %}
+                  {% else %}
                   {% set cardHref = "/resources/{{ row.hs_path }}" %}
-                {% endif %}
+                  {% endif %}
                   <a href="{{ cardHref }}" class="hs-button">
                     Sign Up
                   </a>
@@ -129,7 +128,20 @@
                   <div class="date_section">
                     {#                     <span class="{{ row.categories.name|lower|replace(' ', '-') }}">{{ row.categories.name }}</span> #}
                     <div class="date_sec">
-                      <span>       {{ iconCalendar }} {{ row.webinar_date }}</span>
+{#                       <span>       {{ iconCalendar }} {{ row.webinar_date }}</span> #}
+                       <span>{{ iconCalendar }} {{ row.webinar_date|datetimeformat('%A, %B') }} {% set day = row.webinar_date|datetimeformat('%e') %}
+                    {% if day >= 4 and day <= 20 %}
+                    {% set day = day + "th" %}
+                    {% elif day >= 24 and day <= 30 %}
+                    {% set day = day + "th" %}
+                    {% elif day == 1 or day == 21 or day == 31 %}
+                    {% set day = day + "st" %}
+                    {% elif day == 2 or day == 22 %}
+                    {% set day = day + "nd" %}
+                    {% elif day == 3 or day == 23 %}
+                    {% set day = day + "rd" %}
+                    {% endif %}
+                    {{ day }}</span>
                     </div>
                   </div>
                   {% if row.title %}
@@ -148,11 +160,11 @@
                   {% if module.select_small_card_link_type %}
                   <div class="btn_wrapper">
                     <div class="button_item">
-                    {% if row.alternative_url%}
+                      {% if row.alternative_url%}
                       {% set cardHref = row.alternative_url %}
-                    {% else %}
+                      {% else %}
                       {% set cardHref = "/resources/{{ row.hs_path }}" %}
-                    {% endif %}
+                      {% endif %}
                       {% if module.select_small_card_link_type == "button" %}
                       <a class="hs-button" href="{{ cardHref }}">
                         {{ module.small_card_button_text }}

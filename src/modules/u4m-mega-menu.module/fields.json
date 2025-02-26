@@ -402,6 +402,26 @@
         "display_width" : null,
         "default" : [ ]
       }, {
+        "id" : "57c2c423-b445-d8a6-46ed-900f1c5ed02d",
+        "name" : "topic_name",
+        "label" : "Topic Name",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "mega_menu.child_menu.hubdb_setttings.resource_type",
+          "controlling_value_regex" : "category",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "Webinar"
+      }, {
         "id" : "a1ecd86f-85d3-73a3-72c1-5f567de500bf",
         "name" : "column_feature_image",
         "label" : "Column Featured Image",
@@ -461,26 +481,6 @@
         "type" : "text",
         "display_width" : null,
         "default" : "categories"
-      }, {
-        "id" : "57c2c423-b445-d8a6-46ed-900f1c5ed02d",
-        "name" : "topic_name",
-        "label" : "Topic Name",
-        "required" : false,
-        "locked" : false,
-        "validation_regex" : "",
-        "visibility" : {
-          "controlling_field" : null,
-          "controlling_field_path" : "mega_menu.child_menu.hubdb_setttings.resource_type",
-          "controlling_value_regex" : "category",
-          "property" : null,
-          "operator" : "EQUAL",
-          "access" : null
-        },
-        "allow_new_line" : false,
-        "show_emoji_picker" : false,
-        "type" : "text",
-        "display_width" : null,
-        "default" : "webinar"
       }, {
         "id" : "0b71adb5-d498-8aac-93ab-8532d4321ce8",
         "name" : "column_date",
@@ -550,10 +550,10 @@
       "default" : {
         "resource_type" : "recent",
         "posts_by_title" : [ ],
+        "topic_name" : "Webinar",
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
-        "topic_name" : "webinar",
         "column_date" : "",
         "column_link" : "link",
         "column_read_minutes" : ""
@@ -786,10 +786,10 @@
       "hubdb_setttings" : {
         "resource_type" : "recent",
         "posts_by_title" : [ ],
+        "topic_name" : "Webinar",
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
-        "topic_name" : "webinar",
         "column_date" : "",
         "column_link" : "link",
         "column_read_minutes" : ""
@@ -809,6 +809,7 @@
         "title" : "Title"
       },
       "number_of_posts" : 3,
+      "enable_button" : false,
       "button" : {
         "text" : "Button",
         "link" : {
@@ -820,8 +821,7 @@
           "open_in_new_tab" : false,
           "no_follow" : false
         }
-      },
-      "boolean_field" : false
+      }
     }, {
       "content_type" : "menu",
       "title" : "Accounts payable",
@@ -867,10 +867,10 @@
       "hubdb_setttings" : {
         "resource_type" : "recent",
         "posts_by_title" : [ ],
+        "topic_name" : "Webinar",
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
-        "topic_name" : "webinar",
         "column_date" : "",
         "column_link" : "link",
         "column_read_minutes" : ""
@@ -890,6 +890,7 @@
         "title" : "Title"
       },
       "number_of_posts" : 3,
+      "enable_button" : false,
       "button" : {
         "text" : "Button",
         "link" : {
@@ -901,8 +902,7 @@
           "open_in_new_tab" : false,
           "no_follow" : false
         }
-      },
-      "boolean_field" : false
+      }
     }, {
       "content_type" : "menu",
       "title" : "Accounts payable",
@@ -948,10 +948,10 @@
       "hubdb_setttings" : {
         "resource_type" : "recent",
         "posts_by_title" : [ ],
+        "topic_name" : "Webinar",
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
-        "topic_name" : "webinar",
         "column_date" : "",
         "column_link" : "link",
         "column_read_minutes" : ""
@@ -971,6 +971,7 @@
         "title" : "Title"
       },
       "number_of_posts" : 3,
+      "enable_button" : false,
       "button" : {
         "text" : "Button",
         "link" : {
@@ -982,8 +983,7 @@
           "open_in_new_tab" : false,
           "no_follow" : false
         }
-      },
-      "boolean_field" : false
+      }
     } ]
   }, {
     "id" : "0754c0b7-6e81-4232-bc60-b4265adab575",
@@ -1182,10 +1182,10 @@
       "hubdb_setttings" : {
         "resource_type" : "recent",
         "posts_by_title" : [ ],
+        "topic_name" : "Webinar",
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
-        "topic_name" : "webinar",
         "column_date" : "",
         "column_link" : "link",
         "column_read_minutes" : ""
@@ -1205,16 +1205,19 @@
         "title" : "Title"
       },
       "number_of_posts" : 3,
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      },
-      "text" : "Button"
+      "enable_button" : false,
+      "button" : {
+        "text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
     }, {
       "content_type" : "menu",
       "title" : "Accounts payable",
@@ -1260,10 +1263,10 @@
       "hubdb_setttings" : {
         "resource_type" : "recent",
         "posts_by_title" : [ ],
+        "topic_name" : "Webinar",
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
-        "topic_name" : "webinar",
         "column_date" : "",
         "column_link" : "link",
         "column_read_minutes" : ""
@@ -1283,16 +1286,19 @@
         "title" : "Title"
       },
       "number_of_posts" : 3,
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      },
-      "text" : "Button"
+      "enable_button" : false,
+      "button" : {
+        "text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
     }, {
       "content_type" : "menu",
       "title" : "Accounts payable",
@@ -1338,10 +1344,10 @@
       "hubdb_setttings" : {
         "resource_type" : "recent",
         "posts_by_title" : [ ],
+        "topic_name" : "Webinar",
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
-        "topic_name" : "webinar",
         "column_date" : "",
         "column_link" : "link",
         "column_read_minutes" : ""
@@ -1361,16 +1367,19 @@
         "title" : "Title"
       },
       "number_of_posts" : 3,
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      },
-      "text" : "Button"
+      "enable_button" : false,
+      "button" : {
+        "text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
     } ],
     "bottom_section" : {
       "items" : [ {
@@ -1457,10 +1466,10 @@
       "hubdb_setttings" : {
         "resource_type" : "recent",
         "posts_by_title" : [ ],
+        "topic_name" : "Webinar",
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
-        "topic_name" : "webinar",
         "column_date" : "",
         "column_link" : "link",
         "column_read_minutes" : ""
@@ -1480,16 +1489,19 @@
         "title" : "Title"
       },
       "number_of_posts" : 3,
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      },
-      "text" : "Button"
+      "enable_button" : false,
+      "button" : {
+        "text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
     }, {
       "content_type" : "menu",
       "title" : "Accounts payable",
@@ -1535,10 +1547,10 @@
       "hubdb_setttings" : {
         "resource_type" : "recent",
         "posts_by_title" : [ ],
+        "topic_name" : "Webinar",
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
-        "topic_name" : "webinar",
         "column_date" : "",
         "column_link" : "link",
         "column_read_minutes" : ""
@@ -1558,16 +1570,19 @@
         "title" : "Title"
       },
       "number_of_posts" : 3,
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      },
-      "text" : "Button"
+      "enable_button" : false,
+      "button" : {
+        "text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
     }, {
       "content_type" : "menu",
       "title" : "Accounts payable",
@@ -1613,10 +1628,10 @@
       "hubdb_setttings" : {
         "resource_type" : "recent",
         "posts_by_title" : [ ],
+        "topic_name" : "Webinar",
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
-        "topic_name" : "webinar",
         "column_date" : "",
         "column_link" : "link",
         "column_read_minutes" : ""
@@ -1636,16 +1651,19 @@
         "title" : "Title"
       },
       "number_of_posts" : 3,
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      },
-      "text" : "Button"
+      "enable_button" : false,
+      "button" : {
+        "text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
     } ],
     "bottom_section" : {
       "items" : [ {
@@ -1732,10 +1750,10 @@
       "hubdb_setttings" : {
         "resource_type" : "recent",
         "posts_by_title" : [ ],
+        "topic_name" : "Webinar",
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
-        "topic_name" : "webinar",
         "column_date" : "",
         "column_link" : "link",
         "column_read_minutes" : ""
@@ -1755,16 +1773,19 @@
         "title" : "Title"
       },
       "number_of_posts" : 3,
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      },
-      "text" : "Button"
+      "enable_button" : false,
+      "button" : {
+        "text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
     }, {
       "content_type" : "menu",
       "title" : "Accounts payable",
@@ -1810,10 +1831,10 @@
       "hubdb_setttings" : {
         "resource_type" : "recent",
         "posts_by_title" : [ ],
+        "topic_name" : "Webinar",
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
-        "topic_name" : "webinar",
         "column_date" : "",
         "column_link" : "link",
         "column_read_minutes" : ""
@@ -1833,16 +1854,19 @@
         "title" : "Title"
       },
       "number_of_posts" : 3,
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      },
-      "text" : "Button"
+      "enable_button" : false,
+      "button" : {
+        "text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
     }, {
       "content_type" : "menu",
       "title" : "Accounts payable",
@@ -1888,10 +1912,10 @@
       "hubdb_setttings" : {
         "resource_type" : "recent",
         "posts_by_title" : [ ],
+        "topic_name" : "Webinar",
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
-        "topic_name" : "webinar",
         "column_date" : "",
         "column_link" : "link",
         "column_read_minutes" : ""
@@ -1911,16 +1935,19 @@
         "title" : "Title"
       },
       "number_of_posts" : 3,
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      },
-      "text" : "Button"
+      "enable_button" : false,
+      "button" : {
+        "text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
     } ],
     "bottom_section" : {
       "items" : [ {
@@ -2007,10 +2034,10 @@
       "hubdb_setttings" : {
         "resource_type" : "recent",
         "posts_by_title" : [ ],
+        "topic_name" : "Webinar",
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
-        "topic_name" : "webinar",
         "column_date" : "",
         "column_link" : "link",
         "column_read_minutes" : ""
@@ -2030,16 +2057,19 @@
         "title" : "Title"
       },
       "number_of_posts" : 3,
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      },
-      "text" : "Button"
+      "enable_button" : false,
+      "button" : {
+        "text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
     }, {
       "content_type" : "menu",
       "title" : "Accounts payable",
@@ -2085,10 +2115,10 @@
       "hubdb_setttings" : {
         "resource_type" : "recent",
         "posts_by_title" : [ ],
+        "topic_name" : "Webinar",
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
-        "topic_name" : "webinar",
         "column_date" : "",
         "column_link" : "link",
         "column_read_minutes" : ""
@@ -2108,16 +2138,19 @@
         "title" : "Title"
       },
       "number_of_posts" : 3,
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      },
-      "text" : "Button"
+      "enable_button" : false,
+      "button" : {
+        "text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
     }, {
       "content_type" : "menu",
       "title" : "Accounts payable",
@@ -2163,10 +2196,10 @@
       "hubdb_setttings" : {
         "resource_type" : "recent",
         "posts_by_title" : [ ],
+        "topic_name" : "Webinar",
         "column_feature_image" : "image",
         "column_title" : "title",
         "column_topic" : "categories",
-        "topic_name" : "webinar",
         "column_date" : "",
         "column_link" : "link",
         "column_read_minutes" : ""
@@ -2186,16 +2219,19 @@
         "title" : "Title"
       },
       "number_of_posts" : 3,
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      },
-      "text" : "Button"
+      "enable_button" : false,
+      "button" : {
+        "text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
     } ],
     "bottom_section" : {
       "items" : [ {
