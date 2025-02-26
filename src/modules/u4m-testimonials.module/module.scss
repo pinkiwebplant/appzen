@@ -216,11 +216,16 @@ section.u4m-testimonials {
         border: 1px solid;
         padding: 13rem 20rem;
         border-radius: 4rem;
-
-        img {
-          max-width: 10px;
+        svg {
           vertical-align: middle;
           margin-left: 3.5px;
+          transition: $animation2;
+        }
+        &:hover {
+          background-color: $CassavaLight;
+          svg {
+            transform: translateX(8rem);
+          }
         }
       }
     }

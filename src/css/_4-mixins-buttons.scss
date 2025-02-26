@@ -2,8 +2,6 @@
 @mixin button {
   display: inline-block;
   font-family: $font1;
-  color: $basecolor;
-  background-color: $yellowColor;
   border: 0;
   border-radius: $border1;
   padding: 15rem 20rem;
@@ -16,12 +14,6 @@
   cursor: pointer;
   text-align: center;
   letter-spacing: 0.03em;
-
-  &:hover,
-  &:focus {
-    background-color: $yellowColor;
-    color: $basecolor;
-  }
 }
 
 //
@@ -281,6 +273,17 @@
 
 //
 
+@mixin primary {
+  @include button;
+  color: $basecolor;
+  background-color: $yellowColor;
+  &:hover,
+  &:focus {
+    background: $CassavaLightbtn;
+    color: $basecolor;
+  }
+}
+
 @mixin secondary {
   @include button;
   border: 1px solid $basecolor;
@@ -298,8 +301,9 @@
   color: $white;
   &:hover,
   &:focus {
-    background-color: $basecolor;
+    background-color: $CassavaLight;
     color: $white;
+    border-color: $CassavaLight;
   }
 }
 
@@ -310,8 +314,18 @@
   border: 1px solid $white;
   &:hover,
   &:focus {
-    background-color: $basecolor;
+    background-color: $CassavaLight;
     color: $white;
     border: 1px solid $white;
+  }
+}
+
+@mixin redBtn {
+  @include button;
+  background-color: $LightPink;
+  color: $basecolor;
+  &:hover,
+  &:focus {
+    background: $CoralLight;
   }
 }

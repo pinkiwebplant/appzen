@@ -1,0 +1,77 @@
+<!--
+templateType: page
+isAvailableForNewContent: false
+-->  
+
+{% macro buttonGroup(items)%}
+
+  {% if items %}
+  
+  {% if items.button_type == 'stnd' %} 
+  {% set href = items.button_link.url.href %}
+  {% if items.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+  {% set href = "mailto:" + href %}
+  {% endif %}
+  <a class="{{ items.theme }}{% if items.include_arrow %} cmbtn{% endif %}"
+     {% if items.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+     href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+     {% else %}
+     href="{{ href|escape_url }}"
+     {% endif %}
+     {% if items.button_link.open_in_new_tab %}
+     target="_blank"
+     {% endif %}
+     {% if items.button_link.rel %}
+     rel="{{ items.button_link.rel|escape_attr }}"
+     {% endif %}
+     >
+    {{ items.button_text }}
+    {% if items.include_arrow %}
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M5.5 1L10.5 6L5.5 11" stroke="#3D3533"/><path d="M10.5 6L0.5 6" stroke="#3D3533"/></svg>
+    {% endif %}
+  </a>
+  {% else %}
+  {% cta guid="{{ items.cta_field }}" %}
+  {% endif %}
+  {% endif %}
+  {% endmacro %}
+  
+  
+  {# #}
+  
+  
+  {% macro buttonGroupItems(btnItems)%}
+  {% if btnItems %}
+    {% for item in btnItems %}
+    {% if item.button_type == 'stnd' %} 
+    {% set href = item.button_link.url.href %}
+    {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+    {% set href = "mailto:" + href %}
+    {% endif %}
+    <a class="{{ item.theme }}"
+       {% if item.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+       href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+       {% else %}
+       href="{{ href }}"
+       {% endif %}
+       {% if item.button_link.open_in_new_tab %}
+       target="_blank"
+       {% endif %}
+       {% if item.button_link.rel %}
+       rel="{{ item.button_link.rel }}"
+       {% endif %}
+       >
+      {{ item.button_text }}
+    </a>
+    {% else %}
+    {% cta guid="{{ item.cta_field }}" %}
+    {% endif %}
+    {% endfor %}
+  {% endif %}
+  {% endmacro%}
+  
+  
+  
+  
+  
+  

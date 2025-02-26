@@ -5,156 +5,109 @@
 {% include "../partials/u4-module-includes.html" %}
 {% if module.include_intro %}
 <div class='intro'>
-	<div class='intro_cnt page-center'>
-		{{ module.intro_content }}
-	</div>
+  <div class='intro_cnt page-center'>
+    {{ module.intro_content }}
+  </div>
 </div>
 {% endif %}
 
- 
+
 <div class="wrapper updatedJs">
-	<div class="page-center"> 
+  <div class="page-center"> 
 
-		<div class="tabber_wrap">
-			<div class="tabber_inr desktop_tab"> 
+    <div class="tabber_wrap">
+      <div class="tabber_inr desktop_tab"> 
 
-				<div class="tabs">
-					<div class="tab" dir="rtl">
-						{% for item in module.tabber_slider %}
-						<div class="tab_ttl">
-							<div class="tab_txt">
-								{{ item.tab }}
-							</div>
-						</div>
-						{% endfor %}
-					</div>
-				</div>
-				<div class="tabber_cnt" dir="rtl">
-					{% for item in module.tabber_slider %}
-					<div class="tabber_cnt_inr {% if module.module_overrides.enable_overrides %} {{ module.module_overrides.card_background_settings.select_background_color_type }}_act{% if module.module_overrides.card_background_settings.reverse_text %} act_rev{% endif %}{% endif %}">
-						<div class="tabber_flex flex_row">
-							<div class="tabber_col cnt"> 
-								{{ item.tab_content.content }}
-								{# button #}
-								<div class="btn_row">
-									{% for item2 in item.tab_content.buttons %}
-									{% if item2.button_type == 'stnd' %} 
-									{% set href = item2.button_link.url.href %}
-									{% if item2.button_link.url.type is equalto "EMAIL_ADDRESS" %}
-									{% set href = "mailto:" + href %}
-									{% endif %}
-									<a class="{{ item2.theme }} hs-button"
-										 {% if item2.button_link.url.type is equalto "CALL_TO_ACTION"  %}
-										 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
-										 {% else %}
-										 href="{{ href|escape_url }}"
-										 {% endif %}
-										 {% if item2.button_link.open_in_new_tab %}
-										 target="_blank"
-										 {% endif %}
-										 {% if item2.button_link.rel %}
-										 rel="{{ item2.button_link.rel|escape_attr }}"
-										 {% endif %}
-										 >
-										{{ item2.button_text }}
-									</a>
-									{% else %}
-									{% cta guid="{{ item2.cta_field }}" %}
-									{% endif %}
-									{% endfor %}
+        <div class="tabs">
+          <div class="tab" dir="rtl">
+            {% for item in module.tabber_slider %}
+            <div class="tab_ttl">
+              <div class="tab_txt">
+                {{ item.tab }}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="tabber_cnt" dir="rtl">
+          {% for item in module.tabber_slider %}
+          <div class="tabber_cnt_inr {% if module.module_overrides.enable_overrides %} {{ module.module_overrides.card_background_settings.select_background_color_type }}_act{% if module.module_overrides.card_background_settings.reverse_text %} act_rev{% endif %}{% endif %}">
+            <div class="tabber_flex flex_row">
+              <div class="tabber_col cnt"> 
+                {{ item.tab_content.content }}
+                {# button #}
+                <div class="btn_row">
+                  {{macros.buttonGroupItems(item.tab_content.buttons)}}
 
-								</div>
-								{# button ends #}
+                </div>
+                {# button ends #}
 
-							</div>
-							<div class="tabber_col img">
-								{% if item.tab_content.select_image.src %}
-								<img src="{{ item.tab_content.select_image.src }}" alt="{{ item.tab_content.select_image.alt }}" >
-								{% endif %}
-							</div>
-						</div>
-					</div>
-					{% endfor %}
-				</div> 
-			</div>
-			{# desktop ends #}
+              </div>
+              <div class="tabber_col img">
+                {% if item.tab_content.select_image.src %}
+                <img src="{{ item.tab_content.select_image.src }}" alt="{{ item.tab_content.select_image.alt }}" >
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div> 
+      </div>
+      {# desktop ends #}
 
-			{# mobile starts#}
+      {# mobile starts#}
 
-			<div class="tabber_inr mobile_tab"> 
+      <div class="tabber_inr mobile_tab"> 
 
-				<div class="tabs">
-					<div class="tab">
-						{% for item in module.tabber_slider %}
+        <div class="tabs">
+          <div class="tab">
+            {% for item in module.tabber_slider %}
 
-						<div class="tab_acc_item {{loop.index == 1 ? "active":''}}" data-tab-id="{{loop.index0}}" >
+            <div class="tab_acc_item {{loop.index == 1 ? "active":''}}" data-tab-id="{{loop.index0}}" >
 
 
-							<div class="tab_ttl ">
-								<div class="tab_txt">
-									{{ item.tab }}
-								</div>
-							</div>
-							
-							<div class="tabber_cnt" {% if loop.index == "1" %} style="display: block;"{% endif%}>
-								<div class="tabber_cnt_inr{% if module.module_overrides.enable_overrides %} {{ module.module_overrides.card_background_settings.select_background_color_type }}_act{% if module.module_overrides.card_background_settings.reverse_text %} act_rev{% endif %}{% endif %}">
-									<div class="tabber_flex">
-										<div class="tabber_col cnt"> 
-											{{ item.tab_content.content }}
+              <div class="tab_ttl ">
+                <div class="tab_txt">
+                  {{ item.tab }}
+                </div>
+              </div>
+
+              <div class="tabber_cnt" {% if loop.index == "1" %} style="display: block;"{% endif%}>
+                <div class="tabber_cnt_inr{% if module.module_overrides.enable_overrides %} {{ module.module_overrides.card_background_settings.select_background_color_type }}_act{% if module.module_overrides.card_background_settings.reverse_text %} act_rev{% endif %}{% endif %}">
+                  <div class="tabber_flex">
+                    <div class="tabber_col cnt"> 
+                      {{ item.tab_content.content }}
 
 
-											{# button #}
-												<div class="btn_row">
-									{% for item2 in item.tab_content.buttons %}
-									{% if item2.button_type == 'stnd' %} 
-									{% set href = item2.button_link.url.href %}
-									{% if item2.button_link.url.type is equalto "EMAIL_ADDRESS" %}
-									{% set href = "mailto:" + href %}
-									{% endif %}
-									<a class="{{ item2.theme }} hs-button"
-										 {% if item2.button_link.url.type is equalto "CALL_TO_ACTION"  %}
-										 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
-										 {% else %}
-										 href="{{ href|escape_url }}"
-										 {% endif %}
-										 {% if item2.button_link.open_in_new_tab %}
-										 target="_blank"
-										 {% endif %}
-										 {% if item2.button_link.rel %}
-										 rel="{{ item2.button_link.rel|escape_attr }}"
-										 {% endif %}
-										 >
-										{{ item2.button_text }}
-									</a>
-									{% else %}
-									{% cta guid="{{ item2.cta_field }}" %}
-									{% endif %}
-									{% endfor %}
-
-								</div>
-											{# button ends #}
-
-										</div>
-										<div class="tabber_col img">
-											{% if item.tab_content.select_image.src %}
-											<img src="{{ item.tab_content.select_image.src }}" alt="{{ item.tab_content.select_image.alt }}" >
-											{% endif %}
-										</div>
-									</div>
-								</div>
-							</div> 
-
-						</div>
-						{% endfor %}
-					</div>
-				</div>
+                      {# button #}
+                      <div class="btn_row">
+                        {{macros.buttonGroupItems(item.tab_content.buttons)}}
 
 
-			</div>
+                      </div>
+                      {# button ends #}
 
-		</div>
+                    </div>
+                    <div class="tabber_col img">
+                      {% if item.tab_content.select_image.src %}
+                      <img src="{{ item.tab_content.select_image.src }}" alt="{{ item.tab_content.select_image.alt }}" >
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div> 
 
-	</div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
 </div>
 
 
@@ -164,38 +117,38 @@
 {% require_js %}
 <script>
 
-	$(".{{name}} .desktop_tab .tabber_cnt").slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		arrows: false, 
-		asNavFor: ".{{name}} .desktop_tab .tab",
-		autoplay: true,
-		rtl: true,
-		infinite:true,
-		autoplaySpeed: {{ module.module_settings.speed }},
-		});
-	$(".{{name}} .desktop_tab .tab").slick({
-		slidesToShow: 4,
-		slidesToScroll: 1,
-		asNavFor: ".{{name}} .desktop_tab .tabber_cnt",
-		dots: true,
-		rtl: true,
-		variableWidth: true,
-		focusOnSelect: true,
-		arrows: false,
-		infinite:false,
-		});
+  $(".{{name}} .desktop_tab .tabber_cnt").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false, 
+    asNavFor: ".{{name}} .desktop_tab .tab",
+    autoplay: true,
+    rtl: true,
+    infinite:true,
+    autoplaySpeed: {{ module.module_settings.speed }},
+    });
+  $(".{{name}} .desktop_tab .tab").slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    asNavFor: ".{{name}} .desktop_tab .tabber_cnt",
+    dots: true,
+    rtl: true,
+    variableWidth: true,
+    focusOnSelect: true,
+    arrows: false,
+    infinite:false,
+    });
 
-	$(".{{name}} .mobile_tab .tab_ttl").click(function () {
-		var getId = $(this).parent().attr('data-tab-id');
+  $(".{{name}} .mobile_tab .tab_ttl").click(function () {
+    var getId = $(this).parent().attr('data-tab-id');
 
-	$(this).parent().siblings().removeClass("active");
-	$(this).parent().siblings().find('.tabber_cnt').slideUp();
-	$(this).parent().toggleClass("active");
-	$(this).next().slideToggle();
+  $(this).parent().siblings().removeClass("active");
+  $(this).parent().siblings().find('.tabber_cnt').slideUp();
+  $(this).parent().toggleClass("active");
+  $(this).next().slideToggle();
 
-	});
- 
+  });
+
 
 </script>
 {% end_require_js %}
@@ -203,11 +156,11 @@
 {% if module.module_overrides.card_background_settings.select_background_color_type =="custom"%}
 {% require_css %}
 <style>
-{% scope_css %}
+  {% scope_css %}
   .u4m-top-tabber .tabber_cnt_inr.custom_act{
     background-color:{{ module.module_overrides.card_background_settings.background_color.rgba }}
   }
-{% end_scope_css %}
+  {% end_scope_css %}
 </style>
 {% end_require_css %}
 {% endif %}

@@ -14,35 +14,9 @@
             {{ module.content_column.intro_content }}
           </div>
         </div>
-
-        {% if module.content_column.include_button %} 
+        {% if module.content_column.include_button %}
         <div class="btn_row">
-          {% for item in module.content_column.buttons %}
-          {% if item.button_type == 'stnd' %} 
-          {% set href = item.button_link.url.href %}
-          {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
-          {% set href = "mailto:" + href %}
-          {% endif %}
-          <a class="{{ item.theme }} hs-button"
-             {% if item.button_link.url.type is equalto "CALL_TO_ACTION"  %}
-             href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
-             {% else %}
-             href="{{ href }}"
-             {% endif %}
-             {% if item.button_link.open_in_new_tab %}
-             target="_blank"
-             {% endif %}
-             {% if item.button_link.rel %}
-             rel="{{ item.button_link.rel }}"
-             {% endif %}
-             >
-            {{ item.button_text }}
-          </a>
-          {% else %}
-          {% cta guid="{{ item.cta_field }}" %}
-          {% endif %}
-          {% endfor %}
-
+          {{macros.buttonGroupItems(module.content_column.buttons)}}
         </div>
         {% endif %}
       </div>
@@ -91,32 +65,7 @@
         {% endif %}
         {% if item.content_column.include_button %}
         <div class="btn_row">
-          {% for item2 in item.content_column.buttons %}
-          {% if item2.button_type == 'stnd' %} 
-          {% set href = item2.button_link.url.href %}
-          {% if item2.button_link.url.type is equalto "EMAIL_ADDRESS" %}
-          {% set href = "mailto:" + href %}
-          {% endif %}
-          <a class="{{ item2.theme }} hs-button"
-             {% if item2.button_link.url.type is equalto "CALL_TO_ACTION"  %}
-             href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
-             {% else %}
-             href="{{ href }}"
-             {% endif %}
-             {% if item2.button_link.open_in_new_tab %}
-             target="_blank"
-             {% endif %}
-             {% if item2.button_link.rel %}
-             rel="{{ item2.button_link.rel }}"
-             {% endif %}
-             >
-            {{ item2.button_text }}
-          </a>
-          {% else %}
-          {% cta guid="{{ item2.cta_field }}" %}
-          {% endif %}
-          {% endfor %}
-
+          {{macros.buttonGroupItems(item.content_column.buttons)}}
         </div>
         {% endif %}
       </div>
@@ -168,7 +117,7 @@
   }
   @media(max-width: 767px){
     .{{name}} .banner-column.slider{{loop.index}} .img-inner{
-    padding-bottom: calc(100% - 40px);
+      padding-bottom: calc(100% - 40px);
       background-image:url({{ item.image_column.mobile_image.src }});
     }
   }

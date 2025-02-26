@@ -1,6 +1,6 @@
 @import "../../css/_module-imports";
 
-section.u4m-res-cards {
+section.u4m-casestudy-cards {
   .intro_content {
     display: flex;
     justify-content: space-between;
@@ -28,7 +28,6 @@ section.u4m-res-cards {
     flex-direction: column;
     gap: 20rem;
   }
-
 
   .intro_cnt {
     text-align: center;
@@ -84,7 +83,7 @@ section.u4m-res-cards {
     }
 
     .card_tag {
-      background: #f5f1e8;
+      background: $yellowColor;
       border-radius: 4rem;
       padding: 4px 8px 4px;
       display: inline-block;
@@ -95,7 +94,7 @@ section.u4m-res-cards {
 
     .card_read_minutes {
       padding: 4px 0;
-      color: #746c60;
+      color: $tagcolor;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -141,7 +140,7 @@ section.u4m-res-cards {
 
   .card_item {
     @include tabletmid {
-      width: 33.3333%;
+      width: 50%;
     }
 
     @include tabletvert {
@@ -155,16 +154,43 @@ section.u4m-res-cards {
 
       svg {
         display: block;
-        width: 15px;
+        width: 10px;
       }
 
       a {
-        display: inline-flex;
-        margin-left: auto;
-        width: 20px;
-        height: 20px;
+        display: flex;
+        justify-content: end;
         align-items: center;
-        justify-content: center;
+        gap: 14px;
+        .btnArw {
+          width: 28px;
+          height: 28px;
+          display: flex;
+          justify-content: center;
+          background: $sectionbg;
+          border-radius: 20rem;
+        }
+        .btntext {
+          opacity: 0;
+          visibility: hidden;
+          transition: 0.2s all ease-in;
+        }
+      }
+    }
+    .card_inner:hover {
+      .arrow_link {
+        a {
+          .btnArw {
+            background-color: $basecolor;
+            svg * {
+              stroke: $white;
+            }
+          }
+          .btntext {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
       }
     }
   }
@@ -181,7 +207,7 @@ section.u4m-res-cards {
       justify-content: center;
     }
 
-    //     .grouped-content {
+    // .grouped-content {
     //   &:first-of-type {
     //     margin-left: -10rem;
     //   }
@@ -211,7 +237,7 @@ section.u4m-res-cards {
   }
 
   .no_img_card .card_tag {
-    background: #fef76c;
+    background: $yellowColor;
   }
 
   .card_item.no_img_card .arrow_link {

@@ -42,7 +42,10 @@
              rel="{{ module.content_column.button_link.rel }}"
              {% endif %}
              >
-            {{ module.content_column.button_text }} <img src="{{ get_asset_url('../../templates/images/arrow.png') }}" alt="arrow">
+            {{ module.content_column.button_text }} <svg xmlns="http://www.w3.org/2000/svg" width="11" height="12" viewBox="0 0 11 12" fill="none">
+		<path d="M5 1L10 6L5 11" stroke="currentColor"></path>
+		<path d="M10 6L0 6" stroke="currentColor"></path>
+		</svg>
           </a>
         </div>
         {% endif %}

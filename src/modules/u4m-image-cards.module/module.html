@@ -16,32 +16,7 @@
       {% endif %}
       {% if module.include_button %} 
       <div class="btn_row">
-        {% for item in module.buttons %}
-        {% if item.button_type == 'stnd' %} 
-        {% set href = item.button_link.url.href %}
-        {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
-        {% set href = "mailto:" + href %}
-        {% endif %}
-        <a class="{{ item.theme }} hs-button"
-           {% if item.button_link.url.type is equalto "CALL_TO_ACTION"  %}
-           href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
-           {% else %}
-           href="{{ href|escape_url }}"
-           {% endif %}
-           {% if item.button_link.open_in_new_tab %}
-           target="_blank"
-           {% endif %}
-           {% if item.button_link.rel %}
-           rel="{{ item.button_link.rel|escape_attr }}"
-           {% endif %}
-           >
-          {{ item.button_text }}
-        </a>
-        {% else %}
-        {% cta guid="{{ item.cta_field }}" %}
-        {% endif %}
-        {% endfor %}
-
+         {{macros.buttonGroupItems(module.buttons)}}
       </div>
       {% endif %}
     </div>
@@ -86,29 +61,8 @@
             </div>
             {% endif %}
             <div class="cm_btns">
-              {% if item.buttons.button_type == 'stnd' %} 
-              {% set href = item.buttons.button_link.url.href %}
-              {% if item.buttons.button_link.url.type is equalto "EMAIL_ADDRESS" %}
-              {% set href = "mailto:" + href %}
-              {% endif %}
-              <a class="	{{ item.buttons.theme }} hs-button"
-                 {% if item.buttons.button_link.url.type is equalto "CALL_TO_ACTION"  %}
-                 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
-                 {% else %}
-                 href="{{ href|escape_url }}"
-                 {% endif %}
-                 {% if item.buttons.button_link.open_in_new_tab %}
-                 target="_blank"
-                 {% endif %}
-                 {% if item.buttons.button_link.rel %}
-                 rel="{{ item.buttons.button_link.rel|escape_attr }}"
-                 {% endif %}
-                 >
-                {{ item.buttons.button_text }}
-              </a>
-              {% else %}
-              {% cta guid="{{ item.buttons.cta_field }}" %}
-              {% endif %}
+                   {{macros.buttonGroup(item.buttons)}}
+
             </div>
           </div>
         </div>

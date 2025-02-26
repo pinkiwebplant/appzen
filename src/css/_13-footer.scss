@@ -27,7 +27,7 @@ footer.cmftr.u4m-footer {
 
       .lft_cnt {
         .social_share {
-          margin-bottom: 26px;
+          margin-bottom: 13px;
 
           .inner_items {
             display: flex;
@@ -35,8 +35,18 @@ footer.cmftr.u4m-footer {
             gap: 10px;
 
             .items {
-              width: 21px;
-              height: 24px;
+              // width: 21px;
+              // height: 24px;
+              a {
+                height: 48px;
+                width: 48px;
+                padding: 13px;
+                border-radius: 100%;
+                background-color: transparent;
+                &:hover {
+                  background-color: $greybg;
+                }
+              }
             }
           }
         }
@@ -195,6 +205,9 @@ footer.cmftr.u4m-footer {
                         display: flex;
                         flex-wrap: wrap;
                         gap: 5px;
+                        &:hover {
+                          text-decoration: underline;
+                        }
 
                         span {
                           width: auto;
@@ -262,9 +275,38 @@ footer.cmftr.u4m-footer {
                     line-height: $baseLineHeight2;
                     display: block;
                     width: 100%;
-                    margin-bottom: 21px;
+                    // margin-bottom: 21px;
                     color: $basecolor;
-
+                    display: inline-block;
+                    width: auto;
+                    padding: 5px 10px;
+                    margin-bottom: 6px;
+                    padding-right: 30px;
+                    border-radius: 4px;
+                    position: relative;
+                    cursor: pointer;
+                    &:after {
+                      content: "";
+                      background-image: url("{{ get_asset_url('./../templates/images/ftrarrow.png') }}");
+                      width: 10px;
+                      height: 10px;
+                      background-size: contain;
+                      display: block;
+                      background-repeat: no-repeat;
+                      position: absolute;
+                      right: 13px;
+                      top: 50%;
+                      transform: translateY(-50%);
+                      opacity: 0;
+                      visibility: hidden;
+                    }
+                    &:hover {
+                      background-color: $greybg;
+                      &:after {
+                        opacity: 1;
+                        visibility: visible;
+                      }
+                    }
                     :empty {
                       margin: 0 !important;
                     }
@@ -335,7 +377,12 @@ footer.cmftr.u4m-footer {
 
       .left_cnt {
         width: auto;
-
+        .logo_wrpp {
+          padding-top: 5px;
+          @include navbreakMinMax {
+            padding-top: 0;
+          }
+        }
         @include navbreakMinMax {
           width: 100%;
           max-width: 100%;

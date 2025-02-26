@@ -2,12 +2,29 @@
 
 section.u4m-integrations-listing {
   padding: 80px 0;
-
+  .left {
+    .intro {
+      p {
+        margin-left: 0;
+      }
+    }
+  }
   .center {
     text-align: center;
+    .btn_row {
+      justify-content: center;
+    }
   }
   .right {
     text-align: right;
+    .intro {
+      p {
+        margin-right: 0;
+      }
+    }
+    .btn_row {
+      justify-content: end;
+    }
   }
   .top-section {
     margin-bottom: 60px;

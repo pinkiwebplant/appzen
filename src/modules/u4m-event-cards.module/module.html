@@ -3,6 +3,7 @@
 {% set moduleName = 'u4m-events-cards' %}
 {% set imageMax = 1000 %}
 {% set bgImageMax = 1920 %}
+  {% set btnArrow ='<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M5.5 1L10.5 6L5.5 11" stroke="#574D4A"/><path d="M10.5 6L0.5 6" stroke="#574D4A"/></svg>'%}
 
 {% include "../partials/u4-module-includes.html" %}
 
@@ -95,10 +96,8 @@
           </div>
           <div class="arrow_link"> 
             <a  class="text" href="{{ item.link_for_graphic }}" >
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <path d="M5.5 1L10.5 6L5.5 11" stroke="#574D4A"/>
-                <path d="M10.5 6L0.5 6" stroke="#574D4A"/>
-              </svg>
+            <span class="btntext">Case Study</span>
+            <span class="btnArw">{{ btnArrow }}</span>
             </a>
           </div> 
           <a href="{{ item.link_for_graphic }}" class="absLink" ></a>
@@ -165,10 +164,8 @@
           </div>
           <div class="arrow_link"> 
             <a  class="text" href="{{ item.select_resource.columns.link_for_graphic }}" >
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <path d="M5.5 1L10.5 6L5.5 11" stroke="#574D4A"/>
-                <path d="M10.5 6L0.5 6" stroke="#574D4A"/>
-              </svg>
+            <span class="btntext">Case Study</span>
+            <span class="btnArw">{{ btnArrow }}</span>
             </a>
           </div> 
           <a href="{{ item.select_resource.columns.link_for_graphic }}" class="absLink" ></a>
