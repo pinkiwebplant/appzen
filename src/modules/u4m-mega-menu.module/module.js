@@ -1,18 +1,26 @@
-$('.mobileHide .childTrigger').click(function(event){
-	$(this).parents('.menuItem').siblings().removeClass('childOpen');
-	$(this).parents('.menuItem').toggleClass('childOpen');
+// $('.mobileHide .childTrigger').click(function(event){
+// 	$(this).parents('.menuItem').siblings().removeClass('childOpen');
+// 	$(this).parents('.menuItem').toggleClass('childOpen');
+// 	$('html').toggleClass('hdrOpen');
+// 	event.preventDefault();
+// });
+
+$('.mobileHide .hsChildmenu').hover(function(event){
+// 	$(this).parents('.menuItem').siblings().removeClass('childOpen');
+// 	$(this).parents('.menuItem').toggleClass('childOpen');
 	$('html').toggleClass('hdrOpen');
 	event.preventDefault();
 });
 
-$('html').click(function(){
-	$('.menuItem').removeClass('childOpen');
-	$('html').removeClass('hdrOpen');
-});
 
-$('.megaMenu').click(function(e){
-	e.stopPropagation()
-});
+// $('html').click(function(){
+// 	$('.menuItem').removeClass('childOpen');
+// 	$('html').removeClass('hdrOpen');
+// });
+
+// $('.megaMenu').click(function(e){
+// 	e.stopPropagation()
+// });
 
 
 $('.desktopHide .childTrigger').click(function(){

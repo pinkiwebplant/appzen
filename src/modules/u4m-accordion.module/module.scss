@@ -142,7 +142,23 @@
               transition: $animation2;
             }
           }
-          &:hover {
+          // &:hover {
+          //   span {
+          //     background: $basecolor;
+          //     color: $white;
+          //     background-color: $basecolor;
+          //     * {
+          //       stroke: $white;
+          //     }
+          //   }
+          // }
+
+          @include tabletmid {
+            display: flex;
+          }
+        }
+        &:hover {
+          .item-toggle-icon {
             span {
               background: $basecolor;
               color: $white;
@@ -151,10 +167,6 @@
                 stroke: $white;
               }
             }
-          }
-
-          @include tabletmid {
-            display: flex;
           }
         }
       }

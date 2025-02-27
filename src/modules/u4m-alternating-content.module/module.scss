@@ -87,6 +87,9 @@
                   stroke: currentColor;
                 }
               }
+              &.secondary:hover {
+                background-color: $greybg;
+              }
             }
 
             display: flex;

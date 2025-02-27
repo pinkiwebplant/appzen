@@ -1,5 +1,5 @@
 header.u4m-header {
-  padding: 13.5px 13px 0px;
+  padding: 13.5px 13px 11.5px;
   position: absolute;
   transition:
     height 0.3s,
@@ -51,6 +51,8 @@ header.u4m-header {
     }
 
     .HeaderSticky {
+      position: relative;
+      z-index: 1;
       .hs-menu-wrapper {
         > ul {
           > li {
@@ -80,9 +82,12 @@ header.u4m-header {
                       white-space: normal !important;
                       max-width: 100%;
                       cursor: pointer;
-
+                      border-radius: 4px;
                       @include navbreakMin {
                         padding: 12px 45px;
+                      }
+                      &:hover {
+                        background-color: $lightGray;
                       }
                     }
                   }
@@ -167,6 +172,10 @@ header.u4m-header {
 
   &.stickysec {
     padding-bottom: 0;
+    .megaMenu .hs-megaMenu-wrapper > ul.mobileHide > li > a:before {
+      bottom: -65px;
+      height: 65px;
+    }
   }
 }
 
@@ -279,7 +288,17 @@ header.u4m-header {
           justify-content: space-between;
           column-gap: 10px;
           position: relative;
-
+          &:before {
+            content: "";
+            bottom: -20px;
+            position: absolute;
+            width: 100%;
+            height: 20px;
+            left: 0;
+            z-index: 6;
+            opacity: 0;
+            visibility: hidden;
+          }
           .childTrigger {
             width: 38px;
             display: flex;
@@ -319,8 +338,29 @@ header.u4m-header {
           border-radius: 12px;
           padding: 10px;
           z-index: 3;
-          display: none;
-
+          opacity: 0;
+          visibility: hidden;
+          transform: scale(0.9);
+          .menuArrowWrap {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            padding-right: 10px;
+            justify-content: space-between;
+            .menuArrow {
+              // display: flex;
+              transition: 0.2s all ease-in;
+              opacity: 0;
+              visibility: hidden;
+            }
+            &:hover {
+              .menuArrow {
+                transform: translateX(8px);
+                opacity: 1;
+                visibility: visible;
+              }
+            }
+          }
           > .flex_row {
             .menuItemTtl {
               font-family: $font1;
@@ -330,13 +370,47 @@ header.u4m-header {
               color: $basecolor;
               padding-bottom: 16px;
               border-bottom: 1px solid $lightGray;
-
+              margin-bottom: 20rem;
               a {
                 color: inherit;
+                &.menuArrowWrap {
+                  justify-content: start;
+                  padding: 10px;
+                  border-radius: 4rem;
+                  width: auto;
+                  display: inline-flex;
+                  padding-right: 20px;
+                  &:hover {
+                    background-color: $greybg;
+                  }
+                }
               }
             }
 
             .childmenuItem {
+              > a {
+                border-radius: 4px;
+                padding: 10px;
+                &:hover {
+                  background-color: $greybg;
+                  .menuArrow {
+                    transform: translateX(8px);
+                    opacity: 1;
+                    visibility: visible;
+                  }
+                }
+              }
+              .menuArrowWrap {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+                .menuArrow {
+                  display: flex;
+                  transition: 0.2s all ease-in;
+                  opacity: 0;
+                  visibility: hidden;
+                }
+              }
               .childmenuItemdes {
                 font-family: $font1;
                 font-weight: 400;
@@ -408,6 +482,15 @@ header.u4m-header {
 
                 > a {
                   color: inherit;
+                  &.menuArrowWrap {
+                    align-items: start;
+                    border-radius: 4px;
+                    padding: 10px;
+                    padding-right: 20px;
+                    &:hover {
+                      background-color: $greybg;
+                    }
+                  }
                 }
               }
             }
@@ -478,14 +561,18 @@ header.u4m-header {
               max-width: 33.33%;
               width: 100%;
               padding: 0 20px;
-              gap: 15px;
+              // gap: 15px;
               display: flex;
               flex-direction: column;
+              .menuItemTtl {
+                padding-bottom: 6px;
+                margin-bottom: 15rem;
+              }
             }
           }
 
           width: 994px;
-          padding: 41px 37px 47px;
+          padding: 31px 37px 37px;
           max-width: 100%;
         }
 
@@ -504,7 +591,23 @@ header.u4m-header {
             .menuItem {
               display: flex;
               flex-direction: column;
-              row-gap: 20px;
+              // row-gap: 20px;
+              .menuItemTtl {
+                a {
+                  padding: 0;
+                  background: none;
+                  // .menuArrow {
+                  //   display: none !important;
+                  // }
+                }
+              }
+              .blogCard {
+                .blogCardttl {
+                  .menuArrowWrap {
+                    background: none;
+                  }
+                }
+              }
             }
           }
 
@@ -512,9 +615,12 @@ header.u4m-header {
             max-width: calc(100% - 320px);
             width: 100%;
             padding: 30px 30px 35px;
+            .menuItemTtl {
+              margin-bottom: 9px;
+            }
 
             .bottomPane {
-              padding-top: 16px;
+              padding-top: 6px;
               border-top: 1px solid $lightGray;
               column-gap: 20px;
               justify-content: space-between;
@@ -529,7 +635,7 @@ header.u4m-header {
                 padding: 0 20px;
                 display: flex;
                 flex-direction: column;
-                row-gap: 20px;
+                // row-gap: 20px;
               }
             }
 
@@ -540,6 +646,18 @@ header.u4m-header {
                 font-weight: 400;
                 @include size12;
                 line-height: 150%;
+                a {
+                  padding: 10px;
+                  border-radius: 4rem;
+                  &:hover {
+                    background-color: $greybg;
+                    .menuArrow {
+                      transform: translateX(8px);
+                      opacity: 1;
+                      visibility: visible;
+                    }
+                  }
+                }
 
                 .btnmItemttl {
                   color: $basecolor;
@@ -574,8 +692,8 @@ header.u4m-header {
         &:hover {
           > a {
             position: relative;
-            z-index: 6;
-            background: #e2ddd2;
+            // z-index: 6;
+            background: $lightGray;
 
             // &:after {
             //   position: absolute;
@@ -585,20 +703,33 @@ header.u4m-header {
             //   border-bottom: 4px solid $LightPink;
             //   left: 0;
             // }
+            &:before {
+              opacity: 1;
+              visibility: visible;
+            }
           }
         }
       }
 
-      > li.childOpen {
+      > li.hsChildmenu:hover {
         > .childMenu {
-          display: block;
+          opacity: 1;
+          visibility: visible;
+          transform: scale(1);
+          transition: $animation2;
         }
 
         > a {
           position: relative;
-          z-index: 6;
           background: transparent;
           color: $white;
+          > span {
+            position: relative;
+            z-index: 6;
+          }
+          .childTrigger {
+            z-index: 6;
+          }
           svg {
             * {
               stroke: currentColor;
@@ -619,7 +750,7 @@ header.u4m-header {
         > a {
           position: relative;
           z-index: 6;
-          background: $white;
+          // background: $white;
 
           &:after {
             position: absolute;
@@ -654,6 +785,7 @@ header.u4m-header {
       right: 0;
       width: 100%;
       height: 100%;
+      transition: $animation2;
     }
 
     // overflow: hidden;

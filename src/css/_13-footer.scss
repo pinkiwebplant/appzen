@@ -275,38 +275,42 @@ footer.cmftr.u4m-footer {
                     line-height: $baseLineHeight2;
                     display: block;
                     width: 100%;
-                    // margin-bottom: 21px;
+                    margin-bottom: 21px;
                     color: $basecolor;
-                    display: inline-block;
-                    width: auto;
-                    padding: 5px 10px;
-                    margin-bottom: 6px;
-                    padding-right: 30px;
-                    border-radius: 4px;
-                    position: relative;
-                    cursor: pointer;
-                    &:after {
-                      content: "";
-                      background-image: url("{{ get_asset_url('./../templates/images/ftrarrow.png') }}");
-                      width: 10px;
-                      height: 10px;
-                      background-size: contain;
-                      display: block;
-                      background-repeat: no-repeat;
-                      position: absolute;
-                      right: 13px;
-                      top: 50%;
-                      transform: translateY(-50%);
-                      opacity: 0;
-                      visibility: hidden;
-                    }
-                    &:hover {
-                      background-color: $greybg;
+
+                    &:not([href="javascript:;"]) {
+                      display: inline-block;
+                      width: auto;
+                      padding: 5px 10px;
+                      margin-bottom: 6px;
+                      padding-right: 30px;
+                      border-radius: 4px;
+                      position: relative;
+                      cursor: pointer;
                       &:after {
-                        opacity: 1;
-                        visibility: visible;
+                        content: "";
+                        background-image: url("{{ get_asset_url('./../templates/images/ftrarrow.png') }}");
+                        width: 10px;
+                        height: 10px;
+                        background-size: contain;
+                        display: block;
+                        background-repeat: no-repeat;
+                        position: absolute;
+                        right: 13px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        opacity: 0;
+                        visibility: hidden;
+                      }
+                      &:hover {
+                        background-color: $greybg;
+                        &:after {
+                          opacity: 1;
+                          visibility: visible;
+                        }
                       }
                     }
+
                     :empty {
                       margin: 0 !important;
                     }

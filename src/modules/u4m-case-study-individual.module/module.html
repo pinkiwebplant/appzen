@@ -24,8 +24,20 @@
       <div class="case_large_content">
         <div class="inner_content_box">
           <div class="inner_content">
-
+            {% if row.link  %}
+            <div class="bottomBtn">
+              <a href="{{row.link}}" class="secondary cmbtn">
+                <span>Case Study </span>
+                <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 0.5L10 5.5L5 10.5" stroke="#E2DDD2"/>
+                  <path d="M10 5.5L0 5.5" stroke="#E2DDD2"/>
+                </svg>
+              </a>
+            </div>
+            {% endif %}
             <div class="case_card_intro">
+
+
               {% if row.name %}
               <div class="card_title">
                 <h4>
@@ -50,7 +62,7 @@
         </div>
       </div>
 
-      {% if row.link  %}
+      {#       {% if row.link  %}
       <div class="bottom_btm">
         <div class="bottom_btn_inner">
           <a href="{{row.link}}" class="quaternary cmbtn">
@@ -62,7 +74,7 @@
           </a>
         </div>
       </div>
-      {% endif %}
+      {% endif %} #}
     </div>
     {% else %}
     {% for item in module.add_items %}
@@ -73,7 +85,17 @@
       <div class="case_large_content">
         <div class="inner_content_box">
           <div class="inner_content">
-
+            {% if row.link  %}
+            <div class="bottomBtn">
+              <a href="{{row.link}}" class="secondary cmbtn">
+                <span>Case Study </span>
+                <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 0.5L10 5.5L5 10.5" stroke="#E2DDD2"/>
+                  <path d="M10 5.5L0 5.5" stroke="#E2DDD2"/>
+                </svg>
+              </a>
+            </div>
+            {% endif %}
             <div class="case_card_intro">
               {% if row.name %}
               <div class="card_title">
@@ -99,19 +121,7 @@
         </div>
       </div>
 
-      {% if row.link  %}
-      <div class="bottom_btm">
-        <div class="bottom_btn_inner">
-          <a href="{{row.link}}" class="quaternary cmbtn">
-            <span>Case Study </span>
-            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 0.5L10 5.5L5 10.5" stroke="#E2DDD2"/>
-              <path d="M10 5.5L0 5.5" stroke="#E2DDD2"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-      {% endif %}
+
     </div>
     {% endif %}
     {% endfor %}

@@ -195,6 +195,18 @@
 
   .case_card_intro {
     margin-bottom: 30rem;
+    .card_btn {
+      display: flex;
+      .secondary {
+        display: flex;
+        gap: 10px;
+        border: none;
+        margin-top: 0;
+        &:hover {
+          background-color: $white;
+        }
+      }
+    }
   }
 
   .inner_content {

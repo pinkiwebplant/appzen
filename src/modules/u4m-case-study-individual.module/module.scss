@@ -52,11 +52,20 @@
     background: $white;
     border-radius: 12px;
     padding: 48px;
-    padding-top: 75px;
+    padding-left: 28px;
 
     .card_title h4 {
       font-size: 40px;
       margin-bottom: 13px;
+    }
+    .bottomBtn {
+      display: flex;
+      a {
+        border: none;
+        &:hover {
+          background-color: $greybg;
+        }
+      }
     }
 
     @include tabletvert {
@@ -64,9 +73,12 @@
       padding: 30px;
     }
   }
-
+  .case_card_intro {
+    padding-left: 20px;
+  }
   .case_card_meta {
     margin-top: 117px;
+    padding-left: 20px;
 
     @include tabletvert {
       margin-top: 67px;
@@ -143,5 +155,4 @@
 }
 
 .dnd-section[class*="full-width"] {
-  
 }

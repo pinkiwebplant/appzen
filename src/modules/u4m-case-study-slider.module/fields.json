@@ -98,6 +98,24 @@
     }
   } ]
 }, {
+  "id" : "26108238-a8bd-d3f2-a823-f12a1d6fc8b6",
+  "name" : "enable_card_button",
+  "label" : "Enable Card Button",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "select_post_type",
+    "controlling_value_regex" : "pbt|recent",
+    "property" : null,
+    "operator" : "MATCHES_REGEX",
+    "access" : null
+  },
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
   "id" : "module_overrides",
   "name" : "module_overrides",
   "label" : "Module Overrides",

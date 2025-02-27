@@ -65,6 +65,14 @@ section.u4m-appstore-listing {
         padding: 9px 24px;
         text-align: left;
         text-transform: capitalize;
+        &:hover {
+            background-color: $lightGreybg;
+        }
+    }
+
+    &.lightGreybg .filter-block ul li label:hover,
+    &.lightGreybg ul.dropdown-menu li label:hover {
+        background-color: $white;
     }
 
     .hide,
@@ -741,16 +749,37 @@ text-align: center;
 
                         a {
                             color: $basecolor;
-                            font-size: 13.44px;
+                            font-size: 14px;
                             font-weight: 600;
                             line-height: 110%;
-
-                            svg {
-                                font-size: 10px;
-                                font-weight: 400;
-                                margin: 0 0 0 7px;
-                                transition: transform 0.3s ease;
+                            display: flex;
+                            justify-content: end;
+                            align-items: center;
+                            gap: 14px;
+                            .btnArw {
+                                width: 28px;
+                                height: 28px;
+                                display: flex;
+                                justify-content: center;
+                                background: $sectionbg;
+                                border-radius: 20rem;
+                                svg {
+                                    display: block;
+                                    width: 10px;
+                                }
                             }
+                            .btntext {
+                                opacity: 0;
+                                visibility: hidden;
+                                transition: 0.2s all ease-in;
+                            }
+
+                            // svg {
+                            //     font-size: 10px;
+                            //     font-weight: 400;
+                            //     margin: 0 0 0 7px;
+                            //     transition: transform 0.3s ease;
+                            // }
                         }
                     }
                 }
@@ -758,8 +787,15 @@ text-align: center;
                 &:hover {
                     .card-link-block {
                         a {
-                            svg {
-                                transform: translateX(5px);
+                            .btnArw {
+                                background-color: $basecolor;
+                                svg * {
+                                    stroke: $white;
+                                }
+                            }
+                            .btntext {
+                                opacity: 1;
+                                visibility: visible;
                             }
                         }
                     }

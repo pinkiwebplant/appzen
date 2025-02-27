@@ -662,7 +662,17 @@ section {
   }
 }
 main a:not([class]) {
+  -webkit-text-decoration-skip-ink: none;
+  text-decoration-skip-ink: none;
   text-decoration: underline;
+  text-decoration-color: $LightPink;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 20%;
+  transition: text-decoration-color 0.3sease-in-out;
+}
+
+main a:not([class]):hover {
+  text-decoration-thickness: 3px;
 }
 
 // heading style as per client asked
