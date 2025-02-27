@@ -1,7 +1,7 @@
 {% set moduleName = 'u4m-case-study-slider' %}
 {% set imageMax = 1000 %}
 {% set bgImageMax = 1920 %}
-
+{% set linkIcon ='<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M5.44727 0.672852L10.4473 5.67285L5.44727 10.6729" stroke="#3D3533"/><path d="M10.4473 5.67285L0.447266 5.67285" stroke="#3D3533"/></svg>'%}
 {% include "../partials/u4-module-includes.html" %}
 {% set table = module.select_hubdb_table %}
 {% set query = "" %}
@@ -10,138 +10,152 @@
 
 {% if module.title %}
 <div class="introContent">
-	<div class="page-center">
-		<h4>
-			{{ module.title }}
-		</h4>
-	</div>
+  <div class="page-center">
+    <h4>
+      {{ module.title }}
+    </h4>
+  </div>
 </div>
 {% endif %}
 {% if module.select_post_type == 'pbt' %}
 {% set data = module.post_by_title %}
 <div class="mainSliderWrap">  
-	<div class="bgSlider">
-		{% for row in data %}
-		<div class="bg_item" data-id="tab{{loop.index}}_{{name}}">
-			<div class="bg_item_inner">
-				<div class="case_large_bg" style="background-image: url({{row.select_row.columns.featured_image.url}})">
-				<a href="{{ row.select_row.columns.link }}" class="absLink"></a><img src="{{row.select_row.columns.featured_image.url}}" alt="{{row.select_row.columns.name|striptags }}" />
-				</div>
-			</div>
-		</div>
-		{% endfor %}
-	</div>
+  <div class="bgSlider">
+    {% for row in data %}
+    <div class="bg_item" data-id="tab{{loop.index}}_{{name}}">
+      <div class="bg_item_inner">
+        <div class="case_large_bg" style="background-image: url({{row.select_row.columns.featured_image.url}})">
+          <a href="{{ row.select_row.columns.link }}" class="absLink"></a><img src="{{row.select_row.columns.featured_image.url}}" alt="{{row.select_row.columns.name|striptags }}" />
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
 
-	<div class="contentSliderWrap">
-		<div class="case_large_card contentSlider"> 
-			{% for row in data %}
-			<div class="case_item" data-id="tab{{loop.index}}_{{name}}">
-			<a href="{{ row.select_row.columns.link }}" class="absLink"></a>
-				<div class="case_large_content">
-					<div class="inner_content_box">
-						<div class="inner_content">
-							<div class="case_card_intro">
-								<div class="card_title">
-									<h4>
-									<a  class="text" href="{{ row.select_row.columns.link }}">
-									{{row.select_row.columns.name}}
-									</a>
-									</h4>
-								</div>
-								<div class="card_desc">
-									<p>
-										{{row.select_row.columns.description}}
-									</p>
-								</div>
-							</div>
-							<div class="case_card_meta">
-								<span class="price">{{row.select_row.columns.price}}</span>
-								<span class="subtitle">{{row.select_row.columns.subtitle}}</span>
-							</div>
-						</div>
-					</div>
-				</div> 
-			</div>  
-			{% endfor %}
-		</div>
-	</div>
+  <div class="contentSliderWrap">
+    <div class="case_large_card contentSlider"> 
+      {% for row in data %}
+      <div class="case_item" data-id="tab{{loop.index}}_{{name}}">
+        <a href="{{ row.select_row.columns.link }}" class="absLink"></a>
+        <div class="case_large_content">
+          <div class="inner_content_box">
+            <div class="inner_content">
+              <div class="case_card_intro">
+                {% if module.enable_card_button %}
+                <div class="card_btn">
+                  <a  class="secondary" href="{{ row.link }}">
+                    Case Study<span>{{ linkIcon }}</span>
+                  </a>
+                </div>
+                {% endif %}
+                <div class="card_title">
+                  <h4>
+                    <a  class="text" href="{{ row.select_row.columns.link }}">
+                      {{row.select_row.columns.name}}
+                    </a>
+                  </h4>
+                </div>
+                <div class="card_desc">
+                  <p>
+                    {{row.select_row.columns.description}}
+                  </p>
+                </div>
+              </div>
+              <div class="case_card_meta">
+                <span class="price">{{row.select_row.columns.price}}</span>
+                <span class="subtitle">{{row.select_row.columns.subtitle}}</span>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>  
+      {% endfor %}
+    </div>
+  </div>
 
 </div>
 <div class="thumbSliderWrap">
-	<div class="page-center">
-		<div class="thumbSlider">
-			{% for row in data %}
-			<div class="case_small_card" data-nav-id="tab{{loop.index}}_{{name}}">
-				<div class="case_logo">
-					<img src="{{ row.select_row.columns.logo.url }}" alt="{{ row.select_row.columns.name }}"/>
-				</div>
-			</div>
-			{% endfor %}
-		</div>
-	</div>
+  <div class="page-center">
+    <div class="thumbSlider">
+      {% for row in data %}
+      <div class="case_small_card" data-nav-id="tab{{loop.index}}_{{name}}">
+        <div class="case_logo">
+          <img src="{{ row.select_row.columns.logo.url }}" alt="{{ row.select_row.columns.name }}"/>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
 </div>
 
 {% else %}
 <div class="mainSliderWrap">  
-	<div class="bgSlider">
-		{% for row in rows %}
-		<div class="bg_item" data-id="tab{{loop.index}}_{{name}}">
-			<div class="bg_item_inner">
-				<div class="case_large_bg" style="background-image: url({{row.featured_image.url}})">
-				<a href="{{ row.link }}" class="absLink"></a><img src="{{row.featured_image.url}}" alt="{{row.name|striptags }}" />
-				</div>
-			</div>
-		</div>
-		{% endfor %}
-	</div>
+  <div class="bgSlider">
+    {% for row in rows %}
+    <div class="bg_item" data-id="tab{{loop.index}}_{{name}}">
+      <div class="bg_item_inner">
+        <div class="case_large_bg" style="background-image: url({{row.featured_image.url}})">
+          <a href="{{ row.link }}" class="absLink"></a><img src="{{row.featured_image.url}}" alt="{{row.name|striptags }}" />
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
 
-	<div class="contentSliderWrap">
-		<div class="case_large_card contentSlider"> 
-			{% for row in rows %}
-			<div class="case_item" data-id="tab{{loop.index}}_{{name}}">
-			<a href="{{ row.link }}" class="absLink"></a>
-				<div class="case_large_content">
-					<div class="inner_content_box">
-						<div class="inner_content">
-							<div class="case_card_intro">
-								<div class="card_title">
-									<h4>
-									<a  class="text" href="{{ row.link }}">
-									{{row.name}}
-									</a>
-									</h4>
-								</div>
-								<div class="card_desc">
-									<p>
-										{{row.description}}
-									</p>
-								</div>
-							</div>
-							<div class="case_card_meta">
-								<span class="price">{{row.price}}</span>
-								<span class="subtitle">{{row.subtitle}}</span>
-							</div>
-						</div>
-					</div>
-				</div> 
-			</div>  
-			{% endfor %}
-		</div>
-	</div>
+  <div class="contentSliderWrap">
+    <div class="case_large_card contentSlider"> 
+      {% for row in rows %}
+      <div class="case_item" data-id="tab{{loop.index}}_{{name}}">
+        <a href="{{ row.link }}" class="absLink"></a>
+        <div class="case_large_content">
+          <div class="inner_content_box">
+            <div class="inner_content">
+              <div class="case_card_intro">
+                {% if module.enable_card_button %}
+                <div class="card_btn">
+                  <a  class="secondary" href="{{ row.link }}">
+                    Case Study<span>{{ linkIcon }}</span>
+                  </a>
+                </div>
+                {% endif %}
+                <div class="card_title">
+                  <h4>
+                    <a  class="text" href="{{ row.link }}">
+                      {{row.name}}
+                    </a>
+                  </h4>
+                </div>
+                <div class="card_desc">
+                  <p>
+                    {{row.description}}
+                  </p>
+                </div>
+              </div>
+              <div class="case_card_meta">
+                <span class="price">{{row.price}}</span>
+                <span class="subtitle">{{row.subtitle}}</span>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>  
+      {% endfor %}
+    </div>
+  </div>
 
 </div>
 <div class="thumbSliderWrap">
-	<div class="page-center">
-		<div class="thumbSlider">
-			{% for row in rows %}
-			<div class="case_small_card" data-nav-id="tab{{loop.index}}_{{name}}">
-				<div class="case_logo">
-					<img src="{{ row.logo.url }}" alt="{{ row.name }}"/>
-				</div>
-			</div>
-			{% endfor %}
-		</div>
-	</div>
+  <div class="page-center">
+    <div class="thumbSlider">
+      {% for row in rows %}
+      <div class="case_small_card" data-nav-id="tab{{loop.index}}_{{name}}">
+        <div class="case_logo">
+          <img src="{{ row.logo.url }}" alt="{{ row.name }}"/>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
 </div>
 
 {% endif %}
@@ -150,74 +164,74 @@
 
 {% require_js %}
 <script>
-$(document).ready(function(){
-$('.bgSlider').slick({ 
-infinite: true,
-slidesToShow: 3,
-slidesToScroll: 1,
-arrows: false, 
-centerMode:true,
-centerPadding:'20px',
-variableWidth: true,
-asNavFor: '.thumbSlider,.contentSlider', 	
-autoplay: true,
-autoplaySpeed: 9000,
-focusOnSelect: true
-});
-$('.contentSlider').slick({
-infinite: true,
-slidesToShow: 1,
-slidesToScroll: 1,
-fade:true,
-asNavFor: '.bgSlider,.thumbSlider',
-dots: false, 
-arrows:false,
-responsive: [
-	{
-		breakpoint: 540,
-		settings: {
-			adaptiveHeight:true
-		}
-	} 
-]
-});
-$('.thumbSlider').slick({
-infinite: true,
-slidesToShow: 6,
-slidesToScroll: 1,
-asNavFor: '.bgSlider,.contentSlider',
-dots: false, 
-arrows:false,
-centerMode:false,
-centerPadding:'0',
-focusOnSelect: true,
-responsive: [
-	{
-		breakpoint: 1200,
-		settings: {
-			slidesToShow: 5
-		}
-	},
-	{
-		breakpoint: 1024,
-		settings: {
-			slidesToShow: 4
-		}
-	},
-	{
-		breakpoint: 767,
-		settings: {
-			slidesToShow: 3
-		}
-	},
-	{
-		breakpoint: 580,
-		settings: {
-			slidesToShow: 3
-		}
-	} 
-]
-});
-});
+  $(document).ready(function(){
+    $('.bgSlider').slick({ 
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      arrows: false, 
+      centerMode:true,
+      centerPadding:'20px',
+      variableWidth: true,
+      asNavFor: '.thumbSlider,.contentSlider', 	
+      autoplay: true,
+      autoplaySpeed: 9000,
+      focusOnSelect: true
+    });
+    $('.contentSlider').slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      fade:true,
+      asNavFor: '.bgSlider,.thumbSlider',
+      dots: false, 
+      arrows:false,
+      responsive: [
+        {
+          breakpoint: 540,
+          settings: {
+            adaptiveHeight:true
+          }
+        } 
+      ]
+    });
+    $('.thumbSlider').slick({
+      infinite: true,
+      slidesToShow: 6,
+      slidesToScroll: 1,
+      asNavFor: '.bgSlider,.contentSlider',
+      dots: false, 
+      arrows:false,
+      centerMode:false,
+      centerPadding:'0',
+      focusOnSelect: true,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 5
+          }
+        },
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 4
+          }
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 580,
+          settings: {
+            slidesToShow: 3
+          }
+        } 
+      ]
+    });
+  });
 </script>
 {% end_require_js %}

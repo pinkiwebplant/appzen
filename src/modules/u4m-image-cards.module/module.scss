@@ -68,6 +68,9 @@
 
             a {
               margin: 0;
+              &.secondary:hover {
+                background-color: $greybg;
+              }
             }
           }
 

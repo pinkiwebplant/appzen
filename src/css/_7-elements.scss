@@ -70,14 +70,10 @@ h6 {
 @font-face {
   font-family: "Neue Haas Grotesk Text Pro";
   src:
-    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.eot') }}")
-      format("eot"),
-    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.woff') }}")
-      format("woff"),
-    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.woff2') }}")
-      format("woff2"),
-    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.ttf') }}")
-      format("ttf");
+    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.eot') }}") format("eot"),
+    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.woff') }}") format("woff"),
+    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('../fonts/NeueHaasDisplay-Bold.ttf') }}") format("ttf");
   font-weight: 700;
   font-style: normal;
 }
@@ -85,16 +81,11 @@ h6 {
 @font-face {
   font-family: "Neue Haas Grotesk Text Pro";
   src:
-    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.eot') }}")
-      format("embedded-opentype"),
-    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.woff2') }}")
-      format("woff2"),
-    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.woff') }}")
-      format("woff"),
-    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.ttf') }}")
-      format("truetype"),
-    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.svg') }}")
-      format("svg");
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.woff') }}") format("woff"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.ttf') }}") format("truetype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskTXPro55Rg.svg') }}") format("svg");
   font-weight: 400;
   font-style: normal;
 }
@@ -102,16 +93,11 @@ h6 {
 @font-face {
   font-family: "Neue Haas Grotesk Display Pro";
   src:
-    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.eot') }}")
-      format("embedded-opentype"),
-    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.woff2') }}")
-      format("woff2"),
-    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.woff') }}")
-      format("woff"),
-    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.ttf') }}")
-      format("truetype"),
-    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.svg') }}")
-      format("svg");
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.woff2') }}") format("woff2"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.woff') }}") format("woff"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.ttf') }}") format("truetype"),
+    url("{{ get_asset_url('./../fonts/NHaasGroteskDSPro75Bd.svg') }}") format("svg");
   font-weight: 700;
   font-style: normal;
 }
@@ -600,7 +586,7 @@ section[class*="u4m-"] {
 
 .hs-button,
 .primary {
-  @include button;
+  @include primary;
 }
 
 .secondary {
@@ -613,6 +599,30 @@ section[class*="u4m-"] {
 
 .quaternary {
   @include quaternary;
+}
+
+.btn_row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.cmbtn {
+  display: flex;
+  width: auto;
+  gap: 10px;
+  align-items: center;
+  svg {
+    color: currentColor;
+    transition: 0.25s all ease-in;
+    path {
+      stroke: currentColor;
+    }
+  }
+  &:hover {
+    svg {
+      transform: translateX(8px);
+    }
+  }
 }
 
 section {
@@ -652,7 +662,17 @@ section {
   }
 }
 main a:not([class]) {
+  -webkit-text-decoration-skip-ink: none;
+  text-decoration-skip-ink: none;
   text-decoration: underline;
+  text-decoration-color: $LightPink;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 20%;
+  transition: text-decoration-color 0.3sease-in-out;
+}
+
+main a:not([class]):hover {
+  text-decoration-thickness: 3px;
 }
 
 // heading style as per client asked

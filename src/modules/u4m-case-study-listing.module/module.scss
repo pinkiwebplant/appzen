@@ -67,6 +67,10 @@ section.u4m-case-study-listing {
     background-repeat: no-repeat;
     margin-bottom: 24px;
     max-height: 460px;
+    transition: transform 0.3s cubic-bezier(0, 0, 0.5, 1);
+    &:hover {
+      transform: scale(1.0161290323);
+    }
     &:after {
       content: "";
       display: block;
@@ -119,16 +123,19 @@ section.u4m-case-study-listing {
     }
 
     .hover_content_wrap {
-      width: 100%;
       margin-top: auto;
       padding: 30px 26px;
-      transform: translateY(100%);
-      transition: 0.2s ease;
-
+      width: 100%;
+      transition: 0.4s;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(40px);
       @include tabletmid {
         padding: 20px;
       }
-
+      .hover_content {
+        opacity: 0.3;
+      }
       span {
         display: block;
       }
@@ -144,8 +151,15 @@ section.u4m-case-study-listing {
       }
     }
 
-    &:hover .hover_content_wrap {
-      transform: translateY(0%);
+    &:hover {
+      .hover_content_wrap {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        .hover_content {
+          opacity: 1;
+        }
+      }
     }
   }
 
@@ -169,6 +183,9 @@ section.u4m-case-study-listing {
 
     a {
       margin: 0;
+      &:hover {
+        background-color: $lightGreybg;
+      }
     }
   }
 
@@ -197,6 +214,9 @@ section.u4m-case-study-listing {
         display: block;
         padding: 9px 24px;
         border: 2px solid transparent;
+        &:hover {
+          background-color: $lightGreybg;
+        }
         @include tabletvert {
           padding: 9px;
         }
@@ -208,6 +228,14 @@ section.u4m-case-study-listing {
           padding: 9px 24px;
         }
       }
+    }
+  }
+  &.lightGreybg:not(.reverse-text) {
+    .filter_sidebar_inner .filter_item button:hover {
+      background-color: $white;
+    }
+    .loadmore_btn a:hover {
+      background-color: $white;
     }
   }
 }

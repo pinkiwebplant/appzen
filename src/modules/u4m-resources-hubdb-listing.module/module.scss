@@ -45,7 +45,7 @@ section.u4m-resHub-listing {
     display: flex;
     flex-wrap: wrap;
     row-gap: 40px;
-    @include tabletmidmin { 
+    @include tabletmidmin {
       margin: 0 -10px;
     }
   }
@@ -63,12 +63,12 @@ section.u4m-resHub-listing {
       content: "";
       display: block;
       padding-bottom: 137%;
-      transition: .3s;
+      transition: 0.3s;
     }
     &:hover {
-        &:after {
-            background-color: rgba(0, 0, 0, .5);
-        }
+      &:after {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
     }
   }
 
@@ -138,7 +138,6 @@ section.u4m-resHub-listing {
 
     &:hover .hover_content_wrap {
       transform: translateY(0%);
-
     }
   }
 
@@ -159,6 +158,9 @@ section.u4m-resHub-listing {
 
     a {
       margin: 0;
+      &:hover {
+        background-color: $lightGreybg;
+      }
     }
   }
 
@@ -188,6 +190,9 @@ section.u4m-resHub-listing {
         padding: 9px 24px;
         border: 2px solid transparent;
         text-align: left;
+        &:hover {
+          background-color: $lightGreybg;
+        }
         @include tabletvert {
           padding: 9px;
         }
@@ -199,6 +204,14 @@ section.u4m-resHub-listing {
           padding: 9px 24px;
         }
       }
+    }
+  }
+  &.lightGreybg:not(.reverse-text) {
+    .filter_sidebar_inner .filter_item button:hover {
+      background-color: $white;
+    }
+    .loadmore_btn a:hover {
+      background-color: $white;
     }
   }
 }

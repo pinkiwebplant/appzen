@@ -1,17 +1,16 @@
 [ {
   "id" : "2f10bd6e-cf85-1cf6-5a4f-fa75e1e78238",
   "name" : "include_intro",
-  "display_width" : null,
   "label" : "Include Intro",
   "required" : false,
   "locked" : false,
   "display" : "checkbox",
   "type" : "boolean",
+  "display_width" : null,
   "default" : true
 }, {
   "id" : "50143178-d9f5-ba07-4078-39f5f1abb0d4",
   "name" : "intro_content",
-  "display_width" : null,
   "label" : "Intro Content",
   "required" : false,
   "locked" : false,
@@ -24,11 +23,11 @@
     "access" : null
   },
   "type" : "richtext",
+  "display_width" : null,
   "default" : "<h2>Uplevel your EA operations</h2>\n<h4>Explore use case examples</h4>"
 }, {
   "id" : "d56b4ea1-a525-dcf8-2139-6de21f13ddb2",
   "name" : "tabber_slider",
-  "display_width" : null,
   "label" : "Tabber Slider",
   "required" : false,
   "locked" : false,
@@ -41,7 +40,6 @@
   "children" : [ {
     "id" : "99cae411-e3dc-e6ed-e3a6-141e0ae704d9",
     "name" : "tab",
-    "display_width" : null,
     "label" : "Tab",
     "required" : false,
     "locked" : false,
@@ -49,27 +47,26 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
+    "display_width" : null,
     "default" : "Alerts"
   }, {
     "id" : "841ceb6a-107f-2f57-5576-92cf152598a5",
     "name" : "tab_content",
-    "display_width" : null,
     "label" : "Tab Content",
     "required" : false,
     "locked" : false,
     "children" : [ {
       "id" : "a6f4dd62-3d79-4a6e-8451-e030055890fe",
       "name" : "content",
-      "display_width" : null,
       "label" : "Content",
       "required" : false,
       "locked" : false,
       "type" : "richtext",
+      "display_width" : null,
       "default" : "<h3>Automate risk-based approvals for expense reports</h3>\n<p>Request approval automatically from a direct manager to assist auditors by validating both traditional and non-traditional merchant payments, like Venmo, to ensure secure and compliant transactions.</p>"
     }, {
       "id" : "3e7b1290-a4fe-185f-91a8-e3efb4702570",
       "name" : "buttons",
-      "display_width" : null,
       "label" : "Buttons",
       "required" : false,
       "locked" : false,
@@ -82,7 +79,6 @@
       "children" : [ {
         "id" : "11fd103f-0013-fc61-5a7b-e46385c65700",
         "name" : "button_type",
-        "display_width" : null,
         "label" : "Button Type",
         "required" : false,
         "locked" : false,
@@ -92,11 +88,11 @@
         "reordering_enabled" : true,
         "preset" : null,
         "type" : "choice",
+        "display_width" : null,
         "default" : "stnd"
       }, {
         "id" : "8fd1c5a5-7a28-8e43-5c80-65ca48c5d537",
         "name" : "theme",
-        "display_width" : null,
         "label" : "Theme",
         "required" : false,
         "locked" : false,
@@ -114,11 +110,11 @@
         "reordering_enabled" : true,
         "preset" : null,
         "type" : "choice",
+        "display_width" : null,
         "default" : "secondary"
       }, {
         "id" : "ca18bd16-3680-030e-bd93-1f899fe1b32f",
         "name" : "button_text",
-        "display_width" : null,
         "label" : "Button Text",
         "required" : false,
         "locked" : false,
@@ -134,11 +130,11 @@
         "allow_new_line" : false,
         "show_emoji_picker" : false,
         "type" : "text",
+        "display_width" : null,
         "default" : "Get this Product"
       }, {
         "id" : "f6d5769b-83c4-cfc7-ac05-a3a5b5dd2f76",
         "name" : "button_link",
-        "display_width" : null,
         "label" : "Button Link",
         "required" : false,
         "locked" : false,
@@ -153,6 +149,7 @@
         "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
         "show_advanced_rel_options" : false,
         "type" : "link",
+        "display_width" : null,
         "default" : {
           "url" : {
             "content_id" : null,
@@ -165,7 +162,6 @@
       }, {
         "id" : "9af91169-69d1-ce2b-aec1-82a403c539f6",
         "name" : "cta_field",
-        "display_width" : null,
         "label" : "CTA",
         "required" : false,
         "locked" : false,
@@ -177,12 +173,14 @@
           "operator" : "EQUAL",
           "access" : null
         },
-        "type" : "cta"
+        "type" : "cta",
+        "display_width" : null
       } ],
       "tab" : "CONTENT",
       "expanded" : false,
       "group_occurrence_meta" : null,
       "type" : "group",
+      "display_width" : null,
       "default" : [ {
         "button_type" : "stnd",
         "theme" : "secondary",
@@ -200,7 +198,6 @@
     }, {
       "id" : "24d88c21-fc32-acfb-ca51-78f3f87be77d",
       "name" : "select_image",
-      "display_width" : null,
       "label" : "Select Image",
       "required" : false,
       "locked" : false,
@@ -208,6 +205,7 @@
       "resizable" : false,
       "show_loading" : false,
       "type" : "image",
+      "display_width" : null,
       "default" : {
         "size_type" : "auto",
         "src" : "https://www.appzen.com/hubfs/Appzen-u4m/images/Menuimg4.png",
@@ -223,6 +221,7 @@
     "expanded" : false,
     "group_occurrence_meta" : null,
     "type" : "group",
+    "display_width" : null,
     "default" : {
       "content" : "<h3>Automate risk-based approvals for expense reports</h3>\n<p>Request approval automatically from a direct manager to assist auditors by validating both traditional and non-traditional merchant payments, like Venmo, to ensure secure and compliant transactions.</p>",
       "buttons" : [ {
@@ -255,6 +254,7 @@
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
+  "display_width" : null,
   "default" : [ {
     "tab" : "Alerts",
     "tab_content" : {
@@ -346,51 +346,49 @@
 }, {
   "id" : "c41cef78-1276-2cc3-587a-e73e9dbe95b3",
   "name" : "module_settings",
-  "display_width" : null,
   "label" : "Module Settings",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "15f9e0d4-de97-3bf7-f040-a3a67ab75397",
     "name" : "speed",
-    "display_width" : null,
     "label" : "Speed",
     "required" : false,
     "locked" : false,
     "display" : "text",
     "step" : 1,
     "type" : "number",
+    "display_width" : null,
     "default" : 5000
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
+  "display_width" : null,
   "default" : {
     "speed" : 5000
   }
 }, {
   "id" : "module_overrides",
   "name" : "module_overrides",
-  "display_width" : null,
   "label" : "Module Overrides",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "enable_overrides",
     "name" : "enable_overrides",
-    "display_width" : null,
     "label" : "Enable Overrides",
     "help_text" : "Toggle to override section ID and vertical margin. ",
     "required" : false,
     "locked" : false,
     "display" : "checkbox",
     "type" : "boolean",
+    "display_width" : null,
     "default" : false
   }, {
     "id" : "module_overrides.section_id",
     "name" : "section_id",
-    "display_width" : null,
     "label" : "Section ID",
     "help_text" : "The value you type here will be the anchor link for this section. Should be all lowercase and include dashes instead of spaces. This should be a unique value per module.",
     "required" : false,
@@ -406,11 +404,11 @@
     },
     "allow_new_line" : false,
     "show_emoji_picker" : false,
-    "type" : "text"
+    "type" : "text",
+    "display_width" : null
   }, {
     "id" : "module_overrides.top_margin",
     "name" : "top_margin",
-    "display_width" : null,
     "label" : "Top Margin",
     "required" : false,
     "locked" : false,
@@ -428,11 +426,11 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
+    "display_width" : null,
     "default" : "top-margin-default"
   }, {
     "id" : "custom_top_margin",
     "name" : "custom_top_margin",
-    "display_width" : null,
     "label" : "Custom Top Margin",
     "required" : false,
     "locked" : false,
@@ -447,11 +445,11 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
+    "display_width" : null,
     "default" : 100
   }, {
     "id" : "custom_top_margin_mobile",
     "name" : "custom_top_margin_mobile",
-    "display_width" : null,
     "label" : "Custom Top Margin Mobile",
     "required" : false,
     "locked" : false,
@@ -466,11 +464,11 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
+    "display_width" : null,
     "default" : 50
   }, {
     "id" : "module_overrides.bottom_margin",
     "name" : "bottom_margin",
-    "display_width" : null,
     "label" : "Bottom Margin",
     "required" : false,
     "locked" : false,
@@ -488,11 +486,11 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
+    "display_width" : null,
     "default" : "bottom-margin-default"
   }, {
     "id" : "custom_bottom_margin",
     "name" : "custom_bottom_margin",
-    "display_width" : null,
     "label" : "Custom Bottom Margin",
     "required" : false,
     "locked" : false,
@@ -507,11 +505,11 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
+    "display_width" : null,
     "default" : 100
   }, {
     "id" : "custom_bottom_margin_mobile",
     "name" : "custom_bottom_margin_mobile",
-    "display_width" : null,
     "label" : "Custom Bottom Margin Mobile",
     "required" : false,
     "locked" : false,
@@ -526,11 +524,11 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
+    "display_width" : null,
     "default" : 50
   }, {
     "id" : "module_overrides.top_padding",
     "name" : "top_padding",
-    "display_width" : null,
     "label" : "Top Padding",
     "required" : false,
     "locked" : false,
@@ -548,11 +546,11 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
+    "display_width" : null,
     "default" : "top-padding-default"
   }, {
     "id" : "custom_top_padding",
     "name" : "custom_top_padding",
-    "display_width" : null,
     "label" : "Custom Top Padding",
     "required" : false,
     "locked" : false,
@@ -567,11 +565,11 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
+    "display_width" : null,
     "default" : 100
   }, {
     "id" : "custom_top_padding_mobile",
     "name" : "custom_top_padding_mobile",
-    "display_width" : null,
     "label" : "Custom Top Padding Mobile",
     "required" : false,
     "locked" : false,
@@ -586,11 +584,11 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
+    "display_width" : null,
     "default" : 50
   }, {
     "id" : "module_overrides.bottom_padding",
     "name" : "bottom_padding",
-    "display_width" : null,
     "label" : "Bottom Padding",
     "required" : false,
     "locked" : false,
@@ -608,11 +606,11 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
+    "display_width" : null,
     "default" : "bottom-padding-default"
   }, {
     "id" : "custom_bottom_padding",
     "name" : "custom_bottom_padding",
-    "display_width" : null,
     "label" : "Custom Bottom Padding",
     "required" : false,
     "locked" : false,
@@ -627,11 +625,11 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
+    "display_width" : null,
     "default" : 100
   }, {
     "id" : "custom_bottom_padding_mobile",
     "name" : "custom_bottom_padding_mobile",
-    "display_width" : null,
     "label" : "Custom Bottom Padding Mobile",
     "required" : false,
     "locked" : false,
@@ -646,11 +644,11 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
+    "display_width" : null,
     "default" : 50
   }, {
     "id" : "3acc8068-a3e9-1ee0-60c7-9dbf953422a4",
     "name" : "background_settings",
-    "display_width" : null,
     "label" : "Background Settings",
     "required" : false,
     "locked" : false,
@@ -665,7 +663,6 @@
     "children" : [ {
       "id" : "8c61112d-4e81-6eb2-c3da-f21a5bc9642e",
       "name" : "background_type",
-      "display_width" : null,
       "label" : "Background Type",
       "required" : false,
       "locked" : false,
@@ -675,11 +672,11 @@
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
+      "display_width" : null,
       "default" : "color"
     }, {
       "id" : "0b377766-45a1-d996-07a1-ed7902a91581",
       "name" : "select_background_color_type",
-      "display_width" : null,
       "label" : "Select Background Color",
       "required" : false,
       "locked" : false,
@@ -697,11 +694,11 @@
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
+      "display_width" : null,
       "default" : "grey"
     }, {
       "id" : "6c8bfd0e-1629-1268-e01c-17b4047ecfce",
       "name" : "background_color",
-      "display_width" : null,
       "label" : "Background Color",
       "help_text" : "If a module has formal settings for a background color they will take priority over this value.",
       "inline_help_text" : "",
@@ -716,6 +713,7 @@
         "access" : null
       },
       "type" : "color",
+      "display_width" : null,
       "default" : {
         "color" : null,
         "opacity" : null
@@ -723,7 +721,6 @@
     }, {
       "id" : "878364f4-31ac-6917-e76f-65307d7d36e5",
       "name" : "background_image",
-      "display_width" : null,
       "label" : "Background Image",
       "help_text" : "If a module has formal settings for a background image they will take priority over this value.",
       "required" : false,
@@ -740,6 +737,7 @@
       "resizable" : false,
       "show_loading" : false,
       "type" : "image",
+      "display_width" : null,
       "default" : {
         "size_type" : "auto",
         "src" : "",
@@ -751,6 +749,7 @@
     "expanded" : false,
     "group_occurrence_meta" : null,
     "type" : "group",
+    "display_width" : null,
     "default" : {
       "background_type" : "color",
       "select_background_color_type" : "grey",
@@ -768,7 +767,6 @@
   }, {
     "id" : "92d25ad3-0c9d-7cb3-fa87-246f31491d0a",
     "name" : "card_background_settings",
-    "display_width" : null,
     "label" : "Highlighted Card Background Settings",
     "required" : false,
     "locked" : false,
@@ -783,7 +781,6 @@
     "children" : [ {
       "id" : "fa01cf30-2fb0-3f89-6231-9f9325d141ac",
       "name" : "select_background_color_type",
-      "display_width" : null,
       "label" : "Select Background Color",
       "required" : false,
       "locked" : false,
@@ -793,11 +790,11 @@
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
+      "display_width" : null,
       "default" : "light_grey"
     }, {
       "id" : "bd08c1dc-7224-6783-0f0c-4578d911306e",
       "name" : "background_color",
-      "display_width" : null,
       "label" : "Background Color",
       "help_text" : "If a module has formal settings for a background color they will take priority over this value.",
       "inline_help_text" : "",
@@ -812,6 +809,7 @@
         "access" : null
       },
       "type" : "color",
+      "display_width" : null,
       "default" : {
         "color" : null,
         "opacity" : null
@@ -819,7 +817,6 @@
     }, {
       "id" : "0470980f-ee85-3abb-aa6f-3226d8b956e3",
       "name" : "reverse_text",
-      "display_width" : null,
       "label" : "Reverse Text",
       "required" : false,
       "locked" : false,
@@ -833,12 +830,14 @@
       },
       "display" : "checkbox",
       "type" : "boolean",
+      "display_width" : null,
       "default" : false
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
     "group_occurrence_meta" : null,
     "type" : "group",
+    "display_width" : null,
     "default" : {
       "select_background_color_type" : "light_grey",
       "background_color" : {
@@ -850,7 +849,6 @@
   }, {
     "id" : "b8ff09cf-3e4e-fe6d-88bc-95be48ab2e1e",
     "name" : "reverse_text",
-    "display_width" : null,
     "label" : "Reverse Text",
     "required" : false,
     "locked" : false,
@@ -864,12 +862,14 @@
     },
     "display" : "checkbox",
     "type" : "boolean",
+    "display_width" : null,
     "default" : false
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
+  "display_width" : null,
   "default" : {
     "enable_overrides" : false,
     "top_margin" : "top-margin-default",

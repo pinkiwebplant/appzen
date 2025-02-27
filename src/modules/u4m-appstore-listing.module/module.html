@@ -1,133 +1,133 @@
 
 {% set moduleName = 'u4m-appstore-listing' %}
-  {% set imageMax = 1000 %}
-  {% set bgImageMax = 1920 %}
-  
-  {% include "../partials/u4-module-includes.html" %}
-  
-  {% if dynamic_page_hubdb_row %}
-    {% require_js %}
-  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
-  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/froogaloop.js"></script> 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
-    {% end_require_js %}
-    {% require_css %}
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
-  <style>
-    .hero-module.hero-master.hero-margin-bottom,
-    .u4m-hero{
-      display: none;
-    }
-  </style>
-    {% end_require_css %}
-  {% require_js %}
-  <script>
-    var title_app =  '{{dynamic_page_hubdb_row.title}}';
-    var app_backend_value = '{{dynamic_page_hubdb_row.backend_value}}';
-    $(window).on("load", function(){
-      $("[name='download_app']").val(title_app).change();
-      console.log(app_backend_value);
-      //    $("[name='appstore']").val(app_backend_value).change();
-    })
-  </script>
+{% set imageMax = 1000 %}
+{% set bgImageMax = 1920 %}
+
+{% include "../partials/u4-module-includes.html" %}
+
+{% if dynamic_page_hubdb_row %}
+{% require_js %}
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/froogaloop.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+{% end_require_js %}
+{% require_css %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+<style>
+  .hero-module.hero-master.hero-margin-bottom,
+  .u4m-hero{
+    display: none;
+  }
+</style>
+{% end_require_css %}
+{% require_js %}
+<script>
+  var title_app =  '{{dynamic_page_hubdb_row.title}}';
+  var app_backend_value = '{{dynamic_page_hubdb_row.backend_value}}';
+  $(window).on("load", function(){
+    $("[name='download_app']").val(title_app).change();
+    console.log(app_backend_value);
+    //    $("[name='appstore']").val(app_backend_value).change();
+  })
+</script>
 {% end_require_js %}
 {% require_js %}
-  <script>
-    document.querySelector('.u4m-hero').style.display = 'none';
-  </script>
+<script>
+  document.querySelector('.u4m-hero').style.display = 'none';
+</script>
 {% end_require_js %}
-  {% if dynamic_page_hubdb_row.live == "0" %}
-  <meta name="robots" content="noindex, nofollow">
-  {% endif %}
-  
-  <div class='detail-page-banner pink bg-color {% if not dynamic_page_hubdb_row.hero_video_url %} no-video {% endif %}'>
-    <div class='container page-center'>
+{% if dynamic_page_hubdb_row.live == "0" %}
+<meta name="robots" content="noindex, nofollow">
+{% endif %}
+
+<div class='detail-page-banner pink bg-color {% if not dynamic_page_hubdb_row.hero_video_url %} no-video {% endif %}'>
+  <div class='container page-center'>
     <div class="bgInnerWrap flexleft  hero-without-img   hero-inner-content grey   flex_row">
-    <div class="conInner">
-      <div class="bg-color">
-        <div class="bg-shape bg-shape-1"></div>
-        <div class="bg-shape bg-shape-2"></div>
-        <div class="bg-shape bg-shape-3"></div>
-        <div class="bg-shape bg-shape-4"></div>
-      </div>
-      <a href='{{ module.listing_page_url.href }}' class='all-inegrations'>
-        <img src='https://www.appzen.com/hubfs/Appzen-u4m/images/backarrow.webp' width='20' style='display: inline-block;vertical-align: middle;' alt="star">
-        &nbsp; ALL APPS &nbsp;|&nbsp; {{dynamic_page_hubdb_row.app_type.name}}</a> 
-      <div class='detail-page-content'>
-        <h1>
-          {{dynamic_page_hubdb_row.title}}
-        </h1>
-        {{dynamic_page_hubdb_row.page_sub_heading}}
-      </div>
-      </div>
+      <div class="conInner">
+        <div class="bg-color">
+          <div class="bg-shape bg-shape-1"></div>
+          <div class="bg-shape bg-shape-2"></div>
+          <div class="bg-shape bg-shape-3"></div>
+          <div class="bg-shape bg-shape-4"></div>
+        </div>
+        <a href='{{ module.listing_page_url.href }}' class='all-inegrations'>
+          <img src='https://www.appzen.com/hubfs/Appzen-u4m/images/backarrow.webp' width='20' style='display: inline-block;vertical-align: middle;' alt="star">
+          &nbsp; ALL APPS &nbsp;|&nbsp; {{dynamic_page_hubdb_row.app_type.name}}</a> 
+        <div class='detail-page-content'>
+          <h1>
+            {{dynamic_page_hubdb_row.title}}
+          </h1>
+          {{dynamic_page_hubdb_row.page_sub_heading}}
+        </div>
       </div>
     </div>
   </div>
-  <div class='main-detail-page {% if not dynamic_page_hubdb_row.hero_video_url %} no-video {% endif %}'>
+</div>
+<div class='main-detail-page {% if not dynamic_page_hubdb_row.hero_video_url %} no-video {% endif %}'>
 
   <div class='container page-center'>
-     
-      <div class='detail-page-image detail-video'>
-        
-        {% if dynamic_page_hubdb_row.video_image and dynamic_page_hubdb_row.video_thumbnail.url%}
-        
-        <div class="video-popup-block">
-          <a class="popup-video-btn" href="javaScript:Void(0);">
-            <img src="{{dynamic_page_hubdb_row.video_thumbnail.url}}" loading="lazy" alt='{{dynamic_page_hubdb_row.title}}' width="730" height="410">
-            <img class='play-video' src="{{ get_asset_url('../../templates/images/video-button-play.svg') }}" width="150" height="150px" loading="lazy" alt="play">
-          </a>
-          <div class="video-popup-box popup-containt white-popup mfp-hide">
-            <div class="video-popup-box-overlay"></div>
-            <div class="modal-content">
-              <div class="video-container">
-                {{dynamic_page_hubdb_row.video_image}}
-              </div>
-            </div>
-          </div>  
-        </div> 
-        
-        
-        {% elif dynamic_page_hubdb_row.hero_video_url %}
-        <div class="video-popup-block">
-         
-          <div class="hs-embed-content-wrapper">
-            <div style="position: relative;overflow: hidden;max-width: 100%;padding-bottom: 56.25%;margin: 0px;">
-              <iframe id="projectplayer" src="{{ dynamic_page_hubdb_row.hero_video_url }}?api=1&background=1&mute=0&autoplay=0&loop=0"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay; fullscreen" width="640" height="360" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border: none;"></iframe>
+
+    <div class='detail-page-image detail-video'>
+
+      {% if dynamic_page_hubdb_row.video_image and dynamic_page_hubdb_row.video_thumbnail.url%}
+
+      <div class="video-popup-block">
+        <a class="popup-video-btn" href="javaScript:Void(0);">
+          <img src="{{dynamic_page_hubdb_row.video_thumbnail.url}}" loading="lazy" alt='{{dynamic_page_hubdb_row.title}}' width="730" height="410">
+          <img class='play-video' src="{{ get_asset_url('../../templates/images/video-button-play.svg') }}" width="150" height="150px" loading="lazy" alt="play">
+        </a>
+        <div class="video-popup-box popup-containt white-popup mfp-hide">
+          <div class="video-popup-box-overlay"></div>
+          <div class="modal-content">
+            <div class="video-container">
+              {{dynamic_page_hubdb_row.video_image}}
             </div>
           </div>
-          
-          <div class="overlay-video" id="play-button">
-            <div style="width: 150px; height: 150px;">
-              <img src="{{ get_asset_url('../../templates/images/video-button-play.svg') }}" alt="play">
-            </div>
-          </div>
-          <div class="overlay-video" id="pause-button">
-            <div style="width: 150px; height: 150px;">
-              <img src="{{ get_asset_url('../../templates/images/video-button-pause.svg') }}" alt="pause" >
-            </div>
+        </div>  
+      </div> 
+
+
+      {% elif dynamic_page_hubdb_row.hero_video_url %}
+      <div class="video-popup-block">
+
+        <div class="hs-embed-content-wrapper">
+          <div style="position: relative;overflow: hidden;max-width: 100%;padding-bottom: 56.25%;margin: 0px;">
+            <iframe id="projectplayer" src="{{ dynamic_page_hubdb_row.hero_video_url }}?api=1&background=1&mute=0&autoplay=0&loop=0"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay; fullscreen" width="640" height="360" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border: none;"></iframe>
           </div>
         </div>
-        
-        {% endif %}
-        
+
+        <div class="overlay-video" id="play-button">
+          <div style="width: 150px; height: 150px;">
+            <img src="{{ get_asset_url('../../templates/images/video-button-play.svg') }}" alt="play">
+          </div>
+        </div>
+        <div class="overlay-video" id="pause-button">
+          <div style="width: 150px; height: 150px;">
+            <img src="{{ get_asset_url('../../templates/images/video-button-pause.svg') }}" alt="pause" >
+          </div>
+        </div>
       </div>
-      <div class='detail-content'>
-        {{dynamic_page_hubdb_row.long_content}}
-      </div>
-      <div class='detail-page-image'>
-        <img src='{{dynamic_page_hubdb_row.image.url}}' alt='{{dynamic_page_hubdb_row.title}}' >
-      </div>
+
+      {% endif %}
+
+    </div>
+    <div class='detail-content'>
+      {{dynamic_page_hubdb_row.long_content}}
+    </div>
+    <div class='detail-page-image'>
+      <img src='{{dynamic_page_hubdb_row.image.url}}' alt='{{dynamic_page_hubdb_row.title}}' >
     </div>
   </div>
-  
-  <div class='request-integration-section'>
-    <div class='page-center'>
-      <div class='request-form'>
-  
-        <div class='request-form-popup' id='MyDiv' data-form-id="02ecf852-b974-4c38-9cfd-a62e20251e70">
-  
-         
-          {% form
+</div>
+
+<div class='request-integration-section'>
+  <div class='page-center'>
+    <div class='request-form'>
+
+      <div class='request-form-popup' id='MyDiv' data-form-id="02ecf852-b974-4c38-9cfd-a62e20251e70">
+
+
+        {% form
     form_to_use="{{ module.request_this_integration.popup_form.form_id }}"
     response_response_type="{{ module.request_this_integration.popup_form.response_type }}"
     response_message="{{ module.request_this_integration.popup_form.message }}"
@@ -135,51 +135,51 @@
     response_redirect_url="{{module.request_this_integration.popup_form.redirect_url}}"
     gotowebinar_webinar_key="{{ module.request_this_integration.popup_form.gotowebinar_webinar_key }}"
   %}
-  
-        </div> 
-      </div>
+
+      </div> 
     </div>
   </div>
-  <script>
-    
-  </script>
-  
-  {% elif dynamic_page_hubdb_table_id %}
+</div>
+<script>
+
+</script>
+
+{% elif dynamic_page_hubdb_table_id %}
 
 
-  <div class="appstore-main-container">
+<div class="appstore-main-container">
   <div class='container page-center'>
-      <div class="section-heading-text">
-        <h4>{{ module.section_heading }}</h4>
-      </div>
-      <div class="search-block">
-        <div class="search-inner-block">
-          <input type="text" placeholder="Search all apps" id='search'>
-          <div class="button-block">
-            <button>Search</button>
-          </div>
+    <div class="section-heading-text">
+      <h4>{{ module.section_heading }}</h4>
+    </div>
+    <div class="search-block">
+      <div class="search-inner-block">
+        <input type="text" placeholder="Search all apps" id='search'>
+        <div class="button-block">
+          <button>Search</button>
         </div>
       </div>
-      <div class="filter-card-container" >
-        <div class="filter-card-inner-container">
-          <div class="filter-block-container">
-            <div class="filter-block">
-              <p class="filter-title">CATEGORIES</p>
-              <ul id='options-filter' class="option-set" data-group="filter">
-                {% set types = hubdb_table_rows(5285929, "&orderBy=ordering_by_date_") %}
-                <li>
-                  <input type='radio' id='all' name='re-type' value='' class='all' checked style='display:none;'>
-                  <label for='all'>ALL</label>
-                </li>
-                {% for choice in types %}
-                <li>
-                  <input type="radio" id="{{choice.name|lower|replace("&","")|replace(" ","_")|replace("__","_")}}" name="re-type" value="{{choice.name|lower|replace("&","")|replace(" ","_")|replace("__","_")}}" style='display:none;'>
-                  <label for="{{choice.name|lower|replace("&","")|replace(" ","_")|replace("__","_")}}">  {{choice.name}}</label>
-                </li>  
-                {% endfor %}
-              </ul>
-            </div>
-            {# <div class="filter-block">
+    </div>
+    <div class="filter-card-container" >
+      <div class="filter-card-inner-container">
+        <div class="filter-block-container">
+          <div class="filter-block">
+            <p class="filter-title">CATEGORIES</p>
+            <ul id='options-filter' class="option-set" data-group="filter">
+              {% set types = hubdb_table_rows(5285929, "&orderBy=ordering_by_date_") %}
+              <li>
+                <input type='radio' id='all' name='re-type' value='' class='all' checked style='display:none;'>
+                <label for='all'>ALL</label>
+              </li>
+              {% for choice in types %}
+              <li>
+                <input type="radio" id="{{choice.name|lower|replace("&","")|replace(" ","_")|replace("__","_")}}" name="re-type" value="{{choice.name|lower|replace("&","")|replace(" ","_")|replace("__","_")}}" style='display:none;'>
+                <label for="{{choice.name|lower|replace("&","")|replace(" ","_")|replace("__","_")}}">  {{choice.name}}</label>
+              </li>  
+              {% endfor %}
+            </ul>
+          </div>
+          {# <div class="filter-block">
               <p class="filter-title">MASTERMIND PLATFORM APPS</p>
               <ul id='options-filter-products' class="option-set" data-group="filter-product">
                 {% set types2 = hubdb_table_column(5391476, "app_type").options %}
@@ -197,19 +197,19 @@
                 {% endfor %}
               </ul>
             </div> #}
-            {% if module.app_detail %}
-            <div class='app-listing app-listing-new'>
-              {% for item in module.app_detail %}
-              <div class='app-card'>
-                {{ item.app_content }}
-              </div>
-              {% endfor %}
+          {% if module.app_detail %}
+          <div class='app-listing app-listing-new'>
+            {% for item in module.app_detail %}
+            <div class='app-card'>
+              {{ item.app_content }}
             </div>
-            {% endif %}
+            {% endfor %}
           </div>
-  
-          <div class="card-main-container" id="pagination-2">
-            {# <div class="sort-block">
+          {% endif %}
+        </div>
+
+        <div class="card-main-container" id="pagination-2">
+          {# <div class="sort-block">
               <div class="dropdown">
                 <select id='sortby'>
                   <option value='date' selected >Recently Added</option>
@@ -219,50 +219,50 @@
                 <span class='sort-text'>Sort by</span>
               </div>
             </div> #}
-            <div class="card-container" id='container'>
-              {% if request.domain == "www.appzen.com" %}
-              {% set queryparam = "&orderBy=-publish_date&live=1" %}
-              {% else %}
-              {% set queryparam = "&orderBy=-publish_date" %}
-              {% endif %}
-              {% for row in hubdb_table_rows(module.select_table,queryparam)|sort(True, False, "app_type") %}
-              <div class="card-block {% for cate in row.select_category %} {{cate[1]|lower|replace("&","")|replace(" ","_")|replace("__","_")}}{% endfor %} {% for prod in row.app_type %}{{prod.name|lower|replace("&","")|replace(" ","_")|replace("__","_")}} {% endfor %}  {{row.publish_date|datetimeformat('%B-%e-%Y')}}" data-position="{{row.title}} {{row.short_content|striptags}}" data-date="{{row.publish_date}}">
-                <a href="{{ request.path }}/{{ row.hs_path }}" class='card-link'></a> 
-                <div class="card-inner-block ">
-                  <div class='card-details'>
-                    <div class="card-title">
-                      {# <p>{% if row.app_type.name == 'Premium App' %}<img src='https://www.appzen.com/hubfs/Appzen-u4m/images/shape.webp' alt="shape">&nbsp; {% elif row.app_type.name == 'Custom App' %}<img src='https://www.appzen.com/hubfs/Appzen-u4m/images/shape.webp' alt="shape">&nbsp; {% endif %}{{row.app_type.name}}</p> #}
-                      <h6 class='title'>{{row.title}}</h6>
-                    </div>
-                    <div class="card-text">
-                      <p>
-                        {{row.short_content}}
-                      </p>
-                    </div>
+          <div class="card-container" id='container'>
+            {% if request.domain == "www.appzen.com" %}
+            {% set queryparam = "&orderBy=-publish_date&live=1" %}
+            {% else %}
+            {% set queryparam = "&orderBy=-publish_date" %}
+            {% endif %}
+            {% for row in hubdb_table_rows(module.select_table,queryparam)|sort(True, False, "app_type") %}
+            <div class="card-block {% for cate in row.select_category %} {{cate[1]|lower|replace("&","")|replace(" ","_")|replace("__","_")}}{% endfor %} {% for prod in row.app_type %}{{prod.name|lower|replace("&","")|replace(" ","_")|replace("__","_")}} {% endfor %}  {{row.publish_date|datetimeformat('%B-%e-%Y')}}" data-position="{{row.title}} {{row.short_content|striptags}}" data-date="{{row.publish_date}}">
+              <a href="{{ request.path }}/{{ row.hs_path }}" class='card-link'></a> 
+              <div class="card-inner-block ">
+                <div class='card-details'>
+                  <div class="card-title">
+                    {# <p>{% if row.app_type.name == 'Premium App' %}<img src='https://www.appzen.com/hubfs/Appzen-u4m/images/shape.webp' alt="shape">&nbsp; {% elif row.app_type.name == 'Custom App' %}<img src='https://www.appzen.com/hubfs/Appzen-u4m/images/shape.webp' alt="shape">&nbsp; {% endif %}{{row.app_type.name}}</p> #}
+                    <h6 class='title'>{{row.title}}</h6>
                   </div>
-  
-                  <div class="card-link-block">
-                    <a class="noUnBtn" href="{{ request.path }}/{{ row.hs_path }}">See How<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                    <path d="M5.5 1L10.5 6L5.5 11" stroke="#574D4A"></path>
-                    <path d="M10.5 6L0.5 6" stroke="#574D4A"></path>
-                  </svg></a> 
+                  <div class="card-text">
+                    <p>
+                      {{row.short_content}}
+                    </p>
                   </div>
                 </div>
+
+                <div class="card-link-block">
+                  <a class="noUnBtn" href="{{ request.path }}/{{ row.hs_path }}" href="/georgetown-university-reduces-ap-cycle-times">
+                    <span class="btntext">See How</span>
+                    <span class="btnArw"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M5.5 1L10.5 6L5.5 11" stroke="#574D4A"></path><path d="M10.5 6L0.5 6" stroke="#574D4A"></path></svg></span>
+                  </a>
+                </div>
               </div>
-              {% endfor %}
             </div>
-            <div class='app-bottom-content'>
-                {{ module.bottom_content }}
-            </div>
+            {% endfor %}
+          </div>
+          <div class='app-bottom-content'>
+            {{ module.bottom_content }}
           </div>
         </div>
       </div>
     </div>
   </div>
-  {% endif %}
-  
+</div>
+{% endif %}
+
 {% require_js %}
-  <script>
+<script>
   $(document).ready(function() {
     if ($("#pagination-2").length > 0) {
       !function($){$.smFilteredPagination=function(el,options){var isNumber=new RegExp("^[0-9]+$"),defaults={pagerItems:"div.item",pagerItemsWrapper:"div.results",pagerClass:"pagination",pagerHeader:"pagerHeader",pagerFooter:"pagerFooter",itemsPerPage:6,itemsInPager:6,itemsInPagerEdge:2,itemsInPagerContinued:"...",showPagerHeader:!0,showPagerFooter:!0,showFirst:!0,showPrev:!0,showNext:!0,showLast:!0,showOnZero:!1,showOnOne:!1,textFirst:"First",textPrev:"<",textNext:">",textLast:"Last",hiddenClass:"hide",filteredClassList:".filtered",scrollToTopOnChange:!1,handleLocationHash:!0,locationHashHandler:function(pl){var page=location.hash.split("#")[1];isNumber.test(page)&&pl.setCurrentPage(page)},locationHashUpdate:function(page){location.hash=page},insertPagerHeader:function(el){var pagerContents='<div id="'+this.pagerHeader+'" class="'+this.pagerClass+'"></div>';$("#"+this.pagerHeader).length?$("#"+this.pagerHeader).html(pagerContents):$(el).prepend(pagerContents)},insertPagerFooter:function(el){var pagerContents='<div id="'+this.pagerFooter+'" class="'+this.pagerClass+'"></div>';$("#"+this.pagerFooter).length?$("#"+this.pagerFooter).html(pagerContents):$(el).append(pagerContents)}},plugin=this;plugin.settings={};var buildPager=function(pager,pageCount,selectedPage){var list="<ul>";if((pageCount>0||plugin.settings.showOnZero)&&(pageCount>1||plugin.settings.showOnOne)){var interval=function(pageCount,selectedPage){var halfItemsInPager=Math.ceil(plugin.settings.itemsInPager/2),currentPage=parseInt(selectedPage),upperLimit=pageCount-plugin.settings.itemsInPager;return[currentPage>halfItemsInPager?Math.max(Math.min(currentPage-halfItemsInPager,upperLimit),1):1,currentPage>halfItemsInPager?Math.min(currentPage+halfItemsInPager,pageCount):Math.min(plugin.settings.itemsInPager,pageCount)]}(pageCount,selectedPage);if(plugin.settings.showFirst&&pageCount>1&&(list+='<li><a href="#first" class="first">'+plugin.settings.textFirst+"</a></li>"),plugin.settings.showPrev&&pageCount>1&&(list+='<li><a href="#prev" class="prev">'+plugin.settings.textPrev+"</a></li>"),interval[0]>1&&plugin.settings.itemsInPagerEdge>0){for(var end=Math.min(plugin.settings.itemsInPagerEdge,interval[0]),i=1;i<end;i++)list+='<li><a href="#'+i+'">'+i+"</a></li>";plugin.settings.itemsInPagerEdge<interval[0]&&plugin.settings.itemsInPagerContinued&&(list+="<span>"+plugin.settings.itemsInPagerContinued+"</span>")}for(i=interval[0];i<=interval[1];i++){list+='<li><a href="#'+i+'"'+(i==selectedPage?' class="current"':"")+">"+i+"</a></li>"}if(interval[1]<pageCount&&plugin.settings.itemsInPagerEdge>0){pageCount-plugin.settings.itemsInPagerEdge>interval[1]&&plugin.settings.itemsInPagerContinued&&(list+="<span>"+plugin.settings.itemsInPagerContinued+"</span>");for(i=Math.max(pageCount-plugin.settings.itemsInPagerEdge,interval[1])+1;i<=pageCount;i++)list+='<li><a href="#'+i+'">'+i+"</a></li>"}plugin.settings.showNext&&pageCount>1&&(list+='<li><a href="#next" class="next">'+plugin.settings.textNext+"</a></li>"),plugin.settings.showLast&&pageCount>1&&(list+='<li><a href="#last" class="last">'+plugin.settings.textLast+"</a></li>")}list+="</ul>",$(pager).html(list)};plugin.setItemsPerPage=function(n){plugin.settings.itemsPerPage=parseInt(n),plugin.rebuild()},plugin.setCurrentPage=function(clickedPage){var currentPage=plugin.settings.currentPage,pageCount=Math.ceil(plugin.el.find(plugin.settings.pagerItems,plugin.settings.pagerItemsWrapper).not(plugin.settings.filteredClassList).length/plugin.settings.itemsPerPage);if(plugin.el.find(plugin.settings.tpagerClass+" li a").removeClass("current"),isNumber.test(clickedPage))var start=((selectedPage=(clickedPage=parseInt(clickedPage))>pageCount?pageCount:clickedPage)-1)*plugin.settings.itemsPerPage,end=(selectedPage-1)*plugin.settings.itemsPerPage+plugin.settings.itemsPerPage;else if("first"==clickedPage){var selectedPage=1;start=0,end=plugin.settings.itemsPerPage}else if("prev"==clickedPage)start=((selectedPage=currentPage<2?1:parseInt(currentPage)-1)-1)*plugin.settings.itemsPerPage,end=(selectedPage-1)*plugin.settings.itemsPerPage+plugin.settings.itemsPerPage;else if("next"==clickedPage)start=((selectedPage=currentPage>=pageCount?pageCount:parseInt(currentPage)+1)-1)*plugin.settings.itemsPerPage,end=(selectedPage-1)*plugin.settings.itemsPerPage+plugin.settings.itemsPerPage;else start=((selectedPage=pageCount)-1)*plugin.settings.itemsPerPage,end=(selectedPage-1)*plugin.settings.itemsPerPage+plugin.settings.itemsPerPage;if(plugin.el.find(plugin.settings.pagerItems,plugin.settings.pagerItemsWrapper).not(plugin.settings.filteredClassList).addClass(plugin.settings.hiddenClass).slice(start,end).removeClass(plugin.settings.hiddenClass),plugin.settings.showPagerHeader&&buildPager(plugin.settings.tpagerHeader,pageCount,selectedPage),plugin.settings.showPagerFooter&&buildPager(plugin.settings.tpagerFooter,pageCount,selectedPage),plugin.settings.scrollToTopOnChange){var pagingPosition=plugin.el.position();$("body,html,document").scrollTop(pagingPosition.top)}plugin.settings.currentPage=selectedPage,plugin.settings.handleLocationHash&&plugin.settings.locationHashUpdate(selectedPage)},plugin.getItemsPerPage=function(n){return plugin.settings.itemsPerPage},plugin.getCurrentPage=function(n){return plugin.settings.currentPage},plugin.getPageCount=function(){return plugin.settings.pageCount},plugin.addItems=function(page){$.post(page,(function(data){plugin.el.children(plugin.settings.pagerItemsWrapper).append(data),plugin.rebuild()}))},plugin.rebuild=function(){var currentPage,pageCount=Math.ceil(plugin.el.find(plugin.settings.pagerItems,plugin.settings.pagerItemsWrapper).not(plugin.settings.filteredClassList).length/plugin.settings.itemsPerPage);plugin.settings.pageCount=pageCount,plugin.settings.currentPage=1,plugin.settings.showPagerHeader&&(plugin.settings.insertPagerHeader(plugin.el),buildPager(plugin.settings.tpagerHeader,pageCount,plugin.settings.currentPage)),plugin.settings.showPagerFooter&&(plugin.settings.insertPagerFooter(plugin.el),buildPager(plugin.settings.tpagerFooter,pageCount,plugin.settings.currentPage)),currentPage=void 0!==(currentPage=1)?currentPage:1,plugin.el.find(plugin.settings.pagerItems,plugin.settings.pagerItemsWrapper).filter(plugin.settings.filteredClassList).addClass("hide"),plugin.el.find(plugin.settings.pagerItems,plugin.settings.pagerItemsWrapper).not(plugin.settings.filteredClassList).addClass(plugin.settings.hiddenClass).slice(currentPage-1,plugin.settings.itemsPerPage).removeClass(plugin.settings.hiddenClass)},plugin.settings=$.extend({},defaults,options),plugin.el=el,plugin.settings.currentPage=1,plugin.settings.pageCount=1,plugin.settings.tpagerClass="."+plugin.settings.pagerClass,plugin.settings.tpagerHeader="#"+plugin.settings.pagerHeader,plugin.settings.tpagerFooter="#"+plugin.settings.pagerFooter,plugin.rebuild(),console.log("page class = "+plugin.settings.tpagerClass),plugin.el.find(plugin.settings.tpagerClass+" li a").live("click",(function(e){e.preventDefault(),plugin.settings.currentPage=plugin.el.find(plugin.settings.tpagerClass+" li a.current").length?parseInt(plugin.el.find(plugin.settings.tpagerClass+" li a.current").attr("href").split("#")[1]):1;var clickedPage=$(this).attr("href").split("#")[1];plugin.setCurrentPage(clickedPage)})),plugin.settings.handleLocationHash&&"#"!=location.hash&&""!=location.hash&&null!=location.hash&&plugin.settings.locationHashHandler(plugin),plugin.el}}(jQuery);
@@ -270,12 +270,12 @@
   });
 </script>
 {% end_require_js %}
-  
+
 
 <style>
-.u4m-appstore-listing select#sortby {
-background-image:url({{ get_asset_url('../../templates/images/Down_20Arrow.png') }});
-}
+  .u4m-appstore-listing select#sortby {
+    background-image:url({{ get_asset_url('../../templates/images/Down_20Arrow.png') }});
+  }
 
 </style>
-  </section>
+</section>

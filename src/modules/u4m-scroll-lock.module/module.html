@@ -24,32 +24,7 @@
               {{ item.content }}
               {% if item.include_button %}
               <div class="btn_row">
-                {% for item2 in item.buttons %}
-                {% if item2.button_type == 'stnd' %} 
-                {% set href = item2.button_link.url.href %}
-                {% if item2.button_link.url.type is equalto "EMAIL_ADDRESS" %}
-                {% set href = "mailto:" + href %}
-                {% endif %}
-                <a class="{{ item2.theme }} hs-button"
-                   {% if item2.button_link.url.type is equalto "CALL_TO_ACTION"  %}
-                   href="{{ href }}"
-                   {% else %}
-                   href="{{ href|escape_url }}"
-                   {% endif %}
-                   {% if item2.button_link.open_in_new_tab %}
-                   target="_blank"
-                   {% endif %}
-                   {% if item2.button_link.rel %}
-                   rel="{{ item2.button_link.rel|escape_attr }}"
-                   {% endif %}
-                   >
-                  {{ item2.button_text }}
-                </a>
-                {% else %}
-                {% cta guid="{{ item2.cta_field }}" %}
-                {% endif %}
-                {% endfor %}
-
+                {{macros.buttonGroupItems(item.buttons)}}
               </div>
               {% endif %}
             </div>

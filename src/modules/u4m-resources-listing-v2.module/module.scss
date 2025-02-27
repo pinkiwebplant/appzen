@@ -45,7 +45,7 @@ section.u4m-resHub-listing-v2 {
     display: flex;
     flex-wrap: wrap;
     row-gap: 40px;
-    @include tabletmidmin { 
+    @include tabletmidmin {
       margin: 0 -10px;
     }
     .card_cont_btm {
@@ -202,6 +202,9 @@ section.u4m-resHub-listing-v2 {
 
     a {
       margin: 0;
+      &:hover {
+        background-color: $lightGreybg;
+      }
     }
   }
 
@@ -231,6 +234,9 @@ section.u4m-resHub-listing-v2 {
         padding: 9px 24px;
         border: 2px solid transparent;
         text-align: left;
+        &:hover {
+          background-color: $lightGreybg;
+        }
         @include tabletvert {
           padding: 9px;
         }
@@ -270,6 +276,14 @@ section.u4m-resHub-listing-v2 {
     .loadmore_btn a {
       color: $white;
       border-color: currentColor;
+    }
+  }
+  &.lightGreybg:not(.reverse-text) {
+    .filter_sidebar_inner .filter_item button:hover {
+      background-color: $white;
+    }
+    .loadmore_btn a:hover {
+      background-color: $white;
     }
   }
 }

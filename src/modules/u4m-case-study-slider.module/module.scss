@@ -148,6 +148,7 @@
     width: 100%;
     height: 100%;
     max-width: 450rem;
+    @include cardShadow;
 
     @include phone {
       max-width: unset;
@@ -194,6 +195,18 @@
 
   .case_card_intro {
     margin-bottom: 30rem;
+    .card_btn {
+      display: flex;
+      .secondary {
+        display: flex;
+        gap: 10px;
+        border: none;
+        margin-top: 0;
+        &:hover {
+          background-color: $white;
+        }
+      }
+    }
   }
 
   .inner_content {
