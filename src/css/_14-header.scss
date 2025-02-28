@@ -371,6 +371,7 @@ header.u4m-header {
               padding-bottom: 16px;
               border-bottom: 1px solid $lightGray;
               margin-bottom: 20rem;
+              padding-left: 10px;
               a {
                 color: inherit;
                 &.menuArrowWrap {
@@ -721,7 +722,7 @@ header.u4m-header {
 
         > a {
           position: relative;
-          background: transparent;
+          // background: transparent;
           color: $white;
           > span {
             position: relative;
