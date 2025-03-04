@@ -209,7 +209,24 @@
   {% endif %}
   {% if item2.enable_button %}
   <div class="itemBtn">
-    <a class="primary" href="{{ item2.button.texlinkt }}">{{ item2.button.text }}</a>
+    {% set href = item2.button.link.url.href %}
+    {% if item2.button.link.url.type is equalto "EMAIL_ADDRESS" %}
+    {% set href = "mailto:" + href %}
+    {% endif %}
+    <a
+       {% if item2.button.link.url.type is equalto "CALL_TO_ACTION"  %}
+       href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+       {% else %}
+       href="{{ href|escape_url }}"
+       {% endif %}
+       {% if item2.button.link.open_in_new_tab %}
+       target="_blank"
+       {% endif %}
+       {% if item2.button.link.rel %}
+       rel="{{ item2.button.link.rel|escape_attr }}"
+       {% endif %}
+       class="primary">
+      {{ item2.button.text }}</a>
   </div>
   {% endif %}
   {% endif %}
