@@ -7,7 +7,7 @@ header.u4m-header {
   left: 0;
   width: 100%;
   background-color: $lightGreybg;
-  z-index: 100;
+  // z-index: 100;
 
   .headerIn {
     position: relative;
@@ -774,36 +774,77 @@ header.u4m-header {
 }
 
 @include tabletmidmin {
-  html.hdrOpen {
+  html {
     &:before {
-      content: "";
-      position: fixed;
-      left: 0px;
-      top: 0px;
-      z-index: 2;
       background-color: $basecolor;
-      opacity: 0.4;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      transition: $animation2;
-    }
-
-    // overflow: hidden;
-
-    header.u4m-header:before {
-      background-color: #3d3533;
       content: "";
       height: 100%;
       left: 0;
-      opacity: 0.4;
-      position: absolute;
+      opacity: 0;
       right: 0;
       top: 0;
       width: 100%;
       z-index: 2;
+      position: fixed;
+      visibility: hidden;
+      transition: $animation2;
     }
+    // header.u4m-header:before {
+    //   background-color: $basecolor;
+    //   content: "";
+    //   height: 100%;
+    //   left: 0;
+    //   opacity: 0;
+    //   visibility: hidden;
+    //   position: absolute;
+    //   right: 0;
+    //   top: 0;
+    //   width: 100%;
+    //   z-index: 2;
+    // }
   }
+  html.hdrOpen {
+    &:before {
+      transition: $animation2;
+      opacity: 0.4;
+      visibility: visible;
+    }
+    // header.u4m-header:before {
+    //   transition: $animation2;
+    //   opacity: 0.4;
+    //   visibility: visible;
+    // }
+  }
+  // html.hdrOpen {
+  //   &:before {
+  //     content: "";
+  //     position: fixed;
+  //     left: 0px;
+  //     top: 0px;
+  //     z-index: 2;
+  //     background-color: $basecolor;
+  //     opacity: 0.4;
+  //     right: 0;
+  //     width: 100%;
+  //     height: 100%;
+  //     transition: $animation2;
+  //   }
+
+  //   // overflow: hidden;
+
+  //   header.u4m-header:before {
+  //     background-color: #3d3533;
+  //     content: "";
+  //     height: 100%;
+  //     left: 0;
+  //     opacity: 0.4;
+  //     position: absolute;
+  //     right: 0;
+  //     top: 0;
+  //     width: 100%;
+  //     z-index: 2;
+  //   }
+  // }
 }
 
 @include tabletmidmin {
@@ -1021,7 +1062,7 @@ body.anncmnt_hide {
   header.u4m-header {
     position: fixed;
     animation: headerDown 0.5s ease-out forwards;
-
+    z-index: 100;
     .headerLogo {
       &.sticky {
         display: block !important;
