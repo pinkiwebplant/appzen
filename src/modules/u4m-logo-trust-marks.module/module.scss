@@ -26,6 +26,10 @@ section.u4m-logo-trust-marks {
   }
 
   .logo_section {
+    .page-center.full_width {
+      max-width: 100%;
+      padding: 0;
+    }
     .slider_enable {
       display: block;
     }
@@ -111,7 +115,7 @@ section.u4m-logo-trust-marks {
     }
   }
 
-  .page-center>.flex_row {
+  .page-center > .flex_row {
     justify-content: center;
   }
 
@@ -120,7 +124,6 @@ section.u4m-logo-trust-marks {
   }
 
   @include laptop {
-
     .col2,
     .col3 {
       width: 25%;
@@ -129,7 +132,6 @@ section.u4m-logo-trust-marks {
   }
 
   @include tabletvert {
-
     .col2,
     .col3 {
       width: 33.333%;
@@ -143,7 +145,6 @@ section.u4m-logo-trust-marks {
   }
 
   @include phone {
-
     .col2,
     .col3 {
       width: 50%;

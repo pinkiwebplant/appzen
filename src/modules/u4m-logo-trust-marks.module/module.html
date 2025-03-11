@@ -25,7 +25,7 @@
 {% endif %}
 
 <div class="logo_section {{ module.module_settings.select_theme_type }}">
-  <div class="page-center">
+  <div class="page-center {% if module.module_settings.make_carousel_container_full_width %} full_width{% endif %}">
     <div class="flex_row {% if module.module_settings.enable_slider %} slider_enable {% endif %}">
       <div class="logo_wrapper flex_row {% if module.module_settings.enable_slider %}slider_wrapper{% endif %} {% if module.module_overrides.enable_overrides and module.module_overrides.include_inner_background %}{{ module.module_overrides.inner_background_settings.select_background_color_type }}{% endif %}">
         {% for item in module.logo_items %}

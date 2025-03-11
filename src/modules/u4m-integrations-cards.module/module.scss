@@ -137,15 +137,27 @@ section.u4m-integrations-cards {
 
       svg {
         display: block;
-        width: 15px;
+        width: 10px;
       }
       a {
-        display: inline-flex;
-        margin-left: auto;
-        width: 20px;
-        height: 20px;
         align-items: center;
+        margin-left: auto;
+        background-color: $sectionbg;
+        border-radius: 20rem;
+        display: flex;
+        height: 28px;
         justify-content: center;
+        width: 28px;
+      }
+    }
+    &:hover {
+      .arrow_link {
+        svg * {
+          stroke: $white;
+        }
+        a {
+          background-color: $basecolor;
+        }
       }
     }
   }

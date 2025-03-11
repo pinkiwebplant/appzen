@@ -38,10 +38,10 @@
     p {
       @include size18;
       line-height: 1.6;
-      a {
-        color: inherit;
-        text-decoration: underline;
-      }
+      // a {
+      //   color: inherit;
+      //   text-decoration: underline;
+      // }
     }
     p:last-child {
       margin-bottom: 0;
