@@ -367,6 +367,7 @@ header.u4m-header {
               svg {
                 width: 12px;
                 height: 12px;
+                display: block;
               }
             }
 
@@ -615,6 +616,7 @@ header.u4m-header {
           .itemBtn {
             .primary {
               background-color: $LightPink;
+              background: transparent;
               border: 1px solid $basecolor;
               margin: 0;
             }
@@ -653,7 +655,7 @@ header.u4m-header {
               .menuItemTtl {
                 padding-bottom: 6px;
                 margin-bottom: 15rem;
-
+                padding-left: 0;
                 .menuArrow {
                   opacity: 1;
                   visibility: visible;
@@ -697,6 +699,10 @@ header.u4m-header {
             border-radius: 12px;
             padding: 32px 20px;
             background-color: $LightPink;
+            transition: 0.15s ease;
+            &:hover {
+              background-color: rgba($LightPink, 0.8);
+            }
 
             .menuItem {
               display: flex;
@@ -763,21 +769,41 @@ header.u4m-header {
             }
 
             > .bottomPane {
+              flex-direction: column;
               .btnmItem {
                 font-family: $font1;
                 font-style: normal;
                 font-weight: 400;
                 @include size12;
                 line-height: 150%;
+                display: inline-flex;
                 a {
                   padding: 10px;
                   border-radius: 4rem;
+                  display: inline-flex;
+                  padding-right: 35px;
+                  align-items: center;
                   &:hover {
                     background-color: $greybg;
                     .menuArrow {
                       transform: translateX(8px);
                       opacity: 1;
                       visibility: visible;
+                    }
+                  }
+
+                  .inner_content_wrap {
+                    display: inline-flex;
+                    flex-wrap: wrap;
+                    gap: 6px;
+                    & > span {
+                      display: inline-flex;
+                      flex-wrap: wrap;
+                    }
+
+                    span.btnmItemttl {
+                      margin-bottom: 0;
+                      font-weight: 700;
                     }
                   }
                 }

@@ -367,7 +367,7 @@
                   {% if item2.link.url.type is equalto "EMAIL_ADDRESS" %}
                   {% set href = "mailto:" + href %}
                   {% endif %}
-                  <a
+                  <a class="menuArrowWrap"
                      {% if item2.link.url.type is equalto "CALL_TO_ACTION"  %}
                      href="{{ href }}"
                      {% else %}
@@ -380,8 +380,11 @@
                      rel="{{ item2.link.rel|escape_attr }}"
                      {% endif %}
                      >
-                    <div class="btnmItemttl menuArrowWrap">{{ item2.title }}<span class="menuArrow">{{linkIcon}}</span></div>
-                    <div class="btnmItemdes">{{ item2.description }}</div>
+                    <div class="inner_content_wrap">
+                      <span class="btnmItemttl ">{{ item2.title }}</span>
+                      <span class="btnmItemdes">{{ item2.description }}</span>
+                    </div>
+                    <span class="menuArrow">{{linkIcon}}</span>
                   </a>
                 </div>
                 {% endfor %}
