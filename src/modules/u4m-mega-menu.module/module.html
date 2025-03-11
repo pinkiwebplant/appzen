@@ -112,31 +112,32 @@
       {% set cardHref = "/resources/{{ type.select_row.columns.hs_path }}" %}
       {% endif %}
       <a class="hubdbTableLink menuArrowWrap" href="{{ cardHref }}">
-        <span class="menuArrow">{{linkIcon}}</span>
+
         {% endif %}
 
         {% if item.menu_type == "fw"%}
-
         {% if loop.first %}
-        {% if type.select_row.columns.webinar_date %}
-        <div class="blogCardTags webinars_tag fww"> 
-          {{ iconCalendar }} <span>{{ type.select_row.columns.webinar_date|datetimeformat('%A, %B') }} {% set day = type.select_row.columns.webinar_date|datetimeformat('%e') %}
-          {% if day >= 4 and day <= 20 %}
-          {% set day = day + "th" %}
-          {% elif day >= 24 and day <= 30 %}
-          {% set day = day + "th" %}
-          {% elif day == 1 or day == 21 or day == 31 %}
-          {% set day = day + "st" %}
-          {% elif day == 2 or day == 22 %}
-          {% set day = day + "nd" %}
-          {% elif day == 3 or day == 23 %}
-          {% set day = day + "rd" %}
+        <div class="blogCardMeta_wrap">
+          {% if type.select_row.columns.webinar_date %}
+          <div class="blogCardTags webinars_tag fww"> 
+            {{ iconCalendar }} <span>{{ type.select_row.columns.webinar_date|datetimeformat('%A, %B') }} {% set day = type.select_row.columns.webinar_date|datetimeformat('%e') %}
+            {% if day >= 4 and day <= 20 %}
+            {% set day = day + "th" %}
+            {% elif day >= 24 and day <= 30 %}
+            {% set day = day + "th" %}
+            {% elif day == 1 or day == 21 or day == 31 %}
+            {% set day = day + "st" %}
+            {% elif day == 2 or day == 22 %}
+            {% set day = day + "nd" %}
+            {% elif day == 3 or day == 23 %}
+            {% set day = day + "rd" %}
+            {% endif %}
+            {{ day }}</span>
+          </div>		
           {% endif %}
-          {{ day }}</span>
-        </div>		
-        {% endif %}
-        <div class="blogCardttl fww">
-          {{ type.select_row.columns.title }}
+          <div class="blogCardttl fww">
+            {{ type.select_row.columns.title }}
+          </div>
         </div>
         {% endif %}
 
@@ -165,6 +166,7 @@
         </div>
         {% endif %}
         {# Full Width #}
+        
         {% else %}
 
         {% if type.select_row.columns.webinar_date %}
@@ -201,7 +203,7 @@
         </div>
         {% endif %}
 
-        {% if type.select_row.columns.hs_path or type.select_row.columns.alternative_url %} </a>{% endif %}
+        {% if type.select_row.columns.hs_path or type.select_row.columns.alternative_url %}   {% if item.menu_type == "fw"%} <span class="menuArrow">{{linkIcon}}</span> {% endif %}</a>{% endif %}
     </div>
   </div>
   {% endfor %}

@@ -467,23 +467,21 @@ header.u4m-header {
               }
               .link_added {
                 .menuArrowWrap {
-                  flex-direction: column;
+                  // flex-direction: column;
                   justify-content: flex-start;
                   display: block;
                   padding: 10px;
                   padding-right: 26px;
                   position: relative;
-
+                  display: flex;
+                  align-items: flex-start;
                   border-radius: 8px;
                   &:hover {
                     background: #f7f6f2;
                   }
 
                   .menuArrow {
-                    display: block;
-                    position: absolute;
-                    right: 20px;
-                    top: 10px;
+                    margin-top: 4.5px;
                   }
                 }
               }
@@ -728,6 +726,10 @@ header.u4m-header {
                   .menuArrowWrap {
                     background-color: transparent;
                   }
+                }
+
+                a.hubdbTableLink.menuArrowWrap {
+                  flex-direction: column;
                 }
 
                 &.first {
