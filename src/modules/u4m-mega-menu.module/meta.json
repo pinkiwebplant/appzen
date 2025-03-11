@@ -3,6 +3,11 @@
   "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
   "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
   "module_id" : 183007905689,
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../../js/matchHeight.js",
+    "name" : "matchHeight.js"
+  } ],
   "label" : "Mega Menu",
   "is_available_for_new_content" : true
 }
