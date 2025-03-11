@@ -937,31 +937,32 @@ header.u4m-header {
       visibility: hidden;
       transition: $animation2;
     }
-    // header.u4m-header:before {
-    //   background-color: $basecolor;
-    //   content: "";
-    //   height: 100%;
-    //   left: 0;
-    //   opacity: 0;
-    //   visibility: hidden;
-    //   position: absolute;
-    //   right: 0;
-    //   top: 0;
-    //   width: 100%;
-    //   z-index: 2;
-    // }
+    header.u4m-header:before {
+      background-color: $basecolor;
+      content: "";
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+      transition: $animation2;
+    }
   }
   html.hdrOpen {
     &:before {
       transition: $animation2;
-      opacity: 0.4;
+      opacity: 0.6;
       visibility: visible;
     }
-    // header.u4m-header:before {
-    //   transition: $animation2;
-    //   opacity: 0.4;
-    //   visibility: visible;
-    // }
+    .page-scrolled header.u4m-header:before {
+      transition: $animation2;
+      opacity: 0.6;
+      visibility: visible;
+    }
   }
   // html.hdrOpen {
   //   &:before {
