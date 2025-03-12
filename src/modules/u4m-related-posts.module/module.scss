@@ -84,6 +84,27 @@ section.u4m-related-posts {
         svg {
           height: 10px;
           width: 10px;
+          display: block;
+        }
+        a {
+          align-items: center;
+          margin-left: auto;
+          background-color: $sectionbg;
+          border-radius: 20rem;
+          display: flex;
+          height: 28px;
+          justify-content: center;
+          width: 28px;
+        }
+      }
+      &:hover {
+        .post-item-link {
+          svg * {
+            stroke: $white;
+          }
+          a {
+            background-color: $basecolor;
+          }
         }
       }
     }
